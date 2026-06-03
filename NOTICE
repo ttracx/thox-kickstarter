@@ -1,0 +1,34 @@
+thox-kickstarter - operating playbook for the THOX.ai unified Kickstarter campaign
+Copyright 2026 Thox.ai LLC.
+
+Inventors of record on the THOX device family (covered by this campaign):
+  - Craig Ross
+  - Phamy Xaypanya
+
+THOX IP filings referenced in this repository:
+  IP-008  ThoxClip wearable BLE clip
+  IP-009  ThoxMini RISC-V edge node
+  IP-010  ThoxAir wireless cluster node + MagStack Air pogo interconnect
+  IP-011  ThoxNova desktop hub
+  IP-012  THOX agent contract + cross-runtime routing
+  IP-013  MagStack Air fabric (Pi Zero W class)
+  IP-014  MagStack Air edge-AI vertical slice
+  IP-015  ThoxyMicro on Luckfox Pico Mini B (separate prototype track)
+
+This repository is the canonical source for:
+  - Campaign copy that lands on the Kickstarter Story page
+  - Pricing across all backer tiers and add-ons
+  - Stretch goals and unlock criteria
+  - Production-line timeline and risk register
+  - Press kit boilerplate
+  - Backer communications cadence and templates
+  - Video production logistics and AI-generation prompts
+
+Third-party content embedded:
+  - HKUDS/nanobot (MIT) - ancestor of the ThoxyMicro Go runtime
+  - llama.cpp (MIT)
+  - MLX (MIT)
+  - python-pptx, docx-js (MIT)
+
+This NOTICE file is informational and does not modify the MIT license under
+which this product is distributed.
