@@ -1,4 +1,14 @@
-# thox-kickstarter
+﻿# thox-kickstarter
+
+<!-- thox-badges -->
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
+[![THOX.ai](https://img.shields.io/badge/THOX.ai-portfolio-10B981?style=flat-square)](https://thox.ai)
+[![Status](https://img.shields.io/badge/status-active-success?style=flat-square)](#)
+![Latest Release](https://img.shields.io/github/v/release/ttracx/thox-kickstarter?style=flat-square&include_prereleases)
+![Last Commit](https://img.shields.io/github/last-commit/ttracx/thox-kickstarter?style=flat-square)
+![Open Issues](https://img.shields.io/github/issues/ttracx/thox-kickstarter?style=flat-square)
+<!-- /thox-badges -->
+
 
 [![THOX.ai](https://img.shields.io/badge/THOX.ai-Kickstarter%20Launchkit-1f6feb?style=flat-square)](https://thox.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
