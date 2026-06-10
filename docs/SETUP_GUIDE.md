@@ -52,7 +52,7 @@ When Kickstarter asks for identity verification, you will be handed off to Strip
 
 ## Phase 2. Project basics (Day 2-3 while Stripe verifies)
 
-1. **Project name**: `THOX.ai - Your AI, on silicon you own.`
+1. **Project name**: `THOX.ai - Your AI. Your Data. Your Rules.`
 2. **Project blurb (135 chars max)**: paste from [CAMPAIGN_INFO.md](CAMPAIGN_INFO.md) → "blurb_135" section.
 3. **Project image**: upload the hero shot from `assets/hero/thox-family-on-shelf-1024x576.jpg`. Do not let Kickstarter auto-crop; preview on desktop and mobile.
 4. **Project video**: upload the final 2:30 master MP4. H.264, 1080p, 24 fps, AAC audio. Upload over wired Ethernet. Wait until the platform shows "Encoding complete" before moving on.

@@ -6,7 +6,7 @@ Anything that needs to be quoted on the Kickstarter page, in press, on the websi
 
 | Field | Value |
 |---|---|
-| Project name | THOX.ai - Your AI, on silicon you own. |
+| Project name | THOX.ai - Your AI. Your Data. Your Rules. |
 | Short name | THOX.ai Family Campaign |
 | Category | Technology > Hardware > Gadgets |
 | Country | United States |
@@ -22,7 +22,7 @@ Anything that needs to be quoted on the Kickstarter page, in press, on the websi
 ## Tagline + blurbs
 
 ### Tagline (always use this)
-`Your AI, on silicon you own.`
+`Your AI. Your Data. Your Rules.`
 
 ### blurb_135 (Kickstarter page blurb, 135 chars max, currently 132)
 `Four devices, one agent. ThoxClip listens. ThoxMini thinks small. ThoxAir clusters. ThoxNova hosts the LLM. All local.`

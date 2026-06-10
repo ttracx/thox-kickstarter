@@ -1,4 +1,4 @@
-# THOX.ai - Your AI, on silicon you own.
+# THOX.ai - Your AI. Your Data. Your Rules.
 
 A unified Kickstarter campaign for the THOX device family.
 
@@ -167,12 +167,12 @@ Typography: **Inter** for sans, **JetBrains Mono** for code. Every product enclo
 
 ## Tagline candidates
 
-- THOX.ai - Your AI, on silicon you own.
+- THOX.ai - Your AI. Your Data. Your Rules.
 - THOX.ai - Honest claims, real silicon.
 - THOX.ai - Edge nodes that know what they cannot do, and route the rest.
 - THOX.ai - The agent comes home.
 
-The campaign uses **"Your AI, on silicon you own."** as the primary line.
+The campaign uses **"Your AI. Your Data. Your Rules."** as the primary line.
 
 ---
 
@@ -199,4 +199,4 @@ Founders Pack backers additionally get their name in the firmware boot banner.
 
 ---
 
-THOX.ai - Your AI, on silicon you own.
+THOX.ai - Your AI. Your Data. Your Rules.

@@ -105,4 +105,4 @@ MIT for the docs and templates. The deliverables in `deliverables/` carry their 
 
 ---
 
-THOX.ai - Your AI, on silicon you own.
+THOX.ai - Your AI. Your Data. Your Rules.
