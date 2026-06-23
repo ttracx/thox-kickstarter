@@ -1,7 +1,7 @@
 # THOX.ai Kickstarter shipping plan
 
 **Launch date**: Tue Aug 12 2026, 9:00am PT
-**Days remaining**: 49 (T-49 as of 2026-06-22)
+**Days remaining**: 50 (T-50 as of 2026-06-23)
 **Filming window**: T-35 to T-14 (Jul 7 to Jul 28 2026)
 **Goal**: ship 4 fully functional prototype devices on camera for the
 launch video, with the entire software / firmware / provisioning
@@ -11,6 +11,41 @@ This plan is the **single source of truth** for Kickstarter prep
 across the THOX.ai portfolio. It is the output of a parallel audit
 of 40+ repos and lists every gap between today and a working launch
 video, organized into 8 parallel agent workstreams.
+
+## Operating policy: pull-forward when ahead
+
+When an agent team finishes a queued item ahead of its scheduled slot,
+the next queued item is pulled forward immediately. No waiting for the
+scheduled handoff. After completion, this plan is updated to reflect:
+the shipped item, the new in-progress item, and any downstream date
+that can slide left. See memory `feedback_pull_forward_when_ahead`.
+
+The standing #1 blocker today is the shared Linux build host (gates
+B/C/E/F). When work is blocked there, pull from unblocked lanes
+(A/D/G/H) instead.
+
+## SHIPPED 2026-06-23 (ahead-of-schedule wave)
+
+The following items shipped today, ahead of any deadline in this
+plan. None were in this plan's task table; all were pulled forward
+under the policy above and pushed.
+
+| Lane | Shipped | Repo | Status |
+|---|---|---|---|
+| Brand product line | **ThoxKey v0.2.0** end-to-end (4-SKU restructure + Next.js portal scaffold + Rust launcher + 5 white-label templates + 91-PNG hero gallery + cross-platform renderer) | [ttracx/thox-key](https://github.com/ttracx/thox-key) | tag v0.2.0 pushed |
+| Brand product line | **ThoxStick POC v0.2.0** (investor-grade geometry refresh: X logo 24->432 tris, PCB dummy 324->480 tris, 402035 battery dummy + T-7 Kickstarter decision packet + supplier CAD intake doc) | [ttracx/thox-stick-poc](https://github.com/ttracx/thox-stick-poc) | tag v0.2.0 pushed |
+| Print fleet | **100% print-readiness across all 126 print STLs** (lay-flat 28 floats + convert 13 ASCII to binary + new `scripts/audit_print_readiness.py` CI-gate) | [ttracx/thox-3dprint-kit](https://github.com/ttracx/thox-3dprint-kit), [ttracx/thoxmini-q2-prototype](https://github.com/ttracx/thoxmini-q2-prototype) | shipped + verified exit 0 |
+| Cross-link hygiene | 4 sibling READMEs updated to reference ThoxKey (`thoxllm-factory`, `thox-portable-agent`, `thox-workbench`, `thox-system-prompts`) | per-repo | shipped via 4 parallel agents |
+| Kernel | thoxos-kernel v1.1.25 (MVP-32 release-mgr signature adapter absorbed) | [ttracx/thoxos-kernel](https://github.com/ttracx/thoxos-kernel) | shipped |
+| Marketing | Thox.ai claim-reconciliation pass (11 commits, Super Early Bird / Founders refs removed) | (private) | in progress |
+
+48 commits across 11 repos in 24 hours. Velocity is real.
+
+## Pulled forward 2026-06-23
+
+| Lane | Pulled forward | Why | Dispatched to |
+|---|---|---|---|
+| **G Apps** | thox-terminal v0.2 native SSH module scaffold (the "control from iPhone" video beat) | Build-host blocker idle the Apps lane; G Apps had bandwidth today; v0.2 is a P1 launch item | parallel agent dispatch (see report below) |
 
 ## Demo gap analysis (per device)
 
