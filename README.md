@@ -41,10 +41,44 @@ thox-kickstarter/
 │   ├── SOCIAL_MEDIA_CAMPAIGN.md   social strategy, channels, cadence, KPIs
 │   ├── AI_CONTENT_PIPELINE.md     OpenAI graphics → Grok video, end to end
 │   └── LAUNCH_CHECKLIST.md        T-30 to T+7, hour by hour
+├── prompts/                       AI generation prompt library (OpenAI image + Grok video / illustration)
+│   ├── README.md                  prompt library overview + tool routing
+│   ├── PIPELINE.md                end-to-end OpenAI image -> Grok video workflow
+│   ├── openai/
+│   │   ├── SYSTEM_PROMPT.md       brand-locked system prompt for gpt-image-1
+│   │   └── IMAGE_TEMPLATES.md     10 asset-type templates (hero, lifestyle, MagStack, infographic, unlock, dashboard, ...)
+│   └── grok/
+│       ├── VIDEO_SYSTEM_PROMPT.md          brand-locked system prompt for Grok video
+│       ├── VIDEO_TEMPLATES.md              7 motion-type templates (orbit, dolly-in/out, pan, parallax, surface-loop, text-to-video)
+│       └── ILLUSTRATION_SYSTEM_PROMPT.md   brand-locked system prompt for Grok flat illustrations
+├── social/                        cross-platform social campaign assets and per-post briefs
+│   ├── README.md                  social campaign overview + phase map
+│   ├── CALENDAR.md                90-day cross-platform posting calendar
+│   ├── PLATFORMS.md               per-platform spec sheet (X, IG, TikTok, LinkedIn, YouTube, Reddit, Threads)
+│   └── posts/                     per-post briefs (worked examples for each phase)
+│       ├── _TEMPLATE_brief.md     brief template (copy for new posts)
+│       ├── 00-pre-launch/         T-90 to T-1 (list building)
+│       ├── 01-launch-day/         T+0 (8 posts in 24h)
+│       ├── 02-week-1/             T+1 to T+7
+│       ├── 03-mid-campaign/       T+8 to T+21
+│       ├── 04-stretch/            T+22 to T+28 (pre-staged unlock briefs)
+│       ├── 05-final-48h/          T+28 to T+30 (hourly countdown)
+│       └── 06-post-funding/       T+31 onward (build logs + BackerKit pivot)
+├── runbooks/                      phase-by-phase operator runbooks (how to run the op)
+│   ├── README.md                  roles + tools + SLAs
+│   ├── 00-pre-launch.md           T-90 to T-1: list building, asset stocking, infra setup
+│   ├── 01-launch-week.md          T+0 to T+7: launch choreography + week-1 momentum
+│   ├── 02-mid-campaign.md         T+8 to T+21: sustained drumbeat
+│   ├── 03-stretch-unlock.md       any stretch threshold crossing
+│   ├── 04-final-48h.md            T+28 to T+30: closeout urgency push
+│   ├── 05-post-funding.md         T+31 onward: fulfillment trust + BackerKit
+│   ├── 06-daily-content.md        daily / weekly content production rhythm
+│   └── 07-crisis-response.md      P0-P3 crisis playbook
 ├── assets/
 │   ├── README.md                  brand palette + asset list
-│   ├── social/                    AI-generated social assets (staged pre-publish)
-│   │   └── README.md              social staging spec + naming
+│   ├── social/                    AI-generated social assets staged pre-publish
+│   │   ├── README.md              staging spec + naming grammar + sidecar rule
+│   │   └── <platform>/<post-id>/  per-post asset directory (still + video + prompts)
 │   └── (logos, badges, device photos staged here pre-launch)
 ├── templates/
 │   ├── pre-launch-email.md
@@ -73,7 +107,17 @@ thox-kickstarter/
 | If you are... | Start here |
 |---|---|
 | Setting up the Kickstarter project for the first time | [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) |
-| About to launch (T-30 days or less) | [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md) |
+| About to launch (T-30 days or less) | [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md) + [runbooks/00-pre-launch.md](runbooks/00-pre-launch.md) |
+| Running launch day / launch week | [runbooks/01-launch-week.md](runbooks/01-launch-week.md) + [social/CALENDAR.md](social/CALENDAR.md) "Phase 1" |
+| Producing daily social content | [runbooks/06-daily-content.md](runbooks/06-daily-content.md) + [prompts/PIPELINE.md](prompts/PIPELINE.md) |
+| Generating a new image asset | [prompts/openai/SYSTEM_PROMPT.md](prompts/openai/SYSTEM_PROMPT.md) + [prompts/openai/IMAGE_TEMPLATES.md](prompts/openai/IMAGE_TEMPLATES.md) |
+| Generating a new video asset | [prompts/grok/VIDEO_SYSTEM_PROMPT.md](prompts/grok/VIDEO_SYSTEM_PROMPT.md) + [prompts/grok/VIDEO_TEMPLATES.md](prompts/grok/VIDEO_TEMPLATES.md) |
+| Generating a new illustration / icon / cluster diagram | [prompts/grok/ILLUSTRATION_SYSTEM_PROMPT.md](prompts/grok/ILLUSTRATION_SYSTEM_PROMPT.md) |
+| Drafting a new social post | [social/posts/_TEMPLATE_brief.md](social/posts/_TEMPLATE_brief.md) + the worked example for the relevant phase under `social/posts/` |
+| Hitting a stretch goal threshold | [runbooks/03-stretch-unlock.md](runbooks/03-stretch-unlock.md) + the unlock brief at [social/posts/04-stretch/](social/posts/04-stretch/) |
+| Running the final 48h closeout | [runbooks/04-final-48h.md](runbooks/04-final-48h.md) + [social/posts/05-final-48h/](social/posts/05-final-48h/) |
+| Post-funding fulfillment cadence | [runbooks/05-post-funding.md](runbooks/05-post-funding.md) + [social/posts/06-post-funding/](social/posts/06-post-funding/) |
+| Crisis response (P0-P3) | [runbooks/07-crisis-response.md](runbooks/07-crisis-response.md) |
 | Pitching to a partner or angel | [deliverables/THOX_Kickstarter_Deck.pptx](deliverables/THOX_Kickstarter_Deck.pptx) + [docs/CAMPAIGN_INFO.md](docs/CAMPAIGN_INFO.md) |
 | Recording the hero video | [deliverables/THOX_Video_Script.docx](deliverables/THOX_Video_Script.docx) + [docs/VIDEO_PRODUCTION.md](docs/VIDEO_PRODUCTION.md) |
 | Running the social media campaign | [docs/SOCIAL_MEDIA_CAMPAIGN.md](docs/SOCIAL_MEDIA_CAMPAIGN.md) + [templates/social/content-calendar.md](templates/social/content-calendar.md) |
@@ -133,6 +177,20 @@ Story page and reward tiles use **real EVT photography** — never a render pres
 Anything that needs to be consistent across the campaign (prices, dates, stretch amounts, device specs, inventor names, IP numbers) lives in this repo. The Kickstarter page, BackerKit setup, press releases, social posts, and email blasts all pull from here.
 
 If a number changes, change it in this repo first, then update downstream.
+
+## Social asset generation pipeline (added 2026-06-22)
+
+Every social post in this campaign uses the same end-to-end pipeline:
+
+1. **Brief**: copy `social/posts/_TEMPLATE_brief.md` to the appropriate phase directory and fill in the slots.
+2. **Image**: use [prompts/openai/SYSTEM_PROMPT.md](prompts/openai/SYSTEM_PROMPT.md) + the appropriate template from [prompts/openai/IMAGE_TEMPLATES.md](prompts/openai/IMAGE_TEMPLATES.md) to generate the still in OpenAI gpt-image-1.
+3. **Video**: feed the still into Grok image-to-video using [prompts/grok/VIDEO_SYSTEM_PROMPT.md](prompts/grok/VIDEO_SYSTEM_PROMPT.md) + the appropriate motion template from [prompts/grok/VIDEO_TEMPLATES.md](prompts/grok/VIDEO_TEMPLATES.md).
+4. **Illustration** (for icons / cluster diagrams / vector graphics): use [prompts/grok/ILLUSTRATION_SYSTEM_PROMPT.md](prompts/grok/ILLUSTRATION_SYSTEM_PROMPT.md).
+5. **Post**: schedule via Buffer / TweetDeck / TikTok Studio per the [social/CALENDAR.md](social/CALENDAR.md) cadence and the runbook for the current phase ([runbooks/](runbooks/)).
+
+Full end-to-end pipeline at [prompts/PIPELINE.md](prompts/PIPELINE.md). Worked examples in [social/posts/](social/posts/) cover all 7 campaign phases.
+
+The pipeline is fully brand-locked (THOX dark navy + emerald + IBM Plex Sans / JetBrains Mono, MagStack purple only on MagStack content, no em-dashes anywhere, emojis allowed in captions but not baked into images / videos).
 
 ## Maintainers
 
