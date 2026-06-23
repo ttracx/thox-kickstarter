@@ -45,7 +45,22 @@ under the policy above and pushed.
 
 | Lane | Pulled forward | Why | Dispatched to |
 |---|---|---|---|
-| **G Apps** | thox-terminal v0.2 native SSH module scaffold (the "control from iPhone" video beat) | Build-host blocker idle the Apps lane; G Apps had bandwidth today; v0.2 is a P1 launch item | parallel agent dispatch (see report below) |
+| **G Apps** | thox-terminal v0.3 mDNS device discovery (zero-config "see my Pi Zero stack" video beat) | v0.2 native SSH ALREADY SHIPPED 2026-06-22 (commit `f4ba35b` - this plan was stale); redirected to v0.3 mDNS as the next queued P1 | parallel agent dispatch |
+
+## Plan correction (2026-06-23 wave)
+
+This plan previously listed thox-terminal v0.2 SSH as in-flight. A
+verification pass during pull-forward dispatch found that v0.2
+**already shipped on 2026-06-22**:
+
+- Commit `f4ba35b` "docs: TestFlight submission guide for v0.2 (T-49 Kickstarter handoff)"
+- Citadel 0.12.1 SSH dependency in `Package.swift`
+- Full `ThoxSSHClient` + `ThoxSSHTransport` + `ThoxSSHCommandBuilder`
+- Vault stores: `ThoxKeychain`, `ThoxCredentialStore`, `ThoxSnippetStore`, `ThoxKnownHostsStore`, `ThoxConnectionLogStore`
+- Live interactive shell view + test suite + design spec at `docs/superpowers/specs/2026-06-22-ssh-connectivity-design.md`
+- Keychain Sharing entitlements for iOS + macOS
+
+Mark thox-terminal v0.2 native SSH as **SHIPPED 2026-06-22 (commit f4ba35b)**. Lane G Apps proceeds to v0.3.
 
 ## Demo gap analysis (per device)
 
