@@ -174,6 +174,8 @@ Story page and reward tiles use **real EVT photography** — never a render pres
 
 ## Kickstarter shipping plan (T-49 to launch)
 
+**For Tommy (operator)**: open [docs/TOMMY_ACTION_PLAYBOOK.md](docs/TOMMY_ACTION_PLAYBOOK.md) first. 5 human-gated tasks, ~3 hours of focused work today + ~4 hours of routing this week. Provision the Linux build host today (Action 1) — it unblocks 5 of 8 teams simultaneously.
+
 **Read [docs/KICKSTARTER_SHIPPING_PLAN.md](docs/KICKSTARTER_SHIPPING_PLAN.md)** for the master plan covering every THOX repo that must ship before the Aug 12 2026 launch. The plan was synthesized from a parallel audit of 40+ portfolio repos and identifies:
 
 - 12 critical-path repos that must ship for the video demo
