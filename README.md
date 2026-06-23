@@ -172,6 +172,31 @@ brief → OpenAI gpt-image-1 (graphic) → brand QC → Grok Imagine (image→vi
 Honesty guardrail: AI-generated *device* imagery is stylized social art only. The Kickstarter
 Story page and reward tiles use **real EVT photography** — never a render presented as a photo.
 
+## Kickstarter shipping plan (T-49 to launch)
+
+**Read [docs/KICKSTARTER_SHIPPING_PLAN.md](docs/KICKSTARTER_SHIPPING_PLAN.md)** for the master plan covering every THOX repo that must ship before the Aug 12 2026 launch. The plan was synthesized from a parallel audit of 40+ portfolio repos and identifies:
+
+- 12 critical-path repos that must ship for the video demo
+- 8 parallel agent teams (A through H) with explicit charters
+- Weekly milestones from T-49 (today) to T+0 (Aug 12)
+- 8 named risks with mitigations
+- Per-device demo acceptance criteria
+
+Each team has a self-contained dispatch prompt at [docs/agent-dispatch/](docs/agent-dispatch/) that can be handed off to a fresh Claude Code session. Launch each team in parallel; coordinate only at the daily 8:30am PT standup and the Friday 5pm milestone review.
+
+| Team | Mission | Owner | Repos |
+|---|---|---|---|
+| A | Marketing site reconciliation (April-14/$549 -> Aug-12/$39-499) | Phamy | Thox.ai, thox-command-center |
+| B | ThoxOS Kernel v1.2.0 release (signed + boots Nova hardware) | Craig | thoxos-kernel |
+| C | Image build + signing (Pi Zero 2 W / RV1103 signed image) | Craig | thoxos-air-image, thoxair-pico-sdk, thox-luckfox-pico-mini-b |
+| D | Model training + publish (Phase C 12B, 7 Ollama tags, E2B for NPU) | Phamy | thox-gemma4, thoxllm-factory, thox-gemma4-e4b-sft, thox-micro-125m |
+| E | Provisioning + flashing (ThoxAir MaskROM cross-platform) | Tommy | thox-provisioner, thoxos-mini-flasher, thoxos-mini-utm-build, thox-quickstart, thoxos-mini-ai-usb-factory |
+| F | MagStack 8-clip physical cluster assembly (hero shot) | Craig | magstack-air, magstack-air-edge-rs, thox-q2-print-farm |
+| G | Apps + companion (thox-terminal v0.2, TestFlight builds) | Phamy | thox-terminal, thoxos-companion, thoxos-companion-multiplatform, thox-portable, thox-workbench |
+| H | Silicon + wearable B-roll (stretch tease only) | Craig | thoxinchip, thox-watch |
+
+**Highest-risk items**: Team B (kernel v1.2.0 NO_GO for 24 absorbs) and Team A (marketing site contradicts the Kickstarter copy).
+
 ## Single source of truth
 
 Anything that needs to be consistent across the campaign (prices, dates, stretch amounts, device specs, inventor names, IP numbers) lives in this repo. The Kickstarter page, BackerKit setup, press releases, social posts, and email blasts all pull from here.
