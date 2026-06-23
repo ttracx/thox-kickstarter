@@ -44,7 +44,65 @@ team (see "Agent team structure" below).
 | **P2** | `thoxinchip` | Branch unmerged | GDS render of ThoxCPU for "silicon roadmap" cutaway | Team H (Silicon) |
 | **P2** | `thox-watch` | Hardware bring-up | Display + I2C verified for stretch-goal "ThoxWatch coming" beat | Team H (Silicon) |
 
-## Agent team structure
+## Day 0 launch order (revised 2026-06-23 per shiproom review)
+
+Four corrections to the original plan:
+
+1. **Team A is medium-high risk, not low.** Public Thox.ai site has
+   broader contradictions than the hero/countdown: founder pricing
+   `$629`, ThoxMini `$89.99`, `$899` cost comparison line, December
+   2026 delivery language, Founders Campaign framing. Full claim
+   reconciliation pass needed, not just a hero rewrite.
+
+2. **Team B must be a risk-reduction lane, not the video's single
+   point of failure.** Three legal release-decision outcomes:
+   `GO_REAL_HARDWARE_BOOT` | `GO_QEMU_ONLY_FOR_KICKSTARTER` |
+   `NO_GO_KERNEL_NOT_FOR_VIDEO`. T-21 (Jul 22) is the binding
+   fallback cutoff; after that, kernel stops chasing real hardware
+   and Teams C/E/F own the physical-device beats.
+
+3. **Team D blocker is reframed.** The transformers ecosystem is
+   already past 5.6 (5.12.1 publicly available). The real Team D
+   gate is: pin a known-good transformers version, run Phase C 12B,
+   generate model cards/tags, prove at least one Nova-class local
+   inference path. Not "wait for upstream."
+
+4. **Team C/E are more important than they look.** The
+   `thoxos-air-image` rootfs overlay currently ships placeholder
+   `thox-mesh-ctl` and `thox-assistant` binaries that prevent
+   services from failing but do no real work. That makes C/E the
+   practical hardware-demo fallback if B slips. Shadow-start them
+   on Day 0, not Week 2.
+
+### Day 0 launch order
+
+```
+# Start IMMEDIATELY today
+1. Team A — Marketing site + command-center lockdown
+2. Team B — Kernel v1.2.0 signed evidence lane (3-outcome decision)
+3. Shared Linux build host — required by B, C, E, F (provision TODAY,
+   not "this week"; see docs/agent-dispatch/build-host-spec.md)
+
+# Shadow-start TODAY if any capacity exists
+4. Team C — signed Pi Zero 2 W / RV1103 image artifact (physical
+   fallback lane if B slips)
+5. Team E — cross-platform flasher + MaskROM path (no image counts
+   unless it can be flashed safely)
+
+# Start after build host is online (within 48h)
+6. Team D — model training / tagging / runtime proof
+7. Team F — MagStack compile + physical hero shot
+8. Team G — Terminal / Companion TestFlight proof
+
+# Optional / drop-first if schedule compresses
+9. Team H — silicon GDS + ThoxWatch wrist B-roll
+```
+
+**Order rationale**: Team A protects trust. Team B protects technical
+credibility. Teams C/E protect the physical-device fallback. That
+combination ships a real Kickstarter video without over-claiming.
+
+## Agent team structure (revised risk ratings)
 
 8 parallel agent teams. Each runs as a Claude Code agent + a human
 DRI from THOX. Teams ship in parallel; coordination only at the

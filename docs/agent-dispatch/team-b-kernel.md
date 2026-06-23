@@ -1,96 +1,259 @@
-# Team B — ThoxOS Kernel v1.2.0 release
+# CLAUDE DISPATCH — TEAM B
+
+## ThoxOS Kernel v1.2.0 Signed Release + Boot Evidence
+
+You are Team B for the THOX.ai Kickstarter shiproom.
 
 ## Mission
 
-Ship a signed v1.2.0 release that boots on ThoxNova LattePanda N100
-hardware + Pi Zero W (ThoxMini) + Pi Zero 2 W (ThoxMini Air) by
-T-21 (Jul 22 2026). This is the highest-risk workstream — kernel
-work has been NO_GO for 24 absorbs running.
+Produce a signed, evidence-backed ThoxOS kernel v1.2.0 release decision.
 
-## Repos you own
+Your job is **not** to force a real-hardware boot for the video. Your
+job is to make the kernel truth clear, with three legal outcomes:
 
-- `C:\Users\tommy\dev\thoxos-kernel` (primary)
+- `GO_REAL_HARDWARE_BOOT` if evidence passes and the kernel boots on
+  Nova / Pi Zero W / Pi Zero 2 W hardware.
+- `GO_QEMU_ONLY_FOR_KICKSTARTER` if QEMU evidence passes and real
+  hardware slips past T-21. Video films QEMU on a screen with honest
+  voice-over.
+- `NO_GO_KERNEL_NOT_FOR_VIDEO` if release evidence is incomplete. Video
+  cuts the kernel beat entirely; Teams C/E/F provide the physical
+  device beats.
 
-## Context to load first
+Whichever outcome lands, the decision is **signed, dated, and binding**.
 
-1. `C:\Users\tommy\dev\thox-kickstarter\docs\KICKSTARTER_SHIPPING_PLAN.md`
-2. `C:\Users\tommy\dev\thoxos-kernel\README.md`
-3. `C:\Users\tommy\dev\thoxos-kernel\doc\V120_READINESS.md`
-4. The latest `doc/v1.1.<N>_mvp<M>_absorb_strategy.md` (currently
-   `v1.1.24_mvp31_absorb_strategy.md`)
-5. `patches/v1.2.0-carveout/000{1..7}-*.md` — the canonical v1.2.0
-   patch queue
+## Primary DRI
 
-## Current state (per audit)
+Craig
 
-- v1.1.24 / MVP-31 absorbed
-- Packaged decision: `NO_GO_RELEASE_HANDOFF_AND_DASHBOARD_STAGING_ONLY`
-- v1.2.0 release blocked on:
-  - QEMU evidence on an equipped rust-bare-metal + GRUB host
-  - 7 `v120-*.log` command-specific smoke transcripts
-  - Real detached release signature (current is local HMAC custody)
-  - Release-manager human sign-off (Craig)
+## Repository
 
-## Deliverables
+- `C:\Users\tommy\dev\thoxos-kernel`
 
-1. **Linux build host**: provision a privileged Linux machine with:
-   - Rust nightly with bare-metal targets (x86_64-unknown-none,
-     aarch64-unknown-none-elf, riscv64gc-unknown-none-elf)
-   - grub-mkrescue + grub-pc-bin
-   - qemu-system-x86_64 + qemu-system-aarch64
-   - cosign for release signing
-2. **7 v120-* smoke transcripts**: run each smoke command (per
-   `doc/transcript_markers/*.markers`) through QEMU; capture
-   ordered transcripts; archive to `doc/v120-evidence/`
-3. **Real release signature**: use cosign with an offline-stored
-   key (NOT the local HMAC). Document the signature procedure in
-   `doc/v120-release-signing.md`
-4. **Release-manager sign-off**: Craig physically signs the
-   sign-off document; signature scanned + committed
-5. **v1.2.0 tag**: merge the parked carve-out into the default
-   kernel tree; tag v1.2.0; push tag
-6. **Boot test on real hardware**:
-   - LattePanda N100 (ThoxNova target): boot `thoxos> ` shell
-     reachable over serial (115200 8N1)
-   - Pi Zero W (ThoxMini target): same
-   - Pi Zero 2 W (ThoxMini Air + MagStack target): same
+## Current known state
 
-## Acceptance gate
+The repository has held v1.2.0 at NO_GO across 24 absorbs (MVP-7
+through MVP-31). Required evidence includes:
 
-- [ ] `cargo build --release --target x86_64-unknown-none` produces
-      `thoxos-kernel.bin` in target/
-- [ ] `cosign verify-blob --key cosign.pub thoxos-kernel.bin` passes
-- [ ] LattePanda N100 boots to `thoxos> ` shell within 8 seconds of
-      power-on
-- [ ] Pi Zero W boots to `thoxos> ` shell within 12 seconds
-- [ ] Pi Zero 2 W boots within 10 seconds
-- [ ] `mesh_publish`, `mesh_subscribe`, `time_now` syscalls work
-      on at least one of those boards (Phase 1 deliverable)
-- [ ] All 24-absorb host tests still green
-- [ ] `git tag v1.2.0` exists at origin/main
+- QEMU evidence on a rust-bare-metal + GRUB host
+- 7 `v120-*` smoke transcripts
+- detached release signature (NOT local HMAC)
+- release-manager human signoff
+- rollback plan
+- branch / release evidence bundle
 
-## Scope reduction (if at risk)
+Treat every prior NO_GO as binding until replaced by signed proof.
 
-If by T-28 the QEMU evidence is not yet captured:
-- Film the demo with v1.1.24 booting in QEMU on a screen instead
-  of real silicon
-- Voice-over describes "v1.2.0 lands the week after launch"
-- This is acceptable for the demo but not for the kickstarter promise
+Team B prep work landed in commit `55eddd0`:
 
-## Daily standup template
+- `doc/V120_RELEASE_READINESS_AUDIT_2026-06-22.md`
+- `scripts/provision-linux-build-host.sh`
+- `scripts/capture-v120-smoke-transcripts.sh` (7 commands resolved:
+  `enteragent`, `enter2`, `faultdemo`, `preemptdemo`, `hwtick`, `gpr`,
+  `waitwake`)
+- `doc/v120-release-signing.md`
+- `doc/v120-release-manager-signoff.md`
+- `doc/v120-merge-plan.md`
+
+This dispatch builds on that work. Execute it on the shared Linux build
+host (see `docs/agent-dispatch/build-host-spec.md`).
+
+## Required output files
+
+Create or update under `C:\Users\tommy\dev\thoxos-kernel`:
+
+- `doc/V120_RELEASE_EVIDENCE.md` (master evidence index)
+- `doc/V120_QEMU_TRANSCRIPTS.md` (one section per transcript)
+- `doc/V120_HARDWARE_BOOT_ATTEMPT.md` (per-target boot log)
+- `doc/V120_SIGNED_RELEASE_DECISION.md` (final 3-outcome decision)
+- `doc/V120_ROLLBACK_PLAN.md` (per MVP-25 signed rollback bundle spec)
+- `doc/V120_VIDEO_FALLBACK_DECISION.md` (T-21 fallback path)
+- `artifacts/v120/` (binary + log artifacts; gitignored, indexed by
+  SHA256)
+- Daily report: `thox-kickstarter/docs/agent-dispatch/team-b-daily-report.md`
+
+## Build host requirement
+
+Use the shared Linux build host (`docs/agent-dispatch/build-host-spec.md`).
+Do not rely on local laptops for final evidence.
+
+## Tasks
+
+### 1. Environment proof
+
+Record:
+
+```bash
+rustc --version
+cargo --version
+qemu-system-x86_64 --version
+qemu-system-aarch64 --version
+grub-mkrescue --version || true
+cosign version
+uname -a
+```
+
+Save output to `artifacts/v120/environment.txt`.
+
+### 2. Workspace gates
+
+Run:
+
+```bash
+cargo fmt --all -- --check
+cargo check --workspace
+cargo test --workspace
+cargo clippy --workspace --all-targets -- -D warnings
+```
+
+Save logs:
+- `artifacts/v120/fmt.log`
+- `artifacts/v120/check.log`
+- `artifacts/v120/test.log`
+- `artifacts/v120/clippy.log`
+
+Resolve the known `thox-elf` regression (5 `assert_eq!` sites need
+`#[derive(PartialEq)]` on `Elf64Exec` and `KError`, per V120 audit B3)
+before declaring workspace green.
+
+### 3. Kernel / QEMU gates
+
+Run `scripts/capture-v120-smoke-transcripts.sh` and capture all 7
+transcripts. Each transcript must include:
 
 ```
-[Team B] Day N:
-- Yesterday: <1 line>
-- Today: <1 line>
-- Blocker: <1 line or none>
-- ETA to v1.2.0 tag: <date>
+repo SHA
+build command
+run command
+QEMU version
+expected marker
+actual marker
+exit status
+timestamp
+operator
 ```
 
-## Weekly milestone
+Save to `artifacts/v120/<command>.log` and summarize in
+`doc/V120_QEMU_TRANSCRIPTS.md`.
 
-- Week 1: Linux build host operational + first QEMU smoke
-- Week 2: 4 of 7 smoke transcripts captured
-- Week 3: all 7 transcripts + cosign signing procedure
-- Week 4: release-manager sign-off + v1.2.0 tag
-- Week 5: real-hardware boot tests
+The 7 transcripts:
+- `v120-enteragent.log`
+- `v120-enter2.log`
+- `v120-faultdemo.log`
+- `v120-preemptdemo.log`
+- `v120-hwtick.log`
+- `v120-gpr.log`
+- `v120-waitwake.log`
+
+### 4. Signed release evidence
+
+Produce:
+
+- `artifacts/v120/SHA256SUMS`
+- `artifacts/v120/release-bundle.tar.zst`
+- `artifacts/v120/release-bundle.tar.zst.sig`
+- `artifacts/v120/release-decision.json`
+
+The `release-decision.json` value MUST be one of:
+
+```
+"GO_REAL_HARDWARE_BOOT"
+"GO_QEMU_ONLY_FOR_KICKSTARTER"
+"NO_GO_KERNEL_NOT_FOR_VIDEO"
+```
+
+Cosign keypair: offline-stored, NOT a local HMAC. Procedure in
+`doc/v120-release-signing.md`.
+
+### 5. Hardware boot attempt
+
+Only attempt real Nova / Pi Zero W / Pi Zero 2 W hardware AFTER QEMU
+gates are green. Record per target:
+
+```
+hardware target:
+BIOS/UEFI settings:
+image:
+flash method:
+boot log:
+failure point if any:
+camera proof:
+operator:
+```
+
+Save to `doc/V120_HARDWARE_BOOT_ATTEMPT.md`.
+
+### 6. T-21 fallback rule
+
+If real hardware boot is not green by T-21 (Jul 22 2026):
+
+- Team B MUST stop chasing hardware for the video.
+- Team B MUST provide QEMU screen capture and a signed
+  `GO_QEMU_ONLY_FOR_KICKSTARTER` or `NO_GO_KERNEL_NOT_FOR_VIDEO`
+  memo in `doc/V120_VIDEO_FALLBACK_DECISION.md`.
+- Teams C / E / F / G become the physical-device hardware beats.
+
+This T-21 cutoff is binding. Do not let Team B become the single
+critical path for the campaign video.
+
+## Friday milestone
+
+By Friday 5pm PT, Team B must produce:
+
+1. Build host environment proof.
+2. Workspace test logs (all 4 gates green).
+3. At least one QEMU boot transcript, or a precise blocker memo.
+4. Updated NO_GO / GO decision memo.
+5. T-21 fallback decision path.
+
+## Daily report format
+
+Append to `docs/agent-dispatch/team-b-daily-report.md` daily:
+
+```
+# Team B Daily Report — YYYY-MM-DD
+
+## Summary
+## Completed today
+## Build host status
+## Test status
+## QEMU transcript status (0/7, 1/7, ..., 7/7)
+## Hardware boot status (Nova / Pi Zero W / Pi Zero 2 W)
+## Blockers
+## Risk to T-21
+## Decision state
+GO_REAL_HARDWARE_BOOT / GO_QEMU_ONLY_FOR_KICKSTARTER / NO_GO_KERNEL_NOT_FOR_VIDEO / PENDING
+## Tomorrow plan
+## Friday milestone confidence
+GREEN / YELLOW / RED
+```
+
+## Evidence rule
+
+Every claim about v1.2.0 readiness must reference:
+
+```
+repo:
+branch:
+commit SHA:
+build command:
+test command:
+artifact path:
+SHA256:
+operator:
+timestamp:
+result:
+```
+
+No artifact counts without the full 10-field record.
+
+## Constraints
+
+- Do NOT tag v1.2.0 without Craig's wet-ink signoff (per the existing
+  `doc/v120-release-manager-signoff.md` template).
+- Do NOT touch kernel source unless fixing the `thox-elf` test
+  regression listed in task 2.
+- The default kernel tree stays frozen against the v1.2.0 carve-out
+  until the signed release decision lands.
+- Commit messages: plain technical voice (matches the existing kernel
+  commit log).

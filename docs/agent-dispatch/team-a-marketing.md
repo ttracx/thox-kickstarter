@@ -1,81 +1,211 @@
-# Team A — Marketing site reconciliation
+# CLAUDE DISPATCH — TEAM A
+
+## Marketing Site Rewrite + Command-Center Lockdown
+
+You are Team A for the THOX.ai Kickstarter shiproom.
 
 ## Mission
 
-Ship the production thox.ai marketing site that matches the
-Kickstarter playbook by T-30 (Jul 13 2026). Lock the
-`thox-command-center` repo PRIVATE.
+Reconcile every public-facing THOX.ai campaign, marketing, preorder,
+pricing, delivery, and prototype-readiness claim so the Kickstarter
+video, website, press kit, and internal runbook cannot contradict each
+other.
 
-## Repos you own
+You also own `thox-command-center` lockdown. It must remain
+private/internal-only and must not leak into public surfaces.
 
-- `C:\Users\tommy\dev\Thox.ai` (Next.js 16 marketing site)
-- `C:\Users\tommy\dev\thox-command-center` (NOT yet a git repo;
-  internal only)
+## Primary DRI
 
-## Context to load first
+Phamy
 
-1. `C:\Users\tommy\dev\thox-kickstarter\docs\KICKSTARTER_SHIPPING_PLAN.md`
-2. `C:\Users\tommy\dev\thox-kickstarter\docs\CAMPAIGN_INFO.md`
-3. `C:\Users\tommy\dev\thox-kickstarter\docs\REWARDS_MATRIX.md`
-4. `C:\Users\tommy\dev\Thox.ai\README.md`
-5. `C:\Users\tommy\dev\Thox.ai\app/` directory structure
-6. `C:\Users\tommy\dev\thox-3dprint-kit\devices\thoxnova\v2\README.md`
-7. `C:\Users\tommy\dev\thox-3dprint-kit\devices\thoxclip\v7\README.md`
+## Repositories / surfaces
 
-## Current state (per audit)
+- Thox.ai public site (`C:\Users\tommy\dev\Thox.ai`)
+- `thox-command-center` (private)
+- Kickstarter runbook / campaign docs (`C:\Users\tommy\dev\thox-kickstarter\docs/`)
+- Press kit (`thox-kickstarter/docs/PRESS_KIT.md`)
+- Demo video script (`thox-kickstarter/deliverables/THOX_Video_Script.docx`)
+- Any public docs, footer links, product pages, metadata, OG tags, and
+  pricing references
 
-- Site says "April 14 2026 launch / starting at $549"
-- Kickstarter playbook says "Aug 12 2026 / $39-$499 / 4 SKUs"
-- These contradict each other
+## Current known risks
 
-## Deliverables
+1. Public THOX.ai site currently says (verified 2026-06-23):
+   - Founders Campaign open now
+   - $99.99 refundable Nova deposit
+   - Founder pricing from $629
+   - ThoxMini $89.99
+   - Nova cost comparison line at $899 one-time
+   - delivery target December 2026
+2. Internal Kickstarter playbook says:
+   - Aug 12 2026 launch
+   - $39–$499 ladder
+   - 4 SKU campaign structure
+3. Earlier Team A pass (commit `bda5b54`) updated hero + countdown + 4-SKU
+   block + Stripe deposit, but the **deep pages** (`/kickstarter`,
+   `/founders`, `/pricing`, `/product`, `/investors`) still carry the
+   contradictory Founders-era numbers.
+4. `thox-command-center` was made private in commit `1bf101d`. Verify
+   lockdown holds.
 
-1. **Hero rewrite**: replace "Edge AI device" framing with the
-   4-SKU lineup (ThoxClip / Mini / Air / Nova at $39 / $69 / $79 /
-   $499 early-bird).
-2. **Countdown swap**: change April 14 to Aug 12 2026 9am PT.
-3. **Pricing block**: 4-tier comparison table matching
-   `docs/REWARDS_MATRIX.md`.
-4. **Hero device render**: swap the current device image for a
-   render of the 4 v2 devices in a row (use STL renders from
-   `thox-3dprint-kit/devices/<device>/v2/mockup.svg` as a starting
-   point; commission a real render if time permits).
-5. **JSON-LD**: update the structured-data block for the new launch
-   date.
-6. **Stripe**: update deposit amount from current to $9.99 (matches
-   the launch-list capture price in the playbook); verify
-   `docs/REWARDS_MATRIX.md` confirms this.
-7. **command-center lockdown**: initialize `thox-command-center`
-   as a PRIVATE git repo (gh repo create ttracx/thox-command-center
-   --private); 1-line README "internal ops only"; add cross80127
-   as maintainer; sweep all public THOX repos for any
-   "command-center" string references and remove them.
+## Required output files
 
-## Acceptance gate
+Create or update:
 
-- [ ] Site at thox.ai shows Aug 12 2026 / 4 SKUs / $39-$499 by T-30
-- [ ] Stripe checkout works at $9.99 deposit on staging + prod
-- [ ] `grep -ri "command-center" *` in every public repo returns
-      zero matches (use `gh search code` for portfolio-wide check)
-- [ ] thox-command-center private repo exists at
-      github.com/ttracx/thox-command-center, cross80127 invited
-- [ ] Lighthouse score >=90 on perf / SEO / a11y for the home page
-- [ ] Mobile breakpoint clean on iPhone 15 + Pixel 8
+- `Thox.ai/docs/campaign/CANONICAL_CAMPAIGN_COPY.md`
+- `Thox.ai/docs/campaign/PRICE_AND_REWARD_MATRIX.md`
+- `Thox.ai/docs/campaign/CLAIM_REGISTER.md`
+- `Thox.ai/docs/campaign/PUBLIC_SURFACE_AUDIT.md`
+- `Thox.ai/docs/campaign/VIDEO_SCRIPT_FACT_CHECK.md`
+- `thox-kickstarter/docs/internal/COMMAND_CENTER_LOCKDOWN.md`
+- Daily report: `thox-kickstarter/docs/agent-dispatch/team-a-daily-report.md`
 
-## Daily standup template (post to #ks-ops at 12pm PT)
+## Tasks
+
+### 1. Public surface audit
+
+Inventory every public surface of `Thox.ai`. For each route + page,
+record this structured row:
 
 ```
-[Team A] Day N:
-- Yesterday: <1 line>
-- Today: <1 line>
-- Blocker: <1 line or none>
-- ETA to T-30 milestone: <on track | at risk | slipping>
+Surface:
+URL/path:
+Claim:
+Price:
+Date:
+Delivery language:
+Prototype-readiness language:
+Risk:
+Fix:
+Owner:
+Status:
 ```
 
-## Weekly milestone
+Grep aggressively for: `629`, `549`, `499`, `99.99`, `899`, `89.99`,
+`April`, `December`, `Founders`, `Founder`, `Edge AI`, `Nova`, deposit
+amounts, and any delivery date strings. Save to
+`Thox.ai/docs/campaign/PUBLIC_SURFACE_AUDIT.md`.
 
-- Week 1 (T-49 to T-42): copy draft + design draft
-- Week 2 (T-42 to T-35): site on staging URL
-- Week 3 (T-35 to T-28): GA at thox.ai
-- Week 4 (T-28 to T-21): SEO + JSON-LD + Lighthouse polish
-- Week 5+ (T-21 onward): support other teams; no new site work
+### 2. Canonical campaign source of truth
+
+Produce a single canonical version of every claim used on any public
+surface. Lock these values in
+`Thox.ai/docs/campaign/CANONICAL_CAMPAIGN_COPY.md`:
+
+```
+Campaign title:
+Launch date:
+Primary hero line:
+Product family:
+SKU count:
+Reward ladder:
+Deposit/preorder wording:
+Delivery window:
+Prototype status wording:
+AI disclosure:
+Risks wording:
+Privacy/security wording:
+Refund/deposit wording:
+```
+
+After this file lands, NO public page may use non-canonical language.
+Drive every contradiction from PUBLIC_SURFACE_AUDIT.md to resolved.
+
+### 3. Deep-page reconciliation (the hard part)
+
+For each of `/kickstarter`, `/founders`, `/pricing`, `/product`,
+`/investors`, `/reserve`, and any other route still using
+Nova-only or Founder-era language:
+- Update copy to match `CANONICAL_CAMPAIGN_COPY.md`
+- Remove `$629` / `$549` / `$99.99` deposit / `$899` cost comparison /
+  `December 2026 delivery` references
+- Add the 4-SKU framing where missing
+- Update JSON-LD / OG / metadata per route
+
+Commit each route fix separately so reviewers can audit per-page.
+
+### 4. Command-center lockdown verification
+
+Verify:
+- repo is private (`gh repo view ttracx/thox-command-center --json visibility`)
+- README says INTERNAL ONLY
+- no public deploy points
+- no public screenshots
+- no marketing links to it
+- no product footer links
+- no indexed docs reference it
+- no secret-bearing env examples committed
+- no command-center screenshots in press kit
+- no external docs point to it
+
+Create a lockdown checklist with pass/fail evidence in
+`thox-kickstarter/docs/internal/COMMAND_CENTER_LOCKDOWN.md`.
+
+### 5. Video fact-check gate
+
+Review `thox-kickstarter/deliverables/THOX_Video_Script.docx` (or the
+equivalent script doc) and label EVERY scene:
+
+- `WORKING_PROTOTYPE` — real hardware booting on camera
+- `SOFTWARE_DEMO` — software running on a screen, not necessarily the
+  final device
+- `ENGINEERING_VALIDATION` — bench shot, not a "the device works" claim
+- `PRODUCTION_INTENT_DESIGN` — CAD render or 3D-printed prototype
+- `PLANNED_FEATURE` — narrated as roadmap, never shown working
+
+Anything shown as `WORKING_PROTOTYPE` must have matching evidence from
+Teams B / C / E / F / G. Save the labels to
+`Thox.ai/docs/campaign/VIDEO_SCRIPT_FACT_CHECK.md`. Flag every scene
+where the label cannot be supported by evidence.
+
+## Friday milestone
+
+By Friday 5pm PT, Team A must produce:
+
+1. Final canonical campaign copy (`CANONICAL_CAMPAIGN_COPY.md`).
+2. Fixed public-site copy committed to Thox.ai main + deployed.
+3. Command-center lockdown proof.
+4. Claim register with zero unresolved price/date/delivery contradictions.
+5. Video fact-check sheet, DRI-signed.
+
+## Daily report format
+
+Append to `docs/agent-dispatch/team-a-daily-report.md` daily; the
+scheduled `ks-daily-standup` task pulls from it:
+
+```
+# Team A Daily Report — YYYY-MM-DD
+
+## Summary
+## Completed today
+## Blockers
+## Public contradictions found
+## Copy decisions needed
+## Command-center lockdown status
+## Evidence links / files
+## Tomorrow plan
+## Friday milestone confidence
+GREEN / YELLOW / RED
+```
+
+## Evidence rule
+
+Every claim made about THOX.ai in any public copy must reference:
+
+```
+source repo:
+source file:
+source SHA:
+canonical value:
+review by:
+review date:
+```
+
+If a value cannot be sourced to a repo file, escalate before publishing.
+
+## Constraints
+
+- The `Thox.ai` repo is public; commit messages plain technical voice, no
+  em-dashes, no emojis.
+- The `thox-command-center` repo stays private; never push public.
+- Drive every contradiction to zero before T-30 (Jul 13 2026).

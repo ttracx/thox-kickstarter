@@ -184,18 +184,27 @@ Story page and reward tiles use **real EVT photography** — never a render pres
 
 Each team has a self-contained dispatch prompt at [docs/agent-dispatch/](docs/agent-dispatch/) that can be handed off to a fresh Claude Code session. Launch each team in parallel; coordinate only at the daily 8:30am PT standup and the Friday 5pm milestone review.
 
-| Team | Mission | Owner | Repos |
-|---|---|---|---|
-| A | Marketing site reconciliation (April-14/$549 -> Aug-12/$39-499) | Phamy | Thox.ai, thox-command-center |
-| B | ThoxOS Kernel v1.2.0 release (signed + boots Nova hardware) | Craig | thoxos-kernel |
-| C | Image build + signing (Pi Zero 2 W / RV1103 signed image) | Craig | thoxos-air-image, thoxair-pico-sdk, thox-luckfox-pico-mini-b |
-| D | Model training + publish (Phase C 12B, 7 Ollama tags, E2B for NPU) | Phamy | thox-gemma4, thoxllm-factory, thox-gemma4-e4b-sft, thox-micro-125m |
-| E | Provisioning + flashing (ThoxAir MaskROM cross-platform) | Tommy | thox-provisioner, thoxos-mini-flasher, thoxos-mini-utm-build, thox-quickstart, thoxos-mini-ai-usb-factory |
-| F | MagStack 8-clip physical cluster assembly (hero shot) | Craig | magstack-air, magstack-air-edge-rs, thox-q2-print-farm |
-| G | Apps + companion (thox-terminal v0.2, TestFlight builds) | Phamy | thox-terminal, thoxos-companion, thoxos-companion-multiplatform, thox-portable, thox-workbench |
-| H | Silicon + wearable B-roll (stretch tease only) | Craig | thoxinchip, thox-watch |
+| Team | Mission | Owner | Risk | Repos |
+|---|---|---|---|---|
+| A | Marketing site full reconciliation + command-center lockdown | Phamy | **medium-high** | Thox.ai, thox-command-center |
+| B | Kernel v1.2.0 3-outcome signed release decision (T-21 fallback) | Craig | **HIGH** | thoxos-kernel |
+| C | Signed Pi Zero 2 W / RV1103 image artifact (physical fallback lane) | Craig | medium | thoxos-air-image, thoxair-pico-sdk, thox-luckfox-pico-mini-b |
+| D | Phase C 12B + Ollama tags + E2B/NPU path (transformers pin, not wait) | Phamy | medium-high | thox-gemma4, thoxllm-factory, thox-gemma4-e4b-sft, thox-micro-125m |
+| E | ThoxAir MaskROM + cross-platform flashing (pairs with C) | Tommy | medium | thox-provisioner, thoxos-mini-flasher, thoxos-mini-utm-build, thox-quickstart, thoxos-mini-ai-usb-factory |
+| F | 8-clip MagStack hero shot (compile + bench before filming) | Craig | medium | magstack-air, magstack-air-edge-rs, thox-q2-print-farm |
+| G | Terminal/Companion TestFlight (demo only completed surfaces) | Phamy | medium | thox-terminal, thoxos-companion, thoxos-companion-multiplatform, thox-portable, thox-workbench |
+| H | Silicon GDS + ThoxWatch wrist B-roll (drop first if compressed) | Craig | low / optional | thoxinchip, thox-watch |
 
-**Highest-risk items**: Team B (kernel v1.2.0 NO_GO for 24 absorbs) and Team A (marketing site contradicts the Kickstarter copy).
+**Highest-risk items**: Team B (kernel v1.2.0 NO_GO for 24 absorbs; 3-outcome decision with T-21 binding fallback to QEMU-only or NO_GO-for-video) and Team A (multiple price/date/delivery contradictions across all deep pages, not just hero).
+
+**Day 0 launch order**:
+1. Teams A + B start immediately
+2. Linux build host provisioned **today** (`docs/agent-dispatch/build-host-spec.md`), not "this week"
+3. Teams C + E shadow-start today (physical fallback lane)
+4. Teams D + F + G start after build host is online (within 48h)
+5. Team H optional / drop-first if compressed
+
+Order rationale: Team A protects trust. Team B protects technical credibility. Teams C/E protect the physical-device fallback. That combination ships a real Kickstarter video without over-claiming.
 
 ## Single source of truth
 
