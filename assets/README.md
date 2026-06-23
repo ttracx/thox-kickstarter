@@ -47,3 +47,22 @@ Pre-launch staging area for every visual asset that goes into the campaign.
 
 The bio.md file lives at `assets/bio.md` and is sourced from `docs/CAMPAIGN_INFO.md` "Team bios" section. Update once in CAMPAIGN_INFO, then regenerate.
 
+## Social media assets (AI-generated)
+
+Social graphics and video are produced through the AI content pipeline and staged in
+`assets/social/`. Graphics are generated with OpenAI `gpt-image-1`; motion/video is produced
+with Grok Imagine. The heavy media is gitignore'd pre-publish; the spec and the reproducibility
+sidecars are tracked.
+
+| Need | Go to |
+|---|---|
+| What to post, when, and where | [docs/SOCIAL_MEDIA_CAMPAIGN.md](../docs/SOCIAL_MEDIA_CAMPAIGN.md) |
+| How to make the graphics + video | [docs/AI_CONTENT_PIPELINE.md](../docs/AI_CONTENT_PIPELINE.md) |
+| Staging spec + file naming | [assets/social/README.md](social/README.md) |
+| Graphic prompts (OpenAI) | [templates/social/openai-image-prompts.md](../templates/social/openai-image-prompts.md) |
+| Motion prompts (Grok) | [templates/social/grok-video-prompts.md](../templates/social/grok-video-prompts.md) |
+
+The same brand tokens and typography above apply to every social asset. AI-generated *device*
+imagery is stylized social art only — the Kickstarter Story page and reward tiles use real EVT
+photography (see `docs/LAUNCH_CHECKLIST.md`).
+
