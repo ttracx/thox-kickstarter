@@ -5,3 +5,14 @@
 .env
 *.local.*
 
+# Produced social media binaries are staged in assets/social/ pre-publish.
+# Keep the spec (README) and reproducibility sidecars; ignore the heavy media.
+assets/social/**/*.png
+assets/social/**/*.jpg
+assets/social/**/*.jpeg
+assets/social/**/*.gif
+assets/social/**/*.mp4
+assets/social/**/*.mov
+assets/social/**/*.srt
+!assets/social/README.md
+

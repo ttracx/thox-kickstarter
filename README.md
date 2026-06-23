@@ -38,16 +38,26 @@ thox-kickstarter/
 │   ├── LEGAL.md                   IP filings, tax, accessibility, regional law
 │   ├── BACKER_COMMS.md            cadence, SLAs, escalation playbook
 │   ├── VIDEO_PRODUCTION.md        how to shoot the 2:30 hero video
+│   ├── SOCIAL_MEDIA_CAMPAIGN.md   social strategy, channels, cadence, KPIs
+│   ├── AI_CONTENT_PIPELINE.md     OpenAI graphics → Grok video, end to end
 │   └── LAUNCH_CHECKLIST.md        T-30 to T+7, hour by hour
 ├── assets/
 │   ├── README.md                  brand palette + asset list
+│   ├── social/                    AI-generated social assets (staged pre-publish)
+│   │   └── README.md              social staging spec + naming
 │   └── (logos, badges, device photos staged here pre-launch)
 ├── templates/
 │   ├── pre-launch-email.md
 │   ├── launch-day-email.md
+│   ├── launch-day-social.md       launch-day posts, all channels
 │   ├── weekly-update.md
 │   ├── stretch-unlock-update.md
-│   └── reply-snippets.md          canned replies for the seven most common questions
+│   ├── reply-snippets.md          canned replies for the seven most common questions
+│   └── social/
+│       ├── content-calendar.md    dated post plan, pre-launch → close
+│       ├── post-copy-library.md   paste-ready copy per channel, per pillar
+│       ├── openai-image-prompts.md  graphic-generation prompt library
+│       └── grok-video-prompts.md    video-generation prompt library
 ├── deliverables/
 │   ├── THOX_Kickstarter_Campaign.md         the story page text
 │   ├── THOX_Kickstarter_Deck.pptx           14-slide pitch deck
@@ -66,6 +76,8 @@ thox-kickstarter/
 | About to launch (T-30 days or less) | [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md) |
 | Pitching to a partner or angel | [deliverables/THOX_Kickstarter_Deck.pptx](deliverables/THOX_Kickstarter_Deck.pptx) + [docs/CAMPAIGN_INFO.md](docs/CAMPAIGN_INFO.md) |
 | Recording the hero video | [deliverables/THOX_Video_Script.docx](deliverables/THOX_Video_Script.docx) + [docs/VIDEO_PRODUCTION.md](docs/VIDEO_PRODUCTION.md) |
+| Running the social media campaign | [docs/SOCIAL_MEDIA_CAMPAIGN.md](docs/SOCIAL_MEDIA_CAMPAIGN.md) + [templates/social/content-calendar.md](templates/social/content-calendar.md) |
+| Generating social graphics + video with AI | [docs/AI_CONTENT_PIPELINE.md](docs/AI_CONTENT_PIPELINE.md) + [templates/social/](templates/social/) |
 | Pricing a new tier or add-on | [docs/REWARDS_MATRIX.md](docs/REWARDS_MATRIX.md) |
 | Replying to a backer | [templates/reply-snippets.md](templates/reply-snippets.md) + [docs/FAQ.md](docs/FAQ.md) |
 | Coordinating with press | [docs/PRESS_KIT.md](docs/PRESS_KIT.md) |
@@ -86,6 +98,35 @@ All copy, slides, and assets in this repo use the THOX.ai design tokens:
 | Slate | `#475569` | Muted body text |
 
 Typography: **Inter** for sans, **JetBrains Mono** for code and labels. See [assets/README.md](assets/README.md) for the full asset list and where each appears.
+
+## Social media campaign + AI asset pipeline
+
+The campaign's social presence runs on a self-contained system: strategy, a dated calendar,
+paste-ready copy, and an AI pipeline that produces every graphic and clip on-brand.
+
+- **Strategy + cadence** — [docs/SOCIAL_MEDIA_CAMPAIGN.md](docs/SOCIAL_MEDIA_CAMPAIGN.md):
+  objectives by phase, eight channels, five content pillars, posting cadence, KPIs, crisis
+  posture.
+- **AI content pipeline** — [docs/AI_CONTENT_PIPELINE.md](docs/AI_CONTENT_PIPELINE.md): the
+  end-to-end flow where **static graphics are generated with OpenAI `gpt-image-1`** and then
+  **animated into video with Grok Imagine (xAI)**. Includes API recipes, a brand-QC gate,
+  ffmpeg export specs, naming, and reproducibility rules.
+- **Run-the-show templates** — [templates/social/](templates/social/): a
+  [dated calendar](templates/social/content-calendar.md) (pre-launch → close), a
+  [copy library](templates/social/post-copy-library.md) per channel and pillar, and the
+  [OpenAI](templates/social/openai-image-prompts.md) and
+  [Grok](templates/social/grok-video-prompts.md) prompt libraries.
+- **Asset staging** — [assets/social/](assets/social/README.md): where produced media lands,
+  with a naming grammar and a sidecar rule so any asset is reproducible.
+
+The pipeline in one line:
+
+```
+brief → OpenAI gpt-image-1 (graphic) → brand QC → Grok Imagine (image→video) → caption + export → publish
+```
+
+Honesty guardrail: AI-generated *device* imagery is stylized social art only. The Kickstarter
+Story page and reward tiles use **real EVT photography** — never a render presented as a photo.
 
 ## Single source of truth
 
