@@ -23,6 +23,7 @@ What the video must show vs. what currently works:
 | **ThoxMini** (USB-C stick) | Local inference on a host laptop | STL set ready (v2.1 with USB-C cutout). thoxos-air-image is the Mini Air image but actually RV1103 Mini also uses this. No signed image artifact yet. | **MEDIUM RISK**: no bootable signed image |
 | **ThoxMini Air** (carry-along) | Button controls + carabiner + mesh sync | STL set ready (v2.1 with 4 button cutouts + carabiner ring). magstack-air + magstack-air-edge-rs need Rust env build + Pi Zero 2 W deploy. | **MEDIUM RISK**: not verified to compile + run end-to-end |
 | **All devices (marketing site)** | thox.ai matches the Kickstarter pricing + date | Site says "April 14 2026 / starting at $549"; Kickstarter playbook says "Aug 12 2026 / $39-$499" | **CRITICAL**: marketing site contradicts the video |
+| **ThoxStick** (candidate SKU, NOT in launch lineup) | 96 x 28 x 11.8 mm private-AI compute stick, emerald X mark | POC mockup ready: [ttracx/thox-stick-poc](https://github.com/ttracx/thox-stick-poc) v0.1.2 + mirror at `thox-3dprint-kit/devices/thoxstick/poc/` (18 STLs lay-flat clean + 91 STL-derived preview PNGs + reusable renderer at `cad/render_stl_previews.py`) | **OPTIONAL stretch SKU**: do NOT add to launch lineup pre-Aug 12. Decision review T-7 (Aug 5) on whether to surface as a future-roadmap teaser or stretch reward. Mechanical mockup only; no powered electronics. |
 
 ## Critical-path repos (the 12 that must ship)
 
