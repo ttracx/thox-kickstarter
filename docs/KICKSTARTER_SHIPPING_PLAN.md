@@ -12,6 +12,21 @@ across the THOX.ai portfolio. It is the output of a parallel audit
 of 40+ repos and lists every gap between today and a working launch
 video, organized into 8 parallel agent workstreams.
 
+## Build host decision (2026-06-23): local workstation, NOT cloud VM
+
+The standing #1 blocker (shared Linux build host) is **RESOLVED** by using the local KnightHub workstation as `THOX-BUILD-01`. WSL Ubuntu 26.04, i7-14700F 28t, 127.7 GB RAM, RTX 4060 Ti 16 GB, 320+ GB free NVMe. More compute than any reasonable cloud VM and $0 recurring cost.
+
+Decision doc: [`docs/internal/BUILD_HOST_DECISION.md`](internal/BUILD_HOST_DECISION.md).
+Bootstrap script: [`scripts/provision-thox-build-01.sh`](../scripts/provision-thox-build-01.sh).
+
+Status as of this update:
+- Workspace `~/thox-shiproom/` created with `builds/ artifacts/ secrets/ runners/ logs/`
+- Rust nightly + 4 of 5 bare-metal targets installed (script picks up the 5th)
+- qemu-system-x86_64 + qemu-system-arm + grub-mkrescue + clang + cmake + ninja + git + python3 + docker already on the box
+- Bootstrap script idempotently installs lld + qemu-user-static + debootstrap + cosign + tailscale + GitHub Actions runner template, generates the cosign keypair, writes ENVIRONMENT.txt
+
+Teams B, C, D, E, F are unblocked the moment the bootstrap script finishes its first run + 5 self-hosted runners get registered (5 tokens, ~10 min total). The $95-180/mo cloud-VM line item is reallocated to Pi Zero inventory + Kickstarter video production + packaging samples per the decision doc.
+
 ## Operating policy: pull-forward when ahead
 
 When an agent team finishes a queued item ahead of its scheduled slot,

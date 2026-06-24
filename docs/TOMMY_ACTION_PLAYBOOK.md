@@ -11,7 +11,32 @@ order listed; each one unblocks more agent work than the one above it.
 
 ## Today (Tue Jun 23 2026, 3 hours focused)
 
-### Action 1 — Provision the shared Linux build host (90 min)
+### Action 1 — DECISION CHANGED 2026-06-23: use local workstation, not cloud VM
+
+The Hetzner CCX23 path described below is **superseded**. Decision recorded at [`docs/internal/BUILD_HOST_DECISION.md`](internal/BUILD_HOST_DECISION.md): use the local KnightHub workstation (i7-14700F 20c/28t, 127.7 GB RAM, RTX 4060 Ti 16 GB, WSL Ubuntu 26.04) as `THOX-BUILD-01`. More compute than the cloud option, zero recurring cost, GPU for Team D model packaging.
+
+**Do this instead (15 min, vs the original 90 min):**
+
+1. Open a WSL terminal: `wsl`
+2. Pull and run the bootstrap script:
+   ```
+   curl -fsSL https://raw.githubusercontent.com/ttracx/thox-kickstarter/main/scripts/provision-thox-build-01.sh -o /tmp/bootstrap.sh
+   chmod +x /tmp/bootstrap.sh
+   /tmp/bootstrap.sh
+   ```
+   The script is idempotent. It installs the missing pieces (lld, qemu-user-static, debootstrap, cosign, tailscale, GitHub Actions runner binary) on top of what's already on the box, generates the cosign keypair, and writes `~/thox-shiproom/ENVIRONMENT.txt` with a full state dump.
+3. Follow the "NEXT STEPS" the script prints when it finishes:
+   - `sudo tailscale up` (browser auth; pin the resulting hostname)
+   - Generate 5 GitHub Actions runner tokens (one per repo: thoxos-kernel, thoxos-air-image, thoxllm-factory, thox-provisioner, magstack-air); register via the included `~/thox-shiproom/bin/copy-runner-template <team> <repo> <token>` helper
+   - Commit `~/thox-shiproom/secrets/cosign.pub` to thoxos-kernel + thoxos-air-image release pages (NEVER commit `cosign.key`)
+4. Post in `#ks-ops`: "THOX-BUILD-01 live at `knighthub.<tailnet>.ts.net`. Teams B/C/D/E/F unblocked."
+5. Update `docs/internal/BUILD_HOST_DECISION.md` sign-off checklist.
+
+**Net savings**: $95-180/mo. Redirect to Pi Zero inventory + Kickstarter video production + packaging samples.
+
+---
+
+### Action 1 (ORIGINAL, SUPERSEDED) — Provision the shared Linux build host (90 min)
 
 **Why now**: Unblocks Teams B (kernel), C (image build), D (model
 packaging), E (cross-platform flasher), and F (MagStack Rust compile)
