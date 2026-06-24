@@ -8,9 +8,9 @@ Tommy, you slept; the shiproom kept moving. Here's the recap.
 |---|---|---|---|
 | G Apps | thox-terminal v0.3.0-rc6: tmux quick-actions (24 actions across 6 device kinds) + Connect-handoff focus pulse + v0.3.0 release notes draft | `v0.3.0-rc6` | `95e1d98` |
 | B2B portal | thox-key portal-v0.4.0: RLS policies + 5 email templates + 4 new API routes (Phase 1 backlog COMPLETE) | `portal-v0.4.0` | `6f314f5` |
-| Brand product line | thox-portable-agent ThoxKey integration | redirected (see below) | in flight |
+| Brand product line | thox-portable-agent ThoxKey USB auto-detect (plain-Node, zero new deps) | `v0.2.0` | `c8647f1` |
 
-The third overnight agent (thox-portable-agent) correctly stopped instead of building incompatible code. The original spec assumed an Electron + TypeScript + Zod architecture; the repo is actually plain-Node + zero deps + marked "superseded by thox-workbench" in its own README. Re-dispatched honoring the existing architecture; should land before standup.
+Note on the third dispatch: the first attempt correctly stopped because the original task spec assumed Electron + TypeScript + Zod, but the actual repo is plain-Node + zero deps. Re-dispatched honoring the existing architecture and shipped clean. Pure stdlib mount detection across Windows / macOS / Linux, 5s polling, in-banner UX with THOX palette, 14/14 tests via `node --test`. Zero new runtime deps after the change.
 
 ## thox-terminal v0.3 rc-train is COMPLETE
 

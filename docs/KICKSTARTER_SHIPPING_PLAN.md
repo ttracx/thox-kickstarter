@@ -72,7 +72,7 @@ under the policy above and pushed.
 | **D Models** | thoxllm-factory: ThoxKey portable runtime model mirror prep + sync script (MANIFEST.yaml + 5-model coverage + --verify-loadouts cross-check + 12/12 tests pass) | **SHIPPED 2026-06-23** as mirror-v0.1.0 | commit `eead49c` + tag `mirror-v0.1.0` (plus thox-key cross-link `e8e50be`) |
 | **G Apps** | thox-terminal v0.3.0-rc6 = tmux quick-action set per device kind (24 actions across 6 device kinds) + Connect-handoff polish (`ThoxDashboardFocusCoordinator` pulse) + v0.3.0 release notes draft | **SHIPPED 2026-06-24** as v0.3.0-rc6 | commit `95e1d98` + tag `v0.3.0-rc6` |
 | **B2B portal** | thox-key portal-v0.4.0 = RLS policies SQL (with `is_admin()` + `customer_users` join table) + 5 transactional email templates (plain TSX, zero new deps) + `/api/orders/[id]/quote` + `/api/orders/[id]/promote` + `/api/admin/batches/[id]/ship` + `/api/cron/activation-rollup` routes (Phase 1 backlog COMPLETE) | **SHIPPED 2026-06-24** as portal-v0.4.0 | commit `6f314f5` + tag `portal-v0.4.0` |
-| **Brand product line** | thox-portable-agent ThoxKey integration | REDIRECTED: agent stopped because the spec assumed Electron+TS but the repo is plain-Node HTTP + zero deps + marked as superseded by thox-workbench per its own README. Re-dispatched to do plain-Node integration honoring the existing architecture | in flight 2026-06-24 |
+| **Brand product line** | thox-portable-agent ThoxKey integration (plain-Node zero-dep: `dashboard/thoxkey.mjs` module + cross-platform mount detection + 5s polling + `/api/thoxkey` + `/api/thoxkey/apply` endpoints + in-banner UX with THOX palette + 14/14 tests via `node --test`) | **SHIPPED 2026-06-24** as v0.2.0 | commit `c8647f1` + tag `v0.2.0` |
 
 ### Portal-v0.3.0 detail (thox-key)
 
