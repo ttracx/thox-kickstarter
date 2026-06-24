@@ -65,6 +65,8 @@ under the policy above and pushed.
 | **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser bundled | **SHIPPED 2026-06-23** as v0.3.0-rc3 | commit `640707f` + tag `v0.3.0-rc3` |
 | **B2B portal** | thox-key portal Vercel deploy config + GitHub Actions CI (lint + typecheck + build CI workflow + manual-trigger deploy workflow + PORTAL_DEPLOY.md runbook + pnpm-lock.yaml + check-env script) | **SHIPPED 2026-06-23** as portal-v0.1.0 | commit `caad6ff` + tag `portal-v0.1.0` |
 | **D Models** | thoxllm-factory Cohere North-Mini-Code eval branch (download_model.sh + build_llamacpp_pr24260.sh + run_benchmark.py + summarize_results.py + 22 subset prompts + 7 new agentic-coding prompts + reuses existing eval/run_eval.py harness for the 4 comparison adapters) | **SHIPPED 2026-06-23** as eval-north-mini-code-rc1 | commit `54cfbd7` + tag `eval-north-mini-code-rc1` |
+| **B2B portal** | thox-key portal pages: pricing + account dashboard + admin batches queue (Phase 1 backlog items 1+4+5; builds on portal-v0.1.0 CI) | dispatched 2026-06-23 (in flight) | tbd |
+| **G Apps** | thox-terminal v0.3.0-rc4 = ThoxMini first-run onboarding + local THOXY endpoint config per device (two P1 dev-queue items bundled; powers "unbox -> plug in -> already paired" + "tap a device, your local Ollama is wired" video beats) | dispatched 2026-06-23 (in flight) | tbd |
 
 ### Rc3 detail (thox-terminal)
 
