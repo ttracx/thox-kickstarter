@@ -394,4 +394,234 @@ weekly check-in (Fri 5pm PT) + the daily blocker triage in Slack
   7. **thox-micro-125m SFT**: instruction-tune for ThoxClip /
      ThoxMini routing
 - **Acceptance**: `ollama pull ttracx/<tag>` works for at least 5
-  TH
+  THOX models; ThoxNova on N100 hits >=4 tokens/sec on 12B; ThoxAir
+  on Pi Zero 2 W + Coral hits >=10 tokens/sec on E2B
+- **Risk**: medium-high — model training is fast (~12 hours per
+  training run) but RKNN/Vulkan inference paths are unverified on
+  real hardware
+
+### Team E: Device provisioning + flashing
+- **DRI**: Tommy
+- **Repos**: `thox-provisioner`, `thoxos-mini-flasher`,
+  `thoxos-mini-utm-build`, `thox-quickstart`,
+  `thoxos-mini-ai-usb-factory`
+- **Goal**: every device can be flashed in <5 min on Windows + macOS
+  by T-14 (Jul 29).
+- **Workstream**:
+  1. **thox-provisioner ThoxAir MaskROM**: live cross-platform smoke
+     test on Windows + macOS
+  2. **thoxos-mini-flasher** live smoke on macOS (Windows + web
+     Docker already verified)
+  3. **thoxos-mini-utm-build .utm signature** validation; pair with
+     **ThoxOS-Mini-Provision** end-to-end
+  4. **thoxos-mini-ai-usb-factory Phase 2 ISO**: build the 12B+ on
+     a Linux host; SHA256 verify; smoke on x86_64 UEFI
+  5. **thox-quickstart audit trail**: finish per-unit acceptance
+     QA result JSON; this is the fulfillment gate (Nov 2026)
+- **Acceptance**: a Kickstarter-day demo where Tommy plugs in a
+  fresh ThoxAir USB stick + Pi Zero 2 W board, runs the flasher,
+  and the device boots into THOX branding in under 5 minutes,
+  end-to-end on camera
+- **Risk**: medium — ThoxAir MaskROM is the unknown
+
+### Team F: MagStack cluster physical assembly
+- **DRI**: Craig
+- **Repos**: `magstack-air`, `magstack-air-edge-rs`,
+  `thox-q2-print-farm` (Cluster Dock)
+- **Goal**: assemble a working 8-node MagStack column of Pi Zero 2 W
+  + magnetic pogo-pin connector by T-21 (Jul 22) for the
+  campaign's hero "wow" shot.
+- **Workstream**:
+  1. Compile `magstack-air-edge-rs` in a real Rust environment
+     (currently generated in sandbox without Rust toolchain)
+  2. Deploy to a Pi Zero 2 W: run `cargo test --workspace`
+  3. Print 8 Cluster Dock split-and-bond pieces on the Q2 Combo;
+     validate dovetail joint strength
+  4. Source 8 Pi Zero 2 W + 8 ThoxClip v7.1 enclosures + 8
+     magnetic pogo connectors + 1 USB-PD power source
+  5. Assemble physical stack; verify leader election + work
+     queue distribution under load
+  6. Verify each device's emerald LED pulses out of phase by 90
+     degrees (the "wave through the stack" hero motion)
+- **Acceptance**: 8-clip stack boots, leader election succeeds,
+  workload distributes; LED wave visible on camera at 30 fps
+- **Risk**: medium — physical assembly + the Cluster Dock joint
+  strength is the hardware risk
+
+### Team G: Apps + companion experience
+- **DRI**: Phamy
+- **Repos**: `thox-terminal`, `thoxos-companion`,
+  `thoxos-companion-multiplatform`, `thox-portable`, `thox-workbench`
+- **Goal**: every "control from your phone" or "developer story"
+  beat in the video has a real app behind it by T-28 (Jul 15).
+- **Workstream**:
+  1. **thox-terminal v0.2**: Xcode app target + SwiftNIO SSH +
+     SwiftTerm; bundle id `ai.thox.terminal`; Keychain
+     entitlement; manual device-add sheet; iOS TestFlight build
+  2. **thoxos-companion TestFlight**: P0 PEM trust anchor task +
+     iOS TestFlight build
+  3. **thoxos-companion-multiplatform**: pick first shipping
+     target (Android APK preferred); ship APK to a sideload
+     channel for filming
+  4. **thox-portable** v0.2 PWA: deploy `apps/web-assistant` to
+     Vercel; record the LAN companion launch flow
+  5. **thox-workbench v0.1.0** is already ready; record a USB
+     plug-in workflow for the "developer story" beat
+- **Acceptance**: TestFlight build of thoxos-companion + thox-terminal
+  on Tommy's + Craig's iPhones; APK of multiplatform companion on
+  one Android handset; Vercel deploy of thox-portable's PWA live
+- **Risk**: medium — SwiftNIO SSH integration is the weakest link
+
+### Team H: Silicon + wearable narrative (B-roll only)
+- **DRI**: Craig
+- **Repos**: `thoxinchip`, `thox-watch`
+- **Goal**: shoot enough B-roll for the "silicon roadmap" cutaway
+  and the "ThoxWatch stretch goal" tease by T-14 (Jul 29).
+- **Workstream**:
+  1. **thoxinchip**: merge `docs/team-d-devices` branch; render a
+     GDS layout of the PolarQuant MAC + ThoxCPU; export to PNG
+     for B-roll
+  2. **thox-watch**: flash `thoxwatch_c3_supermini` firmware to a
+     real ESP32-C3 SuperMini; verify display + backlight + BMI160
+     I2C scan; shoot a 5-second "wrist display lighting up" clip
+- **Acceptance**: 1 silicon-roadmap PNG + 1 wrist clip in the asset
+  library
+- **Risk**: low — these are NOT critical-path; they are stretch
+  visual content. Drop if other workstreams need attention
+
+## Dependency graph
+
+```
+Team A (Marketing) ─────────────────────────► T-30 site live
+                                                    │
+                                                    ▼
+Team B (Kernel) ─────────► v1.2.0 ─────────► T-21 kernel boots Nova
+                              │
+                              ▼
+Team C (Images) ─────────► signed image ───► T-21 Air boots branded
+                              │
+                              ▼
+Team D (Models) ─────────► Ollama tags ────► T-28 12B on Nova
+                              │
+                              ▼
+Team F (MagStack) ────────► 8-clip stack ──► T-21 cluster live
+                              │
+                              ▼
+Team E (Provisioning) ───► flasher works ──► T-14 demo flash
+                              │
+                              ▼
+Team G (Apps) ────────────► TestFlight ────► T-14 phone beat
+                              │
+                              ▼
+Team H (Silicon) ─────────► B-roll PNG ────► T-14 stretch tease
+                              │
+                              ▼
+                           FILM DAY (T-7 = Aug 5)
+                              │
+                              ▼
+                           LAUNCH (T+0 = Aug 12 9am PT)
+```
+
+## Weekly milestones (T-49 to T+0)
+
+### Week of 2026-06-22 (T-49 to T-42) — kickoff
+- All 8 teams assigned DRIs + agent instances spun up
+- Each team posts a 1-line week-1 plan in `#ks-ops`
+- Marketing site (Team A) drafts new copy
+
+### Week of 2026-06-29 (T-42 to T-35)
+- Team B: Linux build host operational; first QEMU smoke
+- Team D: transformers 5.6+ bump merged + Phase C 12B training started
+- Team A: site copy review + design draft
+- Team F: Cluster Dock prints from Q2 Combo
+- Team G: thox-terminal Xcode target stood up
+
+### Week of 2026-07-06 (T-35 to T-28) — filming prep
+- Team C: signed image artifact released
+- Team D: 7 Ollama tags live (P1.5)
+- Team G: TestFlight builds in beta review
+- Team A: site live at staging URL
+- Team F: 8-clip stack assembled
+
+### Week of 2026-07-13 (T-28 to T-21) — film week
+- All hero shots filmed
+- Team B: v1.2.0 release tagged + signed
+- Team A: site GA at thox.ai
+- Team D: 12B on Nova hardware verified
+- Team E: flasher demo recorded
+
+### Week of 2026-07-20 (T-21 to T-14) — edit + B-roll
+- Team H: silicon + watch B-roll filmed
+- Hero video edit complete
+- Press kit final
+
+### Week of 2026-07-27 (T-14 to T-7) — embargo + final
+- Press embargoed copies sent
+- Final video lock
+- All apps + sites verified
+
+### Week of 2026-08-03 (T-7 to T+0) — launch week
+- T-7: full team rehearsal of launch-day choreography
+- T-3: "we launch in 3 days" email
+- T+0: launch (9am PT Aug 12 2026)
+
+## Risk register
+
+| ID | Risk | P | Impact | Mitigation | Owner |
+|---|---|---|---|---|---|
+| R1 | thoxos-kernel v1.2.0 slips past T-21 | H | ThoxNova can't boot on camera | Film with v1.1.24 booting in QEMU on the 6" display; voice-over describes the v1.2.0 work | Team B |
+| R2 | Phase C 12B training fails to converge | M | ThoxNova flagship demo uses 7B instead of 12B | Pre-stage Nova-12B-Unleashed as fallback (already trained at 240 steps) | Team D |
+| R3 | MagStack cluster doesn't compile on Pi Zero 2 W | M | Drop the 8-stack hero shot | Pre-record the magstack-air dashboard view on a desktop simulator | Team F |
+| R4 | TestFlight rejection on thoxos-companion | M | iPhone beat falls back to a sideload via Xcode | Submit to TestFlight by T-35 to allow rejection-correction loop | Team G |
+| R5 | Marketing site not live by T-30 | H | Kickstarter video contradicts the site | Lock copy by T-42; ship to staging T-35 | Team A |
+| R6 | Linux build host unavailable | H | Kernel + image cannot ship | Provision a cloud Linux instance (Hetzner / AWS) by T-49 | Team B + C |
+| R7 | Q2 Combo prints fail on multi-color toolchanges | M | Cluster Dock + device shells unprintable | Run the precision coin calibration first (already documented at thox-3dprint-kit/print-queue/00-PRECISION-COIN-CALIBRATION.md) | Team F |
+| R8 | thox-command-center leaks into public surface | H | Confusion or trust loss | Audit every public repo for "command-center" references by T-30; CI check on Thox.ai builds | Team A |
+
+## Acceptance criteria for launch-day demo
+
+The hero video (2:30) MUST show:
+
+- [ ] Tommy or Phamy unboxing a ThoxNova v2 (matte black) and
+      powering it on — display lights up with ThoxOS within 8
+      seconds
+- [ ] An 8-clip MagStack column doing inference (visible LED wave
+      sweeping the stack)
+- [ ] A ThoxMini USB stick plugged into a generic laptop running
+      `ollama run thoxgem:e4b` and getting a response in <10 sec
+- [ ] A ThoxMini Air carry-along clipped to a backpack with the
+      LED strip pulsing emerald
+- [ ] An iPhone (running thoxos-companion or thox-terminal)
+      controlling the ThoxNova over Tailscale
+- [ ] Marketing site at thox.ai matching the Kickstarter copy
+
+The Kickstarter page MUST link to:
+
+- [ ] 4-device pricing tier in `docs/REWARDS_MATRIX.md`
+- [ ] Spec sheet for each device in
+      `thox-3dprint-kit/devices/<device>/v2/README.md`
+- [ ] Press kit at `docs/PRESS_KIT.md`
+- [ ] Backer FAQ at `docs/FAQ.md`
+
+## Dispatch
+
+Each team's agent is launched via:
+
+```
+agent: claude-sonnet-4-6
+prompt: <see docs/agent-dispatch/<team>.md>
+isolation: worktree (per team, on the relevant repo)
+working-dir: C:\Users\tommy\dev\<repo>
+```
+
+Per-team dispatch prompts live at `docs/agent-dispatch/team-<X>.md`
+(generated separately). The DRI reviews the agent's daily report
+in `#ks-ops` and signs off on weekly milestones.
+
+## Daily ritual
+
+- 8:30am PT: standup in `#ks-ops` — each team posts blockers in
+  1 line
+- 12pm PT: agent-dispatched async update from each team
+- 5pm PT: blocker triage (DRIs + Tommy)
+- Fri 5pm PT: weekly milestone review + plan-next-week
