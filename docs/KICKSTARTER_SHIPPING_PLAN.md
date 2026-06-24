@@ -89,8 +89,22 @@ under the policy above and pushed.
 | **Flagship runtime reference** | `ttracx/thoxcore-reference` v0.1.0: ChatGPT-built THOXCore 1.4.2-thoxcore.1 (TypeScript, 505/505 tests, FSL-1.1-ALv2 inherited) vendored VERBATIM with all 5 SHA256s verified clean. Dual-license posture documented (Apache-2.0 THOX-authored + FSL-1.1-ALv2 upstream NOTICE preserved). 9-item PORT_TRACKER staged for clean-room Rust ports into `ttracx/thoxcore`. Comprehensive README with 7-badge block + validation results table + checksum table. Bash + GitHub Actions SHA256 verifier. | **SHIPPED 2026-06-24** as v0.1.0 | commit `f9dac4d` + tag `v0.1.0` + thoxcore cross-link `afdde96` |
 | **Adapter wave 1: LiteRT** | `ttracx/thoxcore` v0.2.0-litert: LiteRT adapter wired behind `litert` cargo feature flag. Real `LiteRtRuntime` trait + `MockLiteRtRuntime` (canned-output runtime) so workspace stays buildable without the 289 MB .litertlm file. `thox-actions-functiongemma` path-dep wires the FUNCTIONGEMMA_BASE_PROMPT + parse_mobile_actions_tool_call into the adapter. Example 03 prints decoded `set_thox_led` function-call end to end. 57 tests no-feature, 64 with-feature. fmt + clippy + test all green. | **SHIPPED 2026-06-24** as v0.2.0-litert | commit `bf8d497` + tag `v0.2.0-litert` + thox-actions cross-link `6cec8e7` |
 | **Adapter wave 1: OpenAI-Compatible** | `ttracx/thoxcore` v0.2.0-openai-compat: real reqwest 0.12 + eventsource-stream 0.2 implementation of chat / generate / embed / chat_stream against `/v1/chat/completions` + `/v1/completions` + `/v1/embeddings`. SSE streaming parses `data: {json}` + `data: [DONE]` cleanly. OpenAI error envelope mapped to AdapterError. 14 new tests (4 unit + 10 wiremock integration covering health / models cache / chat round-trip / SSE / generate / embed / error / timeout / bearer / extra headers). Example 05 demonstrates hermetic round-trip against in-process wiremock. | **SHIPPED 2026-06-24** as v0.2.0-openai-compat | commit `afdde96` + tag `v0.2.0-openai-compat` |
-| **Adapter wave 2: Ollama** | `ttracx/thoxcore` v0.2.0-ollama: real HTTP client against the Ollama API (`/api/chat`, `/api/generate`, `/api/embeddings`, `/api/tags`, `/api/show`). Reuses the reqwest + wiremock + SSE patterns from the OpenAI-Compatible adapter. Composes with `thoxllm-factory` shipping tags (thoxforge, thoxgem-e4b, etc.). Default `base_url` = `http://localhost:11434`. | dispatched 2026-06-24 (in flight) | tbd |
-| **Adapter wave 2: llama.cpp** | `ttracx/thoxcore` v0.2.0-llamacpp: subprocess wrapper around `llama-server` (llama.cpp's HTTP server). Adapter spawns `llama-server` at init with the configured model path; talks to it via the OpenAI-Compatible HTTP surface; cleans up subprocess on Drop / unload. Reuses OpenAICompatibleAdapter under the hood for the HTTP surface. | dispatched 2026-06-24 (in flight) | tbd |
+| **Adapter wave 2: Ollama** | `ttracx/thoxcore` v0.2.0-ollama: real HTTP client against Ollama's native API (`/api/chat`, `/api/generate`, `/api/embeddings`, `/api/tags`, `/api/show`). **NDJSON streaming** via reqwest bytes_stream + hand-rolled line buffering (NOT SSE; intentional - different framing from OpenAI). 19 tests (5 unit + 14 wiremock smoke). Composes with thoxllm-factory shipping tags (thoxforge, thoxgem-e4b-sft, thoxwave-8b-unleashed, thoxnova-12b-unleashed). | **SHIPPED 2026-06-24** as v0.2.0-ollama | commit `f107a53` + tag `v0.2.0-ollama` |
+| **Adapter wave 2: llama.cpp** | `ttracx/thoxcore` v0.2.0-llamacpp: subprocess wrapper around `llama-server`. `SubprocessLauncher` + `HealthChecker` trait seams (Real + Mock) so tests run without spawning the binary. Spawns llama-server at init with model_path + dynamic free port; polls `/health` until 200; delegates chat/generate/embed/stream to inner OpenAICompatibleAdapter pointed at the spawned process. Clean unload + Drop kills the subprocess. 20 tests (5 unit + 15 integration). | **SHIPPED 2026-06-24** as v0.2.0-llamacpp | commit `7639fa1` + tag `v0.2.0-llamacpp` |
+
+### Adapter wave-order progress (4 of 7 real)
+
+| # | Adapter | Status | Tag |
+|---|---|---|---|
+| 1 | LiteRT | real (behind `litert` feature flag) | `v0.2.0-litert` |
+| 2 | OpenAI-Compatible | real | `v0.2.0-openai-compat` |
+| 3 | Ollama | real | `v0.2.0-ollama` |
+| 4 | llama.cpp | real (subprocess + inner OpenAI-Compatible) | `v0.2.0-llamacpp` |
+| 5 | vLLM | stub (wave 3) | - |
+| 6 | TensorRT | stub (wave 3) | - |
+| 7 | MLX | stub (wave 3) | - |
+
+Workspace tests: **88 pass, 0 fail**. fmt + clippy clean with `-D warnings`.
 
 ### Locked next steps + adapter wire plan
 
