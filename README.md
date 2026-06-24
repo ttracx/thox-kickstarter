@@ -254,3 +254,11 @@ MIT for the docs and templates. The deliverables in `deliverables/` carry their 
 ---
 
 THOX.ai - Your AI. Your Data. Your Rules.
+
+
+## Repository neighbors
+
+[ttracx/thoxcore](https://github.com/ttracx/thoxcore) is the flagship
+runtime layer for the THOX device fleet. The August 2026 Kickstarter
+devices (ThoxClip, ThoxMini, ThoxAir, ThoxNova) ship with THOXCore as the
+on-device AI runtime layer.
