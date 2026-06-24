@@ -70,6 +70,9 @@ under the policy above and pushed.
 | **B2B portal** | thox-key portal-v0.3.0 = order detail + asset uploader + preview + checkout + admin batch detail + admin customer detail + auth callback round-trip + Stripe Halo checkout (real `stripe.checkout.sessions.create`) | **SHIPPED 2026-06-23** as portal-v0.3.0 | commit `1674564` + tag `portal-v0.3.0` |
 | **G Apps** | thox-terminal v0.3.0-rc5 = Secure Enclave P256 keygen + Ed25519 software fallback + ThoxKeyExporter to OpenSSH PEM + audit log writer with rotation + Settings export with no private-key leakage | **SHIPPED 2026-06-23** as v0.3.0-rc5 | commit `46598c6` + tag `v0.3.0-rc5` |
 | **D Models** | thoxllm-factory: ThoxKey portable runtime model mirror prep + sync script (MANIFEST.yaml + 5-model coverage + --verify-loadouts cross-check + 12/12 tests pass) | **SHIPPED 2026-06-23** as mirror-v0.1.0 | commit `eead49c` + tag `mirror-v0.1.0` (plus thox-key cross-link `e8e50be`) |
+| **G Apps** | thox-terminal v0.3.0-rc6 = tmux quick-action set per device kind (last v0.3 P1) + rc1/rc2 Connect-handoff polish (freshly-discovered device gets dashboard active-connection highlight) + v0.3.0 release notes draft | dispatched 2026-06-24 overnight (in flight) | tbd |
+| **B2B portal** | thox-key portal-v0.4.0 = RLS policies SQL + 5 transactional email templates (order received / assets needed / deposit invoice / shipped / 30-day activation report) + remaining `/api/orders/[id]/quote` + `/api/orders/[id]/promote` API routes | dispatched 2026-06-24 overnight (in flight) | tbd |
+| **Brand product line** | thox-portable-agent ThoxKey integration = manifest.json reader + auto-detect USB-mounted loadout so the Electron app self-configures when plugged into a ThoxKey Pro or Enterprise drive | dispatched 2026-06-24 overnight (in flight) | tbd |
 
 ### Portal-v0.3.0 detail (thox-key)
 
