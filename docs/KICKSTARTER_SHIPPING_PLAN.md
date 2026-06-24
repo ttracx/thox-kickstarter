@@ -62,6 +62,9 @@ under the policy above and pushed.
 |---|---|---|---|
 | **G Apps** | thox-terminal v0.3 mDNS device discovery scaffold (zero-config "see my Pi Zero stack" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc1 | commit `077daf0` + tag `v0.3.0-rc1` |
 | **G Apps** | thox-terminal v0.3 Tailscale local-API host import (composes with v0.3.0-rc1 mDNS + THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc2 | commit `3ed8a8f` + tag `v0.3.0-rc2` |
+| **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser (two P1 dev-queue items bundled into rc3) | dispatched 2026-06-23 (in flight) | tbd |
+| **B2B portal** | thox-key portal: Vercel deploy config + GitHub Actions CI (no actual deploy; just CI green + one-command deployable from your laptop when you're ready) | dispatched 2026-06-23 (in flight) | tbd |
+| **D Models** | thoxllm-factory: Cohere North-Mini-Code eval branch (download Q4_K_XL + benchmark harness against the existing 58-prompt suite; results inform whether North-Mini-Code becomes the 7th Ollama tag) | dispatched 2026-06-23 (in flight) | tbd |
 
 Delivered: real URLSession against `http://localhost:41112/localapi/v0/status` with the `Host: local-tailscaled.sock` anti-DNS-rebinding header, 2s timeout. `ThoxTailscaleClient` actor + `ThoxTailscalePeer` / `ThoxTailscaleStatus` types + `ThoxTailscaleImportService` mapping Tailscale peers to v0.3.0-rc1 `ThoxDiscoveredDevice`. `ThoxTailscaleImportViewModel` + `ThoxTailscaleImportView` SwiftUI sheet. macOS path functional; iOS path stubbed with `// TODO(ios):` falling through to `.daemonUnreachable` empty state. 3 test files with URLProtocol mock transport. `docs/superpowers/specs/2026-06-23-tailscale-import-design.md`. 10 added + 6 modified.
 
