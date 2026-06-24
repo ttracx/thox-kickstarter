@@ -237,6 +237,7 @@ This repo is the **pre-launch playbook**. The other halves of the Kickstarter op
 | [ttracx/thox-kickstarter](https://github.com/ttracx/thox-kickstarter) | Pre-launch | This repo. Pitch, pricing, dates, video, copy, GTM. |
 | [ttracx/thox-ks-monitor](https://github.com/ttracx/thox-ks-monitor) | Live + post-pledge | Monitoring dashboard + backer CSV import + AI ops digest. KS-ToS-respecting; no credential storage. IP-034. |
 | [ttracx/thox-quickstart](https://github.com/ttracx/thox-quickstart) | Fulfillment | Per-device flash + Tailscale enrollment + assembly QA packets. IP-026. |
+| [ttracx/thox-configurator](https://github.com/ttracx/thox-configurator) | Customer-facing | Build-and-order wizard for ThoxKey + ThoxStick. Server-authoritative pricing; AI Assist re-validated by deterministic engine; Stripe checkout for Key path, reservation for Stick path. IP-037. |
 
 If a date, a price, or a stretch goal changes in this repo, the monitor's reward-tier names must move with it.
 
