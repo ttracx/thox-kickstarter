@@ -82,8 +82,17 @@ under the policy above and pushed.
 | **A Marketing** | P0 CRITICAL Thox.ai claim-reconciliation: 13 commits, 0 contradictions remaining on live `src/app/` surface, 317 obsolete files moved under `archive/`, 4 Stripe-side renames enumerated in `STRIPE_RECONCILIATION_NEEDED.md`. `pnpm exec tsc --noEmit` zero new errors in src/. | **SHIPPED 2026-06-24** as 13-commit series | final commit `bad5424` |
 | **Industrial design** | `ttracx/thox-enclosures` rev-a-v0.2.0: 12 shared OpenSCAD utility modules + 15 per-device .scad files (Mini 4, Air 5, Clip 6) + `tools/build_stls.py` orchestrator + 12 produced STLs (100% lay-flat clean, all within Q2 Combo bed) + 3 per-device PRINT_PLAN docs. STEP + 3MF derivation paths gracefully skip when FreeCAD / Prusa Slicer not on PATH (this rig has only OpenSCAD). | **SHIPPED 2026-06-24** as rev-a-v0.2.0 | commit `ad0a964` + tag `rev-a-v0.2.0` |
 | **Cross-product foundation** | `ttracx/thox-actions` v0.2.0: bundle inspection extracted the ACTUAL FunctionGemma I/O contract from `MobileActions_270M.zip`. **The model emits a custom k:v shape, NOT JSON**: `<start_function_call>call:NAME{key:value}<end_function_call>`. Real Jinja chat template (5,124 bytes) checked in as `FUNCTIONGEMMA_BASE_PROMPT`. New `parser.rs` handles truncation + missing markers + nested JSON values + value coercion (null/bool/int/float/string). 55/55 tests pass (was 36). 10 smoke fixtures covering 10 of 13 ThoxAction variants. | **SHIPPED 2026-06-24** as v0.2.0 | commit `a31e840` + tag `v0.2.0` |
-| **G Apps** | thox-terminal v0.3.0-rc8: sync the rc7 `FunctionGemmaHTTPInferencer` + parser to the v0.2 k:v contract (was JSON stub). Add `MockFunctionGemmaServer` test fixture. Wire the new contract end-to-end so command palette -> HTTP -> FunctionGemma -> k:v -> ThoxAction -> executor runs through the real wire format. | dispatched 2026-06-24 (in flight) | tbd |
-| **Edge AI** | thox-edge-skills v0.2.0: update the `thox-route-action` JS skill to emit/parse the real k:v shape. Pin `chat_template.jinja` as an asset. Add 8-12 more device-specific skills now that the contract is locked. Regenerate catalog.json + run the Python validator gate. | dispatched 2026-06-24 (in flight) | tbd |
+| **G Apps** | thox-terminal v0.3.0-rc8: Swift port of the Rust parser + prompt builder + 10 smoke fixtures + MockFunctionGemmaServer URLProtocol fake. Full rewrite of `FunctionGemmaHTTPInferencer` to real k:v contract. Golden-string test verifies `renderPrompt` matches Rust byte-for-byte. ~51 tests total. | **SHIPPED 2026-06-24** as v0.3.0-rc8 | commit `fa7e4df` + tag `v0.3.0-rc8` |
+| **Edge AI** | thox-edge-skills v0.2.0: 10 new device-specific skills (33 total, was 23). `thox-route-action` JS now speaks real k:v contract (parseFunctionCall mirrors Rust parser; buildAction wraps tagged-enum; renderPrompt mirrors Rust render_prompt; helpers on `window.thoxRouteAction`). `chat_template.jinja` pinned at exact SHA256 match with canonical. 33/33 validator pass. | **SHIPPED 2026-06-24** as v0.2.0 | commit `3e8ad29` + tag `v0.2.0` |
+
+### Wave 9 milestone: FunctionGemma contract locked end-to-end across 3 languages
+
+The same model output bytes (`<start_function_call>call:NAME{key:value}<end_function_call>`) now decode to bit-identical `ThoxAction` values via:
+- **Rust** parser at `thox-actions/crates/thox-actions-functiongemma/src/parser.rs` (v0.2.0)
+- **Swift** parser at `thox-terminal/Sources/ThoxTerminal/Services/Actions/MobileActionsToolCallParser.swift` (v0.3.0-rc8)
+- **JS** parser at `thox-edge-skills/skills/thox-system/thox-route-action/scripts/index.html#parseFunctionCall` (v0.2.0)
+
+`chat_template.jinja` is pinned at SHA256-identical 5,124 bytes across `thox-actions`, `thox-edge-skills/assets/functiongemma/`, and the embedded Swift `FUNCTIONGEMMA_BASE_PROMPT` constant. Three platforms, one contract.
 
 ### Portal-v0.3.0 detail (thox-key)
 
