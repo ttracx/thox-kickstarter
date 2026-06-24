@@ -65,8 +65,22 @@ under the policy above and pushed.
 | **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser bundled | **SHIPPED 2026-06-23** as v0.3.0-rc3 | commit `640707f` + tag `v0.3.0-rc3` |
 | **B2B portal** | thox-key portal Vercel deploy config + GitHub Actions CI (lint + typecheck + build CI workflow + manual-trigger deploy workflow + PORTAL_DEPLOY.md runbook + pnpm-lock.yaml + check-env script) | **SHIPPED 2026-06-23** as portal-v0.1.0 | commit `caad6ff` + tag `portal-v0.1.0` |
 | **D Models** | thoxllm-factory Cohere North-Mini-Code eval branch (download_model.sh + build_llamacpp_pr24260.sh + run_benchmark.py + summarize_results.py + 22 subset prompts + 7 new agentic-coding prompts + reuses existing eval/run_eval.py harness for the 4 comparison adapters) | **SHIPPED 2026-06-23** as eval-north-mini-code-rc1 | commit `54cfbd7` + tag `eval-north-mini-code-rc1` |
-| **B2B portal** | thox-key portal pages: pricing + account dashboard + admin batches queue (Phase 1 backlog items 1+4+5; builds on portal-v0.1.0 CI) | dispatched 2026-06-23 (in flight) | tbd |
-| **G Apps** | thox-terminal v0.3.0-rc4 = ThoxMini first-run onboarding + local THOXY endpoint config per device (two P1 dev-queue items bundled; powers "unbox -> plug in -> already paired" + "tap a device, your local Ollama is wired" video beats) | dispatched 2026-06-23 (in flight) | tbd |
+| **B2B portal** | thox-key portal pages: pricing + account dashboard + admin (dashboard / batches / customers) + login + magic-link auth scaffold | **SHIPPED 2026-06-23** as portal-v0.2.0 | commit `13a22f9` + tag `portal-v0.2.0` |
+| **G Apps** | thox-terminal v0.3.0-rc4 = ThoxMini first-run onboarding + local THOXY endpoint config per device (two P1 dev-queue items bundled; powers "unbox -> plug in -> already paired" + "tap a device, your local Ollama is wired" video beats) | **SHIPPED 2026-06-23** as v0.3.0-rc4 | commit `97d17b4` + tag `v0.3.0-rc4` |
+
+### Portal-v0.2.0 detail (thox-key)
+
+18 new files: `app/pricing/page.tsx`, `app/account/page.tsx`, `app/admin/{page,batches/page,customers/page}.tsx`, `app/login/{page,actions}.{tsx,ts}`, 8 components (`Header`, `AdminHeader`, `Footer`, `Card`, `StatusBadge`, `DataTable`, `KpiCard`, `ActivationChart`), 3 libs (`lib/account.ts`, `lib/admin.ts`, `lib/auth.ts`). Recharts 2.12.7 for the activation chart (SSR-friendly, single linearGradient stays on-palette). Admin gating: `ADMIN_EMAILS` env var allowlist checked in `lib/auth.ts#isAdminEmail` until a `staff` table lands. CI green after a Node 20 -> 22 bump (resolved a pnpm 11 / `node:sqlite` mismatch). Local Windows verification clean.
+
+Handoff: order detail page (`/order/[id]`), admin batch detail (`/admin/batches/[id]`), `app/api/auth/{signout,callback}` to close the magic-link loop, Stripe checkout for Halo + deposit invoices, customer detail page, the 5 email templates set (order received / assets needed / deposit invoice / shipped / 30-day activation report).
+
+### Rc4 detail (thox-terminal)
+
+Onboarding (4 sources + 3 tests + 1 spec): `ThoxOnboardingState` 5-step enum + transition validator, `ThoxOnboardingCoordinator` actor state machine that composes rc1 `ThoxDiscoveryService` + rc2 `ThoxTailscaleImportService` + rc3 `ThoxPrivateKeyStore` + rc4 `ThoxTHOXYEndpointStore` + v0.2 device store / connector via `onDeviceClaimed` Sendable hook. Ed25519 keypair generated via `CryptoKit.Curve25519.Signing.PrivateKey`. Happy path runs end-to-end in `ThoxOnboardingViewModelTests.testFullFlowEndsInDone` (welcome → scan → claim → confirmClaim → installKey → skipTHOXY → done).
+
+THOXY endpoint config (5 sources + 3 tests + 1 spec): `ThoxTHOXYEndpoint` value type + URL validator + suggested-URL helper (default `http://<discovered-host>:11434/api/chat` for Ollama-compatible), `ThoxTHOXYEndpointStore` actor under `ai.thox.terminal.thoxy.*` namespace, `ThoxTHOXYClient` 2s-timeout probe with injectable transport, `ThoxTHOXYConfigViewModel` + `ThoxTHOXYConfigView` sheet + `ThoxTHOXYBadge` (emerald healthy / magstack unhealthy / gray unconfigured) wired into dashboard `DeviceCard`. URLSession wiring functional, not stubbed.
+
+Handoff: Onboarding needs Secure-Enclave Ed25519 generation + canonical OpenSSH PEM wrapping so the generated key is SSH-usable without export. THOXY needs dashboard-side probe cadence so the badge updates automatically + a "Clear" CTA on the config sheet.
 
 ### Rc3 detail (thox-terminal)
 
