@@ -62,9 +62,29 @@ under the policy above and pushed.
 |---|---|---|---|
 | **G Apps** | thox-terminal v0.3 mDNS device discovery scaffold (zero-config "see my Pi Zero stack" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc1 | commit `077daf0` + tag `v0.3.0-rc1` |
 | **G Apps** | thox-terminal v0.3 Tailscale local-API host import (composes with v0.3.0-rc1 mDNS + THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc2 | commit `3ed8a8f` + tag `v0.3.0-rc2` |
-| **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser (two P1 dev-queue items bundled into rc3) | dispatched 2026-06-23 (in flight) | tbd |
-| **B2B portal** | thox-key portal: Vercel deploy config + GitHub Actions CI (no actual deploy; just CI green + one-command deployable from your laptop when you're ready) | dispatched 2026-06-23 (in flight) | tbd |
-| **D Models** | thoxllm-factory: Cohere North-Mini-Code eval branch (download Q4_K_XL + benchmark harness against the existing 58-prompt suite; results inform whether North-Mini-Code becomes the 7th Ollama tag) | dispatched 2026-06-23 (in flight) | tbd |
+| **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser bundled | **SHIPPED 2026-06-23** as v0.3.0-rc3 | commit `640707f` + tag `v0.3.0-rc3` |
+| **B2B portal** | thox-key portal Vercel deploy config + GitHub Actions CI (lint + typecheck + build CI workflow + manual-trigger deploy workflow + PORTAL_DEPLOY.md runbook + pnpm-lock.yaml + check-env script) | **SHIPPED 2026-06-23** as portal-v0.1.0 | commit `caad6ff` + tag `portal-v0.1.0` |
+| **D Models** | thoxllm-factory Cohere North-Mini-Code eval branch (download_model.sh + build_llamacpp_pr24260.sh + run_benchmark.py + summarize_results.py + 22 subset prompts + 7 new agentic-coding prompts + reuses existing eval/run_eval.py harness for the 4 comparison adapters) | **SHIPPED 2026-06-23** as eval-north-mini-code-rc1 | commit `54cfbd7` + tag `eval-north-mini-code-rc1` |
+
+### Rc3 detail (thox-terminal)
+
+Keychain module: 5 sources + 3 tests + 1 spec. `ThoxPrivateKeyStore` composes cleanly with the v0.2 `ThoxSecretStore` protocol under a private `ai.thox.terminal.privatekey.*` namespace; cannot collide with existing credential UUID accounts.
+
+ThoxOS status module: 4 sources + 3 tests + 1 spec. `ThoxOSStatusFetcher` is functional (runs `thoxos status --json` over the existing v0.2 `ThoxSSHTransport`, strips shell preamble, classifies failures). Dashboard `DeviceCard` shows the live strip the moment a fetcher attaches.
+
+Handoff: Keychain needs `ThoxConnectionCoordinator` wired so an operator can pick a stored key by identifier. ThoxOS status needs real-device verification against the ThoxNova prototype + the THOX-BUILD-01 MagStack with kernel v1.1.25 + a `ScenePhase` hook to pause polling when the app backgrounds.
+
+### Portal-v0.1.0 detail (thox-key)
+
+CI workflow gates lint + typecheck + build on every push to `portal/**` using placeholder env (no real secrets required). Deploy workflow is manual-trigger only (no auto-deploy). `pnpm-lock.yaml` committed (lockfileVersion 9.0, pnpm 11 generated); CI pinned to pnpm 11 to match. `docs/PORTAL_DEPLOY.md` covers Vercel link + GitHub secrets + custom domain + rollback.
+
+Handoff: `vercel link` from `portal/`, `gh secret set VERCEL_TOKEN/VERCEL_ORG_ID/VERCEL_PROJECT_ID --repo ttracx/thox-key`, populate Vercel prod env vars (Supabase + Stripe), then `gh workflow run portal-deploy.yml --repo ttracx/thox-key --field environment=production`.
+
+### Eval-rc1 detail (thoxllm-factory)
+
+13 new files under `eval/cohere-north-mini-code/`. Existing `eval/run_eval.py` harness REUSED for the comparison adapters (Forge-7B / Wave-8B-Unleashed / Nova-12B-Unleashed / ThoxGem-E4B); the new `run_benchmark.py` is the cohere2moe-specific orchestrator that spawns llama-server from the PR-#24260 build and captures latency + tokens/sec. 22 prompts subset from the existing 58-prompt suite (coding + reasoning) plus 7 new agentic-coding prompts targeting Cohere's tool-call training. Tests 10/10 passing.
+
+Handoff: at the 4060 Ti rig, run `bash eval/cohere-north-mini-code/scripts/download_model.sh && bash eval/cohere-north-mini-code/scripts/build_llamacpp_pr24260.sh && python eval/cohere-north-mini-code/scripts/run_benchmark.py --compare && python eval/cohere-north-mini-code/scripts/summarize_results.py`, then fill in `eval/cohere-north-mini-code/DECISION.md`. Approx 30 min download + 20 min build + 2 hr benchmark.
 
 Delivered: real URLSession against `http://localhost:41112/localapi/v0/status` with the `Host: local-tailscaled.sock` anti-DNS-rebinding header, 2s timeout. `ThoxTailscaleClient` actor + `ThoxTailscalePeer` / `ThoxTailscaleStatus` types + `ThoxTailscaleImportService` mapping Tailscale peers to v0.3.0-rc1 `ThoxDiscoveredDevice`. `ThoxTailscaleImportViewModel` + `ThoxTailscaleImportView` SwiftUI sheet. macOS path functional; iOS path stubbed with `// TODO(ios):` falling through to `.daemonUnreachable` empty state. 3 test files with URLProtocol mock transport. `docs/superpowers/specs/2026-06-23-tailscale-import-design.md`. 10 added + 6 modified.
 
