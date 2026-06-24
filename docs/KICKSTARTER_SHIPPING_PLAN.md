@@ -61,6 +61,7 @@ under the policy above and pushed.
 | Lane | Pulled forward | Status | Commit / tag |
 |---|---|---|---|
 | **G Apps** | thox-terminal v0.3 mDNS device discovery scaffold (zero-config "see my Pi Zero stack" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc1 | commit `077daf0` + tag `v0.3.0-rc1` |
+| **G Apps** | thox-terminal v0.3 Tailscale local-API host import (next P1 in dev queue; composes with v0.3.0-rc1 mDNS + the THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | dispatched 2026-06-23 (in flight) | tbd |
 
 Delivered: real NWBrowser wiring against `_thox._tcp` service type (default port 22) with `includePeerToPeer: true`, ThoxDiscoveryService actor + ThoxDiscoveryViewModel + ThoxDiscoveryView, both iOS + macOS Info.plist with NSBonjourServices and NSLocalNetworkUsageDescription, Discovery tab wired into ThoxRootView, 3 test files with a fixture seam, `docs/superpowers/specs/2026-06-23-mdns-discovery-design.md`. README + development_queue.md updated. 10 files added + 6 modified.
 
