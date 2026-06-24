@@ -228,6 +228,18 @@ Full end-to-end pipeline at [prompts/PIPELINE.md](prompts/PIPELINE.md). Worked e
 
 The pipeline is fully brand-locked (THOX dark navy + emerald + IBM Plex Sans / JetBrains Mono, MagStack purple only on MagStack content, no em-dashes anywhere, emojis allowed in captions but not baked into images / videos).
 
+## Repository neighbors
+
+This repo is the **pre-launch playbook**. The other halves of the Kickstarter operating loop live in sibling repos:
+
+| Repo | Phase | Owns |
+|---|---|---|
+| [ttracx/thox-kickstarter](https://github.com/ttracx/thox-kickstarter) | Pre-launch | This repo. Pitch, pricing, dates, video, copy, GTM. |
+| [ttracx/thox-ks-monitor](https://github.com/ttracx/thox-ks-monitor) | Live + post-pledge | Monitoring dashboard + backer CSV import + AI ops digest. KS-ToS-respecting; no credential storage. IP-034. |
+| [ttracx/thox-quickstart](https://github.com/ttracx/thox-quickstart) | Fulfillment | Per-device flash + Tailscale enrollment + assembly QA packets. IP-026. |
+
+If a date, a price, or a stretch goal changes in this repo, the monitor's reward-tier names must move with it.
+
 ## Maintainers
 
 - Craig Ross (inventor, hardware)
