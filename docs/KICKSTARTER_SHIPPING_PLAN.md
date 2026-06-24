@@ -61,7 +61,11 @@ under the policy above and pushed.
 | Lane | Pulled forward | Status | Commit / tag |
 |---|---|---|---|
 | **G Apps** | thox-terminal v0.3 mDNS device discovery scaffold (zero-config "see my Pi Zero stack" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc1 | commit `077daf0` + tag `v0.3.0-rc1` |
-| **G Apps** | thox-terminal v0.3 Tailscale local-API host import (next P1 in dev queue; composes with v0.3.0-rc1 mDNS + the THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | dispatched 2026-06-23 (in flight) | tbd |
+| **G Apps** | thox-terminal v0.3 Tailscale local-API host import (composes with v0.3.0-rc1 mDNS + THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc2 | commit `3ed8a8f` + tag `v0.3.0-rc2` |
+
+Delivered: real URLSession against `http://localhost:41112/localapi/v0/status` with the `Host: local-tailscaled.sock` anti-DNS-rebinding header, 2s timeout. `ThoxTailscaleClient` actor + `ThoxTailscalePeer` / `ThoxTailscaleStatus` types + `ThoxTailscaleImportService` mapping Tailscale peers to v0.3.0-rc1 `ThoxDiscoveredDevice`. `ThoxTailscaleImportViewModel` + `ThoxTailscaleImportView` SwiftUI sheet. macOS path functional; iOS path stubbed with `// TODO(ios):` falling through to `.daemonUnreachable` empty state. 3 test files with URLProtocol mock transport. `docs/superpowers/specs/2026-06-23-tailscale-import-design.md`. 10 added + 6 modified.
+
+Next contributor for thox-terminal v0.3.0 (out of rc2): iOS Network Extension exploration to bind the Tailscale-supplied socket, tag-based device-kind heuristics once THOX `tag:*` taxonomy locks, real-device verification on the live THOX-BUILD-01 tailnet with ThoxNova prototype + 4-node Pi Zero MagStack for the Kickstarter video beat.
 
 Delivered: real NWBrowser wiring against `_thox._tcp` service type (default port 22) with `includePeerToPeer: true`, ThoxDiscoveryService actor + ThoxDiscoveryViewModel + ThoxDiscoveryView, both iOS + macOS Info.plist with NSBonjourServices and NSLocalNetworkUsageDescription, Discovery tab wired into ThoxRootView, 3 test files with a fixture seam, `docs/superpowers/specs/2026-06-23-mdns-discovery-design.md`. README + development_queue.md updated. 10 files added + 6 modified.
 
