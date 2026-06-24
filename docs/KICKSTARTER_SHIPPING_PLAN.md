@@ -100,11 +100,11 @@ under the policy above and pushed.
 | 2 | OpenAI-Compatible | real | `v0.2.0-openai-compat` |
 | 3 | Ollama | real | `v0.2.0-ollama` |
 | 4 | llama.cpp | real (subprocess + inner OpenAI-Compatible) | `v0.2.0-llamacpp` |
-| 5 | vLLM | stub (wave 3) | - |
-| 6 | TensorRT | stub (wave 3) | - |
-| 7 | MLX | stub (wave 3) | - |
+| 5 | vLLM | dispatched 2026-06-24 (in flight) | - |
+| 6 | TensorRT | dispatched 2026-06-24 (in flight) | - |
+| 7 | MLX | dispatched 2026-06-24 (in flight) | - |
 
-Workspace tests: **88 pass, 0 fail**. fmt + clippy clean with `-D warnings`.
+Workspace tests: **88 pass, 0 fail**. fmt + clippy clean with `-D warnings`. Wave 12 completes the 7-adapter set; THOXCore moves from foundation phase to integration phase.
 
 ### Locked next steps + adapter wire plan
 
