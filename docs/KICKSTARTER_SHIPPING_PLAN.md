@@ -67,6 +67,9 @@ under the policy above and pushed.
 | **D Models** | thoxllm-factory Cohere North-Mini-Code eval branch (download_model.sh + build_llamacpp_pr24260.sh + run_benchmark.py + summarize_results.py + 22 subset prompts + 7 new agentic-coding prompts + reuses existing eval/run_eval.py harness for the 4 comparison adapters) | **SHIPPED 2026-06-23** as eval-north-mini-code-rc1 | commit `54cfbd7` + tag `eval-north-mini-code-rc1` |
 | **B2B portal** | thox-key portal pages: pricing + account dashboard + admin (dashboard / batches / customers) + login + magic-link auth scaffold | **SHIPPED 2026-06-23** as portal-v0.2.0 | commit `13a22f9` + tag `portal-v0.2.0` |
 | **G Apps** | thox-terminal v0.3.0-rc4 = ThoxMini first-run onboarding + local THOXY endpoint config per device (two P1 dev-queue items bundled; powers "unbox -> plug in -> already paired" + "tap a device, your local Ollama is wired" video beats) | **SHIPPED 2026-06-23** as v0.3.0-rc4 | commit `97d17b4` + tag `v0.3.0-rc4` |
+| **B2B portal** | thox-key portal-v0.3.0 = order detail page + admin batch detail + auth callback round-trip + Stripe Halo checkout (closes 4 Phase 1 backlog items) | dispatched 2026-06-23 (in flight) | tbd |
+| **G Apps** | thox-terminal v0.3.0-rc5 = Secure Enclave Ed25519/ECDSA generation (replaces rc4 CryptoKit software keygen path) + audit log writer + Settings export | dispatched 2026-06-23 (in flight) | tbd |
+| **D Models** | thoxllm-factory: ThoxKey portable runtime model mirror prep + sync script (so build_image.py picks up the 6 shipping adapters' GGUFs at $THOXKEY_MODEL_MIRROR without manual curation) | dispatched 2026-06-23 (in flight) | tbd |
 
 ### Portal-v0.2.0 detail (thox-key)
 
