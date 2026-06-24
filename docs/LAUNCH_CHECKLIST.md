@@ -71,6 +71,23 @@ Owners: P = Phamy (campaign), C = Craig (hardware), B = Both.
 | [ ] | Notify Kickstarter Account Manager (if assigned) of the launch time | P |
 | [ ] | Backup laptop with power adapter staged at the launch desk | B |
 
+## Ops integration gates (T-3 to T-0)
+
+These six gates are owned by Tommy and gate the click-launch moment.
+Source of truth: `docs/KS_OPS_INTEGRATION.md`. Repo: `ttracx/thox-kickstarter-integration`.
+
+| Status | Task | Owner |
+|---|---|---|
+| [ ] | Integration deployed on the ops VPS; Tailscale-only reachable; FastAPI healthcheck passes | T |
+| [ ] | dev@thox.ai added as Kickstarter collaborator (Analytics + Coordinate fulfillment + Manage community) | T |
+| [ ] | First backer-report import smoke-tested; row counts match the Kickstarter dashboard totals | T |
+| [ ] | Fulfillment-risk endpoint returns valid output on a test campaign profile | T |
+| [ ] | PII masking verified on at least one backer-list endpoint (default-mask + X-Operator-Token reveal both confirmed) | T |
+| [ ] | Update-drafter produces sane markdown for a synthetic risk profile (no hallucinated names, no leaked emails) | T |
+
+If any gate fails at T-1, the integration is held back and ops runs
+manually for the first 48 hours. Launch is NOT blocked by this lane.
+
 ## T-1 day
 
 | Status | Task | Owner |
