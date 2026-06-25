@@ -80,7 +80,7 @@ These rolled out since the previous tracker snapshot. Kept here for one cycle, t
 | THOX-BUILD-01 self-hosted runner | bootstrap fixed for User namespace; 5 consumer PRs still open awaiting runner registration | run `pwsh C:\Users\tommy\dev\setup-thox-build-01.ps1` in PowerShell |
 | Consumer workflows wired to thox-build-01 labels | 5 PRs open (thoxos-kernel #1, thox-portable #2, magstack-air-edge-rs #1, thox-quickstart #3, thox-luckfox-pico-mini-b #2); thoxllm-factory #3 already merged | merge after runner registers |
 | xcframework CI on thox-terminal | blocked on cross-repo PAT | create fine-grained PAT scoped Contents:Read on ttracx/thoxcore; add as repo secret `THOXCORE_REPO_PAT` in ttracx/thox-terminal |
-| Stripe product/price reconciliation (4 renames) | blocked on Stripe auth | complete Stripe MCP OAuth OR export `STRIPE_SECRET_KEY` env var |
+| Stripe product/price reconciliation (4 renames) | script staged (`ttracx/thox-key` f5e3500); idempotent reconcile of 8 products + 9 prices including the 4 renames; awaiting Stripe key | export `STRIPE_SECRET_KEY` then `cd portal; pnpm stripe:setup:dry` to preview + `pnpm stripe:setup` to apply. Runbook: `ttracx/thox-key` `docs/STRIPE_SETUP.md` |
 | docs.thox.ai live deploy on Vercel | workflows wired on main (`ttracx/thox-docs` 8eed357); inert until Vercel project + 3 secrets land | create Vercel project (import `ttracx/thox-docs`, framework Next.js, domain `docs.thox.ai`); add repo secrets `VERCEL_TOKEN` + `VERCEL_ORG_ID` + `VERCEL_PROJECT_ID`; point `docs.thox.ai` CNAME at `cname.vercel-dns.com`. Walkthrough in `ttracx/thox-docs` `docs/DEPLOY.md`. ~5 min |
 
 ### Campaign + content
