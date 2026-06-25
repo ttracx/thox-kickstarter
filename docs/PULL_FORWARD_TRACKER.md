@@ -16,6 +16,7 @@ These rolled out since the previous tracker snapshot. Kept here for one cycle, t
 
 | Sprint | Outcome | Repo / PR |
 |---|---|---|
+| **Kickstarter launch content pack (NEW)** | shipped 2026-06-25 direct to main; 6 docs in `content/launch/` | ttracx/thox-kickstarter: VIDEO_SCRIPT.md (90s, 5 beats, 10.8KB), STORYBOARD.md (26 frames + 30s alt cut, 19.6KB), REWARDS_FAQ.md (26 Q&A in THOX voice, 9.8KB), MILESTONES.md (T-48 countdown thru T+30, 11.6KB), STRETCH_GOALS.md ($250K-$3M ladder, conservative on ThoxArm/Vault/Cargo, 7.4KB), PRESS_KIT.md (one-pager + placeholder bios + tech-specs, 11.1KB) |
 | **ThoxMini Air v4 QIDI Q2 3MF kit (NEW)** | PR open; rev2 PR #2 closed as superseded | ttracx/thox-3dprint-kit PR #4 (new halo ring + side buttons + 10 3MF plates, 196 MB total) |
 | **MagStack Cluster Dock print pack (NEW)** | PR open; 5 STL parts + 3 plate 3MFs + 165 LOC guide | ttracx/thox-3dprint-kit PR #3 (parametric generator, ~6.5h + 85g PETG estimate) |
 | **THOXCore Phase E: tracing + multi-region (NEW)** | PR open; 221/221 tests (+45 over baseline 176) | ttracx/thoxcore PR #4 (OTLP tracing pipeline + Region/Zone + 3 region-aware policies + ADR-010 + ADR-011 + examples 13/14) |
@@ -81,8 +82,12 @@ These rolled out since the previous tracker snapshot. Kept here for one cycle, t
 |---|---|---|
 | Kickstarter playbook (`ttracx/thox-kickstarter`) | actively updated; rewards copy locked; PR #2 SoC reconcile open | merge thox-kickstarter PR #2 (blanket-approved doc PR) |
 | Website (`ttracx/Thox.ai`) SoC update | PR #215 OPEN, awaiting your "go" | review PR #215 + say "go Thox.ai" to merge |
-| Hero shots / unboxing video | not started | provide approval to script + render an AI walkthrough; OR record once enclosures print |
-| Demo script for Kickstarter video | not started | I can draft once enclosures print |
+| Hero shots / unboxing video | content pack shipped 2026-06-25 (`content/launch/VIDEO_SCRIPT.md` + `STORYBOARD.md`); practical shoot still pending | review `content/launch/VIDEO_SCRIPT.md` (90s, 5 beats) + `STORYBOARD.md` (26 frames); approve founder bite line at 1:10; book videographer per `content/launch/MILESTONES.md` Phase 1 |
+| Demo script for Kickstarter video | shipped 2026-06-25 to `content/launch/VIDEO_SCRIPT.md` (90s cut) and references existing `deliverables/THOX_Video_Script.docx` (2:30 master) | sign off; revise founder on-camera line; videographer takes both into pre-production |
+| Kickstarter rewards FAQ | shipped 2026-06-25 to `content/launch/REWARDS_FAQ.md` (26 Q&A in THOX voice; complements existing 8-question `docs/FAQ.md`) | Craig sign-off on hardware answers (Q12, Q20, Q22) before publishing to Kickstarter FAQ surface |
+| T-minus countdown calendar | shipped 2026-06-25 to `content/launch/MILESTONES.md` (Phase 1 thru Phase 7, T-48 thru T+30) | review weekly; daily during launch week |
+| Stretch goals launch copy | shipped 2026-06-25 to `content/launch/STRETCH_GOALS.md` ($250K-$3M; ThoxArm/Vault/Cargo treated as concept-art unveils only) | Craig sign-off on BOM-cost figure for MagStack Cluster Dock at-cost add-on at $1M |
+| Press kit one-pager + bios + tech specs | shipped 2026-06-25 to `content/launch/PRESS_KIT.md` (placeholder bios, quotable lines for both founders, per-SKU tech specs) | both founders rewrite their bios; founders may revise quotable lines before kit ships to press at T-21 |
 | THOXKey hero asset (sub-$50 USB swag) | repo + portal scaffold complete | bulk MOQ orders await pricing tier finalization |
 
 ### Memory + ops
