@@ -11,6 +11,22 @@ Conventions:
 - `***` = practical light source
 - Color palette uses the THOX brand: bg #0B1220, fg #F2F4F8, cyan accent #27E5FF, magenta accent #FF3DA8.
 
+## CAD render reference frames (shipped 2026-06-25)
+
+For frames that lean on assembled-device visuals (Frame 03, the cluster reveal, and any stretch-goal cutaways), the videographer should pull the CAD-derived renders from `thox-3dprint-kit/renders/` as composition reference until the practical photo shoot lands.
+
+| Frame intent | Render reference path (in thox-3dprint-kit) |
+|---|---|
+| Frame 03 - 4-node cluster overhead | `renders/hero/hero_4-node-magstack.png` |
+| Device family lineup beat | `renders/hero/hero_device-family.png` |
+| Pocket-scale establishing | `renders/hero/hero_pocket-context.png` |
+| Stretch-goal teaser tail | `renders/hero/hero_stretch-goals.png` |
+| ThoxMini Air macro insert | `devices/thoxmini-air/renders/iso_lit.png` |
+| Cluster dock detail B-roll | `devices/magstack-cluster-dock/renders/side_callout.png` |
+| Exploded mechanical beat | `devices/<device>/renders/exploded.png` |
+
+Full catalog: `thox-3dprint-kit/renders/INDEX.md`. Renders are 4K PNG, THOX brand palette baked in. If a frame contradicts the render, the script is adjusted, not the hardware.
+
 ---
 
 ## Frame 01 - Cold open, clip in hand (0:00 to 0:03)
