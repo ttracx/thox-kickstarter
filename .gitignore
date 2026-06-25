@@ -18,3 +18,9 @@ assets/social/**/*.srt
 
 .scratch/
 graphify-out/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
