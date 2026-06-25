@@ -1,12 +1,29 @@
 # Pull-forward tracker
 
-Living doc. Updated continuously during autonomous-admin sprints. Truth as of 2026-06-25.
+Living doc. Updated continuously during autonomous-admin sprints. Truth as of 2026-06-25 (post-sprint refresh).
 
 Two columns matter:
 - **Status**: what shipped, what's in flight, what's blocked
 - **Action needed (you)**: the keyboard-only items I cannot do on your behalf
 
 When every row in the "Action needed (you)" column is checked, we are ship-ready for the Aug 12 2026 Kickstarter launch (T-48 days from this writing).
+
+---
+
+## Recently shipped (last 24h)
+
+These rolled out since the previous tracker snapshot. Kept here for one cycle, then folded back into the matrix below or retired.
+
+| Sprint | Outcome | Repo / PR |
+|---|---|---|
+| thoxllm-factory CI wiring | merged 2026-06-25 09:49 | ttracx/thoxllm-factory PR #3 (eval + ollama routed to thox-build-01) |
+| Cohere North-Mini-Code eval baseline | merged 2026-06-25 01:32 | ttracx/thoxllm-factory PR #1 (HumanEval + MBPP-Plus + thox_dev rubric, $0 spend) |
+| thoxllm-router-shim | merged 2026-06-25 01:33 | ttracx/thoxllm-factory PR #2 (shipping tags routed through THOXCore) |
+| thoxcore v0.3.0 staged release | merged 2026-06-25 01:39 | ttracx/thoxcore PR #3 (release notes + verify_v0.3.0 harness) |
+| thoxcore observability sub-tag | merged 2026-06-25 01:34 | ttracx/thoxcore PR #2 (Prometheus + SLO surface for router) |
+| thoxcore v0.2.0 staged release | merged 2026-06-25 01:37 | ttracx/thoxcore PR #1 (foundation-phase release artifacts) |
+| ThoxMini wiring (Tailscale + identity + skills) | merged 2026-06-25 01:32 | ttracx/thox-quickstart PR #2 |
+| ThoxMini provision (Luckfox Pico Mini B) | merged 2026-06-25 01:32 | ttracx/thox-quickstart PR #1 |
 
 ---
 
@@ -18,10 +35,12 @@ When every row in the "Action needed (you)" column is checked, we are ship-ready
 |---|---|---|
 | ThoxMini provisioned on Luckfox Pico Mini | shipped (thox-quickstart PR #1 + #2 merged) | none |
 | ThoxMini Tailscale join | staged; tailscaled installed, not joined | `adb shell tailscale up --hostname=thoxmini-luckfox --tun=userspace-networking --advertise-tags=tag:thoxmini --accept-routes` (needs tailnet auth key) |
-| ThoxMini Air enclosure rev2 | READY TO PRINT (audit verdict; PR #2 in thox-3dprint-kit) | print one back + one front in PETG @ 0.16 mm; fit-check the snaps |
+| ThoxMini Air enclosure rev2 | READY TO PRINT (audit verdict; thox-3dprint-kit PR #1 + PR #2 both open and mergeable) | print one back + one front in PETG @ 0.16 mm; fit-check the snaps |
+| ThoxMini Air v4 3MF kit absorb | sprint did NOT yet ship a PR today; rev2 STL is the current canonical | none until v4 kit lands |
 | ThoxClip Pi Zero 2 W flash | blocked on hardware | plug in Pi (USB-OTG port, not PWR) or insert SD card in a USB card reader (~$5 from Amazon) |
-| ThoxNova LattePanda N100 prototype | not yet provisioned | confirm N100 board is in hand and accessible; I can stage the provisioner once you confirm |
+| ThoxNova LattePanda N100 prototype | not yet provisioned; provisioner sprint in flight, no PR yet | confirm N100 board is in hand and accessible; I can stage the provisioner once you confirm |
 | MagStack Air 4-8 node demo | enclosure ready (rev2); stack untested | print 4-8 enclosures + stack on rig |
+| MagStack Cluster Dock print pack | sprint in flight; no PR yet on thox-3dprint-kit | none until kit lands |
 | Pi Zero 2 W cluster physical assembly | print kit shipped (thox-3dprint-kit rev2 + cross-refs) | print 4-8 units; record assembly time |
 
 ### Software
@@ -29,14 +48,16 @@ When every row in the "Action needed (you)" column is checked, we are ship-ready
 | Item | Status | Action needed (you) |
 |---|---|---|
 | THOXCore 7-adapter foundation | SHIPPED 2026-06-24; 145/145 tests | none |
-| THOXCore v0.3 integration phase (router + FFI + observability) | SHIPPED 2026-06-24; 176/176 tests | none |
+| THOXCore v0.3 integration phase (router + FFI + observability) | SHIPPED 2026-06-24; 176/176 tests; v0.3.0 release notes + verify harness merged today | none |
 | thoxcore v0.2.0 final tag | rig verifier prints READY; Mac + CUDA box pending | run `bash scripts/verify_v0.2.0.sh` on Mac + on CUDA box; when both READY, `git tag v0.2.0 && git push origin v0.2.0` |
 | thoxcore v0.3.0 final tag | release notes staged on main; verifier exits 2 (workspace ready, observability sub-tag still un-cut) | tag `v0.3.0-observability` first if you want it; then `git tag v0.3.0 && git push` |
 | thoxllm-factory router-shim | merged; 13 tests | none |
+| thoxllm-factory CI wiring | merged today (PR #3) | none |
+| Cohere North-Mini-Code eval | merged today (PR #1); $0 spend; full 3-baseline matrix on HumanEval + MBPP-Plus + thox_dev | optional: download Cohere GGUF + build llama.cpp PR-24260 if you want the head-to-head |
 | thoxllm-factory shipping tags publicly available on Ollama | local-only; not pushed to ollama.com | `ollama push ttracx/<tag>` for each of the 7 baseline tags (or wait until campaign launch) |
-| thoxllm-factory thoxforge HumanEval template bug | known; 0% pass@1 due to Llama-2 INST template mismatch | being fixed this sprint |
+| thoxllm-factory thoxforge HumanEval template bug | known; 0% pass@1 due to Llama-2 INST template mismatch; sprint in flight, no PR yet | none until fix lands |
 | thoxforge dashboard wired through THOXCore router | merged; behind THOX_USE_THOXCORE_ROUTER flag | `docker compose up` on ops VPS when ready |
-| THOXCore Phase E (tracing + multi-region) | starting this sprint | none |
+| THOXCore Phase E (tracing + multi-region) | sprint in flight; no PR yet on ttracx/thoxcore | none until PR lands |
 | Kickstarter integration (FastAPI ops ingestion) | merged with fulfillment-risk slice | deploy on ops VPS before T-3 days |
 | Edge Gallery skills on ThoxMini | 14 installed + verified | none |
 
@@ -44,8 +65,8 @@ When every row in the "Action needed (you)" column is checked, we are ship-ready
 
 | Item | Status | Action needed (you) |
 |---|---|---|
-| THOX-BUILD-01 self-hosted runner | bootstrap fixed for User namespace; 6 consumer PRs open | run `pwsh C:\Users\tommy\dev\setup-thox-build-01.ps1` in PowerShell |
-| Consumer workflows wired to thox-build-01 labels | 6 PRs open (thoxos-kernel/thox-portable/magstack-air-edge-rs/thox-quickstart/thoxllm-factory/thox-luckfox-pico-mini-b) | merge after runner registers |
+| THOX-BUILD-01 self-hosted runner | bootstrap fixed for User namespace; 5 consumer PRs still open awaiting runner registration | run `pwsh C:\Users\tommy\dev\setup-thox-build-01.ps1` in PowerShell |
+| Consumer workflows wired to thox-build-01 labels | 5 PRs open (thoxos-kernel #1, thox-portable #2, magstack-air-edge-rs #1, thox-quickstart #3, thox-luckfox-pico-mini-b #2); thoxllm-factory #3 already merged | merge after runner registers |
 | xcframework CI on thox-terminal | blocked on cross-repo PAT | create fine-grained PAT scoped Contents:Read on ttracx/thoxcore; add as repo secret `THOXCORE_REPO_PAT` in ttracx/thox-terminal |
 | Stripe product/price reconciliation (4 renames) | blocked on Stripe auth | complete Stripe MCP OAuth OR export `STRIPE_SECRET_KEY` env var |
 
@@ -53,8 +74,7 @@ When every row in the "Action needed (you)" column is checked, we are ship-ready
 
 | Item | Status | Action needed (you) |
 |---|---|---|
-| Kickstarter playbook (`ttracx/thox-kickstarter`) | actively updated; rewards copy locked | none |
-| Cohere North-Mini-Code eval baseline | ran 2026-06-25; 3 baselines on HumanEval + MBPP-Plus + thox_dev rubric; $0 spent | download Cohere model (~18 GB from `unsloth/North-Mini-Code-1.0-GGUF`) + build llama.cpp PR-24260 if you want the full comparison |
+| Kickstarter playbook (`ttracx/thox-kickstarter`) | actively updated; rewards copy locked; PR #2 SoC reconcile open | merge thox-kickstarter PR #2 (blanket-approved doc PR) |
 | Website (`ttracx/Thox.ai`) SoC update | PR #215 OPEN, awaiting your "go" | review PR #215 + say "go Thox.ai" to merge |
 | Hero shots / unboxing video | not started | provide approval to script + render an AI walkthrough; OR record once enclosures print |
 | Demo script for Kickstarter video | not started | I can draft once enclosures print |
@@ -67,49 +87,53 @@ When every row in the "Action needed (you)" column is checked, we are ship-ready
 | Memory hygiene | up-to-date through 2026-06-25 | none |
 | Naming canonical: ThoxMini vs ThoxMini Air | both on Luckfox Pico Mini B; Air adds MagStack ring; locked 2026-06-25 | none |
 | Repo namespace `ttracx/` is User account | bootstrap script patched; runner registration uses repo-scoped endpoint | none |
+| SoC reconcile docs PR wave | 14 docs PRs open across the portfolio (one per affected repo); all blanket-approved doc-only | merge at will or wait for EOD batch |
 
 ---
 
 ## Open PRs awaiting your review or "go"
 
-Updated end-of-day. Numbers approximate; check `gh pr list --search "is:open author:@me"` for the canonical view.
+Refreshed live via `gh pr list` 2026-06-25 post-sprint. Counts exclude bot PRs (ImgBot, Dependabot) unless they are actionable.
 
 | Repo | PRs open | Notes |
 |---|---:|---|
 | ttracx/thox-3dprint-kit | 2 | #1 engineering audit + #2 rev2 absorb. Merge in order. |
+| ttracx/thox-quickstart | 2 | #3 CI wiring + #4 docs (rev2 print kit row + provisioning runbook) |
 | ttracx/magstack-air | 1 | #4 SoC update |
-| ttracx/thox-stick-poc | 1 | #2 RELATED_PRODUCTS |
-| ttracx/thox-quickstart | 1 | #4 INVENTORY + enclosure link |
+| ttracx/thox-stick-poc | 1 actionable | #2 RELATED_PRODUCTS (also #1 ImgBot, ignore) |
 | ttracx/thox-gemma-3n-e4b-litert-lm | 1 | #1 device TOML |
 | ttracx/thox-edge-quantizer-studio | 1 | #1 device profile (review-flagged) |
-| ttracx/thox-watch | 1 | #2 comparison spec |
-| ttracx/Thoxllama.cpp | 1 | #6 integration plan |
+| ttracx/thox-watch | 1 actionable | #2 comparison spec (also #1 ImgBot, ignore) |
+| ttracx/Thoxllama.cpp | 1 actionable | #6 SoC reconcile (also #2-#5 from May still open, #1 ImgBot) |
 | ttracx/thoxos-insider-wsl | 1 | #1 tier map |
 | ttracx/magstack-air-llm | 1 | #1 README note |
-| ttracx/magstack-air-edge-rs | 1 | #2 README note |
-| ttracx/thoxos-kernel | 2 | #1 ci wiring + #2 SoC reconcile (review-flagged armv7l vs riscv64gc) |
+| ttracx/magstack-air-edge-rs | 2 | #1 CI wiring + #2 README note |
+| ttracx/thoxos-kernel | 2 | #1 CI wiring + #2 SoC reconcile (review-flagged armv7l vs riscv64gc) |
 | ttracx/thox-kickstarter | 1 | #2 SoC reconcile |
 | ttracx/thox-workbench | 1 | #1 devices catalog |
 | ttracx/thox-playbooks | 1 | #1 platform spec |
-| ttracx/thox-portable | 1 | #2 ci wiring |
-| ttracx/thoxllm-factory | 1 | #3 ci wiring |
-| ttracx/thox-luckfox-pico-mini-b | 1 | #2 ci wiring |
-| ttracx/Thox.ai | 1 | **#215 AWAITING USER GO** |
+| ttracx/thox-portable | 1 actionable | #2 CI wiring (also #1 ImgBot, ignore) |
+| ttracx/thox-luckfox-pico-mini-b | 1 | #2 CI wiring |
+| ttracx/Thox.ai | 1 actionable | **#215 AWAITING USER GO** (also #214 from May still open) |
 
-Total: ~22 PRs across the portfolio. Only the Thox.ai PR is gated on your explicit "go". Everything else is mergeable at will under blanket-approval.
+Total actionable: 21 PRs across the portfolio (excludes legacy ImgBot/Dependabot bot PRs).
+Total open if you count everything (incl. older Thoxllama.cpp #2-#5 and Thox.ai #214): ~26.
+
+Only the Thox.ai PR #215 is gated on your explicit "go". Everything else is mergeable at will under blanket-approval.
 
 ---
 
 ## In-flight pull-forwards (active sprint)
 
-Updated as agents report.
+These were launched in the current parallel-agent wave. No PR has landed yet for any of them; agents are still working. The instant a PR opens or merges, it moves up.
 
 | Sprint | Task | Status |
 |---|---|---|
-| 2026-06-25-A | thoxforge HumanEval template fix | in flight |
-| 2026-06-25-B | THOXCore Phase E: tracing pipeline + multi-region routing | in flight |
-| 2026-06-25-C | MagStack Cluster Dock print pack | in flight |
-| 2026-06-25-D | ThoxNova LattePanda N100 provisioner kit | in flight |
+| 2026-06-25-A | thoxforge HumanEval template fix (thoxllm-factory) | in flight, no PR yet |
+| 2026-06-25-B | THOXCore Phase E: tracing pipeline + multi-region routing (thoxcore) | in flight, no PR yet |
+| 2026-06-25-C | MagStack Cluster Dock print pack (thox-3dprint-kit) | in flight, no PR yet |
+| 2026-06-25-D | ThoxNova LattePanda N100 provisioner kit (thox-quickstart) | in flight, no PR yet |
+| 2026-06-25-E | ThoxMini Air v4 3MF kit absorb (thox-3dprint-kit) | in flight, no PR yet; rev2 PR #2 still active and NOT superseded |
 
 ---
 
