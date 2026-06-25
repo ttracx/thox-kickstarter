@@ -124,7 +124,8 @@ thox-kickstarter/
 | Generating social graphics + video with AI | [docs/AI_CONTENT_PIPELINE.md](docs/AI_CONTENT_PIPELINE.md) + [templates/social/](templates/social/) |
 | Pricing a new tier or add-on | [docs/REWARDS_MATRIX.md](docs/REWARDS_MATRIX.md) |
 | Replying to a backer | [templates/reply-snippets.md](templates/reply-snippets.md) + [docs/FAQ.md](docs/FAQ.md) |
-| Coordinating with press | [docs/PRESS_KIT.md](docs/PRESS_KIT.md) |
+| Coordinating with press | [docs/PRESS_KIT.md](docs/PRESS_KIT.md) + [content/launch/PRESS_KIT.md](content/launch/PRESS_KIT.md) |
+| Running press outreach (8-tier media list, 5 pitch templates, cadence, playbook) | [content/launch/PRESS_OUTREACH/](content/launch/PRESS_OUTREACH/) |
 | Filing an IP question | [docs/LEGAL.md](docs/LEGAL.md) |
 
 ## Brand and design system
