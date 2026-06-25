@@ -71,8 +71,8 @@ Total: ~15 minutes at the keyboard.
 | P0 | thoxos-air-image | B6 blocker (real binaries) awaiting Craig signoff | needs Craig + build host |
 | P0 | thox-gemma4 / thoxllm-factory | factory v0.1.3 + Cohere eval scaffolded; Phase C 12B blocked | needs build host for Phase C |
 | P1 | thox-provisioner | preflight + build-host requirements doc shipped | needs build host |
-| P1 | magstack-air + edge-rs | 8-clip assembly plan doc shipped; Rust compile unverified on real Pi Zeros | needs hardware on hand + build host |
-| P1 | thox-terminal | **v0.3.0-rc6 shipped overnight**; promotion to v0.3.0 needs hardware verification | needs Pi Zero MagStack |
+| P1 | magstack-air + edge-rs | 8-clip assembly plan doc shipped; Rust compile unverified on real hardware (updated 2026-06-25: target is now Luckfox Pico Mini B MagStack ring, not Pi Zeros) | needs hardware on hand + build host |
+| P1 | thox-terminal | **v0.3.0-rc6 shipped overnight**; promotion to v0.3.0 needs hardware verification | needs Luckfox Pico Mini B MagStack ring (updated 2026-06-25; was Pi Zero MagStack) |
 | P1 | thoxos-companion | P0 PEM trust anchor resolved at `94b0773`; awaits TestFlight from Phamy | needs Phamy session |
 | P2 | thoxinchip | GDS render procedure doc shipped | none (non-blocking B-roll) |
 | P2 | thox-watch | not in critical path | none |

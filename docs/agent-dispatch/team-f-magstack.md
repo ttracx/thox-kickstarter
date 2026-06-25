@@ -21,7 +21,7 @@ for the campaign's hero "wow" shot.
 
 ## Current state
 
-- magstack-air: prototype, no CHANGELOG, no release tag, no Pi Zero 2 W field test
+- magstack-air: prototype, no CHANGELOG, no release tag, no hardware field test (Pi Zero 2 W path now legacy; RV1103 port pending after 2026-06-25 ThoxMini Air SoC retarget)
 - magstack-air-edge-rs: generated in sandbox without Rust toolchain; compile unverified
 - thox-q2-print-farm Cluster Dock: split-and-bond dovetail joint unproven
 
@@ -31,8 +31,9 @@ for the campaign's hero "wow" shot.
    `cargo test --workspace` green
 2. **Print Cluster Dock split-and-bond pieces** on the Q2 Combo
    (run the precision coin calibration first per the runbook)
-3. **Source 8 x Pi Zero 2 W** + 8 x ThoxClip v7.1 shells + 8 x
-   pogo-pin magnetic connectors + 1 x USB-PD source
+3. **Source 8 x Luckfox Pico Mini B** (updated 2026-06-25; was Pi Zero 2 W)
+   + 8 x ThoxClip v7.1 shells + 8 x pogo-pin magnetic connectors
+   + 1 x USB-PD source
 4. **Assemble physical 8-clip stack**
 5. **Deploy magstack-air to the stack**: leader election + work
    queue + per-task memory cap (`ulimit -v`) verified under load

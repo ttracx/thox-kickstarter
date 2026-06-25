@@ -190,7 +190,7 @@ Each team has a self-contained dispatch prompt at [docs/agent-dispatch/](docs/ag
 |---|---|---|---|---|
 | A | Marketing site full reconciliation + command-center lockdown | Phamy | **medium-high** | Thox.ai, thox-command-center |
 | B | Kernel v1.2.0 3-outcome signed release decision (T-21 fallback) | Craig | **HIGH** | thoxos-kernel |
-| C | Signed Pi Zero 2 W / RV1103 image artifact (physical fallback lane) | Craig | medium | thoxos-air-image, thoxair-pico-sdk, thox-luckfox-pico-mini-b |
+| C | Signed RV1103 (Luckfox Pico Mini B) image artifact (physical fallback lane; updated 2026-06-25, Pi Zero 2 W path now legacy prototype only) | Craig | medium | thoxos-air-image, thoxair-pico-sdk, thox-luckfox-pico-mini-b |
 | D | Phase C 12B + Ollama tags + E2B/NPU path (transformers pin, not wait) | Phamy | medium-high | thox-gemma4, thoxllm-factory, thox-gemma4-e4b-sft, thox-micro-125m |
 | E | ThoxAir MaskROM + cross-platform flashing (pairs with C) | Tommy | medium | thox-provisioner, thoxos-mini-flasher, thoxos-mini-utm-build, thox-quickstart, thoxos-mini-ai-usb-factory |
 | F | 8-clip MagStack hero shot (compile + bench before filming) | Craig | medium | magstack-air, magstack-air-edge-rs, thox-q2-print-farm |

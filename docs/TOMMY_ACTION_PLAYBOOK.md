@@ -304,7 +304,7 @@ What changed:
     depends on magstack-air mesh client crate (Team F dependency)
   - thox-assistant: Python, depends on Ollama tag from Team D
 - Acceptance test extends:
-  - NEW section 7a: peer-Pi avahi-browse -tr _magstack-air._tcp check
+  - NEW section 7a: peer-node avahi-browse -tr _magstack-air._tcp check (updated 2026-06-25; ThoxMini Air now Luckfox Pico Mini B, not Pi)
   - NEW section 11: echo "hello" | thox-assistant token check
 
 Files:
