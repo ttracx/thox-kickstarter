@@ -16,3 +16,5 @@ assets/social/**/*.mov
 assets/social/**/*.srt
 !assets/social/README.md
 
+.scratch/
+graphify-out/
