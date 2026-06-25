@@ -71,6 +71,7 @@ Consolidated from all "Recently shipped" entries through 2026-06-25, grouped by 
 ### Content (15+ items)
 
 - UNBOXING_SCRIPTS/ directory: 6 per-device social-cut scripts (ThoxClip 30s, ThoxMini 45s, ThoxMini Air 45s, ThoxNova 60s, MagStack Cluster Dock 45s, THOXKey 30s) + 00_master_voice_guide + POST_LAUNCH_CADENCE (T-28 to T+30) + README with pre/post checklists and founder quality gate (shipped 2026-06-25)
+- Due-diligence packet (content/dd/): 11-section investor DD scaffold (01 company / 02 financials / 03 IP / 04 roadmap / 05 team / 06 market / 07 technical / 08 legal / 09 KS results / 10 partnerships / 11 appendices) + README + COVER_LETTER_TEMPLATE + CHECKLIST + PACKET_ZIPPER.py (stdlib-only, FILL marker scan + SHA256 manifest). Draft only; attorney review required before any external share. State-of-formation Cedar Park TX vs Nevada reconciliation flagged in 01 and 08 (shipped 2026-06-25)
 - Video script + storyboard + REWARDS_FAQ + milestones + stretch goals + press kit
 - 5 pre-launch emails + 8 LinkedIn posts + investor deck PDF + one-pager PDF + investor outreach pack + social kit
 - 12 post-funding email templates + comms playbook + shipping process + crisis comms
