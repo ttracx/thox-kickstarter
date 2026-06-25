@@ -38,7 +38,7 @@ These rolled out since the previous tracker snapshot. Kept here for one cycle, t
 | ThoxMini Air enclosure rev2 | READY TO PRINT (audit verdict; thox-3dprint-kit PR #1 + PR #2 both open and mergeable) | print one back + one front in PETG @ 0.16 mm; fit-check the snaps |
 | ThoxMini Air v4 3MF kit absorb | sprint did NOT yet ship a PR today; rev2 STL is the current canonical | none until v4 kit lands |
 | ThoxClip Pi Zero 2 W flash | blocked on hardware | plug in Pi (USB-OTG port, not PWR) or insert SD card in a USB card reader (~$5 from Amazon) |
-| ThoxNova LattePanda N100 prototype | not yet provisioned; provisioner sprint in flight, no PR yet | confirm N100 board is in hand and accessible; I can stage the provisioner once you confirm |
+| ThoxNova LattePanda N100 prototype | provisioner staged (thox-quickstart PR #5 OPEN) | flash USB with Ubuntu 24.04 LTS server, boot the N100, SCP `provision/thoxnova/bundle/` to the board, `sudo bash install.sh`, then `bash scripts/verify-thoxnova.sh thox@<ip>`. About 30 min cold-flash to verified node. See `docs/THOXNOVA_PROVISIONING.md` (PR #5) |
 | MagStack Air 4-8 node demo | enclosure ready (rev2); stack untested | print 4-8 enclosures + stack on rig |
 | MagStack Cluster Dock print pack | sprint in flight; no PR yet on thox-3dprint-kit | none until kit lands |
 | Pi Zero 2 W cluster physical assembly | print kit shipped (thox-3dprint-kit rev2 + cross-refs) | print 4-8 units; record assembly time |
@@ -98,7 +98,7 @@ Refreshed live via `gh pr list` 2026-06-25 post-sprint. Counts exclude bot PRs (
 | Repo | PRs open | Notes |
 |---|---:|---|
 | ttracx/thox-3dprint-kit | 2 | #1 engineering audit + #2 rev2 absorb. Merge in order. |
-| ttracx/thox-quickstart | 2 | #3 CI wiring + #4 docs (rev2 print kit row + provisioning runbook) |
+| ttracx/thox-quickstart | 3 | #3 CI wiring + #4 docs (rev2 print kit row + provisioning runbook) + #5 ThoxNova LattePanda N100 provisioner kit |
 | ttracx/magstack-air | 1 | #4 SoC update |
 | ttracx/thox-stick-poc | 1 actionable | #2 RELATED_PRODUCTS (also #1 ImgBot, ignore) |
 | ttracx/thox-gemma-3n-e4b-litert-lm | 1 | #1 device TOML |
@@ -132,7 +132,7 @@ These were launched in the current parallel-agent wave. No PR has landed yet for
 | 2026-06-25-A | thoxforge HumanEval template fix (thoxllm-factory) | in flight, no PR yet |
 | 2026-06-25-B | THOXCore Phase E: tracing pipeline + multi-region routing (thoxcore) | in flight, no PR yet |
 | 2026-06-25-C | MagStack Cluster Dock print pack (thox-3dprint-kit) | in flight, no PR yet |
-| 2026-06-25-D | ThoxNova LattePanda N100 provisioner kit (thox-quickstart) | in flight, no PR yet |
+| 2026-06-25-D | ThoxNova LattePanda N100 provisioner kit (thox-quickstart) | shipped: thox-quickstart PR #5 OPEN (Ubuntu 24.04 sibling-pattern runbook + bundle + 12-check verifier; user-keyboard pending) |
 | 2026-06-25-E | ThoxMini Air v4 3MF kit absorb (thox-3dprint-kit) | in flight, no PR yet; rev2 PR #2 still active and NOT superseded |
 
 ---
