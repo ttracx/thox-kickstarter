@@ -16,12 +16,17 @@ These rolled out since the previous tracker snapshot. Kept here for one cycle, t
 
 | Sprint | Outcome | Repo / PR |
 |---|---|---|
-| thoxllm-factory CI wiring | merged 2026-06-25 09:49 | ttracx/thoxllm-factory PR #3 (eval + ollama routed to thox-build-01) |
-| Cohere North-Mini-Code eval baseline | merged 2026-06-25 01:32 | ttracx/thoxllm-factory PR #1 (HumanEval + MBPP-Plus + thox_dev rubric, $0 spend) |
-| thoxllm-router-shim | merged 2026-06-25 01:33 | ttracx/thoxllm-factory PR #2 (shipping tags routed through THOXCore) |
-| thoxcore v0.3.0 staged release | merged 2026-06-25 01:39 | ttracx/thoxcore PR #3 (release notes + verify_v0.3.0 harness) |
-| thoxcore observability sub-tag | merged 2026-06-25 01:34 | ttracx/thoxcore PR #2 (Prometheus + SLO surface for router) |
-| thoxcore v0.2.0 staged release | merged 2026-06-25 01:37 | ttracx/thoxcore PR #1 (foundation-phase release artifacts) |
+| **ThoxMini Air v4 QIDI Q2 3MF kit (NEW)** | PR open; rev2 PR #2 closed as superseded | ttracx/thox-3dprint-kit PR #4 (new halo ring + side buttons + 10 3MF plates, 196 MB total) |
+| **MagStack Cluster Dock print pack (NEW)** | PR open; 5 STL parts + 3 plate 3MFs + 165 LOC guide | ttracx/thox-3dprint-kit PR #3 (parametric generator, ~6.5h + 85g PETG estimate) |
+| **THOXCore Phase E: tracing + multi-region (NEW)** | PR open; 221/221 tests (+45 over baseline 176) | ttracx/thoxcore PR #4 (OTLP tracing pipeline + Region/Zone + 3 region-aware policies + ADR-010 + ADR-011 + examples 13/14) |
+| **ThoxNova LattePanda N100 provisioner (NEW)** | PR open; full bundle + 12-check verifier | ttracx/thox-quickstart PR #5 (Ubuntu 24.04 LTS server + Intel GPU compute stack + Tailscale + Ollama + thoxnova-agent stub) |
+| **thoxforge HumanEval template fix (NEW)** | PR open; pass@1 0% -> 11.59% | ttracx/thoxllm-factory PR #4 (Mistral-Instruct-v0.3 base; dropped Llama-2 INST template; `thoxforge:120steps-completion` tag) |
+| thoxllm-factory CI wiring | merged 2026-06-25 09:49 | ttracx/thoxllm-factory PR #3 |
+| Cohere North-Mini-Code eval baseline | merged 2026-06-25 01:32 | ttracx/thoxllm-factory PR #1 |
+| thoxllm-router-shim | merged 2026-06-25 01:33 | ttracx/thoxllm-factory PR #2 |
+| thoxcore v0.3.0 staged release | merged 2026-06-25 01:39 | ttracx/thoxcore PR #3 |
+| thoxcore observability sub-tag | merged 2026-06-25 01:34 | ttracx/thoxcore PR #2 |
+| thoxcore v0.2.0 staged release | merged 2026-06-25 01:37 | ttracx/thoxcore PR #1 |
 | ThoxMini wiring (Tailscale + identity + skills) | merged 2026-06-25 01:32 | ttracx/thox-quickstart PR #2 |
 | ThoxMini provision (Luckfox Pico Mini B) | merged 2026-06-25 01:32 | ttracx/thox-quickstart PR #1 |
 
@@ -35,12 +40,12 @@ These rolled out since the previous tracker snapshot. Kept here for one cycle, t
 |---|---|---|
 | ThoxMini provisioned on Luckfox Pico Mini | shipped (thox-quickstart PR #1 + #2 merged) | none |
 | ThoxMini Tailscale join | staged; tailscaled installed, not joined | `adb shell tailscale up --hostname=thoxmini-luckfox --tun=userspace-networking --advertise-tags=tag:thoxmini --accept-routes` (needs tailnet auth key) |
-| ThoxMini Air enclosure rev2 | READY TO PRINT (audit verdict; thox-3dprint-kit PR #1 + PR #2 both open and mergeable) | print one back + one front in PETG @ 0.16 mm; fit-check the snaps |
-| ThoxMini Air v4 3MF kit absorb | sprint did NOT yet ship a PR today; rev2 STL is the current canonical | none until v4 kit lands |
+| ThoxMini Air enclosure rev2 | superseded by v4 PR #4; rev2 PR #2 closed | none |
+| ThoxMini Air v4 3MF kit | SHIPPED 2026-06-25; PR #4 open; sibling QA audit PR #1 still applies to source geometry | open `kit-v4/THOX_Mini_Air_QIDI_Q2_test_coupons_plate.3mf` in QIDI Studio, tune snap + paint, then print `production_parts_plate.3mf`; assign matte black for shells + satin light gray for halo ring + green for accent button |
 | ThoxClip Pi Zero 2 W flash | blocked on hardware | plug in Pi (USB-OTG port, not PWR) or insert SD card in a USB card reader (~$5 from Amazon) |
 | ThoxNova LattePanda N100 prototype | provisioner staged (thox-quickstart PR #5 OPEN) | flash USB with Ubuntu 24.04 LTS server, boot the N100, SCP `provision/thoxnova/bundle/` to the board, `sudo bash install.sh`, then `bash scripts/verify-thoxnova.sh thox@<ip>`. About 30 min cold-flash to verified node. See `docs/THOXNOVA_PROVISIONING.md` (PR #5) |
 | MagStack Air 4-8 node demo | enclosure ready (rev2); stack untested | print 4-8 enclosures + stack on rig |
-| MagStack Cluster Dock print pack | sprint in flight; no PR yet on thox-3dprint-kit | none until kit lands |
+| MagStack Cluster Dock print pack | SHIPPED 2026-06-25; PR #3 open | print 5 parts (base + 2x spine seg + cap + cable manifold + spec plate), ~6.5h + ~85g PETG, buy 8 magnets + 4 USB-C cables; assemble for Kickstarter hero shot |
 | Pi Zero 2 W cluster physical assembly | print kit shipped (thox-3dprint-kit rev2 + cross-refs) | print 4-8 units; record assembly time |
 
 ### Software
