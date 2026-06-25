@@ -161,6 +161,7 @@ These were launched in the current parallel-agent wave. No PR has landed yet for
 | 2026-06-25-D | ThoxNova LattePanda N100 provisioner kit (thox-quickstart) | shipped: thox-quickstart PR #5 OPEN (Ubuntu 24.04 sibling-pattern runbook + bundle + 12-check verifier; user-keyboard pending) |
 | 2026-06-25-E | ThoxMini Air v4 3MF kit absorb (thox-3dprint-kit) | in flight, no PR yet; rev2 PR #2 still active and NOT superseded |
 | 2026-06-25-F | Render pipeline full batch (thox-3dprint-kit) | shipped: f1cf56c on main - 25 device shots + 4 hero + 5 press pairs at 4K via Blender 5.1.1; INDEX 41 entries; ~248 MB new. Cross-repo follow-up to thox-kickstarter assets/README.md at 81ac63f |
+| 2026-06-25-G | THOXCore Phase F roadmap (thoxcore) | shipped: c1ef5b5 on main - docs/ROADMAP_PHASE_F.md (4282 B) + 5 tracking docs at docs/PHASE_F/ (18146 B total: F1 marketplace, F2 auth, F3 API stability, F4 SDKs, F5 telemetry) + 2 starter scaffolds (crates/thoxcore-auth skeleton with AuthProvider trait + 5 unimplemented providers, 6/6 tests pass; schemas/adapter-manifest.v1.json marketplace manifest schema). README "What's next" section added. cargo fmt + clippy -D warnings + 227 workspace tests all green. |
 
 ---
 
