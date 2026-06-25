@@ -160,6 +160,7 @@ These were launched in the current parallel-agent wave. No PR has landed yet for
 | 2026-06-25-C | MagStack Cluster Dock print pack (thox-3dprint-kit) | in flight, no PR yet |
 | 2026-06-25-D | ThoxNova LattePanda N100 provisioner kit (thox-quickstart) | shipped: thox-quickstart PR #5 OPEN (Ubuntu 24.04 sibling-pattern runbook + bundle + 12-check verifier; user-keyboard pending) |
 | 2026-06-25-E | ThoxMini Air v4 3MF kit absorb (thox-3dprint-kit) | in flight, no PR yet; rev2 PR #2 still active and NOT superseded |
+| 2026-06-25-F | Render pipeline full batch (thox-3dprint-kit) | shipped: f1cf56c on main - 25 device shots + 4 hero + 5 press pairs at 4K via Blender 5.1.1; INDEX 41 entries; ~248 MB new. Cross-repo follow-up to thox-kickstarter assets/README.md at 81ac63f |
 
 ---
 
