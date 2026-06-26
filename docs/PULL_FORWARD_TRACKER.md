@@ -1,24 +1,24 @@
 # Pull-forward tracker
 
 Living doc. Updated continuously during autonomous-admin sprints.
-Truth as of 2026-06-25 (FINAL EOD FREEZE - canonical for next-day resume).
+Truth as of 2026-06-25 (FINAL EOD FREEZE v2 - canonical for next-day resume).
 
 When every row in "Actions waiting on you" is checked, we are ship-ready for Aug 12 2026 (T-48 days).
 
 ---
 
-## 0. Headline metrics (today 2026-06-25 FINAL)
+## 0. Headline metrics (today 2026-06-25 FINAL v2)
 
-- Total sprints completed: ~50+
-- Total tests across portfolio: ~2,000+ passing
-- New repos created today: 7 (thox-build-infra, thox-docs, thox-q2-print-farm, thox-brand-vault, thox-ip-disclosures, thox-meta, thox-kickstarter-integration)
+- Total sprints completed: ~60+
+- Total tests across portfolio: ~2,500+ passing (thox-loop-engine alone: 217 test fns across 33 files green; benchmarks 46/46; ratchet + foundation + registry + structure + vertical-slice waves all green)
+- New repos created today: 8 (thox-build-infra, thox-docs, thox-q2-print-farm, thox-brand-vault, thox-ip-disclosures, thox-meta, thox-kickstarter-integration, thox-loop-engine)
 - New release tags cut: 12+ across portfolio
 - Lines of code and docs added: tens of thousands
 - Open PRs on Thox.ai (PR-only, no-merge): 4 (#215, #216, #217, #218)
-- Total commits across portfolio today: ~200+
+- Total commits across portfolio today: ~220+
 - Spend today: $0
-- Memory consolidation: 76 topic files (17 added this session); MEMORY.md 13.4 KB / 112 lines (well under 24.4 KB limit); 70/70 cross-links resolve
-- Ship-readiness aggregate: 89%; 13 keyboard items in section 1 close the gap
+- Memory consolidation: 82 topic files (20 added across session); MEMORY.md 14.76 KB / 118 lines (well under 24.4 KB / 200-line caps); cross-links resolve
+- Ship-readiness aggregate: ~90%; 13 keyboard items in section 1 close the gap
 
 ---
 
@@ -45,6 +45,16 @@ When every row in "Actions waiting on you" is checked, we are ship-ready for Aug
 ## 2. What shipped today (canonical list)
 
 Consolidated from all "Recently shipped" entries through 2026-06-25, grouped by domain.
+
+### Loop engine (TEL absorption + adapters + planner; NEW today)
+
+- thox-loop-engine v0.1.0 init (4fcaff8) + 5-agent OODA scaffold + ratchet benchmark subsystem (26d13cb, 46 tests)
+- TEL wave 1 foundation (559e9eb): constitution + OPA policies + evidence bundles + risk tiers
+- TEL wave 2 registry (f623d72): TEL models.yaml + loop.yaml + command-registry + Sovereign/Hybrid/Burst operating modes + gateway
+- TEL wave 3 structure (6a825fb): TEL repository structure (5 services + 8 workers + 5 tool dirs + 5 infra dirs) + 3 living docs (ecosystem_map / mvp_catalog / development_queue) + AGENTS+CLAUDE generators with `--check` drift guard wired in CI
+- TEL wave 4 vertical-slice (a9fdeb0): TEL section 17 end-to-end + 10 acceptance criteria proven (constitution load, policy eval, evidence bundle emission, command-registry routing, sovereign-mode fallback, ratchet-only mutation, sledgehammer trip, DAG planner topo, structured eval rubric, generator-drift guard)
+- Real adapter wiring (loop_engine/gateway/adapters/) + planner-worker implementation: in flight under sibling agent ownership; do not collide on those paths
+- v0.2 tag deferred until wave 5 (real-adapter env-wire + first real-model loop test) lands
 
 ### Software (18+ items)
 
@@ -83,8 +93,8 @@ Consolidated from all "Recently shipped" entries through 2026-06-25, grouped by 
 
 ### Content (15+ items)
 
-- UNBOXING_SCRIPTS/ directory: 6 per-device social-cut scripts (ThoxClip 30s, ThoxMini 45s, ThoxMini Air 45s, ThoxNova 60s, MagStack Cluster Dock 45s, THOXKey 30s) + 00_master_voice_guide + POST_LAUNCH_CADENCE (T-28 to T+30) + README with pre/post checklists and founder quality gate (shipped 2026-06-25)
-- Due-diligence packet (content/dd/): 11-section investor DD scaffold (01 company / 02 financials / 03 IP / 04 roadmap / 05 team / 06 market / 07 technical / 08 legal / 09 KS results / 10 partnerships / 11 appendices) + README + COVER_LETTER_TEMPLATE + CHECKLIST + PACKET_ZIPPER.py (stdlib-only, FILL marker scan + SHA256 manifest). Draft only; attorney review required before any external share. State-of-formation Cedar Park TX vs Nevada reconciliation flagged in 01 and 08 (shipped 2026-06-25)
+- UNBOXING_SCRIPTS/ directory: 6 per-device social-cut scripts + 00_master_voice_guide + POST_LAUNCH_CADENCE (T-28 to T+30) + README with pre/post checklists and founder quality gate
+- Due-diligence packet (content/dd/): 11-section investor DD scaffold + README + COVER_LETTER_TEMPLATE + CHECKLIST + PACKET_ZIPPER.py
 - Video script + storyboard + REWARDS_FAQ + milestones + stretch goals + press kit
 - 5 pre-launch emails + 8 LinkedIn posts + investor deck PDF + one-pager PDF + investor outreach pack + social kit
 - 12 post-funding email templates + comms playbook + shipping process + crisis comms
@@ -119,14 +129,16 @@ Consolidated from all "Recently shipped" entries through 2026-06-25, grouped by 
 | Content | 95% | founder bios + dates pending |
 | Infrastructure | 88% | runner + Stripe + xcframework PAT + Vercel + DNS staged; thox-kickstarter-integration end-to-end smoke surface assembled (dry-run by default) |
 | Brand + governance + IP + compliance | 95% | attorney + CPA + bookstore handoffs pending |
+| Loop engine (NEW) | 80% | TEL 4 waves landed + 217 tests green; v0.2 tag deferred until adapters + first real-model loop test land in wave 5 |
 
-Aggregate: ~89% ready. The 13 keyboard items in section 1 close the gap.
+Aggregate: ~90% ready. The 13 keyboard items in section 1 close the gap.
 
 ---
 
 ## 4. Tomorrow's plan (when you say "keep going")
 
 **Wave 1** (immediately on resume; agent-triggerable the moment user sets the relevant env):
+- thox-loop-engine v0.2 wave 5a: real-adapter env-wire + 1 real-model loop test (cheapest path is Ollama local; coordinate with sibling agent that owns loop_engine/gateway/adapters/)
 - HF Hub upload via thoxllm-factory HF upload automation (2e71f27); waits on user setting HF_TOKEN
 - ThoxLLM v0.7 batch_train via one-command batch trainer (1be5acf); waits on user picking the first model
 - thoxcore v0.2.0 multi-host verify run via verify-collator (8fe3f65); waits on user running verify_v0.2.0.{ps1,sh} on Mac + CUDA box (Windows already green)
@@ -134,6 +146,7 @@ Aggregate: ~89% ready. The 13 keyboard items in section 1 close the gap.
 - Stripe Connect onboarding for top 5 referral codes (pre-seed before launch)
 
 **Wave 2** (after user completes keyboard items overnight):
+- thox-loop-engine v0.2 wave 5b: 2nd worker implementation (architect Gemma 4 26B or coder Qwen 3.6 35B, whichever proves model-routing path first)
 - Stripe products renamed -> referral payouts activate
 - Runner online -> CI starts running (6 consumer workflows in thox-build-infra)
 - xcframework PAT in place -> Mac + iOS builds shipping
@@ -141,6 +154,7 @@ Aggregate: ~89% ready. The 13 keyboard items in section 1 close the gap.
 - v0.2.0 verified -> final tag cut + v0.4.0 release artifacts (57913a9) promoted
 
 **Wave 3** (post-Kickstarter Phase F kickoff; scaffolds already in c1ef5b5):
+- thox-loop-engine v0.2 wave 5c: Temporal integration on a real cluster (currently compose-only); promote planner from in-process to worker-backed
 - thoxcore adapter marketplace (manifest schema staged)
 - SDKs (Swift in v0.2 / Kotlin / Python python-sdk already at a9ea74f / TS)
 - Downstream auth (thoxcore-auth skeleton already staged)
@@ -163,6 +177,48 @@ Until then, keep pulling forward + updating this tracker.
 
 ---
 
-## 6. EOD freeze marker (2026-06-25)
+## 6. ChatGPT TEL absorption summary (NEW 2026-06-25 PM)
 
-This document is the single canonical view for tomorrow's resume. Every artifact shipped today has a memory entry in `agent/memory/`. 76 topic files total; 17 added this session. MEMORY.md 13.4 KB / 112 lines. 70/70 cross-links resolve. No broken references. No outstanding tracker reconciliation. Resume cleanly from section 4 Wave 1.
+ChatGPT TEL blueprint absorbed verbatim across 4 sequential waves on
+`ttracx/thox-loop-engine` (PRIVATE, Apache-2.0; main `a9fdeb0` at EOD).
+Waves: foundation (559e9eb) -> registry (f623d72) -> structure (6a825fb) ->
+vertical-slice (a9fdeb0). All four waves preserve v0.1.0 ratchet posture
+(no force-push, no main-branch rewrite, every mutation through the
+schemas/agent_mutation.schema.json gate).
+
+**Why this is substantially more production-grade than the Gemini baseline:**
+
+- **Written constitution + OPA policies** bind every agent decision to a
+  reviewable rule, vs the Gemini baseline's ad-hoc prompt-side gates.
+- **Evidence bundles** are signed, append-only, schema-pinned per OODA cycle;
+  every decision has a reconstructible audit trail.
+- **Operating modes** (Sovereign / Hybrid / Burst) make the cost-frontier
+  explicit and let the gateway fall back deterministically when a tier
+  fails, vs the baseline's silent fallback.
+- **Command registry** decouples worker intent from concrete tool
+  invocations so a worker says "run-tests" not "execute pytest -x".
+- **Generator-drift guard** (`tools/genagents.py --check`) is enforced in CI
+  so AGENTS.md (Codex) and CLAUDE.md (Claude Code) cannot drift from
+  `.thox/constitution.md` + `.thox/loop.yaml` + `.thox/models.yaml`.
+- **TEL repo structure** (5 services + 8 workers + 5 tool dirs + 5 infra
+  dirs) per TEL section 9; ready for incremental sibling fill-in, not a
+  big-bang rewrite.
+- **10 acceptance criteria** per TEL section 17 all proven in wave 4 with
+  stubbed model backends. Wave 5 promotes to real backends.
+
+At EOD: 217 test functions across 33 test files green; ruff + mypy clean;
+3 living docs (ecosystem_map + mvp_catalog with 6 TEL-MVP-NNN priorities
+scored + development_queue with 56 TEL-NNN items split P0/P1/P2/P3) +
+2 ADRs + 2 runbooks + 1 STRIDE threat model + compose stack
+(Postgres + Temporal + OPA + MinIO + 5 services + 8 workers).
+
+---
+
+## 7. EOD freeze marker (2026-06-25 v2)
+
+This document + `docs/EOD_2026-06-25_SNAPSHOT.md` together are the single
+canonical view for tomorrow's resume. Every artifact shipped today has a
+memory entry in `agent/memory/`. 82 topic files total; 20 added across
+session. MEMORY.md 14.76 KB / 118 lines. Cross-links resolve. No broken
+references. No outstanding tracker reconciliation. Resume cleanly from
+section 4 Wave 1.
