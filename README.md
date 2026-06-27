@@ -52,7 +52,8 @@ thox-kickstarter-quick-launch/
 │   ├── VIDEO_PRODUCTION.md
 │   ├── VIDEO_SCRIPT.md
 │   ├── VIDEO_SCENE_PROMPTS.md
-│   └── VIDEO_WALKTHROUGH_SCRIPT.md
+│   ├── VIDEO_WALKTHROUGH_SCRIPT.md
+│   └── NEW_REPOSITORY_SETUP.md
 ├── prompts/
 │   └── README.md
 ├── templates/
@@ -82,6 +83,7 @@ thox-kickstarter-quick-launch/
 | Record Tommy + Craig walkthrough | [docs/VIDEO_WALKTHROUGH_SCRIPT.md](docs/VIDEO_WALKTHROUGH_SCRIPT.md) |
 | Understand the product ecosystem | [ecosystem_map.md](ecosystem_map.md) |
 | Prioritize launch work | [development_queue.md](development_queue.md) |
+| Materialize as a separate repository | [docs/NEW_REPOSITORY_SETUP.md](docs/NEW_REPOSITORY_SETUP.md) |
 
 ---
 
