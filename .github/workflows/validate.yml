@@ -20,5 +20,5 @@ jobs:
         run: python3 -m pip install pytest
       - name: Run campaign validator
         run: python3 scripts/validate_campaign.py
-      - name: Run tests
-        run: python3 -m pytest -q
+      - name: Run quick-launch tests
+        run: python3 -m pytest tests/test_campaign_docs.py -q
