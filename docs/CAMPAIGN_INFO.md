@@ -1,122 +1,139 @@
-# Campaign Info (source of truth)
+# Campaign Info
 
-Anything that needs to be quoted on the Kickstarter page, in press, on the website, in BackerKit, or in social copy lives here.
+This is the source of truth for the THOX.ai Kickstarter quick launch.
 
 ## Identity
 
 | Field | Value |
 |---|---|
-| Project name | THOX.ai - Your AI. Your Data. Your Rules. |
-| Short name | THOX.ai Family Campaign |
-| Category | Technology > Hardware > Gadgets |
+| Project name | THOX.ai Private AI Hardware |
+| Campaign short name | THOX.ai Quick Launch |
+| Tagline | Your AI. Your Data. Your Rules. |
+| Category | Technology > Hardware |
 | Country | United States |
 | Currency | USD |
 | Duration | 30 days |
-| Funding goal | $250,000 |
-| Funding model | All-or-Nothing |
-| Launch date (target) | August 12, 2026 (Tuesday, 9:00 AM PT) |
-| End date (target) | September 11, 2026 (Thursday, 10:00 PM PT) |
-| Project ID slug | thox-ai-your-ai-on-silicon-you-own |
-| Public URL (post-launch) | kickstarter.com/projects/thox-ai/thox-ai-your-ai-on-silicon-you-own |
+| Recommended funding goal | $150,000 |
+| Funding model | All-or-nothing |
+| Launch target | August 12, 2026, 9:00 AM PT |
+| End target | September 11, 2026, 10:00 PM PT |
+| Public slug | thox-ai-private-ai-hardware |
+| Operating repo | ttracx/thox-kickstarter |
 
-## Tagline + blurbs
+## Founder roles
 
-### Tagline (always use this)
-`Your AI. Your Data. Your Rules.`
+| Person | Public role | Campaign lane |
+|---|---|---|
+| Craig Ross | CEO, THOX.ai | Mission, product positioning, manufacturing plan, backer trust |
+| Tommy Xaypanya | CTO, THOX.ai | Technical architecture, local-first AI runtime, security, demo walkthrough |
 
-### blurb_135 (Kickstarter page blurb, 135 chars max, currently 132)
-`Four devices, one agent. ThoxClip listens. ThoxMini thinks small. ThoxAir clusters. ThoxNova hosts the LLM. All local.`
+Use these exact names and roles in Kickstarter, press, social, video lower thirds, and BackerKit.
 
-### prelaunch_blurb_200 (Coming-soon page, 200 chars max)
-`The THOX family brings personal AI onto silicon you own: a wearable, a pocketable RISC-V node, a Wi-Fi cluster, and a desktop hub. Honest claims, real silicon. Coming to Kickstarter in August 2026.`
+## One-line pitch
 
-### Press one-liner
-`THOX.ai launches a unified Kickstarter for ThoxClip, ThoxMini, ThoxAir, and ThoxNova - the first hardware family designed end-to-end for local personal AI, with the runtime stack already shipping in alpha.`
+`THOX.ai brings private AI into your pocket, desk, and daily workflow with a USB identity key, two local-first edge devices, and a premium clip-on control device.`
 
-## Devices (canonical specs - update here, propagate everywhere else)
+## Kickstarter blurb
 
-### ThoxClip
-- Role: wearable BLE clip, voice + sensor ingress
-- SoC: Nordic nRF52840
-- Sensors: 2 × MEMS mics, 6-axis IMU
-- Radio: BLE 5.3
-- Battery: 12 hours active, USB-C charging
-- Body: anodized aluminum, magnetic clip, emerald accent
-- Backer price: $39 early-bird, $49 list
-- IP filing: THOX IP-008
+`Private AI hardware you own: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Local-first. Portable. Built for real workflows.`
+
+## Plain-English promise
+
+Most AI products ask you to send your work, ideas, conversations, and files somewhere else. THOX.ai is building a hardware family for people who want personal AI they can own, carry, control, and run locally first.
+
+## Product lineup
+
+| Product | Retail | Kickstarter special | Early bird | Role |
+|---|---:|---:|---:|---|
+| ThoxKey | $39.99 | $34 | $24 | USB private AI identity, encrypted launcher, recovery and configuration device |
+| ThoxMini Air | $99 | $79 | $69 | Low-cost wireless edge companion and local routing node |
+| ThoxMini | $199 | $169 | $149 | Mini local compute node for desk, lab, and field workflows |
+| ThoxClip | $399 | $329 | $299 | Premium clip-on private AI capture, command, and control device |
+
+## Product descriptions
+
+### ThoxKey
+
+ThoxKey is the USB device that carries your THOX identity, encrypted configuration, recovery profile, and portable launcher. Plug it in, unlock your private AI workspace, and carry your setup between trusted machines without rebuilding from scratch.
+
+Positioning: the simplest entry point into THOX.ai.
+
+Do not overclaim: ThoxKey is not marketed as a standalone LLM computer. It is the secure portable key for your private AI workflow.
+
+### ThoxMini Air
+
+ThoxMini Air is the low-cost wireless companion for local-first AI workflows. It connects nearby THOX devices, routes lightweight commands, and helps bridge the private AI workspace without requiring a cloud account by default.
+
+Positioning: the accessible wireless node for users who want a THOX device below $100.
+
+Do not overclaim: ThoxMini Air is an edge companion, not a high-end local LLM workstation.
 
 ### ThoxMini
-- Role: pocketable RISC-V edge node
-- SoC: Milk-V Duo (CV1800B), dual RISC-V @ 1 GHz
-- Memory: 64 MB SRAM
-- Storage: microSD
-- Power: under 1 W sustained
-- I/O: USB-C, 3 × UART, 2 × I2C, 4 × GPIO
-- Software floor: ThoxOS Mini boots in under 3 seconds
-- Backer price: $69
-- IP filing: THOX IP-009
 
-### ThoxAir
-- Role: Wi-Fi cluster node, magnetic stackable
-- SoC: BCM2835 (Pi Zero W class)
-- Memory: 512 MB
-- Radio: 2.4 GHz 802.11n + BT 4.1
-- Stack: magnetic 6-pin pogo (5V, GND, UART_TX, UART_RX, I2C_SDA, I2C_SCL)
-- Cluster firmware: MagStack Air (already running in ttracx/magstack-air-edge-rs P0.3)
-- Backer price: $79, $349 for 4-pack Cluster Pack
-- IP filing: THOX IP-010
+ThoxMini is the compact local compute node for desk, lab, and field workflows. It is designed for local services, lightweight agents, encrypted storage, and user-owned automations.
 
-### ThoxNova
-- Role: desktop inference hub
-- SoC: Intel N100 (4 cores, 4 threads, 6W TDP base)
-- Memory: 16 GB DDR5
-- Storage: 256 GB NVMe
-- Network: Gigabit Ethernet, WiFi 6, BT 5.3
-- I/O: USB-C, USB-A × 3, HDMI 2.0, audio jack
-- Power: 12 V DC, passive cooling
-- Software floor: hosts llama-server-sycl with Qwen3-7B, Gemma 3 12B, Llama 3.2 11B by default
-- Backer price: $499
-- IP filing: THOX IP-011
+Positioning: the practical mini box for people who want more capability than a key or wireless companion.
 
-## Funding milestones
+Do not overclaim: large-model workloads should be routed to capable local machines or THOX nodes.
 
-| Tier | Amount | What unlocks |
-|---|---|---|
-| Baseline | $250,000 | Production run begins, all rewards ship |
-| Stretch 1 | $500,000 | ThoxOS Mini preflashed with agent fleet |
-| Stretch 2 | $1,000,000 | MagStack Air firmware bundled on every ThoxAir |
-| Stretch 3 | $1,500,000 | ThoxClip bone-conduction audio |
-| Stretch 4 | $2,000,000 | ThoxNova discrete NPU module slot |
-| Stretch 5 | $3,000,000 | Open hardware files (KiCad + STEP + Buildroot) under CERN-OHL-S |
+### ThoxClip
 
-## Where the money goes (chart data for the deck slide)
+ThoxClip is the premium clip-on command and capture device for private AI workflows. It is designed for quick voice capture, workflow triggers, meeting notes, field capture, and secure handoff into the user-owned THOX environment.
 
-| Category | % | Notes |
-|---|---|---|
-| Manufacturing (PCBA, mechanical, packaging) | 38% | Largest line item, includes per-unit BOM |
-| Certification (FCC, CE, UKCA, BLE SIG) | 22% | Required for shipping across US + EU + UK |
-| Shipping + fulfillment | 18% | Hub in Reno + EU partner |
-| Firmware integration + QA | 12% | Already largely paid; this is the tail end |
-| Kickstarter + payment fees | 6% | Platform 5% + payments ~3% on US/EU |
-| Reserves for supply-chain swaps | 4% | Hedges Milk-V/Pi vendor risk |
+Positioning: the premium device for professionals, founders, researchers, and field operators who want private AI control in a wearable form factor.
 
-## Team bios (200 words each, ready to paste)
+Do not overclaim: ThoxClip is not a medical, emergency, surveillance, or regulated safety device.
 
-### Craig Ross (Inventor, Hardware)
+## Reward strategy
 
-Craig is the hardware lead for the THOX family. He has led mechanical + PCB design for the four device enclosures, the MagStack Air magnetic stack interconnect, and the THOX 5-tier memory hierarchy that informs every device's runtime budget. Prior to THOX, Craig spent a decade in consumer electronics, shipping field-rugged hardware across three continents. His name is on THOX IP-008 through IP-015. Craig insists that no THOX device ever overclaim what its silicon can do, which is why ThoxClip will never tell you it runs an LLM.
+The campaign uses a three-layer reward stack:
 
-### Phamy Xaypanya (Inventor, Software + Campaign)
+1. **Early-bird anchors** create launch-day urgency while staying quantity capped.
+2. **Standard Kickstarter specials** are the main scalable reward tiers.
+3. **Bundles** lift average pledge value and give backers a complete THOX path.
 
-Phamy leads the THOX agent runtime, the cross-platform inference stack (vMLX on Apple Silicon, llama-server variants on NVIDIA + Intel, RKNPU2 on RV1103), and the MagStack Air cluster fabric. The four ThoxAir Pi-class boards in the Cluster Pack appear to clients as a single inference endpoint because of code Phamy wrote. She is on every THOX IP filing alongside Craig. Phamy runs the campaign, ships the firmware updates, and replies to every backer email within five business days.
+## Recommended reward tiers
 
-## Boilerplate
+| Tier | Price | Cap | Includes | Estimated delivery |
+|---|---:|---:|---|---|
+| Supporter | $5 | Unlimited | Updates, backer wall, digital wallpaper pack | October 2026 |
+| Early-bird ThoxKey | $24 | 500 | 1 ThoxKey | January 2027 |
+| ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey | January 2027 |
+| Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air | February 2027 |
+| ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air | February 2027 |
+| Early-bird ThoxMini | $149 | 300 | 1 ThoxMini | March 2027 |
+| ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini | March 2027 |
+| Early-bird ThoxClip | $299 | 200 | 1 ThoxClip | April 2027 |
+| ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip | April 2027 |
+| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxMini Air | February 2027 |
+| THOX Developer Kit | $189 | Unlimited | ThoxKey + ThoxMini | March 2027 |
+| THOX Wearable Pro Kit | $349 | Unlimited | ThoxKey + ThoxClip | April 2027 |
+| THOX Complete Founder Kit | $549 | 100 | ThoxKey + ThoxMini Air + ThoxMini + ThoxClip + founder serial | May 2027 |
 
-### Short company description
-`THOX.ai LLC is a Reno, NV company building a local-first personal AI runtime and the hardware family it runs on. Founded 2025. Software in alpha, hardware in EVT.`
+## Funding allocation
 
-### Long company description (paragraph)
-`THOX.ai is the first end-to-end personal AI stack designed to live on silicon the user owns. The THOX agent runtime ships across every consumer compute platform: Apple Silicon, NVIDIA CUDA, Intel x86, browsers via WebGPU, and small ARM and RISC-V edge boards. The runtime is paired with a hardware family that brings the agent onto wearable, pocketable, wireless-cluster, and desktop form factors. Every device is honest about what its silicon can do. The smaller devices route to the larger ones. The whole family speaks the same agent contract.`
+| Category | Allocation | Notes |
+|---|---:|---|
+| Manufacturing, PCBAs, enclosures, packaging | 42% | First production run and supplier deposits |
+| Firmware, QA, and security validation | 18% | Local-first runtime, signed releases, device validation |
+| Certification and compliance reserve | 16% | FCC, CE, UKCA, labeling, test lab buffer |
+| Fulfillment and logistics | 14% | Packaging, domestic and international shipping operations |
+| Kickstarter, payment fees, and taxes reserve | 7% | Platform/payment overhead and accounting reserve |
+| Contingency | 3% | Supplier swaps and schedule variance |
 
-### One-paragraph campaign description (for press kits + LinkedIn)
-`Kickstarter launches August 12, 2026 with a $250K baseline and four shipping devices: ThoxClip ($39 early-bird wearable), ThoxMini ($69 RISC-V pocket node), ThoxAir ($79 wireless cluster node, $349 for a 4-pack), and ThoxNova ($499 desktop hub). The campaign funds the first production run; the agent runtime is already in alpha across all five major compute platforms. THOX.ai is founded by Craig Ross and Phamy Xaypanya, both inventors on every THOX IP filing.`
+## Campaign guardrails
+
+- Be honest about prototype status and delivery risk.
+- Never present AI-generated device imagery as final production photography.
+- Never claim that small devices run workloads intended for larger hardware.
+- Never describe ThoxClip as a medical, emergency, safety, or surveillance device.
+- Always state that cloud connectors, if used, are optional user choices.
+- Use plain language first; technical detail belongs lower on the page or in updates.
+
+## Backer commitment
+
+`We will communicate every major manufacturing, firmware, compliance, and fulfillment milestone. If something slips, we will say what slipped, why it slipped, what we are doing next, and when backers should expect the next update.`
+
+## Canonical CTA
+
+`Back THOX.ai and help launch private AI hardware people can actually own.`
