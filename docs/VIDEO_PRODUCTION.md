@@ -1,77 +1,91 @@
 # Video Production
 
-Companion to `deliverables/THOX_Video_Script.docx`. The script is the canonical scene list; this doc covers production logistics.
+Production guide for the THOX.ai Kickstarter hero video and founder walkthrough.
 
-## Deliverables out of production
+## Required deliverables
 
-- 2:30 hero master, 1080p H.264 + AAC, < 200 MB, for Kickstarter upload.
-- 1:00 hero cut for the Kickstarter Story page (above-the-fold autoplay; same encode).
-- 0:15 social teaser, 1:1 square, no voiceover, music-bed only.
-- 3:30 long-form explainer, 1080p, with the extra 30-second real-chat segment.
-- B-roll bin: 18 unedited clips, 5 seconds each, exported as separate files.
-- Stills bin: 12 still frames extracted from the master, for press use.
+| Deliverable | Length | Format | Purpose |
+|---|---:|---|---|
+| Hero video | 2:30 to 3:00 | 1080p MP4, H.264, AAC | Kickstarter main video |
+| Founder walkthrough | 6:00 to 8:00 | 1080p MP4 | Technical/business explainer for updates, YouTube, press |
+| 60-second cut | 0:60 | 1080p MP4 | Kickstarter page and YouTube Shorts landscape |
+| 15-second teaser | 0:15 | 9:16 and 1:1 MP4 | Social launch teaser |
+| Still frame pack | 12 images | PNG/JPG | Press, campaign page, updates |
 
-## Schedule
+## Cast
 
-| Date | Phase | Days | Owner |
+| Person | Role on camera |
+|---|---|
+| Craig Ross, CEO, THOX.ai | Mission, why Kickstarter, trust, manufacturing commitment |
+| Tommy Xaypanya, CTO, THOX.ai | Technical architecture, local-first AI workflow, security posture, demo walkthrough |
+
+## Visual rules
+
+- Dark navy / black workspace.
+- Emerald accent lights.
+- Real prototype photography for reward tiles when available.
+- Generated graphics allowed for topology, conceptual scenes, and motion backgrounds.
+- Generated visuals must not be presented as final production photos.
+- No fake UI claims.
+- No medical, emergency, surveillance, or regulated-use claims.
+- No stock footage that looks like generic AI vaporware.
+
+## Shoot list
+
+| Scene | Format | Owner | Notes |
 |---|---|---|---|
-| 2026-05-15 | Pre-production lockdown (script, storyboard, prop list) | 7 | P |
-| 2026-05-22 | Practical shoot (real devices, real desk, real hands) | 3 | C + DP |
-| 2026-05-25 | AI video generation pass (scenes 1, 2, 3, 6, 8, 9, 11) | 4 | P |
-| 2026-05-29 | Edit pass 1 | 5 | DP + Editor |
-| 2026-06-03 | Color + sound | 3 | Editor |
-| 2026-06-06 | Final master + 3 cuts | 2 | Editor |
-| 2026-06-08 | QC and approval | 1 | B |
-| 2026-06-15 | Press cut goes out under embargo (T-58 days) | - | P |
+| Founder cold open | Practical video | Craig | Direct-to-camera, calm and concise |
+| Technical desk walkthrough | Practical video | Tommy | Devices on desk, screen recording optional |
+| Product lineup | Graphic + motion | Producer | Generated hero image can become motion clip |
+| ThoxKey close-up | Practical or graphic | Producer | Show USB form factor and secure identity concept |
+| ThoxMini Air wireless companion | Graphic + motion | Producer | Show network lines, not cloud dependency |
+| ThoxMini local node | Practical + screen | Tommy | Show local services and honest boundaries |
+| ThoxClip premium workflow | Practical or graphic | Craig | Capture and command, no medical claims |
+| Reward pricing card | Motion graphic | Producer | Show early-bird and Kickstarter specials |
+| Closing founder ask | Practical video | Craig + Tommy | Both on camera or split screen |
 
-## Practical-shoot scenes (real footage preferred)
+## Audio
 
-| Scene | Why practical | Notes |
-|---|---|---|
-| 4 (ThoxClip macro) | Hands + magnetic snap + LED pulse needs real physics | 85mm macro; one human hand in frame, no face |
-| 5 (ThoxMini boot timer) | Real boot, real LED, real terminal overlay | Stop-motion the LED if needed; aim for sub-3 second boot in shot |
-| 7 (ThoxNova dashboard) | Real chat streaming on a real monitor reads better than gen-AI | Record the dashboard from the actual ThoxNova EVT unit; tie playback to a deterministic chat replay so we can re-shoot if needed |
-| 10 (price overlay shot) | Real shelf with the four real devices is the campaign's credibility anchor | Use the same shelf and angle as the hero family shot to keep continuity |
+- Natural founder voice preferred.
+- Avoid overproduced hype narration.
+- Music should be subtle, low, and non-distracting.
+- No alarm sounds, notification sounds, fake sci-fi sounds, or aggressive whooshes.
 
-## AI-generation scenes
+## Editing structure
 
-| Scene | Tool (suggested) | Prompt source |
-|---|---|---|
-| 1 (cold open living room) | Veo 3 or Runway Gen-3 | Script row 1, "Gen prompt" cell |
-| 2 (paywall glitch) | Sora 2 | Script row 2 |
-| 3 (four devices on shelf) | Either; practical preferred if budget permits | Script row 3 |
-| 6 (cluster cascade) | Pika 2 or Runway | Script row 6 |
-| 8 (topology montage) | Compose in After Effects from practical B-roll | n/a |
-| 9 (Honest claims text card) | After Effects kinetic type | Script row 9 |
-| 11 (brand close card) | After Effects | Script row 11 |
-
-## Cast and crew
-
-- DP / camera op: TBD, hire from Reno production network.
-- Editor: TBD, must be familiar with kinetic typography + 24fps cinema masters.
-- Voiceover: warm female voice, mid-30s, dry tone. Casting via Voices.com; budget $1,500 for 2:30 master + 3 cuts.
-
-## Sound design
-
-- Music: original ambient analog synth bed, commissioned from local musician. Budget $2,500. No stock music.
-- Foley: practical only. Magnetic snap, USB-C click, button press, fan hum at very low level.
-- No alarm sounds, no notification dings, no whoosh-transitions.
-
-## Color
-
-- All studio scenes on a dark slate (#0a0e14) background.
-- Emerald (#10b981, #34d399) for primary accent.
-- MagStack purple (#a855f7) only on the ThoxAir leader and the THOX badge on ThoxNova.
-- Amber (#f59e0b) reserved for one warning state if shown; absent from the hero master.
+1. Problem: AI is useful, but trust and ownership matter.
+2. Product: four devices in one local-first ecosystem.
+3. Proof: Tommy explains what runs where.
+4. Offer: Craig explains Kickstarter pricing and why back now.
+5. Trust: risks, delivery plan, and commitment.
+6. Ask: back the campaign.
 
 ## Approval gates
 
-| Gate | Approver | Threshold |
+| Gate | Approver | Requirement |
 |---|---|---|
-| Storyboard | B | All 11 scenes drawn + sketched |
-| Practical-shoot dailies | C | Every device shot at least three angles |
-| Picture-locked rough cut | P | VO timing fits, lower-third type readable on mobile |
-| Color pass | C | Devices look like the EVT units, not glossier |
-| Sound mix | P | VO LUFS-16, music ducked under VO -8 dB |
-| Final master | B | Both founders sign off; no edits after this |
+| Script lock | Craig + Tommy | No overclaims, pricing correct |
+| Visual lock | Craig | Product lineup and brand match |
+| Technical lock | Tommy | Architecture claims accurate |
+| Rough cut | Craig + Tommy | Clear story under 3 minutes |
+| Final cut | Craig + Tommy | Ready for Kickstarter upload |
 
+## Export settings
+
+| Output | Resolution | Frame rate | Audio | Notes |
+|---|---:|---:|---|---|
+| Kickstarter master | 1920x1080 | 24 or 30 fps | AAC stereo | Keep under platform upload limits |
+| Social vertical | 1080x1920 | 30 fps | AAC stereo | Captions burned in |
+| Square teaser | 1080x1080 | 30 fps | AAC stereo | No small text |
+
+## Claim-safety checklist
+
+Before final export, verify:
+
+- [ ] ThoxKey is not described as a standalone LLM computer.
+- [ ] ThoxMini Air is not described as a high-end inference workstation.
+- [ ] ThoxMini claims are limited to local services, lightweight agents, and user-owned workflows.
+- [ ] ThoxClip is not described as medical, emergency, safety, or surveillance hardware.
+- [ ] Cloud connectors are described as optional.
+- [ ] Retail and Kickstarter prices match `docs/REWARDS_MATRIX.md`.
+- [ ] Founder roles match: Craig Ross CEO, Tommy Xaypanya CTO.
