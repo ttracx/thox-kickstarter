@@ -1,207 +1,149 @@
 # Kickstarter Setup Guide
 
-Step-by-step playbook for taking the THOX.ai unified campaign from "no Kickstarter account" to "Live and accepting pledges." Every step lists the source-of-truth doc in this repo to copy from.
+Step-by-step setup for the THOX.ai quick-launch Kickstarter campaign.
 
-Total elapsed time if you do this in one focused day: about 6 hours active work, plus 24-72 hours of Kickstarter and Stripe Connect verification waits.
+## Before opening Kickstarter
 
----
-
-## Phase 0. Prep (do these before touching kickstarter.com)
-
-| Step | What | Source in this repo |
+| Status | Item | Source |
 |---|---|---|
-| 0.1 | Confirm hero video is locked picture and locked audio | [deliverables/THOX_Video_Script.docx](../deliverables/THOX_Video_Script.docx) + [docs/VIDEO_PRODUCTION.md](VIDEO_PRODUCTION.md) |
-| 0.2 | Confirm hero image (1024 × 576 minimum, .jpg, < 50 MB) is exported | [assets/README.md](../assets/README.md) |
-| 0.3 | Confirm campaign blurb (1 sentence, max 135 chars) is locked | [docs/CAMPAIGN_INFO.md](CAMPAIGN_INFO.md) |
-| 0.4 | Confirm long-form Story text is final | [deliverables/THOX_Kickstarter_Campaign.md](../deliverables/THOX_Kickstarter_Campaign.md) |
-| 0.5 | Confirm all 10 reward tier blurbs are final | [docs/REWARDS_MATRIX.md](REWARDS_MATRIX.md) |
-| 0.6 | Confirm 6 stretch goal blurbs are final | [docs/STRETCH_GOALS.md](STRETCH_GOALS.md) |
-| 0.7 | Confirm Risks section text is final | [docs/RISKS.md](RISKS.md) |
-| 0.8 | Confirm the eight FAQ entries are final | [docs/FAQ.md](FAQ.md) |
-| 0.9 | Have ready: founder photo, bio (200 words), Stripe Connect docs (ID + business EIN) | n/a |
-| 0.10 | Have ready: bank account in the project country (US dollar bank for thox.ai LLC) | n/a |
+| [ ] | Product lineup locked | `docs/CAMPAIGN_INFO.md` |
+| [ ] | Rewards locked | `docs/REWARDS_MATRIX.md` |
+| [ ] | Story page copy locked | `docs/KICKSTARTER_PAGE_COPY.md` |
+| [ ] | Hero video script locked | `docs/VIDEO_SCRIPT.md` |
+| [ ] | Founder walkthrough script locked | `docs/VIDEO_WALKTHROUGH_SCRIPT.md` |
+| [ ] | Graphic and motion prompts ready | `docs/VIDEO_SCENE_PROMPTS.md` |
+| [ ] | Campaign validator passing | `python3 scripts/validate_campaign.py` |
+| [ ] | Business bank, tax, and identity documents ready | internal ops |
+| [ ] | Final approved product imagery ready | `assets/` |
 
-Do not start Phase 1 until every row in Phase 0 is checked.
+## Account and security setup
 
----
+1. Use a THOX.ai-controlled email address, not a personal inbox.
+2. Store credentials in the company password manager.
+3. Enable two-factor authentication.
+4. Keep recovery codes in the company vault.
+5. Limit collaborator access to the minimum permissions needed.
+6. Remove collaborators after launch if they no longer need access.
 
-## Phase 1. Account + identity verification (Day 1)
+## Project basics
 
-1. Sign up at kickstarter.com using `ops@thox.ai`. Use a password manager.
-2. Settings → Account → enable two-factor with an authenticator app. Save recovery codes to 1Password.
-3. Settings → Privacy → set newsletters to OFF until launch (you do not want Kickstarter's promotional emails arriving while you are mid-setup).
-4. Create the project: top-right menu → Start a project → answer the eligibility quiz (the THOX product family qualifies under Design + Tech > Hardware).
-5. Pick category: **Technology > Hardware**.
-6. Pick subcategory: **Gadgets**.
-7. Project location: **United States**. Project country: **United States**.
+Use these values unless leadership changes them in `docs/CAMPAIGN_INFO.md`.
 
-When Kickstarter asks for identity verification, you will be handed off to Stripe Connect. This is the longest wait in the whole setup.
-
-### Stripe Connect identity verification
-
-8. Use the THOX.ai LLC business entity, not a personal account. Required documents:
-   - EIN letter (or a 147c letter from the IRS if EIN letter is lost)
-   - Articles of organization
-   - Recent utility bill or lease for the business address
-   - Founder driver license or passport
-   - Bank routing + account number for payouts
-9. Submit. Stripe typically replies within 24-48 hours. Plan around that wait.
-10. If Stripe asks for additional documents, respond same day. The campaign cannot accept pledges without verified Stripe Connect.
-
----
-
-## Phase 2. Project basics (Day 2-3 while Stripe verifies)
-
-1. **Project name**: `THOX.ai - Your AI. Your Data. Your Rules.`
-2. **Project blurb (135 chars max)**: paste from [CAMPAIGN_INFO.md](CAMPAIGN_INFO.md) → "blurb_135" section.
-3. **Project image**: upload the hero shot from `assets/hero/thox-family-on-shelf-1024x576.jpg`. Do not let Kickstarter auto-crop; preview on desktop and mobile.
-4. **Project video**: upload the final 2:30 master MP4. H.264, 1080p, 24 fps, AAC audio. Upload over wired Ethernet. Wait until the platform shows "Encoding complete" before moving on.
-5. **Funding goal**: `$250,000`.
-6. **Duration**: 30 days. Do not pick 45 or 60. Backer urgency drops sharply after day 30.
-7. **Funding model**: All-or-Nothing (Kickstarter's only option, just confirming).
-
----
-
-## Phase 3. The Story page (Day 3-4)
-
-Open `deliverables/THOX_Kickstarter_Campaign.md` and paste section by section. Kickstarter's editor accepts markdown via the "Source" view; the rich-text editor will eat your headings.
-
-Suggested in-page ordering (matches the Campaign doc):
-
-1. Hero block: tagline + one-paragraph pitch
-2. The four devices (table)
-3. Per-device deep dives (ThoxClip, ThoxMini, ThoxAir, ThoxNova) - drop the per-device emerald-accented header image above each section
-4. How they work together (the ASCII topology becomes a 1200 × 600 .png; see `assets/README.md` for the export from the pitch deck)
-5. Why now
-6. Where the money goes (chart - export from `deliverables/THOX_Kickstarter_Deck.pptx` slide 14 if needed)
-7. Risks (Kickstarter has a dedicated Risks section in Phase 5; the Story page only needs a 2-paragraph teaser pointing readers there)
-8. Backer commitments
-9. Brand and design
-10. Team bios
-11. Closing CTA: "Back the campaign"
-
-Add at least four animated GIFs in the Story page (Kickstarter analytics show GIF-rich pages have 30%+ higher pledge conversion). Pre-export from your B-roll:
-- ThoxClip tap + LED pulse
-- ThoxAir cluster cascade
-- ThoxNova dashboard live update
-- Family-on-shelf wide
-
----
-
-## Phase 4. Rewards (Day 4)
-
-Use the table in [REWARDS_MATRIX.md](REWARDS_MATRIX.md) verbatim. Click "Add a reward" for each row.
-
-For every reward:
-
-1. **Title**: paste from the matrix
-2. **Pledge amount (USD)**: paste from the matrix
-3. **Description**: paste the description column; do not freelance
-4. **Estimated delivery**: paste the date column; match [TIMELINE.md](TIMELINE.md) exactly
-5. **Ships to**: Anywhere in the world
-6. **Items included**: list each line from the matrix as a separate item
-7. **Quantity**: leave unlimited except for Founders Pack (limit 100)
-
-### Add-ons
-
-After the main tiers, configure these add-ons:
-
-- ThoxClip add-on: $39 (only available if you already pledged for a Mini, Air, or Nova tier)
-- Magnetic stack base: $24
-- Extra USB-C 5V/4A power supply: $19
-- Spare microSD pre-flashed with ThoxOS Mini: $14
-
----
-
-## Phase 5. Risks and challenges
-
-Paste from [RISKS.md](RISKS.md) the full long-form text under the heading "Story-page risks copy." Do not abbreviate. Kickstarter scores higher on campaigns that openly discuss risks.
-
----
-
-## Phase 6. Bio, FAQ, and credentials
-
-1. **Biography**: paste from `assets/bio.md`. 200 words, founder-first.
-2. **Verified identity**: this comes from Stripe Connect (Phase 1).
-3. **Kickstarter project FAQ**: paste each entry from [FAQ.md](FAQ.md) using the Q + A fields.
-
----
-
-## Phase 7. Pre-launch page (T-30 days)
-
-Kickstarter calls this the "coming soon" page. Turn it on as soon as Phase 4 is complete; do not wait for Phase 6.
-
-1. Settings → Promotion → enable Pre-launch page.
-2. Pre-launch hero image: 1024 × 576 reusing the main hero shot.
-3. Pre-launch blurb: paste from [CAMPAIGN_INFO.md](CAMPAIGN_INFO.md) → "prelaunch_blurb_200".
-4. Notify list: this is the most important number in the next 30 days. Drive at least 1,500 followers before launch.
-5. Cross-link: paste the pre-launch URL into:
-   - thox.ai homepage banner
-   - ttracx GitHub org README (use the public `ttracx/thoxymicro-install` repo's README footer)
-   - Twitter / Bluesky / Mastodon bios
-   - LinkedIn featured section
-   - email signature
-
----
-
-## Phase 8. Pre-launch checklist (T-30 to T-1)
-
-See [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md). Highlights:
-
-| T-minus | Task | Owner |
-|---|---|---|
-| T-30 | Pre-launch page live | Phamy |
-| T-21 | Send press kit to 12 pre-briefed reporters under embargo | Phamy |
-| T-14 | All hero video B-roll cuts uploaded for press | Craig |
-| T-7  | Final EVT photo pass on all four devices | Craig |
-| T-3  | Verify Stripe Connect is in "Verified" state, payouts enabled | Phamy |
-| T-2  | Final preview of the live page on desktop, iPad, iPhone, Android phone | Both |
-| T-1  | Lock all copy. No more edits. | Both |
-| T-0  | Launch at 9:00 AM PT (Kickstarter's strongest discovery window) | Both |
-
----
-
-## Phase 9. Day-of-launch playbook (T+0)
-
-| Hour | Task |
+| Kickstarter field | Value |
 |---|---|
-| 09:00 PT | Click Launch. Verify page is live. |
-| 09:05 | Send `templates/launch-day-email.md` to the pre-launch notify list (Mailerlite or whatever ESP you chose) |
-| 09:10 | Post to LinkedIn, Twitter, Bluesky, Mastodon. Use the launch-day social copy in `templates/launch-day-social.md` (add this file later) |
-| 09:30 | Confirm at least 1 pledge per minute is coming in (if not, your funnel is broken; escalate) |
-| 10:00 | First press embargo lifts. Reply to every reporter within 2 hours. |
-| 12:00 | First update to backers: "We are live." Use `templates/weekly-update.md` Day-0 variant. |
-| 17:00 | First day metrics review. |
-| 21:00 | Day-1 close: post to socials with the funded-percentage screenshot. |
+| Project name | THOX.ai Private AI Hardware |
+| Short blurb | Private AI hardware you own: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Local-first. Portable. Built for real workflows. |
+| Category | Technology > Hardware |
+| Funding goal | $150,000 recommended |
+| Duration | 30 days |
+| Currency | USD |
+| Launch target | August 12, 2026, 9:00 AM PT |
+| End target | September 11, 2026, 10:00 PM PT |
 
----
+## Story page setup
 
-## Phase 10. Funded and beyond (T+1 to T+30)
+Paste sections from `docs/KICKSTARTER_PAGE_COPY.md` in this order:
 
-- Weekly updates every Friday at 10:00 PT, no exceptions. Template: `templates/weekly-update.md`.
-- Stretch goal unlocks: same-day Update + email + social posts. Template: `templates/stretch-unlock-update.md`.
-- Reply to comments within 24 hours, M-F. Reply within 48 hours on weekends.
-- BackerKit setup: start at T+7. Address collection survey at T+25. Add-on purchases at T+35.
-- Final-48 push: T+28. Email + social: "Last 48 hours."
-- Campaign close (T+30, 22:00 PT): post the celebratory update within 1 hour of close.
+1. Hero
+2. Why we are building this
+3. Meet the devices
+4. How the THOX flow works
+5. Kickstarter specials
+6. Why Kickstarter
+7. Prototype and production status
+8. Delivery plan
+9. Risks and challenges
+10. Founder bios
+11. Backer promise
+12. Closing CTA
 
----
+Use final approved real prototype photos for reward tiles when available. If a generated graphic is used for concept storytelling, label it clearly as an illustration or concept visual.
 
-## Common mistakes to avoid
+## Rewards setup
 
-- Do not edit the Story page mid-campaign with major changes; Kickstarter analytics show this depresses pledges. Save big rewrites for after funding.
-- Do not undercut your own tiers by adding free upgrades; you set expectations for next time.
-- Do not promise dates you cannot hit by 30 days. The penalty for slipping a Kickstarter promise is reputational, not legal, and that penalty compounds.
-- Do not let a single negative comment go unanswered for more than 24 hours. Silence reads as guilt.
-- Do not announce a stretch goal you are not certain you can deliver. The $1.5M ThoxClip bone-conduction unlock is the riskiest on the list; if BOM swings, push it to $2M and unlock something cheaper at $1.5M.
+Create rewards from `docs/REWARDS_MATRIX.md`.
 
----
+Rules for data entry:
 
-## Source-of-truth pointers
+- Use exact tier names.
+- Use exact pledge amounts.
+- Use exact quantity caps.
+- Use exact estimated delivery months.
+- Do not create unapproved hidden tiers.
+- Do not change reward prices mid-launch without a leadership decision and a public note.
+- Add-ons should be configured only after main reward tiers are correct.
 
-- Campaign narrative: [deliverables/THOX_Kickstarter_Campaign.md](../deliverables/THOX_Kickstarter_Campaign.md)
-- Pitch deck: [deliverables/THOX_Kickstarter_Deck.pptx](../deliverables/THOX_Kickstarter_Deck.pptx)
-- Talking points: [deliverables/THOX_Talking_Points.docx](../deliverables/THOX_Talking_Points.docx)
-- Video script: [deliverables/THOX_Video_Script.docx](../deliverables/THOX_Video_Script.docx)
+## Shipping setup
 
-When in doubt, this repo wins.
+Use post-campaign pledge manager collection for final shipping. Put estimated ranges on the page so backers are not surprised. Do not promise free international shipping unless finance approves it.
+
+## Risks section
+
+Paste the risks from `docs/KICKSTARTER_PAGE_COPY.md` and expand with any confirmed manufacturing, compliance, or fulfillment issue. Be specific. Hardware backers trust teams that explain risks clearly.
+
+## FAQ starter set
+
+Add these questions:
+
+### Is ThoxKey a standalone AI computer?
+
+No. ThoxKey is a USB private AI identity, launcher, recovery, and configuration device. Heavier AI workloads route to capable local THOX nodes or user-owned computers.
+
+### Will my data leave my device?
+
+THOX.ai is designed local-first. Cloud connectors, if enabled, should be optional user choices. The campaign should never imply that every workflow is always offline in every configuration.
+
+### Which device should I back first?
+
+Start with ThoxKey for the lowest-cost entry point. Choose ThoxMini Air for wireless companion workflows. Choose ThoxMini for local services and lightweight agents. Choose ThoxClip for premium capture and command workflows.
+
+### Is ThoxClip a medical or emergency device?
+
+No. ThoxClip is a private AI capture and workflow control device. It is not a medical, emergency response, regulated safety, or surveillance device.
+
+### When will rewards ship?
+
+Estimated delivery starts with ThoxKey in January 2027, then ThoxMini Air in February 2027, ThoxMini in March 2027, ThoxClip in April 2027, and Complete Founder Kits in May 2027.
+
+### Can I add another device later?
+
+Yes. Add-ons are planned after campaign close through the pledge manager, subject to inventory and production limits.
+
+### Are generated images final production photos?
+
+No. Generated visuals are used only for concept art, motion graphics, or explainers. Final reward tiles should use approved prototype or production photography.
+
+### What happens if manufacturing slips?
+
+We will update backers with what slipped, why it slipped, what we are doing next, and when the next update will arrive.
+
+## Pre-launch page
+
+Turn on the pre-launch page after the story, hero image, blurb, and rewards are ready for internal review. The notify list is the main pre-launch KPI.
+
+Targets:
+
+| Date window | Notify-list target |
+|---|---:|
+| T-30 | 500 |
+| T-21 | 1,000 |
+| T-14 | 1,500 |
+| T-7 | 2,500 |
+| T-1 | 3,500 |
+
+## Final go/no-go checklist
+
+Do not click Launch unless every row is true.
+
+| Status | Requirement |
+|---|---|
+| [ ] | Campaign validator passes |
+| [ ] | Product names match: ThoxKey, ThoxMini Air, ThoxMini, ThoxClip |
+| [ ] | Retail prices match: $39.99, $99, $199, $399 |
+| [ ] | Kickstarter prices match approved matrix |
+| [ ] | Founder roles match: Craig Ross CEO, Tommy Xaypanya CTO |
+| [ ] | Hero video uploaded and encoded |
+| [ ] | Rewards preview tested on mobile |
+| [ ] | Risks section is specific and honest |
+| [ ] | No old product names remain in canonical docs |
+| [ ] | Payment setup verified |
