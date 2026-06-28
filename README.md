@@ -1,3 +1,5 @@
+# THOX Kickstarter
+
 ﻿# thox-kickstarter
 
 <!-- thox-badges -->
@@ -264,3 +266,29 @@ THOX.ai - Your AI. Your Data. Your Rules.
 runtime layer for the THOX device fleet. The August 2026 Kickstarter
 devices (ThoxClip, ThoxMini, ThoxAir, ThoxNova) ship with THOXCore as the
 on-device AI runtime layer.
+
+<!-- THOX-DOCS-STANDARD:START -->
+## Repository Description
+
+thox-kickstarter: launch playbook for the THOX.ai unified Kickstarter (ThoxClip, ThoxMini, ThoxAir, ThoxNova). Step-by-step setup guide, campaign copy, rewards matrix, stretch goals, timeline, risks, FAQ, press kit, comms templates, launch checklist + 4 prebuilt deliverables. MIT.
+
+## Documentation
+
+- [Repository documentation](docs/README.md)
+- [Security policy](SECURITY.md)
+- [Contributing guide](CONTRIBUTING.md)
+- [Legal notice](NOTICE.md)
+
+## THOX.ai LLC
+
+This repository is maintained by THOX.ai LLC.
+
+- Tommy Xaypanya is CTO.
+- Craig Ross is CEO.
+
+## Copyright and Legal
+
+Copyright (c) 2026 THOX.ai LLC. All rights reserved unless this repository includes a separate license file that states otherwise.
+
+THOX-specific documentation, configuration, branding, product definitions, and integration work are owned by THOX.ai LLC unless explicitly noted. Third-party dependencies, forks, vendored components, and upstream source materials remain governed by their original licenses and notices.
+<!-- THOX-DOCS-STANDARD:END -->
