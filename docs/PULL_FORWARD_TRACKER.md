@@ -1,24 +1,34 @@
 # Pull-forward tracker
 
 Living doc. Updated continuously during autonomous-admin sprints.
-Truth as of 2026-06-29 (T-44 days to Kickstarter launch Aug 12 2026).
+Truth as of 2026-07-01 (T-43 days to Kickstarter launch Aug 12 2026).
 
 When every row in "Actions waiting on you" is checked, we are ship-ready.
 
 ---
 
-## 0. Headline metrics (today 2026-06-29)
+## 0. Headline metrics (today 2026-07-01)
 
-- Days to launch: **T-44** (Aug 12 2026)
+- Days to launch: **T-43** (Aug 12 2026)
+- Acceptance-gate closure: **3 of 10** launch-day gates closed (docs
+  `REWARDS_MATRIX.md`, `PRESS_KIT.md`, `FAQ.md` verified via audit
+  2026-07-01). 7 gates remain open; see
+  `KICKSTARTER_SHIPPING_PLAN.md` for per-gate blocker + owner. Top
+  launch risk this morning's standup flagged (0/10) is now down to
+  **7 open gates**, all with named owners and blockers.
 - Total sprints completed since project start: ~65+
-- Total tests across portfolio: ~2,600+ passing (thox-quickstart +88 today; loop-engine 320; benchmarks 46; factory pytest+vitest 39)
-- New repos created today: 1 (thoxclip-miady-pizero-transplant-v3, PRIVATE)
-- New release tags cut today: 2 (thox-gemma4 v0.2.0, thoxllm-factory v0.1.5)
-- Major redesigns shipped today: 1 (thoxkey-c175-enclosure v2.0.0 Air-DNA, 19/19 watertight STLs)
-- Open PRs on Thox.ai (PR-only, no-merge): 4 (#215, #216, #217, #218)
+- Total tests across portfolio: ~2,600+ passing (thox-quickstart +88; loop-engine 320; benchmarks 46; factory pytest+vitest 39)
+- Recent GH releases (last 3 days): thoxos-kernel v1.2.0 signed release
+  (2026-06-29), thoxllm-factory v0.1.5, thox-gemma4 v0.2.0, thoxclip-
+  miady-pizero-transplant-v3 v0.1.0
+- Runner `thox-build-01` on ttracx/thoxos-kernel: registered but
+  **OFFLINE** as of 2026-07-01 (user action #2 `setup-thox-build-01.ps1`
+  still pending)
+- Open PRs on Thox.ai (PR-only, no-merge): 4 (#215, #216, #217, #218) — unchanged from 2026-06-25
 - Spend today: $0
 - Memory consolidation: 83+ topic files; MEMORY.md still under 24.4 KB / 200-line caps
-- Ship-readiness aggregate: **~92%** (up from 90% on 2026-06-25); 12 keyboard items in section 1 close the gap (down from 13; R2 model infra now closed)
+- Ship-readiness aggregate: **~93%** (up from 92% on 2026-06-29;
+  acceptance-gate audit legitimately closed 3 of 10 launch-video gates)
 
 ---
 
@@ -153,7 +163,10 @@ Consolidated from all "Recently shipped" entries through 2026-06-29, grouped by 
 | Loop engine | 80% | TEL 4 waves landed + 320 tests green; v0.2 tag deferred until wave 5 (adapters + first real-model loop test) |
 | **D Models** | **95%** | **R2 INFRA CLOSED 2026-06-29: thox-gemma4 v0.2.0 (Phase C kickoff + publish pipeline) + thoxllm-factory v0.1.5 (registry + GGUF + Ollama wired). Only training fire is the remaining keyboard step.** |
 
-Aggregate: **~92% ready** (up from 90%). The 12 remaining keyboard items in section 1 close the gap.
+Aggregate: **~93% ready** (up from 92%). The 12 remaining keyboard
+items in section 1 + 7 open acceptance gates close the gap. Gate
+audit 2026-07-01: 3 of 10 launch-day gates verified closed
+(`REWARDS_MATRIX.md`, `PRESS_KIT.md`, `FAQ.md`).
 
 ---
 
@@ -221,6 +234,30 @@ vertical-slice (a9fdeb0). All four waves preserve v0.1.0 ratchet posture.
 
 At 2026-06-25 EOD: 217 test functions across 33 test files green; ruff + mypy clean.
 At 2026-06-29: 320 test functions green (planner-worker wave landed).
+
+---
+
+## 8. Refresh marker (2026-07-01, T-43)
+
+Today's refresh folded:
+- Acceptance-gate audit against `KICKSTARTER_SHIPPING_PLAN.md` "Acceptance
+  criteria for launch-day demo" section. All 10 gates enumerated;
+  each mapped to concrete evidence (GH release, PR state, file
+  existence) or an explicit open-blocker line.
+- 3 gates closed with in-file `- [x] ... (closed 2026-07-01 via ...)`
+  annotations: REWARDS_MATRIX.md (10 tiers, 4 SKUs), PRESS_KIT.md (real
+  content), FAQ.md (8 real Q&As).
+- 7 gates left open, each with a 1-line status note naming the blocker
+  and owner. Physical demo gates (5) blocked on prints + assembly +
+  Nova provisioning (user actions #7-#9). Marketing gate blocked on
+  merge of Thox.ai PRs #215-218 (`AWAITING USER GO`; PR-only per
+  policy). Spec-sheet path gate blocked on paths not matching plan
+  (thoxclip is v7/, thoxmini-air is kit-v4/, not v2/).
+- Runner `thox-build-01` verified via `gh api` as registered but
+  OFFLINE; user action #2 (setup-thox-build-01.ps1) still open.
+
+Next resume: physical prints + Phase C training fire + Thox.ai PR
+merges are the fastest path from 3/10 -> 8/10 acceptance-gate closure.
 
 ---
 

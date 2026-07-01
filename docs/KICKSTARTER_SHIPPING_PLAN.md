@@ -581,28 +581,78 @@ Team H (Silicon) ─────────► B-roll PNG ────► T-14 
 
 ## Acceptance criteria for launch-day demo
 
+**Audit 2026-07-01 (T-43)**: 3 of 10 gates legitimately closed. Physical demo
+gates (unboxing / MagStack / Air / USB / iPhone) remain OPEN pending
+print+assemble sequence (user actions 7-9 in `PULL_FORWARD_TRACKER.md`).
+Marketing-site gate remains OPEN pending merge of PRs #215-218 (currently
+`AWAITING USER GO`, PR-only per `feedback_no_automerge_thoxai_website`).
+
 The hero video (2:30) MUST show:
 
 - [ ] Tommy or Phamy unboxing a ThoxNova v2 (matte black) and
       powering it on — display lights up with ThoxOS within 8
       seconds
+      - status 2026-07-01: OPEN. Physical unit not yet flashed; user
+        action #9 in `PULL_FORWARD_TRACKER.md` (LattePanda N100 Ubuntu
+        24.04 + `install.sh`) is still pending. Owner: Tommy (30 min
+        keyboard step at rig).
 - [ ] An 8-clip MagStack column doing inference (visible LED wave
       sweeping the stack)
+      - status 2026-07-01: OPEN. `magstack-air` v0.2.0 exists on GH
+        (tag 2026-06-03) but Cluster Dock unprinted; user actions #7
+        (Air v4 print, 90 min) + #8 (Cluster Dock print, 6.5 h) still
+        pending. Owner: Craig / Q2 print farm.
 - [ ] A ThoxMini USB stick plugged into a generic laptop running
       `ollama run thoxgem:e4b` and getting a response in <10 sec
+      - status 2026-07-01: OPEN. `thoxllm-factory` v0.1.5 wires the
+        `ttracx/thoxgemma4-12b:phase-c` Ollama tag but Phase C training
+        fire has not run (waits on user picking rig + `HF_TOKEN` per
+        tracker section 4 Wave 1). No `thoxgem:e4b` tag yet published
+        to `ollama.com/ttracx`. Owner: Team D (Phamy).
 - [ ] A ThoxMini Air carry-along clipped to a backpack with the
       LED strip pulsing emerald
+      - status 2026-07-01: OPEN. `thoxmini-air/kit-v4` STL set ready
+        + v4 OpenSCAD source-of-truth landed (1e050f2), but no printed
+        assembly yet on which to record the LED beat. Blocked on user
+        action #7 (print + assemble in QIDI Studio). Owner: Tommy.
 - [ ] An iPhone (running thoxos-companion or thox-terminal)
       controlling the ThoxNova over Tailscale
+      - status 2026-07-01: OPEN. `thox-terminal` v0.3.0-rc8 shipped
+        locally but no GH release tag on ttracx/thox-terminal; no
+        TestFlight build submitted for `thoxos-companion`; ThoxNova
+        target not provisioned. Owner: Team G (Phamy) + Tommy for
+        Nova provisioning.
 - [ ] Marketing site at thox.ai matching the Kickstarter copy
+      - status 2026-07-01: OPEN. PRs #215 / #216 / #217 / #218 on
+        ttracx/Thox.ai are all OPEN as of today, tagged `AWAITING
+        USER GO`. Per `feedback_no_automerge_thoxai_website`, this
+        repo is PR-only and requires the user to say "go" before
+        merge. Owner: Tommy (30 min review + go per user action #10).
 
 The Kickstarter page MUST link to:
 
-- [ ] 4-device pricing tier in `docs/REWARDS_MATRIX.md`
+- [x] 4-device pricing tier in `docs/REWARDS_MATRIX.md` (closed
+      2026-07-01 via file at `docs/REWARDS_MATRIX.md`: 10 tiers +
+      add-ons + region shipping covering all 4 launch SKUs — ThoxClip
+      $39/49, ThoxMini $69, ThoxAir $79, ThoxNova $499 — matching
+      `docs/CAMPAIGN_INFO.md`)
 - [ ] Spec sheet for each device in
       `thox-3dprint-kit/devices/<device>/v2/README.md`
-- [ ] Press kit at `docs/PRESS_KIT.md`
-- [ ] Backer FAQ at `docs/FAQ.md`
+      - status 2026-07-01: OPEN. Only `thoxmini/v2/README.md` and
+        `thoxnova/v2/README.md` exist under the specified path. Live
+        thoxclip spec lives at `thoxclip/v7/README.md` (v7.1 recessed-
+        pocket revision); thoxmini-air spec lives at
+        `thoxmini-air/kit-v4/README.md` (v4 multi-material kit).
+        Blocker: either normalize the four spec-sheet paths to `v2/`
+        or update this gate to reference the actual live paths. Owner:
+        Team F (Craig) or Team A (Phamy) to fix path normalization.
+- [x] Press kit at `docs/PRESS_KIT.md` (closed 2026-07-01 via file
+      at `docs/PRESS_KIT.md`: press contacts + embargo policy + asset
+      list + boilerplate + spokesperson bios placeholder)
+- [x] Backer FAQ at `docs/FAQ.md` (closed 2026-07-01 via file at
+      `docs/FAQ.md`: 8 verbatim Kickstarter FAQ entries covering
+      offline operation, BYO-LLM, OSS posture, silicon fallbacks,
+      shipping, warranty, and refund policy)
 
 ## Dispatch
 
