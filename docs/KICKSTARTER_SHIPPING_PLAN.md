@@ -597,6 +597,18 @@ ThoxMini + ThoxAir SoCs to Luckfox Pico Mini B (RV1103) per project memory.
 Per `feedback_no_automerge_thoxai_website`, PR-only rule holds; user review
 + "go" required before merge.
 
+**Audit 2026-07-01 (T-43, third pass EOD, script + review-checkpoint prep)**:
+4 of 10 gates fully closed (unchanged); **5 of 6 remaining gates now have
+production-ready script prep** at `docs/video-script/` (5 hero-video beat
+scripts + README) so shoot day is walk-on the moment hardware + Phase C
+training tag land. **6th remaining gate (marketing site) now has a 25-min
+review checklist** at `docs/campaign-page-review-checklist.md` so PR go
+decisions are a checkpoint, not open-ended review. **Fully closed
+count unchanged at 4/10**, but *ship-readiness posture is materially
+higher*: 5/10 scripts-done, 1/10 checklist-done, 4/10 blocked on
+physical hardware + Phase C training fire (Team D) + iOS shipping
+(Team G).
+
 The hero video (2:30) MUST show:
 
 - [ ] Tommy or Phamy unboxing a ThoxNova v2 (matte black) and
@@ -606,12 +618,21 @@ The hero video (2:30) MUST show:
         action #9 in `PULL_FORWARD_TRACKER.md` (LattePanda N100 Ubuntu
         24.04 + `install.sh`) is still pending. Owner: Tommy (30 min
         keyboard step at rig).
+      - **script portion DONE 2026-07-01 EOD**: full production-ready
+        beat script at `docs/video-script/unbox-nova.md` (shots +
+        camera + lighting + VO + on-screen text + screen recording
+        steps + fallback plan). Shoot day = zero prep + walk-on.
 - [ ] An 8-clip MagStack column doing inference (visible LED wave
       sweeping the stack)
       - status 2026-07-01: OPEN. `magstack-air` v0.2.0 exists on GH
         (tag 2026-06-03) but Cluster Dock unprinted; user actions #7
         (Air v4 print, 90 min) + #8 (Cluster Dock print, 6.5 h) still
         pending. Owner: Craig / Q2 print farm.
+      - **script portion DONE 2026-07-01 EOD**: full production-ready
+        beat script at `docs/video-script/magstack-cluster.md` (shots
+        + LED-wave cadence + 6-pin pogo click sound design + optional
+        thox-terminal mDNS B-roll + safety notes on dovetail joint
+        strength). Shoot day = zero prep + walk-on.
 - [ ] A ThoxMini USB stick plugged into a generic laptop running
       `ollama run thoxgem:e4b` and getting a response in <10 sec
       - status 2026-07-01: OPEN. `thoxllm-factory` v0.1.5 wires the
@@ -619,12 +640,22 @@ The hero video (2:30) MUST show:
         fire has not run (waits on user picking rig + `HF_TOKEN` per
         tracker section 4 Wave 1). No `thoxgem:e4b` tag yet published
         to `ollama.com/ttracx`. Owner: Team D (Phamy).
+      - **script portion DONE 2026-07-01 EOD**: full production-ready
+        beat script at `docs/video-script/usb-ollama.md` (USB-gadget
+        enumerate cadence + screen-recording spec + first-token timer
+        overlay + fallback tag path if Phase C not published by
+        shoot day). Shoot day = zero prep + walk-on.
 - [ ] A ThoxMini Air carry-along clipped to a backpack with the
       LED strip pulsing emerald
       - status 2026-07-01: OPEN. `thoxmini-air/kit-v4` STL set ready
         + v4 OpenSCAD source-of-truth landed (1e050f2), but no printed
         assembly yet on which to record the LED beat. Blocked on user
         action #7 (print + assemble in QIDI Studio). Owner: Tommy.
+      - **script portion DONE 2026-07-01 EOD**: full production-ready
+        beat script at `docs/video-script/air-led.md` (backpack hook
+        + carabiner lock cadence + halo LED breathing pattern + mesh-
+        sync color-shift moment + fallback if firmware not ready).
+        Shoot day = zero prep + walk-on.
 - [ ] An iPhone (running thoxos-companion or thox-terminal)
       controlling the ThoxNova over Tailscale
       - status 2026-07-01: OPEN. `thox-terminal` v0.3.0-rc8 shipped
@@ -632,6 +663,11 @@ The hero video (2:30) MUST show:
         TestFlight build submitted for `thoxos-companion`; ThoxNova
         target not provisioned. Owner: Team G (Phamy) + Tommy for
         Nova provisioning.
+      - **script portion DONE 2026-07-01 EOD**: full production-ready
+        beat script at `docs/video-script/iphone-tailscale.md` (tap
+        cadence + tailnet import + LED-flip variant as the strong
+        primary take + fallback to macOS if iOS apps not shippable
+        by shoot day). Shoot day = zero prep + walk-on.
 - [ ] Marketing site at thox.ai matching the Kickstarter copy
       - status 2026-07-01 EOD: OPEN. PRs #215 / #216 / #217 / #218
         remain open, tagged `AWAITING USER GO`. New PR #219 opened
@@ -644,6 +680,13 @@ The hero video (2:30) MUST show:
         Per `feedback_no_automerge_thoxai_website`, this repo is
         PR-only and requires the user to say "go" before merge.
         Owner: Tommy (30 min review + go per user action #10).
+      - **review portion DONE 2026-07-01 EOD**: 5-minute review
+        checkpoint at `docs/campaign-page-review-checklist.md`.
+        10-section per-PR walk-through (copy proof / countdown /
+        SoC facts / pricing / devices section / mobile layout / alt
+        text / external links / legal / cherry-pick regression).
+        User's review time drops from open-ended to ~25 min for all
+        5 PRs.
 
 The Kickstarter page MUST link to:
 

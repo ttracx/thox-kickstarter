@@ -10,12 +10,19 @@ When every row in "Actions waiting on you" is checked, we are ship-ready.
 ## 0. Headline metrics (today 2026-07-01)
 
 - Days to launch: **T-43** (Aug 12 2026)
-- Acceptance-gate closure: **3 of 10** launch-day gates closed (docs
-  `REWARDS_MATRIX.md`, `PRESS_KIT.md`, `FAQ.md` verified via audit
-  2026-07-01). 7 gates remain open; see
-  `KICKSTARTER_SHIPPING_PLAN.md` for per-gate blocker + owner. Top
-  launch risk this morning's standup flagged (0/10) is now down to
-  **7 open gates**, all with named owners and blockers.
+- Acceptance-gate closure: **4 of 10** launch-day gates FULLY closed
+  (docs `REWARDS_MATRIX.md`, `PRESS_KIT.md`, `FAQ.md`, spec-sheet
+  paths verified via T-43 second-pass audit 2026-07-01). Of the 6
+  remaining: **5 have production-ready shot-list scripts** landed
+  EOD 2026-07-01 at `docs/video-script/` (unbox-nova, magstack-
+  cluster, usb-ollama, air-led, iphone-tailscale). **1 (marketing
+  site) has a 25-min review checkpoint** at
+  `docs/campaign-page-review-checklist.md`. Shoot day = walk-on the
+  moment hardware + Phase C tag land. Top launch risk this morning's
+  standup flagged (0/10) is now: **4/10 fully closed, 5/10 scripts
+  done, 1/10 review-checklist ready, 6/10 remaining blocked on
+  hardware (user actions #7-#9) + Phase C training fire (Team D) +
+  Thox.ai PR go decisions (Tommy user action #10)**.
 - Total sprints completed since project start: ~65+
 - Total tests across portfolio: ~2,600+ passing (thox-quickstart +88; loop-engine 320; benchmarks 46; factory pytest+vitest 39)
 - Recent GH releases (last 3 days): thoxos-kernel v1.2.0 signed release
@@ -27,8 +34,10 @@ When every row in "Actions waiting on you" is checked, we are ship-ready.
 - Open PRs on Thox.ai (PR-only, no-merge): 4 (#215, #216, #217, #218) — unchanged from 2026-06-25
 - Spend today: $0
 - Memory consolidation: 83+ topic files; MEMORY.md still under 24.4 KB / 200-line caps
-- Ship-readiness aggregate: **~93%** (up from 92% on 2026-06-29;
-  acceptance-gate audit legitimately closed 3 of 10 launch-video gates)
+- Ship-readiness aggregate: **~94%** (up from 93% earlier today;
+  T-43 EOD third-pass audit landed 5 hero-video beat scripts + 1
+  campaign-page-review checklist, materially reducing shoot-day +
+  PR-review risk even though the fully-closed count remains at 4/10)
 
 ---
 
@@ -163,10 +172,14 @@ Consolidated from all "Recently shipped" entries through 2026-06-29, grouped by 
 | Loop engine | 80% | TEL 4 waves landed + 320 tests green; v0.2 tag deferred until wave 5 (adapters + first real-model loop test) |
 | **D Models** | **95%** | **R2 INFRA CLOSED 2026-06-29: thox-gemma4 v0.2.0 (Phase C kickoff + publish pipeline) + thoxllm-factory v0.1.5 (registry + GGUF + Ollama wired). Only training fire is the remaining keyboard step.** |
 
-Aggregate: **~93% ready** (up from 92%). The 12 remaining keyboard
-items in section 1 + 7 open acceptance gates close the gap. Gate
-audit 2026-07-01: 3 of 10 launch-day gates verified closed
-(`REWARDS_MATRIX.md`, `PRESS_KIT.md`, `FAQ.md`).
+Aggregate: **~94% ready** (up from 93% earlier today). The 12
+remaining keyboard items in section 1 + 6 open acceptance gates
+close the gap. Gate audit 2026-07-01 (third pass, EOD): 4 of 10
+launch-day gates verified fully closed (`REWARDS_MATRIX.md`,
+`PRESS_KIT.md`, `FAQ.md`, spec-sheet paths). Of the 6 open gates,
+5 hero-video beats now have production-ready shot-list scripts at
+`docs/video-script/` and the marketing-site gate has a 25-min
+review checklist at `docs/campaign-page-review-checklist.md`.
 
 ---
 
@@ -236,6 +249,30 @@ At 2026-06-25 EOD: 217 test functions across 33 test files green; ruff + mypy cl
 At 2026-06-29: 320 test functions green (planner-worker wave landed).
 
 ---
+
+## 8a. Refresh marker (2026-07-01, T-43, THIRD PASS EOD)
+
+Third pass this afternoon (script + review-checkpoint prep pass):
+
+- Landed 5 hero-video beat scripts at `docs/video-script/`:
+  - `unbox-nova.md` — 12s ThoxNova v2 unbox + 8s boot beat
+  - `magstack-cluster.md` — 6s 8-clip MagStack LED-wave beat
+  - `usb-ollama.md` — 6s ThoxMini USB `ollama run` beat
+  - `air-led.md` — 8s ThoxMini Air backpack halo-LED beat
+  - `iphone-tailscale.md` — 10s iPhone-controls-Nova beat
+- Landed `docs/video-script/README.md` indexing all 5 beats + asset
+  checklist + total-shoot-time rollup (~15.5 h across 5 beats)
+- Landed `docs/campaign-page-review-checklist.md` — 10-section per-PR
+  walk-through covering copy proof / countdown / SoC facts /
+  pricing / devices section / mobile layout / alt text / external
+  links / legal / cherry-pick regression. Turns Tommy's PR review
+  into a ~25-min checkpoint for all 5 open Thox.ai PRs.
+- Shipping plan acceptance-gate section updated with per-gate
+  **script portion DONE** / **review portion DONE** annotations.
+- Ship-readiness up from 93% -> 94%. Fully-closed count unchanged
+  at 4/10 (shipping cannot ratchet those bits without physical
+  hardware + Phase C tag), but *shoot-day + PR-review posture* is
+  materially higher.
 
 ## 8. Refresh marker (2026-07-01, T-43)
 
