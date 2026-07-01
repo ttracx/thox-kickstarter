@@ -581,11 +581,21 @@ Team H (Silicon) ─────────► B-roll PNG ────► T-14 
 
 ## Acceptance criteria for launch-day demo
 
-**Audit 2026-07-01 (T-43)**: 3 of 10 gates legitimately closed. Physical demo
-gates (unboxing / MagStack / Air / USB / iPhone) remain OPEN pending
-print+assemble sequence (user actions 7-9 in `PULL_FORWARD_TRACKER.md`).
-Marketing-site gate remains OPEN pending merge of PRs #215-218 (currently
-`AWAITING USER GO`, PR-only per `feedback_no_automerge_thoxai_website`).
+**Audit 2026-07-01 (T-43, second pass EOD)**: 4 of 10 gates legitimately
+closed. Second-pass audit closed the spec-sheet gate — spec sheets DO exist
+for all four launch devices in `thox-3dprint-kit`, just not at the
+originally-specified `v2/` paths; gate text updated to reference the actual
+live paths (`thoxclip/v7`, `thoxmini/v2`, `thoxmini-air/kit-v4`,
+`thoxnova/v2`). Physical demo gates (unboxing / MagStack / Air / USB /
+iPhone) remain OPEN pending print+assemble sequence (user actions 7-9 in
+`PULL_FORWARD_TRACKER.md`). Marketing-site gate remains OPEN pending merge
+of PR #219 (2026-07-01 `marketing/campaign-page-refresh-T-43`) — this new
+PR cherry-picks the stranded 2026-06-25 SoC-correction commit `7fa43c4` +
+countdown-hero commit `b40ba89` (both never merged) and adds a T-minus
+countdown badge, `Meet the Devices` section rename, and corrects the
+ThoxMini + ThoxAir SoCs to Luckfox Pico Mini B (RV1103) per project memory.
+Per `feedback_no_automerge_thoxai_website`, PR-only rule holds; user review
++ "go" required before merge.
 
 The hero video (2:30) MUST show:
 
@@ -623,11 +633,17 @@ The hero video (2:30) MUST show:
         target not provisioned. Owner: Team G (Phamy) + Tommy for
         Nova provisioning.
 - [ ] Marketing site at thox.ai matching the Kickstarter copy
-      - status 2026-07-01: OPEN. PRs #215 / #216 / #217 / #218 on
-        ttracx/Thox.ai are all OPEN as of today, tagged `AWAITING
-        USER GO`. Per `feedback_no_automerge_thoxai_website`, this
-        repo is PR-only and requires the user to say "go" before
-        merge. Owner: Tommy (30 min review + go per user action #10).
+      - status 2026-07-01 EOD: OPEN. PRs #215 / #216 / #217 / #218
+        remain open, tagged `AWAITING USER GO`. New PR #219 opened
+        today (`marketing/campaign-page-refresh-T-43`) cherry-picks
+        the stranded 2026-06-25 SoC-correction (`7fa43c4`) + countdown-
+        hero (`b40ba89`) commits and adds T-minus countdown badge,
+        `Meet the Devices` section rename, ThoxMini + ThoxAir SoC
+        correction to Luckfox Pico Mini B (RV1103), and refreshed
+        hero copy leading with the THOX-trained on-device model.
+        Per `feedback_no_automerge_thoxai_website`, this repo is
+        PR-only and requires the user to say "go" before merge.
+        Owner: Tommy (30 min review + go per user action #10).
 
 The Kickstarter page MUST link to:
 
@@ -636,16 +652,22 @@ The Kickstarter page MUST link to:
       add-ons + region shipping covering all 4 launch SKUs — ThoxClip
       $39/49, ThoxMini $69, ThoxAir $79, ThoxNova $499 — matching
       `docs/CAMPAIGN_INFO.md`)
-- [ ] Spec sheet for each device in
-      `thox-3dprint-kit/devices/<device>/v2/README.md`
-      - status 2026-07-01: OPEN. Only `thoxmini/v2/README.md` and
-        `thoxnova/v2/README.md` exist under the specified path. Live
-        thoxclip spec lives at `thoxclip/v7/README.md` (v7.1 recessed-
-        pocket revision); thoxmini-air spec lives at
-        `thoxmini-air/kit-v4/README.md` (v4 multi-material kit).
-        Blocker: either normalize the four spec-sheet paths to `v2/`
-        or update this gate to reference the actual live paths. Owner:
-        Team F (Craig) or Team A (Phamy) to fix path normalization.
+- [x] Spec sheet for each device in `thox-3dprint-kit/devices/`
+      (closed 2026-07-01 EOD via existence verification of all four
+      live spec-sheet paths; gate text updated to reference the
+      actual live paths rather than the outdated `v2/` normalization
+      assumption)
+      - `thoxclip/v7/README.md` — v7.1 recessed-pocket revision
+      - `thoxmini/v2/README.md` — RV1103 v2 spec
+      - `thoxmini-air/kit-v4/README.md` — v4 multi-material kit
+        (halo ring + side buttons per 2026-06-25 `e00dced`)
+      - `thoxnova/v2/README.md` — LattePanda N100 v2 spec
+      - Second-pass audit note: prior gate text said "OPEN pending
+        path normalization to `v2/`". Path normalization is not the
+        launch blocker — the SUBSTANCE is that each of the four
+        launch SKUs has a maintained spec sheet, which they do. The
+        gate is fulfilled. Owner: Team A / Team F — optional follow-
+        up to normalize all four to a single scheme post-launch.
 - [x] Press kit at `docs/PRESS_KIT.md` (closed 2026-07-01 via file
       at `docs/PRESS_KIT.md`: press contacts + embargo policy + asset
       list + boilerplate + spokesperson bios placeholder)
