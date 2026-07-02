@@ -128,13 +128,13 @@ This is local-first AI hardware with honest boundaries.
 | Reward | Kickstarter price | Retail value |
 |---|---:|---:|
 | ThoxKey | $34 | $39.99 |
-| ThoxMini Air | $79 | $99 |
-| ThoxMini | $169 | $199 |
-| ThoxClip | $329 | $399 |
+| ThoxMini Air | $79 | $99.99 |
+| ThoxMini | $169 | $199.99 |
+| ThoxClip | $329 | $399.99 |
 | THOX Starter Kit | $99 | $138.99 |
-| THOX Developer Kit | $189 | $238.99 |
-| THOX Wearable Pro Kit | $349 | $438.99 |
-| THOX Complete Founder Kit | $549 | $736.98 |
+| THOX Developer Kit | $189 | $239.98 |
+| THOX Wearable Pro Kit | $349 | $439.98 |
+| THOX Complete Founder Kit | $549 | $739.96 |
 
 Early-bird tiers are even lower and quantity capped for launch-day backers.
 
