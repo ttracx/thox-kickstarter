@@ -1,7 +1,12 @@
 # Pull-forward tracker
 
 Living doc. Updated continuously during autonomous-admin sprints.
-Truth as of 2026-06-25 (FINAL EOD FREEZE v2 - canonical for next-day resume).
+Truth as of 2026-07-02 (T-41 days to Kickstarter launch Aug 12 2026).
+
+> **Portfolio release single-source:** [`docs/PORTFOLIO_RELEASE_MATRIX.md`](PORTFOLIO_RELEASE_MATRIX.md)
+> is now the canonical one-page truth for SKU x base model x device firmware x
+> factory registry x current release. Refreshed 2026-07-02. If SKU / model /
+> firmware state drifts anywhere in the portfolio, that doc wins.
 
 When every row in "Actions waiting on you" is checked, we are ship-ready for Aug 12 2026 (T-48 days).
 
@@ -222,3 +227,32 @@ memory entry in `agent/memory/`. 82 topic files total; 20 added across
 session. MEMORY.md 14.76 KB / 118 lines. Cross-links resolve. No broken
 references. No outstanding tracker reconciliation. Resume cleanly from
 section 4 Wave 1.
+
+---
+
+## 8. Refresh marker (2026-07-02, T-41)
+
+Today's refresh landed the **portfolio release matrix** as
+`docs/PORTFOLIO_RELEASE_MATRIX.md` — the single-page truth for
+SKU x base model x device firmware x factory registry x current release
+across 15+ repos. Populated from `thoxllm-factory/registry/0.1.6.json`
+(schema 1.6 with new `thoxnova-12b-agent` + `thoxnova-12b-core` entries)
++ per-repo tag lists verified via local `.git` + 2026-07-01 EOD headline
+metrics carried forward + 2026-07-02 8:30 AM PT standup roll-up.
+
+- Ship-readiness percent held at **~94%** (no material closure since
+  2026-07-01 EOD third pass carried in from previous session state;
+  2026-07-02 delta is documentation consolidation, not gate closure)
+- Acceptance-gate count still **4/10 fully closed**; today's standup
+  flagged 2 additional gates (magstack-cluster + iphone-tailscale)
+  as **effectively-ready pending physical capture** — scripts landed
+  at `docs/video-script/` but real capture waits on hardware
+- Team status roll-up: **8/8 on-track** as of 2026-07-02 8:30 AM PT
+- User keyboard-only remaining items: **13** (item 14 CLOSED
+  2026-06-29 via `make phase-c-kickoff`); 4 one-command ready,
+  4 GitHub/Vercel UI, 5 physical hardware or manual review
+- Single most important gap surfaced by the matrix: **ThoxNova SoC
+  repo (`ttracx/thoxnova-soc`) has no release yet and ThoxOS Nova
+  firmware is still TBD**. Maps directly to user action #9 (flash
+  LattePanda + run install.sh) + Phase C 12B training fire (models
+  `thoxnova-12b-agent` + `thoxnova-12b-core`).

@@ -92,6 +92,7 @@ thox-kickstarter-quick-launch/
 
 | Goal | File |
 |---|---|
+| Answer "what model + firmware ships on each SKU?" | [docs/PORTFOLIO_RELEASE_MATRIX.md](docs/PORTFOLIO_RELEASE_MATRIX.md) — canonical single-page truth for SKU x model x device firmware x factory registry x release (refreshed 2026-07-02) |
 | Copy the Kickstarter Story page | [docs/KICKSTARTER_PAGE_COPY.md](docs/KICKSTARTER_PAGE_COPY.md) |
 | Configure Kickstarter rewards | [docs/REWARDS_MATRIX.md](docs/REWARDS_MATRIX.md) |
 | Run the campaign day by day | [docs/QUICK_LAUNCH_RUNBOOK.md](docs/QUICK_LAUNCH_RUNBOOK.md) |
