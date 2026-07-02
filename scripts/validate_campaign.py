@@ -27,8 +27,12 @@ REQUIRED_FILES = [
     "docs/VIDEO_WALKTHROUGH_SCRIPT.md",
     "prompts/README.md",
     "examples/reward-tier-import.csv",
+    "examples/demo-shot-list.csv",
     "agent_tasks/launch-operator.md",
     "demo/README.md",
+    "demo/DEVICE_DEMOS.md",
+    "demo/RECORDING_RUNBOOK.md",
+    "demo/DEMO_ACCEPTANCE_CHECKLIST.md",
 ]
 
 CANONICAL_DOCS = [
@@ -47,6 +51,10 @@ CANONICAL_DOCS = [
     "docs/VIDEO_SCENE_PROMPTS.md",
     "docs/VIDEO_WALKTHROUGH_SCRIPT.md",
     "prompts/README.md",
+    "demo/README.md",
+    "demo/DEVICE_DEMOS.md",
+    "demo/RECORDING_RUNBOOK.md",
+    "demo/DEMO_ACCEPTANCE_CHECKLIST.md",
 ]
 
 REQUIRED_TERMS = [
@@ -54,6 +62,16 @@ REQUIRED_TERMS = [
     "$39.99", "$99", "$199", "$399",
     "$24", "$69", "$149", "$299",
     "Craig Ross, CEO", "Tommy Xaypanya, CTO",
+]
+
+DEMO_REQUIRED_TERMS = [
+    "standalone LLM computer",
+    "wireless local-first companion",
+    "compact local compute node",
+    "premium command and capture device",
+    "not a medical",
+    "not a high-end inference workstation",
+    "heavier work routes to capable local hardware",
 ]
 
 LEGACY_PATTERNS = [
@@ -84,13 +102,27 @@ def main() -> int:
     if missing_terms:
         fail("Missing required campaign terms: " + ", ".join(missing_terms))
 
+    demo_text = "\n".join(
+        read(path)
+        for path in [
+            "demo/README.md",
+            "demo/DEVICE_DEMOS.md",
+            "demo/RECORDING_RUNBOOK.md",
+            "demo/DEMO_ACCEPTANCE_CHECKLIST.md",
+            "docs/VIDEO_WALKTHROUGH_SCRIPT.md",
+        ]
+    )
+    missing_demo_terms = [term for term in DEMO_REQUIRED_TERMS if term not in demo_text]
+    if missing_demo_terms:
+        fail("Missing required demo guardrails: " + ", ".join(missing_demo_terms))
+
     for path in CANONICAL_DOCS:
         text = read(path)
         for pattern in LEGACY_PATTERNS:
             if re.search(pattern, text):
                 fail(f"Legacy term matched {pattern!r} in {path}")
 
-    print("THOX.ai Kickstarter campaign docs validated.")
+    print("THOX.ai Kickstarter campaign docs and demos validated.")
     return 0
 
 
