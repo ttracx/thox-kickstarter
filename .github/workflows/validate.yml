@@ -1,0 +1,24 @@
+name: Validate campaign docs
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - quick-launch-thoxkey-campaign
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependency
+        run: python3 -m pip install pytest
+      - name: Run campaign validator
+        run: python3 scripts/validate_campaign.py
+      - name: Run quick-launch tests
+        run: python3 -m pytest tests/test_campaign_docs.py -q

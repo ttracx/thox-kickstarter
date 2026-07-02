@@ -1,74 +1,108 @@
 # Rewards Matrix
 
-Every tier in one table. Paste verbatim into the Kickstarter Rewards setup.
+Paste these tiers into Kickstarter Rewards. Retail prices are post-campaign MSRP. Kickstarter prices are special campaign prices.
 
-| # | Tier name | Price | Quantity cap | Items included | Estimated delivery | Ships to |
-|---|---|---|---|---|---|---|
-| 1 | Early-bird ThoxClip | $39 | 500 | 1 × ThoxClip, magnetic charger, lanyard | Jan 2027 | Worldwide |
-| 2 | ThoxClip | $49 | unlimited | 1 × ThoxClip, magnetic charger, lanyard | Jan 2027 | Worldwide |
-| 3 | ThoxMini | $69 | unlimited | 1 × ThoxMini, USB-C cable, microSD card preflashed with ThoxOS Mini | Feb 2027 | Worldwide |
-| 4 | ThoxAir | $79 | unlimited | 1 × ThoxAir, USB-C cable, microSD card, MagStack Air firmware | Feb 2027 | Worldwide |
-| 5 | Maker Kit | $109 | unlimited | 1 × ThoxMini + 1 × ThoxClip + dev docs access | Feb 2027 | Worldwide |
-| 6 | Air Kit | $119 | unlimited | 1 × ThoxAir + 1 × ThoxClip + dev docs access | Feb 2027 | Worldwide |
-| 7 | Cluster Pack | $349 | unlimited | 4 × ThoxAir + magnetic stack base + USB-C 5V/4A hub | Mar 2027 | Worldwide |
-| 8 | ThoxNova | $499 | unlimited | 1 × ThoxNova desktop unit + power brick + dock for 1 × ThoxClip | Apr 2027 | Worldwide |
-| 9 | Family Bundle | $599 | unlimited | 1 × ThoxNova + 1 × ThoxMini + 1 × ThoxAir + 1 × ThoxClip + dev docs | May 2027 | Worldwide |
-| 10 | Founders Pack | $1,299 | **100** | Family Bundle + serial-numbered enclosure + name in firmware boot banner + lifetime updates | May 2027 | Worldwide |
+## Retail to Kickstarter pricing
 
-## Add-ons (configured after main tiers)
+| Device | Retail price | Kickstarter special | Early-bird price | Early-bird cap | Savings vs retail |
+|---|---:|---:|---:|---:|---:|
+| ThoxKey | $39.99 | $34 | $24 | 500 | up to 40% |
+| ThoxMini Air | $99 | $79 | $69 | 350 | up to 30% |
+| ThoxMini | $199 | $169 | $149 | 300 | up to 25% |
+| ThoxClip | $399 | $329 | $299 | 200 | up to 25% |
+
+## Main reward tiers
+
+| # | Tier name | Pledge | Quantity cap | Items included | Estimated delivery | Ships to |
+|---:|---|---:|---:|---|---|---|
+| 1 | THOX.ai Supporter | $5 | Unlimited | Backer updates, backer wall, digital wallpaper pack | October 2026 | Digital |
+| 2 | Early-bird ThoxKey | $24 | 500 | 1 ThoxKey USB device | January 2027 | Worldwide |
+| 3 | ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey USB device | January 2027 | Worldwide |
+| 4 | Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air, USB-C cable, quick-start card | February 2027 | Worldwide |
+| 5 | ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air, USB-C cable, quick-start card | February 2027 | Worldwide |
+| 6 | Early-bird ThoxMini | $149 | 300 | 1 ThoxMini, USB-C power cable, quick-start card | March 2027 | Worldwide |
+| 7 | ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini, USB-C power cable, quick-start card | March 2027 | Worldwide |
+| 8 | Early-bird ThoxClip | $299 | 200 | 1 ThoxClip, charging cable, clip mount, quick-start card | April 2027 | Worldwide |
+| 9 | ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip, charging cable, clip mount, quick-start card | April 2027 | Worldwide |
+| 10 | THOX Starter Kit | $99 | Unlimited | 1 ThoxKey + 1 ThoxMini Air | February 2027 | Worldwide |
+| 11 | THOX Developer Kit | $189 | Unlimited | 1 ThoxKey + 1 ThoxMini | March 2027 | Worldwide |
+| 12 | THOX Wearable Pro Kit | $349 | Unlimited | 1 ThoxKey + 1 ThoxClip | April 2027 | Worldwide |
+| 13 | THOX Complete Founder Kit | $549 | 100 | 1 ThoxKey + 1 ThoxMini Air + 1 ThoxMini + 1 ThoxClip + founder serial | May 2027 | Worldwide |
+
+## Add-ons
 
 | Add-on | Price | Eligibility | Estimated delivery |
-|---|---|---|---|
-| ThoxClip add-on | $39 | Requires base pledge of Maker Kit, Air Kit, ThoxNova, or Family Bundle | Jan 2027 |
-| Magnetic stack base | $24 | Any pledge that includes a ThoxAir | Mar 2027 |
-| Extra USB-C 5V/4A power supply | $19 | Any pledge | Feb 2027 |
-| Spare microSD preflashed with ThoxOS Mini | $14 | Any pledge that includes a ThoxMini or ThoxAir | Feb 2027 |
-| Extended warranty (2 years) | $29 | Any pledge | Same as base reward |
+|---|---:|---|---|
+| Extra ThoxKey | $29 | Any physical reward pledge | January 2027 |
+| Extra ThoxMini Air | $74 | Any physical reward pledge | February 2027 |
+| Extra ThoxMini | $159 | Any physical reward pledge | March 2027 |
+| Extra ThoxClip charging cable | $19 | Any ThoxClip pledge | April 2027 |
+| Extended warranty reserve | $29 | Any physical reward pledge | Same as base reward |
 
-## Shipping (per-region surcharges)
+## Shipping estimate placeholders
 
-Shipping is calculated post-campaign via BackerKit. Estimates included on the page:
+Final shipping should be collected in the pledge manager after campaign close. Use these estimates on the campaign page so backers understand likely ranges before pledging.
 
-| Region | ThoxClip | ThoxMini / ThoxAir | Cluster Pack / Nova / Family / Founders |
-|---|---|---|---|
-| US lower 48 | Free | Free | Free |
-| US: AK / HI / PR | $9 | $15 | $39 |
-| Canada | $12 | $19 | $49 |
-| EU (DDP from Netherlands hub) | $18 | $25 | $59 |
-| UK (DDP) | $19 | $26 | $62 |
-| Australia / New Zealand | $25 | $35 | $89 |
-| Rest of world | $29 | $42 | $99 |
+| Region | ThoxKey | ThoxMini Air / ThoxMini | ThoxClip | Bundles |
+|---|---:|---:|---:|---:|
+| United States lower 48 | $5 | $9 | $12 | $14 to $24 |
+| Alaska, Hawaii, Puerto Rico | $9 | $15 | $19 | $24 to $39 |
+| Canada | $12 | $19 | $24 | $29 to $49 |
+| United Kingdom | $15 | $25 | $29 | $39 to $59 |
+| European Union | $15 | $25 | $29 | $39 to $59 |
+| Australia / New Zealand | $19 | $35 | $39 | $49 to $79 |
+| Rest of world | $24 | $42 | $49 | $59 to $99 |
 
-VAT is collected at order survey time for EU + UK destinations via BackerKit.
+## Paste-ready reward copy
 
-## Tier copy (Kickstarter description fields, paste verbatim)
+### THOX.ai Supporter
 
-### #1. Early-bird ThoxClip
-`The wearable that opens the door for the rest of the THOX family. Magnetic clip, dual mics, 6-axis IMU, BLE 5.3, 12-hour battery. Wake-word, tap classifier, and fall-detect run on the device; everything else is routed to whichever THOX node you pair it with. Only 500 of these at $39. After that, ThoxClip is $49.`
+`Support the launch of THOX.ai private AI hardware. You get campaign updates, your name on the digital backer wall, and the THOX.ai wallpaper pack.`
 
-### #2. ThoxClip
-`Same hardware as the early-bird ThoxClip. The magnetic clip that pairs with any THOX node over BLE.`
+### Early-bird ThoxKey
 
-### #3. ThoxMini
-`The cheapest THOX node. Pocketable Milk-V Duo, sub-1W RISC-V, boots ThoxOS Mini in under 3 seconds. Honest about what 64 MB can and cannot do.`
+`The fastest way into THOX.ai. ThoxKey is the USB device for your private AI identity, encrypted launcher, recovery profile, and portable configuration. Limited to 500 early backers at $24.`
 
-### #4. ThoxAir
-`The wireless node. Pi Zero W class, magnetic stack interconnects, MagStack Air firmware preinstalled. Joins a cluster the moment it sees one.`
+### ThoxKey Kickstarter Special
 
-### #5. Maker Kit
-`Your THOX starter: a ThoxMini node plus a ThoxClip. Same lifetime firmware updates as every other tier. Dev docs access included.`
+`ThoxKey is the USB device that lets you carry your THOX setup between trusted machines. It is the simple, affordable entry point to private AI hardware you own.`
 
-### #6. Air Kit
-`Your wireless THOX starter: a ThoxAir node plus a ThoxClip. Dev docs access included.`
+### Early-bird ThoxMini Air
 
-### #7. Cluster Pack
-`Four ThoxAir boards plus the magnetic stack base and a USB-C 5V/4A hub. The 4-node stack runs a sub-1B model across all four boards via llama.cpp --rpc layer pipelining.`
+`ThoxMini Air is the low-cost wireless companion for THOX.ai workflows. It connects nearby devices, routes lightweight commands, and helps keep your private AI workspace local-first. Limited to 350 early backers at $69.`
 
-### #8. ThoxNova
-`The desktop hub. Intel N100, 16 GB DDR5, 256 GB NVMe, passive cooling. Hosts the LLM locally with llama-server-sycl on the Intel iGPU. Built-in dock for one ThoxClip.`
+### ThoxMini Air Kickstarter Special
 
-### #9. Family Bundle
-`One of each: ThoxNova + ThoxMini + ThoxAir + ThoxClip. The complete THOX experience in one shipment.`
+`The sub-$100 THOX wireless companion. ThoxMini Air gives your workspace a lightweight edge node for local-first routing and everyday AI workflow support.`
 
-### #10. Founders Pack
-`Limited to 100 backers. Includes the Family Bundle, a serial-numbered enclosure with your number engraved on the bottom, your name baked into the firmware boot banner of all four devices, and lifetime firmware updates with first-look access to every future THOX device.`
+### Early-bird ThoxMini
+
+`ThoxMini is the compact local compute node for your desk, lab, or field kit. Use it for local services, lightweight agents, encrypted storage, and private automations. Limited to 300 early backers at $149.`
+
+### ThoxMini Kickstarter Special
+
+`A practical mini box for user-owned AI workflows. ThoxMini is built for local-first services and automation without making claims better suited to a full workstation.`
+
+### Early-bird ThoxClip
+
+`ThoxClip is the premium clip-on private AI command and capture device. Designed for quick voice capture, workflow triggers, field notes, and secure handoff into your THOX environment. Limited to 200 early backers at $299.`
+
+### ThoxClip Kickstarter Special
+
+`The premium wearable control point for THOX.ai. Capture thoughts, trigger workflows, and route private notes into your user-owned AI stack.`
+
+### THOX Starter Kit
+
+`Start with the USB identity device and the low-cost wireless companion: 1 ThoxKey + 1 ThoxMini Air. Best for first-time backers who want the simplest THOX setup.`
+
+### THOX Developer Kit
+
+`Build with the core local-first setup: 1 ThoxKey + 1 ThoxMini. Best for developers, researchers, and operators who want a compact THOX node for real experiments.`
+
+### THOX Wearable Pro Kit
+
+`The premium capture workflow: 1 ThoxKey + 1 ThoxClip. Best for founders, consultants, clinicians, attorneys, researchers, and field teams who need private capture and secure handoff.`
+
+### THOX Complete Founder Kit
+
+`One of each campaign device: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip, plus founder serial treatment. Limited to 100 backers. This is the complete THOX.ai quick-launch hardware set.`
