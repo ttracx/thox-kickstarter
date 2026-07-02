@@ -12,9 +12,22 @@
 
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
-This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and the repository-standard planning docs used across THOX.ai projects.
+This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and repository-standard planning docs.
 
 > Campaign promise: private AI hardware for your desk, pocket, and workflow. Your AI. Your Data. Your Rules.
+
+---
+
+## Canonical launch device lineup
+
+Only these four devices are in scope for the Kickstarter campaign and demos:
+
+1. **ThoxKey**
+2. **ThoxMini**
+3. **ThoxMini Air**
+4. **ThoxClip**
+
+All campaign copy, demo scripts, video walkthroughs, reward tiers, and validation checks must stay aligned to this four-device lineup.
 
 ---
 
@@ -23,8 +36,8 @@ This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, 
 | Device | Retail price | Kickstarter special | Early-bird price | Early-bird cap | Savings vs retail |
 |---|---:|---:|---:|---:|---:|
 | ThoxKey | $39.99 | $34 | $24 | 500 | up to 40% |
-| ThoxMini Air | $99 | $79 | $69 | 350 | up to 30% |
 | ThoxMini | $199 | $169 | $149 | 300 | up to 25% |
+| ThoxMini Air | $99 | $79 | $69 | 350 | up to 30% |
 | ThoxClip | $399 | $329 | $299 | 200 | up to 25% |
 
 Retail pricing is the post-campaign MSRP. Kickstarter pricing is the pledge price used in the live rewards matrix. Early-bird tiers are capped to protect margin and create launch-day urgency.
@@ -118,13 +131,27 @@ pytest -q
 
 ---
 
+## Demo rule of record
+
+The demos show one integrated four-device flow:
+
+1. **ThoxKey** unlocks the private workspace and carries user-owned identity/configuration.
+2. **ThoxMini** runs compact local services, lightweight agents, encrypted storage, and private automations.
+3. **ThoxMini Air** coordinates nearby local devices as a wireless local-first companion.
+4. **ThoxClip** captures context and triggers workflows into the private THOX workspace.
+5. Heavier work routes to capable local hardware the user owns.
+
+No demo clip goes into Kickstarter until Craig Ross, CEO and Tommy Xaypanya, CTO both approve the final exported segment.
+
+---
+
 ## Privacy positioning
 
 THOX.ai should never imply that small devices run models they cannot realistically run. The campaign copy uses this rule:
 
 1. **ThoxKey** stores and carries the user-owned private AI identity, configuration, encrypted vault, and portable THOX launcher.
-2. **ThoxMini Air** is the low-cost wireless edge companion and routing node.
-3. **ThoxMini** is the local mini compute node for desk and field use.
+2. **ThoxMini** is the local mini compute node for desk and field use.
+3. **ThoxMini Air** is the low-cost wireless edge companion and routing node.
 4. **ThoxClip** is the premium wearable / clip-on private AI capture and control device.
 5. Larger model workloads are routed to capable local THOX nodes or user-owned computers.
 
