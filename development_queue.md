@@ -13,13 +13,14 @@ Scores use a 1 to 10 scale.
 | 1 | Lock rewards and Kickstarter pricing | 10 | 10 | 10 | 9 | 9.9 | Craig |
 | 2 | Paste-ready Kickstarter Story page | 10 | 9 | 10 | 10 | 9.7 | Craig |
 | 3 | Campaign validation script and tests | 8 | 10 | 10 | 8 | 9.0 | Tommy |
-| 4 | Hero video script and scene prompts | 9 | 8 | 8 | 10 | 8.6 | Producer |
-| 5 | Founder walkthrough script | 8 | 9 | 9 | 9 | 8.6 | Tommy + Craig |
-| 6 | Hero graphics and motion clips | 9 | 8 | 7 | 9 | 8.3 | Producer |
-| 7 | Kickstarter draft setup | 10 | 7 | 7 | 9 | 8.1 | Launch operator |
-| 8 | Launch-day email and social copy | 8 | 9 | 8 | 8 | 8.3 | Launch operator |
-| 9 | Backer FAQ and reply snippets | 8 | 9 | 8 | 8 | 8.3 | Craig |
-| 10 | Pledge manager field map | 7 | 7 | 6 | 8 | 6.9 | Ops |
+| 4 | Finalize device demos and acceptance gates | 9 | 9 | 9 | 10 | 9.1 | Tommy + Craig |
+| 5 | Hero video script and scene prompts | 9 | 8 | 8 | 10 | 8.6 | Producer |
+| 6 | Founder walkthrough script | 8 | 9 | 9 | 9 | 8.6 | Tommy + Craig |
+| 7 | Hero graphics and motion clips | 9 | 8 | 7 | 9 | 8.3 | Producer |
+| 8 | Kickstarter draft setup | 10 | 7 | 7 | 9 | 8.1 | Launch operator |
+| 9 | Launch-day email and social copy | 8 | 9 | 8 | 8 | 8.3 | Launch operator |
+| 10 | Backer FAQ and reply snippets | 8 | 9 | 8 | 8 | 8.3 | Craig |
+| 11 | Pledge manager field map | 7 | 7 | 6 | 8 | 6.9 | Ops |
 
 ## Current sprint
 
@@ -30,6 +31,7 @@ Scores use a 1 to 10 scale.
 | [x] | Add video scene prompts | Graphic prompt and image-to-video prompt exist for every hero scene |
 | [x] | Add founder walkthrough script | Craig CEO and Tommy CTO script ready |
 | [x] | Add validation test path | Script and pytest file included |
+| [x] | Finalize device demos | Per-device scripts, shot flow, fallback plans, and acceptance gates exist in `demo/` |
 | [ ] | Produce actual final images | Use `docs/VIDEO_SCENE_PROMPTS.md` |
-| [ ] | Record founder walkthrough | Use `docs/VIDEO_WALKTHROUGH_SCRIPT.md` |
+| [ ] | Record founder walkthrough and product demos | Use `demo/RECORDING_RUNBOOK.md` and `docs/VIDEO_WALKTHROUGH_SCRIPT.md` |
 | [ ] | Paste campaign into Kickstarter | Use `docs/SETUP_GUIDE.md` |
