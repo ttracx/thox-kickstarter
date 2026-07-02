@@ -13,6 +13,7 @@ All notable campaign-source changes are tracked here.
 - Hero video script.
 - Graphic-generation and image-to-video prompts.
 - Craig Ross CEO and Tommy Xaypanya CTO walkthrough script.
+- Finalized device demo package: per-device demo flows, recording runbook, acceptance checklist, and demo shot-list CSV.
 - Repository-standard planning docs: `ecosystem_map.md`, `mvp_catalog.md`, `development_queue.md`.
 - Campaign validation script and pytest wrapper.
 - Reward tier CSV example.
@@ -22,3 +23,5 @@ All notable campaign-source changes are tracked here.
 
 - Replaced older campaign positioning with updated quick-launch product lineup.
 - Reframed device claims around local-first, privacy-first, and honest capability boundaries.
+- Wired the founder walkthrough script to the finalized device demos.
+- Extended validation to check demo guardrails and demo acceptance files.
