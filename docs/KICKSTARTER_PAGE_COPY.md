@@ -161,16 +161,16 @@ We will not present renders or generated images as final production units.
 
 | Milestone | Target |
 |---|---|
-| Campaign launch | August 12, 2026 |
-| Campaign close | September 11, 2026 |
-| Design validation and supplier lock | October 2026 |
-| Firmware/security validation | November 2026 |
-| Pilot production | December 2026 |
-| ThoxKey shipping starts | January 2027 |
-| ThoxMini Air shipping starts | February 2027 |
-| ThoxMini shipping starts | March 2027 |
-| ThoxClip shipping starts | April 2027 |
-| Complete Founder Kits ship | May 2027 |
+| Campaign launch | July 7, 2026 |
+| Campaign close | August 6, 2026 |
+| Design validation and supplier lock | September 2026 |
+| Firmware/security validation | Q3 2026 |
+| Pilot production | Q3 2026 |
+| ThoxKey shipping starts | Q3/Q4 2026 |
+| ThoxMini Air shipping starts | Q3/Q4 2026 |
+| ThoxMini shipping starts | Q3/Q4 2026 |
+| ThoxClip shipping starts | Q1 2027 |
+| Complete Founder Kits ship | Q1 2027 |
 
 ## Risks and challenges
 
