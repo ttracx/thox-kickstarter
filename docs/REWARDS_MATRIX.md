@@ -101,7 +101,7 @@ Final shipping should be collected in the pledge manager after campaign close. U
 
 ### THOX Wearable Pro Kit
 
-`The premium capture workflow: 1 ThoxKey + 1 ThoxClip. Best for founders, consultants, clinicians, attorneys, researchers, and field teams who need private capture and secure handoff.`
+`The premium capture workflow: 1 ThoxKey + 1 ThoxClip. Best for founders, consultants, attorneys, researchers, field teams, and privacy-first operators who need private capture and secure handoff.`
 
 ### THOX Complete Founder Kit
 
