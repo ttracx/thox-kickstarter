@@ -9,6 +9,9 @@ Purpose: a 6 to 8 minute walkthrough featuring **Craig Ross, CEO of THOX.ai** an
 - Tommy handles architecture and demo details.
 - Keep the tone direct, founder-led, and honest.
 - Do not overclaim device capability.
+- Use the finalized demo flows in `../demo/DEVICE_DEMOS.md`.
+- Use the recording runbook in `../demo/RECORDING_RUNBOOK.md`.
+- Use the acceptance checklist in `../demo/DEMO_ACCEPTANCE_CHECKLIST.md` before publishing.
 
 ## Setup
 
@@ -17,7 +20,7 @@ Purpose: a 6 to 8 minute walkthrough featuring **Craig Ross, CEO of THOX.ai** an
 | Camera | 1080p or 4K, eye-level |
 | Audio | Lavalier or USB dynamic mic |
 | Background | Dark desk, THOX devices visible |
-| Screen share | Optional local dashboard or architecture slide |
+| Screen share | Local dashboard or topology graphic from the demo package |
 | Runtime | 6 to 8 minutes |
 | Captions | Required |
 
@@ -35,37 +38,47 @@ Purpose: a 6 to 8 minute walkthrough featuring **Craig Ross, CEO of THOX.ai** an
 
 **Tommy:** I am Tommy Xaypanya, CTO of THOX.ai. The architecture is local-first. ThoxKey is your portable private AI identity and launcher. ThoxMini Air is the wireless companion. ThoxMini is the compact compute node. ThoxClip captures context and triggers workflows. When a task is too heavy for a small device, we route it to capable local hardware the user owns.
 
-### 2:00-2:45 — ThoxKey walkthrough
+### 2:00-2:45 — ThoxKey demo
 
-**Tommy:** ThoxKey is the simplest entry point. It is a USB device with a clear job: carry your THOX identity, encrypted configuration, launcher settings, and recovery profile. It helps you move your private AI setup between trusted machines without rebuilding everything from scratch.
+[SHOW: `demo/DEVICE_DEMOS.md` Demo 1. Insert ThoxKey. Show local workspace unlock.]
+
+**Tommy:** ThoxKey is the simplest entry point. It is a USB device with a clear job: carry your THOX identity, encrypted configuration, launcher settings, and recovery profile. In the demo, I plug it into a trusted machine and the local workspace opens. The important boundary is that ThoxKey is not a standalone LLM computer. It carries and unlocks the workflow.
 
 **Craig:** Retail for ThoxKey is $39.99. Kickstarter special pricing is $34, with early-bird pricing from $24.
 
-### 2:45-3:30 — ThoxMini Air walkthrough
+### 2:45-3:30 — ThoxMini Air demo
 
-**Tommy:** ThoxMini Air is the low-cost wireless companion. It is for local routing, lightweight coordination, and simple edge workflows. It keeps the THOX experience accessible below $100 retail while staying honest about what a small wireless device should do.
+[SHOW: `demo/DEVICE_DEMOS.md` Demo 2. Show local wireless companion topology.]
+
+**Tommy:** ThoxMini Air is the low-cost wireless companion. It is for local routing, lightweight coordination, and simple edge workflows. We are not positioning it as a high-end inference workstation. Its role is to help nearby THOX devices coordinate local-first workflows.
 
 **Craig:** Retail for ThoxMini Air is $99. Kickstarter special pricing is $79, with early-bird pricing from $69.
 
-### 3:30-4:20 — ThoxMini walkthrough
+### 3:30-4:20 — ThoxMini demo
 
-**Tommy:** ThoxMini is the compact local compute node. This is where we can run local services, lightweight agents, encrypted storage, and private automations. It is for people who want a practical local-first box for a desk, lab, or field workflow.
+[SHOW: `demo/DEVICE_DEMOS.md` Demo 3. Show local services dashboard.]
+
+**Tommy:** ThoxMini is the compact local compute node. This is where we show local services, lightweight agents, encrypted storage, and private automations. The honest boundary is simple: this is not a promise that every large model runs on tiny hardware. ThoxMini is for practical local-first services and workflows, and heavier work routes to capable local machines when needed.
 
 **Craig:** Retail for ThoxMini is $199. Kickstarter special pricing is $169, with early-bird pricing from $149.
 
-### 4:20-5:15 — ThoxClip walkthrough
+### 4:20-5:15 — ThoxClip demo
 
-**Tommy:** ThoxClip is the premium clip-on command and capture device. The workflow is simple: capture a thought, trigger an action, and route that context back into your private THOX workspace. It is not a medical or emergency product. It is a private AI workflow device.
+[SHOW: `demo/DEVICE_DEMOS.md` Demo 4. Show tap/capture action routing into local workspace.]
+
+**Craig:** ThoxClip is the premium command and capture device. It is for quick notes, workflow triggers, and routing context into your private THOX workspace. It is not a medical device, it is not an emergency device, and it is not surveillance hardware. It is a private AI workflow tool for people who need capture and command away from the desk.
 
 **Craig:** Retail for ThoxClip is $399. Kickstarter special pricing is $329, with early-bird pricing from $299.
 
-### 5:15-6:15 — Demo moment
+### 5:15-6:15 — Integrated ecosystem demo
 
-**Tommy:** Here is the flow. I insert ThoxKey and unlock a THOX workspace on a trusted machine. ThoxMini Air appears as a nearby wireless companion. ThoxMini runs the local services. ThoxClip captures a note and sends it into the local workflow. The system keeps the workflow local-first and routes heavier work only where the user chooses.
+[SHOW: `demo/DEVICE_DEMOS.md` Integrated ecosystem demo.]
 
-[SHOW: screen recording or simple topology graphic.]
+**Tommy:** Here is the flow. ThoxKey unlocks the private workspace. ThoxMini Air appears as the wireless companion. ThoxMini runs the local services. ThoxClip captures a note and sends it into the local workflow. The system keeps the workflow local-first and routes heavier work only to capable local hardware the user owns.
 
 ### 6:15-7:00 — Kickstarter plan
+
+[SHOW: pricing card from `docs/VIDEO_SCENE_PROMPTS.md` Scene 08.]
 
 **Craig:** Kickstarter funding helps us move through the first coordinated production run, firmware hardening, validation, packaging, and fulfillment. We are using special Kickstarter pricing to reward early backers and to get the first THOX.ai hardware family into the hands of people who care about private AI ownership.
 
@@ -77,14 +90,14 @@ Purpose: a 6 to 8 minute walkthrough featuring **Craig Ross, CEO of THOX.ai** an
 
 ## B-roll inserts
 
-| Insert | Use |
-|---|---|
-| ThoxKey inserted into laptop | During ThoxKey section |
-| ThoxMini Air wireless rings graphic | During ThoxMini Air section |
-| ThoxMini dashboard | During ThoxMini section |
-| ThoxClip capture animation | During ThoxClip section |
-| Four-device topology | Demo moment |
-| Pricing card | Kickstarter plan |
+| Insert | Use | Source |
+|---|---|---|
+| ThoxKey inserted into laptop | During ThoxKey demo | `demo/DEVICE_DEMOS.md` Demo 1 |
+| ThoxMini Air wireless rings graphic | During ThoxMini Air demo | `demo/DEVICE_DEMOS.md` Demo 2 |
+| ThoxMini dashboard | During ThoxMini demo | `demo/DEVICE_DEMOS.md` Demo 3 |
+| ThoxClip capture animation | During ThoxClip demo | `demo/DEVICE_DEMOS.md` Demo 4 |
+| Four-device topology | Integrated ecosystem demo | `demo/DEVICE_DEMOS.md` integrated demo |
+| Pricing card | Kickstarter plan | `docs/VIDEO_SCENE_PROMPTS.md` Scene 08 |
 
 ## Caption snippets
 
@@ -106,3 +119,4 @@ Purpose: a 6 to 8 minute walkthrough featuring **Craig Ross, CEO of THOX.ai** an
 - [ ] No overclaim that ThoxMini Air is high-end compute hardware.
 - [ ] ThoxClip is described as workflow hardware, not regulated-use hardware.
 - [ ] Cloud connectors are optional, not required.
+- [ ] Demo clips pass `../demo/DEMO_ACCEPTANCE_CHECKLIST.md`.
