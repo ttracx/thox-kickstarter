@@ -12,7 +12,7 @@
 
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
-This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, and the repository-standard planning docs used across THOX.ai projects.
+This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and the repository-standard planning docs used across THOX.ai projects.
 
 > Campaign promise: private AI hardware for your desk, pocket, and workflow. Your AI. Your Data. Your Rules.
 
@@ -62,11 +62,15 @@ thox-kickstarter-quick-launch/
 ├── tests/
 │   └── test_campaign_docs.py
 ├── examples/
-│   └── reward-tier-import.csv
+│   ├── reward-tier-import.csv
+│   └── demo-shot-list.csv
 ├── agent_tasks/
 │   └── launch-operator.md
 └── demo/
-    └── README.md
+    ├── README.md
+    ├── DEVICE_DEMOS.md
+    ├── RECORDING_RUNBOOK.md
+    └── DEMO_ACCEPTANCE_CHECKLIST.md
 ```
 
 ---
@@ -78,6 +82,8 @@ thox-kickstarter-quick-launch/
 | Copy the Kickstarter Story page | [docs/KICKSTARTER_PAGE_COPY.md](docs/KICKSTARTER_PAGE_COPY.md) |
 | Configure Kickstarter rewards | [docs/REWARDS_MATRIX.md](docs/REWARDS_MATRIX.md) |
 | Run the campaign day by day | [docs/QUICK_LAUNCH_RUNBOOK.md](docs/QUICK_LAUNCH_RUNBOOK.md) |
+| Finalize and record device demos | [demo/DEVICE_DEMOS.md](demo/DEVICE_DEMOS.md) + [demo/RECORDING_RUNBOOK.md](demo/RECORDING_RUNBOOK.md) |
+| Approve Kickstarter-ready demo clips | [demo/DEMO_ACCEPTANCE_CHECKLIST.md](demo/DEMO_ACCEPTANCE_CHECKLIST.md) |
 | Produce the hero video | [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md) + [docs/VIDEO_PRODUCTION.md](docs/VIDEO_PRODUCTION.md) |
 | Generate graphics and image-to-video clips | [docs/VIDEO_SCENE_PROMPTS.md](docs/VIDEO_SCENE_PROMPTS.md) |
 | Record Tommy + Craig walkthrough | [docs/VIDEO_WALKTHROUGH_SCRIPT.md](docs/VIDEO_WALKTHROUGH_SCRIPT.md) |
@@ -102,6 +108,7 @@ The validator checks for:
 - outdated device names from older campaign drafts
 - required founder roles: Tommy Xaypanya, CTO and Craig Ross, CEO
 - required documentation files
+- required device demo guardrails and acceptance criteria
 
 For CI usage:
 
@@ -146,7 +153,7 @@ This repo follows the THOX.ai quick-launch repository standard:
 - changelog
 - environment example
 - scripts, tests, examples, agent tasks, and demo notes
-- CI-style validation for campaign copy consistency
+- CI-style validation for campaign copy, device demo, and acceptance criteria consistency
 
 ---
 
