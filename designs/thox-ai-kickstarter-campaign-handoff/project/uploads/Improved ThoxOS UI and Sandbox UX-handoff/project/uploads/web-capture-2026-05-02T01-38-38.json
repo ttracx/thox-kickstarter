@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cap_monoanch_44a2g7",
+    "selector": "div",
+    "label": "THOXOS v6.0.0 COMPLETE SYSTEM DEMO [00] …",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:38:35.825Z",
+    "innerText": "THOXOS v6.0.0 COMPLETE SYSTEM DEMO\n[00]\nThoxOS v6.0 — kernel 5.15.148-thoxos-rt [PREEMPT_RT]\n[01]\nNVIDIA Jetson Orin NX 16GB — CUDA 12.3 · 1024 CUDA cores · 32 Tensor cores\n[02]\ncuQuantum SDK 24.03 — cuStateVec · cuTensorNet · cuDensityMat\n[03]\nTensorRT-LLM v0.9 — FP8 quantization engine loaded\n[04]\nClaude claude-sonnet-4-20250514 — model mapped to VRAM [OK]\n[05]\nMagStack™ pogo-connector — 4/4 nodes online · NFC ST25DV64K\n[06]\nRaft consensus — quorum 3/4 · leader node-0 · term 48\n[07]\nTPM 2.0 (Infineon SLB9670) — attestation chain verified ✓\n[08]\nEdge AI pipeline — vision router · LLM router · quantum router\n[09]\nUMA memory bus — 16GB unified · quantum/LLM shared heap\n[10]\ngRPC gateway :50051 · Ollama :11434 · Supabase edge runtime\n[11]\nNullClaw v0.1 — autonomous agent runtime · 678KB · <2ms boot\n[12]\nLightpanda headless browser — CDP :9222 · MCP tools · 9× less RAM\n[13]\nOllama — llama3.1:8b-q4_K_M loaded · Q4 KV cache · 15-25 tok/s\n[14]\nAgent Orchestrator :8300 — 4 subagents · MCP · SQLite+vector memory [READY]\n[15]\nMesh Cognition Protocol — CfC network · Kuramoto sync · 256-byte hidden states\n[16]\nDistributed Inference — PP×TP hybrid · 4-node MagStack cluster · 14B active\n▋",
+    "outerHTML": "<div style=\"width: 100%; height: 100%; background: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-family: &quot;JetBrains Mono&quot;, monospace; overflow: hidden; padding: 0px 20px;\"><div style=\"max-width: 600px; width: 100%;\"><div style=\"color: rgb(16, 185, 129); font-size: 20px; font-weight: 800; margin-bottom: 16px; letter-spacing: 2px;\">THOX<span style=\"color: rgb(250, 250, 250);\">OS</span> <span style=\"font-size: 10px; color: rgb(63, 63, 70);\">v6.0.0 COMPLETE SYSTEM DEMO</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[00]</span><span style=\"word-break: break-word;\">ThoxOS v6.0 — kernel 5.15.148-thoxos-rt  [PREEMPT_RT]</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[01]</span><span style=\"word-break: break-word;\">NVIDIA Jetson Orin NX 16GB — CUDA 12.3 · 1024 CUDA cores · 32 Tensor cores</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[02]</span><span style=\"word-break: break-word;\">cuQuantum SDK 24.03 — cuStateVec · cuTensorNet · cuDensityMat</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[03]</span><span style=\"word-break: break-word;\">TensorRT-LLM v0.9 — FP8 quantization engine loaded</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[04]</span><span style=\"word-break: break-word;\">Claude claude-sonnet-4-20250514 — model mapped to VRAM [OK]</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[05]</span><span style=\"word-break: break-word;\">MagStack™ pogo-connector — 4/4 nodes online · NFC ST25DV64K</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[06]</span><span style=\"word-break: break-word;\">Raft consensus — quorum 3/4 · leader node-0 · term 48</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[07]</span><span style=\"word-break: break-word;\">TPM 2.0 (Infineon SLB9670) — attestation chain verified ✓</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[08]</span><span style=\"word-break: break-word;\">Edge AI pipeline — vision router · LLM router · quantum router</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[09]</span><span style=\"word-break: break-word;\">UMA memory bus — 16GB unified · quantum/LLM shared heap</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[10]</span><span style=\"word-break: break-word;\">gRPC gateway :50051 · Ollama :11434 · Supabase edge runtime</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[11]</span><span style=\"word-break: break-word;\">NullClaw v0.1 — autonomous agent runtime · 678KB · &lt;2ms boot</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[12]</span><span style=\"word-break: break-word;\">Lightpanda headless browser — CDP :9222 · MCP tools · 9× less RAM</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[13]</span><span style=\"word-break: break-word;\">Ollama — llama3.1:8b-q4_K_M loaded · Q4 KV cache · 15-25 tok/s</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[14]</span><span style=\"word-break: break-word;\">Agent Orchestrator :8300 — 4 subagents · MCP · SQLite+vector memory [READY]</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[15]</span><span style=\"word-break: break-word;\">Mesh Cognition Protocol — CfC network · Kuramoto sync · 256-byte hidden states</span></div><div style=\"font-size: 10px; color: rgb(16, 185, 129); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[16]</span><span style=\"word-break: break-word;\">Distributed Inference — PP×TP hybrid · 4-node MagStack cluster · 14B active</span></div><span style=\"color: rgb(16, 185, 129); font-size: 10px;\">▋</span><div style=\"margin-top: 14px; height: 2px; background: rgb(31, 41, 55); border-radius: 1px; overflow: hidden;\"><div style=\"height: 100%; width: 89.4737%; background: linear-gradient(90deg, rgb(5, 150, 105), rgb(52, 211, 153)); transition: width 0.13s;\"></div></div></div></div>",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 2179,
+      "height": 1270
+    },
+    "computedStyles": {
+      "display": "flex",
+      "width": "2179px",
+      "height": "1270px",
+      "padding": "0px 20px",
+      "border": "0px none rgb(255, 255, 255)",
+      "box-sizing": "border-box",
+      "background": "rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "justify-content": "center",
+      "align-items": "center",
+      "overflow": "hidden",
+      "transition": "all"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  }
+]

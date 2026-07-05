@@ -1,0 +1,27 @@
+{
+  "$theme": "meshstack",
+  "$extends": "base",
+  "color": {
+    "bg": {
+      "canvas":   { "$type": "color", "$value": "{color.core.mesh.canvas}" },
+      "surface":  { "$type": "color", "$value": "{color.core.mesh.card}" },
+      "elevated": { "$type": "color", "$value": "{color.core.mesh.cardElevated}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.core.mesh.border}" },
+      "subtle":  { "$type": "color", "$value": "{color.core.mesh.surface}" }
+    },
+    "text": {
+      "secondary": { "$type": "color", "$value": "{color.core.mesh.textSecondary}" },
+      "muted":     { "$type": "color", "$value": "{color.core.mesh.textMuted}" }
+    },
+    "brand": {
+      "soft": { "$type": "color", "$value": "{color.core.mesh.brandSoft}" }
+    },
+    "state": {
+      "warning":  { "$type": "color", "$value": "{color.core.mesh.warning}" },
+      "info":     { "$type": "color", "$value": "{color.core.mesh.info}" },
+      "disabled": { "$type": "color", "$value": "{color.core.mesh.disabled}" }
+    }
+  }
+}

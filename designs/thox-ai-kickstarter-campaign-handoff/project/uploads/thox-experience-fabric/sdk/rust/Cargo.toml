@@ -1,0 +1,23 @@
+[package]
+name = "txf"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "THOX Experience Fabric Rust SDK: convenience facade re-exporting every txf-* crate."
+
+[dependencies]
+txf-core = { path = "../../packages/txf-core" }
+txf-design-tokens = { path = "../../packages/txf-design-tokens" }
+txf-components = { path = "../../packages/txf-components" }
+txf-agent-framework = { path = "../../packages/txf-agent-framework" }
+txf-memory = { path = "../../packages/txf-memory" }
+txf-navigation = { path = "../../packages/txf-navigation" }
+txf-device-fabric = { path = "../../packages/txf-device-fabric" }
+txf-projects = { path = "../../packages/txf-projects" }
+txf-notifications = { path = "../../packages/txf-notifications" }
+txf-voice = { path = "../../packages/txf-voice" }
+txf-compliance = { path = "../../packages/txf-compliance" }
+
+[lints]
+workspace = true

@@ -1,0 +1,18 @@
+{
+  "name": "@thox/txf-react",
+  "version": "0.1.0",
+  "private": true,
+  "description": "THOX Experience Fabric React SDK. Implements the universal navigation, command palette, agent surface, device panel, notifications, and theme over the TXF design tokens.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "echo 'Phase 1: wire tsup'",
+    "lint": "echo 'Phase 1: wire eslint'"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "files": ["src"]
+}

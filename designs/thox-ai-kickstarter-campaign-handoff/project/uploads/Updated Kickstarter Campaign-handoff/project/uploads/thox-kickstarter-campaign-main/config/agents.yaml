@@ -1,0 +1,63 @@
+# Thox.ai campaign agent team.
+#
+# The team is a fixed DAG. Each agent declares the agents it depends on; the
+# orchestrator computes a topological order and feeds upstream outputs forward.
+# The deterministic compliance gate runs on every agent listed in `gated`.
+#
+#   campaign_manager
+#        |
+#   content_writer            <-- gated (compliance gate runs here)
+#        |
+#   compliance_guardian
+#        |
+#   +----+-----+
+#   |          |
+# social_   email_
+# scheduler  sequencer
+#   |          |
+#   +----+-----+
+#        |
+#    analytics
+
+defaults:
+  model: "claude-sonnet-4-6"
+  max_tokens: 2048
+  temperature: 0.4
+
+# Agents whose output must pass the deterministic compliance gate.
+gated:
+  - content_writer
+
+agents:
+  - name: campaign_manager
+    role: "Owns the brief, sequencing, and the single source of truth for the campaign."
+    prompt: "campaign_manager.md"
+    depends_on: []
+
+  - name: content_writer
+    role: "Drafts all public campaign copy. Output is gated by compliance."
+    prompt: "content_writer.md"
+    depends_on: ["campaign_manager"]
+    temperature: 0.6
+
+  - name: compliance_guardian
+    role: "Reviews drafted copy against the hard guardrails and explains any blocks."
+    prompt: "compliance_guardian.md"
+    depends_on: ["content_writer"]
+    temperature: 0.1
+
+  - name: social_scheduler
+    role: "Turns cleared copy into a social media calendar."
+    prompt: "social_scheduler.md"
+    depends_on: ["compliance_guardian"]
+
+  - name: email_sequencer
+    role: "Turns cleared copy into email sequences."
+    prompt: "email_sequencer.md"
+    depends_on: ["compliance_guardian"]
+
+  - name: analytics
+    role: "Reports on the scheduled outputs and recommends next actions."
+    prompt: "analytics.md"
+    depends_on: ["social_scheduler", "email_sequencer"]
+    max_tokens: 1536

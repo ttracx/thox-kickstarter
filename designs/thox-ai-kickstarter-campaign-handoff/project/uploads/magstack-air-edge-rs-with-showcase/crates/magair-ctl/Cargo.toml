@@ -1,0 +1,17 @@
+[package]
+name = "magair-ctl"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[[bin]]
+name = "magairctl"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+magair-core = { path = "../magair-core" }
+reqwest.workspace = true
+serde_json.workspace = true

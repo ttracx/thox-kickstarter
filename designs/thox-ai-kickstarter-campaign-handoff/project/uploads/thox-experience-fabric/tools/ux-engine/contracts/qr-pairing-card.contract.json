@@ -1,0 +1,26 @@
+{
+  "id": "qr-pairing-card",
+  "name": "MS / Pairing / QRPairingCard",
+  "category": "Pairing",
+  "interactive": true,
+  "variants": ["valid", "expiring", "expired", "loading"],
+  "states": ["default", "focus", "pressed", "disabled", "loading", "error"],
+  "a11y": { "role": "group", "minTarget": "target.touch", "focusVisible": true, "labelRequired": true },
+  "tokens": {
+    "surface": "color.bg.surface",
+    "border": "color.border.default",
+    "code": "color.text.code",
+    "expiring": "color.state.warning",
+    "expired": "color.state.danger",
+    "radius": "radius.md"
+  },
+  "platforms": {
+    "web": "QRPairingCard (React)",
+    "ios": "QRPairingCard (SwiftUI)",
+    "android": "QRPairingCard (Compose)",
+    "macos": "QRPairingCard (SwiftUI)",
+    "windows": "QRPairingCard (WinUI UserControl)"
+  },
+  "journeys": ["J-002", "J-003"],
+  "readiness": "L2"
+}

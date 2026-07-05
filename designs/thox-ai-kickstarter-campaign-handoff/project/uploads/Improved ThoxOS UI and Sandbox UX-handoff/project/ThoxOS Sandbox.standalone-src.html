@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ThoxOS Sandbox — v6.1</title>
+<meta name="viewport" content="width=1280"/>
+<meta name="ext-resource-dependency" content="assets/thox-icon-green.png" data-resource-id="thoxIconGreen"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"/>
+<link rel="stylesheet" href="src/styles.css"/>
+<link rel="stylesheet" href="src/mobile.css"/>
+<link rel="stylesheet" href="src/apps2.css"/>
+<style>
+@font-face{font-family:'Xolonium';src:url('fonts/xolonium-regular.otf') format('opentype');font-weight:400}
+@font-face{font-family:'Xolonium';src:url('fonts/xolonium-bold.otf') format('opentype');font-weight:700}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+/* Standalone: rewrite string-referenced asset URLs to bundled blob URLs at runtime. */
+(function(){
+  function patch(){
+    if (!window.__resources) return;
+    document.querySelectorAll('img[src="assets/thox-icon-green.png"]').forEach(function(img){
+      img.src = window.__resources.thoxIconGreen;
+    });
+  }
+  new MutationObserver(patch).observe(document.body, {subtree:true, childList:true});
+  patch();
+})();
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#0A0F0D">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0A0F0D"/>
+    <g stroke="#10B981" stroke-width="1.2" fill="none" opacity=".55">
+      <line x1="240" y1="220" x2="520" y2="180"/>
+      <line x1="520" y1="180" x2="780" y2="260"/>
+      <line x1="780" y1="260" x2="960" y2="200"/>
+      <line x1="240" y1="220" x2="380" y2="380"/>
+      <line x1="380" y1="380" x2="600" y2="420"/>
+      <line x1="600" y1="420" x2="780" y2="260"/>
+      <line x1="600" y1="420" x2="820" y2="540"/>
+      <line x1="380" y1="380" x2="320" y2="560"/>
+      <line x1="320" y1="560" x2="560" y2="620"/>
+      <line x1="560" y1="620" x2="820" y2="540"/>
+      <line x1="820" y1="540" x2="960" y2="200"/>
+    </g>
+    <g fill="#34D399">
+      <circle cx="240" cy="220" r="6"/>
+      <circle cx="520" cy="180" r="6"/>
+      <circle cx="780" cy="260" r="6"/>
+      <circle cx="960" cy="200" r="6"/>
+      <circle cx="380" cy="380" r="6"/>
+      <circle cx="600" cy="420" r="6"/>
+      <circle cx="320" cy="560" r="6"/>
+      <circle cx="560" cy="620" r="6"/>
+      <circle cx="820" cy="540" r="6"/>
+    </g>
+    <g transform="translate(600 400)">
+      <circle r="86" fill="#0A0F0D" stroke="#34D399" stroke-width="3"/>
+      <text y="14" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="44" fill="#34D399">THOX</text>
+      <text y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#34D399" letter-spacing="3" opacity=".75">OS</text>
+    </g>
+  </svg>
+</template>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="src/icons.jsx"></script>
+<script type="text/babel" src="src/shell.jsx"></script>
+<script type="text/babel" src="src/mobile.jsx"></script>
+<script type="text/babel" src="src/apps.jsx"></script>
+<script type="text/babel" src="src/apps2.jsx"></script>
+<script type="text/babel" src="src/app.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+[package]
+name = "txf-design-tokens"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "THOX Experience Fabric design tokens: emerald-first dark surface palette, Inter + JetBrains Mono, motion + spacing scales. Multi-target emitter (CSS, JSON, Swift, Kotlin, Tailwind, Figma)."
+
+[[bin]]
+name = "txf-tokens"
+path = "src/bin/emit.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+
+[lints]
+workspace = true

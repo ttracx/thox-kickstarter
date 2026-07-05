@@ -1,0 +1,20 @@
+{
+  "name": "thox_air_sensor_anomaly_tiny",
+  "version": "1.0.0",
+  "feature_names": [
+    "cpu_temp_c",
+    "load_1m",
+    "battery_drop_rate"
+  ],
+  "mean": [
+    48.0,
+    0.45,
+    0.05
+  ],
+  "std": [
+    8.0,
+    0.35,
+    0.04
+  ],
+  "threshold": 2.25
+}

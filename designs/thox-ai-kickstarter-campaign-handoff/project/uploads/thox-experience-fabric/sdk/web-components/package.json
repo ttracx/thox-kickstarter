@@ -1,0 +1,9 @@
+{
+  "name": "@thox/txf-web-components",
+  "version": "0.1.0",
+  "private": true,
+  "description": "THOX Experience Fabric framework-free Web Components - Phase 0 scaffold.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/index.js"
+}

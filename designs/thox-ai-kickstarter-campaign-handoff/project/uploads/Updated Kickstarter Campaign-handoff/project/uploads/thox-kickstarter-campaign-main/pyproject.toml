@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thox-campaign"
+version = "0.1.0"
+description = "Campaign operations layer for the Thox.ai Founder Reservation and Kickstarter campaigns."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [
+    { name = "Thox.ai LLC" },
+]
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+live = [
+    # Installed only for `cli.py run --live`. The Anthropic SDK is imported
+    # lazily so it is never required for tests or the mock pipeline.
+    "anthropic>=0.39.0",
+]
+
+[project.scripts]
+thox-campaign = "thox_campaign.cli:main"
+
+[tool.setuptools]
+packages = ["thox_campaign", "thox_campaign.agents"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

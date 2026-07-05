@@ -1,0 +1,18 @@
+[package]
+name = "txf-memory"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "TXF universal memory: 4 tiers (HOT/WARM/COLD/VAULT) bridging to the thox-digitalhumans 7-tier cognitive memory model."
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+schemars = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

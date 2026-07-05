@@ -1,0 +1,13 @@
+[package]
+name = "txf-tauri"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Tauri side-of-bridge plug for the TXF runtime. Phase 0 scaffold."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

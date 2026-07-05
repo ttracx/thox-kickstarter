@@ -1,0 +1,63 @@
+[workspace]
+resolver = "2"
+members = [
+    "packages/txf-core",
+    "packages/txf-design-tokens",
+    "packages/txf-agent-framework",
+    "packages/txf-memory",
+    "packages/txf-navigation",
+    "packages/txf-device-fabric",
+    "packages/txf-projects",
+    "packages/txf-notifications",
+    "packages/txf-voice",
+    "packages/txf-compliance",
+    "certification/ux-validator",
+    "certification/branding-validator",
+    "certification/accessibility-validator",
+    "certification/release-gates",
+    "sdk/rust",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["THOX.ai Engineering <hello@thox.ai>"]
+homepage = "https://thox.ai"
+repository = "https://github.com/ttracx/thox-experience-fabric"
+rust-version = "1.78"
+
+[workspace.dependencies]
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.10", features = ["v4", "serde"] }
+schemars = { version = "0.8", features = ["uuid1", "chrono"] }
+tokio = { version = "1.40", features = ["macros", "rt-multi-thread", "sync", "time"] }
+once_cell = "1.20"
+
+# Workspace-wide lints. The TXF spec is the source of truth; we forbid
+# undisciplined drift in the implementation layer.
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+rust_2018_idioms = "warn"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+# Pragmatic allow-list - same posture as thox-digitalhumans / thox-litert-lm.
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+derivable_impls = "allow"
+default_constructed_unit_structs = "allow"
+collapsible_str_replace = "allow"
+needless_pass_by_value = "allow"
+similar_names = "allow"
+return_self_not_must_use = "allow"

@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Introducing THOX.ai — Briefing for Marty Walsh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="assets/thox-tokens.css" />
+<style>
+  :root {
+    --type-display: 92px;
+    --type-title: 56px;
+    --type-subtitle: 36px;
+    --type-body: 26px;
+    --type-small: 22px;
+    --type-mono-sm: 18px;
+    --pad-x: 100px;
+    --pad-top: 80px;
+    --pad-bottom: 80px;
+    --gap-title: 40px;
+    --gap-item: 22px;
+  }
+
+  html, body { background: #000; margin: 0; padding: 0; }
+  body { font-family: var(--thox-font-sans, "Inter", system-ui, sans-serif); color: var(--fg, #fafafa); }
+
+  deck-stage { background: #000; }
+
+  section {
+    box-sizing: border-box;
+    background: var(--bg, #09090B);
+    color: var(--fg, #fafafa);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* shared */
+  .slide-pad {
+    position: absolute;
+    inset: 0;
+    padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eyebrow {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: var(--type-mono-sm);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-hover, #34D399);
+    font-weight: 500;
+    margin: 0 0 28px;
+  }
+  .eyebrow .num { color: var(--fg-3, #71717A); margin-right: 18px; }
+  .eyebrow .dot { color: var(--fg-3, #71717A); margin: 0 12px; }
+
+  h1.title {
+    font-size: var(--type-title);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    text-wrap: balance;
+    max-width: 1600px;
+  }
+  h1.title em { color: var(--accent-hover, #34D399); font-style: normal; }
+
+  .subtitle {
+    font-size: 30px;
+    line-height: 1.42;
+    color: var(--fg-2, #a1a1aa);
+    font-weight: 400;
+    margin: 24px 0 0;
+    max-width: 1450px;
+    text-wrap: pretty;
+  }
+  .subtitle strong { color: #fff; font-weight: 500; }
+
+  .footer-chip {
+    position: absolute;
+    left: var(--pad-x);
+    bottom: 36px;
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-4, #52525b);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-chip img { height: 16px; opacity: 0.7; }
+  .footer-chip span { white-space: nowrap; }
+  .footer-chip .sep { color: var(--fg-4, #3f3f46); }
+
+  .page-num {
+    position: absolute;
+    right: var(--pad-x);
+    bottom: 36px;
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--fg-4, #52525b);
+  }
+
+  .mono { font-family: var(--thox-font-mono, "JetBrains Mono", monospace); }
+
+  /* ---------- Cover ---------- */
+  .cover { background: #000; }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: -200px -200px auto auto;
+    width: 1000px; height: 1000px;
+    background: radial-gradient(closest-side, rgba(16,185,129,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .cover .slide-pad { justify-content: space-between; }
+  .cover .brand-row { display: flex; align-items: center; justify-content: space-between; }
+  .cover .brand-row img.wordmark { height: 36px; }
+  .cover .stamp {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 14px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+    border: 1px solid var(--hairline, rgba(255,255,255,0.12));
+    padding: 10px 18px;
+    border-radius: 999px;
+  }
+  .cover h1.hero {
+    font-size: var(--type-display);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    max-width: 1500px;
+  }
+  .cover h1.hero em { font-style: normal; color: var(--accent-hover, #34D399); }
+  .cover .lede {
+    font-size: 28px;
+    line-height: 1.45;
+    color: var(--fg-2, #a1a1aa);
+    max-width: 1100px;
+    margin: 36px 0 0;
+  }
+  .cover .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    padding-top: 28px;
+  }
+  .cover .meta-cell { padding-right: 32px; }
+  .cover .meta-cell + .meta-cell { border-left: 1px solid var(--hairline, rgba(255,255,255,0.08)); padding-left: 32px; }
+  .meta-label {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-4, #52525b);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+  .meta-value {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.3;
+    margin: 0;
+    font-weight: 500;
+  }
+  .meta-value .muted { color: var(--fg-2, #a1a1aa); font-weight: 400; display: block; margin-top: 4px; font-size: 18px;}
+
+  /* ---------- Company slide ---------- */
+  .body-2col {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    flex: 1;
+    min-height: 0;
+    align-items: stretch;
+    margin-top: 48px;
+  }
+  .body-2col > * { min-height: 0; min-width: 0; }
+  .body-2col p { font-size: 26px; line-height: 1.45; color: var(--fg-2, #a1a1aa); margin: 0 0 22px; max-width: 780px; }
+  .body-2col p strong { color: #fff; font-weight: 500; }
+
+  .product-card {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  }
+  .product-card .img-wrap {
+    flex: 1;
+    min-height: 0;
+    background: radial-gradient(ellipse at center, #0a0a0a 0%, #000 80%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 32px;
+  }
+  .product-card .img-wrap::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 70%, rgba(16,185,129,0.22), transparent 70%);
+    pointer-events: none;
+  }
+  .product-card img { max-width: 100%; max-height: 100%; object-fit: contain; position: relative; z-index: 1; }
+  .product-card .caption {
+    padding: 20px 24px;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+  }
+  .product-card .caption .name { color: #fff; font-weight: 500; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    padding-top: 26px;
+    margin-top: 32px;
+  }
+  .facts .cell { padding-right: 32px; }
+  .facts .cell + .cell { border-left: 1px solid var(--hairline, rgba(255,255,255,0.08)); padding-left: 32px; }
+
+  /* ---------- Platform layers ---------- */
+  .layers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 56px;
+    flex: 1;
+  }
+  .layer-card {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 14px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    position: relative;
+    overflow: hidden;
+  }
+  .layer-card .layer-num {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--accent-hover, #34D399);
+    margin-bottom: 24px;
+  }
+  .layer-card h3 {
+    font-size: 30px;
+    line-height: 1.1;
+    color: #fff;
+    margin: 0 0 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .layer-card h3 .tm { font-size: 14px; vertical-align: super; color: var(--fg-3); margin-left: 2px; }
+  .layer-card .what {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+    margin: 0 0 18px;
+  }
+  .layer-card p { font-size: 19px; line-height: 1.5; color: var(--fg-2, #a1a1aa); margin: 0; }
+  .layer-card.first {
+    background: linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0));
+    border-color: rgba(16,185,129,0.30);
+  }
+
+  /* ---------- IP portfolio ---------- */
+  .ip-bignum {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-bottom: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    padding: 36px 0;
+  }
+  .ip-bignum .cell { padding: 0 32px; }
+  .ip-bignum .cell + .cell { border-left: 1px solid var(--hairline, rgba(255,255,255,0.08)); }
+  .ip-bignum .num {
+    font-size: 110px;
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    color: var(--accent-hover, #34D399);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    margin: 0;
+  }
+  .ip-bignum .lbl {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+    margin: 18px 0 0;
+  }
+
+  .ip-domains {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .ip-domain {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 12px;
+    padding: 24px 22px;
+  }
+  .ip-domain .name {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-hover, #34D399);
+    margin: 0 0 14px;
+  }
+  .ip-domain .count {
+    font-size: 44px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    margin: 0 0 8px;
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    letter-spacing: -0.03em;
+  }
+  .ip-domain .desc { font-size: 16px; line-height: 1.45; color: var(--fg-2, #a1a1aa); margin: 0; }
+
+  .status-bar {
+    margin-top: 28px;
+    border: 1px solid rgba(245,158,11,0.30);
+    background: rgba(245,158,11,0.06);
+    border-radius: 10px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 18px;
+    color: var(--fg-2, #a1a1aa);
+  }
+  .status-bar .pill {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FBBF24;
+    border: 1px solid rgba(245,158,11,0.35);
+    padding: 6px 12px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .status-bar strong { color: #fff; font-weight: 500; }
+
+  /* ---------- Crown jewels ---------- */
+  .jewels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+    flex: 1;
+  }
+  .jewel {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  }
+  .jewel .id {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--accent-hover, #34D399);
+    margin: 0 0 18px;
+  }
+  .jewel h4 {
+    font-size: 24px;
+    line-height: 1.18;
+    color: #fff;
+    margin: 0 0 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    min-height: 56px;
+  }
+  .jewel .domain {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    padding: 4px 10px;
+    border-radius: 4px;
+    align-self: flex-start;
+    margin-bottom: 18px;
+  }
+  .jewel p { font-size: 16px; line-height: 1.5; color: var(--fg-2, #a1a1aa); margin: 0; }
+
+  /* ---------- Timeline (Roadmap / Filing strategy) ---------- */
+  .timeline {
+    margin-top: 44px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline .axis {
+    position: relative;
+    height: 60px;
+    margin: 0 60px;
+  }
+  .timeline .axis-line {
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    height: 1px;
+    background: var(--hairline, rgba(255,255,255,0.18));
+  }
+  .timeline .axis-line.progress {
+    background: linear-gradient(90deg, var(--accent-hover, #34D399) 0%, var(--accent-hover, #34D399) 22%, var(--hairline, rgba(255,255,255,0.18)) 22%);
+  }
+  .timeline .marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--bg, #09090B);
+    border: 2px solid var(--fg-3, #71717A);
+  }
+  .timeline .marker.done { border-color: var(--accent-hover, #34D399); background: var(--accent-hover, #34D399); }
+  .timeline .marker.now { border-color: var(--accent-hover, #34D399); background: var(--bg); box-shadow: 0 0 0 6px rgba(16,185,129,0.20); }
+
+  .timeline .stops {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 0;
+  }
+  .stop {
+    padding: 0 12px;
+  }
+  .stop .when {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+    margin: 0 0 10px;
+  }
+  .stop .when.now { color: var(--accent-hover, #34D399); }
+  .stop h5 {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .stop p { font-size: 16px; line-height: 1.5; color: var(--fg-2, #a1a1aa); margin: 0; }
+
+  /* ---------- Prototyping status ---------- */
+  .status-cols {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 28px;
+    margin-top: 48px;
+    flex: 1;
+  }
+  .status-col {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 14px;
+    padding: 30px 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    display: flex;
+    flex-direction: column;
+  }
+  .status-col h4 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 0 6px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .status-col .tag {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-hover, #34D399);
+    margin: 0 0 22px;
+  }
+  .status-col.now .tag { color: var(--accent-hover, #34D399); }
+  .status-col.next .tag { color: #FBBF24; }
+  .status-col.next { border-color: rgba(245,158,11,0.25); }
+  .status-col.next .tag::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FBBF24; margin-right: 8px; vertical-align: middle; }
+  .status-col.now .tag::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-hover, #34D399); margin-right: 8px; vertical-align: middle; box-shadow: 0 0 0 4px rgba(16,185,129,0.20);}
+  .status-col.done .tag::before { content: "✓"; color: var(--accent-hover, #34D399); margin-right: 8px; }
+
+  .status-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .status-col li {
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--fg-2, #a1a1aa);
+    padding-left: 22px;
+    position: relative;
+  }
+  .status-col li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--fg-3, #52525b);
+  }
+  .status-col.done li::before { background: var(--accent-hover, #34D399); }
+
+  /* ---------- Use of proceeds ---------- */
+  .uop {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    margin-top: 44px;
+    flex: 1;
+  }
+  .uop-bars { display: flex; flex-direction: column; gap: 22px; }
+  .uop-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 110px;
+    align-items: center;
+    gap: 24px;
+  }
+  .uop-row .label { font-size: 20px; color: #fff; font-weight: 500; }
+  .uop-row .label .sub { display: block; font-size: 15px; color: var(--fg-3, #71717A); font-weight: 400; margin-top: 2px; }
+  .uop-row .bar {
+    height: 18px;
+    background: var(--hairline, rgba(255,255,255,0.06));
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+  .uop-row .bar .fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: linear-gradient(90deg, var(--accent-hover, #34D399), rgba(16,185,129,0.55));
+    border-radius: 999px;
+  }
+  .uop-row .pct {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 22px;
+    color: #fff;
+    text-align: right;
+    font-weight: 500;
+  }
+  .uop-row .pct .of { font-size: 14px; color: var(--fg-3, #71717A); display: block; margin-top: 2px;}
+
+  .uop-total {
+    border-left: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .uop-total .big {
+    font-size: 92px;
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    color: #fff;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    margin: 0;
+  }
+  .uop-total .big em { color: var(--accent-hover, #34D399); font-style: normal; }
+  .uop-total .big .small { font-size: 36px; color: var(--fg-2, #a1a1aa); }
+  .uop-total .lbl {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-3, #71717A);
+    margin: 14px 0 28px;
+  }
+  .uop-total p { font-size: 22px; line-height: 1.5; color: var(--fg-2, #a1a1aa); margin: 0; }
+  .uop-total p strong { color: #fff; font-weight: 500; }
+
+  /* ---------- Filing strategy ---------- */
+  .filing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 48px;
+    flex: 1;
+  }
+  .filing .panel {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 14px;
+    padding: 32px 32px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    display: flex;
+    flex-direction: column;
+  }
+  .filing .panel h4 {
+    font-size: 26px;
+    color: #fff;
+    margin: 0 0 4px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .filing .panel .tag {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-hover, #34D399);
+    margin: 0 0 24px;
+  }
+  .filing-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    align-items: start;
+    padding: 16px 0;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.08));
+  }
+  .filing-row:first-of-type { border-top: none; padding-top: 4px; }
+  .filing-row .when {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: var(--accent-hover, #34D399);
+    padding-top: 4px;
+  }
+  .filing-row .what h5 {
+    font-size: 19px;
+    color: #fff;
+    margin: 0 0 4px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .filing-row .what p { font-size: 16px; line-height: 1.45; color: var(--fg-2, #a1a1aa); margin: 0; }
+
+  .econ-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.08));
+    font-size: 18px;
+    gap: 18px;
+  }
+  .econ-row:first-of-type { border-top: none; padding-top: 4px; }
+  .econ-row .k { color: var(--fg-2, #a1a1aa); }
+  .econ-row .v { color: #fff; font-family: var(--thox-font-mono, "JetBrains Mono", monospace); font-weight: 500; }
+  .econ-row.hi .v { color: var(--accent-hover, #34D399); font-size: 22px; }
+
+  /* ---------- The Ask ---------- */
+  .ask { background: var(--bg, #09090B); }
+  .ask::before {
+    content: "";
+    position: absolute;
+    inset: auto auto -200px -200px;
+    width: 900px; height: 900px;
+    background: radial-gradient(closest-side, rgba(16,185,129,0.16), transparent 70%);
+    pointer-events: none;
+  }
+  .ask .ask-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    flex: 1;
+    margin-top: 48px;
+  }
+  .ask-list { display: flex; flex-direction: column; gap: 28px; }
+  .ask-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .ask-item .n {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 30px;
+    color: var(--accent-hover, #34D399);
+    font-weight: 500;
+    line-height: 1;
+    padding-top: 6px;
+  }
+  .ask-item h4 { font-size: 26px; color: #fff; margin: 0 0 10px; font-weight: 600; letter-spacing: -0.01em; }
+  .ask-item p { font-size: 19px; line-height: 1.5; color: var(--fg-2, #a1a1aa); margin: 0; }
+
+  .contact-card {
+    border: 1px solid var(--hairline, rgba(255,255,255,0.10));
+    border-radius: 16px;
+    padding: 44px 44px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+  .contact-card .stamp-row {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .contact-card .stamp-row img { height: 22px; }
+  .contact-card .stamp-row .pill {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-hover, #34D399);
+    border: 1px solid rgba(16,185,129,0.30);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  .contact-card .nextsteps {
+    font-size: 28px;
+    line-height: 1.35;
+    color: #fff;
+    margin: 0 0 32px;
+    font-weight: 500;
+    text-wrap: pretty;
+  }
+  .contact-card .nextsteps em { color: var(--accent-hover, #34D399); font-style: normal; }
+  .contact-card .who {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline, rgba(255,255,255,0.10));
+  }
+  .contact-card .who .row { font-size: 18px; color: var(--fg-2, #a1a1aa); display: flex; gap: 12px; align-items: baseline; }
+  .contact-card .who .row .k {
+    font-family: var(--thox-font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-4, #52525b);
+    width: 90px;
+    flex-shrink: 0;
+  }
+  .contact-card .who .row a, .contact-card .who .row .val { color: #fff; text-decoration: none; }
+
+</style>
+<script type="application/json" id="speaker-notes">
+[
+  "Marty, thanks for taking the time. Before we get into how you can help, I want to give you a quick briefing on the company — what we've built, where we are, and what we're raising. About ten slides, fifteen minutes. We're THOX.ai. We build a purpose-built edge AI compute platform. Pre-revenue, pre-production, with a refundable-deposit pre-order book live and the Nova flagship shipping in December 2026. We're raising five to ten million.",
+  "Quick frame on the company. THOX builds hardware-defined intelligence. The wedge is simple: cloud AI is expensive, latency-bound, and structurally incompatible with the privacy requirements in healthcare, legal, finance, and government. We let those customers run modern LLMs locally — predictable cost, low latency, full data sovereignty. The product on the right is Nova, the personal edge device. We're pre-revenue but we have an active pre-order book, we're members of Intel's Partner Alliance and NVIDIA's Inception program, and the entire software stack runs today.",
+  "The platform is five reinforcing layers. Nova is the hardware. MagStack is the magnetic clustering interconnect that lets you snap two, four, or eight devices together and run hundred-billion-parameter models. MeshStack is the cross-platform fabric that turns phones, tablets, and laptops into a private mesh — that's our recurring SaaS layer. ThoxQuantum is on-device quantum emulation; we're the first edge device that runs both LLMs and quantum simulation natively. And ThoxMigrate is our automated cloud-to-edge migration platform — customers move off OpenAI or Anthropic with a one-line environment-variable change. Every layer is its own revenue line and every layer makes the others stronger.",
+  "This is the part you'll care about most, Marty. Our IP work is real and deep. Thirty-two inventions, ninety-three figures, ninety-two claims, across five domains: hardware, silicon, inference, agents, and protocols. The portfolio is structured as a single consolidated provisional — one priority date for all thirty-two inventions, one micro-entity fee. It's ready to upload to USPTO Patent Center. The honest status is that it's not filed yet, and that's specifically what we want your help on — both the filing itself and the conversion strategy at month nine.",
+  "Five inventions anchor the moat. The MagStack ornamental design is our category-defining form factor — design patent on the physical clustering interface. PolarQuant Q4 is sixteen-times context-length scaling on the same memory budget. Mesh Cognition is the protocol that turns a cluster into one distributed model. ThoxCPU is the silicon underneath the whole stack. And Agent Swarm plus TPM is hardware-rooted trust — the compliance moat that locks in regulated industries. The other twenty-seven inventions reinforce these five.",
+  "Here's the filing plan, which is exactly the conversation we'd want to have with you. Month zero, we file the consolidated provisional — single eighty-dollar micro entity fee, single priority date. Month nine, counsel reviews the highest-value claims for the non-provisional conversion strategy. Month twelve, we convert to non-provisional and file PCT for international protection. Consolidating saves us about twenty-five hundred dollars versus thirty-two individual filings, but more important than the savings is that it locks the priority date for everything simultaneously — which matters when we start showing this to investors and partners.",
+  "Where we are on the product side. Completed work: full product and hardware design, finalized specifications, the entire ThoxOS stack and inference architecture, ThoxQuantum integration with live demos, MeshStack public marketing surface, the MagStack SDK, the Founders Reserve pre-order campaign, Stripe catalog wired, and the partner memberships. In flight right now: EVT hardware prototyping, benchmark work against Apple Silicon and other edge platforms, manufacturing partner selection, and the MeshStack app distribution across iOS, Android, macOS, and Windows. Next: DVT and PVT this year, manufacturing partner locked, and ship the flagship to Founders in December.",
+  "Use of proceeds for the five to ten million raise. Roughly forty percent goes into manufacturing — that's the EVT to DVT to PVT progression, tooling, and the first production run. Twenty percent into engineering — silicon optimization, firmware, ThoxOS, the MeshStack apps. Fifteen into go-to-market — channel partners, regulatory certification for healthcare and finance, the Founders fulfillment. Ten into IP — non-provisional conversion, PCT filings, trademark expansion, and counsel. Ten into operations and team. Five percent reserve. This is twelve months of runway to first ship plus the platform layers we monetize after.",
+  "The twelve-month plan, paired to the capital. Q3 this year: DVT complete, manufacturing partner signed, non-provisional patent conversion underway. Q4: PVT, first units to Founders. Q1 next year: PCT filed for international IP, MeshStack apps shipped on all four platforms, ThoxMigrate moves from pilot into production access. Q2: Edge Series launches — Pro, Pro Max, Pro Ultra — same software stack, scaled compute, up-market into workgroup, department, and enterprise rack. By end of year we should be ramping revenue across hardware, MeshStack subscriptions, and ThoxMigrate platform access.",
+  "Here's the ask. Three things. First, introductions — to the seed and Series A investors in your network who write checks for category-defining hardware companies, especially anyone with edge, healthcare, or defense exposure. Second, counsel on the IP — we want Snell and Wilmer to take a look at the provisional package before we upload it, and we want you in the room for the conversion strategy at month nine. Third, the strategic guidance you're known for — the right corporate structure, the right convertible terms, and a clean cap table going into the round. Our contact info is on the slide. Happy to go deeper on any layer of this. Thanks again, Marty."
+]
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#000000">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#000000"/>
+    <circle cx="900" cy="240" r="320" fill="#10B981" opacity="0.18"/>
+    <g transform="translate(380,300)" fill="none" stroke="#34D399" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="440" height="240" rx="32"/>
+      <circle cx="220" cy="120" r="56" fill="#00FF88" stroke="none"/>
+      <circle cx="220" cy="120" r="22" fill="#000000" stroke="none"/>
+    </g>
+    <text x="380" y="620" font-family="Inter,system-ui,sans-serif" font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-2">THOX.ai</text>
+    <text x="380" y="680" font-family="ui-monospace,Menlo,monospace" font-size="22" fill="#52525b" letter-spacing="6">BRIEFING · CONFIDENTIAL</text>
+  </svg>
+</template>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ============ 01 COVER ============ -->
+<section data-label="01 Cover" class="cover">
+  <div class="slide-pad">
+    <div class="brand-row">
+      <img class="wordmark" src="assets/thox-logo.png" alt="THOX.ai" />
+      <span class="stamp">Confidential · For Marty Walsh</span>
+    </div>
+
+    <div>
+      <p class="eyebrow">Briefing <span class="dot">·</span> Snell &amp; Wilmer <span class="dot">·</span> May 2026</p>
+      <h1 class="hero">Introducing <em>THOX.ai</em>.<br/>Edge AI, built as hardware.</h1>
+      <p class="lede">A pre-revenue AI hardware company shipping the Nova edge inference device — with a five-layer platform, a 32-invention IP portfolio, and an active pre-order book. This briefing covers what we've built, where we are, and the raise we're preparing.</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-cell">
+        <p class="meta-label">Prepared For</p>
+        <p class="meta-value">Marty Walsh<span class="muted">Snell &amp; Wilmer LLP</span></p>
+      </div>
+      <div class="meta-cell">
+        <p class="meta-label">Stage</p>
+        <p class="meta-value">Pre-production<span class="muted">EVT · Series Seed</span></p>
+      </div>
+      <div class="meta-cell">
+        <p class="meta-label">Raise Target</p>
+        <p class="meta-value">$5M – $10M<span class="muted">12-month runway</span></p>
+      </div>
+      <div class="meta-cell">
+        <p class="meta-label">Ship Window</p>
+        <p class="meta-value">December 2026<span class="muted">Nova flagship</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip">
+    <img src="assets/thox-icon-green.png" alt="" />
+    <span>THOX.AI LLC</span>
+    <span class="sep">·</span>
+    <span>CONFIDENTIAL</span>
+  </div>
+</section>
+
+<!-- ============ 02 COMPANY ============ -->
+<section data-label="02 Company">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">01</span>The Company</p>
+    <h1 class="title">A purpose-built edge AI platform for industries that <em>can't ship data to the cloud</em>.</h1>
+
+    <div class="body-2col">
+      <div>
+        <p>
+          <strong>THOX.ai</strong> builds <strong>Nova</strong>, an edge inference device, and <strong>ThoxOS</strong>, the on-device operating system that runs it. The platform extends through four reinforcing software layers — magnetic clustering, a private mesh fabric, on-device quantum emulation, and an automated cloud-to-edge migration platform.
+        </p>
+        <p>
+          Target customers are healthcare systems, law firms, financial services, and government agencies. Every industry where data sovereignty is non-negotiable, and where cloud AI is structurally incompatible with the workflow.
+        </p>
+
+        <div class="facts">
+          <div class="cell">
+            <p class="meta-label">Headquarters</p>
+            <p class="meta-value">Texas<span class="muted">THOX.ai LLC</span></p>
+          </div>
+          <div class="cell">
+            <p class="meta-label">Stage</p>
+            <p class="meta-value">Pre-revenue<span class="muted">EVT · active pre-orders</span></p>
+          </div>
+          <div class="cell">
+            <p class="meta-label">Validators</p>
+            <p class="meta-value">Intel · NVIDIA<span class="muted">Partner Alliance · Inception</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="assets/nova-hero.png" alt="THOX Nova" />
+        </div>
+        <div class="caption">
+          <span class="name">THOX Nova</span>
+          <span>Matte Black · Ship Dec 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">02 / 10</div>
+</section>
+
+<!-- ============ 03 PLATFORM ============ -->
+<section data-label="03 Platform">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">02</span>The Platform</p>
+    <h1 class="title">Five reinforcing layers. Each is a revenue line. Each strengthens the others.</h1>
+
+    <div class="layers">
+      <div class="layer-card first">
+        <div class="layer-num">L1 · HARDWARE</div>
+        <h3>THOX Nova<span class="tm">™</span></h3>
+        <p class="what">Edge inference device</p>
+        <p>The on-prem compute platform. Runs 7B–32B models locally with predictable cost, low latency, and full data sovereignty.</p>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">L2 · INTERCONNECT</div>
+        <h3>MagStack<span class="tm">™</span></h3>
+        <p class="what">Magnetic clustering</p>
+        <p>Snap 1, 2, 4, or 8 devices face-to-back. Scale to 200B-parameter models and 32-qubit quantum emulation per cluster.</p>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">L3 · MESH</div>
+        <h3>MeshStack<span class="tm">™</span></h3>
+        <p class="what">Cross-platform fabric</p>
+        <p>iOS, Android, macOS, Windows. Turns personal devices into a private mesh. Recurring SaaS layered on every Nova.</p>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">L4 · QUANTUM</div>
+        <h3>ThoxQuantum<span class="tm">™</span></h3>
+        <p class="what">On-device emulation</p>
+        <p>GPU-accelerated quantum simulation native to ThoxOS. Up to 32 qubits on an 8× MagStack. HIPAA-compliant. Air-gapped.</p>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">L5 · MIGRATION</div>
+        <h3>ThoxMigrate<span class="tm">™</span></h3>
+        <p class="what">Cloud-to-edge platform</p>
+        <p>One API_BASE_URL change moves a customer off OpenAI or Anthropic onto THOX. Three AI teams. Gated access. Platform revenue.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">03 / 10</div>
+</section>
+
+<!-- ============ 04 IP PORTFOLIO ============ -->
+<section data-label="04 IP Portfolio">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">03</span>Intellectual Property</p>
+    <h1 class="title">A <em>32-invention portfolio</em> covering every layer of the stack, prepared as a single consolidated provisional.</h1>
+
+    <div class="ip-bignum">
+      <div class="cell">
+        <p class="num">32</p>
+        <p class="lbl">Inventions</p>
+      </div>
+      <div class="cell">
+        <p class="num">92</p>
+        <p class="lbl">Claims</p>
+      </div>
+      <div class="cell">
+        <p class="num">93</p>
+        <p class="lbl">Figures</p>
+      </div>
+      <div class="cell">
+        <p class="num">5</p>
+        <p class="lbl">Domains</p>
+      </div>
+    </div>
+
+    <div class="ip-domains">
+      <div class="ip-domain">
+        <p class="name">Hardware</p>
+        <p class="count">5</p>
+        <p class="desc">Magnetic clustering, thermal architecture, optical interconnect, multi-sensor PCB, ornamental design</p>
+      </div>
+      <div class="ip-domain">
+        <p class="name">Silicon</p>
+        <p class="count">7</p>
+        <p class="desc">ThoxCPU, Int7+1 quantization, PolarQuant Q4, NPU tile array, sensor frontend, HSM with PUF, quantum simulation</p>
+      </div>
+      <div class="ip-domain">
+        <p class="name">Inference</p>
+        <p class="count">9</p>
+        <p class="desc">ThoxOS, Mesh Cognition, sparse attention + NVMe KV, schedulers, tensor-parallel sharding, federated tuning</p>
+      </div>
+      <div class="ip-domain">
+        <p class="name">Agents</p>
+        <p class="count">6</p>
+        <p class="desc">TPM-rooted agent swarms, MCP server, bitemporal rules, hashlines editing, digital clones, multi-modal perception</p>
+      </div>
+      <div class="ip-domain">
+        <p class="name">Protocols</p>
+        <p class="count">5</p>
+        <p class="desc">MagStack protocol stack, mesh memory protocol, signed telemetry, A/B firmware + TPM, edge-cloud CRDT sync</p>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <span class="pill">Status · Not filed</span>
+      <span>Filing package is assembled and ready for USPTO Patent Center upload. Single consolidated provisional, micro entity status, single priority date for all 32 inventions. <strong>This is what we need Snell &amp; Wilmer's eyes on first.</strong></span>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">04 / 10</div>
+</section>
+
+<!-- ============ 05 CROWN JEWELS ============ -->
+<section data-label="05 Crown Jewels">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">04</span>Highest-Leverage IP</p>
+    <h1 class="title">Five crown jewels anchor the moat. The remaining 27 inventions reinforce them.</h1>
+
+    <div class="jewels">
+      <div class="jewel">
+        <p class="id">IP-018</p>
+        <span class="domain">Hardware</span>
+        <h4>MagStack Ornamental Design</h4>
+        <p>Design patent on the magnetically-coupled clustering form factor. First-mover protection on the physical interconnect that defines the product category.</p>
+      </div>
+      <div class="jewel">
+        <p class="id">IP-021</p>
+        <span class="domain">Silicon</span>
+        <h4>PolarQuant Q4 Compression</h4>
+        <p>16× context length scaling on the same memory budget. Long-context edge workloads cloud-only competitors can't match without expensive infrastructure.</p>
+      </div>
+      <div class="jewel">
+        <p class="id">IP-002</p>
+        <span class="domain">Inference</span>
+        <h4>Mesh Cognition Protocol</h4>
+        <p>Continuous-time hidden-state coupling across devices. The substrate that turns a cluster into a single distributed model, not separate inference instances.</p>
+      </div>
+      <div class="jewel">
+        <p class="id">IP-010</p>
+        <span class="domain">Silicon</span>
+        <h4>ThoxCPU</h4>
+        <p>Software-defined pipeline reconfiguration with on-die CfC unit and MagStack DMA. The silicon foundation that makes the entire stack possible.</p>
+      </div>
+      <div class="jewel">
+        <p class="id">IP-007</p>
+        <span class="domain">Agents</span>
+        <h4>Agent Swarm + TPM</h4>
+        <p>Hardware-rooted trust for autonomous agents in regulated industries. The compliance moat competitors without dedicated silicon cannot replicate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">05 / 10</div>
+</section>
+
+<!-- ============ 06 FILING STRATEGY ============ -->
+<section data-label="06 Filing Strategy">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">05</span>Filing Strategy</p>
+    <h1 class="title">One consolidated provisional. One priority date. A clean conversion path at month 12.</h1>
+
+    <div class="filing">
+      <div class="panel">
+        <h4>Filing timeline</h4>
+        <p class="tag">USPTO + PCT path</p>
+
+        <div class="filing-row">
+          <div class="when">Now</div>
+          <div class="what">
+            <h5>Filing package ready</h5>
+            <p>All 6 PDFs assembled. $80 micro entity fee. USPTO Patent Center upload prepared.</p>
+          </div>
+        </div>
+        <div class="filing-row">
+          <div class="when">Month 0</div>
+          <div class="what">
+            <h5>Provisional filed</h5>
+            <p>Single priority date locked for all 32 inventions simultaneously.</p>
+          </div>
+        </div>
+        <div class="filing-row">
+          <div class="when">Month 9</div>
+          <div class="what">
+            <h5>Counsel review</h5>
+            <p>Identify the highest-value claims for non-provisional conversion strategy. <strong style="color:#fff">Snell &amp; Wilmer's lane.</strong></p>
+          </div>
+        </div>
+        <div class="filing-row">
+          <div class="when">Month 12</div>
+          <div class="what">
+            <h5>Non-provisional + PCT</h5>
+            <p>Convert to non-provisional; file PCT for international protection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h4>Filing economics</h4>
+        <p class="tag">Why consolidated</p>
+
+        <div class="econ-row"><span class="k">Filing strategy</span><span class="v">Single consolidated provisional</span></div>
+        <div class="econ-row"><span class="k">Inventions covered</span><span class="v">32 · IP-001 → IP-032</span></div>
+        <div class="econ-row"><span class="k">USPTO fee (micro entity)</span><span class="v">$80</span></div>
+        <div class="econ-row"><span class="k">Alt: 32 individual filings</span><span class="v">$2,560</span></div>
+        <div class="econ-row hi"><span class="k">Savings via consolidation</span><span class="v">$2,480</span></div>
+        <div class="econ-row"><span class="k">Priority date</span><span class="v">Single, uniform</span></div>
+        <div class="econ-row"><span class="k">Application count</span><span class="v">One</span></div>
+
+        <p style="font-size:18px;color:var(--fg-2);line-height:1.5;margin:28px 0 0;">Beyond the dollar savings, the consolidated structure simplifies tracking and locks one priority date across the whole stack — material when we start sharing this with investors and partners.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">06 / 10</div>
+</section>
+
+<!-- ============ 07 STATUS / PROTOTYPING ============ -->
+<section data-label="07 Status">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">06</span>Where We Are Today</p>
+    <h1 class="title">Software stack runs today. Hardware in EVT. Pre-order book live.</h1>
+
+    <div class="status-cols">
+      <div class="status-col done">
+        <h4>Completed</h4>
+        <p class="tag">Shipped &amp; live</p>
+        <ul>
+          <li>Product design, architecture, finalized hardware specifications</li>
+          <li>ThoxOS — hardware-accelerated inference stack, OpenAI-compatible API</li>
+          <li>ThoxQuantum simulation runtime · live demos at /quantum-portfolio &amp; /quantum-lab</li>
+          <li>MeshStack public surface · five-tier matrix · cross-platform device demos</li>
+          <li>MagStack™ SDK and developer tooling</li>
+          <li>Founders Reserve live · $99.99 refundable deposit · Stripe catalog wired</li>
+          <li>Intel Partner Alliance · NVIDIA Inception memberships</li>
+        </ul>
+      </div>
+
+      <div class="status-col now">
+        <h4>In Progress</h4>
+        <p class="tag">Active execution</p>
+        <ul>
+          <li>Hardware prototyping — EVT phase</li>
+          <li>Benchmarking against Apple Silicon &amp; comparable edge platforms</li>
+          <li>Manufacturing partner selection</li>
+          <li>MeshStack distribution — iOS, Android, macOS, Windows</li>
+          <li>Patent provisional package — awaiting filing</li>
+          <li>THOX Edge Series R&amp;D wrap — Pro · Pro Max · Pro Ultra</li>
+        </ul>
+      </div>
+
+      <div class="status-col next">
+        <h4>Next 12 Months</h4>
+        <p class="tag">Gated on this raise</p>
+        <ul>
+          <li>DVT &amp; PVT hardware milestones</li>
+          <li>Manufacturing partner contracted; first production run</li>
+          <li>Non-provisional conversion + PCT international filing</li>
+          <li>Founders fulfillment — December 2026 ship</li>
+          <li>Edge Series launch — workgroup → enterprise rack</li>
+          <li>ThoxMigrate platform — pilot → production access tiers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">07 / 10</div>
+</section>
+
+<!-- ============ 08 USE OF PROCEEDS ============ -->
+<section data-label="08 Use of Proceeds">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">07</span>Use of Proceeds</p>
+    <h1 class="title">How we deploy $5M – $10M. Twelve months from EVT to first revenue.</h1>
+
+    <div class="uop">
+      <div class="uop-bars">
+        <div class="uop-row">
+          <div class="label">Manufacturing<span class="sub">EVT → DVT → PVT · tooling · first run</span></div>
+          <div class="bar"><div class="fill" style="width: 40%"></div></div>
+          <div class="pct">40%<span class="of">$2.0M – $4.0M</span></div>
+        </div>
+        <div class="uop-row">
+          <div class="label">Engineering<span class="sub">Silicon · firmware · ThoxOS · MeshStack apps</span></div>
+          <div class="bar"><div class="fill" style="width: 20%"></div></div>
+          <div class="pct">20%<span class="of">$1.0M – $2.0M</span></div>
+        </div>
+        <div class="uop-row">
+          <div class="label">Go-to-Market<span class="sub">Channel · regulatory cert · Founders fulfillment</span></div>
+          <div class="bar"><div class="fill" style="width: 15%"></div></div>
+          <div class="pct">15%<span class="of">$0.75M – $1.5M</span></div>
+        </div>
+        <div class="uop-row">
+          <div class="label">IP &amp; Legal<span class="sub">Non-provisional · PCT · trademark · counsel</span></div>
+          <div class="bar"><div class="fill" style="width: 10%"></div></div>
+          <div class="pct">10%<span class="of">$0.5M – $1.0M</span></div>
+        </div>
+        <div class="uop-row">
+          <div class="label">Team &amp; Operations<span class="sub">Mfg ops · finance · admin</span></div>
+          <div class="bar"><div class="fill" style="width: 10%"></div></div>
+          <div class="pct">10%<span class="of">$0.5M – $1.0M</span></div>
+        </div>
+        <div class="uop-row">
+          <div class="label">Working Capital Reserve<span class="sub">Contingency · vendor float</span></div>
+          <div class="bar"><div class="fill" style="width: 5%"></div></div>
+          <div class="pct">5%<span class="of">$0.25M – $0.5M</span></div>
+        </div>
+      </div>
+
+      <div class="uop-total">
+        <p class="big"><em>$5</em><span class="small">M –</span> <em>$10</em><span class="small">M</span></p>
+        <p class="lbl">Series Seed · 12 months</p>
+        <p>Lands us at <strong>first hardware revenue</strong> and a <strong>monetized MeshStack subscriber base</strong>, with the IP portfolio converted to non-provisional + PCT before close.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">08 / 10</div>
+</section>
+
+<!-- ============ 09 ROADMAP ============ -->
+<section data-label="09 Roadmap">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">08</span>12-Month Roadmap</p>
+    <h1 class="title">Hardware ships in Q4. Software platform layers monetize in parallel.</h1>
+
+    <div class="timeline">
+      <div class="axis" style="margin-top: 60px;">
+        <div class="axis-line"></div>
+        <div class="marker now" style="left: 8%"></div>
+        <div class="marker" style="left: 28%"></div>
+        <div class="marker" style="left: 50%"></div>
+        <div class="marker" style="left: 72%"></div>
+        <div class="marker" style="left: 92%"></div>
+      </div>
+      <div class="stops">
+        <div class="stop">
+          <p class="when now">Q2 2026 · Now</p>
+          <h5>EVT &amp; provisional filed</h5>
+          <p>Hardware EVT, provisional patent filed, seed close, MeshStack public launch.</p>
+        </div>
+        <div class="stop">
+          <p class="when">Q3 2026</p>
+          <h5>DVT &amp; manufacturing partner</h5>
+          <p>DVT complete. Manufacturing partner signed. Non-provisional conversion work begins.</p>
+        </div>
+        <div class="stop">
+          <p class="when">Q4 2026</p>
+          <h5>Nova ships to Founders</h5>
+          <p>PVT complete. First production run. December delivery to Founders Reserve holders.</p>
+        </div>
+        <div class="stop">
+          <p class="when">Q1 2027</p>
+          <h5>PCT + MeshStack scale</h5>
+          <p>PCT filed for international IP. MeshStack live across iOS, Android, macOS, Windows. ThoxMigrate pilot → production.</p>
+        </div>
+        <div class="stop">
+          <p class="when">Q2 2027</p>
+          <h5>Edge Series launches</h5>
+          <p>THOX Edge Pro · Pro Max · Pro Ultra. Workgroup → department → enterprise rack. Series A position established.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">09 / 10</div>
+</section>
+
+<!-- ============ 10 THE ASK ============ -->
+<section data-label="10 The Ask" class="ask">
+  <div class="slide-pad">
+    <p class="eyebrow"><span class="num">09</span>How You Can Help</p>
+    <h1 class="title">Three things from Snell &amp; Wilmer.</h1>
+
+    <div class="ask-grid">
+      <div class="ask-list">
+        <div class="ask-item">
+          <div class="n">01</div>
+          <div>
+            <h4>Investor introductions</h4>
+            <p>Warm intros to seed and Series A investors in your network — particularly funds with hardware, edge AI, healthcare, legal-tech, or defense exposure. Check sizes $250K–$2M for the seed round.</p>
+          </div>
+        </div>
+        <div class="ask-item">
+          <div class="n">02</div>
+          <div>
+            <h4>Counsel on the IP portfolio</h4>
+            <p>Snell &amp; Wilmer review of the consolidated provisional before USPTO upload, then partnership through the month-9 conversion strategy and the month-12 PCT filing.</p>
+          </div>
+        </div>
+        <div class="ask-item">
+          <div class="n">03</div>
+          <div>
+            <h4>Corporate &amp; round structuring</h4>
+            <p>Strategic guidance on entity structure, convertible terms, and cap-table hygiene heading into the seed close — and the standing relationship that lets us move quickly when the Series A opens.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="stamp-row">
+          <img src="assets/thox-icon-green.png" alt="" />
+          <span class="pill">Next Steps</span>
+        </div>
+        <p class="nextsteps">Happy to schedule a <em>longer working session</em> on the IP portfolio and a separate intro round on the investor list whenever it works for your calendar.</p>
+        <div class="who">
+          <div class="row"><span class="k">Company</span><span class="val">THOX.ai LLC · Texas</span></div>
+          <div class="row"><span class="k">Web</span><span class="val">thox.ai / investors</span></div>
+          <div class="row"><span class="k">Prepared</span><span class="val">May 2026 · Confidential</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-chip"><img src="assets/thox-icon-green.png" alt="" /><span>THOX.AI LLC</span><span class="sep">·</span><span>CONFIDENTIAL</span></div>
+  <div class="page-num">10 / 10</div>
+</section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script>
+(async () => {
+  try { await customElements.whenDefined('deck-stage'); } catch (e) {}
+  const ds = document.querySelector('deck-stage');
+  if (ds) {
+    // Weigh only slide children — same filter as deck-stage.length. Skipping
+    // slotted script/style/template keeps inline Babel/CSS from registering
+    // as stable "content" before the framework has mounted anything.
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of ds.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll('img,svg,canvas,video').length;
+      }
+      return text + media * 100;
+    };
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      if (n > 0 && n === last) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  try { await document.fonts.ready; } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

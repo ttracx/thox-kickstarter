@@ -1,0 +1,176 @@
+# Thox.ai campaign model. Covers both phases in one file:
+#   phase 1 = Founder Reservation (live now, Nova-only refundable deposit)
+#   phase 2 = Kickstarter (all five SKUs, future)
+#
+# Pricing note: Nova pricing is LOCKED. The four other SKU prices are working
+# figures pending sign-off (locked: false). The "working figure" status must
+# never surface in public copy.
+
+meta:
+  brand: "Thox.ai LLC"
+  wordmark: "Thox.ai"
+  manufacturer: "Thox.ai LLC"
+  os_name: "ThoxOS"
+  estimated_shipping: "Q4 2026"
+  currency: "USD"
+
+founders:
+  - name: "Craig Ross"
+    role: "CEO"
+  - name: "Tommy Xaypanya"
+    role: "CTO"
+
+# Sadie is an openly synthetic digital-human interface in ThoxOS. She is never
+# a founder, equity holder, or spokesperson of record. Recorded here only to
+# document the boundary; she must not appear in founder bios or legal content.
+platform_interface:
+  name: "Sadie"
+  description: "Openly synthetic digital-human interface in ThoxOS."
+
+skus:
+  - id: ThoxNova
+    name: "ThoxNova"
+    tagline: "Flagship privacy-first edge AI device."
+    locked: true
+    msrp: 899
+    super_early_bird: 629
+    colorways: ["Matte Black", "Space Gray", "Arctic White"]
+    features:
+      - "MagStack face-mounted coupling."
+      - "Clusters up to 8 devices."
+      - "Runs ThoxOS."
+  - id: ThoxClip
+    name: "ThoxClip"
+    tagline: "Phone-attached, vertically flush companion."
+    locked: false
+    price_working: 199
+    features:
+      - "Runs ThoxOS Clip Edition."
+      - "USB-C PowerBridge."
+      - "Engineering preview."
+  - id: ThoxMini
+    name: "ThoxMini"
+    tagline: "USB-C private Linux compute stick."
+    locked: false
+    price_working: 89.99
+    features:
+      - "Plugs into any USB-C host."
+      - "Private Linux compute stick."
+  - id: ThoxAir
+    name: "ThoxAir"
+    tagline: "Thinnest always-carry pocket node."
+    locked: false
+    price_working: 299
+    features:
+      - "Net-new pocket node."
+      - "Always-carry thin profile."
+  - id: ThoxOnStick
+    name: "ThoxOnStick"
+    tagline: "Bootable ThoxOS environment appliance."
+    locked: false
+    price_working: 129
+    features:
+      - "Runs a self-contained ThoxOS desktop on a host machine."
+      - "Net-new bootable appliance."
+
+phases:
+  founder_reservation:
+    name: "Founder Reservation"
+    status: live
+    primary: true
+    payments: "Stripe"
+    refundable: true
+    note: "Refundable deposit credited toward purchase. Reservation, not a final sale."
+    estimated_shipping: "Q4 2026"
+    sku_scope: ["ThoxNova"]
+    tiers:
+      - id: single
+        name: "Single"
+        deposit: 99.99
+        nova_count: 1
+      - id: duo
+        name: "Duo"
+        deposit: 249.00
+        nova_count: 2
+      - id: quad
+        name: "Quad"
+        deposit: 499.00
+        nova_count: 4
+      - id: octuple
+        name: "Octuple"
+        deposit: 999.00
+        nova_count: 8
+
+  kickstarter:
+    name: "Kickstarter"
+    status: planned
+    primary: false
+    funding_goal: 75000
+    duration_days: 30
+    model: "all-or-nothing"
+    sku_scope: ["ThoxNova", "ThoxClip", "ThoxMini", "ThoxAir", "ThoxOnStick"]
+    note: "Treat the Founder Reservation list as day-one backers."
+    bundles:
+      - id: nova_single
+        name: "Nova Single"
+        price_working: 629
+        contents: "One ThoxNova at super early bird pricing."
+      - id: nova_duo
+        name: "Nova Duo"
+        price_working: 1199
+        contents: "Two ThoxNova devices, MagStack ready."
+      - id: nova_quad
+        name: "Nova Quad"
+        price_working: 2299
+        contents: "Four ThoxNova devices for a starter cluster."
+      - id: family_kit
+        name: "Family Kit"
+        price_working: 999
+        contents: "One ThoxNova plus one ThoxClip."
+    stretch_goals:
+      - threshold: 100000
+        title: "Extended colorway run"
+        description: "Lock the full colorway lineup into the first production wave."
+      - threshold: 150000
+        title: "ThoxAir tooling"
+        description: "Fund dedicated tooling for the ThoxAir pocket node."
+      - threshold: 225000
+        title: "ThoxOnStick expansion"
+        description: "Expand ThoxOnStick host compatibility testing."
+      - threshold: 300000
+        title: "MeshStack feature acceleration"
+        description: "Accelerate MeshStack roadmap features for all backers."
+    fulfillment_waves:
+      - wave: 1
+        name: "Founder wave"
+        scope: "Founder Reservation backers and Nova Single bundles."
+        target: "Q4 2026"
+      - wave: 2
+        name: "Cluster wave"
+        scope: "Nova Duo and Nova Quad bundles."
+        target: "Q1 2027"
+      - wave: 3
+        name: "Family wave"
+        scope: "Family Kit and ThoxClip preview units."
+        target: "Q2 2027"
+      - wave: 4
+        name: "Expansion wave"
+        scope: "ThoxMini, ThoxAir, and ThoxOnStick."
+        target: "Q3 2027"
+
+meshstack:
+  name: "MeshStack"
+  description: "Private mesh on the WireGuard protocol."
+  apps: ["iOS", "Android", "macOS", "Windows"]
+  privacy:
+    - "coordinator never sees plaintext"
+    - "works offline on LAN after pairing"
+    - "uses the WireGuard protocol"
+  founder_special:
+    included_pro_months: 12
+    founder_rate_monthly: 9
+    note: "12 months MeshStack Pro included, then a 9 USD per month Founder rate for life."
+  founder_annual_preorder:
+    pro_per_year: 99
+    family_per_year: 249
+    team_per_seat_per_year: 599

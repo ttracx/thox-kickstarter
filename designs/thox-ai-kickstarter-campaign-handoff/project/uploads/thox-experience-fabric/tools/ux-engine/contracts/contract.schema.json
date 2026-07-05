@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "THOX UX Component Contract",
+  "description": "Platform-agnostic specification a component must satisfy on every platform. Validated by src/lint/contracts.mjs.",
+  "type": "object",
+  "required": ["id", "name", "category", "interactive", "variants", "states", "a11y", "tokens", "platforms", "readiness"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string", "pattern": "^MS / [A-Za-z]+ / [A-Za-z]+( / [A-Za-z]+)?$" },
+    "category": { "type": "string" },
+    "interactive": { "type": "boolean" },
+    "variants": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "states": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "a11y": {
+      "type": "object",
+      "required": ["role", "minTarget", "focusVisible", "labelRequired"],
+      "properties": {
+        "role": { "type": "string" },
+        "minTarget": { "type": "string" },
+        "focusVisible": { "type": "boolean" },
+        "labelRequired": { "type": "boolean" }
+      }
+    },
+    "tokens": { "type": "object", "additionalProperties": { "type": "string" } },
+    "platforms": {
+      "type": "object",
+      "required": ["web", "ios", "android", "macos", "windows"],
+      "additionalProperties": { "type": "string" }
+    },
+    "journeys": { "type": "array", "items": { "type": "string" } },
+    "readiness": { "type": "string", "enum": ["L0", "L1", "L2", "L3", "L4", "L5"] }
+  }
+}

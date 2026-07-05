@@ -1,0 +1,39 @@
+{
+  "_comment": "TXF v2.0 token projection. Brand COLORS are derived from the engine core palette by src/emit/txf.mjs and must not be duplicated here. This file holds only the TXF-specific structural scales and the two dark-surface values (surface, card) that are unique to the TXF runtime and are not part of the engine semantic themes. Editing the engine emerald (tokens/core/color.json) propagates to TXF tokens automatically; editing a structural scale here is the single authoring point for that scale.",
+  "version": "2.0",
+  "surfaces": {
+    "surface": "#111113",
+    "card": "#1A1A1C"
+  },
+  "typography": {
+    "primary_family": "Inter, system-ui, -apple-system, sans-serif",
+    "mono_family": "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace",
+    "weights": [400, 500, 600, 700, 800],
+    "scale_rem": [0.75, 0.875, 1.0, 1.125, 1.25, 1.5, 2.0, 3.0]
+  },
+  "spacing": {
+    "scale_px": [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 96]
+  },
+  "radius": {
+    "scale_px": [0, 4, 8, 12, 16, 24]
+  },
+  "motion": {
+    "duration_ms": [100, 200, 300, 500, 800],
+    "reduced_motion_default_ms": 0
+  },
+  "elevation": {
+    "shadow_sm": "0 1px 2px rgba(0,0,0,0.6)",
+    "shadow_md": "0 4px 12px rgba(0,0,0,0.65)",
+    "shadow_lg": "0 12px 32px rgba(0,0,0,0.72)",
+    "glass_blur_px": 20
+  },
+  "layout": {
+    "desktop_columns": 12,
+    "tablet_columns": 8,
+    "mobile_columns": 4,
+    "desktop_gutter_px": 24,
+    "tablet_gutter_px": 20,
+    "mobile_gutter_px": 16,
+    "baseline_px": 8
+  }
+}

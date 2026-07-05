@@ -1,0 +1,27 @@
+{
+  "$theme": "doc",
+  "$extends": "base",
+  "color": {
+    "bg": {
+      "canvas":   { "$type": "color", "$value": "{color.core.doc.canvas}" },
+      "surface":  { "$type": "color", "$value": "{color.core.doc.surface}" },
+      "elevated": { "$type": "color", "$value": "{color.core.doc.surface}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.core.doc.border}" },
+      "subtle":  { "$type": "color", "$value": "{color.core.doc.border}" }
+    },
+    "text": {
+      "primary":   { "$type": "color", "$value": "{color.core.doc.text}" },
+      "secondary": { "$type": "color", "$value": "{color.core.doc.textSecondary}" },
+      "muted":     { "$type": "color", "$value": "{color.core.doc.textSecondary}" },
+      "accent":    { "$type": "color", "$value": "{color.core.emerald.800}" },
+      "onAccent":  { "$type": "color", "$value": "{color.core.white}" }
+    }
+  },
+  "type": {
+    "family": {
+      "sans": { "$type": "fontFamily", "$value": "Xolonium, Calibri, system-ui, sans-serif" }
+    }
+  }
+}

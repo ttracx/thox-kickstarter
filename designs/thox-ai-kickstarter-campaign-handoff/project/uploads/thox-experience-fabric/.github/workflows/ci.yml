@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  rust:
+    name: Rust ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: fmt
+        run: cargo fmt --all -- --check
+      - name: clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: test
+        run: cargo test --workspace --no-fail-fast
+
+  release-gate-smoke:
+    name: thox-cert smoke
+    runs-on: ubuntu-latest
+    needs: rust
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: build cli
+        run: cargo build -p release-gates --bin thox-cert
+      - name: prep sample bundle
+        run: |
+          mkdir -p sample-bundle
+          cat > sample-bundle/txf.json <<'JSON'
+          {
+            "txfVersion": "2.0",
+            "designSystem": "THOX",
+            "identityEnabled": true,
+            "memoryEnabled": true,
+            "projectsEnabled": true,
+            "navigationStandard": true,
+            "deviceFabricEnabled": true,
+            "agentFabricEnabled": true,
+            "voiceEnabled": true,
+            "accessibilityCertified": true,
+            "experienceScoreFloor": 90
+          }
+          JSON
+      - name: run gate
+        run: cargo run -p release-gates --bin thox-cert -- --bundle sample-bundle
+
+  ux-engine:
+    name: UX engine (tokens + brand + a11y + drift)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # The engine is the single source of truth for design tokens. This job
+      # rebuilds every per-platform artifact, runs the four gates (forbidden
+      # patterns, WCAG AA contrast, component contracts, dist drift), runs the
+      # unit tests, and verifies the consumed TXF runtime bundle
+      # (design-systems/thox-ai-txf/TOKENS.json) is in sync with the engine.
+      - name: Build tokens
+        working-directory: tools/ux-engine
+        run: node src/build.mjs
+      - name: Verify gates
+        working-directory: tools/ux-engine
+        run: node src/verify.mjs
+      - name: Unit tests
+        working-directory: tools/ux-engine
+        run: node --test test/*.test.mjs
+      - name: TXF token drift gate
+        working-directory: tools/ux-engine
+        run: node src/sync-txf.mjs --check

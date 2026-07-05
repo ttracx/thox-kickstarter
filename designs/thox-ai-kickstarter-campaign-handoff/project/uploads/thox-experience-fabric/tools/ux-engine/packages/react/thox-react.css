@@ -1,0 +1,15 @@
+/* THOX UX React component keyframes. Import once at app root. */
+@keyframes thox-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Respect reduced-motion: freeze the spinner to a static ring. */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes thox-spin {
+    to {
+      transform: none;
+    }
+  }
+}

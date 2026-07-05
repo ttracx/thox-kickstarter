@@ -1,0 +1,28 @@
+{
+  "id": "device-card",
+  "name": "MS / Cards / DeviceCard",
+  "category": "Cards",
+  "interactive": true,
+  "variants": ["origin", "anchor", "inferenceNode", "offline"],
+  "states": ["default", "hover", "focus", "pressed", "disabled", "loading"],
+  "a11y": { "role": "button", "minTarget": "target.touch", "focusVisible": true, "labelRequired": true },
+  "tokens": {
+    "surface": "color.bg.surface",
+    "border": "color.border.default",
+    "borderHover": "color.focus.ring",
+    "title": "color.text.primary",
+    "meta": "color.text.secondary",
+    "online": "role.deviceState.online",
+    "active": "role.deviceState.active",
+    "radius": "radius.md"
+  },
+  "platforms": {
+    "web": "DeviceCard (React)",
+    "ios": "DeviceCard (SwiftUI)",
+    "android": "DeviceCard (Compose Card)",
+    "macos": "DeviceCard (SwiftUI row/card)",
+    "windows": "DeviceCard (WinUI UserControl)"
+  },
+  "journeys": ["J-004", "J-005", "J-009"],
+  "readiness": "L3"
+}

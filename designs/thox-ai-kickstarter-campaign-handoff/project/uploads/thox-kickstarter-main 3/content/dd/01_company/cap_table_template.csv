@@ -1,0 +1,8 @@
+holder_name,holder_type,unit_class,units_held,fully_diluted_percent,issue_date,consideration,vesting_schedule,cliff_months,notes
+FILL: Tommy Xaypanya,founder,common,FILL,FILL,FILL,FILL: founders stock,FILL: 48 months,12,co-founder
+FILL: Craig Ross,founder,common,FILL,FILL,FILL,FILL: founders stock,FILL: 48 months,12,co-founder
+FILL: employee option pool,reserved,option,FILL,FILL,FILL,n/a,n/a,n/a,reserved for hires
+FILL: advisor pool,reserved,option,FILL,FILL,FILL,n/a,n/a,n/a,reserved for advisors
+FILL: SAFE round 1 lead,investor,safe,FILL,FILL,FILL,FILL: dollars,n/a,n/a,FILL: cap and discount
+FILL: SAFE round 1 follower,investor,safe,FILL,FILL,FILL,FILL: dollars,n/a,n/a,FILL: cap and discount
+TOTAL,,,FILL,100.00,,,,,

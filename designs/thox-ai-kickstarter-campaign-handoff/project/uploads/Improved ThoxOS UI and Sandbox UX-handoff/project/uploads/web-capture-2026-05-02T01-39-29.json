@@ -1,0 +1,366 @@
+[
+  {
+    "id": "cap_monoanch_44a2g7",
+    "selector": "div",
+    "label": "THOXOS v6.0.0 COMPLETE SYSTEM DEMO [00] …",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:38:35.825Z",
+    "innerText": "THOXOS v6.0.0 COMPLETE SYSTEM DEMO\n[00]\nThoxOS v6.0 — kernel 5.15.148-thoxos-rt [PREEMPT_RT]\n[01]\nNVIDIA Jetson Orin NX 16GB — CUDA 12.3 · 1024 CUDA cores · 32 Tensor cores\n[02]\ncuQuantum SDK 24.03 — cuStateVec · cuTensorNet · cuDensityMat\n[03]\nTensorRT-LLM v0.9 — FP8 quantization engine loaded\n[04]\nClaude claude-sonnet-4-20250514 — model mapped to VRAM [OK]\n[05]\nMagStack™ pogo-connector — 4/4 nodes online · NFC ST25DV64K\n[06]\nRaft consensus — quorum 3/4 · leader node-0 · term 48\n[07]\nTPM 2.0 (Infineon SLB9670) — attestation chain verified ✓\n[08]\nEdge AI pipeline — vision router · LLM router · quantum router\n[09]\nUMA memory bus — 16GB unified · quantum/LLM shared heap\n[10]\ngRPC gateway :50051 · Ollama :11434 · Supabase edge runtime\n[11]\nNullClaw v0.1 — autonomous agent runtime · 678KB · <2ms boot\n[12]\nLightpanda headless browser — CDP :9222 · MCP tools · 9× less RAM\n[13]\nOllama — llama3.1:8b-q4_K_M loaded · Q4 KV cache · 15-25 tok/s\n[14]\nAgent Orchestrator :8300 — 4 subagents · MCP · SQLite+vector memory [READY]\n[15]\nMesh Cognition Protocol — CfC network · Kuramoto sync · 256-byte hidden states\n[16]\nDistributed Inference — PP×TP hybrid · 4-node MagStack cluster · 14B active\n▋",
+    "outerHTML": "<div style=\"width: 100%; height: 100%; background: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-family: &quot;JetBrains Mono&quot;, monospace; overflow: hidden; padding: 0px 20px;\"><div style=\"max-width: 600px; width: 100%;\"><div style=\"color: rgb(16, 185, 129); font-size: 20px; font-weight: 800; margin-bottom: 16px; letter-spacing: 2px;\">THOX<span style=\"color: rgb(250, 250, 250);\">OS</span> <span style=\"font-size: 10px; color: rgb(63, 63, 70);\">v6.0.0 COMPLETE SYSTEM DEMO</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[00]</span><span style=\"word-break: break-word;\">ThoxOS v6.0 — kernel 5.15.148-thoxos-rt  [PREEMPT_RT]</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[01]</span><span style=\"word-break: break-word;\">NVIDIA Jetson Orin NX 16GB — CUDA 12.3 · 1024 CUDA cores · 32 Tensor cores</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[02]</span><span style=\"word-break: break-word;\">cuQuantum SDK 24.03 — cuStateVec · cuTensorNet · cuDensityMat</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[03]</span><span style=\"word-break: break-word;\">TensorRT-LLM v0.9 — FP8 quantization engine loaded</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[04]</span><span style=\"word-break: break-word;\">Claude claude-sonnet-4-20250514 — model mapped to VRAM [OK]</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[05]</span><span style=\"word-break: break-word;\">MagStack™ pogo-connector — 4/4 nodes online · NFC ST25DV64K</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[06]</span><span style=\"word-break: break-word;\">Raft consensus — quorum 3/4 · leader node-0 · term 48</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[07]</span><span style=\"word-break: break-word;\">TPM 2.0 (Infineon SLB9670) — attestation chain verified ✓</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[08]</span><span style=\"word-break: break-word;\">Edge AI pipeline — vision router · LLM router · quantum router</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[09]</span><span style=\"word-break: break-word;\">UMA memory bus — 16GB unified · quantum/LLM shared heap</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[10]</span><span style=\"word-break: break-word;\">gRPC gateway :50051 · Ollama :11434 · Supabase edge runtime</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[11]</span><span style=\"word-break: break-word;\">NullClaw v0.1 — autonomous agent runtime · 678KB · &lt;2ms boot</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[12]</span><span style=\"word-break: break-word;\">Lightpanda headless browser — CDP :9222 · MCP tools · 9× less RAM</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[13]</span><span style=\"word-break: break-word;\">Ollama — llama3.1:8b-q4_K_M loaded · Q4 KV cache · 15-25 tok/s</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[14]</span><span style=\"word-break: break-word;\">Agent Orchestrator :8300 — 4 subagents · MCP · SQLite+vector memory [READY]</span></div><div style=\"font-size: 10px; color: rgb(55, 65, 81); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[15]</span><span style=\"word-break: break-word;\">Mesh Cognition Protocol — CfC network · Kuramoto sync · 256-byte hidden states</span></div><div style=\"font-size: 10px; color: rgb(16, 185, 129); margin-bottom: 2.5px; display: flex; gap: 8px;\"><span style=\"color: rgb(15, 58, 32); flex-shrink: 0;\">[16]</span><span style=\"word-break: break-word;\">Distributed Inference — PP×TP hybrid · 4-node MagStack cluster · 14B active</span></div><span style=\"color: rgb(16, 185, 129); font-size: 10px;\">▋</span><div style=\"margin-top: 14px; height: 2px; background: rgb(31, 41, 55); border-radius: 1px; overflow: hidden;\"><div style=\"height: 100%; width: 89.4737%; background: linear-gradient(90deg, rgb(5, 150, 105), rgb(52, 211, 153)); transition: width 0.13s;\"></div></div></div></div>",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 2179,
+      "height": 1270
+    },
+    "computedStyles": {
+      "display": "flex",
+      "width": "2179px",
+      "height": "1270px",
+      "padding": "0px 20px",
+      "border": "0px none rgb(255, 255, 255)",
+      "box-sizing": "border-box",
+      "background": "rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "justify-content": "center",
+      "align-items": "center",
+      "overflow": "hidden",
+      "transition": "all"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobf0p_ts9p24",
+    "selector": "div",
+    "label": "⚙ Settings Display Inference Quantum Abo…",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:11.690Z",
+    "innerText": "⚙\nSettings\nDisplay\nInference\nQuantum\nAbout\nDISPLAY\nResolution\nLarger Text\n·\nDefault\n·\nMore Space\n☀\n☀\nBrightness\nAppearance\nDark\nLight\nAccent Color\nSound Effects\nNotifications",
+    "outerHTML": "<div style=\"position: absolute; inset: 36px 0px 72px; overflow: hidden;\"><div style=\"position: absolute; left: 212px; top: 138px; z-index: 103; width: 760px; height: 540px; background: rgba(5, 5, 12, 0.97); border: 1px solid rgba(107, 114, 128, 0.25); border-radius: 10px; overflow: hidden; box-shadow: rgba(107, 114, 128, 0.08) 0px 0px 32px, rgba(0, 0, 0, 0.7) 0px 20px 54px; transition: left 0.16s, top 0.16s, width 0.16s, height 0.16s, border-radius 0.16s, background 0.4s; font-family: &quot;JetBrains Mono&quot;, monospace; display: flex; flex-direction: column;\"><div style=\"height: 36px; background: rgba(14, 14, 22, 0.99); border-bottom: 1px solid rgba(107, 114, 128, 0.157); display: flex; align-items: center; padding: 0px 10px; gap: 7px; cursor: grab; flex-shrink: 0; user-select: none;\"><span style=\"color: rgb(107, 114, 128); font-size: 13px; font-weight: 700;\">⚙</span><span style=\"color: rgb(250, 250, 250); font-size: 11px; font-weight: 600; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;\">Settings</span><div class=\"wc\" style=\"display: flex; gap: 5px;\"><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(245, 158, 11); cursor: pointer;\"></div><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(16, 185, 129); cursor: pointer;\"></div><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(239, 68, 68); cursor: pointer;\"></div></div></div><div style=\"flex: 1 1 0%; overflow: hidden; display: flex; flex-direction: column; min-height: 0px;\"><div style=\"flex: 1 1 0%; display: flex; background: rgb(6, 6, 15); font-family: &quot;JetBrains Mono&quot;, monospace; overflow: hidden; min-height: 0px;\"><div style=\"width: 85px; background: rgb(4, 4, 16); border-right: 1px solid rgb(26, 26, 40); padding: 6px 0px; flex-shrink: 0;\"><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(52, 211, 153); background: rgba(52, 211, 153, 0.06); border-left: 2px solid rgb(52, 211, 153);\">Display</div><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(75, 85, 99); background: transparent; border-left: 2px solid transparent;\">Inference</div><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(75, 85, 99); background: transparent; border-left: 2px solid transparent;\">Quantum</div><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(75, 85, 99); background: transparent; border-left: 2px solid transparent;\">About</div></div><div style=\"flex: 1 1 0%; overflow-y: auto; padding: 12px 14px;\"><div style=\"color: rgb(52, 211, 153); font-size: 9px; font-weight: 700; letter-spacing: 0.8px; margin-bottom: 6px; padding-bottom: 3px; border-bottom: 1px solid rgba(52, 211, 153, 0.133);\">DISPLAY</div><div style=\"margin-bottom: 12px;\"><div style=\"color: rgb(107, 114, 128); font-size: 8px; margin-bottom: 8px; text-align: center;\">Resolution</div><div style=\"display: flex; justify-content: center; align-items: flex-end; gap: 6px;\"><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 28px; height: 20px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 96.0757%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 94.8143%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 73.1186%;\"></div></div></div><span style=\"font-size: 7px; color: rgb(75, 85, 99); white-space: nowrap;\">Larger Text</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 32px; height: 23px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 90.8223%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 68.3191%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 88.7952%;\"></div></div></div><span style=\"font-size: 7px; color: transparent;\">·</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 38px; height: 27px; border-radius: 3px; background: rgb(26, 26, 46); border: 1.5px solid rgb(16, 185, 129); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: rgba(16, 185, 129, 0.267) 0px 0px 8px; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 98.0671%;\"></div><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 61.0207%;\"></div><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 70.0419%;\"></div><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 70.505%;\"></div></div></div><span style=\"font-size: 7px; color: rgb(250, 250, 250); white-space: nowrap;\">Default</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 44px; height: 31px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 67.2625%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 93.2858%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 70.2648%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 80.2402%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 74.8938%;\"></div></div></div><span style=\"font-size: 7px; color: transparent;\">·</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 50px; height: 35px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 64.9425%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 61.9278%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 92.2731%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 65.5719%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 79.7202%;\"></div></div></div><span style=\"font-size: 7px; color: rgb(75, 85, 99); white-space: nowrap;\">More Space</span></div></div></div><div style=\"margin-bottom: 12px; padding: 0px 4px;\"><div style=\"display: flex; align-items: center; gap: 8px;\"><span style=\"font-size: 11px; color: rgb(75, 85, 99);\">☀</span><input min=\"0.4\" max=\"1\" step=\"0.05\" type=\"range\" value=\"1\" style=\"flex: 1 1 0%; accent-color: rgb(16, 185, 129); height: 4px;\"><span style=\"font-size: 14px; color: rgb(156, 163, 175);\">☀</span></div><div style=\"text-align: center; margin-top: 3px;\"><span style=\"font-size: 8px; color: rgb(75, 85, 99);\">Brightness</span></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Appearance</span><div style=\"display: flex; gap: 4px;\"><div style=\"padding: 3px 10px; border-radius: 5px; background: rgba(16, 185, 129, 0.125); border: 1px solid rgb(16, 185, 129); color: rgb(16, 185, 129); font-size: 9px; cursor: pointer; transition: 0.15s;\">Dark</div><div style=\"padding: 3px 10px; border-radius: 5px; background: transparent; border: 1px solid rgb(55, 65, 81); color: rgb(107, 114, 128); font-size: 9px; cursor: pointer; transition: 0.15s;\">Light</div></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Accent Color</span><div style=\"display: flex; gap: 5px;\"><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(52, 211, 153); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(59, 130, 246); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(168, 85, 247); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(245, 158, 11); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(239, 68, 68); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(16, 185, 129); cursor: pointer; border: 2px solid rgb(255, 255, 255);\"></div></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Sound Effects</span><div style=\"width: 30px; height: 17px; border-radius: 9px; background: rgb(16, 185, 129); position: relative; cursor: pointer; transition: background 0.2s;\"><div style=\"position: absolute; top: 2px; left: 13px; width: 13px; height: 13px; border-radius: 50%; background: rgb(255, 255, 255); transition: left 0.2s;\"></div></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Notifications</span><div style=\"width: 30px; height: 17px; border-radius: 9px; background: rgb(16, 185, 129); position: relative; cursor: pointer; transition: background 0.2s;\"><div style=\"position: absolute; top: 2px; left: 13px; width: 13px; height: 13px; border-radius: 50%; background: rgb(255, 255, 255); transition: left 0.2s;\"></div></div></div></div></div></div></div></div>",
+    "rect": {
+      "x": 0,
+      "y": 36,
+      "width": 2558,
+      "height": 1162
+    },
+    "computedStyles": {
+      "display": "block",
+      "position": "absolute",
+      "top": "36px",
+      "right": "0px",
+      "bottom": "72px",
+      "left": "0px",
+      "width": "2558px",
+      "height": "1162px",
+      "border": "0px none rgb(255, 255, 255)",
+      "box-sizing": "border-box",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "overflow": "hidden",
+      "transition": "all"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobfwi_wb9vry",
+    "selector": "div",
+    "label": "◉ AI ⬡ QSim ⬡ Mag ▶ Pipe ◈ GPU >_ Term ⚡…",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:12.834Z",
+    "innerText": "◉\nAI\n⬡\nQSim\n⬡\nMag\n▶\nPipe\n◈\nGPU\n>_\nTerm\n⚡\nAgent\n⚙\nCfg\n🧠\nMesh\n⚡\nDist\n📊\nMem\n🔒\nSec\n💾\nKV\n📦\nOTA\n▶▶\nDemo\nℹ\nInfo",
+    "outerHTML": "<div style=\"position: absolute; bottom: 0px; left: 0px; right: 0px; height: 72px; background: rgba(4, 4, 10, 0.99); border-top: 1px solid rgb(20, 20, 30); display: flex; align-items: center; justify-content: center; z-index: 9998; padding: 0px 6px; backdrop-filter: blur(12px); transition: background 0.4s, border-color 0.4s; overflow: auto hidden;\"><div title=\"AI Inference\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">◉</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">AI</span></div><div title=\"Quantum Sim\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(168, 85, 247); box-shadow: none; transition: 0.15s;\">⬡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">QSim</span></div><div title=\"MagStack™\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(192, 132, 252); box-shadow: none; transition: 0.15s;\">⬡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Mag</span></div><div title=\"Edge Pipeline\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(245, 158, 11); box-shadow: none; transition: 0.15s;\">▶</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Pipe</span></div><div title=\"GPU Dashboard\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(59, 130, 246); box-shadow: none; transition: 0.15s;\">◈</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">GPU</span></div><div title=\"Terminal\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(52, 211, 153); box-shadow: none; transition: 0.15s;\">&gt;_</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Term</span></div><div title=\"Agents\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(52, 211, 153); box-shadow: none; transition: 0.15s;\">⚡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Agent</span></div><div title=\"Settings\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid rgba(107, 114, 128, 0.22); background: rgba(107, 114, 128, 0.03); transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(107, 114, 128); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(107, 114, 128); box-shadow: rgba(107, 114, 128, 0.267) 0px 0px 10px; transition: 0.15s;\">⚙</div><span style=\"font-size: 6px; color: rgb(107, 114, 128);\">Cfg</span><div style=\"width: 3px; height: 3px; border-radius: 50%; background: rgb(107, 114, 128);\"></div></div><div title=\"Mesh Cognition\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">🧠</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Mesh</span></div><div title=\"Dist Inference\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(251, 191, 36); box-shadow: none; transition: 0.15s;\">⚡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Dist</span></div><div title=\"Memory Hierarchy\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(96, 165, 250); box-shadow: none; transition: 0.15s;\">📊</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Mem</span></div><div title=\"Security Center\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">🔒</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Sec</span></div><div title=\"KV Cache\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(34, 211, 238); box-shadow: none; transition: 0.15s;\">💾</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">KV</span></div><div title=\"OTA Updates\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">📦</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">OTA</span></div><div title=\"Demo Mode\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(251, 191, 36); box-shadow: none; transition: 0.15s;\">▶▶</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Demo</span></div><div title=\"Device Info\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0; transform: translateY(0px);\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(156, 163, 175); box-shadow: none; transition: 0.15s;\">ℹ</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Info</span></div></div>",
+    "rect": {
+      "x": 0,
+      "y": 1198,
+      "width": 2558,
+      "height": 72
+    },
+    "computedStyles": {
+      "display": "flex",
+      "position": "absolute",
+      "top": "1198px",
+      "right": "0px",
+      "bottom": "0px",
+      "left": "0px",
+      "width": "2558px",
+      "height": "72px",
+      "padding": "0px 6px",
+      "box-sizing": "border-box",
+      "background": "rgba(4, 4, 10, 0.99) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "justify-content": "center",
+      "align-items": "center",
+      "overflow": "auto hidden",
+      "z-index": "9998",
+      "transition": "background 0.4s, border-color 0.4s"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobmtu_zy5cmx",
+    "selector": "div",
+    "label": "DISPLAY Resolution Larger Text · Default…",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:21.810Z",
+    "innerText": "DISPLAY\nResolution\nLarger Text\n·\nDefault\n·\nMore Space\n☀\n☀\nBrightness\nAppearance\nDark\nLight\nAccent Color\nSound Effects\nNotifications",
+    "outerHTML": "<div style=\"flex: 1 1 0%; overflow-y: auto; padding: 12px 14px;\"><div style=\"color: rgb(52, 211, 153); font-size: 9px; font-weight: 700; letter-spacing: 0.8px; margin-bottom: 6px; padding-bottom: 3px; border-bottom: 1px solid rgba(52, 211, 153, 0.133);\">DISPLAY</div><div style=\"margin-bottom: 12px;\"><div style=\"color: rgb(107, 114, 128); font-size: 8px; margin-bottom: 8px; text-align: center;\">Resolution</div><div style=\"display: flex; justify-content: center; align-items: flex-end; gap: 6px;\"><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 28px; height: 20px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 95.3389%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 79.8053%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 87.7284%;\"></div></div></div><span style=\"font-size: 7px; color: rgb(75, 85, 99); white-space: nowrap;\">Larger Text</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 32px; height: 23px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 72.9372%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 98.1363%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 78.0771%;\"></div></div></div><span style=\"font-size: 7px; color: transparent;\">·</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 38px; height: 27px; border-radius: 3px; background: rgb(26, 26, 46); border: 1.5px solid rgb(16, 185, 129); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: rgba(16, 185, 129, 0.267) 0px 0px 8px; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 76.5539%;\"></div><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 90.2076%;\"></div><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 70.8579%;\"></div><div style=\"height: 1.5px; background: rgba(16, 185, 129, 0.376); border-radius: 1px; width: 83.4097%;\"></div></div></div><span style=\"font-size: 7px; color: rgb(250, 250, 250); white-space: nowrap;\">Default</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 44px; height: 31px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 62.5676%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 73.4535%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 71.2856%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 88.4292%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 85.1106%;\"></div></div></div><span style=\"font-size: 7px; color: transparent;\">·</span></div><div style=\"display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer;\"><div style=\"width: 50px; height: 35px; border-radius: 3px; background: rgb(12, 12, 24); border: 1.5px solid rgb(42, 42, 58); display: flex; flex-direction: column; padding: 2px; gap: 1px; overflow: hidden; box-shadow: none; transition: 0.15s;\"><div style=\"display: flex; gap: 1.5px; padding: 1px 0px;\"><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(239, 68, 68);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(245, 158, 11);\"></div><div style=\"width: 2.5px; height: 2.5px; border-radius: 50%; background: rgb(16, 185, 129);\"></div></div><div style=\"flex: 1 1 0%; display: flex; flex-direction: column; gap: 1px; justify-content: center; padding: 0px 1px;\"><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 63.3122%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 64.0416%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 85.8829%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 75.4745%;\"></div><div style=\"height: 1.5px; background: rgb(42, 42, 58); border-radius: 1px; width: 63.9543%;\"></div></div></div><span style=\"font-size: 7px; color: rgb(75, 85, 99); white-space: nowrap;\">More Space</span></div></div></div><div style=\"margin-bottom: 12px; padding: 0px 4px;\"><div style=\"display: flex; align-items: center; gap: 8px;\"><span style=\"font-size: 11px; color: rgb(75, 85, 99);\">☀</span><input min=\"0.4\" max=\"1\" step=\"0.05\" type=\"range\" value=\"1\" style=\"flex: 1 1 0%; accent-color: rgb(16, 185, 129); height: 4px;\"><span style=\"font-size: 14px; color: rgb(156, 163, 175);\">☀</span></div><div style=\"text-align: center; margin-top: 3px;\"><span style=\"font-size: 8px; color: rgb(75, 85, 99);\">Brightness</span></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Appearance</span><div style=\"display: flex; gap: 4px;\"><div style=\"padding: 3px 10px; border-radius: 5px; background: rgba(16, 185, 129, 0.125); border: 1px solid rgb(16, 185, 129); color: rgb(16, 185, 129); font-size: 9px; cursor: pointer; transition: 0.15s;\">Dark</div><div style=\"padding: 3px 10px; border-radius: 5px; background: transparent; border: 1px solid rgb(55, 65, 81); color: rgb(107, 114, 128); font-size: 9px; cursor: pointer; transition: 0.15s;\">Light</div></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Accent Color</span><div style=\"display: flex; gap: 5px;\"><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(52, 211, 153); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(59, 130, 246); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(168, 85, 247); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(245, 158, 11); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(239, 68, 68); cursor: pointer; border: 2px solid transparent;\"></div><div style=\"width: 15px; height: 15px; border-radius: 50%; background: rgb(16, 185, 129); cursor: pointer; border: 2px solid rgb(255, 255, 255);\"></div></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Sound Effects</span><div style=\"width: 30px; height: 17px; border-radius: 9px; background: rgb(16, 185, 129); position: relative; cursor: pointer; transition: background 0.2s;\"><div style=\"position: absolute; top: 2px; left: 13px; width: 13px; height: 13px; border-radius: 50%; background: rgb(255, 255, 255); transition: left 0.2s;\"></div></div></div><div style=\"display: flex; justify-content: space-between; align-items: center; padding: 7px 0px; border-bottom: 1px solid rgb(26, 26, 40);\"><span style=\"color: rgb(156, 163, 175); font-size: 10px;\">Notifications</span><div style=\"width: 30px; height: 17px; border-radius: 9px; background: rgb(16, 185, 129); position: relative; cursor: pointer; transition: background 0.2s;\"><div style=\"position: absolute; top: 2px; left: 13px; width: 13px; height: 13px; border-radius: 50%; background: rgb(255, 255, 255); transition: left 0.2s;\"></div></div></div></div>",
+    "rect": {
+      "x": 298,
+      "y": 211,
+      "width": 673,
+      "height": 502
+    },
+    "computedStyles": {
+      "display": "block",
+      "width": "673px",
+      "height": "502px",
+      "padding": "12px 14px",
+      "border": "0px none rgb(255, 255, 255)",
+      "box-sizing": "border-box",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "flex": "1 1 0%",
+      "overflow": "auto",
+      "transition": "all"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobnej_3ppvqw",
+    "selector": "div",
+    "label": "Display Inference Quantum About",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:22.555Z",
+    "innerText": "Display\nInference\nQuantum\nAbout",
+    "outerHTML": "<div style=\"width: 85px; background: rgb(4, 4, 16); border-right: 1px solid rgb(26, 26, 40); padding: 6px 0px; flex-shrink: 0;\"><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(52, 211, 153); background: rgba(52, 211, 153, 0.06); border-left: 2px solid rgb(52, 211, 153);\">Display</div><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(75, 85, 99); background: transparent; border-left: 2px solid transparent;\">Inference</div><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(75, 85, 99); background: transparent; border-left: 2px solid transparent;\">Quantum</div><div style=\"padding: 7px 10px; cursor: pointer; font-size: 9px; color: rgb(75, 85, 99); background: transparent; border-left: 2px solid transparent;\">About</div></div>",
+    "rect": {
+      "x": 213,
+      "y": 211,
+      "width": 85,
+      "height": 502
+    },
+    "computedStyles": {
+      "display": "block",
+      "width": "85px",
+      "height": "502px",
+      "padding": "6px 0px",
+      "box-sizing": "border-box",
+      "background": "rgb(4, 4, 16) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "flex": "0 0 auto",
+      "transition": "all"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobo20_n7idid",
+    "selector": "div",
+    "label": "⚙ Settings",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:23.400Z",
+    "innerText": "⚙\nSettings",
+    "outerHTML": "<div style=\"height: 36px; background: rgba(14, 14, 22, 0.99); border-bottom: 1px solid rgba(107, 114, 128, 0.157); display: flex; align-items: center; padding: 0px 10px; gap: 7px; cursor: grab; flex-shrink: 0; user-select: none;\"><span style=\"color: rgb(107, 114, 128); font-size: 13px; font-weight: 700;\">⚙</span><span style=\"color: rgb(250, 250, 250); font-size: 11px; font-weight: 600; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;\">Settings</span><div class=\"wc\" style=\"display: flex; gap: 5px;\"><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(245, 158, 11); cursor: pointer;\"></div><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(16, 185, 129); cursor: pointer;\"></div><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(239, 68, 68); cursor: pointer;\"></div></div></div>",
+    "rect": {
+      "x": 213,
+      "y": 175,
+      "width": 758,
+      "height": 36
+    },
+    "computedStyles": {
+      "display": "flex",
+      "width": "758px",
+      "height": "36px",
+      "padding": "0px 10px",
+      "box-sizing": "border-box",
+      "background": "rgba(14, 14, 22, 0.99) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "flex": "0 0 auto",
+      "align-items": "center",
+      "gap": "7px",
+      "transition": "all",
+      "cursor": "grab"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobp47_nfz11y",
+    "selector": "span",
+    "label": "Settings",
+    "tag": "span",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:24.775Z",
+    "innerText": "Settings",
+    "outerHTML": "<span style=\"color: rgb(250, 250, 250); font-size: 11px; font-weight: 600; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;\">Settings</span>",
+    "rect": {
+      "x": 241,
+      "y": 186,
+      "width": 670,
+      "height": 14
+    },
+    "computedStyles": {
+      "display": "block",
+      "width": "670.031px",
+      "height": "14px",
+      "border": "0px none rgb(250, 250, 250)",
+      "box-sizing": "border-box",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(250, 250, 250)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "11px",
+      "font-weight": "600",
+      "text-decoration": "none",
+      "white-space": "nowrap",
+      "flex": "1 1 0%",
+      "overflow": "hidden",
+      "transition": "all",
+      "cursor": "grab"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_monobpmn_b8lac8",
+    "selector": "div",
+    "label": "⚙ Settings",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:39:25.439Z",
+    "innerText": "⚙\nSettings",
+    "outerHTML": "<div style=\"height: 36px; background: rgba(14, 14, 22, 0.99); border-bottom: 1px solid rgba(107, 114, 128, 0.157); display: flex; align-items: center; padding: 0px 10px; gap: 7px; cursor: grab; flex-shrink: 0; user-select: none;\"><span style=\"color: rgb(107, 114, 128); font-size: 13px; font-weight: 700;\">⚙</span><span style=\"color: rgb(250, 250, 250); font-size: 11px; font-weight: 600; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;\">Settings</span><div class=\"wc\" style=\"display: flex; gap: 5px;\"><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(245, 158, 11); cursor: pointer;\"></div><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(16, 185, 129); cursor: pointer;\"></div><div style=\"width: 11px; height: 11px; border-radius: 50%; background: rgb(239, 68, 68); cursor: pointer;\"></div></div></div>",
+    "rect": {
+      "x": 213,
+      "y": 175,
+      "width": 758,
+      "height": 36
+    },
+    "computedStyles": {
+      "display": "flex",
+      "width": "758px",
+      "height": "36px",
+      "padding": "0px 10px",
+      "box-sizing": "border-box",
+      "background": "rgba(14, 14, 22, 0.99) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "flex": "0 0 auto",
+      "align-items": "center",
+      "gap": "7px",
+      "transition": "all",
+      "cursor": "grab"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  }
+]

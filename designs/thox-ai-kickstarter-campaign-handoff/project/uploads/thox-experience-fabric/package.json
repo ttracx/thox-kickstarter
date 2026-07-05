@@ -1,0 +1,13 @@
+{
+  "name": "thox-experience-fabric",
+  "private": true,
+  "version": "0.1.0",
+  "description": "THOX Experience Fabric - the official cross-platform experience layer for all THOX.ai products.",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "sdk/react",
+    "sdk/react-native",
+    "sdk/web-components"
+  ],
+  "packageManager": "pnpm@9.0.0"
+}

@@ -1,0 +1,198 @@
+# Thox.ai brand and compliance guardrails.
+#
+# These rules are machine-checkable and enforced by thox_campaign/guardrails.py.
+# They are applied as a hard gate on every content-producing step. The public
+# website currently uses some claims that are forbidden here on purpose: this
+# repo holds the conservative line for campaign copy.
+#
+# Severity values: "error" (blocks publication) or "warning" (reported only).
+# Any other severity is a configuration error.
+
+# Literal phrases matched case-insensitively anywhere in the text.
+forbidden_phrases:
+  # Processor and module part names.
+  - text: "Intel N305"
+    severity: error
+    reason: "Processor part name; not disclosed in public copy."
+  - text: "Intel"
+    severity: error
+    reason: "Processor vendor name; not disclosed in public copy."
+  - text: "NVIDIA"
+    severity: error
+    reason: "Module vendor name; not disclosed in public copy."
+  - text: "Jetson"
+    severity: error
+    reason: "Module part name; not disclosed in public copy."
+  - text: "Orin"
+    severity: error
+    reason: "Module part name; not disclosed in public copy."
+  - text: "Renesas"
+    severity: error
+    reason: "Component vendor name; not disclosed in public copy."
+  - text: "P9418"
+    severity: error
+    reason: "Component part name; not disclosed in public copy."
+  - text: "Raspberry Pi"
+    severity: error
+    reason: "Module part name; not disclosed in public copy."
+  - text: "CM5"
+    severity: error
+    reason: "Compute module part name; not disclosed in public copy."
+
+  # Internal algorithm names.
+  - text: "PolarQuant"
+    severity: error
+    reason: "Internal algorithm name; not disclosed in public copy."
+  - text: "RHT"
+    severity: error
+    reason: "Internal algorithm name; not disclosed in public copy."
+  - text: "FWHT"
+    severity: error
+    reason: "Internal algorithm name; not disclosed in public copy."
+
+  # Banned marketing or architecture claims.
+  - text: "Patent Pending"
+    severity: error
+    reason: "Unverified legal claim."
+  - text: "military grade"
+    severity: error
+    reason: "Unsubstantiated marketing claim."
+  - text: "unhackable"
+    severity: error
+    reason: "Absolute security claim; indefensible."
+  - text: "no central server"
+    severity: error
+    reason: "Architecture claim; use approved privacy phrasing instead."
+  - text: "we cannot decrypt"
+    severity: error
+    reason: "Absolute claim; use 'coordinator never sees plaintext' instead."
+  - text: "general purpose VPN"
+    severity: error
+    reason: "Misrepresents MeshStack; it is a private mesh, not a general VPN."
+
+  # Certification claims.
+  - text: "Made for MagSafe"
+    severity: error
+    reason: "Certification claim not held."
+  - text: "MFi Certified"
+    severity: error
+    reason: "Certification claim not held."
+  - text: "Qi2 Certified"
+    severity: error
+    reason: "Certification claim not held."
+  - text: "Qi2"
+    severity: error
+    reason: "Bare certification mark not permitted in consumer copy."
+
+  # Old colorway names.
+  - text: "Midnight Black"
+    severity: error
+    reason: "Retired colorway name; use Matte Black."
+  - text: "Titanium Gray"
+    severity: error
+    reason: "Retired colorway name; use Space Gray."
+  - text: "Silver"
+    severity: error
+    reason: "Retired colorway name; use Arctic White."
+
+  # Supplier and inactive partner names.
+  - text: "Arrow Electronics"
+    severity: error
+    reason: "Supplier name; public copy says 'manufactured by Thox.ai LLC'."
+  - text: "Seeed Studio"
+    severity: error
+    reason: "Inactive partner; must not appear in copy."
+  - text: "Seeed"
+    severity: error
+    reason: "Inactive partner; must not appear in copy."
+
+  # Location disclosure.
+  - text: "Cedar Park"
+    severity: error
+    reason: "City disclosure not permitted in any output."
+  - text: "Texas"
+    severity: error
+    reason: "State disclosure not permitted in any output."
+
+  # Out-of-scope SKUs and accessories.
+  - text: "Cluster Dock"
+    severity: error
+    reason: "Out-of-scope accessory."
+  - text: "MagStack Pad"
+    severity: error
+    reason: "Out-of-scope accessory."
+
+# Regex patterns with optional per-rule flags. Supported flags: "i"
+# (case-insensitive), "m" (multiline), "s" (dotall).
+forbidden_patterns:
+  - pattern: '\d+\s*TOPS'
+    severity: error
+    reason: "Performance figure expressed as TOPS."
+    flags: ""
+  - pattern: '—'
+    severity: error
+    reason: "Em dash (U+2014) is forbidden anywhere."
+    flags: ""
+  - pattern: '\b(?:HIPAA|GDPR|ITAR)\b[^.\n]{0,40}complian'
+    severity: error
+    reason: "Regulatory compliance claim."
+    flags: "i"
+  - pattern: 'complian[^.\n]{0,40}\b(?:HIPAA|GDPR|ITAR)\b'
+    severity: error
+    reason: "Regulatory compliance claim."
+    flags: "i"
+  - pattern: '\b(?:Pro|Lite)\s+(?:variant|edition|model|tier)s?\b'
+    severity: error
+    reason: "Out-of-scope Pro or Lite product variant."
+    flags: "i"
+
+  # Warnings: reported but not blocking.
+  - pattern: 'sub-?\s*\d+\s*ms'
+    severity: warning
+    reason: "Hard latency figure; verify before publishing."
+    flags: "i"
+  - pattern: '\b\d+\s*ms\b'
+    severity: warning
+    reason: "Hard latency figure; verify before publishing."
+    flags: "i"
+  - pattern: '\b\d+K(?:\s*(?:to|-)\s*\d+K)?\b'
+    severity: warning
+    reason: "Hard context-window figure; verify before publishing."
+    flags: ""
+  - pattern: '\b\d+\+?\s*languages\b'
+    severity: warning
+    reason: "Language-count claim; verify before publishing."
+    flags: "i"
+  - pattern: '\b(?:Llama|Mistral|Mixtral|Qwen|Gemma|Phi-?\d|GPT-?\d|Falcon)\b'
+    severity: warning
+    reason: "Named third-party model; avoid model lists in public copy."
+    flags: "i"
+  - pattern: '(?<!-)--(?!-)'
+    severity: warning
+    reason: "Double hyphen used as an em dash; rephrase."
+    flags: ""
+
+# Emoji are forbidden anywhere; detected by an explicit Unicode range in code.
+forbid_emoji: true
+
+# The only colorways permitted in public copy.
+allowed_colorways:
+  - "Matte Black"
+  - "Space Gray"
+  - "Arctic White"
+
+# The only privacy phrasing permitted. Copy that talks about privacy should
+# draw from this list rather than inventing claims.
+approved_privacy_phrases:
+  - "data stays on your devices"
+  - "works offline on LAN after pairing"
+  - "uses the WireGuard protocol"
+  - "coordinator never sees plaintext"
+
+# The only product names permitted in public copy.
+public_skus:
+  - "ThoxNova"
+  - "ThoxClip"
+  - "ThoxMini"
+  - "ThoxAir"
+  - "ThoxOnStick"

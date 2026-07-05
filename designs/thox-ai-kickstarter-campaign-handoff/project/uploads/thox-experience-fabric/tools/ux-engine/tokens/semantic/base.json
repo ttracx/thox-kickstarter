@@ -1,0 +1,43 @@
+{
+  "$theme": "base",
+  "color": {
+    "bg": {
+      "canvas":   { "$type": "color", "$value": "{color.core.zinc.950}" },
+      "surface":  { "$type": "color", "$value": "{color.core.zinc.900}" },
+      "elevated": { "$type": "color", "$value": "{color.core.zinc.800}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.core.zinc.700}" },
+      "subtle":  { "$type": "color", "$value": "{color.core.zinc.800}" },
+      "focus":   { "$type": "color", "$value": "{color.core.emerald.500}" }
+    },
+    "text": {
+      "primary":   { "$type": "color", "$value": "{color.core.zinc.50}" },
+      "secondary": { "$type": "color", "$value": "{color.core.zinc.400}" },
+      "muted":     { "$type": "color", "$value": "{color.core.zinc.500}" },
+      "onAccent":  { "$type": "color", "$value": "{color.core.zinc.950}" },
+      "accent":    { "$type": "color", "$value": "{color.core.emerald.400}" },
+      "code":      { "$type": "color", "$value": "{color.core.emerald.400}" }
+    },
+    "brand": {
+      "primary": { "$type": "color", "$value": "{color.core.emerald.500}" },
+      "hover":   { "$type": "color", "$value": "{color.core.emerald.400}" },
+      "active":  { "$type": "color", "$value": "{color.core.emerald.600}" },
+      "neon":    { "$type": "color", "$value": "{color.core.neon}" }
+    },
+    "accent": {
+      "magstack":      { "$type": "color", "$value": "{color.core.purple.500}", "$extensions": { "thox.restricted": "magstack-only" } },
+      "magstackHover": { "$type": "color", "$value": "{color.core.purple.400}", "$extensions": { "thox.restricted": "magstack-only" } }
+    },
+    "state": {
+      "success":  { "$type": "color", "$value": "{color.core.emerald.500}" },
+      "warning":  { "$type": "color", "$value": "{color.core.amber}" },
+      "danger":   { "$type": "color", "$value": "{color.core.red}" },
+      "info":     { "$type": "color", "$value": "{color.core.blue}" },
+      "disabled": { "$type": "color", "$value": "{color.core.zinc.700}" }
+    },
+    "focus": {
+      "ring": { "$type": "color", "$value": "{color.core.emerald.500}" }
+    }
+  }
+}

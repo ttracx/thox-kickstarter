@@ -1,0 +1,27 @@
+{
+  "id": "primary-button",
+  "name": "MS / Action / PrimaryButton",
+  "category": "Action",
+  "interactive": true,
+  "variants": ["solid", "ghost", "outline"],
+  "states": ["default", "hover", "focus", "pressed", "disabled", "loading"],
+  "a11y": { "role": "button", "minTarget": "target.touch", "focusVisible": true, "labelRequired": true },
+  "tokens": {
+    "fill": "color.brand.primary",
+    "fillHover": "color.brand.hover",
+    "fillActive": "color.brand.active",
+    "label": "color.text.onAccent",
+    "focusRing": "color.focus.ring",
+    "radius": "radius.sm",
+    "disabledFill": "color.state.disabled"
+  },
+  "platforms": {
+    "web": "ThoxButton (React, packages/react)",
+    "ios": "ThoxButtonStyle (SwiftUI ButtonStyle)",
+    "android": "ThoxButton (Compose)",
+    "macos": "ThoxButtonStyle (SwiftUI ButtonStyle)",
+    "windows": "ThoxButton (WinUI Style)"
+  },
+  "journeys": ["J-001", "J-002", "J-006"],
+  "readiness": "L3"
+}

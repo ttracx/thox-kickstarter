@@ -1,0 +1,13 @@
+{
+  "motion": {
+    "duration": {
+      "fast": { "$type": "duration", "$value": "200ms" },
+      "base": { "$type": "duration", "$value": "300ms" },
+      "slow": { "$type": "duration", "$value": "500ms" }
+    },
+    "easing": {
+      "standard": { "$type": "cubicBezier", "$value": "cubic-bezier(0.4, 0, 0.2, 1)" }
+    },
+    "stagger": { "$type": "duration", "$value": "100ms" }
+  }
+}

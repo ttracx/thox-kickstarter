@@ -1,0 +1,15 @@
+[package]
+name = "txf-compliance"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "TXF compliance: HIPAA / GDPR / SOC2 guardrails wired into every surface before traffic flows."
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+schemars = { workspace = true }
+
+[lints]
+workspace = true

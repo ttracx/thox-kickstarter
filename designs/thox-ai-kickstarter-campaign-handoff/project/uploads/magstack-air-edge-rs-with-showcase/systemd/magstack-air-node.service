@@ -1,0 +1,36 @@
+[Unit]
+Description=MagStack Air Edge RS node
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=magstack
+Group=magstack
+EnvironmentFile=/etc/magstack-air/air.env
+ExecStart=/usr/local/bin/magair-node \
+  --mode ${MAGSTACK_AIR_MODE} \
+  --bind ${MAGSTACK_AIR_BIND} \
+  --public-url ${MAGSTACK_AIR_PUBLIC_URL} \
+  --db ${MAGSTACK_AIR_DB} \
+  --models-dir ${MAGSTACK_AIR_MODELS_DIR} \
+  --token ${MAGSTACK_AIR_TOKEN} \
+  --internal-secret ${MAGSTACK_AIR_INTERNAL_SECRET} \
+  --capacity ${MAGSTACK_AIR_CAPACITY} \
+  --beat-ms ${MAGSTACK_AIR_BEAT_MS} \
+  --failure-timeout-ms ${MAGSTACK_AIR_FAILURE_TIMEOUT_MS} \
+  --label tier=air \
+  --label product=thoxmini-air
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/magstack-air /opt/magstack-air/models
+CapabilityBoundingSet=
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

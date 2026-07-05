@@ -1,0 +1,49 @@
+{
+  "type": {
+    "family": {
+      "sans": { "$type": "fontFamily", "$value": "Inter, system-ui, -apple-system, sans-serif" },
+      "mono": { "$type": "fontFamily", "$value": "JetBrains Mono, Fira Code, Cascadia Code, Consolas, monospace" },
+      "platform": {
+        "ios":         { "$type": "fontFamily", "$value": "SF Pro" },
+        "iosMono":     { "$type": "fontFamily", "$value": "SF Mono" },
+        "android":     { "$type": "fontFamily", "$value": "Roboto" },
+        "androidMono": { "$type": "fontFamily", "$value": "Roboto Mono" },
+        "windows":     { "$type": "fontFamily", "$value": "Segoe UI Variable" },
+        "windowsMono": { "$type": "fontFamily", "$value": "Cascadia Mono" }
+      }
+    },
+    "size": {
+      "displayXl":   { "$type": "dimension", "$value": "64px" },
+      "display":     { "$type": "dimension", "$value": "48px" },
+      "h1":          { "$type": "dimension", "$value": "36px" },
+      "h2":          { "$type": "dimension", "$value": "24px" },
+      "h3":          { "$type": "dimension", "$value": "20px" },
+      "body":        { "$type": "dimension", "$value": "16px" },
+      "bodySm":      { "$type": "dimension", "$value": "14px" },
+      "caption":     { "$type": "dimension", "$value": "12px" },
+      "mono":        { "$type": "dimension", "$value": "14px" },
+      "deviceLabel": { "$type": "dimension", "$value": "8px" }
+    },
+    "lineHeight": {
+      "displayXl": { "$type": "dimension", "$value": "72px" },
+      "display":   { "$type": "dimension", "$value": "56px" },
+      "h1":        { "$type": "dimension", "$value": "44px" },
+      "h2":        { "$type": "dimension", "$value": "32px" },
+      "h3":        { "$type": "dimension", "$value": "28px" },
+      "body":      { "$type": "dimension", "$value": "24px" },
+      "bodySm":    { "$type": "dimension", "$value": "20px" },
+      "caption":   { "$type": "dimension", "$value": "16px" }
+    },
+    "weight": {
+      "regular":   { "$type": "number", "$value": 400 },
+      "medium":    { "$type": "number", "$value": 500 },
+      "semibold":  { "$type": "number", "$value": 600 },
+      "bold":      { "$type": "number", "$value": 700 },
+      "extrabold": { "$type": "number", "$value": 800 }
+    },
+    "tracking": {
+      "tight": { "$type": "dimension", "$value": "-0.02em" },
+      "wide":  { "$type": "dimension", "$value": "2px" }
+    }
+  }
+}

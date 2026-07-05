@@ -1,0 +1,13 @@
+[package]
+name = "ux-validator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Validates TXF UX surface (navigation, agents, devices, memory)."
+
+[dependencies]
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

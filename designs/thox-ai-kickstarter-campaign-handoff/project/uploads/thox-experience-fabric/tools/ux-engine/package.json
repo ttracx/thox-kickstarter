@@ -1,0 +1,57 @@
+{
+  "name": "@thox/txf-ux-engine",
+  "version": "0.1.0",
+  "description": "THOX UX engine: single token source of truth for the THOX Experience Fabric. Compiles one token tree to web, SwiftUI, Compose, Rust, Figma, and the TXF v2.0 runtime bundle, and enforces brand, accessibility, contract, and drift gates in CI.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src",
+    "tokens",
+    "contracts",
+    "dist",
+    "packages"
+  ],
+  "exports": {
+    ".": "./src/build.mjs",
+    "./resolve": "./src/resolve.mjs",
+    "./tokens.css": "./dist/web/thox-tokens.css",
+    "./tailwind": "./dist/web/tailwind-preset.cjs",
+    "./figma": "./dist/figma/thox.tokens.json",
+    "./react": "./packages/react/index.ts"
+  },
+  "bin": {
+    "thox-ux-build": "src/build.mjs",
+    "thox-ux-verify": "src/verify.mjs"
+  },
+  "scripts": {
+    "build": "node src/build.mjs",
+    "build:clean": "node src/build.mjs --clean",
+    "lint": "node src/lint/forbidden.mjs .",
+    "contrast": "node src/lint/contrast.mjs",
+    "contracts": "node src/lint/contracts.mjs",
+    "drift": "node src/lint/drift.mjs",
+    "verify": "node src/verify.mjs",
+    "test": "node --test test/*.test.mjs",
+    "gate": "node src/build.mjs && node src/verify.mjs && node --test test/*.test.mjs && node src/sync-txf.mjs --check",
+    "tokens:txf": "node src/sync-txf.mjs",
+    "tokens:txf:check": "node src/sync-txf.mjs --check"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

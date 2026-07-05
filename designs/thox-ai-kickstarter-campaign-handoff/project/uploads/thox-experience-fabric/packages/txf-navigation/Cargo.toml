@@ -1,0 +1,15 @@
+[package]
+name = "txf-navigation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "TXF navigation: locked 5-section model (Home/Agents/Projects/Devices/Vault) + universal command palette schema."
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+schemars = { workspace = true }
+
+[lints]
+workspace = true

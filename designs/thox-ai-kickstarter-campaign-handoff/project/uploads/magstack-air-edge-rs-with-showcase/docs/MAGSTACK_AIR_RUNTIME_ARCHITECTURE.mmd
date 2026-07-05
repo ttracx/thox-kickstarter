@@ -1,0 +1,15 @@
+flowchart LR
+  subgraph LAN[Wi-Fi LAN]
+    L[Leader\nAPI + SQLite queue + scheduler]
+    W1[Worker\nRust edge AI executor]
+    W2[Worker\nRust edge AI executor]
+  end
+  PWA[PWA / Watch bridge] -->|/api/infer| L
+  CLI[magairctl] -->|/api/tasks| L
+  SDK[Python SDK] -->|/api/infer| L
+  W1 -->|register/beat| L
+  W2 -->|register/beat| L
+  L -->|assignment in beat response| W1
+  L -->|assignment in beat response| W2
+  W1 -->|/internal/result| L
+  W2 -->|/internal/result| L

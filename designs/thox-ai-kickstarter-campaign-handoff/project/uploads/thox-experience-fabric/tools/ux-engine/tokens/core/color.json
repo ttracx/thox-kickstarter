@@ -1,0 +1,51 @@
+{
+  "color": {
+    "core": {
+      "emerald": {
+        "400": { "$type": "color", "$value": "#34d399" },
+        "500": { "$type": "color", "$value": "#10b981" },
+        "600": { "$type": "color", "$value": "#059669" },
+        "800": { "$type": "color", "$value": "#065f46" }
+      },
+      "neon":  { "$type": "color", "$value": "#00ff88" },
+      "zinc": {
+        "50":  { "$type": "color", "$value": "#fafafa" },
+        "400": { "$type": "color", "$value": "#a1a1aa" },
+        "500": { "$type": "color", "$value": "#71717a" },
+        "700": { "$type": "color", "$value": "#3f3f46" },
+        "800": { "$type": "color", "$value": "#27272a" },
+        "900": { "$type": "color", "$value": "#18181b" },
+        "950": { "$type": "color", "$value": "#09090b" }
+      },
+      "purple": {
+        "400": { "$type": "color", "$value": "#c084fc", "$extensions": { "thox.restricted": "magstack-only" } },
+        "500": { "$type": "color", "$value": "#a855f7", "$extensions": { "thox.restricted": "magstack-only" } }
+      },
+      "amber": { "$type": "color", "$value": "#f59e0b" },
+      "red":   { "$type": "color", "$value": "#ef4444" },
+      "blue":  { "$type": "color", "$value": "#3b82f6" },
+      "white": { "$type": "color", "$value": "#ffffff" },
+      "black": { "$type": "color", "$value": "#000000" },
+      "mesh": {
+        "canvas":        { "$type": "color", "$value": "#000000" },
+        "surface":       { "$type": "color", "$value": "#050a0b" },
+        "card":          { "$type": "color", "$value": "#091113" },
+        "cardElevated":  { "$type": "color", "$value": "#0d1718" },
+        "brandSoft":     { "$type": "color", "$value": "#06251b" },
+        "border":        { "$type": "color", "$value": "#1f3430" },
+        "textSecondary": { "$type": "color", "$value": "#c7d0cc" },
+        "textMuted":     { "$type": "color", "$value": "#87928e" },
+        "warning":       { "$type": "color", "$value": "#facc15" },
+        "info":          { "$type": "color", "$value": "#38bdf8" },
+        "disabled":      { "$type": "color", "$value": "#2a3633" }
+      },
+      "doc": {
+        "canvas":        { "$type": "color", "$value": "#ffffff" },
+        "surface":       { "$type": "color", "$value": "#f3f4f6" },
+        "text":          { "$type": "color", "$value": "#000000" },
+        "textSecondary": { "$type": "color", "$value": "#4b5563" },
+        "border":        { "$type": "color", "$value": "#d1d5db" }
+      }
+    }
+  }
+}

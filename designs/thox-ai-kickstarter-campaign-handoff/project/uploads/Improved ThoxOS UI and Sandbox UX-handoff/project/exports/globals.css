@@ -1,0 +1,224 @@
+/* ============================================================
+   ThoxOS — 2026 polish patch
+   Drop these blocks into your globals.css (or a co-located
+   thoxos.css imported once near the top of your app shell).
+   ------------------------------------------------------------
+   Pairs with the patched ThoxOS.jsx.
+
+   Required asset:
+     /public/thox-bg-2026.png   (mesh-network background image)
+
+   Notes:
+   - These are class overrides, not a full reset. Keep your
+     existing tokens/vars; this file only touches lock styling
+     and adds the new lock chrome elements (.thox-lock-mark,
+     .thox-lock-brand) used by LockScreen.
+   - All selectors are flat (no nesting) so they work without
+     a CSS preprocessor.
+   ============================================================ */
+
+/* ---------- Lock screen — mesh background ---------- */
+
+.thox-lock.thox-lock--mesh {
+  /* Full-bleed mesh image, with a soft vignette to keep the
+     password card legible. The image is loaded from /public,
+     so deploy thox-bg-2026.png at the project root. */
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  background-color: #000;
+  background-image: url('/thox-bg-2026.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: var(--thox-font-sans, 'Inter', system-ui, sans-serif);
+  color: #fafafa;
+}
+
+/* Vignette + grain — sits over the photo, under the card. */
+.thox-lock.thox-lock--mesh::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  pointer-events: none;
+}
+
+/* All children float above the vignette. */
+.thox-lock.thox-lock--mesh > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Lock screen — clock ---------- */
+
+.thox-lock.thox-lock--mesh .thox-lock-time {
+  font-family: var(--thox-font-mono, 'JetBrains Mono', monospace);
+  font-size: clamp(56px, 9vw, 112px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #fafafa;
+  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.55);
+  margin-bottom: 0;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-date {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(250, 250, 250, 0.72);
+  text-transform: none;
+  margin-bottom: 32px;
+}
+
+/* ---------- Lock screen — card ---------- */
+
+.thox-lock.thox-lock--mesh .thox-lock-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: min(360px, calc(100vw - 48px));
+  padding: 28px 28px 22px;
+
+  background: rgba(9, 9, 11, 0.72);
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 24px 60px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Replaces the old user-initial avatar. Renders the chip glyph
+   from ChipGlyph component. */
+.thox-lock.thox-lock--mesh .thox-lock-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+  margin-bottom: 4px;
+
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.18);
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-brand {
+  font-family: var(--thox-font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fafafa;
+  line-height: 1;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-brand b {
+  font-weight: 800;
+  color: #34d399;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-user {
+  font-family: var(--thox-font-mono, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(250, 250, 250, 0.55);
+  margin-bottom: 8px;
+}
+
+/* ---------- Lock screen — input row ---------- */
+
+.thox-lock.thox-lock--mesh .thox-lock-input {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-input input {
+  flex: 1;
+  min-width: 0;
+  height: 38px;
+  padding: 0 14px;
+
+  font-family: var(--thox-font-mono, 'JetBrains Mono', monospace);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: #fafafa;
+
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(63, 63, 70, 0.7);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-input input::placeholder {
+  color: rgba(113, 113, 122, 0.6);
+  letter-spacing: 0.18em;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-input input:focus {
+  border-color: #10b981;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-input .thox-btn.primary {
+  height: 38px;
+  padding: 0 16px;
+
+  font-family: var(--thox-font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #04130d;
+
+  background: #10b981;
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-input .thox-btn.primary:hover {
+  background: #34d399;
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-input .thox-btn.primary:active {
+  transform: translateY(1px);
+}
+
+.thox-lock.thox-lock--mesh .thox-lock-hint {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(161, 161, 170, 0.7);
+}
+
+/* Hide the legacy avatar element if any older markup is still
+   on the page. New LockScreen markup uses .thox-lock-mark. */
+.thox-lock.thox-lock--mesh .thox-lock-avatar {
+  display: none;
+}

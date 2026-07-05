@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://thox.ai/schemas/txf-manifest-2.0.json",
+  "title": "TXF Manifest",
+  "description": "Every TXF-certified application ships a txf.json at the bundle root that conforms to this schema.",
+  "type": "object",
+  "required": [
+    "txfVersion",
+    "designSystem",
+    "identityEnabled",
+    "memoryEnabled",
+    "projectsEnabled",
+    "navigationStandard",
+    "deviceFabricEnabled",
+    "agentFabricEnabled",
+    "voiceEnabled",
+    "accessibilityCertified"
+  ],
+  "properties": {
+    "txfVersion": {
+      "type": "string",
+      "enum": ["2.0"],
+      "description": "Pin to the TXF spec version this app implements."
+    },
+    "designSystem": {
+      "type": "string",
+      "enum": ["THOX"],
+      "description": "Always 'THOX' for TXF-certified applications."
+    },
+    "identityEnabled": { "type": "boolean" },
+    "memoryEnabled": { "type": "boolean" },
+    "projectsEnabled": { "type": "boolean" },
+    "navigationStandard": {
+      "type": "boolean",
+      "description": "Confirms the locked 5-section navigation model is present."
+    },
+    "deviceFabricEnabled": { "type": "boolean" },
+    "agentFabricEnabled": { "type": "boolean" },
+    "voiceEnabled": { "type": "boolean" },
+    "accessibilityCertified": {
+      "type": "boolean",
+      "description": "Binding claim that WCAG 2.2 AA + THOX accessibility floor were validated for this build."
+    },
+    "experienceScoreFloor": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 90,
+      "description": "Minimum THOX Experience Score required to ship. Default is the Ship gate (90)."
+    },
+    "complianceMode": {
+      "type": "string",
+      "enum": ["None", "Hipaa", "Gdpr", "Soc2", "Pci", "Iso27001"],
+      "default": "None"
+    }
+  },
+  "additionalProperties": false
+}

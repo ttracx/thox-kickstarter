@@ -1,0 +1,16 @@
+{
+  "role": {
+    "device": {
+      "origin":        { "$type": "string", "$value": "Origin" },
+      "leadDevice":    { "$type": "string", "$value": "Lead Device" },
+      "inferenceNode": { "$type": "string", "$value": "Inference Node" },
+      "anchor":        { "$type": "string", "$value": "Anchor" }
+    },
+    "deviceState": {
+      "online":   { "$type": "color", "$value": "{color.core.emerald.500}" },
+      "active":   { "$type": "color", "$value": "{color.core.neon}" },
+      "degraded": { "$type": "color", "$value": "{color.core.amber}" },
+      "offline":  { "$type": "color", "$value": "{color.core.zinc.500}" }
+    }
+  }
+}

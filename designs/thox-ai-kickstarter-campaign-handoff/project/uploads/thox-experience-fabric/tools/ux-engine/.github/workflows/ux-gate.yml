@@ -1,0 +1,50 @@
+name: ux-gate
+
+# Blocks any merge that drifts the compiled tokens, violates the THOX brand or
+# compliance rules, fails WCAG AA, or breaks a component contract.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "tokens/**"
+      - "src/**"
+      - "contracts/**"
+      - "packages/**"
+      - "dist/**"
+      - ".github/workflows/ux-gate.yml"
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      # Rebuild artifacts from the token source of truth. If the committed
+      # dist/ differs from a fresh build, the drift gate below fails.
+      - name: Build tokens
+        run: pnpm build
+
+      - name: Verify (brand + a11y + contracts + drift)
+        run: pnpm verify
+
+      - name: Unit tests
+        run: pnpm test
+
+      # Lint the whole repo for forbidden brand and compliance patterns, scoped
+      # by surface (public Founders content is held to the strictest rule set).
+      - name: Forbidden-pattern scan
+        run: pnpm lint

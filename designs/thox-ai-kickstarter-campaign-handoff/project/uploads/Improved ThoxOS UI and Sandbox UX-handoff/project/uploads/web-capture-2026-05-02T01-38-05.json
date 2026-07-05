@@ -1,0 +1,152 @@
+[
+  {
+    "id": "cap_mono9nkt_lgabjy",
+    "selector": "div",
+    "label": "ThoxOS Status: Ready ◉ Connected WiFi ⬡ …",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:37:49.469Z",
+    "innerText": "ThoxOS\nStatus: Ready\n◉\nConnected\nWiFi\n⬡\nSub Units: 3\nMagStack\n◎\nActive\nSystem\n◈\nAnalytics\nGPU\n📦\nFirmware\nOTA\n⚙\nSettings\n⬡ MAGSTACK™ · 4 nodes · Raft 3/4\nOpen an app from the dock below ↓",
+    "outerHTML": "<div style=\"position: absolute; inset: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;\"><div style=\"display: inline-block; margin-bottom: 8px;\"><svg width=\"100\" height=\"100\" viewBox=\"0 0 120 120\" style=\"filter: drop-shadow(rgba(16, 185, 129, 0.3) 0px 0px 30px);\"><rect x=\"20\" y=\"20\" width=\"80\" height=\"80\" rx=\"14\" fill=\"#0d1117\" stroke=\"#10b981\" stroke-width=\"1.5\"></rect><line x1=\"28\" y1=\"32\" x2=\"92\" y2=\"32\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"28\" y1=\"44\" x2=\"92\" y2=\"44\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"28\" y1=\"56\" x2=\"92\" y2=\"56\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"28\" y1=\"68\" x2=\"92\" y2=\"68\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"28\" y1=\"80\" x2=\"92\" y2=\"80\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"32\" y1=\"28\" x2=\"32\" y2=\"92\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"44\" y1=\"28\" x2=\"44\" y2=\"92\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"56\" y1=\"28\" x2=\"56\" y2=\"92\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"68\" y1=\"28\" x2=\"68\" y2=\"92\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><line x1=\"80\" y1=\"28\" x2=\"80\" y2=\"92\" stroke=\"#10b981\" stroke-width=\"0.5\" opacity=\"0.15\"></line><rect x=\"44\" y=\"44\" width=\"32\" height=\"32\" rx=\"4\" fill=\"#0d1117\" stroke=\"#10b981\" stroke-width=\"1.5\"></rect></svg></div><div style=\"font-family: &quot;JetBrains Mono&quot;, monospace; font-weight: 700; font-size: 24px; color: rgb(255, 255, 255); letter-spacing: 2px;\">ThoxOS</div><div style=\"color: rgb(156, 163, 175); font-size: 12px;\">Status: Ready</div><div style=\"display: flex; gap: 12px; margin-top: 10px;\"><div style=\"background: rgb(17, 24, 39); border-radius: 12px; padding: 14px 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); min-width: 80px;\"><div style=\"font-size: 18px; color: rgb(16, 185, 129); margin-bottom: 4px;\">◉</div><div style=\"color: rgb(209, 213, 219); font-size: 9px; font-weight: 600;\">Connected</div><div style=\"color: rgb(107, 114, 128); font-size: 7px; margin-top: 1px;\">WiFi</div></div><div style=\"background: rgb(17, 24, 39); border-radius: 12px; padding: 14px 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); min-width: 80px;\"><div style=\"font-size: 18px; color: rgb(168, 85, 247); margin-bottom: 4px;\">⬡</div><div style=\"color: rgb(209, 213, 219); font-size: 9px; font-weight: 600;\">Sub Units: 3</div><div style=\"color: rgb(107, 114, 128); font-size: 7px; margin-top: 1px;\">MagStack</div></div><div style=\"background: rgb(17, 24, 39); border-radius: 12px; padding: 14px 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); min-width: 80px;\"><div style=\"font-size: 18px; color: rgb(16, 185, 129); margin-bottom: 4px;\">◎</div><div style=\"color: rgb(209, 213, 219); font-size: 9px; font-weight: 600;\">Active</div><div style=\"color: rgb(107, 114, 128); font-size: 7px; margin-top: 1px;\">System</div></div><div style=\"background: rgb(17, 24, 39); border-radius: 12px; padding: 14px 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); min-width: 80px;\"><div style=\"font-size: 18px; color: rgb(16, 185, 129); margin-bottom: 4px;\">◈</div><div style=\"color: rgb(209, 213, 219); font-size: 9px; font-weight: 600;\">Analytics</div><div style=\"color: rgb(107, 114, 128); font-size: 7px; margin-top: 1px;\">GPU</div></div><div style=\"background: rgb(17, 24, 39); border-radius: 12px; padding: 14px 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); min-width: 80px;\"><div style=\"font-size: 18px; color: rgb(16, 185, 129); margin-bottom: 4px;\">📦</div><div style=\"color: rgb(209, 213, 219); font-size: 9px; font-weight: 600;\">Firmware</div><div style=\"color: rgb(107, 114, 128); font-size: 7px; margin-top: 1px;\">OTA</div></div><div style=\"background: rgb(17, 24, 39); border-radius: 12px; padding: 14px 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); min-width: 80px;\"><div style=\"font-size: 18px; color: rgb(16, 185, 129); margin-bottom: 4px;\">⚙</div><div style=\"color: rgb(209, 213, 219); font-size: 9px; font-weight: 600;\">Settings</div></div></div><div style=\"margin-top: 10px; padding: 6px 16px; border-radius: 8px; background: rgba(255, 255, 255, 0.02);\"><span style=\"color: rgb(168, 85, 247); font-weight: 700; font-size: 10px;\">⬡</span> <span style=\"color: rgb(156, 163, 175); font-size: 10px;\">MAGSTACK™ · 4 nodes · Raft 3/4</span></div><div style=\"color: rgb(26, 26, 40); font-size: 9px; margin-top: 4px;\">Open an app from the dock below ↓</div></div>",
+    "rect": {
+      "x": 0,
+      "y": 36,
+      "width": 2179,
+      "height": 1162
+    },
+    "computedStyles": {
+      "display": "flex",
+      "position": "absolute",
+      "top": "0px",
+      "right": "0px",
+      "bottom": "0px",
+      "left": "0px",
+      "width": "2179px",
+      "height": "1162px",
+      "border": "0px none rgb(255, 255, 255)",
+      "box-sizing": "border-box",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "flex-direction": "column",
+      "justify-content": "center",
+      "align-items": "center",
+      "gap": "14px",
+      "transition": "all"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_mono9sv8_8etprw",
+    "selector": "div",
+    "label": "THOXOSv6 COMPLETE SYSTEM DEMO GPU VRAM 4…",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:37:56.324Z",
+    "innerText": "THOXOSv6\nCOMPLETE SYSTEM DEMO\nGPU\nVRAM\n42 t/s\n☀\n🔊\n🔔\n8:37:55 PM",
+    "outerHTML": "<div style=\"position: absolute; top: 0px; left: 0px; right: 0px; height: 36px; background: rgba(4, 4, 10, 0.99); border-bottom: 1px solid rgb(20, 20, 30); display: flex; align-items: center; padding: 0px 14px; z-index: 9999; gap: 10px; overflow: hidden; backdrop-filter: blur(12px); transition: background 0.4s, border-color 0.4s;\"><span style=\"color: rgb(16, 185, 129); font-weight: 800; font-size: 12px; letter-spacing: 1px; white-space: nowrap;\">THOX<span style=\"color: rgb(250, 250, 250);\">OS</span><span style=\"color: rgb(16, 185, 129); font-size: 7px; opacity: 0.5; margin-left: 2px;\">v6</span></span><div style=\"width: 1px; height: 12px; background: rgb(31, 31, 46);\"></div><span style=\"color: rgb(26, 26, 40); font-size: 8px;\">COMPLETE SYSTEM DEMO</span><div style=\"flex: 1 1 0%;\"></div><div style=\"display: flex; gap: 6px; align-items: center; margin-right: 4px;\"><div style=\"display: flex; align-items: center; gap: 3px;\"><div style=\"width: 24px; height: 4px; background: rgb(26, 26, 40); border-radius: 2px; overflow: hidden;\"><div style=\"height: 100%; width: 73.9435%; background: rgb(16, 185, 129); transition: width 0.7s;\"></div></div><span style=\"color: rgb(16, 185, 129); font-size: 8px;\">GPU</span></div><div style=\"display: flex; align-items: center; gap: 3px;\"><div style=\"width: 24px; height: 4px; background: rgb(26, 26, 40); border-radius: 2px; overflow: hidden;\"><div style=\"height: 100%; width: 58.5673%; background: rgb(59, 130, 246); transition: width 0.7s;\"></div></div><span style=\"color: rgb(59, 130, 246); font-size: 8px;\">VRAM</span></div><div style=\"display: flex; align-items: center; gap: 3px;\"><span style=\"color: rgb(52, 211, 153); font-size: 8px;\">42 t/s</span></div></div><div style=\"width: 1px; height: 12px; background: rgb(31, 31, 46); flex-shrink: 0;\"></div><div title=\"Switch to light\" style=\"cursor: pointer; padding: 1px 3px; font-size: 12px; color: rgb(245, 158, 11); transition: color 0.2s;\">☀</div><div title=\"Sound on\" style=\"cursor: pointer; padding: 1px 3px; font-size: 12px; color: rgb(52, 211, 153); transition: color 0.2s;\">🔊</div><div style=\"position: relative; cursor: pointer; padding: 1px 3px;\"><span style=\"color: rgb(31, 31, 46); font-size: 12px;\">🔔</span></div><div style=\"width: 1px; height: 12px; background: rgb(31, 31, 46); flex-shrink: 0;\"></div><span style=\"color: rgb(31, 31, 46); font-size: 9px; white-space: nowrap;\">8:37:55 PM</span></div>",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 2179,
+      "height": 36
+    },
+    "computedStyles": {
+      "display": "flex",
+      "position": "absolute",
+      "top": "0px",
+      "right": "0px",
+      "bottom": "1234px",
+      "left": "0px",
+      "width": "2179px",
+      "height": "36px",
+      "padding": "0px 14px",
+      "box-sizing": "border-box",
+      "background": "rgba(4, 4, 10, 0.99) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "align-items": "center",
+      "gap": "10px",
+      "overflow": "hidden",
+      "z-index": "9999",
+      "transition": "background 0.4s, border-color 0.4s"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  },
+  {
+    "id": "cap_mono9tw1_l3mdg0",
+    "selector": "div",
+    "label": "◉ AI ⬡ QSim ⬡ Mag ▶ Pipe ◈ GPU >_ Term ⚡…",
+    "tag": "div",
+    "url": "https://sandbox.thox.ai/",
+    "title": "ThoxOS — AI Inference Sandbox | Thox.ai",
+    "timestamp": "2026-05-02T01:37:57.649Z",
+    "innerText": "◉\nAI\n⬡\nQSim\n⬡\nMag\n▶\nPipe\n◈\nGPU\n>_\nTerm\n⚡\nAgent\n⚙\nCfg\n🧠\nMesh\n⚡\nDist\n📊\nMem\n🔒\nSec\n💾\nKV\n📦\nOTA\n▶▶\nDemo\nℹ\nInfo",
+    "outerHTML": "<div style=\"position: absolute; bottom: 0px; left: 0px; right: 0px; height: 72px; background: rgba(4, 4, 10, 0.99); border-top: 1px solid rgb(20, 20, 30); display: flex; align-items: center; justify-content: center; z-index: 9998; padding: 0px 6px; backdrop-filter: blur(12px); transition: background 0.4s, border-color 0.4s; overflow: auto hidden;\"><div title=\"AI Inference\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">◉</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">AI</span></div><div title=\"Quantum Sim\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(168, 85, 247); box-shadow: none; transition: 0.15s;\">⬡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">QSim</span></div><div title=\"MagStack™\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(192, 132, 252); box-shadow: none; transition: 0.15s;\">⬡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Mag</span></div><div title=\"Edge Pipeline\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(245, 158, 11); box-shadow: none; transition: 0.15s;\">▶</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Pipe</span></div><div title=\"GPU Dashboard\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(59, 130, 246); box-shadow: none; transition: 0.15s;\">◈</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">GPU</span></div><div title=\"Terminal\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(52, 211, 153); box-shadow: none; transition: 0.15s;\">&gt;_</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Term</span></div><div title=\"Agents\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(52, 211, 153); box-shadow: none; transition: 0.15s;\">⚡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Agent</span></div><div title=\"Settings\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(107, 114, 128); box-shadow: none; transition: 0.15s;\">⚙</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Cfg</span></div><div title=\"Mesh Cognition\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">🧠</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Mesh</span></div><div title=\"Dist Inference\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(251, 191, 36); box-shadow: none; transition: 0.15s;\">⚡</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Dist</span></div><div title=\"Memory Hierarchy\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(96, 165, 250); box-shadow: none; transition: 0.15s;\">📊</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Mem</span></div><div title=\"Security Center\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">🔒</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Sec</span></div><div title=\"KV Cache\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(34, 211, 238); box-shadow: none; transition: 0.15s;\">💾</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">KV</span></div><div title=\"OTA Updates\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(16, 185, 129); box-shadow: none; transition: 0.15s;\">📦</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">OTA</span></div><div title=\"Demo Mode\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(251, 191, 36); box-shadow: none; transition: 0.15s;\">▶▶</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Demo</span></div><div title=\"Device Info\" style=\"display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 5px; border-radius: 10px; border: 1px solid transparent; background: transparent; transition: 0.15s; flex-shrink: 0;\"><div style=\"width: 34px; height: 34px; border-radius: 8px; background: rgb(12, 12, 24); border: 1px solid rgb(31, 31, 46); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgb(156, 163, 175); box-shadow: none; transition: 0.15s;\">ℹ</div><span style=\"font-size: 6px; color: rgb(26, 26, 40);\">Info</span></div></div>",
+    "rect": {
+      "x": 0,
+      "y": 1198,
+      "width": 2179,
+      "height": 72
+    },
+    "computedStyles": {
+      "display": "flex",
+      "position": "absolute",
+      "top": "1198px",
+      "right": "0px",
+      "bottom": "0px",
+      "left": "0px",
+      "width": "2179px",
+      "height": "72px",
+      "padding": "0px 6px",
+      "box-sizing": "border-box",
+      "background": "rgba(4, 4, 10, 0.99) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font-family": "\"JetBrains Mono\", monospace",
+      "font-size": "16px",
+      "text-decoration": "none",
+      "justify-content": "center",
+      "align-items": "center",
+      "overflow": "auto hidden",
+      "z-index": "9998",
+      "transition": "background 0.4s, border-color 0.4s"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      }
+    ]
+  }
+]

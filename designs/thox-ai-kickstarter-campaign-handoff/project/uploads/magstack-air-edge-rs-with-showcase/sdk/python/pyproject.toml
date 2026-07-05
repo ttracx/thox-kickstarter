@@ -1,0 +1,9 @@
+[project]
+name = "magstack-air-sdk"
+version = "0.2.0"
+description = "Thin Python SDK for the Rust-first MagStack Air edge AI runtime"
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

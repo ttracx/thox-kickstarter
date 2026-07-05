@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MagStack Air Edge RS</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#050708; color:#f1f5f9; }
+    body { margin:0; background:radial-gradient(circle at 20% 0%, rgba(16,185,129,.16), transparent 32rem), #050708; }
+    main { max-width:1100px; margin:0 auto; padding:32px 20px; }
+    h1 { font-size: clamp(2rem, 4vw, 4rem); margin:.2rem 0; letter-spacing:-.05em; }
+    h2 { margin-top:2rem; color:#34d399; }
+    .eyebrow { color:#10b981; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform:uppercase; letter-spacing:.16em; font-size:.75rem; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
+    .card { border:1px solid #1f2937; background:rgba(15,23,42,.72); border-radius:18px; padding:18px; box-shadow: 0 14px 50px rgba(0,0,0,.26); }
+    label { display:block; margin:.7rem 0 .25rem; color:#cbd5e1; font-size:.9rem; }
+    input, textarea, select { width:100%; box-sizing:border-box; border:1px solid #334155; background:#020617; color:#e2e8f0; border-radius:12px; padding:12px; }
+    button { margin-top:12px; border:0; background:#10b981; color:#03120c; font-weight:800; border-radius:999px; padding:11px 18px; cursor:pointer; }
+    button.secondary { background:#1f2937; color:#e2e8f0; }
+    pre { overflow:auto; background:#020617; border:1px solid #1e293b; border-radius:14px; padding:14px; min-height:80px; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { border-bottom:1px solid #1f2937; padding:8px; text-align:left; font-size:.9rem; }
+    .pill { display:inline-flex; border:1px solid #10b981; color:#34d399; border-radius:999px; padding:.15rem .5rem; margin:.1rem; font-size:.75rem; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">THOX.ai / MagStack Air</div>
+  <h1>Edge AI Wi‑Fi Fabric</h1>
+  <p>Rust-first prototype dashboard for ThoxMini Air nodes running lightweight local inference jobs.</p>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Connection</h2>
+      <label>API base URL</label>
+      <input id="base" value="" placeholder="http://127.0.0.1:8787" />
+      <label>Bearer token</label>
+      <input id="token" type="password" placeholder="MAGSTACK_AIR_TOKEN" />
+      <button onclick="refreshAll()">Refresh</button>
+    </section>
+
+    <section class="card">
+      <h2>Run inference</h2>
+      <label>Kind</label>
+      <select id="kind">
+        <option>ai.intent.v1</option>
+        <option>ai.sensor_anomaly.v1</option>
+        <option>ai.embed_hash.v1</option>
+      </select>
+      <label>Text or JSON payload</label>
+      <textarea id="payload" rows="5">check cluster temperature and battery health</textarea>
+      <button onclick="infer()">Submit sync inference</button>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Result</h2>
+    <pre id="result">Ready.</pre>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Nodes</h2>
+      <div id="nodes">Not loaded.</div>
+    </section>
+    <section class="card">
+      <h2>Tasks</h2>
+      <div id="tasks">Not loaded.</div>
+    </section>
+  </div>
+</main>
+<script>
+function baseUrl(){ return document.getElementById('base').value || window.location.origin; }
+function token(){ return document.getElementById('token').value; }
+async function api(path, opts={}){
+  opts.headers = Object.assign({'Authorization':'Bearer '+token()}, opts.headers || {});
+  const res = await fetch(baseUrl()+path, opts);
+  const text = await res.text();
+  let json;
+  try { json = JSON.parse(text); } catch { json = {raw:text}; }
+  if(!res.ok) throw new Error(JSON.stringify(json));
+  return json;
+}
+function show(id, obj){ document.getElementById(id).textContent = JSON.stringify(obj, null, 2); }
+async function refreshAll(){
+  try {
+    const nodes = await api('/api/nodes');
+    document.getElementById('nodes').innerHTML = '<table><tr><th>Node</th><th>Caps</th><th>Temp</th></tr>' +
+      (nodes.nodes || []).map(n => '<tr><td>'+n.node_id.slice(0,8)+'</td><td>'+(n.capabilities||[]).map(c=>'<span class="pill">'+c+'</span>').join('')+'</td><td>'+((n.metrics&&n.metrics.cpu_temp_c)||'')+'</td></tr>').join('') + '</table>';
+    const tasks = await api('/api/tasks');
+    document.getElementById('tasks').innerHTML = '<table><tr><th>Task</th><th>Kind</th><th>Status</th></tr>' +
+      (tasks.tasks || []).slice(0,12).map(t => '<tr><td>'+t.id.slice(0,8)+'</td><td>'+t.kind+'</td><td>'+t.status+'</td></tr>').join('') + '</table>';
+  } catch(e) { show('result', {error:String(e)}); }
+}
+async function infer(){
+  const kind = document.getElementById('kind').value;
+  const raw = document.getElementById('payload').value;
+  let body;
+  if(kind === 'ai.sensor_anomaly.v1') {
+    try { body = {kind, payload: JSON.parse(raw), sync:true, wait_ms:30000}; }
+    catch { body = {kind, payload:{features: raw.split(',').map(Number)}, sync:true, wait_ms:30000}; }
+  } else if(kind === 'ai.embed_hash.v1') {
+    body = {kind, payload:{text:raw, dims:64}, sync:true, wait_ms:30000};
+  } else {
+    body = {kind, text:raw, sync:true, wait_ms:30000};
+  }
+  try {
+    const out = await api('/api/infer', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    show('result', out);
+    await refreshAll();
+  } catch(e) { show('result', {error:String(e)}); }
+}
+window.addEventListener('load', () => { document.getElementById('base').value = window.location.origin; });
+</script>
+</body>
+</html>

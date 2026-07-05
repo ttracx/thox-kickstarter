@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MagStack Air / ThoxMini Air Rust edge-AI Wi-Fi cluster prototype showcase." />
+  <title>MagStack Air · ThoxMini Air Rust Edge-AI Prototype</title>
+  <style>
+    :root {
+      --ink: #05070a;
+      --panel: #0a111b;
+      --panel-2: #0d1724;
+      --panel-3: #111d2d;
+      --line: rgba(148, 163, 184, 0.24);
+      --line-strong: rgba(16, 185, 129, 0.45);
+      --text: #e5eef9;
+      --muted: #94a3b8;
+      --soft: #cbd5e1;
+      --emerald: #10b981;
+      --emerald-2: #34d399;
+      --purple: #a855f7;
+      --amber: #f59e0b;
+      --blue: #38bdf8;
+      --danger: #fb7185;
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 13% 10%, rgba(16, 185, 129, 0.18), transparent 30%),
+        radial-gradient(circle at 82% 0%, rgba(168, 85, 247, 0.20), transparent 30%),
+        linear-gradient(135deg, #04070b 0%, #08111c 48%, #03050a 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    .noise {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      opacity: 0.12;
+      mix-blend-mode: screen;
+      background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 24px 24px, 24px 24px;
+      mask-image: radial-gradient(circle at center, black, transparent 85%);
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 7, 10, 0.72);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(16,185,129,0.22), rgba(168,85,247,0.18));
+      border: 1px solid rgba(16,185,129,0.45);
+      box-shadow: 0 0 30px rgba(16,185,129,0.16);
+      position: relative;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 2px solid var(--emerald-2);
+      border-radius: 5px;
+    }
+
+    .brand-mark::after {
+      inset: 15px;
+      border-color: var(--purple);
+      opacity: 0.75;
+    }
+
+    .brand-title {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-title strong {
+      font-size: 0.96rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-title span {
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a,
+    .print-button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      color: var(--soft);
+      background: transparent;
+      text-decoration: none;
+      font: 600 0.78rem/1 var(--sans);
+      letter-spacing: 0.02em;
+      padding: 11px 12px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    nav a:hover,
+    .print-button:hover {
+      background: rgba(148, 163, 184, 0.12);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 72px 0 36px;
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: max-content;
+      max-width: 100%;
+      padding: 8px 12px;
+      border: 1px solid rgba(16,185,129,0.42);
+      border-radius: 999px;
+      background: rgba(16,185,129,0.08);
+      color: #a7f3d0;
+      font: 700 0.75rem/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-2);
+      box-shadow: 0 0 18px rgba(52,211,153,0.9);
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      max-width: 820px;
+      font-size: clamp(3.2rem, 6vw, 6.8rem);
+      line-height: 0.86;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(110deg, white 0%, #a7f3d0 40%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 700px;
+      color: var(--soft);
+      font-size: clamp(1.06rem, 1.7vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,185,129,0.5);
+      background: linear-gradient(135deg, rgba(16,185,129,0.95), rgba(5,150,105,0.95));
+      color: #02120b;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 18px 48px rgba(16,185,129,0.25);
+    }
+
+    .button.secondary {
+      background: rgba(15, 23, 42, 0.65);
+      color: white;
+      border-color: rgba(148,163,184,0.28);
+      box-shadow: none;
+    }
+
+    .hero-meta {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      min-height: 92px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(13, 23, 36, 0.72);
+    }
+
+    .metric strong {
+      display: block;
+      font: 900 1.26rem/1.2 var(--mono);
+      color: white;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .device-stage {
+      position: relative;
+      min-height: 610px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(15,23,42,0.84), rgba(2,6,23,0.62)),
+        radial-gradient(circle at 30% 20%, rgba(16,185,129,0.14), transparent 42%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .device-stage::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .stage-label {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      z-index: 5;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: #a7f3d0;
+      font: 800 0.72rem/1 var(--mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .stage-label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-2);
+      box-shadow: 0 0 20px rgba(52,211,153,0.85);
+    }
+
+    .render-wrap {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(86%, 490px);
+      height: 430px;
+      transform: translate(-50%, -46%);
+      perspective: 1100px;
+    }
+
+    .stack-render {
+      position: absolute;
+      inset: 18px 38px 38px;
+      transform-style: preserve-3d;
+      transform: rotateX(58deg) rotateZ(-30deg) translateY(8px);
+    }
+
+    .unit {
+      position: absolute;
+      width: 330px;
+      height: 190px;
+      left: 50%;
+      top: 50%;
+      transform-style: preserve-3d;
+      border-radius: 26px;
+      border: 1px solid rgba(203,213,225,0.22);
+      background:
+        linear-gradient(135deg, rgba(17,24,39,0.98), rgba(3,7,18,0.94)),
+        radial-gradient(circle at 20% 20%, rgba(16,185,129,0.12), transparent 45%);
+      box-shadow:
+        0 20px 55px rgba(0,0,0,0.65),
+        inset 0 0 0 2px rgba(255,255,255,0.03),
+        inset 0 0 30px rgba(16,185,129,0.05);
+    }
+
+    .unit::before {
+      content: "";
+      position: absolute;
+      inset: 18px 22px;
+      border-radius: 20px;
+      border: 1px solid rgba(148,163,184,0.20);
+      background:
+        linear-gradient(90deg, transparent 0 36%, rgba(56,189,248,0.08) 36% 64%, transparent 64%),
+        repeating-linear-gradient(90deg, rgba(148,163,184,0.08) 0 1px, transparent 1px 18px);
+      opacity: 0.7;
+    }
+
+    .unit::after {
+      content: "";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      width: 44px;
+      height: 14px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(16,185,129,0.48));
+      box-shadow: 0 0 18px rgba(16,185,129,0.25);
+    }
+
+    .unit .chip {
+      position: absolute;
+      left: 96px;
+      top: 67px;
+      width: 86px;
+      height: 54px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, #121826, #05070a);
+      border: 1px solid rgba(52,211,153,0.28);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 10px 26px rgba(0,0,0,0.35);
+    }
+
+    .unit .chip::before,
+    .unit .chip::after {
+      content: "";
+      position: absolute;
+      left: -13px;
+      right: -13px;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, rgba(52,211,153,0.65) 0 4px, transparent 4px 9px);
+    }
+
+    .unit .chip::before { top: 13px; }
+    .unit .chip::after { bottom: 13px; }
+
+    .unit .pins {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .unit .pins i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--purple);
+      box-shadow: 0 0 18px rgba(168,85,247,0.8);
+    }
+
+    .unit .magnet {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #04100b;
+      font: 900 0.74rem/1 var(--mono);
+      box-shadow: inset 0 -7px 18px rgba(0,0,0,0.22), 0 0 25px rgba(0,0,0,0.22);
+    }
+
+    .unit .n { background: var(--amber); }
+    .unit .s { background: var(--emerald); }
+    .unit .m1 { left: 24px; top: 24px; }
+    .unit .m2 { right: 24px; top: 24px; }
+    .unit .m3 { left: 24px; bottom: 24px; }
+    .unit .m4 { right: 24px; bottom: 24px; }
+
+    .unit-1 { transform: translate3d(-50%, -50%, 0) translateY(96px); opacity: 0.64; }
+    .unit-2 { transform: translate3d(-50%, -50%, 52px) translateY(32px); opacity: 0.84; }
+    .unit-3 { transform: translate3d(-50%, -50%, 104px) translateY(-32px); }
+
+    .glow-ring {
+      position: absolute;
+      left: 50%;
+      bottom: 54px;
+      width: 360px;
+      height: 88px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(16,185,129,0.23), transparent 65%);
+      filter: blur(5px);
+    }
+
+    .callout {
+      position: absolute;
+      z-index: 6;
+      width: 190px;
+      padding: 13px 14px;
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 16px;
+      background: rgba(5, 10, 18, 0.78);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 16px 44px rgba(0,0,0,0.3);
+    }
+
+    .callout strong {
+      display: block;
+      color: white;
+      font: 900 0.76rem/1.2 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .callout span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .callout.one { top: 86px; right: 22px; }
+    .callout.two { bottom: 86px; left: 24px; }
+    .callout.three { right: 34px; bottom: 34px; }
+
+    section {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 58px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      color: var(--emerald-2);
+      font: 900 0.78rem/1 var(--mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 10px 0 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .section-note {
+      max-width: 470px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(13, 23, 36, 0.76);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255,255,255,0.055), transparent 36%);
+      opacity: 0.6;
+    }
+
+    .card-body {
+      position: relative;
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: #d1fae5;
+      background: rgba(16,185,129,0.10);
+      border: 1px solid rgba(16,185,129,0.25);
+      font: 800 0.68rem/1 var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .tag.purple { color: #eadcff; border-color: rgba(168,85,247,0.35); background: rgba(168,85,247,0.12); }
+    .tag.blue { color: #d8f3ff; border-color: rgba(56,189,248,0.34); background: rgba(56,189,248,0.10); }
+    .tag.amber { color: #ffedd5; border-color: rgba(245,158,11,0.34); background: rgba(245,158,11,0.10); }
+
+    .card h3 {
+      margin: 16px 0 9px;
+      font-size: 1.16rem;
+      letter-spacing: -0.025em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 0.94rem;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(13,23,36,0.72);
+    }
+
+    .spec-table th,
+    .spec-table td {
+      padding: 16px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(148,163,184,0.14);
+      vertical-align: top;
+    }
+
+    .spec-table th {
+      width: 24%;
+      color: white;
+      font: 800 0.8rem/1.25 var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(16,185,129,0.06);
+    }
+
+    .spec-table td {
+      color: var(--soft);
+      line-height: 1.55;
+    }
+
+    .spec-table tr:last-child th,
+    .spec-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(13, 23, 36, 0.72);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+      overflow: hidden;
+    }
+
+    .panel-body { padding: 24px; }
+
+    .anatomy {
+      min-height: 590px;
+      position: relative;
+      background:
+        radial-gradient(circle at 48% 28%, rgba(16,185,129,0.14), transparent 34%),
+        linear-gradient(145deg, rgba(15,23,42,0.8), rgba(2,6,23,0.92));
+    }
+
+    .exploded {
+      position: absolute;
+      inset: 46px 32px 42px;
+      display: grid;
+      place-items: center;
+    }
+
+    .plate {
+      position: absolute;
+      width: 340px;
+      height: 198px;
+      border-radius: 26px;
+      border: 1px solid rgba(148,163,184,0.22);
+      background: linear-gradient(140deg, rgba(15,23,42,0.98), rgba(2,6,23,0.96));
+      box-shadow: 0 20px 50px rgba(0,0,0,0.38), inset 0 0 0 2px rgba(255,255,255,0.025);
+      transform: rotateX(62deg) rotateZ(-28deg);
+    }
+
+    .plate.lid { margin-top: -170px; opacity: 0.98; }
+    .plate.board { margin-top: -18px; width: 270px; height: 112px; border-radius: 17px; border-color: rgba(56,189,248,0.26); background: linear-gradient(135deg, rgba(8,47,73,0.90), rgba(3,7,18,0.96)); }
+    .plate.thermal { margin-top: 95px; width: 280px; height: 124px; border-radius: 18px; border-color: rgba(245,158,11,0.28); background: linear-gradient(135deg, rgba(245,158,11,0.24), rgba(30,41,59,0.96)); }
+    .plate.base { margin-top: 222px; }
+
+    .plate::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 22px;
+      top: 18px;
+      color: rgba(226,232,240,0.85);
+      font: 900 0.72rem/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .leader-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      align-items: center;
+    }
+
+    .flow-node {
+      min-height: 120px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.18);
+      background: rgba(2,6,23,0.50);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .flow-node strong {
+      display: block;
+      color: white;
+      font-size: 0.95rem;
+      letter-spacing: -0.015em;
+    }
+
+    .flow-node span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.35;
+      margin-top: 8px;
+    }
+
+    .flow-arrow {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(16,185,129,0.1), rgba(16,185,129,0.95));
+      position: relative;
+    }
+
+    .flow-arrow::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 9px;
+      height: 9px;
+      border-top: 2px solid var(--emerald-2);
+      border-right: 2px solid var(--emerald-2);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .ai-console {
+      margin-top: 18px;
+      border: 1px solid rgba(16,185,129,0.28);
+      border-radius: 22px;
+      background: #020617;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    }
+
+    .console-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+      color: var(--muted);
+      font: 800 0.75rem/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lights { display: flex; gap: 6px; }
+    .lights i { width: 10px; height: 10px; border-radius: 50%; background: rgba(148,163,184,0.35); }
+    .lights i:nth-child(1) { background: var(--danger); }
+    .lights i:nth-child(2) { background: var(--amber); }
+    .lights i:nth-child(3) { background: var(--emerald); }
+
+    pre {
+      margin: 0;
+      padding: 20px;
+      color: #d1fae5;
+      font: 500 0.84rem/1.65 var(--mono);
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.18);
+      background: rgba(2,6,23,0.45);
+      width: max-content;
+      max-width: 100%;
+    }
+
+    .tab-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--soft);
+      background: transparent;
+      cursor: pointer;
+      font: 800 0.77rem/1 var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .tab-button[aria-selected="true"] {
+      background: rgba(16,185,129,0.16);
+      color: #a7f3d0;
+      box-shadow: inset 0 0 0 1px rgba(16,185,129,0.32);
+    }
+
+    .tab-panels { margin-top: 18px; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 16px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(2,6,23,0.36);
+    }
+
+    .timeline-item b {
+      color: var(--emerald-2);
+      font: 900 0.78rem/1.3 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item strong {
+      display: block;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .showcase-footer {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto 36px;
+      border: 1px solid rgba(16,185,129,0.24);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(16,185,129,0.12), rgba(168,85,247,0.08)),
+        rgba(13,23,36,0.76);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .showcase-footer p {
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.55;
+    }
+
+    .mini-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .mini-badge {
+      border: 1px solid rgba(148,163,184,0.20);
+      background: rgba(2,6,23,0.35);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--soft);
+      font: 700 0.72rem/1 var(--mono);
+    }
+
+    .legal {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .copy-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--amber);
+      border-radius: 14px;
+      background: rgba(245,158,11,0.08);
+      color: #fde68a;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 980px) {
+      .topbar-inner { align-items: flex-start; padding: 16px 0; flex-direction: column; }
+      nav { justify-content: flex-start; }
+      .hero { grid-template-columns: 1fr; padding-top: 44px; }
+      .device-stage { min-height: 540px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .section-head { display: grid; }
+      .leader-flow { grid-template-columns: 1fr; }
+      .flow-arrow { width: 1px; height: 34px; margin: 0 auto; background: linear-gradient(180deg, rgba(16,185,129,0.1), rgba(16,185,129,0.95)); }
+      .flow-arrow::after { right: 50%; top: auto; bottom: 0; transform: translateX(50%) rotate(135deg); }
+      .showcase-footer { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-meta { grid-template-columns: 1fr; }
+      .device-stage { min-height: 480px; }
+      .render-wrap { transform: translate(-50%, -42%) scale(0.78); }
+      .callout { display: none; }
+      .spec-table, .spec-table tbody, .spec-table tr, .spec-table th, .spec-table td { display: block; width: 100%; }
+      .spec-table th { border-bottom: 0; padding-bottom: 8px; }
+      .spec-table td { padding-top: 0; }
+      .timeline-item { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(3rem, 18vw, 5rem); }
+    }
+
+    @media print {
+      body { background: white; color: black; }
+      .noise, .topbar, .hero-actions, .print-button { display: none !important; }
+      .page, section, .hero, .showcase-footer { width: 100%; max-width: none; }
+      .hero, section { padding: 24px 0; }
+      .card, .panel, .metric, .spec-table, .showcase-footer { box-shadow: none; background: white; color: black; border-color: #cbd5e1; }
+      .gradient-text, h1, h2, h3, .card h3, .flow-node strong, .timeline-item strong { color: black; background: none; -webkit-background-clip: initial; background-clip: initial; }
+      p, .lede, .section-note, .card p, .metric span, .timeline-item p, .legal, .spec-table td { color: #334155; }
+      pre { color: #064e3b; white-space: pre-wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="page">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="MagStack Air home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-title">
+            <strong>MagStack Air</strong>
+            <span>ThoxMini Air · Rust Edge-AI</span>
+          </span>
+        </a>
+        <nav aria-label="Page navigation">
+          <a href="#overview">Overview</a>
+          <a href="#device">Device</a>
+          <a href="#fabric">Fabric</a>
+          <a href="#edge-ai">Edge AI</a>
+          <a href="#demo">Demo</a>
+          <button class="print-button" type="button" onclick="window.print()">Print sheet</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="MagStack Air hero">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Internal P0.3 prototype showcase</div>
+          <h1><span class="gradient-text">Rust Wi-Fi cluster</span><br />for real edge AI jobs.</h1>
+          <p class="lede">MagStack Air turns a stack of ThoxMini Air Raspberry Pi Zero 2 W-class nodes into a local Wi‑Fi edge fabric: lightweight Rust inference, telemetry-aware scheduling, task persistence, and a dashboard that proves the stack is doing useful work.</p>
+          <div class="hero-actions">
+            <a class="button" href="#demo">View demo flow</a>
+            <a class="button secondary" href="#edge-ai">See AI jobs</a>
+          </div>
+          <div class="hero-meta" aria-label="Prototype highlights">
+            <div class="metric"><strong>Rust-first</strong><span>Node runtime, scheduler, auth, telemetry, CLI, and built-in AI jobs.</span></div>
+            <div class="metric"><strong>Wi‑Fi fabric</strong><span>Leader plus worker agents over local LAN; explicit leader for reliable P0 bring-up.</span></div>
+            <div class="metric"><strong>Pi-realistic</strong><span>Tiny local models, one-task worker default, no large-LLM claim on Air-class nodes.</span></div>
+          </div>
+        </div>
+
+        <aside class="device-stage" aria-label="CSS-rendered MagStack Air device stack">
+          <div class="stage-label">MagStack vertical cluster</div>
+          <div class="glow-ring" aria-hidden="true"></div>
+          <div class="render-wrap" aria-hidden="true">
+            <div class="stack-render">
+              <div class="unit unit-1">
+                <span class="magnet n m1">N</span><span class="magnet s m2">S</span><span class="magnet s m3">S</span><span class="magnet n m4">N</span>
+                <span class="chip"></span><span class="pins"><i></i><i></i><i></i></span>
+              </div>
+              <div class="unit unit-2">
+                <span class="magnet n m1">N</span><span class="magnet s m2">S</span><span class="magnet s m3">S</span><span class="magnet n m4">N</span>
+                <span class="chip"></span><span class="pins"><i></i><i></i><i></i></span>
+              </div>
+              <div class="unit unit-3">
+                <span class="magnet n m1">N</span><span class="magnet s m2">S</span><span class="magnet s m3">S</span><span class="magnet n m4">N</span>
+                <span class="chip"></span><span class="pins"><i></i><i></i><i></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="callout one"><strong>MagStack face</strong><span>Quad polarity pattern for self-alignment and stack feel validation.</span></div>
+          <div class="callout two"><strong>Thermal path</strong><span>Telemetry + anomaly job tracks heat and load during demo workloads.</span></div>
+          <div class="callout three"><strong>Wi‑Fi cluster</strong><span>Every node can advertise capacity; leader routes jobs by capability.</span></div>
+        </aside>
+      </section>
+
+      <section id="overview" aria-label="Overview">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">What it is</div>
+            <h2>A credible Air-class AI appliance slice.</h2>
+          </div>
+          <p class="section-note">The showcase is deliberately internal/prototype-safe: it presents working local AI jobs and cluster behavior without implying a tiny Pi node runs a large general-purpose LLM.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><div class="card-body"><span class="tag">Control plane</span><h3>Leader node with persistent queue</h3><p>SQLite-backed task state, node registry, stale-job requeue, capability routing, authenticated API, and dashboard serving from the local network.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag purple">Node plane</span><h3>Rust worker daemon</h3><p>Telemetry, registration, beat loop, one-task default guardrail, signed internal flow, and a safe executor for built-in AI jobs or allowlisted plugins.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag blue">Experience layer</span><h3>Dashboard + Python SDK</h3><p>Static LAN dashboard for demos and a dependency-light Python SDK for product workflows, tests, and higher-level integrations.</p></div></article>
+        </div>
+      </section>
+
+      <section id="device" aria-label="Device anatomy">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Device anatomy</div>
+            <h2>Low-profile compute node, stack-first identity.</h2>
+          </div>
+          <p class="section-note">The P0 goal is to prove physical stack behavior, Wi‑Fi cluster reliability, thermal behavior, and real local inference before advancing shared power or identity contacts.</p>
+        </div>
+        <div class="split">
+          <div class="panel anatomy" aria-label="Exploded CSS device diagram">
+            <div class="exploded" aria-hidden="true">
+              <div class="plate lid" data-label="vented lid + magnet skin"></div>
+              <div class="plate board" data-label="Pi Zero 2 W board zone"></div>
+              <div class="plate thermal" data-label="thermal pad / airflow"></div>
+              <div class="plate base" data-label="base shell + MagStack face"></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <table class="spec-table" aria-label="MagStack Air prototype specification">
+                <tbody>
+                  <tr><th>Internal name</th><td>MagStack Air / ThoxMini Air engineering prototype. Public-facing naming can be mapped separately for campaign copy.</td></tr>
+                  <tr><th>Compute target</th><td>Raspberry Pi Zero 2 W-class Linux node for P0 software and enclosure validation.</td></tr>
+                  <tr><th>Cluster mode</th><td>Wi‑Fi LAN with explicit leader for P0 reliability; workers register, beat, pull work, execute, and callback results.</td></tr>
+                  <tr><th>MagStack role</th><td>Mechanical self-alignment and stack identity first. Shared 5V / identity contacts remain an upgrade path after safety validation.</td></tr>
+                  <tr><th>AI boundary</th><td>Lightweight local inference, routing, anomaly detection, deterministic embedding hashes, and plugin bridge for bigger nodes.</td></tr>
+                  <tr><th>Demo proof</th><td>Submit a prompt, route it by capability, run Rust-native inference, persist result, and watch the dashboard update.</td></tr>
+                </tbody>
+              </table>
+              <div class="copy-note">Prototype copy guardrail: show real working units or label renders clearly. Avoid claims such as large-LLM inference on Air-class nodes, unbreakable security, or compliance guarantees.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fabric" aria-label="Wi-Fi fabric">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Runtime fabric</div>
+            <h2>Wi‑Fi replaces the backplane, Rust keeps it lean.</h2>
+          </div>
+          <p class="section-note">The realistic P0 design trades mDNS-only election for an explicit leader URL during hardware demos, while still using a zero-extra-cable Wi‑Fi fabric across stacked nodes.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-body">
+            <div class="leader-flow" aria-label="Runtime flow">
+              <div class="flow-node"><strong>Client</strong><span>Dashboard, CLI, SDK, PWA bridge, or watch relay submits JSON task.</span></div>
+              <div class="flow-arrow" aria-hidden="true"></div>
+              <div class="flow-node"><strong>Leader</strong><span>Authenticates, stores task, matches required capability, and assigns work.</span></div>
+              <div class="flow-arrow" aria-hidden="true"></div>
+              <div class="flow-node"><strong>Worker</strong><span>Heartbeat carries capacity and pulls one task when available.</span></div>
+              <div class="flow-arrow" aria-hidden="true"></div>
+              <div class="flow-node"><strong>AI runtime</strong><span>Rust-native tiny model or guarded plugin produces result.</span></div>
+              <div class="flow-arrow" aria-hidden="true"></div>
+              <div class="flow-node"><strong>Result</strong><span>Callback persists output, updates dashboard, and exposes API history.</span></div>
+            </div>
+            <div class="ai-console" aria-label="Example runtime command">
+              <div class="console-head"><span>magairctl demo</span><span class="lights"><i></i><i></i><i></i></span></div>
+              <pre><code>$ magairctl infer \
+  --url http://thoxair-leader.local:8787 \
+  --kind ai.intent.v1 \
+  --text "check cluster temperature and summarize battery health"
+
+queued task=task_01HX... capability=ai.intent.v1
+worker=air-node-03 runtime=rust-native
+result={"label":"ops","confidence":0.72,"preview":"intent=ops confidence=0.720"}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="edge-ai" aria-label="Edge AI jobs">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Real edge AI jobs</div>
+            <h2>Built-in tasks that can run on Air-class nodes.</h2>
+          </div>
+          <p class="section-note">These are not placeholders. They are small enough to be useful for prototype demos while preserving the upgrade path to ThoxMini, Nova, Jetson, or NPU-backed nodes.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><div class="card-body"><span class="tag">ai.intent.v1</span><h3>Tiny intent classifier</h3><p>Bag-of-words softmax for routing prompts into operations, health, code, research, or general workflows without a cloud call.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag amber">ai.sensor_anomaly.v1</span><h3>Telemetry anomaly detector</h3><p>Z-score anomaly detection for thermal, load, battery drop, motion, or other compact numeric vectors.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag blue">ai.embed_hash.v1</span><h3>Deterministic text vector</h3><p>Normalized hashed embeddings for local routing, dedupe, cache keys, and approximate matching.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag purple">plugin.process.v1</span><h3>Guarded plugin bridge</h3><p>Optional allowlisted external process path for ONNX, TFLite, or llama.cpp wrappers on bigger Thox nodes.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag">fleet telemetry</span><h3>AI-aware scheduling</h3><p>Capabilities, temperature, memory, load, and stale task recovery give demos a realistic operational feel.</p></div></article>
+          <article class="card"><div class="card-body"><span class="tag amber">claim boundary</span><h3>No large-LLM overclaim</h3><p>Air runs lightweight AI and routes heavier jobs to stronger local nodes. That keeps the prototype honest and shippable.</p></div></article>
+        </div>
+      </section>
+
+      <section id="demo" aria-label="Prototype demo plan">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Demo vertical slice</div>
+            <h2>What the prototype should show on the bench.</h2>
+          </div>
+          <p class="section-note">This is the end-to-end story for a realistic working prototype: physical stack, Wi‑Fi cluster, local AI job, dashboard proof, and failure recovery.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-body">
+            <div class="tabs" role="tablist" aria-label="Demo phases">
+              <button class="tab-button" role="tab" aria-selected="true" aria-controls="panel-build" id="tab-build">1 Build</button>
+              <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-boot" id="tab-boot">2 Boot</button>
+              <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-run" id="tab-run">3 Run AI</button>
+              <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-fail" id="tab-fail">4 Recover</button>
+            </div>
+            <div class="tab-panels">
+              <div class="tab-panel active" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+                <div class="timeline">
+                  <div class="timeline-item"><b>Build</b><div><strong>Assemble three Air nodes.</strong><p>Use independently powered nodes for P0, validate printed enclosure fit, magnet polarity, antenna clearance, vents, service access, and thermal pad placement.</p></div></div>
+                  <div class="timeline-item"><b>Install</b><div><strong>Deploy Rust runtime.</strong><p>Install <code>magair-node</code>, model JSON files, systemd unit, token config, and static dashboard on the leader.</p></div></div>
+                </div>
+              </div>
+              <div class="tab-panel" role="tabpanel" id="panel-boot" aria-labelledby="tab-boot">
+                <div class="timeline">
+                  <div class="timeline-item"><b>Leader</b><div><strong>Start the leader service.</strong><p>Leader exposes authenticated API, dashboard, task queue, node registry, and result history on the local Wi‑Fi network.</p></div></div>
+                  <div class="timeline-item"><b>Workers</b><div><strong>Register and beat.</strong><p>Each worker reports node ID, labels, capabilities, temperature, memory, load, and capacity.</p></div></div>
+                </div>
+              </div>
+              <div class="tab-panel" role="tabpanel" id="panel-run" aria-labelledby="tab-run">
+                <div class="timeline">
+                  <div class="timeline-item"><b>Submit</b><div><strong>Send an AI request.</strong><p>Use dashboard, CLI, SDK, or local app bridge to submit <code>ai.intent.v1</code>, <code>ai.sensor_anomaly.v1</code>, or <code>ai.embed_hash.v1</code>.</p></div></div>
+                  <div class="timeline-item"><b>Observe</b><div><strong>Watch capability routing.</strong><p>Dashboard shows queued, running, completed, worker assignment, and result preview.</p></div></div>
+                </div>
+              </div>
+              <div class="tab-panel" role="tabpanel" id="panel-fail" aria-labelledby="tab-fail">
+                <div class="timeline">
+                  <div class="timeline-item"><b>Failure</b><div><strong>Kill a worker or leader process.</strong><p>Verify stale running tasks are requeued after timeout and completed by an available worker after restart.</p></div></div>
+                  <div class="timeline-item"><b>Evidence</b><div><strong>Export logs and screenshots.</strong><p>Collect dashboard state, journal logs, task history, and thermal notes for the next hardware/software revision.</p></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="mini-badges" aria-label="Validation gates">
+              <span class="mini-badge">Rust fmt/clippy/test</span>
+              <span class="mini-badge">aarch64 build</span>
+              <span class="mini-badge">3-node Wi‑Fi test</span>
+              <span class="mini-badge">thermal endpoint</span>
+              <span class="mini-badge">dashboard proof</span>
+              <span class="mini-badge">leader recovery</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="showcase-footer">
+      <div>
+        <p><strong>MagStack Air P0.3</strong> is an internal working prototype page for ThoxMini Air engineering demos. It showcases the device, the Wi‑Fi fabric, and Rust-native lightweight AI workloads while keeping public claims conservative.</p>
+        <div class="mini-badges">
+          <span class="mini-badge">Rust-first portfolio alignment</span>
+          <span class="mini-badge">Real edge-AI job slice</span>
+          <span class="mini-badge">Pi Zero 2 W-class guardrails</span>
+          <span class="mini-badge">Not final production DFM</span>
+        </div>
+      </div>
+      <div class="legal">THOX.ai LLC · Internal engineering showcase · Rev P0.3 · 2026-06-03</div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const tabs = Array.from(document.querySelectorAll('.tab-button'));
+      const panels = Array.from(document.querySelectorAll('.tab-panel'));
+
+      function selectTab(tab) {
+        tabs.forEach((button) => {
+          const selected = button === tab;
+          button.setAttribute('aria-selected', selected ? 'true' : 'false');
+          button.tabIndex = selected ? 0 : -1;
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle('active', panel.id === tab.getAttribute('aria-controls'));
+        });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+          event.preventDefault();
+          const offset = event.key === 'ArrowRight' ? 1 : -1;
+          const next = tabs[(index + offset + tabs.length) % tabs.length];
+          next.focus();
+          selectTab(next);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
