@@ -14,6 +14,19 @@
 
 This repository includes the THOX.ai Kickstarter campaign design assets from Claude Design.
 See the `designs/thox-ai-kickstarter-campaign-handoff/` directory for the HTML/CSS/JS prototypes.
+Key design files include:
+- [ThoxOS Mini Demo.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/ThoxOS%20Mini%20Demo.dc.html)
+- [Kickstarter Story.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/Kickstarter%20Story.dc.html)
+- [Campaign Runbook.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/Campaign%20Runbook.dc.html)
+- [Model Gallery.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/Model%20Gallery.dc.html)
+- [Software Demo.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/Software%20Demo.dc.html)
+- [THOX Experience Fabric.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/THOX%20Experience%20Fabric.dc.html)
+- [Campaign Animatic -export-.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/Campaign%20Animatic%20-%20export-.dc.html)
+- [Campaign Animatic.dc.html](designs/thox-ai-kickstarter-campaign-handoff/project/Campaign%20Animatic.dc.html)
+- [THOX Video Storyboard (standalone).html](designs/thox-ai-kickstarter-campaign-handoff/project/THOX%20Video%20Storyboard%20(standalone).html)
+- [Video Storyboard.html](designs/thox-ai-kickstarter-campaign-handoff/project/Video%20Storyboard.html)
+- [THOX Kickstarter Story.html](designs/thox-ai-kickstarter-campaign-handoff/project/THOX%20Kickstarter%20Story.html)
+
 The primary design file is `designs/thox-ai-kickstarter-campaign-handoff/project/THOX Kickstarter Story.html`.
 
 
