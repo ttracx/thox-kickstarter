@@ -10,6 +10,13 @@
 [![Status](https://img.shields.io/badge/status-quick--launch%20ready-d29922?style=flat-square)](#launch-readiness)
 <!-- /thox-badges -->
 
+## Design Assets
+
+This repository includes the THOX.ai Kickstarter campaign design assets from Claude Design.
+See the `designs/thox-ai-kickstarter-campaign-handoff/` directory for the HTML/CSS/JS prototypes.
+The primary design file is `designs/thox-ai-kickstarter-campaign-handoff/project/THOX Kickstarter Story.html`.
+
+
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
 This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and repository-standard planning docs.
