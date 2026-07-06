@@ -1,0 +1,8 @@
+tool:    brand design (final art supplied by THOX creative team)
+size:    1600x900 (still image)
+seed:    n/a — not generated via gpt-image-1 pipeline
+still_prompt: n/a — hand-composed brand art
+motion_prompt: n/a — still asset
+source_still: prelaunch_product_meshstack-social-everydevice_16x9_v1.png
+qc: passed 2026-07-06 by TX (brand-QC'd on delivery)
+notes: MeshStack app asset. Social hero — Private AI, across every device. Brand tokens verified (emerald #10b981, ink #0a0e14); WireGuard(R) wording and 'MESH' (not fabric) confirmed per previz QA. Approved v1 unless a higher v# supersedes.
