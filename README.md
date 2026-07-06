@@ -31,7 +31,7 @@ The primary design file is `designs/thox-ai-kickstarter-campaign-handoff/project
 
 ## Campaign digital content & production (`kickstarter/`)
 
-Deployable, brand-consistent campaign content generated from the design handoff and kept on the THOX Experience Fabric tokens. Everything is browsable and interactive — start at the hub and open any page in a browser.
+Deployable, brand-consistent campaign content generated from the design handoff and kept on the THOX Experience Fabric tokens. Everything is browsable and interactive — start at the hub and open any page in a browser. Every page is **mobile-optimized** (fluid type, auto-sizing elements, no horizontal scroll at phone widths) and carries the **company legal footer** (© THOX.ai LLC, trademark + IP notices in a collapsible "Legal & trademarks" view).
 
 **Campaign focus:** this Kickstarter launches four devices — **ThoxKey, ThoxMini Air, ThoxMini, ThoxClip** — and the **MeshStack app**. THOX Nova, the THOX Edge Series (Pro / Pro Max / Pro Ultra), and ThoxMigrate are shown as **roadmap and vision**, not campaign rewards. Device copy (full page copy + short graphic copy) lives in [`kickstarter/copy.md`](kickstarter/copy.md).
 

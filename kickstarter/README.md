@@ -63,6 +63,14 @@ copies only the assets the pages actually reference (not the multi-hundred-MB of
 unused product renders and uploads). Every page was rendered end-to-end in
 headless Chromium to confirm it boots with zero page errors.
 
+As a final pass the build injects, into **every** page, a company legal footer
+(© THOX.ai LLC, trademark + IP notices in a collapsible "Legal & trademarks"
+view so it never clutters the page) and ensures a mobile `viewport` meta. The
+authored content pages (hub, packaging, founders, MagDisplay, Experience
+Fabric, models, story) also get mobile-safety CSS and fluid `clamp()` type, and
+were verified at a 390 px phone width with no horizontal overflow. The footer
+self-heals on the React demo pages that replace `<body>` on hydration.
+
 ## Platform: ThoxOS, ThoxOS Mini, and the Experience Fabric
 
 The campaign presents one platform at two scales, held together by a single
