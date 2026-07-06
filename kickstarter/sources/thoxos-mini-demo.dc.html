@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Xolonium'; src: url('assets/fonts/xolonium-regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Xolonium'; src: url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+    @keyframes tm-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes tm-pop { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: none; } }
+    @keyframes tm-blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0.25; } }
+  </style>
+</helmet>
+<div style="width: 100%; height: 100vh; min-height: 720px; background: #000; color: #f8fafc; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow: hidden; position: relative;">
+
+  <!-- ============ WALKTHROUGH ============ -->
+  <sc-if value="{{ showWalk }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; inset: 0; overflow: auto; background: radial-gradient(circle at 22% 0%, rgba(16,185,129,0.16), transparent 520px), radial-gradient(circle at 86% 18%, rgba(56,189,248,0.10), transparent 460px), linear-gradient(135deg, #05070a 0%, #0b1018 48%, #0e1420 100%);">
+      <div style="max-width: 940px; margin: 0 auto; padding: 40px 24px 56px;">
+        <!-- topbar -->
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 26px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border: 1px solid rgba(16,185,129,0.36); border-radius: 10px; display: grid; place-items: center; background: rgba(16,185,129,0.10); box-shadow: 0 0 28px rgba(16,185,129,0.14);">
+              <img src="assets/logos/thox-icon-green.png" alt="" style="width: 22px; height: 22px; object-fit: contain;">
+            </div>
+            <div><div style="font-size: 16px; font-weight: 700; letter-spacing: 0.02em;">ThoxOS Mini</div><div style="color: #a5b4c4; font-size: 12.5px;">ThoxKey first run</div></div>
+          </div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #64748b; text-transform: uppercase;">v1.0.3 · local-first</div>
+        </div>
+
+        <!-- hero -->
+        <div style="border: 1px solid rgba(148,163,184,0.2); background: rgba(17,24,39,0.6); border-radius: 12px; padding: 34px; margin-bottom: 20px; backdrop-filter: blur(18px);">
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #10b981; border: 1px solid rgba(16,185,129,0.28); background: rgba(16,185,129,0.08); border-radius: 999px; padding: 7px 11px; font-size: 11.5px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px;">
+            <span style="width: 6px; height: 6px; background: #10b981; border-radius: 50%; box-shadow: 0 0 8px #10b981;"></span>ThoxKey walkthrough
+          </div>
+          <h1 style="font-family: Xolonium, Inter, sans-serif; font-size: 42px; line-height: 1.02; margin: 0 0 14px; letter-spacing: -0.01em; max-width: 720px;">Plug in the key. Own the intelligence.</h1>
+          <p style="color: #a5b4c4; font-size: 16px; line-height: 1.55; max-width: 620px; margin: 0;">The ThoxKey carries a full private AI desktop. Insert it, launch, and ThoxOS Mini comes up in your browser on 127.0.0.1. No account, no cloud, no telemetry.</p>
+        </div>
+
+        <!-- progress -->
+        <div style="border: 1px solid rgba(148,163,184,0.2); background: rgba(17,24,39,0.6); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; display: flex; gap: 8px;">
+          <sc-for list="{{ walkTrack }}" as="w" hint-placeholder-count="4">
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+              <div style="height: 5px; border-radius: 999px; background: {{ w.bar }};"></div>
+              <div style="display: flex; align-items: center; gap: 7px; font-size: 12px; color: {{ w.textColor }};">
+                <span style="width: 20px; height: 20px; border-radius: 999px; display: grid; place-items: center; font-size: 11px; font-family: 'JetBrains Mono', monospace; background: {{ w.dotBg }}; color: {{ w.dotColor }};">{{ w.dotLabel }}</span>
+                <span style="font-weight: 500;">{{ w.name }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- step card -->
+        <div style="border: 1px solid rgba(148,163,184,0.2); background: rgba(17,24,39,0.6); border-radius: 12px; padding: 30px; backdrop-filter: blur(18px); animation: tm-fade 0.3s ease;">
+          <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 6px;">
+            <div style="width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; background: rgba(16,185,129,0.12); color: #10b981; font-family: 'JetBrains Mono', monospace; font-weight: 700;">{{ walkNum }}</div>
+            <h2 style="margin: 0; font-size: 23px; font-family: Xolonium, Inter, sans-serif; font-weight: 700;">{{ walkTitle }}</h2>
+          </div>
+          <p style="margin: 6px 0 22px 50px; color: #a5b4c4; font-size: 14.5px; line-height: 1.5;">{{ walkSub }}</p>
+
+          <!-- step body: ThoxKey visual -->
+          <sc-if value="{{ walkIsInsert }}" hint-placeholder-val="{{ true }}">
+            <div style="display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: center;">
+              <div style="position: relative; background: #000; border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(16,185,129,0.1);">
+                <img src="assets/runbook/dev-key.png" alt="ThoxKey" style="width: 100%; aspect-ratio: 4/3; object-fit: contain;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <sc-for list="{{ insertChecks }}" as="ic" hint-placeholder-count="3">
+                  <div style="display: flex; align-items: center; gap: 11px; border: 1px solid rgba(148,163,184,0.2); background: rgba(15,23,42,0.6); border-radius: 8px; padding: 12px 14px;">
+                    <span style="width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; background: {{ ic.iconBg }}; color: {{ ic.iconColor }}; font-size: 12px; flex-shrink: 0;">{{ ic.icon }}</span>
+                    <div style="flex: 1;"><div style="font-size: 13.5px; font-weight: 600;">{{ ic.label }}</div><div style="font-size: 11.5px; color: #94a3b8;">{{ ic.detail }}</div></div>
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: {{ ic.tagColor }};">{{ ic.tag }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- step body: boot -->
+          <sc-if value="{{ walkIsBoot }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              <div style="border: 1px solid rgba(148,163,184,0.2); background: #02060f; border-radius: 10px; padding: 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.9; color: #a5b4c4; min-height: 148px;">
+                <sc-for list="{{ bootLines }}" as="bl" hint-placeholder-count="5">
+                  <div style="display: flex; gap: 10px;"><span style="color: {{ bl.color }};">{{ bl.mark }}</span><span>{{ bl.text }}</span></div>
+                </sc-for>
+                <span style="color: #34d399; animation: tm-blink 1s step-end infinite;">▋</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #94a3b8;"><span>{{ bootLabel }}</span><span>{{ bootPct }}%</span></div>
+                <div style="height: 8px; background: rgba(148,163,184,0.16); border-radius: 999px; overflow: hidden;"><div style="height: 100%; width: {{ bootPct }}%; background: linear-gradient(90deg, #059669, #34d399); border-radius: 999px; transition: width 0.25s ease; box-shadow: 0 0 14px rgba(52,211,153,0.5);"></div></div>
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- step body: ready -->
+          <sc-if value="{{ walkIsReady }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 10px 0 4px; text-align: center;">
+              <div style="width: 62px; height: 62px; border-radius: 999px; display: grid; place-items: center; background: rgba(16,185,129,0.14); border: 1px solid rgba(16,185,129,0.36);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" style="width: 30px; height: 30px;"><path d="M20 6 9 17l-5-5"/></svg>
+              </div>
+              <div style="font-family: Xolonium, Inter, sans-serif; font-size: 22px; font-weight: 700;">ThoxOS Mini is ready.</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid rgba(16,185,129,0.36); background: rgba(16,185,129,0.06); border-radius: 8px; padding: 13px 16px; width: 100%; max-width: 380px;">
+                <code style="font-family: 'JetBrains Mono', monospace; color: #34d399; font-size: 15px;">http://127.0.0.1:6080</code>
+                <span style="width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399;"></span>
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- nav -->
+          <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 28px;">
+            <button onClick="{{ walkBack }}" style="{{ walkBackStyle }}">← Back</button>
+            <button onClick="{{ walkNext }}" style="min-height: 44px; padding: 0 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; font-size: 14px; background: #10b981; color: #02120c; font-family: Inter, sans-serif; box-shadow: 0 0 24px rgba(16,185,129,0.2);">{{ walkNextLabel }}</button>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #475569;">
+          <span>THOX.AI LLC · CONFIDENTIAL</span><span>YOUR AI. YOUR DATA. YOUR RULES.</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ SHELL (lock + desktop) ============ -->
+  <sc-if value="{{ showShell }}" hint-placeholder-val="{{ false }}">
+    <!-- wallpaper -->
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 18%, rgba(16,185,129,0.22), transparent 42%), radial-gradient(ellipse at 10% 78%, rgba(16,185,129,0.18), transparent 36%), linear-gradient(rgba(16,185,129,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.045) 1px, transparent 1px), #000; background-size: auto, auto, 80px 80px, 80px 80px, auto;"></div>
+    <div style="position: absolute; inset: 0; background: url('assets/thoxos/thox-bg-2026.png') center / cover no-repeat; opacity: 0.5; mix-blend-mode: screen; filter: saturate(1.08) contrast(1.08);"></div>
+    <div style="position: absolute; right: 32px; bottom: 34px; color: rgba(255,255,255,0.06); font-family: Xolonium, Inter, sans-serif; font-size: clamp(64px, 12vw, 170px); font-weight: 700; letter-spacing: -0.06em; pointer-events: none; line-height: 1;">ThoxOS Mini</div>
+
+    <!-- menubar -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 30px; display: flex; align-items: center; gap: 14px; padding: 0 12px; z-index: 20; background: rgba(9,9,11,0.88); border-bottom: 1px solid rgba(255,255,255,0.105); backdrop-filter: blur(18px); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(248,250,252,0.72);">
+      <div style="display: inline-flex; align-items: center; gap: 8px; height: 100%; color: #34d399; font-weight: 700; letter-spacing: 0.05em;"><img src="assets/logos/thox-icon-green.png" alt="" style="width: 15px; height: 15px; object-fit: contain;">ThoxOS Mini</div>
+      <span>Finder</span><span>File</span><span>View</span><span>Window</span><span>Help</span>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
+        <sc-for list="{{ chips }}" as="ch" hint-placeholder-count="3">
+          <div style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 9px; border: 1px solid rgba(255,255,255,0.105); border-radius: 6px; background: rgba(255,255,255,0.045); color: {{ ch.color }};" title="{{ ch.title }}">
+            <span style="width: 6px; height: 6px; border-radius: 999px; background: {{ ch.led }}; box-shadow: 0 0 9px {{ ch.led }};"></span><span>{{ ch.text }}</span>
+          </div>
+        </sc-for>
+        <button onClick="{{ openPalette }}" style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 9px; border: 1px solid rgba(255,255,255,0.105); border-radius: 6px; background: rgba(255,255,255,0.045); color: rgba(248,250,252,0.72); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px;">⌕ Search <kbd style="min-width: 18px; padding: 1px 6px; border: 1px solid rgba(255,255,255,0.105); border-radius: 4px; background: rgba(255,255,255,0.06); color: rgba(248,250,252,0.72); font-size: 10px;">⌘K</kbd></button>
+        <div style="color: #f8fafc; letter-spacing: 0.07em;">{{ clock }}</div>
+      </div>
+    </div>
+
+    <!-- stage -->
+    <div style="position: absolute; inset: 30px 0 0; z-index: 5;">
+      <!-- lock -->
+      <sc-if value="{{ locked }}" hint-placeholder-val="{{ true }}">
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: tm-pop 0.35s ease;">
+          <div style="font-family: Xolonium, Inter, sans-serif; font-size: clamp(72px, 12vw, 150px); line-height: 0.86; font-weight: 700; letter-spacing: -0.055em; text-shadow: 0 18px 60px rgba(0,0,0,0.75);">{{ lockTime }}</div>
+          <div style="margin-bottom: 24px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(248,250,252,0.72); letter-spacing: 0.14em;">{{ lockDate }}</div>
+          <div style="width: 342px; padding: 20px 26px; display: flex; flex-direction: column; align-items: center; gap: 14px; background: rgba(9,9,11,0.78); border: 1px solid rgba(255,255,255,0.105); border-radius: 12px; box-shadow: 0 34px 90px -40px rgba(0,0,0,0.95), inset 0 1px 0 rgba(255,255,255,0.035); backdrop-filter: blur(22px);">
+            <div style="width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: #34d399; color: #04140c; font-family: Xolonium, Inter, sans-serif; font-size: 29px; font-weight: 700; box-shadow: 0 0 34px rgba(52,211,153,0.32);">T</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(248,250,252,0.72); letter-spacing: 0.05em;">thoxos user</div>
+            <div style="display: flex; gap: 8px; width: 100%;">
+              <div style="flex: 1; height: 38px; padding: 0 12px; display: flex; align-items: center; color: #f8fafc; background: rgba(0,0,0,0.65); border: 1px solid rgba(52,211,153,0.55); border-radius: 7px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.28em; box-shadow: 0 0 0 3px rgba(16,185,129,0.08);">••••••</div>
+              <button onClick="{{ unlock }}" style="height: 38px; padding: 0 14px; border: 1px solid #10b981; border-radius: 7px; background: #10b981; color: #03130b; font-weight: 700; cursor: pointer; box-shadow: 0 0 28px rgba(16,185,129,0.18);">Unlock</button>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; color: rgba(248,250,252,0.45); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;">Press Unlock to connect · defaults match your local container</div>
+          </div>
+          <div style="position: absolute; right: 58px; bottom: 58px; font-family: Xolonium, Inter, sans-serif; font-size: clamp(38px, 6vw, 70px); font-weight: 700; letter-spacing: -0.04em;"><span style="color: #34d399;">Thox</span>OS</div>
+          <div style="position: absolute; right: 60px; bottom: 38px; color: rgba(248,250,252,0.45); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">v1.0.3 | Local-first AI desktop</div>
+        </div>
+      </sc-if>
+
+      <!-- desktop card -->
+      <sc-if value="{{ unlocked }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); width: min(580px, calc(100vw - 44px)); padding: 22px; background: rgba(12,12,14,0.74); border: 1px solid rgba(255,255,255,0.105); border-radius: 14px; backdrop-filter: blur(20px); box-shadow: 0 30px 100px -55px rgba(0,0,0,1), 0 0 0 1px rgba(52,211,153,0.08); animation: tm-pop 0.35s ease;">
+          <h1 style="font-family: Xolonium, Inter, sans-serif; font-size: 30px; letter-spacing: -0.035em; margin: 0 0 7px;">{{ panelTitle }}</h1>
+          <p style="color: rgba(248,250,252,0.72); line-height: 1.5; font-size: 13px; margin: 0 0 18px;">{{ panelSummary }}</p>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px;">
+            <sc-for list="{{ metrics }}" as="mt" hint-placeholder-count="4">
+              <div style="min-height: 66px; padding: 10px; border: 1px solid rgba(255,255,255,0.105); border-radius: 9px; background: rgba(255,255,255,0.035);">
+                <b style="display: block; color: #34d399; font-family: 'JetBrains Mono', monospace; font-size: 15px; margin-bottom: 5px;">{{ mt.v }}</b>
+                <span style="color: rgba(248,250,252,0.45); font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;">{{ mt.k }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <!-- app action bar -->
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+            <button onClick="{{ runCheck }}" style="min-height: 34px; padding: 0 13px; border: 1px solid #10b981; border-radius: 7px; background: rgba(16,185,129,0.88); color: #03130b; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.04em; cursor: pointer;">{{ runLabel }}</button>
+            <button onClick="{{ copyCmd }}" style="min-height: 34px; padding: 0 12px; border: 1px solid rgba(255,255,255,0.105); border-radius: 7px; background: rgba(255,255,255,0.045); color: {{ copyColor }}; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.04em; cursor: pointer;">{{ copyLabel }}</button>
+            <button onClick="{{ lockAgain }}" style="min-height: 34px; padding: 0 12px; border: 1px solid rgba(255,255,255,0.105); border-radius: 7px; background: rgba(255,255,255,0.045); color: rgba(248,250,252,0.72); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.04em; cursor: pointer;">Lock</button>
+          </div>
+          <!-- result rows -->
+          <div style="padding: 12px; border: 1px solid rgba(255,255,255,0.105); border-radius: 9px; background: rgba(0,0,0,0.42); max-height: 190px; overflow: auto;">
+            <div style="display: grid; gap: 6px;">
+              <sc-for list="{{ panelRows }}" as="r" hint-placeholder-count="4">
+                <div style="display: grid; grid-template-columns: minmax(96px, 0.7fr) minmax(0, 1.3fr); gap: 8px; align-items: start; padding: 7px 8px; border: 1px solid rgba(255,255,255,0.07); border-radius: 7px; background: rgba(255,255,255,0.035); font-family: 'JetBrains Mono', monospace; font-size: 10px;">
+                  <b style="color: #34d399; font-weight: 700; overflow-wrap: anywhere;">{{ r.k }}</b>
+                  <code style="color: rgba(248,250,252,0.72); white-space: pre-wrap; overflow-wrap: anywhere;">{{ r.v }}</code>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="margin-top: 14px; display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.105); border-radius: 8px; background: rgba(255,255,255,0.03); color: rgba(248,250,252,0.72); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399; box-shadow: 0 0 6px rgba(52,211,153,0.55);"></span>All traffic stays on <code style="color: #34d399;">127.0.0.1</code> · no cloud · no telemetry.
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <!-- dock -->
+    <div style="position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 25;">
+      <div style="display: flex; gap: 6px; padding: 6px; border: 1px solid rgba(255,255,255,0.105); border-radius: 14px; background: rgba(15,15,18,0.82); backdrop-filter: blur(20px); box-shadow: 0 18px 55px -30px rgba(0,0,0,0.95), inset 0 1px 0 rgba(255,255,255,0.04);">
+        <sc-for list="{{ dockApps }}" as="da" hint-placeholder-count="7">
+          <button onClick="{{ da.onClick }}" title="{{ da.title }}" style="{{ da.style }}">
+            <svg viewBox="0 0 32 32" style="width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(52,211,153,0.28));"><use href="{{ da.icon }}"></use></svg>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- dock icon symbols -->
+    <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+      <symbol id="tm-ai" viewBox="0 0 32 32"><path d="M7 9.5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H12l-5 4v-16a2 2 0 0 1 2-2Z"/><path d="m11 17 5-4 5 5"/><circle cx="11" cy="17" r="1.7"/><circle cx="16" cy="13" r="1.7"/><circle cx="21" cy="18" r="1.7"/></symbol>
+      <symbol id="tm-agents" viewBox="0 0 32 32"><path d="m8 10 16-2-6 17-10-15Z"/><circle cx="8" cy="10" r="3.5"/><circle cx="24" cy="8" r="3.5"/><circle cx="18" cy="25" r="3.5"/><circle cx="16" cy="15" r="1.8"/></symbol>
+      <symbol id="tm-skills" viewBox="0 0 32 32"><path d="M7 8h11v11H7z"/><path d="M15 14h10v10H15z"/><path d="m9 25 14-18"/><circle cx="23" cy="7" r="1.8"/></symbol>
+      <symbol id="tm-terminal" viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="16" rx="2"/><path d="m10 13 4 3-4 3"/><path d="M17 20h6"/></symbol>
+      <symbol id="tm-files" viewBox="0 0 32 32"><path d="M5 10h9l2-3h6l3 3h2v15H5z"/><path d="M8 15h16"/><path d="M9 20h12"/></symbol>
+      <symbol id="tm-settings" viewBox="0 0 32 32"><path d="M16 5v4"/><path d="M16 23v4"/><path d="m8.2 8.2 2.8 2.8"/><path d="m21 21 2.8 2.8"/><path d="M5 16h4"/><path d="M23 16h4"/><path d="m8.2 23.8 2.8-2.8"/><path d="m21 11 2.8-2.8"/><circle cx="16" cy="16" r="5.5"/><circle cx="16" cy="16" r="1.8"/></symbol>
+      <symbol id="tm-about" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="10.5" r="1.5"/><path d="M16 15v8"/></symbol>
+    </svg>
+
+    <!-- command palette -->
+    <sc-if value="{{ paletteOpen }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closePalette }}" style="position: absolute; inset: 0; z-index: 35; display: grid; place-items: start center; padding: 78px 16px 16px; background: rgba(0,0,0,0.34); backdrop-filter: blur(4px);"></div>
+      <div style="position: absolute; left: 50%; top: 78px; transform: translateX(-50%); z-index: 36; width: min(560px, calc(100vw - 32px)); overflow: hidden; border: 1px solid rgba(52,211,153,0.45); border-radius: 12px; background: rgba(9,9,11,0.96); box-shadow: 0 28px 92px -34px rgba(0,0,0,0.96), 0 0 0 1px rgba(52,211,153,0.08); animation: tm-pop 0.22s ease;">
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.105);">
+          <div style="font-family: Xolonium, Inter, sans-serif; font-size: 17px;">Search ThoxOS Mini Apps</div>
+          <button onClick="{{ closePalette }}" style="width: 30px; height: 30px; border: 1px solid rgba(255,255,255,0.105); border-radius: 7px; background: rgba(255,255,255,0.04); color: rgba(248,250,252,0.72); cursor: pointer;">×</button>
+        </div>
+        <input type="text" value="{{ paletteQuery }}" onInput="{{ onPaletteSearch }}" placeholder="AI, agents, terminal, privacy..." style="width: calc(100% - 24px); height: 40px; margin: 12px; padding: 0 12px; border: 1px solid rgba(255,255,255,0.105); border-radius: 8px; background: rgba(0,0,0,0.58); color: #f8fafc; outline: none; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="display: grid; gap: 6px; max-height: 320px; overflow: auto; padding: 0 12px 12px;">
+          <sc-for list="{{ paletteResults }}" as="pr" hint-placeholder-count="4">
+            <button onClick="{{ pr.onPick }}" style="display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 56px; padding: 9px 10px; border: 1px solid rgba(255,255,255,0.105); border-radius: 8px; background: rgba(255,255,255,0.035); color: #f8fafc; text-align: left; cursor: pointer;">
+              <span style="width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.105); border-radius: 8px; color: #34d399; font-family: Xolonium, Inter, sans-serif; font-size: 12px; font-weight: 700; background: rgba(16,185,129,0.08);">{{ pr.glyph }}</span>
+              <span style="display: grid; gap: 3px; min-width: 0;"><b style="font-family: Xolonium, Inter, sans-serif; font-size: 14px;">{{ pr.title }}</b><span style="color: rgba(248,250,252,0.45); font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 1.35;">{{ pr.summary }}</span></span>
+              <span style="color: rgba(248,250,252,0.45); font-family: 'JetBrains Mono', monospace; font-size: 10px;">{{ pr.action }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- toast -->
+    <sc-if value="{{ toastShown }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; left: 50%; bottom: 84px; transform: translateX(-50%); z-index: 40; max-width: min(420px, calc(100vw - 32px)); padding: 10px 16px; border: 1px solid {{ toastBorder }}; border-radius: 8px; background: rgba(9,9,11,0.92); color: {{ toastColor }}; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; box-shadow: 0 20px 60px -20px rgba(0,0,0,0.9); backdrop-filter: blur(12px); animation: tm-pop 0.2s ease;">{{ toastMsg }}</div>
+    </sc-if>
+
+    <!-- restart walkthrough -->
+    <button onClick="{{ restart }}" style="position: absolute; left: 12px; bottom: 14px; z-index: 26; height: 26px; padding: 0 11px; border: 1px solid rgba(255,255,255,0.105); border-radius: 7px; background: rgba(15,15,18,0.82); color: rgba(248,250,252,0.45); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; cursor: pointer; backdrop-filter: blur(20px);">↺ Restart walkthrough</button>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 800}}">
+class Component extends DCLogic {
+  state = {
+    phase: 'walk', walkStep: 0, bootPct: 0,
+    locked: true, chipsReady: false,
+    activeApp: 'ai_inference', panelRunning: false, panelChecked: false,
+    paletteOpen: false, paletteQuery: '', copied: false,
+    toast: null, toastOk: true,
+    now: new Date(),
+  };
+
+  WALK = [
+    { num: '1', title: 'Insert the ThoxKey', sub: 'Plug the ThoxKey into any USB port. ThoxOS Mini verifies the signed manifest and the offline model cache before it boots.', kind: 'insert', next: 'Launch ThoxOS Mini →' },
+    { num: '2', title: 'First boot', sub: 'The launcher starts the local runtime and pulls the default model. First boot builds the container. After that it is fast.', kind: 'boot', next: 'Continue →' },
+    { num: '3', title: 'Ready', sub: 'The desktop is up on 127.0.0.1:6080, bound to localhost only. Open it and sign in with your local VNC password.', kind: 'ready', next: 'Open ThoxOS Mini →' },
+  ];
+
+  INSERT_CHECKS = [
+    { icon: '✓', label: 'Signed manifest verified', detail: 'Ed25519 signature valid', tag: 'ok', ok: true },
+    { icon: '✓', label: 'Model cache 4/4 staged', detail: 'Gemma LiteRT assets SHA256-valid', tag: 'ok', ok: true },
+    { icon: '✓', label: 'Payload mounted read-only', detail: '/Volumes/THOXOS_MINI', tag: 'ok', ok: true },
+  ];
+
+  BOOT_STEPS = [
+    { at: 0, text: 'launcher: starting local runtime', mark: '›', color: '#64748b' },
+    { at: 22, text: 'docker: building thoxos-mini container', mark: '›', color: '#64748b' },
+    { at: 48, text: 'ollama: pulling thoxmini:3b (Q4_K_M)', mark: '›', color: '#64748b' },
+    { at: 74, text: 'gateway: local ThoxLLM on 127.0.0.1:8787', mark: '✓', color: '#34d399' },
+    { at: 96, text: 'novnc: desktop ready on 127.0.0.1:6080', mark: '✓', color: '#34d399' },
+  ];
+
+  APPS = {
+    ai_inference: { title: 'AI Inference', glyph: 'AI', icon: '#tm-ai', accent: '#35f0a3', keywords: 'chat inference model gateway local private prompt',
+      summary: 'Local gateway, model backend, and LiteRT readiness.', command: 'curl -fsS http://127.0.0.1:8787/healthz', action: 'gateway_ping',
+      rows: [ ['backend','ollama sidecar · thoxmini-net'], ['model','thoxgem:e4b · ready'], ['litert','gemma-4-E2B-it-web.task · ready'], ['policy','local-first · no cloud'], ['healthz','ok'] ] },
+    agents: { title: 'Agents', glyph: 'AG', icon: '#tm-agents', accent: '#7ae7ff', keywords: 'qa jobs agent report automation evidence',
+      summary: 'Local agent QA report writer and app readiness evidence.', command: "curl -fsS -X POST http://127.0.0.1:8787/v1/thoxos/actions -d '{\"action\":\"mobile_qa_report\"}'", action: 'mobile_qa_report',
+      rows: [ ['job','runtime_health'], ['queued','1'], ['ran','1 · ok'], ['evidence','thoxos-app-activity.jsonl'], ['scope','bounded local jobs'] ] },
+    skills: { title: 'Skills', glyph: 'SK', icon: '#tm-skills', accent: '#f3bf45', keywords: 'models skills assets litert web capability catalog',
+      summary: 'Gemma LiteRT/Web asset and capability readiness.', command: 'curl -fsS http://127.0.0.1:8787/v1/litert/manifest', action: 'model_asset_check',
+      rows: [ ['manifest','/v1/litert/manifest'], ['asset','gemma-4-E2B-it-web.task'], ['browser_litert','generated'], ['fallback_model','thoxmini:3b'], ['capabilities','chat · litert · qa'] ] },
+    terminal: { title: 'Terminal', glyph: '>', icon: '#tm-terminal', accent: '#e7fff5', keywords: 'terminal tui diagnostics command shell thoxkey status',
+      summary: 'Scoped command surface. Arbitrary shell disabled.', command: 'thoxkey', action: 'terminal_diagnostics',
+      rows: [ ['allowed','status · models · media · activity · agents'], ['thoxkey','read-only signed-media validation'], ['arbitrary_shell','disabled'], ['status','ok'] ] },
+    files: { title: 'Files', glyph: 'FS', icon: '#tm-files', accent: '#7ae7ff', keywords: 'files finder thoxkey storage workspace browser',
+      summary: 'Workspace and mounted ThoxKey visibility.', command: 'thoxkey', action: 'files_summary',
+      rows: [ ['roots','workspace · reports · thox_key · evidence · models'], ['thox_key','/Volumes/THOXOS_MINI'], ['traversal','rejected'], ['contents','metadata only'] ] },
+    settings: { title: 'Settings', glyph: 'ST', icon: '#tm-settings', accent: '#c7d4ce', keywords: 'settings privacy local config diagnostics runtime',
+      summary: 'Local-only runtime settings and diagnostics boundary.', command: 'docker exec thoxos-mini /usr/share/thoxos-shell/thoxos-shell.py --qa-evidence --write', action: 'settings_summary',
+      rows: [ ['profile_memory','enabled · 3 fields'], ['activity_log','metadata-only'], ['boundary','localhost'], ['telemetry','none'] ] },
+    about: { title: 'About', glyph: 'TH', icon: '#tm-about', accent: '#b9f9dc', keywords: 'about thoxos version identity local first',
+      summary: 'Product, service, and local-first system identity.', command: 'curl -fsS http://127.0.0.1:8787/healthz', action: 'about_summary',
+      rows: [ ['product','ThoxOS Mini'], ['release','v1.0.3'], ['descriptor','Local-first AI desktop'], ['variants','ThoxMini · ThoxMini Air · ThoxClip'], ['ports','6080 · 5901 · 8787 on 127.0.0.1'] ] },
+  };
+  APP_ORDER = ['ai_inference','agents','skills','terminal','files','settings','about'];
+
+  // TXF txf-navigation::universal_commands — MUST register verbatim
+  UNIVERSAL = [
+    { title: 'Create Project', route: 'agents' },
+    { title: 'Open Vault', route: 'files' },
+    { title: 'Find Device', route: 'about' },
+    { title: 'Launch Agent', route: 'agents' },
+    { title: 'Deploy Workflow', route: 'agents' },
+    { title: 'Generate Code', route: 'terminal' },
+    { title: 'Print Asset', route: 'skills' },
+    { title: 'Search Memory', route: 'settings' },
+  ];
+
+  componentDidMount() {
+    this._clock = setInterval(() => this.setState({ now: new Date() }), 1000);
+    this._keys = (e) => {
+      const k = (e.key || '').toLowerCase();
+      if ((e.metaKey || e.ctrlKey) && k === 'k') { e.preventDefault(); if (this.state.phase === 'shell') this.setState((s) => ({ paletteOpen: !s.paletteOpen, paletteQuery: '' })); }
+      else if (k === 'escape' && this.state.paletteOpen) this.setState({ paletteOpen: false });
+    };
+    window.addEventListener('keydown', this._keys);
+  }
+  componentWillUnmount() { clearInterval(this._clock); clearInterval(this._boot); clearTimeout(this._toast); clearTimeout(this._chips); if (this._keys) window.removeEventListener('keydown', this._keys); }
+
+  runUniversal(cmd) { this.setState({ paletteOpen: false, locked: false }); this.selectApp(cmd.route, true); this.fireToast('⌘ ' + cmd.title, true); }
+
+  pad(n) { return String(n).padStart(2, '0'); }
+
+  walkNext() {
+    const s = this.state;
+    if (s.walkStep === 0) { this.setState({ walkStep: 1, bootPct: 0 }); this.startBoot(); return; }
+    if (s.walkStep === 1) { if (s.bootPct < 100) { this.setState({ bootPct: 100 }); } this.setState({ walkStep: 2 }); return; }
+    // enter shell
+    clearInterval(this._boot);
+    this.setState({ phase: 'shell', locked: true, chipsReady: false });
+    this.armChips();
+  }
+  walkBack() {
+    const s = this.state;
+    if (s.walkStep === 0) return;
+    clearInterval(this._boot);
+    this.setState({ walkStep: s.walkStep - 1 });
+  }
+  startBoot() {
+    clearInterval(this._boot);
+    this._boot = setInterval(() => {
+      this.setState((st) => {
+        const p = Math.min(100, st.bootPct + 2);
+        if (p >= 100) clearInterval(this._boot);
+        return { bootPct: p };
+      });
+    }, 45);
+  }
+  armChips() {
+    clearTimeout(this._chips);
+    this._chips = setTimeout(() => this.setState({ chipsReady: true }), 1400);
+  }
+  unlock() { this.setState({ locked: false }); this.selectApp('ai_inference', false); }
+  lockAgain() { this.setState({ locked: true }); }
+  restart() { clearInterval(this._boot); this.setState({ phase: 'walk', walkStep: 0, bootPct: 0, locked: true, chipsReady: false, paletteOpen: false, panelChecked: false }); }
+
+  selectApp(id, run = true) {
+    this.setState({ activeApp: id, panelChecked: false, panelRunning: false, copied: false });
+    if (run) this.runCheck(id);
+  }
+  runCheck(idArg) {
+    const id = typeof idArg === 'string' ? idArg : this.state.activeApp;
+    this.setState({ activeApp: id, panelRunning: true, panelChecked: false });
+    clearTimeout(this._run);
+    this._run = setTimeout(() => {
+      this.setState({ panelRunning: false, panelChecked: true });
+      this.fireToast(this.APPS[id].title + ': ready', true);
+    }, 520);
+  }
+  copyCmd() {
+    const cmd = this.APPS[this.state.activeApp].command;
+    const done = () => { this.setState({ copied: true }); this.fireToast('Command copied to clipboard', true); clearTimeout(this._cpr); this._cpr = setTimeout(() => this.setState({ copied: false }), 1400); };
+    try { navigator.clipboard.writeText(cmd).then(done, () => this.fbCopy(cmd, done)); } catch (e) { this.fbCopy(cmd, done); }
+  }
+  fbCopy(t, done) { const ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done(); }
+  fireToast(msg, ok) { this.setState({ toast: msg, toastOk: ok }); clearTimeout(this._toast); this._toast = setTimeout(() => this.setState({ toast: null }), 3000); }
+
+  openPalette() { this.setState({ paletteOpen: true, paletteQuery: '' }); }
+  closePalette() { this.setState({ paletteOpen: false }); }
+  pickFromPalette(id) { this.setState({ paletteOpen: false, locked: false }); this.selectApp(id, true); }
+
+  renderVals() {
+    const S = this.state;
+    const now = S.now;
+    const time = this.pad(now.getHours()) + ':' + this.pad(now.getMinutes());
+
+    // ---- walkthrough ----
+    const step = this.WALK[S.walkStep];
+    const walkTrack = this.WALK.map((w, i) => {
+      const done = i < S.walkStep, active = i === S.walkStep;
+      return { name: w.title.replace('the ', ''),
+        bar: done ? '#10b981' : (active ? '#38bdf8' : 'rgba(148,163,184,0.18)'),
+        textColor: (done || active) ? '#f8fafc' : '#64748b',
+        dotBg: active ? 'rgba(56,189,248,0.18)' : (done ? 'rgba(16,185,129,0.16)' : 'rgba(148,163,184,0.14)'),
+        dotColor: active ? '#38bdf8' : (done ? '#10b981' : '#a5b4c4'),
+        dotLabel: done ? '✓' : String(i + 1) };
+    });
+    const bootLines = this.BOOT_STEPS.filter((b) => S.bootPct >= b.at).map((b) => ({ text: b.text, mark: b.mark, color: b.color }));
+    const bootLabel = S.bootPct >= 100 ? 'ready' : (S.bootPct >= 74 ? 'starting services' : (S.bootPct >= 48 ? 'pulling model' : (S.bootPct >= 22 ? 'building container' : 'starting runtime')));
+
+    // ---- shell chips ----
+    const chips = S.chipsReady
+      ? [ { text: 'AI ready', led: '#34d399', color: '#34d399', title: 'Local AI gateway status' },
+          { text: 'MODELS 4/4', led: '#34d399', color: 'rgba(248,250,252,0.72)', title: 'LiteRT model asset readiness' },
+          { text: 'APPS 7/7', led: '#34d399', color: 'rgba(248,250,252,0.72)', title: 'ThoxOS app readiness' } ]
+      : [ { text: 'AI checking', led: '#fbbf24', color: 'rgba(248,250,252,0.72)', title: 'Local AI gateway status' },
+          { text: 'MODELS —', led: '#fbbf24', color: 'rgba(248,250,252,0.72)', title: 'LiteRT model asset readiness' },
+          { text: 'APPS —', led: '#fbbf24', color: 'rgba(248,250,252,0.72)', title: 'ThoxOS app readiness' } ];
+
+    // ---- dock ----
+    const dockApps = this.APP_ORDER.map((id) => {
+      const a = this.APPS[id]; const on = id === S.activeApp && !S.locked;
+      return { title: a.title, icon: a.icon, onClick: () => { this.setState({ locked: false }); this.selectApp(id, true); },
+        style: 'position: relative; width: 42px; height: 42px; border: 1px solid ' + (on ? a.accent : 'rgba(255,255,255,0.105)') + '; border-radius: 10px; display: grid; place-items: center; color: ' + a.accent + '; background: radial-gradient(circle at 30% 18%, rgba(255,255,255,0.12), transparent 42%), linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025)); cursor: pointer; transition: transform 0.16s ease, border-color 0.16s ease; transform: ' + (on ? 'translateY(-3px)' : 'none') + '; box-shadow: ' + (on ? '0 10px 26px -18px ' + a.accent : 'inset 0 1px 0 rgba(255,255,255,0.08)') + ';' };
+    });
+
+    // ---- active app panel ----
+    const app = this.APPS[S.activeApp];
+    const metrics = [ { v: 'v1.0.3', k: 'release' }, { v: '127.0.0.1', k: 'local only' }, { v: '6080', k: 'noVNC port' }, { v: '8787', k: 'gateway' } ];
+    let panelRows;
+    if (S.panelRunning) panelRows = [ { k: 'action', v: app.action }, { k: 'status', v: 'running scoped local check...' }, { k: 'endpoint', v: '/v1/thoxos/actions' } ];
+    else if (S.panelChecked) panelRows = app.rows.map(([k, v]) => ({ k, v }));
+    else panelRows = [ { k: 'app', v: app.title }, { k: 'summary', v: app.summary }, { k: 'handoff', v: 'Full desktop ' + app.title + ' panel' } ];
+
+    // ---- palette ----
+    const q = S.paletteQuery.trim().toLowerCase();
+    const paletteResults = this.APP_ORDER.filter((id) => {
+      if (!q) return true;
+      const a = this.APPS[id];
+      return (id + ' ' + a.title + ' ' + a.summary + ' ' + a.action + ' ' + a.keywords).toLowerCase().includes(q);
+    }).map((id) => { const a = this.APPS[id]; return { glyph: a.glyph, title: a.title, summary: a.summary, action: a.action, onPick: () => this.pickFromPalette(id) }; });
+
+    return {
+      showWalk: S.phase === 'walk', showShell: S.phase === 'shell',
+      // walk
+      walkTrack, walkNum: step.num, walkTitle: step.title, walkSub: step.sub,
+      walkIsInsert: step.kind === 'insert', walkIsBoot: step.kind === 'boot', walkIsReady: step.kind === 'ready',
+      insertChecks: this.INSERT_CHECKS.map((c) => ({ label: c.label, detail: c.detail, icon: c.icon, tag: c.tag,
+        iconBg: 'rgba(16,185,129,0.14)', iconColor: '#10b981', tagColor: '#10b981' })),
+      bootLines, bootPct: S.bootPct, bootLabel,
+      walkNext: () => this.walkNext(), walkBack: () => this.walkBack(), walkNextLabel: step.next,
+      walkBackStyle: 'min-height: 44px; padding: 0 18px; border-radius: 8px; border: 1px solid rgba(148,163,184,0.2); background: transparent; color: ' + (S.walkStep === 0 ? 'rgba(148,163,184,0.3)' : '#a5b4c4') + '; cursor: ' + (S.walkStep === 0 ? 'default' : 'pointer') + '; font-weight: 700; font-size: 14px; font-family: Inter, sans-serif;',
+      // shell
+      clock: time + ':' + this.pad(now.getSeconds()),
+      lockTime: time, lockDate: now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' }),
+      chips, locked: S.locked, unlocked: !S.locked,
+      unlock: () => this.unlock(), lockAgain: () => this.lockAgain(), restart: () => this.restart(),
+      dockApps,
+      panelTitle: S.activeApp === 'ai_inference' && !S.panelChecked && !S.panelRunning ? 'ThoxOS Mini Desktop' : app.title,
+      panelSummary: S.panelRunning ? 'Running scoped local check...' : (S.panelChecked ? (app.summary) : 'The local noVNC desktop is running in your browser. Runtime controls, model checks, and app actions stay on this machine.'),
+      metrics, panelRows,
+      runCheck: () => this.runCheck(), runLabel: S.panelRunning ? 'Running…' : 'Run Check',
+      copyCmd: () => this.copyCmd(), copyLabel: S.copied ? 'Copied' : 'Copy Command', copyColor: S.copied ? '#34d399' : 'rgba(248,250,252,0.72)',
+      openPalette: () => this.openPalette(), closePalette: () => this.closePalette(),
+      paletteOpen: S.paletteOpen, paletteQuery: S.paletteQuery, onPaletteSearch: (e) => this.setState({ paletteQuery: e.target.value }), paletteResults,
+      toastShown: !!S.toast, toastMsg: S.toast || '', toastColor: S.toastOk ? '#f8fafc' : '#fecdd3', toastBorder: S.toastOk ? 'rgba(52,211,153,0.35)' : 'rgba(251,113,133,0.45)',
+    };
+  }
+}
+</script>
+</body>
+</html>
