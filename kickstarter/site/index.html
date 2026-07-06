@@ -38,6 +38,8 @@
   .feat-media { position:relative; min-height:260px; border-left:1px solid #1F3430; background:#000; }
   .feat-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; }
   @media (max-width:720px) { .feature { grid-template-columns:1fr; } .feat-media { min-height:200px; border-left:0; border-top:1px solid #1F3430; } }
+  .section-label { margin-top:40px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em;
+                    text-transform:uppercase; color:#71717A; border-bottom:1px solid var(--border); padding-bottom:10px; }
   .foot { margin-top:56px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; color:#71717A; }
 </style>
@@ -60,6 +62,27 @@
       </div>
       <div class="feat-media"><img src="assets/preview/thoxos-demo.png" alt="ThoxOS desktop" loading="lazy" /></div>
     </a>
+    <div class="section-label">Film production</div>
+    <div class="grid">
+      <a class="card" href="./production-tracker.html">
+        <div class="card-top">
+          <div class="card-title">Production Tracker</div>
+          <span class="tag" style="color:#34D399;border-color:#34D39955;">Interactive</span>
+        </div>
+        <p class="card-blurb">Interactive shot-by-shot tracker for the film: device capture inventory, storyboard scenes, To shoot &rarr; Captured &rarr; Approved, notes, and JSON/CSV export. Saved in your browser.</p>
+        <div class="card-go">Open &rarr;</div>
+      </a>
+
+      <a class="card" href="./storyboard.html">
+        <div class="card-top">
+          <div class="card-title">Video Storyboard</div>
+          <span class="tag" style="color:#10B981;border-color:#10B98155;">Self-contained</span>
+        </div>
+        <p class="card-blurb">The QA-approved previz storyboard: 13 modules, 117 shots, 9:40 master. Shot-for-shot visual reference for the shoot.</p>
+        <div class="card-go">Open &rarr;</div>
+      </a>
+    </div>
+    <div class="section-label">Campaign pages</div>
     <div class="grid">
       <a class="card" href="./story.html">
         <div class="card-top">
@@ -112,15 +135,6 @@
           <span class="tag" style="color:#34D399;border-color:#34D39955;">Interactive</span>
         </div>
         <p class="card-blurb">Animated teaser sequence built from the device close-up footage.</p>
-        <div class="card-go">Open &rarr;</div>
-      </a>
-
-      <a class="card" href="./video-storyboard.html">
-        <div class="card-top">
-          <div class="card-title">Video Storyboard</div>
-          <span class="tag" style="color:#10B981;border-color:#10B98155;">Self-contained</span>
-        </div>
-        <p class="card-blurb">Shot-by-shot production storyboard for the Kickstarter film.</p>
         <div class="card-go">Open &rarr;</div>
       </a>
     </div>

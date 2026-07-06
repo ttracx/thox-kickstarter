@@ -8,8 +8,23 @@ with the **THOX Experience Fabric (TXF)** tokens.
 |---|---|---|
 | `story.html` | Self-contained, standalone Kickstarter Story page (all images + the Xolonium display font inlined as data URIs; Inter / JetBrains Mono via Google Fonts with system fallback). ~5 MB, single file. | Hosting a live campaign landing/preview page, embedding in a deck, or handing to the Kickstarter team as the visual spec. Open it in any browser. |
 | `story.md` | The full campaign copy, section-for-section, in Markdown. | Pasting into the Kickstarter Story editor (which takes text + images, not raw HTML). Also the copy source of truth for social posts. |
-| `site/` | A portable, deployable static bundle of **every** campaign page, with a branded `index.html` hub. React / ReactDOM / Babel are vendored locally, so the interactive prototypes run with no CDN. | Deploying the whole campaign as one static site (Vercel, GitHub Pages, Netlify, `python3 -m http.server site/`). |
-| `sources/` | Upstream inputs the build consumes: the `thoxos-sandbox.html` flagship demo and its preview image. | Regenerating `site/`. |
+| `site/` | A portable, deployable static bundle of **every** campaign page + the film production tools, with a branded `index.html` hub. React / ReactDOM / Babel are vendored locally, so the interactive prototypes run with no CDN. | Deploying the whole campaign as one static site (Vercel, GitHub Pages, Netlify, `python3 -m http.server site/`). |
+| `PRODUCTION.md` | Static device + storyboard capture inventory and checklist, generated from the shot list. | Printable shoot reference; index of every production resource. |
+| `sources/` | Upstream inputs the build consumes: the ThoxOS sandbox + preview, the previz storyboard, the film shot list, storyboard script, previz QA, and the funded-milestone runbook. | Regenerating `site/`. |
+
+## Film production tools
+
+The Kickstarter film ships with an interactive production system, generated from
+[`sources/thox-video-shotlist.csv`](sources/thox-video-shotlist.csv) (117 shots, 13 segments, 9:40 master):
+
+| Tool | File | What it does |
+|---|---|---|
+| **Production Tracker** | [`site/production-tracker.html`](site/production-tracker.html) | Interactive, browser-saved tracker. Device capture inventory + every storyboard shot, moved **To shoot → Captured → Approved** with notes, filters, and JSON/CSV export. |
+| **Visual storyboard** | [`site/storyboard.html`](site/storyboard.html) | The QA-approved previz: 13 modules, shot-for-shot visual reference. |
+| **Inventory & checklist** | [`PRODUCTION.md`](PRODUCTION.md) | Static, printable device + scene checklist with the capture workflow and compliance reminders. |
+
+Rebuild the tracker alone with `python3 kickstarter/build_tracker.py`; `build_site.py`
+runs it automatically as its last step.
 
 ## `site/` — the deployable bundle
 

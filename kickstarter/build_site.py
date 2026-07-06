@@ -12,7 +12,7 @@ THOX campaign design page.
 - Uses the self-contained story.html and the self-contained storyboard export.
 - Writes a branded index.html hub on the TXF tokens.
 """
-import pathlib, shutil, re
+import pathlib, shutil, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent            # kickstarter/
 REPO = ROOT.parent
@@ -75,7 +75,13 @@ PAGES = [
     (PROJ / "Software Demo.dc.html",                   "software-demo.html",     "Software Demo",      "Clickable ThoxOS software walkthrough: mesh, devices, activity, settings.", "interactive"),
     (PROJ / "ThoxOS Mini Demo.dc.html",                "thoxos-mini-demo.html",  "ThoxOS Mini Demo",   "Interactive ThoxOS Mini shell: boot, insert, agents, files, skills, terminal.", "interactive"),
     (PROJ / "Campaign Animatic.dc.html",               "campaign-animatic.html", "Campaign Animatic",  "Animated teaser sequence built from the device close-up footage.", "interactive"),
-    (PROJ / "THOX Video Storyboard (standalone).html", "video-storyboard.html",  "Video Storyboard",   "Shot-by-shot production storyboard for the Kickstarter film.", "self-contained"),
+]
+
+# 4c) Production resources (storyboard visualization + generated tracker)
+shutil.copy2(ROOT / "sources/thox-kickstarter-storyboard.html", SITE / "storyboard.html")
+PRODUCTION = [
+    ("production-tracker.html", "Production Tracker", "Interactive shot-by-shot tracker for the film: device capture inventory, storyboard scenes, To shoot &rarr; Captured &rarr; Approved, notes, and JSON/CSV export. Saved in your browser.", "interactive"),
+    ("storyboard.html",         "Video Storyboard",   "The QA-approved previz storyboard: 13 modules, 117 shots, 9:40 master. Shot-for-shot visual reference for the shoot.", "self-contained"),
 ]
 kept = []
 for src, out, title, blurb, kind in PAGES:
@@ -99,6 +105,16 @@ cards = "\n".join(f"""
         <p class="card-blurb">{blurb}</p>
         <div class="card-go">Open &rarr;</div>
       </a>""" for (out, title, blurb, kind) in kept)
+
+prod_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:{badge[kind][0]};border-color:{badge[kind][0]}55;">{badge[kind][1]}</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">Open &rarr;</div>
+      </a>""" for (out, title, blurb, kind) in PRODUCTION)
 
 featured_html = ""
 if FEATURED["src"].exists():
@@ -154,6 +170,8 @@ index = f"""<!DOCTYPE html>
   .feat-media {{ position:relative; min-height:260px; border-left:1px solid #1F3430; background:#000; }}
   .feat-media img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; }}
   @media (max-width:720px) {{ .feature {{ grid-template-columns:1fr; }} .feat-media {{ min-height:200px; border-left:0; border-top:1px solid #1F3430; }} }}
+  .section-label {{ margin-top:40px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em;
+                    text-transform:uppercase; color:#71717A; border-bottom:1px solid var(--border); padding-bottom:10px; }}
   .foot {{ margin-top:56px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; color:#71717A; }}
 </style>
@@ -167,6 +185,10 @@ index = f"""<!DOCTYPE html>
     <h1>Your AI. Your Data.<br /><span class="g">Your Rules.</span></h1>
     <p class="sub">Every page of the THOX.ai Kickstarter campaign, generated from the design handoff and deployable as one static bundle. Pick a page to open it.</p>
     {featured_html}
+    <div class="section-label">Film production</div>
+    <div class="grid">{prod_cards}
+    </div>
+    <div class="section-label">Campaign pages</div>
     <div class="grid">{cards}
     </div>
     <div class="foot">
@@ -178,6 +200,10 @@ index = f"""<!DOCTYPE html>
 </html>
 """
 (SITE / "index.html").write_text(index)
-print(f"\nWrote {SITE}/index.html with {len(kept)} pages")
+print(f"\nWrote {SITE}/index.html with {len(kept)} pages + {len(PRODUCTION)} production resources")
+
+# 6) Generate the interactive production tracker into the bundle
+subprocess.run([sys.executable, str(ROOT / "build_tracker.py")], check=True)
+
 sz = sum(f.stat().st_size for f in SITE.rglob('*') if f.is_file())
 print(f"Bundle size: {sz/1048576:.1f} MB")
