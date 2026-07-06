@@ -8,6 +8,34 @@ with the **THOX Experience Fabric (TXF)** tokens.
 |---|---|---|
 | `story.html` | Self-contained, standalone Kickstarter Story page (all images + the Xolonium display font inlined as data URIs; Inter / JetBrains Mono via Google Fonts with system fallback). ~5 MB, single file. | Hosting a live campaign landing/preview page, embedding in a deck, or handing to the Kickstarter team as the visual spec. Open it in any browser. |
 | `story.md` | The full campaign copy, section-for-section, in Markdown. | Pasting into the Kickstarter Story editor (which takes text + images, not raw HTML). Also the copy source of truth for social posts. |
+| `site/` | A portable, deployable static bundle of **every** campaign page, with a branded `index.html` hub. React / ReactDOM / Babel are vendored locally, so the interactive prototypes run with no CDN. | Deploying the whole campaign as one static site (Vercel, GitHub Pages, Netlify, `python3 -m http.server site/`). |
+| `sources/` | Upstream inputs the build consumes: the `thoxos-sandbox.html` flagship demo and its preview image. | Regenerating `site/`. |
+
+## `site/` — the deployable bundle
+
+`index.html` links every page:
+
+| Page | Kind | Notes |
+|---|---|---|
+| **ThoxOS Demo** (`thoxos-demo.html`) | Flagship | The full ThoxOS desktop sandbox (v6.1): lock screen, menu bar, ⌘K command palette, app dock, live on-device inference. Self-contained React app. Any password unlocks it. |
+| Kickstarter Story | Self-contained | Same page as `../story.html`. |
+| Campaign Runbook | Runtime | Internal launch playbook. |
+| Model Gallery · Software Demo · ThoxOS Mini Demo · Campaign Animatic | Interactive | Claude Design prototypes, rendered by the vendored runtime. |
+| Video Storyboard | Self-contained | The standalone storyboard export. |
+
+Build / rebuild it with:
+
+```
+python3 kickstarter/build_site.py     # writes kickstarter/site/
+python3 -m http.server --directory kickstarter/site 8000   # preview at :8000
+```
+
+The build flattens all pages to the bundle root (so their relative `./support.js`,
+`./image-slot.js`, `./*.jsx`, and `assets/` references keep resolving), vendors
+React/ReactDOM/Babel into `site/vendor/` and repoints `support.js` at them, and
+copies only the assets the pages actually reference (not the multi-hundred-MB of
+unused product renders and uploads). Every page was rendered end-to-end in
+headless Chromium to confirm it boots with zero page errors.
 
 ## How `story.html` was produced
 
