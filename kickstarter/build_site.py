@@ -120,6 +120,17 @@ if xf_src.exists():
         "The scientific design system and Rust runtime behind every THOX surface. One experience across ThoxOS Mini and full ThoxOS: locked navigation, one visible agent, four-tier memory, generated tokens, and a certified Experience Score."))
     print("  ~ experience-fabric.html <- sources/experience-fabric.html")
 
+# 4b3c) Packaging showcase — "what's in the box" retail renders
+packaging_kept = []
+pkg_page = ROOT / "sources/packaging.html"
+pkg_imgs = ROOT / "sources/packaging"
+if pkg_page.exists() and pkg_imgs.exists():
+    shutil.copytree(pkg_imgs, SITE / "assets/packaging", dirs_exist_ok=True)
+    shutil.copy2(pkg_page, SITE / "packaging.html")
+    packaging_kept.append(("packaging.html", "What's in the Box",
+        "The actual retail packaging your pledge ships in: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — front, back, and specs. Exactly what Kickstarter backers receive."))
+    print("  ~ packaging.html         <- sources/packaging.html (+ assets/packaging/)")
+
 # 4b4) Flagship edge-AI device demos (upcoming product line)
 DEVICES = [
     ("thox-nova",      "THOX Nova",      "Your private AI mesh, in hand. The flagship handheld edge-AI node running ThoxOS."),
@@ -233,6 +244,16 @@ platform_cards = "\n".join(f"""
         <div class="card-go">Explore the fabric &rarr;</div>
       </a>""" for (out, title, blurb) in platform_kept)
 
+packaging_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:#34D399;border-color:#34D39955;">Rewards</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">See what backers get &rarr;</div>
+      </a>""" for (out, title, blurb) in packaging_kept)
+
 prod_cards = "\n".join(f"""
       <a class="card" href="./{out}">
         <div class="card-top">
@@ -312,6 +333,9 @@ index = f"""<!DOCTYPE html>
     <h1>Your AI. Your Data.<br /><span class="g">Your Rules.</span></h1>
     <p class="sub">Every page of the THOX.ai Kickstarter campaign, generated from the design handoff and deployable as one static bundle. Pick a page to open it.</p>
     {featured_html}
+    <div class="section-label">Kickstarter rewards — what backers get</div>
+    <div class="grid">{packaging_cards}
+    </div>
     <div class="section-label">Platform &amp; architecture — one experience, every surface</div>
     <div class="grid">{platform_cards}
     </div>

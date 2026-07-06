@@ -38,6 +38,7 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 | What | Where | Notes |
 |---|---|---|
 | **Campaign site hub** | [`kickstarter/site/index.html`](kickstarter/site/index.html) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
+| **What's in the Box** | [`kickstarter/site/packaging.html`](kickstarter/site/packaging.html) | Retail-packaging showcase of what backers receive: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. |
 | **THOX Experience Fabric** | [`kickstarter/site/experience-fabric.html`](kickstarter/site/experience-fabric.html) | The scientific design system + Rust runtime behind every surface: three planes, locked nav, one visible agent, four-tier memory, generated tokens, certified Experience Score ≥ 90. |
 | **ThoxOS Mini Demo** | [`kickstarter/site/thoxos-mini-demo.html`](kickstarter/site/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
 | **ThoxOS Demo** (flagship) | [`kickstarter/site/thoxos-demo.html`](kickstarter/site/thoxos-demo.html) | The **full ThoxOS** desktop that ships on THOX Nova and the THOX Edge Series: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. |

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THOX.ai — What's in the Box</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family:'Xolonium'; src:url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight:700; }
+  :root { --ink:#09090B; --surface:#111113; --card:#1A1A1C; --border:#27272A; --em:#10B981; --em2:#34D399; --fg:#FAFAFA; --mut:#A1A1AA; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--ink); color:var(--fg); font-family:Inter,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:40px 32px 88px; }
+  nav.top { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  nav.top img { height:26px; }
+  nav.top .links a { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.06em; color:var(--mut); text-decoration:none; margin-left:22px; }
+  nav.top .links a:hover { color:var(--em2); }
+  .hero { padding:60px 0 20px; }
+  .kicker { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--em2); }
+  h1 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:56px; line-height:1.04; letter-spacing:-.01em; margin:18px 0 0; }
+  h1 .g { color:var(--em2); }
+  .lede { font-size:18px; line-height:1.6; color:var(--mut); max-width:660px; margin:22px 0 0; }
+  .chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+  .chip { font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.04em; color:var(--fg);
+          border:1px solid var(--border); background:var(--card); border-radius:999px; padding:7px 14px; }
+  .chip b { color:var(--em2); font-weight:500; }
+  .section-label { margin:64px 0 0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em;
+                   text-transform:uppercase; color:#71717A; border-bottom:1px solid var(--border); padding-bottom:12px; }
+  .shot { margin-top:28px; background:var(--surface); border:1px solid var(--border); border-radius:20px; overflow:hidden; }
+  .shot img { display:block; width:100%; height:auto; }
+  .shot .cap { padding:22px 26px 24px; border-top:1px solid var(--border); }
+  .shot .cap .t { display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .shot .cap h3 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:22px; margin:0; }
+  .shot .cap .price { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--em2); white-space:nowrap; }
+  .shot .cap p { font-size:14.5px; line-height:1.65; color:var(--mut); margin:10px 0 0; max-width:820px; }
+  .box-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .box-list span { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.03em; color:var(--fg);
+                   border:1px solid var(--border); border-radius:8px; padding:6px 11px; background:var(--card); }
+  .box-list span::before { content:"▪ "; color:var(--em2); }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:840px){ .grid2{ grid-template-columns:1fr; } h1{ font-size:40px; } }
+  .note { margin-top:44px; background:linear-gradient(135deg,#0d1512,#000); border:1px solid #1F3430; border-radius:18px; padding:28px 30px; }
+  .note h3 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:19px; margin:0 0 8px; }
+  .note p { font-size:14.5px; line-height:1.65; color:var(--mut); margin:0; }
+  .foot { margin-top:64px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+          font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; color:#71717A; }
+  .back { display:inline-block; margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--em2); text-decoration:none; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <img src="assets/logos/thox-logo-horiz-whiteout.png" alt="THOX.ai" />
+      <div class="links"><a href="./index.html">Campaign</a><a href="./story.html">Story</a><a href="./models.html">Models</a></div>
+    </nav>
+
+    <header class="hero">
+      <div class="kicker">Kickstarter Rewards · What's in the box</div>
+      <h1>Real hardware.<br /><span class="g">Retail-ready.</span></h1>
+      <p class="lede">These are the actual retail boxes your pledge ships in — designed, spec'd, and photographed. Every THOX device is a private AI computer that keeps your data 100% local: no cloud, no tracking, no compromises. Here is exactly what backers receive.</p>
+      <div class="chips">
+        <span class="chip"><b>Designed &amp; built</b> in the USA</span>
+        <span class="chip"><b>Edge AI</b> on-device</span>
+        <span class="chip"><b>MagSafe / Qi2</b> ready</span>
+        <span class="chip"><b>Private</b> by design</span>
+        <span class="chip"><b>CE · FC</b> certified</span>
+      </div>
+    </header>
+
+    <div class="section-label">ThoxMini Air — wireless private AI computer</div>
+    <figure class="shot" style="margin:0;">
+      <img src="assets/packaging/thox-mini-air-box.png" alt="THOX Mini Air retail packaging — front, back, and side" loading="lazy" />
+      <figcaption class="cap">
+        <div class="t"><h3>ThoxMini Air</h3><span class="price">Wireless · Qi2</span></div>
+        <p>The wireless flagship of the pocket line. Snap it onto any MagSafe or Qi2 surface and it powers up — no cables, no clutter. Octa-core ARM, 8GB LPDDR5, 128GB storage, Wi-Fi 6E, all running private on-device AI.</p>
+        <div class="box-list"><span>ThoxMini Air</span><span>USB-C cable</span><span>Quick Start Guide</span></div>
+      </figcaption>
+    </figure>
+
+    <div class="section-label">ThoxMini — private AI. portable compute. three colorways</div>
+    <figure class="shot" style="margin:0;">
+      <img src="assets/packaging/thoxmini-colorways-box.png" alt="ThoxMini retail packaging in Matte Black, Space Gray, and Arctic White" loading="lazy" />
+      <figcaption class="cap">
+        <div class="t"><h3>ThoxMini</h3><span class="price">Matte Black · Space Gray · Arctic White</span></div>
+        <p>Your AI, your data, your rules — in your pocket, in your color. ThoxMini is offline-ready and works on your LAN after pairing, so private AI compute goes anywhere you do. Choose Matte Black, Space Gray, or Arctic White.</p>
+        <div class="box-list"><span>ThoxMini</span><span>USB-C cable</span><span>Quick Start Guide</span><span>3 colorways</span></div>
+      </figcaption>
+    </figure>
+
+    <div class="section-label">ThoxClip — vertically flush. clips to your iPhone</div>
+    <div class="grid2">
+      <figure class="shot" style="margin:0;">
+        <img src="assets/packaging/thox-clip-colorways-box.png" alt="ThoxClip retail packaging in three colorways with devices" loading="lazy" />
+        <figcaption class="cap">
+          <div class="t"><h3>ThoxClip</h3><span class="price">3 colorways</span></div>
+          <p>MagSafe / Qi2, PowerBridge, Edge AI, and private-by-design in a vertically flush clip — three colorways to match your phone.</p>
+          <div class="box-list"><span>ThoxClip</span><span>USB-C cable</span><span>Quick Start Guide</span></div>
+        </figcaption>
+      </figure>
+      <figure class="shot" style="margin:0;">
+        <img src="assets/packaging/thox-clip-box-detail.png" alt="ThoxClip back-of-box detail with specifications" loading="lazy" />
+        <figcaption class="cap">
+          <div class="t"><h3>No cloud inside. Just private AI.</h3></div>
+          <p>ThoxClip brings private, on-device AI to your iPhone — a Raspberry Pi Compute Module 5 built in, 100 × 86 × 11.8 mm, USB-C, Qi2 certified. No cloud. No tracking. Just powerful Edge AI that stays with you.</p>
+          <div class="box-list"><span>CM5 on-device</span><span>USB-C</span><span>Qi2 certified</span></div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="note">
+      <h3>Also in the campaign — ThoxKey and the THOX Edge Series</h3>
+      <p>The four launch devices — ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip — all run ThoxOS Mini on the THOX Experience Fabric. The THOX Edge Series (Pro, Pro Max, Pro Ultra) and THOX Nova run the full ThoxOS and are shown on the campaign as the roadmap. See the <a href="./index.html" style="color:var(--em2);text-decoration:none;">campaign hub</a> for every device and demo.</p>
+    </div>
+
+    <a class="back" href="./index.html">&larr; Back to campaign pages</a>
+
+    <div class="foot">
+      <div>THOX.AI LLC · © 2026</div>
+      <div>YOUR AI. YOUR DATA. YOUR RULES.</div>
+    </div>
+  </div>
+</body>
+</html>
