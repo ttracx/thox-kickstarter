@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THOX.ai — Founders Club &amp; Add-ons</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family:'Xolonium'; src:url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight:700; }
+  :root { --ink:#09090B; --surface:#111113; --card:#1A1A1C; --border:#27272A; --em:#10B981; --em2:#34D399; --gold:#E4C87B; --fg:#FAFAFA; --mut:#A1A1AA; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--ink); color:var(--fg); font-family:Inter,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:40px 32px 88px; }
+  nav.top { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  nav.top img { height:26px; }
+  nav.top .links a { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.06em; color:var(--mut); text-decoration:none; margin-left:22px; }
+  nav.top .links a:hover { color:var(--em2); }
+  .hero { padding:58px 0 8px; }
+  .kicker { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--em2); }
+  h1 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:56px; line-height:1.04; letter-spacing:-.01em; margin:18px 0 0; }
+  h1 .g { color:var(--em2); }
+  .lede { font-size:18px; line-height:1.6; color:var(--mut); max-width:680px; margin:22px 0 0; }
+  .section-label { margin:64px 0 0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em;
+                   text-transform:uppercase; color:#71717A; border-bottom:1px solid var(--border); padding-bottom:12px; }
+
+  /* Founders marquee tier */
+  .tier { margin-top:30px; display:grid; grid-template-columns:1.05fr 1fr; gap:0; border:1px solid #3A3320;
+          border-radius:22px; overflow:hidden; background:linear-gradient(135deg,#15130c,#0a0a0b 60%); }
+  .tier .body { padding:38px 40px; }
+  .tier .medal { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+                 color:var(--gold); border:1px solid #4A4020; border-radius:999px; padding:5px 12px; display:inline-block; }
+  .tier h2 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:30px; margin:16px 0 6px; }
+  .tier .price { display:flex; align-items:baseline; gap:12px; margin:10px 0 4px; }
+  .tier .price .big { font-family:Xolonium,Inter,sans-serif; font-size:44px; color:var(--em2); }
+  .tier .price .was { font-family:'JetBrains Mono',monospace; font-size:15px; color:#71717A; text-decoration:line-through; }
+  .tier .price .save { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold); }
+  .tier ul { list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:11px; }
+  .tier li { font-size:14.5px; line-height:1.5; color:var(--fg); padding-left:24px; position:relative; }
+  .tier li::before { content:"◆"; color:var(--em2); position:absolute; left:0; top:1px; font-size:11px; }
+  .tier li .mut { color:var(--mut); }
+  .tier .devices { border-left:1px solid #3A3320; background:rgba(0,0,0,.35); padding:34px 32px; display:flex; flex-direction:column; gap:14px; justify-content:center; }
+  .tier .devices .dh { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#71717A; }
+  .tier .devrow { display:flex; align-items:baseline; justify-content:space-between; gap:12px; border-bottom:1px dashed #2A2A2E; padding-bottom:9px; }
+  .tier .devrow b { font-weight:600; font-size:14.5px; }
+  .tier .devrow span { font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--mut); }
+  .tier .devtot { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:2px; }
+  .tier .devtot b { font-family:Xolonium,Inter,sans-serif; font-size:15px; }
+  .tier .devtot span { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--em2); }
+
+  /* item grids */
+  .grid { margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); } .tier{ grid-template-columns:1fr; } .tier .devices{ border-left:0; border-top:1px solid #3A3320; } h1{ font-size:40px; } }
+  @media (max-width:560px){ .grid{ grid-template-columns:1fr; } }
+  .item { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+  .item .ph { aspect-ratio:1/1; background:#000; }
+  .item .ph img { width:100%; height:100%; object-fit:cover; display:block; }
+  .item .meta { padding:16px 18px 18px; display:flex; flex-direction:column; gap:7px; flex:1; }
+  .item .top { display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+  .item h3 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:16px; margin:0; }
+  .item .p { font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--em2); white-space:nowrap; }
+  .item .p.excl { color:var(--gold); font-size:11px; }
+  .item .d { font-size:12.5px; line-height:1.5; color:var(--mut); margin:0; }
+  .item .kind { font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:#71717A; }
+
+  .howto { margin-top:44px; background:linear-gradient(135deg,#0d1512,#000); border:1px solid #1F3430; border-radius:18px; padding:28px 30px; }
+  .howto h3 { font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:19px; margin:0 0 10px; }
+  .howto p { font-size:14px; line-height:1.65; color:var(--mut); margin:0 0 8px; }
+  .howto .fine { font-family:'JetBrains Mono',monospace; font-size:11px; color:#71717A; margin-top:12px; }
+  .back { display:inline-block; margin-top:36px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--em2); text-decoration:none; }
+  .foot { margin-top:40px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+          font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; color:#71717A; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <img src="assets/logos/thox-logo-horiz-whiteout.png" alt="THOX.ai" />
+      <div class="links"><a href="./index.html">Campaign</a><a href="./packaging.html">What's in the box</a><a href="./story.html">Story</a></div>
+    </nav>
+
+    <header class="hero">
+      <div class="kicker">Kickstarter Reward · THOX Founders Club</div>
+      <h1>Back all four.<br /><span class="g">Become a Founder.</span></h1>
+      <p class="lede">Pledge for the complete lineup — ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip — and you join the THOX Founders Club: a numbered membership, your pick of Founders swag, a year of MeshStack, and your name in the launch. Everything else here is an add-on you can drop into any pledge.</p>
+    </header>
+
+    <div class="section-label">The Founders tier — all four devices</div>
+    <section class="tier">
+      <div class="body">
+        <span class="medal">★ Founders Club · limited &amp; numbered</span>
+        <h2>THOX Founders Complete Set</h2>
+        <div class="price">
+          <span class="big">$549</span>
+          <span class="was">$611 à la carte</span>
+          <span class="save">save $62 · $188 off retail</span>
+        </div>
+        <ul>
+          <li>All four launch devices — <span class="mut">ThoxKey, ThoxMini Air, ThoxMini, ThoxClip</span></li>
+          <li>Numbered Founders Club metal member card <span class="mut">(#0001 and up, one per Founder)</span></li>
+          <li><b>Pick any 2 Founders swag items</b> <span class="mut">— hoodie, crewneck, tee, cap, bottle, or backpack</span></li>
+          <li>MeshStack — 12-month access <span class="mut">(MS-12A-FOUNDER)</span></li>
+          <li>Founders Club sticker pack</li>
+          <li>Your name in the launch credits + priority early access</li>
+        </ul>
+      </div>
+      <div class="devices">
+        <div class="dh">What's in the set — Kickstarter value</div>
+        <div class="devrow"><b>ThoxKey</b><span>$34</span></div>
+        <div class="devrow"><b>ThoxMini Air</b><span>$79</span></div>
+        <div class="devrow"><b>ThoxMini</b><span>$169</span></div>
+        <div class="devrow"><b>ThoxClip</b><span>$329</span></div>
+        <div class="devtot"><b>Founders Complete Set</b><span>$549</span></div>
+        <div class="dh" style="margin-top:4px;">+ Founders Club membership, swag &amp; MeshStack included</div>
+      </div>
+    </section>
+
+    <div class="section-label">Pick your Founders swag — choose 2, included with the tier</div>
+    <div class="grid">
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-hoodie.png" alt="THOX.ai Founders Club hoodie" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>Founders Club Hoodie</h3><span class="p">$72</span></div>
+          <div class="kind">Apparel</div><p class="d">Heavyweight black hoodie. "Your AI. Your Data. Your Rules." down the sleeve; API RATE LIMIT — "No rate limits. Just gains." on the back.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/owners-crewneck.png" alt="Built for Owners, Not Users crewneck" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"Owners" Crewneck</h3><span class="p">$58</span></div>
+          <div class="kind">Apparel</div><p class="d">"Built for Owners, Not Users." on the front, "Private AI you can hold." on the back. Premium crewneck sweatshirt.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/no-cloud-tee.png" alt="No Cloud Inside Founders Club tee" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"No Cloud Inside" Tee</h3><span class="p">$34</span></div>
+          <div class="kind">Apparel</div><p class="d">Founders Club front logo; bold NO CLOUD INSIDE back print. THOX Nova Founder Edition.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-cap.png" alt="THOX.ai Founders Club cap" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>Founders Club Cap</h3><span class="p">$32</span></div>
+          <div class="kind">Headwear</div><p class="d">Embroidered THOX.ai + FOUNDERS CLUB. "Sever the Cord" across the back.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/api-rate-limit-bottle.png" alt="API Rate Limit shaker bottle" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"API Rate Limit" Bottle</h3><span class="p">$24</span></div>
+          <div class="kind">Drinkware</div><p class="d">Matte-black stainless shaker bottle. API RATE LIMIT down the side, THOX chip mark at the base.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/thing-o-box-backpack.png" alt="Thing O Box Founder Edition backpack" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"Thing O Box" Backpack</h3><span class="p">$128</span></div>
+          <div class="kind">Gear · Founder Edition</div><p class="d">Tech backpack, Founder Edition. "NO CLOUD INSIDE" strap tag, padded device sleeves. <b>Counts as both swag picks.</b></p></div>
+      </div>
+    </div>
+
+    <div class="section-label">Add-ons — add to any pledge</div>
+    <div class="grid">
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-card.png" alt="THOX.ai Founders Club numbered metal member card" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>Founders Club Member Card</h3><span class="p excl">Founders exclusive</span></div>
+          <div class="kind">Collectible · numbered</div><p class="d">Matte-black metal card, laser-etched and individually numbered. Included with the Founders tier — not sold separately.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-sticker-meshstack-pack.png" alt="Founders sticker pack and MeshStack access card" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>MeshStack — 12-Month Access</h3><span class="p">$99</span></div>
+          <div class="kind">Digital · MS-12A</div><p class="d">A full year of MeshStack, redeemable at console.thox.ai/redeem. Ships with the Founders sticker pack + MagStack quick-start card.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-sticker-meshstack-pack.png" alt="THOX Founders sticker pack" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>Founders Sticker Pack</h3><span class="p">$12</span></div>
+          <div class="kind">Accessory</div><p class="d">Die-cut THOX.ai, "No Cloud Inside," Thing O Approved, and chip-mark stickers. Free with the Founders tier.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/thing-o-box-backpack.png" alt="Thing O Box Founder Edition backpack" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"Thing O Box" Backpack</h3><span class="p">$128</span></div>
+          <div class="kind">Gear · Founder Edition</div><p class="d">The Founder Edition tech backpack, à la carte for any pledge.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-hoodie.png" alt="Founders Club hoodie" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>Founders Club Hoodie</h3><span class="p">$72</span></div>
+          <div class="kind">Apparel</div><p class="d">Add the hoodie to any pledge, no Founders tier required.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/owners-crewneck.png" alt="Owners crewneck" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"Owners" Crewneck</h3><span class="p">$58</span></div>
+          <div class="kind">Apparel</div><p class="d">"Built for Owners, Not Users." crewneck, à la carte.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/no-cloud-tee.png" alt="No Cloud Inside tee" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"No Cloud Inside" Tee</h3><span class="p">$34</span></div>
+          <div class="kind">Apparel</div><p class="d">The Founders tee, add-on price.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/founders-cap.png" alt="Founders Club cap" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>Founders Club Cap</h3><span class="p">$32</span></div>
+          <div class="kind">Headwear</div><p class="d">Embroidered "Sever the Cord" cap, add-on price.</p></div>
+      </div>
+      <div class="item">
+        <div class="ph"><img src="assets/swag/api-rate-limit-bottle.png" alt="API Rate Limit bottle" loading="lazy" /></div>
+        <div class="meta"><div class="top"><h3>"API Rate Limit" Bottle</h3><span class="p">$24</span></div>
+          <div class="kind">Drinkware</div><p class="d">Stainless shaker bottle, add-on price.</p></div>
+      </div>
+    </div>
+
+    <div class="howto">
+      <h3>How add-ons work</h3>
+      <p>On Kickstarter, add-ons are extras you stack onto your pledge at checkout — no separate order. Back any reward, then add the exact dollar amount of the accessories you want on top; we collect sizes and colorways in the post-campaign survey.</p>
+      <p>Prices shown are suggested Kickstarter add-on prices and are indicative until the campaign goes live on <b>July 9, 2026</b>. Founders-tier swag picks and the sticker pack are included at no extra cost; only additional items are charged.</p>
+      <p class="fine">Suggested pricing · subject to final campaign configuration · THOX.AI LLC</p>
+    </div>
+
+    <a class="back" href="./index.html">&larr; Back to campaign pages</a>
+    <div class="foot">
+      <div>THOX.AI LLC · © 2026</div>
+      <div>YOUR AI. YOUR DATA. YOUR RULES.</div>
+    </div>
+  </div>
+</body>
+</html>

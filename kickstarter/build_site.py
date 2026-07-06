@@ -130,6 +130,25 @@ if pkg_page.exists() and pkg_imgs.exists():
     packaging_kept.append(("packaging.html", "What's in the Box",
         "The actual retail packaging your pledge ships in: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — front, back, and specs. Exactly what Kickstarter backers receive."))
     print("  ~ packaging.html         <- sources/packaging.html (+ assets/packaging/)")
+fnd_page = ROOT / "sources/founders.html"
+fnd_imgs = ROOT / "sources/swag"
+if fnd_page.exists() and fnd_imgs.exists():
+    shutil.copytree(fnd_imgs, SITE / "assets/swag", dirs_exist_ok=True)
+    shutil.copy2(fnd_page, SITE / "founders.html")
+    packaging_kept.append(("founders.html", "Founders Club &amp; Add-ons",
+        "Back all four devices to become a Founder: numbered membership, your pick of Founders swag, 12 months of MeshStack, and your name in the launch. Plus every swag item as an add-on with pricing."))
+    print("  ~ founders.html          <- sources/founders.html (+ assets/swag/)")
+
+# 4b3d) THOX MagDisplay — upcoming companion display (roadmap, Spring 2027)
+magdisplay_kept = []
+md_page = ROOT / "sources/magdisplay.html"
+md_imgs = ROOT / "sources/magdisplay"
+if md_page.exists() and md_imgs.exists():
+    shutil.copytree(md_imgs, SITE / "assets/magdisplay", dirs_exist_ok=True)
+    shutil.copy2(md_page, SITE / "magdisplay.html")
+    magdisplay_kept.append(("magdisplay.html", "THOX MagDisplay",
+        "Upcoming companion display (Spring 2027): a pocket-class color e-ink surface that MagStacks onto ThoxMini, ThoxMini Air, ThoxClip, or ThoxNova. See more, stay local, own your data."))
+    print("  ~ magdisplay.html        <- sources/magdisplay.html (+ assets/magdisplay/)")
 
 # 4b4) Flagship edge-AI device demos (upcoming product line)
 DEVICES = [
@@ -213,6 +232,16 @@ device_cards = "\n".join(f"""
         <p class="card-blurb">{blurb}</p>
         <div class="card-go">Explore device &rarr;</div>
       </a>""" for (out, title, blurb) in device_kept)
+
+magdisplay_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:#2DD4BF;border-color:#2DD4BF55;">Spring 2027</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">Preview MagDisplay &rarr;</div>
+      </a>""" for (out, title, blurb) in magdisplay_kept)
 
 tool_cards = "\n".join(f"""
       <a class="card" href="./{out}">
@@ -341,6 +370,7 @@ index = f"""<!DOCTYPE html>
     </div>
     <div class="section-label">Upcoming flagship devices — THOX Nova &amp; the THOX Edge Series</div>
     <div class="grid">{device_cards}
+{magdisplay_cards}
     </div>
     <div class="section-label">Tools</div>
     <div class="grid">{tool_cards}
