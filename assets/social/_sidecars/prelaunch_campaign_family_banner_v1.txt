@@ -1,0 +1,8 @@
+tool:    brand design (final art supplied by THOX creative team)
+size:    2172x724 (banner)
+seed:    n/a — not generated via gpt-image-1 pipeline
+still_prompt: n/a — hand-composed brand art, not a filled pipeline prompt
+motion_prompt: n/a — still asset
+source_still: prelaunch_campaign_family_banner_v1.png
+qc: passed 2026-07-06 by TX (brand-QC'd on delivery)
+notes: Family horizontal banner (3:1) — logo + tagline left, four-device lineup right, 5-benefit row underneath. Sized toward X/LinkedIn header crops. Brand tokens verified (emerald #10b981 accents, ink #0a0e14 ground, Inter/mono type). Wordmark + tagline "Your AI. Your Data. Your Rules." present. Keep this approved v1; archive if superseded.
