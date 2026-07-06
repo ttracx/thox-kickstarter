@@ -34,13 +34,16 @@ runs it automatically as its last step.
 
 | Page | Kind | Notes |
 |---|---|---|
-| **ThoxOS Demo** (`thoxos-demo.html`) | Flagship | The full ThoxOS desktop sandbox (v6.1): lock screen, menu bar, ⌘K command palette, app dock, live on-device inference. Self-contained React app. Any password unlocks it. |
+| **ThoxOS Demo** (`thoxos-demo.html`) | Flagship | The **full ThoxOS** desktop sandbox (v6.1) that ships on THOX Nova + Pro: lock screen, menu bar, ⌘K command palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. Self-contained React app. Any password unlocks it. |
+| **THOX Experience Fabric** (`experience-fabric.html`) | Platform | The scientific design system + Rust runtime behind every THOX surface. Three planes (products → SDKs → runtime), the runtime crates, locked navigation, one visible agent (THOXY), four-tier memory, generated tokens, and the certified **Experience Score ≥ 90**. Self-contained. Source in `sources/experience-fabric.html`. |
+| **ThoxLLM Model Gallery** (`models.html`) | Live app | Model gallery + download center for the real THOX models: filter by source / family / capability, match a model to your device, and copy the exact `ollama pull` / Hugging Face command. Links to the [model catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/thox-ai). Self-contained. Source in `sources/models.html`. |
 | **MeshStack app** (`meshstack-{ios,ipad,macos,windows,android}.html`) | Live app ×5 | Fully-functional standalone MeshStack demos, one per platform: identity, pairing, connect, monitor, devices. Self-contained React apps. Sources in `sources/meshstack/`. |
-| **Flagship devices** (`thox-nova.html`, `thox-pro.html`, `thox-pro-max.html`, `thox-pro-ultra.html`) | Live demo ×4 | Interactive product pages for the upcoming THOX Nova + Pro / Pro Max / Pro Ultra edge-AI line (Upstrima Edge). Self-contained. Sources in `sources/devices/`. |
+| **Flagship devices** (`thox-nova.html`, `thox-pro.html`, `thox-pro-max.html`, `thox-pro-ultra.html`) | Live demo ×4 | Interactive product pages for the upcoming THOX Nova + Pro / Pro Max / Pro Ultra edge-AI line (Upstrima Edge), which run the **full ThoxOS**. Self-contained. Sources in `sources/devices/`. |
 | **ThoxMigrate** (`thoxmigrate.html`) | Live app | Cloud-to-edge AI migration tool: scan cloud API traffic, map models to local equivalents, plan the move to THOX edge. Self-contained. Source in `sources/thoxmigrate.html`. |
+| **ThoxOS Mini Demo** (`thoxos-mini-demo.html`) | Interactive | The **edge build of ThoxOS** that powers the four campaign devices — ThoxKey, ThoxMini Air, ThoxMini, ThoxClip: boot, insert, agents, files, skills, terminal. The same Experience Fabric as full ThoxOS, shrunk to a key. Source in `sources/thoxos-mini-demo.dc.html`. |
 | Kickstarter Story | Self-contained | Same page as `../story.html`. |
 | Campaign Runbook | Runtime | Internal launch playbook. |
-| Model Gallery · Software Demo · ThoxOS Mini Demo · Campaign Animatic | Interactive | Claude Design prototypes, rendered by the vendored runtime. |
+| Model Gallery · Software Demo · Campaign Animatic | Interactive | Claude Design prototypes, rendered by the vendored runtime. |
 | Video Storyboard | Self-contained | The standalone storyboard export. |
 
 Build / rebuild it with:
@@ -56,6 +59,32 @@ React/ReactDOM/Babel into `site/vendor/` and repoints `support.js` at them, and
 copies only the assets the pages actually reference (not the multi-hundred-MB of
 unused product renders and uploads). Every page was rendered end-to-end in
 headless Chromium to confirm it boots with zero page errors.
+
+## Platform: ThoxOS, ThoxOS Mini, and the Experience Fabric
+
+The campaign presents one platform at two scales, held together by a single
+design + runtime framework.
+
+- **ThoxOS Mini** — the edge build that ships on the four launch devices
+  (**ThoxKey, ThoxMini Air, ThoxMini, ThoxClip**). A pocket-sized shell: boot,
+  insert, agents, files, skills, terminal, all on-device. Demo:
+  [`site/thoxos-mini-demo.html`](site/thoxos-mini-demo.html).
+- **Full ThoxOS** — the complete desktop OS that ships on the **THOX Nova and
+  Pro** series (kept in the campaign so backers meet the full architecture and
+  roadmap). Demo: [`site/thoxos-demo.html`](site/thoxos-demo.html).
+- **THOX Experience Fabric (TXF)** — the reason the two feel like one product.
+  It is a scientific design system plus a Rust runtime that guarantees the same
+  experience on every surface: three planes (products → SDKs → runtime),
+  a fixed set of runtime crates, **locked navigation**, **one visible agent
+  (THOXY)**, **four-tier memory** (HOT / WARM / COLD / VAULT), design tokens
+  generated from a single source, and a certification gate — the **Experience
+  Score**, which every surface must hold at **≥ 90**. It is also THOX's adopted
+  internal development framework. Page:
+  [`site/experience-fabric.html`](site/experience-fabric.html).
+
+`experience-fabric.html` is a self-contained, from-scratch page built on the TXF
+tokens; `thoxos-mini-demo.html` is the Claude Design ThoxOS Mini prototype
+(`sources/thoxos-mini-demo.dc.html`) rendered by the vendored runtime.
 
 ## How `story.html` was produced
 

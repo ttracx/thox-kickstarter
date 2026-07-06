@@ -55,7 +55,7 @@ FEATURED = {
     "src": ROOT / "sources/thoxos-sandbox.html",
     "out": "thoxos-demo.html",
     "title": "ThoxOS Demo",
-    "blurb": "The full ThoxOS desktop, live: lock screen, menu bar, command palette (⌘K), a dock of real apps, and streaming on-device inference at 42 tok/s. Any password unlocks it.",
+    "blurb": "The full ThoxOS desktop that ships on THOX Nova and Pro, live: lock screen, menu bar, command palette (⌘K), a dock of real apps, and streaming on-device inference at 42 tok/s. Same Experience Fabric as ThoxOS Mini, scaled up. Any password unlocks it.",
     "preview": "sources/thoxos-preview.png",
 }
 prev_rel = None
@@ -73,7 +73,8 @@ PAGES = [
     (PROJ / "Campaign Runbook.dc.html",                "campaign-runbook.html",  "Campaign Runbook",   "Internal launch playbook: overview, roles, tiers, timeline, launch-day comms, risk tracker.", "runtime"),
     (PROJ / "Model Gallery.dc.html",                   "model-gallery.html",     "Model Gallery",      "Interactive browser of the local model library available on ThoxOS.", "interactive"),
     (PROJ / "Software Demo.dc.html",                   "software-demo.html",     "Software Demo",      "Clickable ThoxOS software walkthrough: mesh, devices, activity, settings.", "interactive"),
-    (PROJ / "ThoxOS Mini Demo.dc.html",                "thoxos-mini-demo.html",  "ThoxOS Mini Demo",   "Interactive ThoxOS Mini shell: boot, insert, agents, files, skills, terminal.", "interactive"),
+    ((ROOT / "sources/thoxos-mini-demo.dc.html") if (ROOT / "sources/thoxos-mini-demo.dc.html").exists() else (PROJ / "ThoxOS Mini Demo.dc.html"),
+                                                       "thoxos-mini-demo.html",  "ThoxOS Mini Demo",   "The edge build that powers ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Boot, insert, agents, files, skills, terminal — the same Experience Fabric, shrunk to a key.", "interactive"),
     (PROJ / "Campaign Animatic.dc.html",               "campaign-animatic.html", "Campaign Animatic",  "Animated teaser sequence built from the device close-up footage.", "interactive"),
 ]
 
@@ -95,7 +96,7 @@ if msdir.exists():
             meshstack_kept.append((f"meshstack-{key}.html", title, blurb))
             print(f"  ~ meshstack-{key:8s}.html <- sources/meshstack/{key}.html")
 
-# 4b3) ThoxMigrate — cloud-to-edge AI migration tool
+# 4b3) Tools: ThoxMigrate + ThoxLLM Model Gallery & Download Center
 thoxmigrate_kept = []
 tm_src = ROOT / "sources/thoxmigrate.html"
 if tm_src.exists():
@@ -103,6 +104,21 @@ if tm_src.exists():
     thoxmigrate_kept.append(("thoxmigrate.html", "ThoxMigrate",
         "Cloud-to-edge AI migration: scan your current cloud AI usage, map models to local equivalents, and plan the move to THOX edge devices. Fully interactive."))
     print("  ~ thoxmigrate.html      <- sources/thoxmigrate.html")
+mg_src = ROOT / "sources/models.html"
+if mg_src.exists():
+    shutil.copy2(mg_src, SITE / "models.html")
+    thoxmigrate_kept.append(("models.html", "ThoxLLM Model Gallery",
+        "Model gallery + download center: browse the real THOX models, find the right one for your device, and pull from Hugging Face or Ollama. Links to the catalog + compatibility tool."))
+    print("  ~ models.html           <- sources/models.html")
+
+# 4b3b) THOX Experience Fabric (TXF) — the cross-platform design + runtime framework
+platform_kept = []
+xf_src = ROOT / "sources/experience-fabric.html"
+if xf_src.exists():
+    shutil.copy2(xf_src, SITE / "experience-fabric.html")
+    platform_kept.append(("experience-fabric.html", "THOX Experience Fabric",
+        "The scientific design system and Rust runtime behind every THOX surface. One experience across ThoxOS Mini and full ThoxOS: locked navigation, one visible agent, four-tier memory, generated tokens, and a certified Experience Score."))
+    print("  ~ experience-fabric.html <- sources/experience-fabric.html")
 
 # 4b4) Flagship edge-AI device demos (upcoming product line)
 DEVICES = [
@@ -207,6 +223,16 @@ meshstack_cards = "\n".join(f"""
         <div class="card-go">Launch app &rarr;</div>
       </a>""" for (out, title, blurb) in meshstack_kept)
 
+platform_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:#A855F7;border-color:#A855F755;">Platform</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">Explore the fabric &rarr;</div>
+      </a>""" for (out, title, blurb) in platform_kept)
+
 prod_cards = "\n".join(f"""
       <a class="card" href="./{out}">
         <div class="card-top">
@@ -286,6 +312,9 @@ index = f"""<!DOCTYPE html>
     <h1>Your AI. Your Data.<br /><span class="g">Your Rules.</span></h1>
     <p class="sub">Every page of the THOX.ai Kickstarter campaign, generated from the design handoff and deployable as one static bundle. Pick a page to open it.</p>
     {featured_html}
+    <div class="section-label">Platform &amp; architecture — one experience, every surface</div>
+    <div class="grid">{platform_cards}
+    </div>
     <div class="section-label">Upcoming flagship devices — THOX Nova &amp; Pro series</div>
     <div class="grid">{device_cards}
     </div>

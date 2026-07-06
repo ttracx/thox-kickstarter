@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ThoxLLM — Model Gallery &amp; Download Center</title>
+<meta name="description" content="Browse THOX.ai's local AI models and download them from Hugging Face or Ollama. Find the ideal model for your THOX device." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family:'Xolonium'; src:url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight:700; }
+  :root{ --ink:#09090B; --surface:#131316; --card:#1A1A1C; --border:#27272A; --border2:#3F3F46;
+         --em:#10B981; --em2:#34D399; --purple:#A855F7; --amber:#F59E0B; --fg:#FAFAFA; --mut:#A1A1AA; --dim:#71717A; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:var(--ink); color:var(--fg); font-family:Inter,system-ui,sans-serif; }
+  a{ color:var(--em2); text-decoration:none; }
+  .wrap{ max-width:1160px; margin:0 auto; padding:0 28px; }
+  /* nav */
+  .nav{ position:sticky; top:0; z-index:40; background:rgba(9,9,11,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  .nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav img{ height:24px; }
+  .nav .links{ display:flex; gap:22px; font-size:13.5px; }
+  .nav .links a{ color:var(--mut); } .nav .links a:hover{ color:var(--fg); }
+  @media(max-width:720px){ .nav .links{ display:none; } }
+  /* hero */
+  .hero{ padding:70px 0 40px; position:relative; overflow:hidden; }
+  .hero .glow{ position:absolute; top:-160px; right:-120px; width:640px; height:560px; border-radius:50%;
+    background:radial-gradient(circle,rgba(16,185,129,.14) 0%,rgba(0,0,0,0) 68%); pointer-events:none; }
+  .kick{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--em2); }
+  h1{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:56px; line-height:1.03; letter-spacing:-.01em; margin:18px 0 0; }
+  h1 .g{ color:var(--em2); }
+  .lede{ font-size:18px; line-height:1.6; color:var(--mut); max-width:660px; margin:18px 0 0; }
+  @media(max-width:720px){ h1{ font-size:38px; } }
+  /* source cards */
+  .srcgrid{ margin-top:34px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media(max-width:900px){ .srcgrid{ grid-template-columns:1fr 1fr; } }
+  .src{ display:flex; flex-direction:column; gap:8px; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; transition:border-color .2s, transform .2s; }
+  .src:hover{ border-color:var(--em); transform:translateY(-2px); }
+  .src .ico{ font-size:22px; }
+  .src .t{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:16px; }
+  .src .d{ font-size:12.5px; color:var(--mut); line-height:1.5; flex:1; }
+  .src .go{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--em2); }
+  /* section */
+  h2{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:30px; margin:0; }
+  .section{ padding:56px 0 0; }
+  .section .sub{ color:var(--mut); font-size:15.5px; line-height:1.6; margin:12px 0 0; max-width:720px; }
+  .label{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
+  /* device journey */
+  .devs{ margin-top:24px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  @media(max-width:820px){ .devs{ grid-template-columns:1fr 1fr; } }
+  .devbtn{ text-align:left; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; cursor:pointer; transition:border-color .2s, background .2s; color:inherit; font:inherit; }
+  .devbtn:hover{ border-color:var(--em2); }
+  .devbtn.on{ border-color:var(--em); background:rgba(16,185,129,.08); }
+  .devbtn .n{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:16px; }
+  .devbtn .r{ font-size:12px; color:var(--mut); margin-top:6px; line-height:1.45; }
+  .devbtn .tier{ font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--em2); margin-top:8px; }
+  .devhint{ margin-top:14px; font-size:13.5px; color:var(--mut); }
+  .devhint b{ color:var(--fg); }
+  /* controls */
+  .controls{ margin-top:22px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  input[type=search],select{ font-family:Inter; font-size:13px; color:var(--fg); background:var(--surface); border:1px solid var(--border2); border-radius:9px; padding:9px 12px; }
+  input[type=search]{ min-width:220px; }
+  .chip{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--mut); background:var(--surface); border:1px solid var(--border2); border-radius:999px; padding:7px 13px; cursor:pointer; }
+  .chip.on{ color:var(--ink); background:var(--em); border-color:var(--em); font-weight:700; }
+  /* model grid */
+  .grid{ margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media(max-width:980px){ .grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:640px){ .grid{ grid-template-columns:1fr; } }
+  .m{ display:flex; flex-direction:column; gap:12px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px; transition:border-color .2s; }
+  .m:hover{ border-color:var(--border2); }
+  .m.hide{ display:none; }
+  .m .top{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+  .m .name{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:19px; }
+  .m .size{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--em2); white-space:nowrap; }
+  .m .base{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--dim); }
+  .m .blurb{ font-size:13.5px; line-height:1.55; color:var(--mut); flex:1; }
+  .m .tags{ display:flex; gap:6px; flex-wrap:wrap; }
+  .tag{ font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--border2); color:var(--mut); border-radius:999px; padding:3px 8px; }
+  .tag.vision{ color:var(--purple); border-color:#a855f755; }
+  .tag.think{ color:var(--em2); border-color:#34d39955; }
+  .tag.priv{ color:var(--amber); border-color:#f59e0b55; }
+  .devfit{ font-size:11.5px; color:var(--dim); }
+  .devfit b{ color:var(--em2); font-weight:600; }
+  .pull{ display:flex; align-items:center; gap:8px; background:#000; border:1px solid var(--border); border-radius:9px; padding:9px 11px; }
+  .pull code{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--fg); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
+  .copy{ font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--em2); background:none; border:1px solid var(--border2); border-radius:6px; padding:4px 8px; cursor:pointer; white-space:nowrap; }
+  .copy:hover{ border-color:var(--em); }
+  .links{ display:flex; gap:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; }
+  .foot{ margin:70px 0 60px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; color:var(--dim); }
+  .banner{ margin-top:24px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; background:linear-gradient(135deg,#0d1512,#000); border:1px solid #1F3430; border-radius:16px; padding:20px 24px; }
+  .banner .bt{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:17px; }
+  .banner .bd{ font-size:13.5px; color:var(--mut); flex:1; min-width:240px; }
+  .btn{ display:inline-block; background:var(--em); color:var(--ink); font-weight:600; font-size:13.5px; border-radius:999px; padding:11px 22px; }
+  .btn:hover{ box-shadow:0 0 26px rgba(16,185,129,.28); color:var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <a href="./index.html"><img src="assets/logos/thox-logo-horiz-whiteout.png" alt="THOX.ai" /></a>
+  <div class="links">
+    <a href="#sources">Sources</a>
+    <a href="#find">Find your model</a>
+    <a href="#gallery">Gallery</a>
+    <a href="https://www.thox.ai/docs/model-compatibility" target="_blank" rel="noopener">Compatibility tool ↗</a>
+    <a href="./index.html">Campaign ↗</a>
+  </div>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="glow"></div>
+  <div class="kick">ThoxLLM · Model Gallery &amp; Download Center</div>
+  <h1>Your models.<br /><span class="g">Your hardware. Your rules.</span></h1>
+  <p class="lede">Browse the THOX.ai local model family and pull it from wherever you like — <b style="color:#fafafa">Hugging Face</b> or <b style="color:#fafafa">Ollama</b>. Every model runs on hardware you own. Pick your device below and we'll show what fits.</p>
+</div></div>
+
+<div class="wrap" id="sources">
+  <div class="label">Get the models from your choice of source</div>
+  <div class="srcgrid">
+    <a class="src" href="https://huggingface.co/Thox-ai" target="_blank" rel="noopener">
+      <div class="ico">🤗</div><div class="t">Hugging Face</div>
+      <div class="d">Weights, GGUF, and model cards. The <code>Thox-ai</code> org.</div>
+      <div class="go">huggingface.co/Thox-ai ↗</div>
+    </a>
+    <a class="src" href="https://ollama.com/thox-ai" target="_blank" rel="noopener">
+      <div class="ico">🦙</div><div class="t">Ollama</div>
+      <div class="d">One-command pulls for local runtimes. The <code>thox-ai</code> namespace.</div>
+      <div class="go">ollama.com/thox-ai ↗</div>
+    </a>
+    <a class="src" href="https://www.thox.ai/docs/model-catalog" target="_blank" rel="noopener">
+      <div class="ico">📚</div><div class="t">Model catalog</div>
+      <div class="d">Full specs, quantizations, and industry guidance.</div>
+      <div class="go">thox.ai/docs/model-catalog ↗</div>
+    </a>
+    <a class="src" href="https://www.thox.ai/docs/model-compatibility" target="_blank" rel="noopener">
+      <div class="ico">🧭</div><div class="t">Compatibility tool</div>
+      <div class="d">Check which model is ideal for your device or MagStack.</div>
+      <div class="go">thox.ai/docs/model-compatibility ↗</div>
+    </a>
+  </div>
+</div>
+
+<div class="section" id="find"><div class="wrap">
+  <div class="label">Your journey · step 1</div>
+  <h2>Find your model</h2>
+  <p class="sub">Pick the THOX device you're running. We'll spotlight the models that fit its memory tier — then you download from Hugging Face or Ollama. For exact RAM math, open the <a href="https://www.thox.ai/docs/model-compatibility" target="_blank" rel="noopener">compatibility tool ↗</a>.</p>
+  <div class="devs" id="devs"></div>
+  <div class="devhint" id="devhint"></div>
+</div></div>
+
+<div class="section" id="gallery"><div class="wrap">
+  <div class="label">Your journey · step 2</div>
+  <h2>The gallery</h2>
+  <p class="sub">Filter by capability or source. Each card carries a one-line pull command and a link to the full model card.</p>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search models, base, use case…" />
+    <select id="fsource"><option value="">Any source</option><option value="ollama">On Ollama</option><option value="hf">On Hugging Face</option></select>
+    <select id="fgroup"><option value="">All families</option><option value="core">ThoxLLM core</option><option value="nellie">Nellie agents</option><option value="pro">THOX Pro</option><option value="cluster">MagStack cluster</option></select>
+    <span class="chip" data-cap="vision">vision</span>
+    <span class="chip" data-cap="think">thinking</span>
+    <span class="chip" data-cap="tools">tools</span>
+    <span class="chip" data-cap="code">coding</span>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></div>
+
+<div class="wrap">
+  <div class="banner">
+    <div class="bt">Not sure yet?</div>
+    <div class="bd">Browse everything live on the sources, or run the compatibility tool to match a model to your exact device and MagStack size.</div>
+    <a class="btn" href="https://www.thox.ai/docs/model-compatibility" target="_blank" rel="noopener">Open compatibility tool</a>
+  </div>
+  <div class="foot">
+    <div>THOX.AI LLC · © 2026 · Models available on Hugging Face &amp; Ollama</div>
+    <div>YOUR AI. YOUR DATA. YOUR RULES.</div>
+  </div>
+</div>
+
+<script>
+// ---- Device memory tiers (from thox.ai/docs/model-compatibility) ----
+const DEVICES = [
+  { id:"ThoxKey", n:"ThoxKey", tier:"Carry &amp; launch", r:"Carries your workspace + GGUF model files. Pairs with a compute device to run.", fit:["3B"] },
+  { id:"ThoxMini Air", n:"ThoxMini Air", tier:"Lightweight · wireless", r:"Battery-powered companion. Best with the smallest models for quick local tasks.", fit:["125M","3B"] },
+  { id:"ThoxMini", n:"ThoxMini", tier:"Single device · ~16GB", r:"Compact USB-C compute. Comfortable with 3–8B models.", fit:["3B","7B","8B"] },
+  { id:"ThoxNova", n:"ThoxNova + MagStack", tier:"MagStack 2×/4× · 32–64GB+", r:"Flagship node; stack for frontier + cluster models (12–32B and beyond).", fit:["8B","12B","14B","24B","30B","32B","cluster"] },
+];
+
+// ---- Real THOX model catalog (Hugging Face Thox-ai + Ollama thox-ai + docs) ----
+const M = [
+  // ThoxLLM core (public on HF + Ollama)
+  { name:"ThoxMini-3B", size:"3B", sizes:["3B"], base:"Llama-3.2-3B", group:"core",
+    blurb:"Pocket-sized local assistant. The default for the smallest THOX devices.",
+    caps:["tools"], ollama:"thox-ai/thoxmini-3b", hf:"Thox-ai/ThoxMini-3B", devices:["ThoxMini Air","ThoxMini","ThoxKey"] },
+  { name:"ThoxForge-7B", size:"7B", sizes:["7B"], base:"Mistral-7B", group:"core",
+    blurb:"General-purpose workhorse for everyday local workflows and drafting.",
+    caps:["tools"], ollama:"thox-ai/thoxforge-7b", hf:"Thox-ai/ThoxForge-7B", devices:["ThoxMini","ThoxNova"] },
+  { name:"ThoxGlobal-7B", size:"7B", sizes:["7B"], base:"Qwen2.5-7B", group:"core",
+    blurb:"Multilingual model tuned for cross-language work across 30+ languages.",
+    caps:["tools"], ollama:"thox-ai/thoxglobal-7b", hf:"Thox-ai/ThoxGlobal-7B", devices:["ThoxMini","ThoxNova"] },
+  { name:"ThoxWave-8B", size:"8B", sizes:["8B"], base:"Dolphin-Llama-3", group:"core",
+    blurb:"Expressive long-form model for creative and open-ended generation.",
+    caps:["tools"], ollama:"thox-ai/thoxwave-8b", hf:"Thox-ai/ThoxWave-8B", devices:["ThoxMini","ThoxNova"] },
+  { name:"ThoxNova-12B-Core", size:"12B", sizes:["12B"], base:"Gemma-4-12B", group:"core",
+    blurb:"Flagship reasoning core. The most capable single-node THOX model.",
+    caps:["tools","think"], ollama:"thox-ai/thoxnova-12b-core", hf:"Thox-ai/ThoxNova-12B-Core", devices:["ThoxNova"] },
+  { name:"ThoxNova-12B-Agent", size:"12B", sizes:["12B"], base:"Gemma-4-12B", group:"core",
+    blurb:"Agentic flagship with tool use and multi-step thinking for automations.",
+    caps:["tools","think"], ollama:"thox-ai/thoxnova-12b-agent", hf:"Thox-ai/ThoxNova-12B-Agent", devices:["ThoxNova"] },
+  { name:"ThoxGemma4", size:"12B", sizes:["12B"], base:"Gemma-4", group:"core",
+    blurb:"Gemma-4 tuned build with tools and thinking, ready for agent flows.",
+    caps:["tools","think"], ollama:"thox-ai/thoxgemma4", hf:null, devices:["ThoxNova"] },
+  { name:"thox-micro-125m", size:"125M", sizes:["125M"], base:"—", group:"core", soon:true,
+    blurb:"Ultra-light model for the most constrained edge tasks. Coming soon.",
+    caps:["tools"], ollama:null, hf:null, devices:["ThoxMini Air","ThoxKey"] },
+
+  // Nellie agents (Ollama)
+  { name:"nellie-core", size:"agent", sizes:[], base:"THOX agent runtime", group:"nellie",
+    blurb:"Core Nellie agent: tools + thinking, the base for the agent family.",
+    caps:["tools","think"], ollama:"thox-ai/nellie-core", hf:null, devices:["ThoxMini","ThoxNova"] },
+  { name:"nellie-coder", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
+    blurb:"Coding agent with tool use for local software workflows.",
+    caps:["tools","code"], ollama:"thox-ai/nellie-coder", hf:null, devices:["ThoxMini","ThoxNova"] },
+  { name:"nellie-coder-next", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
+    blurb:"Next-generation coding agent with expanded tool use.",
+    caps:["tools","code"], ollama:"thox-ai/nellie-coder-next", hf:null, devices:["ThoxNova"] },
+  { name:"nellie-orchestrator", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
+    blurb:"Multi-agent orchestrator that routes work across the mesh.",
+    caps:["tools","think"], ollama:"thox-ai/nellie-orchestrator", hf:null, devices:["ThoxNova"] },
+  { name:"nellie-research", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
+    blurb:"Research agent for long-context retrieval and synthesis.",
+    caps:["tools","think"], ollama:"thox-ai/nellie-research", hf:null, devices:["ThoxNova"] },
+  { name:"nellie-vision", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
+    blurb:"Vision agent: sees, reasons, and acts with tools.",
+    caps:["vision","tools","think"], ollama:"thox-ai/nellie-vision", hf:null, devices:["ThoxNova"] },
+
+  // THOX Pro catalog (docs; Ollama THOX-ai/thox-pro-*)
+  { name:"THOX Pro 8B", size:"8B", sizes:["8B"], base:"Ministral-3 8B", group:"pro", ctx:"256K", mem:"10GB",
+    blurb:"Privacy-first professional AI with vision + 32-language support. Recommended for most Pro users.",
+    caps:["vision","tools"], ollama:"THOX-ai/thox-pro-8b", hf:null, devices:["ThoxNova"] },
+  { name:"THOX Pro 14B", size:"14B", sizes:["14B"], base:"Ministral-3 14B", group:"pro", ctx:"256K", mem:"14GB",
+    blurb:"Advanced vision model with enhanced multilingual capability for complex professional tasks.",
+    caps:["vision","tools"], ollama:"THOX-ai/thox-pro-14b", hf:null, devices:["ThoxNova"] },
+  { name:"THOX Pro 24B", size:"24B", sizes:["24B"], base:"Devstral-Small-2 24B", group:"pro", ctx:"384K", mem:"20GB",
+    blurb:"Agentic coding model for software engineering: tool use and multi-file editing.",
+    caps:["tools","code","think"], ollama:"THOX-ai/thox-pro-24b", hf:null, devices:["ThoxNova"] },
+  { name:"THOX Pro 30B", size:"30B", sizes:["30B"], base:"Nemotron-3-Nano 30B", group:"pro", ctx:"256K", mem:"24GB",
+    blurb:"Reasoning powerhouse with thinking mode (3.5B active) for deep analysis and research.",
+    caps:["tools","think"], ollama:"THOX-ai/thox-pro-30b", hf:null, devices:["ThoxNova"] },
+  { name:"THOX Pro 32B", size:"32B", sizes:["32B"], base:"Qwen3-VL 32B", group:"pro", ctx:"256K", mem:"24GB",
+    blurb:"Vision specialist with OCR for 32 languages, built for document-heavy workflows.",
+    caps:["vision","tools"], ollama:"THOX-ai/thox-pro-32b", hf:null, devices:["ThoxNova"] },
+
+  // MagStack cluster / enterprise (private — shown for the roadmap picture)
+  { name:"thox-cluster-nano", size:"cluster", sizes:["cluster"], base:"Nemotron-3-Nano", group:"cluster", priv:true,
+    blurb:"Long-context cluster model optimized for MagStack clusters.",
+    caps:["think"], ollama:"thox-ai/thox-cluster-nano", hf:null, devices:["ThoxNova"] },
+  { name:"thox-cluster-swift", size:"cluster", sizes:["cluster"], base:"Ministral-3 8B", group:"cluster", priv:true,
+    blurb:"Ultra-fast distributed AI for 30–50 concurrent users, real-time responses.",
+    caps:["tools"], ollama:"thox-ai/thox-cluster-swift", hf:null, devices:["ThoxNova"] },
+  { name:"thox-cluster-code", size:"cluster", sizes:["cluster"], base:"Qwen2.5-Coder 32B", group:"cluster", priv:true,
+    blurb:"Code-specialized cluster for engineering teams; GPT-4o-competitive coding.",
+    caps:["tools","code","think"], ollama:"thox-ai/thox-cluster-code", hf:null, devices:["ThoxNova"] },
+  { name:"thox-cluster-deep", size:"cluster", sizes:["cluster"], base:"Llama 3.1 405B", group:"cluster", priv:true,
+    blurb:"Frontier distributed reasoning across 6–12 hardened edge devices.",
+    caps:["think"], ollama:"thox-ai/thox-cluster-deep", hf:null, devices:["ThoxNova"] },
+  { name:"thox-cluster-maverick", size:"cluster", sizes:["cluster"], base:"Qwen3 235B MoE", group:"cluster", priv:true,
+    blurb:"Enterprise-scale distributed AI, on-premises, mission-critical reliability.",
+    caps:["tools","think"], ollama:"thox-ai/thox-cluster-maverick", hf:null, devices:["ThoxNova"] },
+  { name:"thox-cluster-secure", size:"cluster", sizes:["cluster"], base:"Qwen2.5 72B", group:"cluster", priv:true,
+    blurb:"Maximum-security distributed AI for cleared personnel; compliance-focused.",
+    caps:["think"], ollama:"thox-ai/thox-cluster-secure", hf:null, devices:["ThoxNova"] },
+];
+
+const el=(t,c,h)=>{const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
+const GROUP={core:"ThoxLLM core",nellie:"Nellie agent",pro:"THOX Pro",cluster:"MagStack cluster"};
+
+// device journey
+let activeDev=null;
+const devsBox=document.getElementById('devs');
+DEVICES.forEach(d=>{
+  const b=el('button','devbtn');
+  b.innerHTML=`<div class="n">${d.n}</div><div class="r">${d.r}</div><div class="tier">${d.tier}</div>`;
+  b.onclick=()=>{ activeDev = activeDev===d.id?null:d.id; render(); syncDevUI(); };
+  b.dataset.id=d.id; devsBox.appendChild(b);
+});
+function syncDevUI(){
+  [...devsBox.children].forEach(b=> b.classList.toggle('on', b.dataset.id===activeDev));
+  const hint=document.getElementById('devhint');
+  if(!activeDev){ hint.innerHTML='<b>Tip:</b> tap a device to spotlight the models that fit its memory tier.'; return; }
+  const d=DEVICES.find(x=>x.id===activeDev);
+  const n=M.filter(m=>m.devices.includes(activeDev)).length;
+  hint.innerHTML=`Showing <b>${n}</b> models that fit <b>${d.n}</b> (${d.tier}). Clear the device to see everything.`;
+}
+
+// filters
+let caps=new Set();
+document.querySelectorAll('.chip').forEach(c=> c.onclick=()=>{ c.classList.toggle('on'); const k=c.dataset.cap; caps.has(k)?caps.delete(k):caps.add(k); render(); });
+['q','fsource','fgroup'].forEach(id=> document.getElementById(id).addEventListener('input', render));
+
+function pullLine(m){
+  if(m.soon) return `<div class="pull"><code># coming soon</code></div>`;
+  if(m.ollama) return `<div class="pull"><code>ollama pull ${m.ollama}</code><button class="copy" data-cmd="ollama pull ${m.ollama}">Copy</button></div>`;
+  if(m.hf) return `<div class="pull"><code>huggingface.co/${m.hf}</code><button class="copy" data-cmd="https://huggingface.co/${m.hf}">Copy</button></div>`;
+  return '';
+}
+function linksLine(m){
+  const parts=[];
+  if(m.hf) parts.push(`<a href="https://huggingface.co/${m.hf}" target="_blank" rel="noopener">🤗 Hugging Face ↗</a>`);
+  if(m.ollama) parts.push(`<a href="https://ollama.com/${m.ollama}" target="_blank" rel="noopener">🦙 Ollama ↗</a>`);
+  return parts.length? `<div class="links">${parts.join('')}</div>`:'';
+}
+
+function render(){
+  const q=document.getElementById('q').value.toLowerCase().trim();
+  const fs=document.getElementById('fsource').value, fg=document.getElementById('fgroup').value;
+  const grid=document.getElementById('grid'); grid.innerHTML='';
+  let shown=0;
+  M.forEach(m=>{
+    if(fg && m.group!==fg) return;
+    if(fs==='ollama' && !m.ollama) return;
+    if(fs==='hf' && !m.hf) return;
+    if(activeDev && !m.devices.includes(activeDev)) return;
+    for(const c of caps){ if(!(m.caps||[]).includes(c)) return; }
+    if(q && !((m.name+' '+m.base+' '+m.blurb+' '+GROUP[m.group]).toLowerCase().includes(q))) return;
+    shown++;
+    const card=el('div','m');
+    const tags=(m.caps||[]).map(c=>`<span class="tag ${c==='vision'?'vision':c==='think'?'think':''}">${c==='think'?'thinking':c}</span>`).join('')
+      + (m.priv?'<span class="tag priv">private</span>':'') + (m.soon?'<span class="tag">coming soon</span>':'');
+    const meta = m.mem?`${m.base} · ${m.mem} · ${m.ctx} ctx`:m.base;
+    const fit = m.devices.length?`<div class="devfit">Runs on: <b>${m.devices.join(' · ')}</b></div>`:'';
+    card.innerHTML=
+      `<div class="top"><div class="name">${m.name}</div><div class="size">${m.size}</div></div>`+
+      `<div class="base">${meta}</div>`+
+      `<div class="tags">${tags}</div>`+
+      `<div class="blurb">${m.blurb}</div>`+
+      fit+ pullLine(m)+ linksLine(m);
+    grid.appendChild(card);
+  });
+  grid.querySelectorAll('.copy').forEach(b=> b.onclick=()=>{ navigator.clipboard && navigator.clipboard.writeText(b.dataset.cmd); const o=b.textContent; b.textContent='Copied'; setTimeout(()=>b.textContent=o,1200); });
+  if(!shown) grid.appendChild(el('div','sub','No models match those filters. Clear a filter or the selected device.'));
+}
+syncDevUI(); render();
+</script>
+</body>
+</html>

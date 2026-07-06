@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THOX Experience Fabric — one experience, every surface</title>
+<meta name="description" content="THOX Experience Fabric (TXF): the cross-platform experience layer that makes every THOX device, app, and agent behave the same. Spec-driven, gated, certified." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family:'Xolonium'; src:url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight:700; }
+  :root{ --ink:#09090B; --surface:#111113; --card:#1A1A1C; --border:#27272A; --border2:#3F3F46;
+         --em:#10B981; --em2:#34D399; --purple:#A855F7; --fg:#FAFAFA; --mut:#A1A1AA; --dim:#71717A; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:var(--ink); color:var(--fg); font-family:Inter,system-ui,sans-serif; }
+  a{ color:var(--em2); text-decoration:none; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+  .nav{ position:sticky; top:0; z-index:40; background:rgba(9,9,11,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  .nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav img{ height:24px; }
+  .nav .links{ display:flex; gap:22px; font-size:13.5px; }
+  .nav .links a{ color:var(--mut); } .nav .links a:hover{ color:var(--fg); }
+  @media(max-width:720px){ .nav .links{ display:none; } }
+  .hero{ padding:76px 0 34px; position:relative; overflow:hidden; }
+  .glow{ position:absolute; top:-160px; right:-120px; width:620px; height:560px; border-radius:50%;
+    background:radial-gradient(circle,rgba(16,185,129,.13) 0%,rgba(0,0,0,0) 68%); pointer-events:none; }
+  .kick{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--em2); }
+  h1{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:54px; line-height:1.04; letter-spacing:-.01em; margin:18px 0 0; }
+  h1 .g{ color:var(--em2); }
+  .lede{ font-size:18px; line-height:1.62; color:var(--mut); max-width:680px; margin:18px 0 0; }
+  .meta{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+  .pill{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--mut); border:1px solid var(--border2); border-radius:999px; padding:6px 12px; }
+  @media(max-width:720px){ h1{ font-size:37px; } }
+  h2{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:28px; margin:0; }
+  .section{ padding:54px 0 0; }
+  .section .sub{ color:var(--mut); font-size:15.5px; line-height:1.6; margin:12px 0 0; max-width:740px; }
+  .label{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
+  /* architecture planes */
+  .planes{ margin-top:26px; display:flex; flex-direction:column; gap:12px; }
+  .plane{ border:1px solid var(--border); border-radius:16px; padding:22px 24px; background:var(--card); }
+  .plane.rt{ background:linear-gradient(135deg,#0d1512,#000); border-color:#1F3430; }
+  .plane .pl{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--em2); }
+  .plane .pt{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:18px; margin-top:6px; }
+  .plane .pd{ font-size:13.5px; color:var(--mut); margin-top:6px; line-height:1.55; }
+  .conn{ text-align:center; color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:14px; }
+  .chips{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+  .c{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--fg); background:#000; border:1px solid var(--border2); border-radius:8px; padding:6px 10px; }
+  .c.em{ color:var(--em2); border-color:#34d39955; }
+  /* grids */
+  .grid3{ margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .grid2{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:820px){ .grid3{ grid-template-columns:1fr 1fr; } .grid2{ grid-template-columns:1fr; } }
+  @media(max-width:520px){ .grid3{ grid-template-columns:1fr; } }
+  .box{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; }
+  .box .h{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:15.5px; }
+  .box .m{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--em2); margin-top:3px; }
+  .box .p{ font-size:13px; color:var(--mut); line-height:1.5; margin-top:8px; }
+  .navbar5{ margin-top:16px; display:flex; gap:8px; flex-wrap:wrap; }
+  .navbar5 span{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--fg); background:#000; border:1px solid var(--border2); border-radius:8px; padding:8px 14px; }
+  .navbar5 span b{ color:var(--em2); }
+  .score{ margin-top:22px; display:flex; align-items:center; gap:24px; background:linear-gradient(135deg,#0d1512,#000); border:1px solid #1F3430; border-radius:18px; padding:26px 28px; flex-wrap:wrap; }
+  .score .big{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:52px; color:var(--em2); line-height:1; }
+  .score .sd{ font-size:14px; color:var(--mut); line-height:1.6; flex:1; min-width:260px; }
+  .foot{ margin:70px 0 60px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; color:var(--dim); }
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <a href="./index.html"><img src="assets/logos/thox-logo-horiz-whiteout.png" alt="THOX.ai" /></a>
+  <div class="links">
+    <a href="#planes">Architecture</a>
+    <a href="#runtime">Runtime</a>
+    <a href="#principles">Principles</a>
+    <a href="#science">Why it matters</a>
+    <a href="./index.html">Campaign ↗</a>
+  </div>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="glow"></div>
+  <div class="kick">THOX Experience Fabric · TXF</div>
+  <h1>One experience.<br /><span class="g">Every surface.</span></h1>
+  <p class="lede">TXF is the cross-platform experience layer beneath every THOX product. Every device feels like THOX, every app feels like THOX, every agent behaves like THOX. The screen size changes. The hardware changes. <b style="color:#fafafa">The experience never changes.</b></p>
+  <div class="meta">
+    <span class="pill">Spec v2.0 · TXF v0.4.1</span>
+    <span class="pill">Cross-platform experience layer</span>
+    <span class="pill">Core Platform Specification</span>
+  </div>
+</div></div>
+
+<div class="section" id="planes"><div class="wrap">
+  <div class="label">Architecture</div>
+  <h2>Three planes, one fabric.</h2>
+  <p class="sub">TXF sits above the THOX design system and below every product. Products call platform SDKs; the SDKs are thin wrappers over one shared Rust runtime. Consistency is structural, not a style guide someone remembers to follow.</p>
+  <div class="planes">
+    <div class="plane">
+      <div class="pl">Products</div>
+      <div class="pt">Every surface, one identity</div>
+      <div class="chips">
+        <span class="c">ThoxKey</span><span class="c">ThoxMini Air</span><span class="c">ThoxMini</span><span class="c">ThoxClip</span>
+        <span class="c em">ThoxNova</span><span class="c em">THOX Pro</span><span class="c">ThoxOS</span><span class="c">ThoxOS Mini</span>
+        <span class="c">Dispatch</span><span class="c">Studio</span><span class="c">Forge</span><span class="c">Mobile</span>
+      </div>
+    </div>
+    <div class="conn">↑ &nbsp; SDKs &nbsp; ↑</div>
+    <div class="plane">
+      <div class="pl">Platform SDKs</div>
+      <div class="pt">Thin wrappers, native feel</div>
+      <div class="chips">
+        <span class="c">react / next</span><span class="c">react-native</span><span class="c">flutter</span><span class="c">swift</span>
+        <span class="c">kotlin</span><span class="c">tauri</span><span class="c">rust</span><span class="c">web-components</span>
+      </div>
+    </div>
+    <div class="conn">↑ &nbsp; one runtime &nbsp; ↑</div>
+    <div class="plane rt">
+      <div class="pl">TXF Runtime · Rust</div>
+      <div class="pt">One source of behavior for all of THOX</div>
+      <div class="pd">Identity, tokens, components, agents, memory, navigation, device fabric, projects, notifications, voice, and compliance — one implementation, every platform.</div>
+    </div>
+  </div>
+</div></div>
+
+<div class="section" id="runtime"><div class="wrap">
+  <div class="label">The runtime</div>
+  <h2>Eleven crates. One behavior.</h2>
+  <div class="grid3">
+    <div class="box"><div class="h">txf-core</div><div class="m">identity + manifest</div><div class="p">User model and the TXF manifest schema every certified surface ships.</div></div>
+    <div class="box"><div class="h">txf-design-tokens</div><div class="m">compiled design system</div><div class="p">Tokens generated from the UX engine, never hand-edited.</div></div>
+    <div class="box"><div class="h">txf-components</div><div class="m">component contracts</div><div class="p">Universal contracts with accessibility + token bindings.</div></div>
+    <div class="box"><div class="h">txf-agent-framework</div><div class="m">THOXY + agent mesh</div><div class="p">The THOXY protocol, capability routing, and the agent mesh.</div></div>
+    <div class="box"><div class="h">txf-memory</div><div class="m">HOT / WARM / COLD / VAULT</div><div class="p">Four memory tiers with the same shape on every surface.</div></div>
+    <div class="box"><div class="h">txf-navigation</div><div class="m">5 locked sections</div><div class="p">Home · Agents · Projects · Devices · Vault. Never reordered.</div></div>
+    <div class="box"><div class="h">txf-device-fabric</div><div class="m">discovery + telemetry</div><div class="p">Device discovery, presence, and telemetry across the mesh.</div></div>
+    <div class="box"><div class="h">txf-projects</div><div class="m">universal project model</div><div class="p">One project model that follows you between devices.</div></div>
+    <div class="box"><div class="h">txf-voice</div><div class="m">wake + state machine</div><div class="p">Wake phrase and the idle→listening→thinking→responding ladder.</div></div>
+    <div class="box"><div class="h">txf-notifications</div><div class="m">cross-surface signals</div><div class="p">One notification standard that spans every THOX surface.</div></div>
+    <div class="box"><div class="h">txf-compliance</div><div class="m">HIPAA / GDPR / SOC2</div><div class="p">Compliance guardrails enforced in the runtime, not bolted on.</div></div>
+  </div>
+</div></div>
+
+<div class="section" id="principles"><div class="wrap">
+  <div class="label">Design principles</div>
+  <h2>Locked where it matters.</h2>
+  <p class="sub">A few things are non-negotiable so the experience is predictable everywhere — the parts users build muscle memory around.</p>
+  <div class="navbar5">
+    <span>Home</span><span>Agents</span><span>Projects</span><span>Devices</span><span>Vault</span>
+  </div>
+  <div class="grid2">
+    <div class="box"><div class="h">One visible agent: THOXY</div><div class="p">Only THOXY is user-visible by default; every other agent routes through it unless Advanced Mode is on. One face, one voice, one place to ask.</div></div>
+    <div class="box"><div class="h">Locked navigation</div><div class="p">Exactly five sections, in order, on every certified surface — desktop sidebar or mobile bottom bar. Never added, removed, renamed, or reordered.</div></div>
+    <div class="box"><div class="h">Four-tier memory</div><div class="p">HOT (this conversation) · WARM (this project) · COLD (retrievable history) · VAULT (sealed, encrypted). Same model on the smallest device and the largest.</div></div>
+    <div class="box"><div class="h">Voice state ladder</div><div class="p">idle → listening → thinking → responding | executing → completed | error → idle. The same states, wherever THOXY listens.</div></div>
+  </div>
+</div></div>
+
+<div class="section" id="science"><div class="wrap">
+  <div class="label">Why it matters</div>
+  <h2>Scientific by design.</h2>
+  <p class="sub">TXF is a fully-adopted internal development framework — not a mood board. Consistency is measured and gated, so it holds under change.</p>
+  <div class="grid3">
+    <div class="box"><div class="h">Tokens are generated</div><div class="m">never hand-edited</div><div class="p">Design tokens compile from one authored source through the UX engine; a CI drift gate fails the build if any surface falls out of sync.</div></div>
+    <div class="box"><div class="h">Four gates on every PR</div><div class="m">brand · WCAG AA · contracts · drift</div><div class="p">Brand rules, WCAG AA contrast, component contracts, and token drift are checked automatically before anything ships.</div></div>
+    <div class="box"><div class="h">Plain-language specs</div><div class="m">standards/</div><div class="p">UX, interaction, accessibility, digital-human, and agent-behavior specifications — the contract the whole company builds to.</div></div>
+  </div>
+  <div class="score">
+    <div class="big">≥ 90</div>
+    <div class="sd"><b style="color:#fafafa">The THOX Experience Score.</b> Every release is scored 0–100 by the certification release gates. 90+ ships, 80–89 gets review, below 80 is blocked. Certified bundles carry a <code>txf.json</code> manifest with an experience-score floor of 90.</div>
+  </div>
+</div></div>
+
+<div class="wrap"><div class="foot">
+  <div>THOX.AI LLC · © 2026 · THOX Experience Fabric (TXF) · Spec v2.0</div>
+  <div>YOUR AI. YOUR DATA. YOUR RULES.</div>
+</div></div>
+
+</body>
+</html>

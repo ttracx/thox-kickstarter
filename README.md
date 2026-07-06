@@ -38,9 +38,12 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 | What | Where | Notes |
 |---|---|---|
 | **Campaign site hub** | [`kickstarter/site/index.html`](kickstarter/site/index.html) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
-| **ThoxOS Demo** (flagship) | [`kickstarter/site/thoxos-demo.html`](kickstarter/site/thoxos-demo.html) | The full realistic ThoxOS desktop: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. |
+| **THOX Experience Fabric** | [`kickstarter/site/experience-fabric.html`](kickstarter/site/experience-fabric.html) | The scientific design system + Rust runtime behind every surface: three planes, locked nav, one visible agent, four-tier memory, generated tokens, certified Experience Score ≥ 90. |
+| **ThoxOS Mini Demo** | [`kickstarter/site/thoxos-mini-demo.html`](kickstarter/site/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
+| **ThoxOS Demo** (flagship) | [`kickstarter/site/thoxos-demo.html`](kickstarter/site/thoxos-demo.html) | The **full ThoxOS** desktop that ships on THOX Nova + Pro: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. |
+| **ThoxLLM Model Gallery** | [`kickstarter/site/models.html`](kickstarter/site/models.html) | Model gallery + download center for the real THOX models: filter, match to your device, copy the exact `ollama pull` / Hugging Face command. Links to the [catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/thox-ai). |
 | **MeshStack app** (5 platforms) | `kickstarter/site/meshstack-{ios,ipad,macos,windows,android}.html` | Fully-functional standalone MeshStack demos: identity, pairing, connect, monitor. |
-| **Flagship devices** (4) | `kickstarter/site/thox-{nova,pro,pro-max,pro-ultra}.html` | Interactive product pages for the upcoming THOX Nova + Pro series edge-AI line. |
+| **Flagship devices** (4) | `kickstarter/site/thox-{nova,pro,pro-max,pro-ultra}.html` | Interactive product pages for the upcoming THOX Nova + Pro series edge-AI line, which run the full ThoxOS. |
 | **ThoxMigrate** | [`kickstarter/site/thoxmigrate.html`](kickstarter/site/thoxmigrate.html) | Cloud-to-edge AI migration tool (scan, map, migrate). |
 | **Campaign animatic** | `kickstarter/site/animatic.html` | Working-concept animatic video of the storyboard (`assets/video/`). Device close-ups in `assets/device/video/`. |
 | **Copy system** | [`kickstarter/copy.md`](kickstarter/copy.md) | Full + graphic-ready device copy; single source of truth. |
@@ -50,7 +53,9 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 | **Production inventory & checklist** | [`kickstarter/PRODUCTION.md`](kickstarter/PRODUCTION.md) | Printable device + scene checklist and capture workflow. |
 | **Full guide** | [`kickstarter/README.md`](kickstarter/README.md) | Deliverable map, provenance, and build/regenerate instructions. |
 
-Also included under `kickstarter/site/`: Campaign Runbook, Model Gallery, Software Demo, ThoxOS Mini Demo, and the Campaign Animatic — the interactive design prototypes, rendered by the vendored runtime.
+Also included under `kickstarter/site/`: Campaign Runbook, Model Gallery, Software Demo, and the Campaign Animatic — the interactive design prototypes, rendered by the vendored runtime.
+
+**One platform, two scales.** ThoxOS Mini (the four launch devices) and full ThoxOS (the Nova / Pro roadmap) feel like one product because both run on the **THOX Experience Fabric** — a scientific design system plus a Rust runtime that locks navigation, keeps a single visible agent (THOXY), enforces four-tier memory, generates every design token from one source, and gates each surface on a certified **Experience Score ≥ 90**. It is also THOX's adopted internal development framework. See [`kickstarter/site/experience-fabric.html`](kickstarter/site/experience-fabric.html).
 
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
