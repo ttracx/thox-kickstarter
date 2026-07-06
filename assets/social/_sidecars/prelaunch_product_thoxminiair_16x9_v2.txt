@@ -1,0 +1,8 @@
+tool:    generated — kickstarter/build_device_graphics.py (HTML -> headless Chromium)
+size:    3200x1800 (16x9, rendered at 1600x900 @2x)
+seed:    n/a — deterministic HTML render
+still_prompt: n/a — copy + layout from kickstarter/copy.md (graphic-ready short copy)
+motion_prompt: n/a — still asset
+source_still: prelaunch_product_thoxminiair_16x9_v2.png
+qc: passed 2026-07-06 by TX (copy verified against kickstarter/copy.md)
+notes: ThoxMini Air — Wireless THOX workflows in a battery-powered form. Regenerated from the canonical short copy so on-image text (title, subheadline, 5 callouts, footer line, honest-positioning line) matches copy.md exactly. Composites the matte-black product render on TXF tokens (emerald #10b981/#34d399, ink #09090b, Xolonium display). v1 is the brand-supplied art; v2 is the copy-locked regeneration. Rebuild: python3 kickstarter/build_device_graphics.py.
