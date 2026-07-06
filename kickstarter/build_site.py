@@ -77,6 +77,50 @@ PAGES = [
     (PROJ / "Campaign Animatic.dc.html",               "campaign-animatic.html", "Campaign Animatic",  "Animated teaser sequence built from the device close-up footage.", "interactive"),
 ]
 
+# 4b2) MeshStack app — fully functional standalone demos, one per platform
+MESHSTACK = [
+    ("ios",     "MeshStack · iOS",     "The MeshStack iPhone app: create a private identity, pair by QR, and watch the encrypted mesh come alive."),
+    ("ipad",    "MeshStack · iPad",    "MeshStack on iPad: full mesh overview, device roles, and live distributed-inference metrics."),
+    ("macos",   "MeshStack · macOS",   "The macOS desktop app: network map, devices, inference, activity, and security in one window."),
+    ("windows", "MeshStack · Windows", "MeshStack for Windows: monitor your private mesh, devices online, and total throughput live."),
+    ("android", "MeshStack · Android", "The MeshStack Android app: one-time pairing, private mesh, and on-device inference."),
+]
+msdir = ROOT / "sources/meshstack"
+meshstack_kept = []
+if msdir.exists():
+    for key, title, blurb in MESHSTACK:
+        src = msdir / f"{key}.html"
+        if src.exists():
+            shutil.copy2(src, SITE / f"meshstack-{key}.html")
+            meshstack_kept.append((f"meshstack-{key}.html", title, blurb))
+            print(f"  ~ meshstack-{key:8s}.html <- sources/meshstack/{key}.html")
+
+# 4b3) ThoxMigrate — cloud-to-edge AI migration tool
+thoxmigrate_kept = []
+tm_src = ROOT / "sources/thoxmigrate.html"
+if tm_src.exists():
+    shutil.copy2(tm_src, SITE / "thoxmigrate.html")
+    thoxmigrate_kept.append(("thoxmigrate.html", "ThoxMigrate",
+        "Cloud-to-edge AI migration: scan your current cloud AI usage, map models to local equivalents, and plan the move to THOX edge devices. Fully interactive."))
+    print("  ~ thoxmigrate.html      <- sources/thoxmigrate.html")
+
+# 4b4) Flagship edge-AI device demos (upcoming product line)
+DEVICES = [
+    ("thox-nova",      "THOX Nova",      "Your private AI mesh, in hand. The flagship handheld edge-AI node running ThoxOS."),
+    ("thox-pro",       "THOX Pro",       "Upstrima Edge D — the Pro desktop edge-AI node for always-on local inference."),
+    ("thox-pro-max",   "THOX Pro Max",   "Upstrima Edge Q — higher-capacity Pro Max node for larger local models."),
+    ("thox-pro-ultra", "THOX Pro Ultra", "Upstrima Edge X — the top-tier Ultra node for the most demanding local AI workloads."),
+]
+devdir = ROOT / "sources/devices"
+device_kept = []
+if devdir.exists():
+    for key, title, blurb in DEVICES:
+        src = devdir / f"{key}.html"
+        if src.exists():
+            shutil.copy2(src, SITE / f"{key}.html")
+            device_kept.append((f"{key}.html", title, blurb))
+            print(f"  ~ {key+'.html':22s} <- sources/devices/{key}.html")
+
 # 4c) Production resources (storyboard visualization + generated tracker)
 shutil.copy2(ROOT / "sources/thox-kickstarter-storyboard.html", SITE / "storyboard.html")
 PRODUCTION = [
@@ -105,6 +149,36 @@ cards = "\n".join(f"""
         <p class="card-blurb">{blurb}</p>
         <div class="card-go">Open &rarr;</div>
       </a>""" for (out, title, blurb, kind) in kept)
+
+device_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:#34D399;border-color:#34D39955;">Live demo</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">Explore device &rarr;</div>
+      </a>""" for (out, title, blurb) in device_kept)
+
+tool_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:#34D399;border-color:#34D39955;">Live app</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">Launch app &rarr;</div>
+      </a>""" for (out, title, blurb) in thoxmigrate_kept)
+
+meshstack_cards = "\n".join(f"""
+      <a class="card" href="./{out}">
+        <div class="card-top">
+          <div class="card-title">{title}</div>
+          <span class="tag" style="color:#34D399;border-color:#34D39955;">Live app</span>
+        </div>
+        <p class="card-blurb">{blurb}</p>
+        <div class="card-go">Launch app &rarr;</div>
+      </a>""" for (out, title, blurb) in meshstack_kept)
 
 prod_cards = "\n".join(f"""
       <a class="card" href="./{out}">
@@ -185,6 +259,15 @@ index = f"""<!DOCTYPE html>
     <h1>Your AI. Your Data.<br /><span class="g">Your Rules.</span></h1>
     <p class="sub">Every page of the THOX.ai Kickstarter campaign, generated from the design handoff and deployable as one static bundle. Pick a page to open it.</p>
     {featured_html}
+    <div class="section-label">Upcoming flagship devices — THOX Nova &amp; Pro series</div>
+    <div class="grid">{device_cards}
+    </div>
+    <div class="section-label">Tools</div>
+    <div class="grid">{tool_cards}
+    </div>
+    <div class="section-label">MeshStack app — live demos</div>
+    <div class="grid">{meshstack_cards}
+    </div>
     <div class="section-label">Film production</div>
     <div class="grid">{prod_cards}
     </div>

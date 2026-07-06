@@ -37,6 +37,9 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 |---|---|---|
 | **Campaign site hub** | [`kickstarter/site/index.html`](kickstarter/site/index.html) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
 | **ThoxOS Demo** (flagship) | [`kickstarter/site/thoxos-demo.html`](kickstarter/site/thoxos-demo.html) | The full realistic ThoxOS desktop: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. |
+| **MeshStack app** (5 platforms) | `kickstarter/site/meshstack-{ios,ipad,macos,windows,android}.html` | Fully-functional standalone MeshStack demos: identity, pairing, connect, monitor. |
+| **Flagship devices** (4) | `kickstarter/site/thox-{nova,pro,pro-max,pro-ultra}.html` | Interactive product pages for the upcoming THOX Nova + Pro series edge-AI line. |
+| **ThoxMigrate** | [`kickstarter/site/thoxmigrate.html`](kickstarter/site/thoxmigrate.html) | Cloud-to-edge AI migration tool (scan, map, migrate). |
 | **Production Tracker** | [`kickstarter/site/production-tracker.html`](kickstarter/site/production-tracker.html) | Interactive film shot tracker — device capture inventory + 117 storyboard shots, To shoot → Captured → Approved, notes, JSON/CSV export, saved in-browser. |
 | **Visual storyboard** | [`kickstarter/site/storyboard.html`](kickstarter/site/storyboard.html) | QA-approved previz, 13 modules, 9:40 master. |
 | **Kickstarter Story** | [`kickstarter/story.html`](kickstarter/story.html) · [`story.md`](kickstarter/story.md) | Self-contained Story page + paste-ready copy. |

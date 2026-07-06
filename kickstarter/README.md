@@ -33,6 +33,9 @@ runs it automatically as its last step.
 | Page | Kind | Notes |
 |---|---|---|
 | **ThoxOS Demo** (`thoxos-demo.html`) | Flagship | The full ThoxOS desktop sandbox (v6.1): lock screen, menu bar, ⌘K command palette, app dock, live on-device inference. Self-contained React app. Any password unlocks it. |
+| **MeshStack app** (`meshstack-{ios,ipad,macos,windows,android}.html`) | Live app ×5 | Fully-functional standalone MeshStack demos, one per platform: identity, pairing, connect, monitor, devices. Self-contained React apps. Sources in `sources/meshstack/`. |
+| **Flagship devices** (`thox-nova.html`, `thox-pro.html`, `thox-pro-max.html`, `thox-pro-ultra.html`) | Live demo ×4 | Interactive product pages for the upcoming THOX Nova + Pro / Pro Max / Pro Ultra edge-AI line (Upstrima Edge). Self-contained. Sources in `sources/devices/`. |
+| **ThoxMigrate** (`thoxmigrate.html`) | Live app | Cloud-to-edge AI migration tool: scan cloud API traffic, map models to local equivalents, plan the move to THOX edge. Self-contained. Source in `sources/thoxmigrate.html`. |
 | Kickstarter Story | Self-contained | Same page as `../story.html`. |
 | Campaign Runbook | Runtime | Internal launch playbook. |
 | Model Gallery · Software Demo · ThoxOS Mini Demo · Campaign Animatic | Interactive | Claude Design prototypes, rendered by the vendored runtime. |
