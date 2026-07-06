@@ -4,7 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-</head>
+<style data-thox-legal>
+.thox-legal{box-sizing:border-box;max-width:1120px;margin:0 auto;padding:28px 20px 40px;
+  border-top:1px solid rgba(255,255,255,.10);font-family:Inter,system-ui,sans-serif;color:#A1A1AA;background:transparent;}
+.thox-legal *{box-sizing:border-box;}
+.thox-legal .tl-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px;}
+.thox-legal .tl-main{flex:1 1 320px;min-width:0;text-align:left;}
+.thox-legal .tl-copy{font-size:13px;color:#D4D4D8;margin:0;}
+.thox-legal .tl-more{margin-top:8px;}
+.thox-legal .tl-more summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:#34D399;list-style:none;display:inline-flex;align-items:center;gap:6px;}
+.thox-legal .tl-more summary::-webkit-details-marker{display:none;}
+.thox-legal .tl-more summary::before{content:"+";color:#34D399;font-weight:700;}
+.thox-legal .tl-more[open] summary::before{content:"–";}
+.thox-legal .tl-more p{font-size:11.5px;line-height:1.6;color:#71717A;margin:10px 0 0;max-width:760px;}
+.thox-legal .tl-side{flex:0 1 auto;text-align:right;}
+.thox-legal .tl-side p{font-size:11.5px;line-height:1.55;color:#71717A;margin:0;}
+.thox-legal .tl-side p.ip{margin-top:6px;}
+@media (max-width:640px){
+  .thox-legal .tl-inner{flex-direction:column;align-items:center;text-align:center;}
+  .thox-legal .tl-main,.thox-legal .tl-side{text-align:center;flex-basis:auto;}
+  .thox-legal .tl-more summary{justify-content:center;}
+}
+</style></head>
 <body>
 <x-dc>
 <helmet>
@@ -356,5 +378,30 @@ class Component extends DCLogic {
   }
 }
 </script>
+<!--thox-legal-footer-->
+<footer class="thox-legal" id="thox-legal-footer">
+  <div class="tl-inner">
+    <div class="tl-main">
+      <p class="tl-copy">&copy; 2026 THOX.ai LLC. All Rights Reserved.</p>
+      <details class="tl-more">
+        <summary>Legal &amp; trademarks</summary>
+        <p>THOX.ai&trade;, ThoxOS&trade;, MagStack&trade;, MeshStack&trade;, ThoxMigrate&trade;, the THOX Edge Series&trade;, the THOX Nova Series&trade;, and the THOX.ai logo are trademarks or registered trademarks of THOX.ai LLC in the United States and other countries. WireGuard&reg; is a registered trademark of Jason A. Donenfeld.</p>
+        <p>Proprietary IP portfolio spanning hardware, software, and AI domains.</p>
+        <p>All other trademarks are the property of their respective owners.</p>
+        <p>NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries. Intel, the Intel logo, the Intel Partner logo, and the Intel Partner Alliance logo are trademarks of Intel Corporation or its subsidiaries.</p>
+      </details>
+    </div>
+    <div class="tl-side">
+      <p>Designed in Texas.</p>
+      <p>Built for professionals everywhere.</p>
+      <p class="ip">Protected by U.S. and international IP laws.</p>
+    </div>
+  </div>
+</footer>
+<script data-thox-legal>/* Some pages are React apps that replace <body> on hydration; re-append the
+   footer (captured at parse time) if it goes missing after load. */
+(function(){var src=document.getElementById('thox-legal-footer');var html=src?src.outerHTML:'';
+ function ensure(){if(html&&!document.querySelector('.thox-legal')){try{document.body.insertAdjacentHTML('beforeend',html);}catch(e){}}}
+ window.addEventListener('load',function(){setTimeout(ensure,1500);setTimeout(ensure,3500);});})();</script>
 </body>
 </html>

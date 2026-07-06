@@ -319,12 +319,12 @@ index = f"""<!DOCTYPE html>
   :root {{ --ink:#09090B; --surface:#1A1A1C; --border:#27272A; --em:#10B981; --em2:#34D399; --fg:#FAFAFA; --mut:#A1A1AA; }}
   * {{ box-sizing:border-box; }}
   html,body {{ margin:0; background:var(--ink); color:var(--fg); font-family:Inter,system-ui,sans-serif; }}
-  .wrap {{ max-width:1040px; margin:0 auto; padding:64px 32px 80px; }}
-  .top {{ display:flex; align-items:center; justify-content:space-between; gap:16px; }}
+  .wrap {{ max-width:1040px; margin:0 auto; padding:clamp(32px,6vw,64px) clamp(18px,4vw,32px) 80px; }}
+  .top {{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }}
   .brand {{ display:flex; align-items:center; gap:12px; }}
   .brand img {{ height:28px; }}
   .kicker {{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; color:var(--mut); text-transform:uppercase; }}
-  h1 {{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:48px; line-height:1.08; margin:56px 0 0; letter-spacing:-.01em; }}
+  h1 {{ font-family:Xolonium,Inter,sans-serif; font-weight:700; font-size:clamp(32px,7vw,48px); line-height:1.08; margin:clamp(36px,6vw,56px) 0 0; letter-spacing:-.01em; }}
   h1 .g {{ color:var(--em2); }}
   .sub {{ font-size:18px; line-height:1.6; color:var(--mut); max-width:640px; margin:20px 0 0; }}
   .grid {{ margin-top:44px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }}
@@ -397,6 +397,89 @@ print(f"\nWrote {SITE}/index.html with {len(kept)} pages + {len(PRODUCTION)} pro
 
 # 6) Generate the interactive production tracker into the bundle
 subprocess.run([sys.executable, str(ROOT / "build_tracker.py")], check=True)
+
+# 7) Company legal footer + mobile hardening on every page
+# The footer is scoped under .thox-legal so its CSS never collides with a
+# page's own styles; the long trademark text lives in a collapsed <details>
+# so it stays out of the way ("about view") until a reader opens it.
+LEGAL_FOOTER_CSS = """<style data-thox-legal>
+.thox-legal{box-sizing:border-box;max-width:1120px;margin:0 auto;padding:28px 20px 40px;
+  border-top:1px solid rgba(255,255,255,.10);font-family:Inter,system-ui,sans-serif;color:#A1A1AA;background:transparent;}
+.thox-legal *{box-sizing:border-box;}
+.thox-legal .tl-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px;}
+.thox-legal .tl-main{flex:1 1 320px;min-width:0;text-align:left;}
+.thox-legal .tl-copy{font-size:13px;color:#D4D4D8;margin:0;}
+.thox-legal .tl-more{margin-top:8px;}
+.thox-legal .tl-more summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:#34D399;list-style:none;display:inline-flex;align-items:center;gap:6px;}
+.thox-legal .tl-more summary::-webkit-details-marker{display:none;}
+.thox-legal .tl-more summary::before{content:"+";color:#34D399;font-weight:700;}
+.thox-legal .tl-more[open] summary::before{content:"–";}
+.thox-legal .tl-more p{font-size:11.5px;line-height:1.6;color:#71717A;margin:10px 0 0;max-width:760px;}
+.thox-legal .tl-side{flex:0 1 auto;text-align:right;}
+.thox-legal .tl-side p{font-size:11.5px;line-height:1.55;color:#71717A;margin:0;}
+.thox-legal .tl-side p.ip{margin-top:6px;}
+@media (max-width:640px){
+  .thox-legal .tl-inner{flex-direction:column;align-items:center;text-align:center;}
+  .thox-legal .tl-main,.thox-legal .tl-side{text-align:center;flex-basis:auto;}
+  .thox-legal .tl-more summary{justify-content:center;}
+}
+</style>"""
+LEGAL_FOOTER_HTML = """<!--thox-legal-footer-->
+<footer class="thox-legal" id="thox-legal-footer">
+  <div class="tl-inner">
+    <div class="tl-main">
+      <p class="tl-copy">&copy; 2026 THOX.ai LLC. All Rights Reserved.</p>
+      <details class="tl-more">
+        <summary>Legal &amp; trademarks</summary>
+        <p>THOX.ai&trade;, ThoxOS&trade;, MagStack&trade;, MeshStack&trade;, ThoxMigrate&trade;, the THOX Edge Series&trade;, the THOX Nova Series&trade;, and the THOX.ai logo are trademarks or registered trademarks of THOX.ai LLC in the United States and other countries. WireGuard&reg; is a registered trademark of Jason A. Donenfeld.</p>
+        <p>Proprietary IP portfolio spanning hardware, software, and AI domains.</p>
+        <p>All other trademarks are the property of their respective owners.</p>
+        <p>NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries. Intel, the Intel logo, the Intel Partner logo, and the Intel Partner Alliance logo are trademarks of Intel Corporation or its subsidiaries.</p>
+      </details>
+    </div>
+    <div class="tl-side">
+      <p>Designed in Texas.</p>
+      <p>Built for professionals everywhere.</p>
+      <p class="ip">Protected by U.S. and international IP laws.</p>
+    </div>
+  </div>
+</footer>
+<script data-thox-legal>/* Some pages are React apps that replace <body> on hydration; re-append the
+   footer (captured at parse time) if it goes missing after load. */
+(function(){var src=document.getElementById('thox-legal-footer');var html=src?src.outerHTML:'';
+ function ensure(){if(html&&!document.querySelector('.thox-legal')){try{document.body.insertAdjacentHTML('beforeend',html);}catch(e){}}}
+ window.addEventListener('load',function(){setTimeout(ensure,1500);setTimeout(ensure,3500);});})();</script>
+"""
+VIEWPORT_TAG = '<meta name="viewport" content="width=device-width, initial-scale=1" />'
+# Mobile-safety CSS for the content/marketing pages we author (not the React
+# app/demo pages, whose own layouts must not be overridden).
+AUTHORED = {"index.html", "packaging.html", "founders.html", "magdisplay.html",
+            "experience-fabric.html", "models.html", "story.html"}
+SAFETY_CSS = ("<style data-thox-mobile>html,body{overflow-x:hidden;max-width:100%}"
+              "img,svg,video,canvas{max-width:100%;height:auto}pre{overflow-x:auto}</style>")
+footer_added = 0
+for html_path in sorted(SITE.rglob("*.html")):
+    txt = html_path.read_text(errors="ignore")
+    changed = False
+    # Ensure a viewport meta so mobile browsers scale correctly.
+    if "name=\"viewport\"" not in txt and "name='viewport'" not in txt and "<head>" in txt:
+        txt = txt.replace("<head>", "<head>\n" + VIEWPORT_TAG, 1)
+        changed = True
+    # Mobile-safety CSS for authored content pages only.
+    if html_path.name in AUTHORED and "data-thox-mobile" not in txt and "</head>" in txt:
+        txt = txt.replace("</head>", SAFETY_CSS + "</head>", 1)
+        changed = True
+    # Footer CSS goes in <head> so it survives a body re-render; the markup +
+    # self-heal script go before </body>.
+    if "thox-legal-footer" not in txt and "</head>" in txt and "</body>" in txt:
+        txt = txt.replace("</head>", LEGAL_FOOTER_CSS + "</head>", 1)
+        txt = txt.replace("</body>", LEGAL_FOOTER_HTML + "</body>", 1)
+        changed = True
+        footer_added += 1
+    if changed:
+        html_path.write_text(txt)
+print(f"Injected legal footer into {footer_added} pages")
 
 sz = sum(f.stat().st_size for f in SITE.rglob('*') if f.is_file())
 print(f"Bundle size: {sz/1048576:.1f} MB")
