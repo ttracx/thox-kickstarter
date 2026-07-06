@@ -34,19 +34,89 @@ THOX.ai is a local-first hardware and software ecosystem built around one rule: 
 
 ## 02 — Meet the devices
 
-### Four devices. One private system.
+### Four devices. One modular local AI ecosystem.
 
-**ThoxKey — Portable workspace key** · from **$24** (retail $39.99)
-Your THOX workspace on a compact USB key: files, launchers, model assets, and recovery tools. Plug in and keep working across supported computers.
+This campaign launches four devices — **ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip** — and the **MeshStack app** that ties them together. Each does one honest job well; together they form a private, local-first system you own.
 
-**ThoxMini Air — Wireless companion** · from **$69** (retail $99)
-The battery-powered, wireless version of ThoxMini. Pairs with your devices for portable sessions and quick access without plugging in.
+---
 
-**ThoxMini — Compute companion** · from **$149** (retail $199)
-A pocket-sized local AI companion. Connects to a supported computer over USB-C and runs local services, lightweight agents, and offline-first workflows.
+### ThoxKey — Your portable THOX workspace key. · from **$24** (retail $39.99)
 
-**ThoxClip — Magnetic phone companion** · from **$299** (retail $399)
-A slim magnetic companion for the back of compatible phones. Keeps local tools and data with your phone, with USB-C access and a MagStack-ready design direction.
+ThoxKey is the simplest way to carry your THOX workspace with you. It is a compact USB device that holds your local workspace files, launchers, documents, model assets, recovery tools, and THOX companion software, so you can plug in, open your workspace, and keep working across supported computers. No cloud dashboard required to get started.
+
+**Key features**
+- Portable THOX workspace: project files, documents, launchers, and setup tools travel with you
+- Simple USB plug-in workflow for supported desktop and laptop systems
+- Local-first design: your files and device tools stay physically in your hands
+- Prototype-friendly storage for installers, model files, documentation, recovery scripts, and offline resources
+- Companion to ThoxOS, ThoxMini, ThoxMini Air, and ThoxClip workflows
+- No cloud account required for basic file access, depending on host system configuration
+- Compact THOX-branded enclosure
+
+**Best for:** carrying THOX setup tools · moving project files between machines · offline documentation and recovery kits · the smallest THOX hardware entry point.
+
+**What it is, honestly:** a portable workspace and storage device. It is not a standalone AI computer — its job is to carry and launch the THOX experience from supported host devices.
+
+---
+
+### ThoxMini — A compact local AI compute companion. · from **$149** (retail $199)
+
+ThoxMini is a pocket-sized local AI device that brings THOX workflows to the edge. It connects to a host device over USB-C and provides a compact foundation for local services, lightweight agents, companion tools, and offline-first AI workflows. Built for developers, researchers, and privacy-focused users who want small, owned hardware instead of cloud-only tools.
+
+**Key features**
+- Compact USB-C companion form factor designed for local AI workflows
+- Runs THOX software services for supported local workflows and developer tasks
+- Local-first architecture built around user-controlled data and device ownership
+- Supports lightweight models and agents, depending on final hardware configuration
+- USB-connected operation with supported laptops, desktops, and workstations
+- ThoxOS Mini target support for local tools, launchers, and device services
+- Expandable path for storage, recovery, diagnostics, and device provisioning
+- Prototype enclosure validated through 3D printing before final production tooling
+
+**Best for:** developers testing local AI workflows · a small THOX device that lives next to your computer · offline-first assistants, scripts, and workspace automation · edge AI experimentation in a compact physical device.
+
+**What it is, honestly:** a compact local compute companion. Final performance, model support, and runtime capabilities depend on the production hardware configuration and the supported software release.
+
+---
+
+### ThoxMini Air — Wireless THOX workflows in a smaller, battery-powered form. · from **$69** (retail $99)
+
+ThoxMini Air is the wireless version of the ThoxMini concept. It is a small, battery-powered THOX companion that supports lightweight local services, device pairing, wireless access, and on-the-go workflows without a constant USB tether. Built for portability, quick access, and local-first interaction between THOX devices, companion apps, and supported host systems.
+
+**Key features**
+- Wireless-first companion design for portable THOX workflows
+- Battery-powered operation for short mobile sessions and device pairing
+- Slim, pocketable enclosure target
+- Local-first workflow support for files, tools, pairing, and lightweight services
+- Works alongside THOX companion apps for mobile and desktop interaction
+- Quick access to local device functions without always plugging in
+- Ecosystem workflows with ThoxKey, ThoxMini, and ThoxClip
+- Snap-fit 3D-printed prototype validation path
+
+**Best for:** portable local AI workflows · wireless access to THOX tools · device-to-device demos · a smaller wireless THOX companion.
+
+**What it is, honestly:** a wireless companion device for lightweight local workflows. It is not intended to replace a laptop, workstation, or a larger THOX compute device.
+
+---
+
+### ThoxClip — The magnetic THOX companion for your phone. · from **$299** (retail $399)
+
+ThoxClip is a slim magnetic companion designed to attach to the back of compatible phones and keep your AI tools, local data, and companion device functions physically close to the device you already carry. Built for early adopters who want a phone-friendly entry into the THOX hardware ecosystem, with MagStack expansion in its design DNA.
+
+**Key features**
+- Magnetic phone-back companion for phones with MagSafe-style magnetic layouts
+- Slim vertical profile designed to sit flush with the phone body
+- USB-C access for charging, data, or supported device workflows, depending on final configuration
+- THOX MagStack design direction for modular device attachment and pairing
+- Local-first mobile companion role within the THOX hardware and app ecosystem
+- 3D-printed prototype validation before final production refinement
+- Built to complement ThoxKey, ThoxMini, and ThoxMini Air, not replace them
+
+**Best for:** phone-based THOX demos · magnetic mobile companion workflows · portable AI hardware experimentation · a THOX device that lives with your phone.
+
+**What it is, honestly:** a magnetic companion accessory. It is magnetic-compatible, not certified under any third-party magnetic attachment or charging standard. Final charging, data, and compute capabilities depend on the production hardware configuration.
+
+---
 
 _Every hardware pledge includes 12 months of MeshStack Pro._
 
@@ -75,6 +145,21 @@ MeshStack pairs every THOX device into a private mesh on your LAN. Pairing uses 
 - **OWN** — Data stays on your devices. Your mesh, your rules.
 
 _12 months of MeshStack Pro included with every hardware pledge._
+
+**The MeshStack app** pairs your THOX devices into this private mesh from iOS, iPad, macOS, Windows, and Android. One-time QR pairing, then your devices talk directly. Included with the campaign.
+
+---
+
+## The road ahead — vision & roadmap
+
+We are launching four devices and the MeshStack app first. Here is where the ecosystem is heading, so you can see the full vision. **These are roadmap items, not part of the Kickstarter reward tiers.**
+
+- **MeshStack, everywhere** — the companion app expands across iOS, iPad, macOS, Windows, and Android, pairing every THOX device into one private, encrypted mesh.
+- **THOX Nova** — the flagship handheld edge-AI node: your private AI mesh, in hand.
+- **THOX Pro / Pro Max / Pro Ultra** — the Upstrima Edge desktop line for heavier, always-on local inference.
+- **ThoxMigrate** — a cloud-to-edge migration tool to move existing AI workloads onto local THOX hardware.
+
+Our principle is simple: **Build. Don't replace.** The four campaign devices ship first; the roadmap shows the ecosystem they plug into.
 
 ---
 

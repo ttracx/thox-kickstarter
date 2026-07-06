@@ -8,6 +8,7 @@ with the **THOX Experience Fabric (TXF)** tokens.
 |---|---|---|
 | `story.html` | Self-contained, standalone Kickstarter Story page (all images + the Xolonium display font inlined as data URIs; Inter / JetBrains Mono via Google Fonts with system fallback). ~5 MB, single file. | Hosting a live campaign landing/preview page, embedding in a deck, or handing to the Kickstarter team as the visual spec. Open it in any browser. |
 | `story.md` | The full campaign copy, section-for-section, in Markdown. | Pasting into the Kickstarter Story editor (which takes text + images, not raw HTML). Also the copy source of truth for social posts. |
+| `copy.md` | The **copy system**: full Kickstarter descriptions + short graphic-ready copy for the four campaign devices and the ecosystem, brand constants, and the on-graphic "avoid" list. | Single source of truth for device copy. Full copy → the page; short copy → graphics. |
 | `site/` | A portable, deployable static bundle of **every** campaign page + the film production tools, with a branded `index.html` hub. React / ReactDOM / Babel are vendored locally, so the interactive prototypes run with no CDN. | Deploying the whole campaign as one static site (Vercel, GitHub Pages, Netlify, `python3 -m http.server site/`). |
 | `PRODUCTION.md` | Static device + storyboard capture inventory and checklist, generated from the shot list. | Printable shoot reference; index of every production resource. |
 | `sources/` | Upstream inputs the build consumes: the ThoxOS sandbox + preview, the previz storyboard, the film shot list, storyboard script, previz QA, and the funded-milestone runbook. | Regenerating `site/`. |
@@ -21,6 +22,7 @@ The Kickstarter film ships with an interactive production system, generated from
 |---|---|---|
 | **Production Tracker** | [`site/production-tracker.html`](site/production-tracker.html) | Interactive, browser-saved tracker. Device capture inventory + every storyboard shot, moved **To shoot → Captured → Approved** with notes, filters, and JSON/CSV export. |
 | **Visual storyboard** | [`site/storyboard.html`](site/storyboard.html) | The QA-approved previz: 13 modules, shot-for-shot visual reference. |
+| **Campaign animatic** | `site/animatic.html` | The working-concept animatic video of the storyboard, playable in the browser (source: `assets/video/thox-campaign-animatic-v1-1080p.mp4`). Device close-up clips live in `assets/device/video/`. |
 | **Inventory & checklist** | [`PRODUCTION.md`](PRODUCTION.md) | Static, printable device + scene checklist with the capture workflow and compliance reminders. |
 
 Rebuild the tracker alone with `python3 kickstarter/build_tracker.py`; `build_site.py`

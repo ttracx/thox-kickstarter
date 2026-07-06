@@ -17,5 +17,18 @@ Brand tokens and typography are the same as [`../README.md`](../README.md).
 | **ThoxClip** | `thoxclip-matte-black-back.png`, `thoxclip-space-gray-back.png`, `thoxclip-arctic-white-back.png`, `thoxclip-packaging.png` (retail board) |
 | **THOX Nova** | `thoxnova-spec-board.png` (full spec board: internals, MagStack duo/quad architecture, colorways, MeshStack network, specifications) |
 
+## Device close-up videos (`video/`)
+
+Product close-up clips for the four campaign devices, for social cutdowns and the Kickstarter film:
+
+| Device | File |
+|---|---|
+| ThoxKey | `video/thoxkey-closeup.mp4` |
+| ThoxMini Air | `video/thoxmini-air-closeup.mp4` |
+| ThoxMini | `video/thoxmini-closeup.mp4` |
+| ThoxClip | `video/thoxclip-closeup.mp4` |
+
+The campaign animatic (working concept) lives at [`../video/thox-campaign-animatic-v1-1080p.mp4`](../video/thox-campaign-animatic-v1-1080p.mp4) and is playable in the site bundle at `kickstarter/site/animatic.html`.
+
 Composed social/marketing graphics (feature cards, banners, ecosystem
 layouts) are staged separately under [`../social/`](../social/README.md).

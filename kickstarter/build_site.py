@@ -121,12 +121,39 @@ if devdir.exists():
             device_kept.append((f"{key}.html", title, blurb))
             print(f"  ~ {key+'.html':22s} <- sources/devices/{key}.html")
 
-# 4c) Production resources (storyboard visualization + generated tracker)
+# 4c) Production resources (storyboard visualization + generated tracker + animatic)
 shutil.copy2(ROOT / "sources/thox-kickstarter-storyboard.html", SITE / "storyboard.html")
 PRODUCTION = [
     ("production-tracker.html", "Production Tracker", "Interactive shot-by-shot tracker for the film: device capture inventory, storyboard scenes, To shoot &rarr; Captured &rarr; Approved, notes, and JSON/CSV export. Saved in your browser.", "interactive"),
     ("storyboard.html",         "Video Storyboard",   "The QA-approved previz storyboard: 13 modules, 117 shots, 9:40 master. Shot-for-shot visual reference for the shoot.", "self-contained"),
 ]
+# Campaign animatic — working-concept video, playable in the bundle
+animatic_src = REPO / "assets/video/thox-campaign-animatic-v1-1080p.mp4"
+if animatic_src.exists():
+    (SITE / "assets/video").mkdir(parents=True, exist_ok=True)
+    shutil.copy2(animatic_src, SITE / "assets/video/campaign-animatic.mp4")
+    (SITE / "animatic.html").write_text("""<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THOX.ai — Campaign Animatic</title>
+<style>
+  html,body{margin:0;background:#09090B;color:#FAFAFA;font-family:Inter,system-ui,sans-serif;min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:32px;box-sizing:border-box;}
+  .k{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#34D399;}
+  h1{font-size:24px;font-weight:700;margin:0;text-align:center;}
+  video{width:min(100%,1100px);border-radius:14px;border:1px solid #27272A;background:#000;box-shadow:0 12px 32px rgba(0,0,0,.7);}
+  a{color:#34D399;font-family:'JetBrains Mono',monospace;font-size:12px;text-decoration:none;}
+  .sub{color:#A1A1AA;font-size:13.5px;margin:0;text-align:center;}
+</style></head>
+<body>
+  <div class="k">THOX.ai · Kickstarter Film · Working concept</div>
+  <h1>Campaign Animatic v1</h1>
+  <video controls playsinline preload="metadata" src="assets/video/campaign-animatic.mp4"></video>
+  <p class="sub">Animatic pass of the storyboard. Not final footage.</p>
+  <a href="./index.html">&larr; Back to campaign pages</a>
+</body></html>""")
+    PRODUCTION.append(("animatic.html", "Campaign Animatic (video)",
+        "The working-concept animatic of the Kickstarter film storyboard, playable in the browser. Not final footage.", "self-contained"))
+    print("  ~ animatic.html          <- assets/video/thox-campaign-animatic-v1-1080p.mp4")
 kept = []
 for src, out, title, blurb, kind in PAGES:
     if src.exists():
