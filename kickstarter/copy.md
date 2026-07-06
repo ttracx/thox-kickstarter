@@ -156,7 +156,7 @@ Shown to give backers the full picture of where THOX is going. These are **not**
 
 - **MeshStack app** — the companion app that pairs your THOX devices into a private, encrypted mesh (WireGuard® protocol) across iOS, iPad, macOS, Windows, and Android. After pairing, devices work offline on your LAN; the coordinator never sees plaintext.
 - **THOX Nova** — the flagship handheld edge-AI node (private AI mesh, in hand).
-- **THOX Pro / Pro Max / Pro Ultra** — the Upstrima Edge desktop line for heavier always-on local inference.
+- **THOX Edge Series — Pro / Pro Max / Pro Ultra** — the desktop line for heavier always-on local inference.
 - **ThoxMigrate** — a cloud-to-edge migration tool to move existing AI workloads to local THOX hardware.
 
 Positioning: **Build. Don't replace.** The four campaign devices ship first; the roadmap shows the ecosystem they plug into.

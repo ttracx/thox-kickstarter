@@ -55,7 +55,7 @@ FEATURED = {
     "src": ROOT / "sources/thoxos-sandbox.html",
     "out": "thoxos-demo.html",
     "title": "ThoxOS Demo",
-    "blurb": "The full ThoxOS desktop that ships on THOX Nova and Pro, live: lock screen, menu bar, command palette (⌘K), a dock of real apps, and streaming on-device inference at 42 tok/s. Same Experience Fabric as ThoxOS Mini, scaled up. Any password unlocks it.",
+    "blurb": "The full ThoxOS desktop that ships on THOX Nova and the THOX Edge Series, live: lock screen, menu bar, command palette (⌘K), a dock of real apps, and streaming on-device inference at 42 tok/s. Same Experience Fabric as ThoxOS Mini, scaled up. Any password unlocks it.",
     "preview": "sources/thoxos-preview.png",
 }
 prev_rel = None
@@ -123,9 +123,9 @@ if xf_src.exists():
 # 4b4) Flagship edge-AI device demos (upcoming product line)
 DEVICES = [
     ("thox-nova",      "THOX Nova",      "Your private AI mesh, in hand. The flagship handheld edge-AI node running ThoxOS."),
-    ("thox-pro",       "THOX Pro",       "Upstrima Edge D — the Pro desktop edge-AI node for always-on local inference."),
-    ("thox-pro-max",   "THOX Pro Max",   "Upstrima Edge Q — higher-capacity Pro Max node for larger local models."),
-    ("thox-pro-ultra", "THOX Pro Ultra", "Upstrima Edge X — the top-tier Ultra node for the most demanding local AI workloads."),
+    ("thox-pro",       "THOX Edge Pro",       "The Pro desktop edge-AI node for always-on local inference."),
+    ("thox-pro-max",   "THOX Edge Pro Max",   "The higher-capacity Pro Max node for larger local models."),
+    ("thox-pro-ultra", "THOX Edge Pro Ultra", "The top-tier Pro Ultra node for the most demanding local AI workloads."),
 ]
 devdir = ROOT / "sources/devices"
 device_kept = []
@@ -315,7 +315,7 @@ index = f"""<!DOCTYPE html>
     <div class="section-label">Platform &amp; architecture — one experience, every surface</div>
     <div class="grid">{platform_cards}
     </div>
-    <div class="section-label">Upcoming flagship devices — THOX Nova &amp; Pro series</div>
+    <div class="section-label">Upcoming flagship devices — THOX Nova &amp; the THOX Edge Series</div>
     <div class="grid">{device_cards}
     </div>
     <div class="section-label">Tools</div>
