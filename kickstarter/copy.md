@@ -158,5 +158,39 @@ Shown to give backers the full picture of where THOX is going. These are **not**
 - **THOX Nova** — the flagship handheld edge-AI node (private AI mesh, in hand).
 - **THOX Edge Series — Pro / Pro Max / Pro Ultra** — the desktop line for heavier always-on local inference.
 - **ThoxMigrate** — a cloud-to-edge migration tool to move existing AI workloads to local THOX hardware.
+- **THOX MagDisplay** — a MagSafe / Qi2 add-on display for the THOX devices, expected to launch **early Spring 2027**.
 
 Positioning: **Build. Don't replace.** The four campaign devices ship first; the roadmap shows the ecosystem they plug into.
+
+---
+
+# Founders Club tier + swag add-ons
+
+## THOX Founders Complete Set — $549
+
+Back all four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip) in one pledge and join the **THOX Founders Club**. À-la-carte Kickstarter value is $611 ($34 + $79 + $169 + $329), so the set saves $62 vs individual pledges and $188 off the $737 combined retail.
+
+Included with the Founders tier:
+- A **numbered** Founders Club metal member card (#0001 and up, one per Founder)
+- **Pick any 2 Founders swag items** (hoodie, crewneck, tee, cap, bottle, or backpack — the backpack counts as both picks)
+- **MeshStack 12-month access** (MS-12A-FOUNDER)
+- Founders Club sticker pack
+- Name in the launch credits + priority early access
+
+## Swag add-ons — suggested Kickstarter add-on pricing
+
+Add-ons stack onto any pledge at checkout; sizes/colorways collected in the post-campaign survey. Prices are suggestions, indicative until launch (July 9, 2026).
+
+| Item | Suggested add-on price |
+|---|---|
+| "Thing O Box" Founder Edition backpack | $128 |
+| MeshStack — 12-month access (MS-12A) | $99 |
+| Founders Club hoodie (API Rate Limit) | $72 |
+| "Built for Owners, Not Users" crewneck | $58 |
+| "No Cloud Inside" tee (Founder Edition) | $34 |
+| Founders Club cap ("Sever the Cord") | $32 |
+| "API Rate Limit" shaker bottle | $24 |
+| Founders Club sticker pack | $12 |
+| Founders Club numbered metal member card | Founders exclusive (not sold separately) |
+
+Full page: `site/founders.html`. Renders live in `sources/swag/`.
