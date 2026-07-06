@@ -33,6 +33,8 @@ The primary design file is `designs/thox-ai-kickstarter-campaign-handoff/project
 
 Deployable, brand-consistent campaign content generated from the design handoff and kept on the THOX Experience Fabric tokens. Everything is browsable and interactive — start at the hub and open any page in a browser.
 
+**Campaign focus:** this Kickstarter launches four devices — **ThoxKey, ThoxMini Air, ThoxMini, ThoxClip** — and the **MeshStack app**. THOX Nova, the Pro / Pro Max / Pro Ultra line, and ThoxMigrate are shown as **roadmap and vision**, not campaign rewards. Device copy (full page copy + short graphic copy) lives in [`kickstarter/copy.md`](kickstarter/copy.md).
+
 | What | Where | Notes |
 |---|---|---|
 | **Campaign site hub** | [`kickstarter/site/index.html`](kickstarter/site/index.html) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
@@ -40,6 +42,8 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 | **MeshStack app** (5 platforms) | `kickstarter/site/meshstack-{ios,ipad,macos,windows,android}.html` | Fully-functional standalone MeshStack demos: identity, pairing, connect, monitor. |
 | **Flagship devices** (4) | `kickstarter/site/thox-{nova,pro,pro-max,pro-ultra}.html` | Interactive product pages for the upcoming THOX Nova + Pro series edge-AI line. |
 | **ThoxMigrate** | [`kickstarter/site/thoxmigrate.html`](kickstarter/site/thoxmigrate.html) | Cloud-to-edge AI migration tool (scan, map, migrate). |
+| **Campaign animatic** | `kickstarter/site/animatic.html` | Working-concept animatic video of the storyboard (`assets/video/`). Device close-ups in `assets/device/video/`. |
+| **Copy system** | [`kickstarter/copy.md`](kickstarter/copy.md) | Full + graphic-ready device copy; single source of truth. |
 | **Production Tracker** | [`kickstarter/site/production-tracker.html`](kickstarter/site/production-tracker.html) | Interactive film shot tracker — device capture inventory + 117 storyboard shots, To shoot → Captured → Approved, notes, JSON/CSV export, saved in-browser. |
 | **Visual storyboard** | [`kickstarter/site/storyboard.html`](kickstarter/site/storyboard.html) | QA-approved previz, 13 modules, 9:40 master. |
 | **Kickstarter Story** | [`kickstarter/story.html`](kickstarter/story.html) · [`story.md`](kickstarter/story.md) | Self-contained Story page + paste-ready copy. |
