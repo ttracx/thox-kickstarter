@@ -15,6 +15,7 @@ Brand tokens and typography are the same as [`../README.md`](../README.md).
 | **ThoxMini** | `thoxmini-matte-black.png`, `thoxmini-space-gray.png`, `thoxmini-arctic-white.png`, `thoxmini-packaging.png` (retail board) |
 | **ThoxMini Air** | `thoxmini-air-matte-black-4view.png`, `thoxmini-air-space-gray-4view.png`, `thoxmini-air-arctic-white-4view.png` (front / back / side / detail per color) |
 | **ThoxClip** | `thoxclip-matte-black-back.png`, `thoxclip-space-gray-back.png`, `thoxclip-arctic-white-back.png`, `thoxclip-packaging.png` (retail board) |
+| **THOX Nova** | `thoxnova-spec-board.png` (full spec board: internals, MagStack duo/quad architecture, colorways, MeshStack network, specifications) |
 
 Composed social/marketing graphics (feature cards, banners, ecosystem
 layouts) are staged separately under [`../social/`](../social/README.md).
