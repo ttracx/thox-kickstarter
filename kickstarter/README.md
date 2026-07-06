@@ -1,0 +1,83 @@
+# Kickstarter digital content
+
+Deployable Kickstarter campaign content generated from the Claude Design
+handoff (`designs/thox-ai-kickstarter-campaign-handoff/`) and kept consistent
+with the **THOX Experience Fabric (TXF)** tokens.
+
+| File | What it is | Use it for |
+|---|---|---|
+| `story.html` | Self-contained, standalone Kickstarter Story page (all images + the Xolonium display font inlined as data URIs; Inter / JetBrains Mono via Google Fonts with system fallback). ~5 MB, single file. | Hosting a live campaign landing/preview page, embedding in a deck, or handing to the Kickstarter team as the visual spec. Open it in any browser. |
+| `story.md` | The full campaign copy, section-for-section, in Markdown. | Pasting into the Kickstarter Story editor (which takes text + images, not raw HTML). Also the copy source of truth for social posts. |
+| `site/` | A portable, deployable static bundle of **every** campaign page + the film production tools, with a branded `index.html` hub. React / ReactDOM / Babel are vendored locally, so the interactive prototypes run with no CDN. | Deploying the whole campaign as one static site (Vercel, GitHub Pages, Netlify, `python3 -m http.server site/`). |
+| `PRODUCTION.md` | Static device + storyboard capture inventory and checklist, generated from the shot list. | Printable shoot reference; index of every production resource. |
+| `sources/` | Upstream inputs the build consumes: the ThoxOS sandbox + preview, the previz storyboard, the film shot list, storyboard script, previz QA, and the funded-milestone runbook. | Regenerating `site/`. |
+
+## Film production tools
+
+The Kickstarter film ships with an interactive production system, generated from
+[`sources/thox-video-shotlist.csv`](sources/thox-video-shotlist.csv) (117 shots, 13 segments, 9:40 master):
+
+| Tool | File | What it does |
+|---|---|---|
+| **Production Tracker** | [`site/production-tracker.html`](site/production-tracker.html) | Interactive, browser-saved tracker. Device capture inventory + every storyboard shot, moved **To shoot → Captured → Approved** with notes, filters, and JSON/CSV export. |
+| **Visual storyboard** | [`site/storyboard.html`](site/storyboard.html) | The QA-approved previz: 13 modules, shot-for-shot visual reference. |
+| **Inventory & checklist** | [`PRODUCTION.md`](PRODUCTION.md) | Static, printable device + scene checklist with the capture workflow and compliance reminders. |
+
+Rebuild the tracker alone with `python3 kickstarter/build_tracker.py`; `build_site.py`
+runs it automatically as its last step.
+
+## `site/` — the deployable bundle
+
+`index.html` links every page:
+
+| Page | Kind | Notes |
+|---|---|---|
+| **ThoxOS Demo** (`thoxos-demo.html`) | Flagship | The full ThoxOS desktop sandbox (v6.1): lock screen, menu bar, ⌘K command palette, app dock, live on-device inference. Self-contained React app. Any password unlocks it. |
+| Kickstarter Story | Self-contained | Same page as `../story.html`. |
+| Campaign Runbook | Runtime | Internal launch playbook. |
+| Model Gallery · Software Demo · ThoxOS Mini Demo · Campaign Animatic | Interactive | Claude Design prototypes, rendered by the vendored runtime. |
+| Video Storyboard | Self-contained | The standalone storyboard export. |
+
+Build / rebuild it with:
+
+```
+python3 kickstarter/build_site.py     # writes kickstarter/site/
+python3 -m http.server --directory kickstarter/site 8000   # preview at :8000
+```
+
+The build flattens all pages to the bundle root (so their relative `./support.js`,
+`./image-slot.js`, `./*.jsx`, and `assets/` references keep resolving), vendors
+React/ReactDOM/Babel into `site/vendor/` and repoints `support.js` at them, and
+copies only the assets the pages actually reference (not the multi-hundred-MB of
+unused product renders and uploads). Every page was rendered end-to-end in
+headless Chromium to confirm it boots with zero page errors.
+
+## How `story.html` was produced
+
+`story.html` is the Claude Design `Kickstarter Story.dc.html` page resolved into
+plain, portable HTML:
+
+- Every `image-slot` is replaced with a real `<img>` (data URI).
+  - The four device cards + both founder photos use the design team's own
+    slot assignments from `.image-slots.state.json`.
+  - The **hero** uses `assets/social/prelaunch/prelaunch_campaign_ecosystem_16x9_v1.png`
+    (the new 16:9 ecosystem render).
+  - **Topology** and the **ThoxOS dashboard** use the handoff marketing/OS art
+    (`ks-mkt-thoxmini-wireless-diagram-v2.png`, `thox-bg-2026.png`).
+- The `sc-if` campaign-state conditionals are resolved to launch defaults:
+  early bird **available**, Sage colorway **locked**.
+- The Claude Design runtime (`support.js`, `image-slot.js`, `<x-dc>`) is removed.
+
+### Regenerating
+
+The page is a build artifact. To rebuild it (for example after the design team
+assigns the hero / topology / dashboard slots, or swaps device renders), re-run
+the converter that produced it against the updated handoff and slot state, then
+commit the refreshed `story.html`.
+
+## Brand consistency
+
+Colors, type, and spacing follow `designs/thox-ai-kickstarter-campaign-handoff/project/CLAUDE.md`
+(TOKENS.json v2.0): black `#09090B`, surface `#1A1A1C`, emerald `#10B981`,
+emerald-bright `#34D399`; Inter + JetBrains Mono, Xolonium for display headings.
+Voice: local-first, spec-first, plain. No em dashes in product copy.

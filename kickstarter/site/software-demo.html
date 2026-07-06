@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Xolonium'; src: url('assets/fonts/xolonium-regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Xolonium'; src: url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+    @keyframes sd-blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+    @keyframes sd-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  </style>
+</helmet>
+<div style="min-height: 100vh; background: #09090B; color: #FAFAFA; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <!-- shared icon defs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="sd-chip" viewBox="0 0 116 110">
+        <g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
+          <line x1="30" y1="2" x2="30" y2="14"/><line x1="44" y1="2" x2="44" y2="14"/><line x1="58" y1="2" x2="58" y2="14"/><line x1="72" y1="2" x2="72" y2="14"/><line x1="86" y1="2" x2="86" y2="14"/>
+          <line x1="30" y1="96" x2="30" y2="108"/><line x1="44" y1="96" x2="44" y2="108"/><line x1="58" y1="96" x2="58" y2="108"/><line x1="72" y1="96" x2="72" y2="108"/><line x1="86" y1="96" x2="86" y2="108"/>
+          <line x1="2" y1="30" x2="14" y2="30"/><line x1="2" y1="44" x2="14" y2="44"/><line x1="2" y1="58" x2="14" y2="58"/><line x1="2" y1="72" x2="14" y2="72"/><line x1="2" y1="86" x2="14" y2="86"/>
+          <line x1="102" y1="30" x2="114" y2="30"/><line x1="102" y1="44" x2="114" y2="44"/><line x1="102" y1="58" x2="114" y2="58"/><line x1="102" y1="72" x2="114" y2="72"/><line x1="102" y1="86" x2="114" y2="86"/>
+        </g>
+        <rect x="14" y="14" width="88" height="82" rx="10" ry="10" fill="none" stroke="currentColor" stroke-width="3"/>
+        <rect x="42" y="40" width="32" height="30" rx="3" ry="3" fill="#000"/>
+        <rect x="42" y="40" width="32" height="30" rx="3" ry="3" fill="none" stroke="currentColor" stroke-width="3"/>
+        <rect x="54" y="51" width="8" height="8" rx="1" ry="1" fill="none" stroke="currentColor" stroke-width="2"/>
+      </symbol>
+      <symbol id="sd-hexlock" viewBox="0 0 36 42"><path d="M 18 0 L 36 10.5 L 36 31.5 L 18 42 L 0 31.5 L 0 10.5 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="17" width="10" height="9" rx="1" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.2"/><path d="M 14.5 17 V 14 a 3.5 3.5 0 0 1 7 0 V 17" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+      <symbol id="sd-shield" viewBox="0 0 16 16"><path d="M 8 1 L 14 3 V 8 Q 14 12 8 15 Q 2 12 2 8 V 3 Z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="sd-link" viewBox="0 0 16 16"><path d="M 6 10 L 10 6 M 6.5 4.5 L 9 2 a 3 3 0 0 1 4 4 L 11 8 M 5 8 L 3 10 a 3 3 0 0 0 4 4 L 9.5 11.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></symbol>
+      <symbol id="sd-pulse" viewBox="0 0 16 16"><path d="M 1 8 L 4 8 L 6 3 L 9 13 L 11 8 L 15 8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="sd-grid" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="2" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="9" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="9" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="sd-settings" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M 8 1 V 3 M 8 13 V 15 M 1 8 H 3 M 13 8 H 15 M 3 3 L 4.5 4.5 M 11.5 11.5 L 13 13 M 13 3 L 11.5 4.5 M 4.5 11.5 L 3 13" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="sd-check" viewBox="0 0 16 16"><path d="M 3 8 L 7 12 L 13 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="sd-bolt" viewBox="0 0 16 16"><path d="M 9 1 L 3 9 L 7 9 L 6 15 L 13 6 L 8.5 6 Z" fill="currentColor"/></symbol>
+      <symbol id="sd-activity" viewBox="0 0 16 16"><path d="M 1 8 H 4 L 6 3 L 9 13 L 11 8 H 15" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
+
+  <div style="max-width: 1180px; margin: 0 auto; padding: 44px 40px 80px;">
+
+    <!-- header + switcher -->
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399; display: flex; align-items: center; gap: 10px;">
+          <span style="width: 6px; height: 6px; background: #34D399; transform: rotate(45deg); display: inline-block;"></span>Software · Interactive demo
+        </div>
+        <h1 style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: -0.02em; margin: 0;">The software, running.</h1>
+        <p style="font-size: 15px; line-height: 1.55; color: #A1A1AA; margin: 0; max-width: 560px;">Three surfaces from the THOX stack. Switch devices, then click around: run a local session, tap through the companion, walk the mesh.</p>
+      </div>
+      <div style="display: flex; gap: 4px; background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 4px;">
+        <sc-for list="{{ surfaces }}" as="s" hint-placeholder-count="3">
+          <button onClick="{{ s.onPick }}" style="{{ s.tabStyle }}">
+            <span style="font-size: 13px; font-weight: 600;">{{ s.label }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; color: {{ s.subColor }};">{{ s.sub }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- stage -->
+    <div style="margin-top: 36px; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; background: radial-gradient(120% 90% at 50% 0%, rgba(16,185,129,0.05), transparent 60%), #0B0B0D; padding: 40px; min-height: 660px; display: flex; align-items: center; justify-content: center;">
+
+      <!-- ============ THOXOS MINI ============ -->
+      <sc-if value="{{ showMini }}" hint-placeholder-val="{{ true }}">
+        <div style="width: 100%; max-width: 940px; background: #050505; border: 1px solid #27272A; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7);">
+          <!-- titlebar -->
+          <div style="height: 40px; background: #161616; border-bottom: 1px solid #27272A; display: flex; align-items: center; padding: 0 14px; gap: 8px;">
+            <div style="display: flex; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57;"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E;"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840;"></span></div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A1A1AA; margin-left: 16px;">ThoxOS Mini · Portable</span>
+            <span style="margin-left: auto; display: flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #34D399;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #34D399; box-shadow: 0 0 8px rgba(52,211,153,0.8);"></span>LOCAL · OFFLINE-FIRST</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 60px 1fr 232px; height: 560px;">
+            <!-- dock -->
+            <div style="background: #0A0A0A; border-right: 1px solid #1A1A1A; display: flex; flex-direction: column; align-items: center; padding: 16px 0; gap: 14px;">
+              <svg viewBox="0 0 116 110" style="width: 30px; height: 28px; color: #34D399; filter: drop-shadow(0 0 8px rgba(52,211,153,0.5));"><use href="#sd-chip"/></svg>
+              <div style="width: 30px; height: 1px; background: #1A1A1A;"></div>
+              <sc-for list="{{ miniDock }}" as="dk" hint-placeholder-count="4">
+                <div style="width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; background: {{ dk.bg }}; color: {{ dk.color }};">
+                  <svg viewBox="0 0 16 16" style="width: 17px; height: 17px;"><use href="{{ dk.icon }}"/></svg>
+                </div>
+              </sc-for>
+            </div>
+            <!-- console -->
+            <div style="display: flex; flex-direction: column; padding: 22px 24px; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <h2 style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 18px; margin: 0;">Local session</h2>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #34D399; border: 1px solid rgba(16,185,129,0.4); border-radius: 999px; padding: 3px 9px;">On device</span>
+              </div>
+              <!-- model chips -->
+              <div style="margin-top: 16px; display: flex; gap: 8px;">
+                <sc-for list="{{ miniModels }}" as="m" hint-placeholder-count="3">
+                  <button onClick="{{ m.onPick }}" style="{{ m.style }}">
+                    <span style="font-size: 12.5px; font-weight: 600;">{{ m.label }}</span>
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: {{ m.subColor }};">{{ m.sub }}</span>
+                  </button>
+                </sc-for>
+              </div>
+              <!-- transcript -->
+              <div style="margin-top: 18px; flex: 1; background: #0A0A0A; border: 1px solid #1F1F1F; border-radius: 10px; padding: 18px; overflow: auto; min-height: 0; display: flex; flex-direction: column; gap: 14px;">
+                <div style="display: flex; gap: 10px;">
+                  <span style="flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #71717A; padding-top: 2px;">YOU</span>
+                  <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #E4E4E7;">{{ miniPrompt }}</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                  <span style="flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #34D399; padding-top: 2px;">THOX</span>
+                  <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #D4D4D8; white-space: pre-wrap;">{{ miniResponse }}<span style="{{ caretStyle }}">▋</span></p>
+                </div>
+              </div>
+              <!-- prompt bar -->
+              <div style="margin-top: 14px; display: flex; gap: 10px; align-items: center;">
+                <div style="flex: 1; display: flex; align-items: center; gap: 10px; background: #111113; border: 1px solid #27272A; border-radius: 10px; padding: 11px 14px;">
+                  <svg viewBox="0 0 116 110" style="width: 15px; height: 14px; color: #34D399; flex-shrink: 0;"><use href="#sd-chip"/></svg>
+                  <span style="font-size: 13px; color: #A1A1AA;">{{ miniPrompt }}</span>
+                </div>
+                <button onClick="{{ runMini }}" style="{{ runStyle }}">{{ runLabel }}</button>
+              </div>
+            </div>
+            <!-- right rail -->
+            <div style="background: #0A0A0A; border-left: 1px solid #1A1A1A; padding: 20px 18px; display: flex; flex-direction: column; gap: 16px;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #71717A;">Telemetry</div>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 30px; color: #FAFAFA;">{{ miniTps }}</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A1A1AA;">tok/s</span></div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #52525B;">FP8 · {{ miniModelLabel }}</div>
+              </div>
+              <sc-for list="{{ miniMeters }}" as="mt" hint-placeholder-count="3">
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10.5px;"><span style="color: #A1A1AA;">{{ mt.label }}</span><span style="color: #FAFAFA;">{{ mt.val }}</span></div>
+                  <div style="height: 4px; background: #1F1F1F; border-radius: 2px; overflow: hidden;"><div style="height: 100%; width: {{ mt.pct }}; background: #34D399; border-radius: 2px; box-shadow: 0 0 6px rgba(52,211,153,0.5); transition: width 0.4s;"></div></div>
+                </div>
+              </sc-for>
+              <div style="margin-top: auto; display: flex; align-items: center; gap: 7px; background: #111113; border-radius: 8px; padding: 9px 12px;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #34D399; box-shadow: 0 0 6px rgba(52,211,153,0.85);"></span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #A1A1AA; letter-spacing: 0.04em;">{{ miniStatus }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ THOXCOMPANION ============ -->
+      <sc-if value="{{ showComp }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; gap: 48px; align-items: center; flex-wrap: wrap; justify-content: center;">
+          <!-- phone -->
+          <div style="width: 320px; height: 640px; background: #050505; border: 1px solid #27272A; border-radius: 44px; padding: 12px; position: relative; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7);">
+            <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 100px; height: 26px; background: #000; border-radius: 14px; z-index: 3;"></div>
+            <div style="width: 100%; height: 100%; background: #0A0A0A; border-radius: 34px; overflow: hidden; display: flex; flex-direction: column;">
+              <!-- status -->
+              <div style="height: 46px; padding: 14px 26px 0; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600;"><span>9:41</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em;">5G ●●●</span></div>
+              <!-- header -->
+              <div style="padding: 12px 20px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1A1A1A;">
+                <div style="display: flex; align-items: center; gap: 9px;">
+                  <svg viewBox="0 0 116 110" style="width: 22px; height: 21px; color: #34D399;"><use href="#sd-chip"/></svg>
+                  <span style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 17px;">ThoxCompanion</span>
+                </div>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: #34D399; border: 1px solid rgba(16,185,129,0.35); border-radius: 999px; padding: 3px 7px;">{{ compOnline }}</span>
+              </div>
+              <!-- body -->
+              <div style="flex: 1; overflow: auto; padding: 16px 16px 8px;">
+                <!-- DEVICES TAB -->
+                <sc-if value="{{ compDevicesTab }}" hint-placeholder-val="{{ true }}">
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <sc-for list="{{ compDevices }}" as="d" hint-placeholder-count="4">
+                      <button onClick="{{ d.onOpen }}" style="text-align: left; cursor: pointer; background: #131315; border: 1px solid {{ d.border }}; border-radius: 14px; padding: 14px 15px; display: flex; align-items: center; gap: 12px;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background: {{ d.dotColor }}; box-shadow: {{ d.dotGlow }}; flex-shrink: 0;"></span>
+                        <div style="flex: 1; min-width: 0;">
+                          <div style="font-size: 14px; font-weight: 600; color: #FAFAFA;">{{ d.name }}</div>
+                          <div style="font-size: 11.5px; color: #71717A;">{{ d.sub }}</div>
+                        </div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: {{ d.statusColor }};">{{ d.status }}</span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <!-- DEVICE DETAIL -->
+                <sc-if value="{{ compDetailOpen }}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; flex-direction: column; gap: 14px;">
+                    <button onClick="{{ closeDetail }}" style="align-self: flex-start; background: none; border: none; color: #34D399; font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer; padding: 0; letter-spacing: 0.06em;">← Devices</button>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span style="width: 12px; height: 12px; border-radius: 50%; background: {{ detail.dotColor }}; box-shadow: {{ detail.dotGlow }};"></span>
+                      <div><div style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 20px;">{{ detail.name }}</div><div style="font-size: 12px; color: #71717A;">{{ detail.sub }}</div></div>
+                    </div>
+                    <p style="font-size: 13px; line-height: 1.6; color: #A1A1AA; margin: 0;">{{ detail.detail }}</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                      <sc-for list="{{ detail.stats }}" as="st" hint-placeholder-count="4">
+                        <div style="background: #131315; border: 1px solid #27272A; border-radius: 10px; padding: 11px 12px;">
+                          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #71717A;">{{ st.k }}</div>
+                          <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FAFAFA; margin-top: 3px;">{{ st.v }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                    <button onClick="{{ toggleDetail }}" style="{{ detail.actionStyle }}">{{ detail.actionLabel }}</button>
+                  </div>
+                </sc-if>
+                <!-- ACTIVITY TAB -->
+                <sc-if value="{{ compActivityTab }}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; flex-direction: column; gap: 2px;">
+                    <sc-for list="{{ compActivity }}" as="a" hint-placeholder-count="4">
+                      <div style="display: flex; gap: 12px; padding: 12px 4px; border-bottom: 1px solid #1A1A1C;">
+                        <span style="width: 26px; height: 26px; border-radius: 8px; background: #131315; border: 1px solid #27272A; display: flex; align-items: center; justify-content: center; color: #34D399; flex-shrink: 0;"><svg viewBox="0 0 16 16" style="width: 13px; height: 13px;"><use href="{{ a.icon }}"/></svg></span>
+                        <div style="flex: 1;"><div style="font-size: 12.5px; line-height: 1.45; color: #D4D4D8;">{{ a.text }}</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #52525B; margin-top: 3px;">{{ a.t }} ago</div></div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <!-- SETTINGS TAB -->
+                <sc-if value="{{ compSettingsTab }}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <sc-for list="{{ compSettings }}" as="sg" hint-placeholder-count="4">
+                      <button onClick="{{ sg.onToggle }}" style="cursor: pointer; text-align: left; background: #131315; border: 1px solid #27272A; border-radius: 12px; padding: 14px 15px; display: flex; align-items: center; gap: 12px;">
+                        <div style="flex: 1;"><div style="font-size: 13.5px; font-weight: 600;">{{ sg.label }}</div><div style="font-size: 11px; color: #71717A; margin-top: 2px;">{{ sg.sub }}</div></div>
+                        <span style="{{ sg.trackStyle }}"><span style="{{ sg.knobStyle }}"></span></span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+              <!-- tab bar -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #1A1A1A; padding: 8px 6px 14px;">
+                <sc-for list="{{ compTabs }}" as="t" hint-placeholder-count="3">
+                  <button onClick="{{ t.onPick }}" style="background: none; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; color: {{ t.color }};">
+                    <svg viewBox="0 0 16 16" style="width: 20px; height: 20px;"><use href="{{ t.icon }}"/></svg>
+                    <span style="font-size: 10px; font-weight: 600;">{{ t.label }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <!-- side note -->
+          <div style="max-width: 300px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #34D399;">ThoxCompanion</div>
+            <h3 style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 24px; margin: 0; line-height: 1.1;">Your devices, in your pocket.</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: #A1A1AA; margin: 0;">The companion app pairs with every THOX device on your LAN. Check status, follow activity, and hand off sessions. Nothing leaves your network.</p>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <sc-for list="{{ compNotes }}" as="n" hint-placeholder-count="3">
+                <div style="display: flex; gap: 10px; font-size: 13px; color: #D4D4D8;"><span style="color: #10B981;">→</span><span>{{ n }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ MESHSTACK ============ -->
+      <sc-if value="{{ showMesh }}" hint-placeholder-val="{{ false }}">
+        <div style="width: 100%; max-width: 960px; background: #0A0A0A; border: 1px solid #27272A; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7);">
+          <div style="height: 38px; background: #161616; border-bottom: 1px solid #27272A; display: flex; align-items: center; padding: 0 14px; gap: 8px;">
+            <div style="display: flex; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57;"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E;"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840;"></span></div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A1A1AA; margin-left: 16px;">MeshStack</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; height: 566px;">
+            <!-- sidebar -->
+            <aside style="background: #161616; border-right: 1px solid #27272A; padding: 22px 14px; display: flex; flex-direction: column; gap: 3px;">
+              <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 16px; margin-bottom: 10px; border-bottom: 1px solid #27272A;">
+                <svg viewBox="0 0 36 42" style="width: 22px; height: 26px; color: #34D399; filter: drop-shadow(0 0 10px rgba(52,211,153,0.4));"><use href="#sd-hexlock"/></svg>
+                <span style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 16px;">Mesh<span style="color: #34D399;">Stack</span></span>
+              </div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #52525B; padding: 8px 8px 6px;">Mesh</div>
+              <sc-for list="{{ meshNav }}" as="mn" hint-placeholder-count="4">
+                <button onClick="{{ mn.onPick }}" style="{{ mn.style }}">
+                  <svg viewBox="0 0 16 16" style="width: 14px; height: 14px; opacity: 0.85;"><use href="{{ mn.icon }}"/></svg>
+                  <span style="font-size: 13px;">{{ mn.label }}</span>
+                  <span style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: {{ mn.countColor }};">{{ mn.count }}</span>
+                </button>
+              </sc-for>
+              <button onClick="{{ pickMeshSettings }}" style="{{ meshSettingsStyle }}"><svg viewBox="0 0 16 16" style="width: 14px; height: 14px; opacity: 0.85;"><use href="#sd-settings"/></svg><span style="font-size: 13px;">Settings</span></button>
+            </aside>
+            <!-- main -->
+            <main style="padding: 28px 32px; overflow: auto;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px;">
+                <div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #34D399;">{{ meshEyebrow }}</div>
+                  <h2 style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 24px; margin: 6px 0 4px; letter-spacing: -0.01em;">{{ meshTitle }}</h2>
+                  <p style="font-size: 13px; color: #A1A1AA; margin: 0;">{{ meshSub }}</p>
+                </div>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #34D399; background: rgba(16,185,129,0.12); border: 1px solid rgba(52,211,153,0.3); border-radius: 999px; padding: 5px 11px;">✓ Mesh verified</span>
+              </div>
+              <!-- stat row -->
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px;">
+                <sc-for list="{{ meshStats }}" as="ms" hint-placeholder-count="4">
+                  <div style="background: #161616; border: 1px solid #27272A; border-radius: 8px; padding: 14px 16px;">
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: #71717A; margin-bottom: 7px;">{{ ms.label }}</div>
+                    <div style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 21px;">{{ ms.val }}<span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #A1A1AA; font-weight: 400; margin-left: 4px;">{{ ms.unit }}</span></div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #34D399; margin-top: 4px;">{{ ms.delta }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <!-- CONNECT: topology -->
+              <sc-if value="{{ meshConnect }}" hint-placeholder-val="{{ true }}">
+                <div style="background: #161616; border: 1px solid #27272A; border-radius: 8px; padding: 18px 20px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><span style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 13px;">TOPOLOGY</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #71717A;">live · refreshed 2s ago</span></div>
+                  <div style="height: 200px; background: #0A0A0A; border: 1px solid #27272A; border-radius: 8px; overflow: hidden;">
+                    <svg viewBox="0 0 800 200" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;">
+                      <g stroke="#10B981" stroke-width="1" stroke-dasharray="3 3" opacity="0.5" fill="none"><line x1="400" y1="100" x2="120" y2="60"/><line x1="400" y1="100" x2="120" y2="150"/><line x1="400" y1="100" x2="680" y2="50"/><line x1="400" y1="100" x2="680" y2="140"/></g>
+                      <line x1="400" y1="100" x2="540" y2="100" stroke="#34D399" stroke-width="1.5"/>
+                      <g transform="translate(400 100)"><polygon points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="#161616" stroke="#34D399" stroke-width="1.5"/><circle r="6" fill="#34D399" filter="drop-shadow(0 0 8px rgba(52,211,153,0.7))"/></g>
+                      <g font-family="JetBrains Mono, monospace" font-size="10" fill="#a1a1aa">
+                        <g><circle cx="120" cy="60" r="8" fill="#161616" stroke="#34D399" stroke-width="1.5"/><circle cx="120" cy="60" r="3" fill="#34D399"/><text x="120" y="42" text-anchor="middle">nova-7f4a</text><text x="120" y="80" text-anchor="middle" fill="#71717a">14ms</text></g>
+                        <g><circle cx="120" cy="150" r="8" fill="#161616" stroke="#34D399" stroke-width="1.5"/><circle cx="120" cy="150" r="3" fill="#34D399"/><text x="120" y="175" text-anchor="middle">mac-9d31</text><text x="120" y="135" text-anchor="middle" fill="#71717a">22ms</text></g>
+                        <g><circle cx="540" cy="100" r="9" fill="#161616" stroke="#34D399" stroke-width="2"/><circle cx="540" cy="100" r="4" fill="#34D399" filter="drop-shadow(0 0 6px rgba(52,211,153,0.7))"/><text x="540" y="125" text-anchor="middle" fill="#fafafa">ios-b22e</text><text x="540" y="82" text-anchor="middle" fill="#34D399">8ms · active</text></g>
+                        <g><circle cx="680" cy="50" r="8" fill="#161616" stroke="#F59E0B" stroke-width="1.5"/><circle cx="680" cy="50" r="3" fill="#F59E0B"/><text x="680" y="32" text-anchor="middle">win-0c8f</text><text x="680" y="70" text-anchor="middle" fill="#71717a">pairing</text></g>
+                        <g><circle cx="680" cy="140" r="8" fill="#161616" stroke="#34D399" stroke-width="1.5"/><circle cx="680" cy="140" r="3" fill="#34D399"/><text x="680" y="165" text-anchor="middle">drd-a155</text><text x="680" y="125" text-anchor="middle" fill="#71717a">via relay</text></g>
+                      </g>
+                    </svg>
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <sc-for list="{{ meshPeers }}" as="p" hint-placeholder-count="5">
+                      <div style="display: grid; grid-template-columns: 20px 1.3fr 1fr 1fr 96px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid #1A1A1A; font-size: 12px;">
+                        <span style="width: 8px; height: 8px; border-radius: 50%; background: {{ p.dot }}; box-shadow: {{ p.glow }};"></span>
+                        <span style="font-family: 'JetBrains Mono', monospace; color: #FAFAFA;">{{ p.name }}</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; color: #A1A1AA;">{{ p.lat }}</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; color: #A1A1AA;">{{ p.tp }}</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; text-align: right; color: {{ p.stColor }};">{{ p.st }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+              <!-- MONITOR -->
+              <sc-if value="{{ meshMonitor }}" hint-placeholder-val="{{ false }}">
+                <div style="background: #161616; border: 1px solid #27272A; border-radius: 8px; padding: 20px 22px;">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;"><div><span style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 26px;">847</span> <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #71717A;">MB/s</span></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #34D399;">+12.4% · 24h</span></div>
+                  <svg viewBox="0 0 760 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block;">
+                    <path d="M 0 74 L 54 62 L 108 68 L 162 52 L 216 56 L 270 40 L 324 48 L 378 32 L 432 36 L 486 20 L 540 28 L 594 16 L 648 22 L 702 10 L 760 16" fill="none" stroke="#34D399" stroke-width="1.6"/>
+                    <path d="M 0 74 L 54 62 L 108 68 L 162 52 L 216 56 L 270 40 L 324 48 L 378 32 L 432 36 L 486 20 L 540 28 L 594 16 L 648 22 L 702 10 L 760 16 L 760 100 L 0 100 Z" fill="url(#sdfade)" opacity="0.5"/>
+                    <defs><linearGradient id="sdfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34D399" stop-opacity="0.35"/><stop offset="100%" stop-color="#34D399" stop-opacity="0"/></linearGradient></defs>
+                  </svg>
+                  <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px;">
+                    <sc-for list="{{ meshCaps }}" as="c" hint-placeholder-count="3">
+                      <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><span style="color: #A1A1AA;">{{ c.label }}</span><span style="color: #FAFAFA;">{{ c.val }}</span></div>
+                        <div style="height: 4px; background: #1F1F1F; border-radius: 2px; overflow: hidden;"><div style="height: 100%; width: {{ c.pct }}; background: #34D399; border-radius: 2px; box-shadow: 0 0 6px rgba(52,211,153,0.5);"></div></div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+            </main>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+
+    <!-- footer -->
+    <div style="margin-top: 28px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #52525B;">THOX.AI LLC · CONFIDENTIAL</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #52525B;">YOUR AI. YOUR DATA. YOUR RULES.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180, &quot;height&quot;: 820}}">
+class Component extends DCLogic {
+  state = {
+    surface: 'mini',
+    // mini
+    miniModel: 1, miniRunning: false, miniResponse: '', miniTps: 0, miniProgress: 0,
+    // companion
+    compTab: 'devices', compDetail: null, compOn: { key: true, air: true, mini: true, clip: false },
+    compSettings: { lan: true, notify: true, autoHandoff: false, wake: true },
+    // mesh
+    meshView: 'connect',
+  };
+
+  SURFACES = [
+    { id: 'mini', label: 'ThoxOS Mini', sub: 'Portable desktop' },
+    { id: 'companion', label: 'ThoxCompanion', sub: 'Phone app' },
+    { id: 'mesh', label: 'MeshStack', sub: 'Fleet admin' },
+  ];
+
+  MODELS = [
+    { label: 'Local 3B', sub: 'fast', tps: 48 },
+    { label: 'Local 8B', sub: 'balanced', tps: 32 },
+    { label: 'Vision', sub: 'multimodal', tps: 18 },
+  ];
+
+  MINI_PROMPT = 'Summarize the launch runbook in three lines.';
+  MINI_FULL = '1. Launch July 9 at 9:00 AM PT with all four devices and early-bird tiers.\n2. Hold the funding goal, then open stretch goals and answer every backer.\n3. Ship the first devices in December 2026. ThoxClip follows in Q1 2027.';
+
+  MINI_DOCK = [
+    { icon: '#sd-bolt' }, { icon: '#sd-grid' }, { icon: '#sd-activity' }, { icon: '#sd-settings' },
+  ];
+
+  DEVICES = [
+    { id: 'key', name: 'ThoxKey', sub: 'Workspace key', detail: 'USB workspace key. Files, launchers, and model assets travel with you and mount on any supported computer.',
+      stats: [ {k:'Type',v:'USB-A'}, {k:'Mounted',v:'mac-9d31'}, {k:'Storage',v:'62% used'}, {k:'Synced',v:'2m ago'} ] },
+    { id: 'air', name: 'ThoxMini Air', sub: 'Wireless companion', detail: 'Battery-powered wireless module. Pairs for portable sessions with no cable.',
+      stats: [ {k:'Link',v:'Wireless'}, {k:'Battery',v:'82%'}, {k:'Latency',v:'22 ms'}, {k:'Synced',v:'14m ago'} ] },
+    { id: 'mini', name: 'ThoxMini', sub: 'Compute companion', detail: 'USB-C compute node. Runs local services and agents at full tilt, offline-first.',
+      stats: [ {k:'Link',v:'USB-C'}, {k:'Load',v:'34%'}, {k:'Throughput',v:'32 tok/s'}, {k:'Synced',v:'now'} ] },
+    { id: 'clip', name: 'ThoxClip', sub: 'Phone companion', detail: 'Magnetic phone-back companion. Keeps local tools and data with your phone.',
+      stats: [ {k:'Attach',v:'Phone'}, {k:'Battery',v:'64%'}, {k:'State',v:'Standby'}, {k:'Synced',v:'1h ago'} ] },
+  ];
+
+  ACTIVITY = [
+    { icon: '#sd-bolt', text: 'ThoxMini began a local inference session', t: '2m' },
+    { icon: '#sd-link', text: 'ThoxMini Air paired over wireless', t: '14m' },
+    { icon: '#sd-grid', text: 'ThoxKey mounted on mac-9d31', t: '1h' },
+    { icon: '#sd-shield', text: 'Firmware check: all devices current', t: '3h' },
+  ];
+
+  SETTINGS = [
+    { id: 'lan', label: 'LAN-only mode', sub: 'Never leave the local network' },
+    { id: 'notify', label: 'Notifications', sub: 'Device and session alerts' },
+    { id: 'autoHandoff', label: 'Auto handoff', sub: 'Resume sessions across devices' },
+    { id: 'wake', label: 'Wake on attach', sub: 'Start when a device connects' },
+  ];
+
+  MESH_NAV = [
+    { id: 'identity', label: 'Identity', icon: '#sd-shield', count: '' },
+    { id: 'pair', label: 'Pair', icon: '#sd-grid', count: '2' },
+    { id: 'connect', label: 'Connect', icon: '#sd-link', count: '5' },
+    { id: 'monitor', label: 'Monitor', icon: '#sd-pulse', count: '' },
+  ];
+
+  PEERS = [
+    { name: 'nova-7f4a', lat: '14 ms · p50', tp: '↑220 ↓412', st: 'online', dot: '#34D399', glow: '0 0 6px rgba(52,211,153,0.7)', stColor: '#34D399' },
+    { name: 'mac-9d31', lat: '22 ms · p50', tp: '↑180 ↓95', st: 'online', dot: '#34D399', glow: '0 0 6px rgba(52,211,153,0.7)', stColor: '#34D399' },
+    { name: 'ios-b22e', lat: '8 ms · p50', tp: '↑410 ↓38', st: 'active', dot: '#34D399', glow: '0 0 6px rgba(52,211,153,0.7)', stColor: '#34D399' },
+    { name: 'win-0c8f', lat: '— ms', tp: 'handshake', st: 'pairing', dot: '#F59E0B', glow: 'none', stColor: '#F59E0B' },
+    { name: 'drd-a155', lat: '41 ms · p50', tp: '↑12 ↓8', st: 'via relay', dot: '#34D399', glow: 'none', stColor: '#A1A1AA' },
+  ];
+
+  setSurface(id) { this.setState({ surface: id }); }
+
+  runMini() {
+    if (this.state.miniRunning) return;
+    const model = this.MODELS[this.state.miniModel];
+    this.setState({ miniRunning: true, miniResponse: '', miniTps: model.tps, miniProgress: 0 });
+    const words = this.MINI_FULL.split(/(\s+)/);
+    let i = 0;
+    clearInterval(this._mini);
+    this._mini = setInterval(() => {
+      if (i >= words.length) {
+        clearInterval(this._mini); this._mini = null;
+        this.setState({ miniRunning: false });
+        return;
+      }
+      const jitter = model.tps + Math.round(Math.sin(i) * 4);
+      this.setState((s) => ({ miniResponse: s.miniResponse + words[i], miniTps: jitter, miniProgress: Math.min(1, i / words.length) }));
+      i++;
+    }, 55);
+  }
+
+  componentDidMount() {
+    // seed a completed run so the console isn't empty on first view
+    this.setState({ miniResponse: this.MINI_FULL, miniTps: this.MODELS[this.state.miniModel].tps });
+  }
+  componentWillUnmount() { clearInterval(this._mini); }
+
+  pickModel(i) { this.setState({ miniModel: i, miniTps: this.MODELS[i].tps }); }
+
+  renderVals() {
+    const S = this.state;
+    const tabStyleFor = (on) => 'display: flex; flex-direction: column; gap: 2px; align-items: flex-start; cursor: pointer; border: none; border-radius: 9px; padding: 9px 16px; background: ' + (on ? '#1F1F22' : 'transparent') + '; color: ' + (on ? '#FAFAFA' : '#A1A1AA') + '; transition: all 0.2s;';
+    const surfaces = this.SURFACES.map((s) => ({
+      label: s.label, sub: s.sub, onPick: () => this.setSurface(s.id),
+      tabStyle: tabStyleFor(S.surface === s.id),
+      subColor: S.surface === s.id ? '#34D399' : '#52525B',
+    }));
+
+    // ---- MINI ----
+    const miniModels = this.MODELS.map((m, i) => {
+      const on = i === S.miniModel;
+      return { label: m.label, sub: m.sub,
+        onPick: () => this.pickModel(i),
+        subColor: on ? '#34D399' : '#52525B',
+        style: 'display: flex; flex-direction: column; gap: 2px; align-items: flex-start; cursor: pointer; border-radius: 9px; padding: 9px 14px; background: ' + (on ? '#0A0A0A' : '#111113') + '; border: 1px solid ' + (on ? 'rgba(16,185,129,0.5)' : '#27272A') + '; color: ' + (on ? '#FAFAFA' : '#A1A1AA') + ';' };
+    });
+    const model = this.MODELS[S.miniModel];
+    const load = S.miniRunning ? 68 : 34;
+    const miniMeters = [
+      { label: 'Compute', val: load + '%', pct: load + '%' },
+      { label: 'Memory', val: '3.4 / 8 GB', pct: '42%' },
+      { label: 'NPU', val: S.miniRunning ? 'active' : 'idle', pct: S.miniRunning ? '80%' : '12%' },
+    ];
+
+    // ---- COMPANION ----
+    const onCount = Object.values(S.compOn).filter(Boolean).length;
+    const compDevices = this.DEVICES.map((d) => {
+      const on = S.compOn[d.id];
+      const status = on ? (d.id === 'mini' ? 'Active' : (d.id === 'key' ? 'Connected' : 'Paired')) : 'Standby';
+      return { name: d.name, sub: d.sub, onOpen: () => this.setState({ compDetail: d.id }),
+        dotColor: on ? '#34D399' : '#71717A', dotGlow: on ? '0 0 8px rgba(52,211,153,0.75)' : 'none',
+        status, statusColor: on ? '#34D399' : '#71717A',
+        border: on ? 'rgba(16,185,129,0.25)' : '#27272A' };
+    });
+    const dObj = this.DEVICES.find((d) => d.id === S.compDetail);
+    let detail = null;
+    if (dObj) {
+      const on = S.compOn[dObj.id];
+      detail = { name: dObj.name, sub: dObj.sub, detail: dObj.detail, stats: dObj.stats,
+        dotColor: on ? '#34D399' : '#71717A', dotGlow: on ? '0 0 8px rgba(52,211,153,0.75)' : 'none',
+        actionLabel: on ? 'Disconnect' : 'Connect',
+        actionStyle: 'cursor: pointer; margin-top: 2px; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 14px; border: 1px solid ' + (on ? '#27272A' : 'rgba(16,185,129,0.5)') + '; background: ' + (on ? 'transparent' : '#10B981') + '; color: ' + (on ? '#A1A1AA' : '#04150E') + ';' };
+    }
+    const tabs = [ { id: 'devices', label: 'Devices', icon: '#sd-grid' }, { id: 'activity', label: 'Activity', icon: '#sd-activity' }, { id: 'settings', label: 'Settings', icon: '#sd-settings' } ];
+    const compTabs = tabs.map((t) => ({ label: t.label, icon: t.icon,
+      onPick: () => this.setState({ compTab: t.id, compDetail: null }),
+      color: S.compTab === t.id && !S.compDetail ? '#34D399' : '#71717A' }));
+    const compSettings = this.SETTINGS.map((sg) => {
+      const on = S.compSettings[sg.id];
+      return { label: sg.label, sub: sg.sub, onToggle: () => this.setState((st) => ({ compSettings: Object.assign({}, st.compSettings, { [sg.id]: !st.compSettings[sg.id] }) })),
+        trackStyle: 'width: 40px; height: 23px; border-radius: 999px; background: ' + (on ? '#10B981' : '#27272A') + '; position: relative; flex-shrink: 0; transition: background 0.2s; display: inline-block;',
+        knobStyle: 'position: absolute; top: 3px; left: ' + (on ? '20px' : '3px') + '; width: 17px; height: 17px; border-radius: 50%; background: #fff; transition: left 0.2s;' };
+    });
+
+    // ---- MESH ----
+    const meshNav = this.MESH_NAV.map((mn) => {
+      const on = (mn.id === 'connect' && S.meshView === 'connect') || (mn.id === 'monitor' && S.meshView === 'monitor');
+      return { label: mn.label, icon: mn.icon, count: mn.count,
+        onPick: () => { if (mn.id === 'connect' || mn.id === 'monitor') this.setState({ meshView: mn.id }); },
+        countColor: on ? '#34D399' : '#52525B',
+        style: 'display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; cursor: pointer; padding: 8px 10px; border: none; border-radius: 6px; background: ' + (on ? '#1F1F1F' : 'transparent') + '; color: ' + (on ? '#FAFAFA' : '#A1A1AA') + ';' };
+    });
+    const meshStats = S.meshView === 'connect'
+      ? [ {label:'Peers',val:'5',unit:'online',delta:'+2 · 24h'}, {label:'Throughput',val:'847',unit:'MB/s',delta:'+12.4% · 24h'}, {label:'Latency',val:'23',unit:'ms p50',delta:'-8.1% · 24h'}, {label:'Uptime',val:'99.97',unit:'%',delta:'7d window'} ]
+      : [ {label:'Tx peak',val:'128',unit:'MB/s',delta:'live'}, {label:'Loss',val:'0.02',unit:'%',delta:'-0.01 · 24h'}, {label:'Sessions',val:'5',unit:'active',delta:'steady'}, {label:'Relayed',val:'1',unit:'peer',delta:'drd-a155'} ];
+    const meshCaps = [
+      { label: 'Throughput', val: '847 MB/s', pct: '84%' },
+      { label: 'Latency budget', val: '23/40 ms', pct: '57%' },
+      { label: 'Packet integrity', val: '99.98%', pct: '99%' },
+    ];
+
+    return {
+      surfaces,
+      showMini: S.surface === 'mini', showComp: S.surface === 'companion', showMesh: S.surface === 'mesh',
+      // mini
+      miniDock: this.MINI_DOCK, miniModels, miniPrompt: this.MINI_PROMPT,
+      miniResponse: S.miniResponse, miniTps: S.miniTps, miniMeters, miniModelLabel: model.label,
+      runMini: () => this.runMini(),
+      runLabel: S.miniRunning ? 'Running' : 'Run',
+      runStyle: 'cursor: ' + (S.miniRunning ? 'default' : 'pointer') + '; padding: 11px 20px; border-radius: 10px; border: none; font-weight: 700; font-size: 13px; font-family: Inter, sans-serif; background: ' + (S.miniRunning ? '#1F1F22' : '#10B981') + '; color: ' + (S.miniRunning ? '#71717A' : '#04150E') + ';',
+      caretStyle: S.miniRunning ? 'color: #34D399; animation: sd-blink 1s step-end infinite;' : 'display: none;',
+      miniStatus: S.miniRunning ? 'AI INFERENCE · ' + S.miniTps + ' tok/s · FP8' : 'Status: Ready',
+      // companion
+      compOnline: onCount + '/4 online',
+      compDevicesTab: S.compTab === 'devices' && !S.compDetail,
+      compDetailOpen: !!S.compDetail,
+      compActivityTab: S.compTab === 'activity' && !S.compDetail,
+      compSettingsTab: S.compTab === 'settings' && !S.compDetail,
+      compDevices, detail: detail || { name: '', sub: '', detail: '', stats: [], dotColor: '#71717A', dotGlow: 'none', actionLabel: '', actionStyle: '' },
+      closeDetail: () => this.setState({ compDetail: null }),
+      toggleDetail: () => { const id = S.compDetail; this.setState((st) => ({ compOn: Object.assign({}, st.compOn, { [id]: !st.compOn[id] }) })); },
+      compActivity: this.ACTIVITY, compSettings, compTabs,
+      compNotes: ['Live status for every paired device', 'Activity feed of local sessions', 'LAN-only. Nothing leaves your network'],
+      // mesh
+      meshNav, meshStats, meshCaps, meshPeers: this.PEERS,
+      pickMeshSettings: () => {},
+      meshSettingsStyle: 'display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; cursor: pointer; margin-top: auto; padding: 8px 10px; border: none; border-radius: 6px; background: transparent; color: #A1A1AA;',
+      meshConnect: S.meshView === 'connect', meshMonitor: S.meshView === 'monitor',
+      meshEyebrow: S.meshView === 'connect' ? 'Scene 03 · Connect' : 'Scene 04 · Monitor',
+      meshTitle: S.meshView === 'connect' ? 'Five peers, no server.' : 'Live, then gone.',
+      meshSub: S.meshView === 'connect' ? 'Direct end-to-end sessions. The system never sees the payload.' : 'Throughput, latency, and loss in real time. No historical archive.',
+    };
+  }
+}
+</script>
+</body>
+</html>

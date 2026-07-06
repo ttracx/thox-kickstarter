@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Xolonium'; src: url('assets/fonts/xolonium-regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Xolonium'; src: url('assets/fonts/xolonium-bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+    @keyframes mg-dl { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @keyframes mg-slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+    ::placeholder { color: #52525B; }
+    .mg-scroll::-webkit-scrollbar { width: 8px; }
+    .mg-scroll::-webkit-scrollbar-thumb { background: #27272A; border-radius: 4px; }
+  </style>
+</helmet>
+<div style="min-height: 100vh; background: #09090B; color: #FAFAFA; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 44px 40px 96px;">
+
+    <!-- header -->
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399; display: flex; align-items: center; gap: 10px;">
+          <span style="width: 6px; height: 6px; background: #34D399; transform: rotate(45deg); display: inline-block;"></span>ThoxLLM Factory · Download center
+        </div>
+        <h1 style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 46px; line-height: 1; letter-spacing: -0.02em; margin: 0;">Local model gallery.</h1>
+        <p style="font-size: 16px; line-height: 1.55; color: #A1A1AA; margin: 0;">Ten base models, renamed and fine-tuned into the THOX lineup. Every model runs on device. Pick a quant, pull the tag, keep the weights on hardware you own.</p>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #52525B; letter-spacing: 0.06em;">thoxllm-factory v0.1.7 · registry schema 1.2 · THOX IP-018</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/logos/thox-logo-horiz-whiteout.png" alt="THOX.ai" style="height: 26px; width: auto;">
+      </div>
+    </div>
+
+    <!-- stat chips -->
+    <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+      <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+        <div style="background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 5px;">
+          <div style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 26px; color: {{ st.color }};">{{ st.value }}</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">{{ st.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- toolbar -->
+    <div style="margin-top: 28px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 220px; display: flex; align-items: center; gap: 10px; background: #111113; border: 1px solid #27272A; border-radius: 10px; padding: 11px 14px;">
+        <svg viewBox="0 0 16 16" style="width: 15px; height: 15px; color: #52525B; flex-shrink: 0;"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="11" y1="11" x2="14" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search models, base, role, tag" style="flex: 1; background: none; border: none; outline: none; color: #FAFAFA; font-size: 13.5px; font-family: Inter, sans-serif;">
+      </div>
+      <div style="display: flex; gap: 3px; background: #111113; border: 1px solid #27272A; border-radius: 10px; padding: 3px;">
+        <sc-for list="{{ statusTabs }}" as="t" hint-placeholder-count="4">
+          <button onClick="{{ t.onPick }}" style="{{ t.style }}">{{ t.label }}<span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: 0.7; margin-left: 6px;">{{ t.count }}</span></button>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- tier filter row -->
+    <div style="margin-top: 12px; display: flex; gap: 7px; align-items: center; flex-wrap: wrap;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #52525B; margin-right: 4px;">Tier</span>
+      <sc-for list="{{ tierChips }}" as="tc" hint-placeholder-count="8">
+        <button onClick="{{ tc.onPick }}" style="{{ tc.style }}">{{ tc.label }}</button>
+      </sc-for>
+    </div>
+
+    <!-- results count -->
+    <div style="margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #71717A;">{{ resultLabel }}</div>
+
+    <!-- grid -->
+    <div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px;">
+      <sc-for list="{{ cards }}" as="m" hint-placeholder-count="10">
+        <button onClick="{{ m.onOpen }}" style="text-align: left; cursor: pointer; background: #111113; border: 1px solid {{ m.border }}; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: rgba(16,185,129,0.4); background: #141416;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #52525B; letter-spacing: 0.1em;">P{{ m.rank }}</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ m.statusColor }};">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ m.statusColor }}; box-shadow: {{ m.statusGlow }}; {{ m.statusAnim }}"></span>{{ m.statusLabel }}
+            </span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em; color: #FAFAFA;">{{ m.name }}</div>
+            <div style="font-size: 13px; color: #A1A1AA;">{{ m.role }}</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #71717A;">
+            <span style="color: #34D399;">base</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ m.base }}</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <sc-for list="{{ m.tiers }}" as="tr" hint-placeholder-count="3">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.04em; color: #A1A1AA; background: #09090B; border: 1px solid #27272A; border-radius: 999px; padding: 3px 8px;">{{ tr }}</span>
+            </sc-for>
+          </div>
+          <div style="margin-top: 4px; padding-top: 12px; border-top: 1px solid #1F1F1F; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #FAFAFA;">{{ m.tag }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #34D399; letter-spacing: 0.06em;">Details →</span>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+
+    <!-- empty state -->
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 40px; text-align: center; padding: 60px 20px; border: 1px dashed #27272A; border-radius: 14px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #71717A;">No models match. Clear the filters and try again.</div>
+      </div>
+    </sc-if>
+
+    <!-- footer -->
+    <div style="margin-top: 48px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid #1F1F1F; padding-top: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #52525B;">THOX.AI LLC · CONFIDENTIAL</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #52525B;">YOUR AI. YOUR DATA. YOUR RULES.</div>
+    </div>
+  </div>
+
+  <!-- ============ DRAWER ============ -->
+  <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeDrawer }}" style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(2px); z-index: 40;"></div>
+    <div class="mg-scroll" style="position: fixed; top: 0; right: 0; height: 100vh; width: 520px; max-width: 92vw; background: #0B0B0D; border-left: 1px solid #27272A; z-index: 41; overflow-y: auto; box-shadow: -30px 0 80px -20px rgba(0,0,0,0.7); animation: mg-slide 0.28s cubic-bezier(0.2, 0, 0, 1);">
+      <div style="padding: 28px 32px 40px;">
+        <!-- head -->
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ d.statusColor }};">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ d.statusColor }}; box-shadow: {{ d.statusGlow }}; {{ d.statusAnim }}"></span>{{ d.statusLabel }}
+            </span>
+            <h2 style="font-family: Xolonium, Inter, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em; margin: 0;">{{ d.name }}</h2>
+            <div style="font-size: 14px; color: #A1A1AA;">{{ d.role }} · priority {{ d.rank }}</div>
+          </div>
+          <button onClick="{{ closeDrawer }}" style="flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; background: #1A1A1C; border: 1px solid #27272A; color: #A1A1AA; cursor: pointer; font-size: 16px; line-height: 1; display: flex; align-items: center; justify-content: center;">✕</button>
+        </div>
+
+        <p style="margin: 18px 0 0; font-size: 14px; line-height: 1.6; color: #A1A1AA;">{{ d.notes }}</p>
+
+        <!-- spec grid -->
+        <div style="margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1F1F1F; border: 1px solid #1F1F1F; border-radius: 12px; overflow: hidden;">
+          <sc-for list="{{ d.specs }}" as="sp" hint-placeholder-count="4">
+            <div style="background: #111113; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">{{ sp.k }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #FAFAFA;">{{ sp.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- base model link -->
+        <a href="{{ d.hfUrl }}" target="_blank" rel="noopener" style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #111113; border: 1px solid #27272A; border-radius: 10px; padding: 13px 16px; text-decoration: none;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">Base model</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #34D399;">{{ d.base }}</span></div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #71717A;">Hugging Face ↗</span>
+        </a>
+
+        <!-- tiers -->
+        <div style="margin-top: 18px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A; margin-bottom: 10px;">Cleared device tiers</div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <sc-for list="{{ d.tierDetail }}" as="td" hint-placeholder-count="3">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #A1A1AA; background: #09090B; border: 1px solid #27272A; border-radius: 999px; padding: 5px 10px;" title="{{ td.desc }}">{{ td.label }}</span>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- install -->
+        <div style="margin-top: 22px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A; margin-bottom: 10px;">Install via Ollama</div>
+          <sc-for list="{{ d.commands }}" as="c" hint-placeholder-count="2">
+            <div style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; background: #000; border: 1px solid #27272A; border-radius: 10px; padding: 12px 14px;">
+              <span style="color: #34D399; font-family: 'JetBrains Mono', monospace; font-size: 13px;">$</span>
+              <span style="flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #E4E4E7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ c.cmd }}</span>
+              <button onClick="{{ c.onCopy }}" style="flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: {{ c.copyColor }}; background: #1A1A1C; border: 1px solid #27272A; border-radius: 6px; padding: 6px 10px; cursor: pointer;">{{ c.copyLabel }}</button>
+            </div>
+          </sc-for>
+          <sc-if value="{{ d.disabled }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top: 6px; display: flex; gap: 9px; background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 14px;">
+              <span style="color: #F59E0B; flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em;">{{ d.disabledTag }}</span>
+              <span style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA;">{{ d.disabledReason }}</span>
+            </div>
+          </sc-if>
+        </div>
+
+        <!-- gguf artifacts -->
+        <div style="margin-top: 22px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">GGUF artifacts</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #52525B;">approx · llama.cpp</div>
+          </div>
+          <div style="border: 1px solid #1F1F1F; border-radius: 12px; overflow: hidden;">
+            <sc-for list="{{ d.quants }}" as="q" hint-placeholder-count="3">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-bottom: 1px solid #1A1A1A; background: {{ q.bg }};">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 700; color: {{ q.labelColor }}; width: 74px;">{{ q.quant }}</span>
+                <div style="flex: 1; min-width: 0;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A1A1AA; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ q.file }}</div></div>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #FAFAFA;">{{ q.size }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: {{ q.tagColor }};">{{ q.tagText }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- provenance -->
+        <div style="margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; line-height: 1.7; color: #52525B;">
+          <div>fine-tune · {{ d.ft }}</div>
+          <div>modelfile · {{ d.modelfile }}</div>
+          <div>license · {{ d.license }}</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1240, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  state = { query: '', status: 'all', tier: 'all', selectedId: null, copied: null, sortBy: 'priority', density: 'comfortable' };
+
+  MODELS = [
+    { id:'thoxnova-12b-agent', name:'ThoxNova-12B-Agent', role:'Primary agent model', rank:1, base:'google/gemma-4-12B-it-assistant', params:12, disk:'1.7 GB', license:'gemma', status:'blocked', tag:'thoxnova:12b-agent', modelfile:'ollama/Modelfile.thoxnova-12b-agent', tiers:['thoxnova','workstation','thoxvault'], notes:'Primary THOX agent surface across ThoxNova, workstation, and vault tiers. Paired with ThoxNova-12B-Core for speculative decoding (Gemma 4 main plus assistant draft).', blockedReason:'Local training environment must reach transformers 5.6+ with Gemma4UnifiedForConditionalGeneration, then adapter, GGUF, and Ollama artifacts must be produced.' },
+    { id:'thoxforge-7b', name:'ThoxForge-7B', role:'Coding and reasoning', rank:2, base:'mistralai/Mistral-7B-Instruct-v0.3', params:7, disk:'55 GB', license:'apache-2.0', status:'ready', tag:'thoxforge:7b', modelfile:'ollama/Modelfile.thoxforge-7b', tiers:['thoxnova','workstation','thoxvault'], notes:'Coding and reasoning workhorse. Powers the THOX Forge operator dashboard agents and Cursor and Continue integrations.', blockedReason:null },
+    { id:'thoxmini-3b', name:'ThoxMini-3B', role:'Lightweight edge', rank:3, base:'meta-llama/Llama-3.2-3B-Instruct', params:3, disk:'cloning', license:'llama-3.2', status:'downloading', tag:'thoxmini:3b', modelfile:'ollama/Modelfile.thoxmini-3b', tiers:['thoxmini','thoxair','thoxnova','workstation','thoxvault','magstack','browser'], notes:'Edge-tier target. Q4_K_M with offload on Pi Zero W. MagStack Air shards it across four to eight Pi Zero 2 W nodes.', blockedReason:'Base weights still landing. Cloning Llama-3.2-3B-Instruct in a background session before training can start.' },
+    { id:'thoxglobal-7b', name:'ThoxGlobal-7B', role:'Multilingual', rank:4, base:'Qwen/Qwen2.5-7B-Instruct', params:7, disk:'29 GB', license:'apache-2.0', status:'ready', tag:'thoxglobal:7b', modelfile:'ollama/Modelfile.thoxglobal-7b', tiers:['thoxnova','workstation','thoxvault'], notes:'Multilingual default for non-English routes. Qwen2.5 base covers 29 plus languages.', blockedReason:null },
+    { id:'thoxwave-8b-unleashed', name:'ThoxWave-8B-Unleashed', role:'Creative all-rounder', rank:5, base:'dphn/dolphin-2.9-llama3-8b', params:8, disk:'30 GB', license:'llama-3', status:'ready', tag:'thoxwave:8b-unleashed', modelfile:'ollama/Modelfile.thoxwave-8b-unleashed', tiers:['thoxnova','workstation','thoxvault'], notes:'Creative all-rounder built on Dolphin 2.9 Llama-3 8B. Brainstorming, ideation, and long-form drafting.', blockedReason:null },
+    { id:'thoxtitan-26b-agent', name:'ThoxTitan-26B-Agent', role:'Premium workstation model', rank:6, base:'google/gemma-4-26B-A4B-it-assistant', params:26, disk:'1.7 GB', license:'gemma', status:'blocked', tag:'thoxtitan:26b-agent', modelfile:'ollama/Modelfile.thoxtitan-26b-agent', tiers:['workstation','thoxvault'], notes:'Premium workstation and vault agent. Gemma-4 26B-A4B sparse activation, reserved for ThoxVault and 4060 Ti-class rigs.', blockedReason:'Gemma-4 A4B MoE variant. Same artifact gate as the Gemma 4 12B line: transformers 5.6+ with Gemma4UnifiedForConditionalGeneration.' },
+    { id:'thoxgem-e4b', name:'ThoxGem-E4B', role:'Efficient THOX assistant', rank:7, base:'google/gemma-4-E4B', params:4, disk:'30 GB', license:'gemma', status:'ready', tag:'thoxgem:e4b', modelfile:'ollama/Modelfile.thoxgem-e4b', tiers:['thoxnova','workstation','thoxvault','browser'], notes:'Phase B SFT lands here. Efficient Gemma 4 E4B base, runs in the browser tier over WebGPU via LiteRT-LM.', blockedReason:null },
+    { id:'thoxgem-e4b-agent', name:'ThoxGem-E4B-Agent', role:'Fast local agent', rank:8, base:'google/gemma-4-E4B-it-assistant', params:4, disk:'366 MB', license:'gemma', status:'ready', tag:'thoxgem:e4b-agent', modelfile:'ollama/Modelfile.thoxgem-e4b-agent', tiers:['thoxnova','workstation','thoxvault','browser'], notes:'Fast local agent paired with ThoxGem-E4B for speculative decoding on the E4B family. Browser-tier candidate via LiteRT-LM.', blockedReason:null },
+    { id:'thoxnova-12b-core', name:'ThoxNova-12B-Core', role:'Main THOX assistant', rank:9, base:'google/gemma-4-12B', params:12, disk:'40 GB', license:'gemma', status:'blocked', tag:'thoxnova:12b-core', modelfile:'ollama/Modelfile.thoxnova-12b-core', tiers:['thoxnova','workstation','thoxvault'], notes:'Main THOX assistant base, the broader generalist surface. Pairs with ThoxNova-12B-Agent for speculative decoding.', blockedReason:'Local training environment must reach transformers 5.6+ with Gemma4UnifiedForConditionalGeneration, then adapter, GGUF, and Ollama artifacts must be produced.' },
+    { id:'thoxnova-12b-unleashed', name:'ThoxNova-12B-Unleashed', role:'Premium open assistant', rank:10, base:'MarinaraSpaghetti/NemoMix-Unleashed-12B', params:12, disk:'46 GB', license:'apache-2.0', status:'ready', tag:'thoxnova:12b-unleashed', modelfile:'ollama/Modelfile.thoxnova-12b-unleashed', tiers:['thoxnova','workstation','thoxvault'], notes:'Premium open assistant on NemoMix-Unleashed-12B, Mistral-Nemo lineage. The 46 GB footprint is reserved for workstation and vault.', blockedReason:null },
+  ];
+
+  TIER_META = {
+    thoxmini: 'Milk-V Duo RISC-V edge tier, about 2 W, 0.5 TOPS NPU',
+    thoxair: 'Pi Zero W micro tier, about 2.5 W, with offload',
+    thoxnova: 'LattePanda N100, 16 GB DDR5 workstation',
+    thoxvault: 'Server tier, all THOX models',
+    workstation: 'Dev rig RTX 4060 Ti 16 GB plus 128 GB RAM',
+    magstack: 'Pi Zero 2 W cluster, sharded inference',
+    browser: 'WebGPU via LiteRT-LM',
+  };
+
+  QUANTS = ['Q4_K_M', 'Q5_K_M', 'Q8_0'];
+  QUANT_FACTOR = { Q4_K_M: 0.58, Q5_K_M: 0.68, Q8_0: 1.06 };
+
+  STATUS_META = {
+    ready: { label: 'Ready', color: '#34D399', glow: '0 0 8px rgba(52,211,153,0.75)', anim: '' },
+    blocked: { label: 'Blocked', color: '#F59E0B', glow: 'none', anim: '' },
+    downloading: { label: 'Downloading', color: '#60A5FA', glow: '0 0 8px rgba(96,165,250,0.6)', anim: 'animation: mg-dl 1.4s ease-in-out infinite;' },
+  };
+
+  ggufSize(params, quant) {
+    const gb = params * this.QUANT_FACTOR[quant];
+    if (gb < 1) return Math.round(gb * 1000) + ' MB';
+    return gb.toFixed(1) + ' GB';
+  }
+
+  copy(text, key) {
+    const done = () => { this.setState({ copied: key }); clearTimeout(this._cp); this._cp = setTimeout(() => this.setState({ copied: null }), 1400); };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, () => this.fallbackCopy(text, done)); }
+      else this.fallbackCopy(text, done);
+    } catch (e) { this.fallbackCopy(text, done); }
+  }
+  fallbackCopy(text, done) {
+    const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta); done();
+  }
+
+  componentWillUnmount() { clearTimeout(this._cp); }
+
+  filtered() {
+    const q = this.state.query.trim().toLowerCase();
+    return this.MODELS.filter((m) => {
+      if (this.state.status !== 'all' && m.status !== this.state.status) return false;
+      if (this.state.tier !== 'all' && !m.tiers.includes(this.state.tier)) return false;
+      if (q) {
+        const hay = (m.name + ' ' + m.base + ' ' + m.role + ' ' + m.tag).toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  renderVals() {
+    const S = this.state;
+    const readyN = this.MODELS.filter((m) => m.status === 'ready').length;
+
+    const stats = [
+      { value: this.MODELS.length, label: 'Models', color: '#FAFAFA' },
+      { value: readyN, label: 'Ready to pull', color: '#34D399' },
+      { value: 3, label: 'Quant targets', color: '#FAFAFA' },
+      { value: 7, label: 'Device tiers', color: '#FAFAFA' },
+    ];
+
+    const statusCounts = { all: this.MODELS.length, ready: readyN, blocked: this.MODELS.filter((m) => m.status === 'blocked').length, downloading: this.MODELS.filter((m) => m.status === 'downloading').length };
+    const statusTabs = [ ['all','All'], ['ready','Ready'], ['blocked','Blocked'], ['downloading','Downloading'] ].map(([id, label]) => {
+      const on = S.status === id;
+      return { label, count: statusCounts[id], onPick: () => this.setState({ status: id }),
+        style: 'cursor: pointer; border: none; border-radius: 8px; padding: 8px 13px; font-size: 12.5px; font-weight: 600; font-family: Inter, sans-serif; background: ' + (on ? '#1F1F22' : 'transparent') + '; color: ' + (on ? '#FAFAFA' : '#A1A1AA') + ';' };
+    });
+
+    const tierIds = ['all','thoxmini','thoxair','thoxnova','workstation','thoxvault','magstack','browser'];
+    const tierChips = tierIds.map((t) => {
+      const on = S.tier === t;
+      return { label: t === 'all' ? 'All' : t, onPick: () => this.setState({ tier: t }),
+        style: 'cursor: pointer; border-radius: 999px; padding: 5px 11px; font-family: \'JetBrains Mono\', monospace; font-size: 10.5px; letter-spacing: 0.04em; background: ' + (on ? 'rgba(16,185,129,0.14)' : '#111113') + '; border: 1px solid ' + (on ? 'rgba(52,211,153,0.4)' : '#27272A') + '; color: ' + (on ? '#34D399' : '#A1A1AA') + ';' };
+    });
+
+    let list = this.filtered();
+
+    const cards = list.map((m) => {
+      const sm = this.STATUS_META[m.status];
+      return { rank: m.rank, name: m.name, role: m.role, base: m.base, tag: m.tag,
+        tiers: m.tiers.slice(0, 4),
+        onOpen: () => this.setState({ selectedId: m.id, copied: null }),
+        statusLabel: sm.label, statusColor: sm.color, statusGlow: sm.glow, statusAnim: sm.anim,
+        border: m.status === 'ready' ? 'rgba(255,255,255,0.10)' : '#1F1F1F' };
+    });
+
+    const resultLabel = list.length === this.MODELS.length
+      ? 'Showing all ' + this.MODELS.length + ' models'
+      : 'Showing ' + list.length + ' of ' + this.MODELS.length + ' models';
+
+    // drawer
+    const sel = this.MODELS.find((m) => m.id === S.selectedId);
+    let d = null;
+    if (sel) {
+      const sm = this.STATUS_META[sel.status];
+      const disabled = sel.status !== 'ready';
+      const mkCmd = (cmd, key) => ({ cmd, onCopy: () => this.copy(cmd, key),
+        copyLabel: S.copied === key ? 'Copied' : 'Copy', copyColor: S.copied === key ? '#34D399' : '#A1A1AA' });
+      const commands = disabled ? [] : [ mkCmd('ollama run ttracx/' + sel.tag, sel.id + '-run'), mkCmd('ollama pull ttracx/' + sel.tag, sel.id + '-pull') ];
+      const quants = this.QUANTS.map((q, i) => ({
+        quant: q, file: sel.id + '.' + q + '.gguf', size: sel.status === 'downloading' ? 'pending' : this.ggufSize(sel.params, q),
+        bg: i === 0 ? 'rgba(16,185,129,0.05)' : 'transparent',
+        labelColor: i === 0 ? '#34D399' : '#E4E4E7',
+        tagText: i === 0 ? 'default' : '', tagColor: '#34D399' }));
+      d = {
+        name: sel.name, role: sel.role, rank: sel.rank, notes: sel.notes, base: sel.base, license: sel.license,
+        statusLabel: sm.label, statusColor: sm.color, statusGlow: sm.glow, statusAnim: sm.anim,
+        hfUrl: 'https://huggingface.co/' + sel.base,
+        ft: 'QLoRA r=8 alpha=16', modelfile: sel.modelfile,
+        specs: [ { k:'Parameters', v: sel.params + 'B' }, { k:'Source on disk', v: sel.disk }, { k:'License', v: sel.license }, { k:'Default quant', v: 'Q4_K_M' } ],
+        tierDetail: sel.tiers.map((t) => ({ label: t, desc: this.TIER_META[t] || '' })),
+        commands, disabled, disabledTag: sel.status === 'blocked' ? 'BLOCKED' : 'DOWNLOADING', disabledReason: sel.blockedReason || '',
+        quants,
+      };
+    }
+
+    return {
+      stats, statusTabs, tierChips, cards, resultLabel,
+      query: S.query, onSearch: (e) => this.setState({ query: e.target.value }),
+      isEmpty: list.length === 0,
+      drawerOpen: !!sel, closeDrawer: () => this.setState({ selectedId: null }),
+      d: d || { name:'', role:'', rank:'', notes:'', base:'', license:'', statusLabel:'', statusColor:'#71717A', statusGlow:'none', statusAnim:'', hfUrl:'#', ft:'', modelfile:'', specs:[], tierDetail:[], commands:[], disabled:false, disabledTag:'', disabledReason:'', quants:[] },
+    };
+  }
+}
+</script>
+</body>
+</html>

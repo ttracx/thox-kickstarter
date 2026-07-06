@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes rb-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s cubic-bezier(0.2, 0, 0, 1), transform 0.6s cubic-bezier(0.2, 0, 0, 1); }
+    [data-reveal].rb-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; } }
+    .rb-nav-link { transition: color 0.2s, border-color 0.2s, background 0.2s; }
+    .rb-scroll::-webkit-scrollbar { width: 0; height: 0; }
+    input[type=range].rb-range { -webkit-appearance: none; appearance: none; height: 3px; background: #27272A; border-radius: 999px; outline: none; }
+    input[type=range].rb-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #10B981; cursor: pointer; box-shadow: 0 0 14px rgba(16,185,129,0.5); }
+    input[type=range].rb-range::-moz-range-thumb { width: 16px; height: 16px; border: none; border-radius: 50%; background: #10B981; cursor: pointer; box-shadow: 0 0 14px rgba(16,185,129,0.5); }
+  </style>
+</helmet>
+<div ref="{{ setRoot }}" style="min-height: 100vh; background: #09090B; color: #FAFAFA; font-family: Inter, system-ui, sans-serif; display: flex; align-items: stretch;">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside style="width: 248px; flex-shrink: 0; border-right: 1px solid rgba(255,255,255,0.10); position: sticky; top: 0; height: 100vh; box-sizing: border-box; padding: 28px 20px; display: flex; flex-direction: column; gap: 28px; background: #09090B;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <img src="assets/logos/thox-logo-horiz-whiteout.png" alt="THOX.ai" style="height: 24px; width: auto; align-self: flex-start;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #71717A; line-height: 1.7;">Kickstarter<br>Campaign Runbook</div>
+      <div style="align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #34D399; border: 1px solid rgba(16,185,129,0.4); border-radius: 999px; padding: 4px 10px;">Confidential · Internal</div>
+    </div>
+
+    <nav style="display: flex; flex-direction: column; gap: 2px;">
+      <sc-for list="{{ navItems }}" as="nav" hint-placeholder-count="9">
+        <a href="{{ nav.href }}" data-nav="{{ nav.id }}" onClick="{{ nav.onClick }}" class="rb-nav-link" style="display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: #A1A1AA; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #52525B; width: 16px;">{{ nav.num }}</span>
+          <span style="font-size: 13px; font-weight: 500;">{{ nav.label }}</span>
+        </a>
+      </sc-for>
+    </nav>
+
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #71717A;">Launch in</div>
+      <div style="display: flex; align-items: baseline; gap: 4px; font-family: 'JetBrains Mono', monospace;">
+        <span data-cd="days" style="font-size: 26px; font-weight: 700; color: #34D399;">—</span>
+        <span style="font-size: 12px; color: #71717A;">d</span>
+        <span data-cd="hours" style="font-size: 26px; font-weight: 700; color: #FAFAFA; margin-left: 6px;">—</span>
+        <span style="font-size: 12px; color: #71717A;">h</span>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #52525B; letter-spacing: 0.08em;">JUL 9, 2026 · 9:00 AM PT</div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; padding: 0 40px 120px;">
+    <div style="width: 100%; max-width: 880px;">
+
+      <!-- OVERVIEW -->
+      <section id="overview" data-section="overview" data-screen-label="Overview" style="padding: 56px 0 40px; scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">01 — Mission control</div>
+        <h1 data-reveal style="font-size: 46px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; margin: 18px 0 0; max-width: 640px;">Four devices. One launch. Run it clean.</h1>
+        <p data-reveal style="font-size: 17px; line-height: 1.6; color: #A1A1AA; margin: 20px 0 0; max-width: 560px;">Everything the team needs to take THOX.ai live on Kickstarter: the plan, the run of show, the roles, and the story the hardware tells.</p>
+
+        <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+          <sc-for list="{{ kpis }}" as="kpi" hint-placeholder-count="4">
+            <div data-reveal style="background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 20px 18px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">{{ kpi.label }}</div>
+              <div data-count="{{ kpi.count }}" data-prefix="{{ kpi.prefix }}" data-suffix="{{ kpi.suffix }}" style="font-family: 'JetBrains Mono', monospace; font-size: 27px; font-weight: 700; color: #FAFAFA; letter-spacing: -0.01em;">{{ kpi.display }}</div>
+              <div style="font-size: 12px; color: #52525B;">{{ kpi.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section id="timeline" data-section="timeline" data-screen-label="Timeline" style="padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">02 — Campaign timeline</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">Pre-launch to fulfillment.</h2>
+        <div style="margin-top: 32px; position: relative; padding-left: 26px;">
+          <div style="position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(#10B981, rgba(255,255,255,0.10));"></div>
+          <sc-for list="{{ timeline }}" as="row" hint-placeholder-count="7">
+            <div data-reveal style="position: relative; padding: 0 0 26px;">
+              <div style="position: absolute; left: -26px; top: 3px; width: 11px; height: 11px; border-radius: 50%; background: {{ row.dotBg }}; border: 2px solid #09090B; box-shadow: 0 0 0 1px {{ row.dotRing }};"></div>
+              <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #34D399; min-width: 118px;">{{ row.date }}</span>
+                <span style="font-size: 15px; font-weight: 600;">{{ row.title }}</span>
+              </div>
+              <div style="font-size: 13.5px; line-height: 1.55; color: #A1A1AA; margin: 5px 0 0 132px;">{{ row.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- LAUNCH DAY -->
+      <section id="launchday" data-section="launchday" data-screen-label="Launch Day" style="padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">03 — Launch day run of show</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">July 9. Hour by hour.</h2>
+        <p data-reveal style="font-size: 15px; line-height: 1.6; color: #A1A1AA; margin: 12px 0 0; max-width: 560px;">All times Pacific. Owner in mono. Green rows are hard gates: do not advance until done.</p>
+        <div data-reveal style="margin-top: 28px; border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; overflow: hidden;">
+          <div style="display: grid; grid-template-columns: 92px 1fr 116px; background: #111113; border-bottom: 1px solid rgba(255,255,255,0.10);">
+            <div style="padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">Time</div>
+            <div style="padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">Action</div>
+            <div style="padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">Owner</div>
+          </div>
+          <sc-for list="{{ runOfShow }}" as="slot" hint-placeholder-count="8">
+            <div style="display: grid; grid-template-columns: 92px 1fr 116px; border-bottom: 1px solid rgba(255,255,255,0.06); background: {{ slot.bg }};">
+              <div style="padding: 13px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: {{ slot.timeColor }};">{{ slot.time }}</div>
+              <div style="padding: 13px 16px; font-size: 13.5px; line-height: 1.5; color: #E4E4E7;">{{ slot.action }}</div>
+              <div style="padding: 13px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #A1A1AA;">{{ slot.owner }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- ROLES -->
+      <section id="roles" data-section="roles" data-screen-label="Roles" style="padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">04 — Roles and responsibilities</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">Who owns what.</h2>
+        <div style="margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <sc-for list="{{ roles }}" as="role" hint-placeholder-count="4">
+            <div data-reveal style="background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 16px; font-weight: 600;">{{ role.name }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #34D399; border: 1px solid rgba(16,185,129,0.4); border-radius: 999px; padding: 3px 9px;">{{ role.tag }}</span>
+              </div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #71717A;">{{ role.owner }}</div>
+              <ul style="margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px;">
+                <sc-for list="{{ role.duties }}" as="duty" hint-placeholder-count="3">
+                  <li style="display: flex; gap: 9px; font-size: 13px; line-height: 1.5; color: #A1A1AA;">
+                    <span style="color: #10B981; flex-shrink: 0;">→</span><span>{{ duty }}</span>
+                  </li>
+                </sc-for>
+              </ul>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- DEVICE DEMO -->
+      <section id="devices" data-section="devices" data-screen-label="Device Demo" style="padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">05 — Device demo</div>
+        <h2 data-reveal style="font-size: 32px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">The lineup, and the day it powers.</h2>
+        <p data-reveal style="font-size: 15px; line-height: 1.6; color: #A1A1AA; margin: 12px 0 0; max-width: 580px;">The centerpiece of the pitch. Select a device for its spec card, then play the walkthrough to see how they hand off across one working day.</p>
+
+        <!-- selector -->
+        <div data-reveal style="margin-top: 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+          <sc-for list="{{ devices }}" as="d" hint-placeholder-count="4">
+            <button onClick="{{ d.onSelect }}" style="{{ d.chipStyle }}">
+              <img src="{{ d.img }}" alt="{{ d.name }}" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; background: #000;">
+              <span style="font-size: 13px; font-weight: 600; color: {{ d.chipText }};">{{ d.name }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #71717A;">{{ d.priceLabel }}</span>
+            </button>
+          </sc-for>
+        </div>
+
+        <!-- spec card -->
+        <div data-reveal style="margin-top: 16px; background: #000; border: 1px solid rgba(16,185,129,0.25); border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: 300px 1fr;">
+          <div style="position: relative; background: radial-gradient(circle at 50% 40%, rgba(16,185,129,0.16), transparent 70%); display: flex; align-items: center; justify-content: center; padding: 28px; border-right: 1px solid rgba(255,255,255,0.08);">
+            <img src="{{ dev.img }}" alt="{{ dev.name }}" style="width: 100%; max-width: 240px; aspect-ratio: 4/3; object-fit: contain;">
+          </div>
+          <div style="padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+              <span style="font-size: 22px; font-weight: 700;">{{ dev.name }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #71717A;">from <span style="color: #34D399; font-weight: 700;">{{ dev.priceFrom }}</span> · retail {{ dev.priceRetail }}</span>
+            </div>
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #34D399;">{{ dev.brandLabel }}</div>
+            <p style="font-size: 14px; line-height: 1.6; color: #A1A1AA; margin: 0;">{{ dev.desc }}</p>
+            <div style="height: 1px; background: rgba(255,255,255,0.08); margin: 4px 0;"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px;">
+              <sc-for list="{{ dev.specs }}" as="spec" hint-placeholder-count="4">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #71717A;">{{ spec.k }}</span>
+                  <span style="font-size: 13px; color: #E4E4E7;">{{ spec.v }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top: auto; display: flex; align-items: center; gap: 8px; padding-top: 8px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px rgba(16,185,129,0.7);"></span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #A1A1AA;">Ships {{ dev.ships }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- walkthrough -->
+        <div data-reveal style="margin-top: 16px; background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; padding: 26px 28px 30px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #71717A;">One day · four devices</div>
+            <button onClick="{{ togglePlay }}" style="display: flex; align-items: center; gap: 8px; background: #10B981; color: #04150E; border: none; border-radius: 999px; padding: 8px 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;">{{ playLabel }}</button>
+          </div>
+
+          <!-- stage nodes -->
+          <div style="margin-top: 22px; display: flex; align-items: center; justify-content: space-between; position: relative;">
+            <div style="position: absolute; left: 10px; right: 10px; top: 50%; height: 1px; background: rgba(255,255,255,0.10);"></div>
+            <sc-for list="{{ stages }}" as="st" hint-placeholder-count="6">
+              <button onClick="{{ st.onPick }}" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; background: none; border: none; cursor: pointer; padding: 0;">
+                <span style="width: 20px; height: 20px; border-radius: 50%; background: {{ st.nodeBg }}; border: 2px solid {{ st.nodeBorder }}; box-shadow: {{ st.nodeGlow }}; transition: all 0.3s;"></span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: {{ st.labelColor }};">{{ st.time }}</span>
+              </button>
+            </sc-for>
+          </div>
+
+          <!-- active moment -->
+          <div style="margin-top: 24px; display: grid; grid-template-columns: 130px 1fr; gap: 22px; align-items: center;">
+            <div style="position: relative; background: #000; border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: center;">
+              <img src="{{ day.img }}" alt="{{ day.deviceName }}" style="width: 100%; aspect-ratio: 4/3; object-fit: contain;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #34D399; letter-spacing: 0.06em;">{{ day.time }}</span>
+                <span style="font-size: 15px; font-weight: 600;">{{ day.place }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #A1A1AA; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 3px 9px;">{{ day.deviceName }}</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: #A1A1AA; margin: 0; max-width: 460px;">{{ day.text }}</p>
+            </div>
+          </div>
+
+          <!-- scrubber -->
+          <input type="range" class="rb-range" min="0" max="5" step="1" value="{{ dayStage }}" onChange="{{ onScrub }}" onInput="{{ onScrub }}" style="width: 100%; margin-top: 24px;">
+        </div>
+      </section>
+
+      <!-- TIERS -->
+      <section id="tiers" data-section="tiers" data-screen-label="Tiers" style="padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">06 — Pledge tiers and stretch goals</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">What backers get.</h2>
+        <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+          <sc-for list="{{ devices }}" as="t" hint-placeholder-count="4">
+            <div data-reveal style="background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-size: 16px; font-weight: 600;">{{ t.name }}</span>
+              <div style="display: flex; align-items: baseline; gap: 6px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; color: #34D399;">{{ t.priceFrom }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #71717A;">early bird</span>
+              </div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #52525B;">retail {{ t.priceRetail }}</div>
+              <div style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA; margin-top: 4px;">{{ t.brandLabel }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+          <sc-for list="{{ stretch }}" as="sg" hint-placeholder-count="3">
+            <div data-reveal style="background: #000; border: 1px solid {{ sg.border }}; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; color: {{ sg.amtColor }};">{{ sg.amount }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ sg.tagColor }};">{{ sg.tag }}</span>
+              </div>
+              <div style="font-size: 14px; font-weight: 600;">{{ sg.title }}</div>
+              <div style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA;">{{ sg.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- COMMS -->
+      <section id="comms" data-section="comms" data-screen-label="Comms" style="padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">07 — Comms cadence</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">Keep backers close.</h2>
+        <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 10px;">
+          <sc-for list="{{ comms }}" as="c" hint-placeholder-count="5">
+            <div data-reveal style="display: grid; grid-template-columns: 150px 1fr 130px; gap: 18px; align-items: center; background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 10px; padding: 15px 18px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #34D399;">{{ c.when }}</span>
+              <span style="font-size: 13.5px; color: #E4E4E7; line-height: 1.5;">{{ c.what }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #71717A; text-align: right;">{{ c.channel }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- RISKS -->
+      <section id="risks" data-section="risks" data-screen-label="Risks" style="padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">08 — Risk and mitigation register</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">What could bite, and the plan.</h2>
+        <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 10px;">
+          <sc-for list="{{ risks }}" as="r" hint-placeholder-count="5">
+            <div data-reveal style="background: #111113; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ r.sevColor }}; border: 1px solid {{ r.sevBorder }}; border-radius: 999px; padding: 3px 9px;">{{ r.sev }}</span>
+                <span style="font-size: 15px; font-weight: 600;">{{ r.risk }}</span>
+              </div>
+              <div style="display: flex; gap: 9px; font-size: 13.5px; line-height: 1.55; color: #A1A1AA;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #34D399; flex-shrink: 0; padding-top: 2px;">Fix</span>
+                <span>{{ r.fix }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- TRACKER -->
+      <section id="tracker" data-section="tracker" data-screen-label="Tracker" style="padding: 44px 0 20px; border-top: 1px solid rgba(255,255,255,0.10); scroll-margin-top: 24px;">
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">09 — Funding tracker</div>
+        <h2 data-reveal style="font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 14px 0 0;">The number that matters.</h2>
+        <div data-reveal style="margin-top: 28px; background: #000; border: 1px solid rgba(16,185,129,0.25); border-radius: 18px; padding: 34px 36px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -120px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(16,185,129,0.12), transparent 70%);"></div>
+          <div style="position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">Raised</span>
+              <span data-fund-raised style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700; color: #34D399; letter-spacing: -0.01em;">$0</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px; text-align: right;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A;">Goal</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700; color: #FAFAFA; letter-spacing: -0.01em;">{{ goalDisplay }}</span>
+            </div>
+          </div>
+          <div style="position: relative; margin-top: 22px; height: 12px; background: #1A1A1C; border-radius: 999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <div data-fund-bar style="height: 100%; width: 0%; background: linear-gradient(90deg, #059669, #34D399); border-radius: 999px; transition: width 1.4s cubic-bezier(0.2, 0, 0, 1); box-shadow: 0 0 20px rgba(16,185,129,0.4);"></div>
+          </div>
+          <div style="position: relative; margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <span data-fund-pct style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #FAFAFA;">0%</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #71717A;">Funded</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <span data-fund-backers style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #FAFAFA;">0</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #71717A;">Backers</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #FAFAFA;">{{ trackerState }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #71717A;">Status</span>
+            </div>
+          </div>
+          <div style="position: relative; margin-top: 22px; font-size: 12.5px; line-height: 1.55; color: #52525B; font-family: 'JetBrains Mono', monospace;">{{ trackerNote }}</div>
+        </div>
+        <div style="margin-top: 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #52525B;">THOX.AI LLC · CONFIDENTIAL</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #52525B;">YOUR AI. YOUR DATA. YOUR RULES.</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 900}, &quot;goal&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 10000, &quot;tsType&quot;: &quot;number&quot;, &quot;min&quot;: 1000, &quot;max&quot;: 100000, &quot;step&quot;: 1000, &quot;unit&quot;: &quot;$&quot;, &quot;section&quot;: &quot;Funding&quot;}, &quot;raised&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 0, &quot;tsType&quot;: &quot;number&quot;, &quot;min&quot;: 0, &quot;max&quot;: 100000, &quot;step&quot;: 500, &quot;unit&quot;: &quot;$&quot;, &quot;section&quot;: &quot;Funding&quot;}, &quot;backers&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 0, &quot;tsType&quot;: &quot;number&quot;, &quot;min&quot;: 0, &quot;max&quot;: 5000, &quot;step&quot;: 10, &quot;section&quot;: &quot;Funding&quot;}}">
+class Component extends DCLogic {
+  state = { activeIdx: 0, dayStage: 0, playing: false };
+
+  setRoot = (el) => { this.root = el; };
+
+  // ---- static data ----
+  DEVICES = [
+    { name: 'ThoxKey', img: 'assets/runbook/dev-key.png', priceFrom: '$24', priceRetail: '$39.99', brandLabel: 'Portable workspace key',
+      desc: 'Your THOX workspace on a compact USB key: files, launchers, model assets, and recovery tools. Plug in and keep working across supported computers.',
+      ships: 'Q4 2026',
+      specs: [ {k:'Form', v:'Compact USB key'}, {k:'Connector', v:'USB-A'}, {k:'Carries', v:'Files · launchers · models'}, {k:'Setup', v:'Plug and go'} ] },
+    { name: 'ThoxMini Air', img: 'assets/runbook/dev-air.png', priceFrom: '$69', priceRetail: '$99', brandLabel: 'Wireless companion',
+      desc: 'The battery-powered, wireless version of ThoxMini. Pairs with your devices for portable sessions and quick access without plugging in.',
+      ships: 'Q4 2026',
+      specs: [ {k:'Form', v:'Pocket module'}, {k:'Power', v:'Battery, wireless'}, {k:'Pairing', v:'Wireless to devices'}, {k:'Use', v:'Portable sessions'} ] },
+    { name: 'ThoxMini', img: 'assets/runbook/dev-mini.png', priceFrom: '$149', priceRetail: '$199', brandLabel: 'Compute companion',
+      desc: 'A pocket-sized local AI companion. Connects to a supported computer over USB-C and runs local services, lightweight agents, and offline-first workflows.',
+      ships: 'Q4 2026',
+      specs: [ {k:'Form', v:'Pocket compute'}, {k:'Connector', v:'USB-C'}, {k:'Runs', v:'Local services · agents'}, {k:'Mode', v:'Offline-first'} ] },
+    { name: 'ThoxClip', img: 'assets/runbook/dev-clip.png', priceFrom: '$299', priceRetail: '$399', brandLabel: 'Magnetic phone companion',
+      desc: 'A slim magnetic companion for the back of compatible phones. Keeps local tools and data with your phone, with USB-C access and a MagStack-ready design direction.',
+      ships: 'Q1 2027',
+      specs: [ {k:'Form', v:'Slim magnetic'}, {k:'Attach', v:'Phone back'}, {k:'Connector', v:'USB-C'}, {k:'Direction', v:'MagStack-ready'} ] },
+  ];
+
+  STAGES = [
+    { time: '07:12', place: 'Leaving home', deviceName: 'ThoxClip', devIdx: 3,
+      text: 'Phone in the pocket, ThoxClip on the back. The local workspace leaves the house without a copy, an account, or a cloud round-trip.' },
+    { time: '08:40', place: 'Cafe', deviceName: 'ThoxKey', devIdx: 0,
+      text: 'Plug ThoxKey into the borrowed laptop. Files, launchers, and model assets come up exactly as they were left.' },
+    { time: '12:30', place: 'The desk', deviceName: 'ThoxMini', devIdx: 2,
+      text: 'Back at the desk. ThoxMini over USB-C runs local services and agents at full tilt, offline-first.' },
+    { time: '15:05', place: 'On the move', deviceName: 'ThoxMini Air', devIdx: 1,
+      text: 'Untethered between meetings. ThoxMini Air pairs wirelessly for a quick portable session, no cable needed.' },
+    { time: '18:20', place: 'Trade floor', deviceName: 'ThoxClip', devIdx: 3,
+      text: 'No signal on the floor. Pull the phone: the workspace is right there, local, riding along on ThoxClip.' },
+    { time: '21:00', place: 'Home', deviceName: 'Full stack', devIdx: 2,
+      text: 'The day hands back to the stack. Every edit is already local. Nothing copied, nothing emailed, nothing left in someone else\u2019s cloud.' },
+  ];
+
+  NAV = [
+    { id:'overview', num:'01', label:'Overview' },
+    { id:'timeline', num:'02', label:'Timeline' },
+    { id:'launchday', num:'03', label:'Launch day' },
+    { id:'roles', num:'04', label:'Roles' },
+    { id:'devices', num:'05', label:'Device demo' },
+    { id:'tiers', num:'06', label:'Pledge tiers' },
+    { id:'comms', num:'07', label:'Comms' },
+    { id:'risks', num:'08', label:'Risks' },
+    { id:'tracker', num:'09', label:'Tracker' },
+  ];
+
+  TIMELINE = [
+    { date:'JUN 2026', title:'Pre-launch build', desc:'Landing page live, email list warming, press and creator outreach, and the campaign page in staging.', phase:'pre' },
+    { date:'JUL 9, 2026', title:'Campaign launch', desc:'Live at 9:00 AM PT with all four devices, early-bird tiers, and the launch email out the door.', phase:'launch' },
+    { date:'JUL 2026', title:'Momentum window', desc:'Daily updates, backer replies within the hour, and the first stretch-goal push once the goal is cleared.', phase:'launch' },
+    { date:'AUG 8, 2026', title:'Campaign closes', desc:'All-or-nothing: cards charge only if the $10,000 goal is met. Final 48-hour countdown push.', phase:'launch' },
+    { date:'AUG 2026', title:'BackerKit surveys', desc:'Collect colorways, add-ons, and shipping addresses. Lock the production manifest.', phase:'post' },
+    { date:'SEP\u2013NOV 2026', title:'Production and validation', desc:'Design freeze, validation builds, and radio certification per region. Weekly manufacturing updates.', phase:'post' },
+    { date:'DEC 2026', title:'First deliveries', desc:'ThoxKey, ThoxMini Air, and ThoxMini ship to backers. ThoxClip follows in Q1 2027 after its longer certification path.', phase:'ship' },
+  ];
+
+  RUN = [
+    { time:'06:30', action:'War room online. Verify campaign page, video, images, and all reward tiers render correctly.', owner:'Ops', gate:false },
+    { time:'08:30', action:'Final pre-flight: pricing, shipping estimates, and links checked one last time. Go / no-go call.', owner:'Founders', gate:true },
+    { time:'09:00', action:'Campaign goes live. Flip page to public. Confirm live URL loads for an outside device.', owner:'Ops', gate:true },
+    { time:'09:05', action:'Launch email to full list. Post launch across X, LinkedIn, and community channels.', owner:'Marketing', gate:false },
+    { time:'09:15', action:'Notify press and creators with embargo lifted. Send the media kit link.', owner:'Marketing', gate:false },
+    { time:'10:00', action:'First metrics read: visits, conversion, tier mix. Reply to every early comment and message.', owner:'Community', gate:false },
+    { time:'13:00', action:'Midday update post with early traction. Watch for the funding-goal cross.', owner:'Marketing', gate:false },
+    { time:'17:00', action:'Day-one recap: numbers, top questions, tomorrow\u2019s plan. First campaign update if goal is near.', owner:'Founders', gate:false },
+  ];
+
+  ROLES = [
+    { name:'Campaign lead', tag:'DRI', owner:'Founder · Tommy', duties:['Go / no-go authority on launch','Owns funding target and stretch pacing','Final word on scope and messaging'] },
+    { name:'Marketing and comms', tag:'Reach', owner:'Founder · Craig', duties:['Launch email and social sequence','Press, creator, and community outreach','Daily updates and momentum posts'] },
+    { name:'Community and support', tag:'Backers', owner:'Support pod', duties:['Reply to comments and messages within the hour','Track FAQ themes, feed answers back','Flag risks and refund requests fast'] },
+    { name:'Ops and fulfillment', tag:'Delivery', owner:'Ops pod', duties:['Page, links, and tier QA before launch','BackerKit survey and manifest','Manufacturing and shipping cadence'] },
+  ];
+
+  STRETCH = [
+    { amount:'$10,000', tag:'Goal', title:'Production greenlit', desc:'Every listed reward moves to manufacturing and ships as described.', hit:true },
+    { amount:'$25,000', tag:'Stretch 1', title:'Extra colorway', desc:'Unlock a fourth colorway across the lineup, backer-voted in the survey.', hit:false },
+    { amount:'$50,000', tag:'Stretch 2', title:'Premium cable + case', desc:'Every hardware pledge adds a braided USB-C cable and a travel case.', hit:false },
+  ];
+
+  COMMS = [
+    { when:'Launch day', what:'Launch announcement plus first traction recap to the full list.', channel:'Email · Social' },
+    { when:'Daily · week 1', what:'Short progress update: funding, milestones, and answered questions.', channel:'Update · X' },
+    { when:'Goal cross', what:'\u201cWe\u2019re funded\u201d moment and the first stretch-goal reveal.', channel:'Email · Social' },
+    { when:'Weekly', what:'Behind-the-scenes on production, certification, and the team.', channel:'Update' },
+    { when:'Final 48h', what:'Countdown push and last-call for early-bird pricing.', channel:'Email · Social' },
+  ];
+
+  RISKS = [
+    { sev:'High', risk:'Slow start stalls momentum', fix:'Warm the list pre-launch, line up day-one backers, and front-load press so the first hours show traction.' },
+    { sev:'High', risk:'Certification delays a device', fix:'ThoxClip already carries the longest path and is scheduled for Q1 2027. Never ship uncertified hardware; communicate slips early.' },
+    { sev:'Med', risk:'Component cost or supply swings', fix:'Lock quotes before launch, keep a margin buffer in the goal, and gate stretch add-ons on cleared funding.' },
+    { sev:'Med', risk:'Support volume spikes', fix:'Pre-write the FAQ, staff the community pod for launch week, and template the common replies.' },
+    { sev:'Low', risk:'Messaging drift off-brand', fix:'Single source of truth for device copy. No em dashes, no hype, spec-first. Review posts against the brand voice.' },
+  ];
+
+  scrollTo(id) {
+    const el = this.root && this.root.querySelector('#' + id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 16;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // reveal + count-up + funding bar on intersect
+    const revEls = this.root.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('rb-in');
+        this.root.querySelectorAll('[data-count]').forEach((n) => {
+          if (e.target.contains(n) && !n.dataset.done) { n.dataset.done = '1'; this.countUp(n); }
+        });
+        if (e.target.querySelector && e.target.querySelector('[data-fund-bar]') && !this._fundDone) {
+          this._fundDone = true; this.animateFunding();
+        }
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.2 });
+    revEls.forEach((el) => reduce ? el.classList.add('rb-in') : io.observe(el));
+    if (reduce) { this.root.querySelectorAll('[data-count]').forEach((n) => this.setNum(n, +n.dataset.count)); this.animateFunding(); }
+
+    // scrollspy: pick the last section whose top is above the viewport mid-line;
+    // force the first section when parked near the top.
+    this._secs = Array.from(this.root.querySelectorAll('[data-section]'));
+    this._spy = () => {
+      const line = window.innerHeight * 0.35;
+      let active = this._secs[0];
+      if (window.scrollY > 4) {
+        for (const s of this._secs) {
+          if (s.getBoundingClientRect().top <= line) active = s;
+        }
+      }
+      if (active) this.setActiveNav(active.dataset.section);
+    };
+    this._spy();
+    window.addEventListener('scroll', this._spy, { passive: true });
+    window.addEventListener('resize', this._spy);
+
+    // countdown
+    this.tick(); this._cd = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() { clearInterval(this._cd); clearInterval(this._play); if (this._spy) { window.removeEventListener('scroll', this._spy); window.removeEventListener('resize', this._spy); } }
+
+  setActiveNav(id) {
+    this.root.querySelectorAll('[data-nav]').forEach((a) => {
+      const on = a.dataset.nav === id;
+      a.style.color = on ? '#FAFAFA' : '#A1A1AA';
+      a.style.background = on ? 'rgba(16,185,129,0.08)' : 'transparent';
+      a.style.borderColor = on ? 'rgba(16,185,129,0.35)' : 'transparent';
+    });
+  }
+
+  setNum(n, val) {
+    const pre = n.dataset.prefix === 'undefined' ? '' : (n.dataset.prefix || '');
+    const suf = n.dataset.suffix === 'undefined' ? '' : (n.dataset.suffix || '');
+    n.textContent = pre + Math.round(val).toLocaleString('en-US') + suf;
+  }
+  countUp(n) {
+    const target = +n.dataset.count; if (!isFinite(target)) return;
+    const dur = 1100, t0 = performance.now();
+    const step = (t) => {
+      const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      this.setNum(n, target * e);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  animateFunding() {
+    const raised = this.props.raised ?? 0;
+    const goal = this.props.goal ?? 10000;
+    const backers = this.props.backers ?? 0;
+    const pct = Math.min(100, Math.round((raised / goal) * 100));
+    const bar = this.root.querySelector('[data-fund-bar]');
+    const rEl = this.root.querySelector('[data-fund-raised]');
+    const pEl = this.root.querySelector('[data-fund-pct]');
+    const bEl = this.root.querySelector('[data-fund-backers]');
+    if (bar) requestAnimationFrame(() => { bar.style.width = pct + '%'; });
+    const dur = 1300, t0 = performance.now();
+    const step = (t) => {
+      const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      if (rEl) rEl.textContent = '$' + Math.round(raised * e).toLocaleString('en-US');
+      if (pEl) pEl.textContent = Math.round(pct * e) + '%';
+      if (bEl) bEl.textContent = Math.round(backers * e).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  tick() {
+    const target = Date.UTC(2026, 6, 9, 16, 0, 0); // Jul 9 2026 09:00 PT (PDT = UTC-7)
+    let diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000);
+    const dEl = this.root && this.root.querySelector('[data-cd="days"]');
+    const hEl = this.root && this.root.querySelector('[data-cd="hours"]');
+    if (dEl) dEl.textContent = d;
+    if (hEl) hEl.textContent = String(h).padStart(2, '0');
+  }
+
+  selectDevice(i) { this.setState({ activeIdx: i }); }
+  pickStage(i) { this.stopPlay(); this.setState({ dayStage: i }); }
+  onScrub = (e) => { this.stopPlay(); this.setState({ dayStage: +e.target.value }); };
+  stopPlay() { if (this._play) { clearInterval(this._play); this._play = null; } if (this.state.playing) this.setState({ playing: false }); }
+  togglePlay = () => {
+    if (this.state.playing) { this.stopPlay(); return; }
+    this.setState({ playing: true, dayStage: this.state.dayStage >= 5 ? 0 : this.state.dayStage });
+    this._play = setInterval(() => {
+      this.setState((s) => {
+        if (s.dayStage >= 5) { clearInterval(this._play); this._play = null; return { playing: false }; }
+        return { dayStage: s.dayStage + 1 };
+      });
+    }, 1900);
+  };
+
+  renderVals() {
+    const goal = this.props.goal ?? 10000;
+    const raised = this.props.raised ?? 0;
+    const backers = this.props.backers ?? 0;
+    const pct = Math.min(100, Math.round((raised / goal) * 100));
+    const isPre = raised <= 0;
+
+    const devices = this.DEVICES.map((d, i) => {
+      const on = i === this.state.activeIdx;
+      return Object.assign({}, d, {
+        priceLabel: 'from ' + d.priceFrom,
+        onSelect: () => this.selectDevice(i),
+        chipText: on ? '#FAFAFA' : '#A1A1AA',
+        chipStyle: 'display: flex; flex-direction: column; gap: 7px; padding: 10px; text-align: left; cursor: pointer; border-radius: 12px; background: ' + (on ? '#000' : '#111113') + '; border: 1px solid ' + (on ? 'rgba(16,185,129,0.5)' : 'rgba(255,255,255,0.10)') + '; box-shadow: ' + (on ? '0 0 22px rgba(16,185,129,0.16)' : 'none') + '; transition: all 0.2s;',
+      });
+    });
+
+    const stages = this.STAGES.map((s, i) => {
+      const on = i === this.state.dayStage;
+      const done = i < this.state.dayStage;
+      return {
+        time: s.time,
+        onPick: () => this.pickStage(i),
+        nodeBg: on ? '#10B981' : (done ? '#059669' : '#1A1A1C'),
+        nodeBorder: on ? '#34D399' : (done ? '#059669' : 'rgba(255,255,255,0.14)'),
+        nodeGlow: on ? '0 0 16px rgba(16,185,129,0.6)' : 'none',
+        labelColor: on ? '#34D399' : '#71717A',
+      };
+    });
+
+    const st = this.STAGES[this.state.dayStage];
+    const day = { time: st.time, place: st.place, deviceName: st.deviceName, text: st.text, img: this.DEVICES[st.devIdx].img };
+
+    const timeline = this.TIMELINE.map((r) => {
+      const c = r.phase === 'launch' ? '#10B981' : (r.phase === 'ship' ? '#34D399' : '#52525B');
+      return Object.assign({}, r, { dotBg: c, dotRing: r.phase === 'launch' ? 'rgba(16,185,129,0.4)' : 'rgba(255,255,255,0.1)' });
+    });
+
+    const runOfShow = this.RUN.map((s) => ({
+      time: s.time, action: s.action, owner: s.owner,
+      bg: s.gate ? 'rgba(16,185,129,0.06)' : 'transparent',
+      timeColor: s.gate ? '#34D399' : '#A1A1AA',
+    }));
+
+    const stretch = this.STRETCH.map((s) => ({
+      amount: s.amount, tag: s.tag, title: s.title, desc: s.desc,
+      border: s.hit ? 'rgba(16,185,129,0.4)' : 'rgba(255,255,255,0.10)',
+      amtColor: s.hit ? '#34D399' : '#FAFAFA',
+      tagColor: s.hit ? '#34D399' : '#71717A',
+    }));
+
+    const risks = this.RISKS.map((r) => {
+      const map = { High: ['#F87171', 'rgba(248,113,113,0.4)'], Med: ['#FBBF24', 'rgba(251,191,36,0.4)'], Low: ['#A1A1AA', 'rgba(255,255,255,0.14)'] };
+      const [sc, sb] = map[r.sev] || map.Low;
+      return { sev: r.sev, risk: r.risk, fix: r.fix, sevColor: sc, sevBorder: sb };
+    });
+
+    const kpis = [
+      { label: 'Funding goal', count: 10000, prefix: '$', suffix: '', display: '$0', sub: 'All-or-nothing' },
+      { label: 'Devices', count: 4, prefix: '', suffix: '', display: '0', sub: 'Key · Air · Mini · Clip' },
+      { label: 'Launch', count: NaN, prefix: '', suffix: '', display: 'Jul 9', sub: '9:00 AM PT' },
+      { label: 'First ship', count: NaN, prefix: '', suffix: '', display: 'Dec 2026', sub: 'Clip Q1 2027' },
+    ];
+
+    const navItems = this.NAV.map((n) => ({
+      id: n.id, num: n.num, label: n.label, href: '#' + n.id,
+      onClick: (ev) => { ev.preventDefault(); this.scrollTo(n.id); },
+    }));
+
+    return {
+      setRoot: this.setRoot,
+      navItems, kpis, timeline, runOfShow, roles: this.ROLES, comms: this.COMMS, risks, stretch,
+      devices, dev: this.DEVICES[this.state.activeIdx],
+      stages, day, dayStage: this.state.dayStage,
+      onScrub: this.onScrub, togglePlay: this.togglePlay,
+      playLabel: this.state.playing ? 'Pause' : (this.state.dayStage >= 5 ? 'Replay' : 'Play day'),
+      goalDisplay: '$' + goal.toLocaleString('en-US'),
+      trackerState: isPre ? 'Pre-launch' : (pct >= 100 ? 'Funded' : 'Live'),
+      trackerNote: isPre
+        ? 'Pre-launch. The campaign opens July 9, 2026. Set the raised and backers tweaks during the campaign to turn this into a live tracker.'
+        : 'Live figures. Update the raised and backers tweaks to keep the tracker current.',
+    };
+  }
+}
+</script>
+</body>
+</html>

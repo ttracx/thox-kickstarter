@@ -29,6 +29,22 @@ Key design files include:
 
 The primary design file is `designs/thox-ai-kickstarter-campaign-handoff/project/THOX Kickstarter Story.html`.
 
+## Campaign digital content & production (`kickstarter/`)
+
+Deployable, brand-consistent campaign content generated from the design handoff and kept on the THOX Experience Fabric tokens. Everything is browsable and interactive — start at the hub and open any page in a browser.
+
+| What | Where | Notes |
+|---|---|---|
+| **Campaign site hub** | [`kickstarter/site/index.html`](kickstarter/site/index.html) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
+| **ThoxOS Demo** (flagship) | [`kickstarter/site/thoxos-demo.html`](kickstarter/site/thoxos-demo.html) | The full realistic ThoxOS desktop: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. |
+| **Production Tracker** | [`kickstarter/site/production-tracker.html`](kickstarter/site/production-tracker.html) | Interactive film shot tracker — device capture inventory + 117 storyboard shots, To shoot → Captured → Approved, notes, JSON/CSV export, saved in-browser. |
+| **Visual storyboard** | [`kickstarter/site/storyboard.html`](kickstarter/site/storyboard.html) | QA-approved previz, 13 modules, 9:40 master. |
+| **Kickstarter Story** | [`kickstarter/story.html`](kickstarter/story.html) · [`story.md`](kickstarter/story.md) | Self-contained Story page + paste-ready copy. |
+| **Production inventory & checklist** | [`kickstarter/PRODUCTION.md`](kickstarter/PRODUCTION.md) | Printable device + scene checklist and capture workflow. |
+| **Full guide** | [`kickstarter/README.md`](kickstarter/README.md) | Deliverable map, provenance, and build/regenerate instructions. |
+
+Also included under `kickstarter/site/`: Campaign Runbook, Model Gallery, Software Demo, ThoxOS Mini Demo, and the Campaign Animatic — the interactive design prototypes, rendered by the vendored runtime.
+
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
 This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and repository-standard planning docs.
