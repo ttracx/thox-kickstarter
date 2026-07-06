@@ -29,8 +29,8 @@ DEVICES = [
         "callouts": ["Portable THOX workspace", "USB plug-in workflow", "Local-first file access", "Stores setup tools + docs", "Companion to ThoxOS devices"],
         "footer": "Carry your workspace anywhere.",
         "honest": "Portable workspace + storage device. Not a standalone AI computer.",
-        "img": REPO / "assets/device/thoxkey-matte-black.png",
-        "fit": "contain",
+        "img": REPO / "assets/device/thoxkey-matte-black-cutout.png",
+        "fit": "contain", "cutout": True,
     },
     {
         "key": "thoxmini", "name_w": "Thox", "name_g": "Mini",
@@ -67,8 +67,59 @@ DEVICES = [
 ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.6" '
         'stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>')
 
+# Background knockout for studio renders on a light ground: flood from the
+# borders, removing only pixels close to the sampled light background (global
+# threshold), stopping at the dark device edge (keeps body, USB, LED); feathers
+# the seam. Skipped for images that already have a transparent background.
+KNOCKOUT = """<script>
+(function(){
+  var im = new Image();
+  im.onload = function(){
+    var w = im.naturalWidth, h = im.naturalHeight;
+    var work = document.createElement('canvas'); work.width = w; work.height = h;
+    var wx = work.getContext('2d'); wx.drawImage(im, 0, 0);
+    var d = wx.getImageData(0, 0, w, h), a = d.data;
+    function px(x,y){ return (y*w+x)*4; }
+    var cs=[px(2,2),px(w-3,2),px(2,h-3),px(w-3,h-3)], br=0,bg=0,bb=0;
+    for (var c=0;c<4;c++){ br+=a[cs[c]]; bg+=a[cs[c]+1]; bb+=a[cs[c]+2]; }
+    br/=4; bg/=4; bb/=4;
+    var HARD=60, SOFT=96;
+    function dist(o){ var dr=a[o]-br, dg=a[o+1]-bg, db=a[o+2]-bb; return Math.sqrt(dr*dr+dg*dg+db*db); }
+    var vis = new Uint8Array(w*h);
+    var sx = new Int32Array(w*h), sy = new Int32Array(w*h), sp = 0;
+    function push(x,y){ var id=y*w+x; if(!vis[id]){ vis[id]=1; sx[sp]=x; sy[sp]=y; sp++; } }
+    for (var x=0;x<w;x++){ push(x,0); push(x,h-1); }
+    for (var y=0;y<h;y++){ push(0,y); push(w-1,y); }
+    while (sp>0){
+      sp--; var cx=sx[sp], cy=sy[sp], o=(cy*w+cx)*4;
+      var dd=dist(o);
+      if (dd>=SOFT) continue;
+      a[o+3] = dd<=HARD ? 0 : Math.round(255*(dd-HARD)/(SOFT-HARD));
+      var nb=[[cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]];
+      for (var k=0;k<4;k++){
+        var nx=nb[k][0], ny=nb[k][1];
+        if(nx<0||ny<0||nx>=w||ny>=h) continue;
+        push(nx,ny);
+      }
+    }
+    wx.putImageData(d,0,0);
+    var dev=document.getElementById('dev'); dev.width=w; dev.height=h;
+    dev.getContext('2d').drawImage(work,0,0);
+    document.body.setAttribute('data-ready','1');
+  };
+  im.src = "__IMG__";
+})();
+</script>"""
+
 def card(d):
     img = uri(d["img"], "image/png")
+    if d.get("cutout"):
+        # Image already has a transparent background — draw it as-is.
+        right_el = f'<div class="right"><img id="dev" src="{img}" alt="{d["name_w"]}{d["name_g"]}" onload="document.body.setAttribute(\'data-ready\',\'1\')"/></div>'
+        knockout = ""
+    else:
+        right_el = '<div class="right"><canvas id="dev"></canvas></div>'
+        knockout = KNOCKOUT.replace("__IMG__", img)
     callouts = "\n".join(
         f'<div class="co"><div class="ico">{ICON}</div><div class="cot">{c}</div></div>'
         for c in d["callouts"])
@@ -97,7 +148,7 @@ def card(d):
   .ico svg{{width:20px;height:20px;}}
   .cot{{font-size:18px;font-weight:500;color:#FAFAFA;}}
   .right{{position:relative;display:flex;align-items:center;justify-content:center;}}
-  .right canvas{{max-width:100%;max-height:600px;filter:drop-shadow(0 26px 52px rgba(0,0,0,0.65)) drop-shadow(0 0 60px rgba(16,185,129,0.14));}}
+  .right canvas,.right img{{max-width:100%;max-height:600px;filter:drop-shadow(0 26px 52px rgba(0,0,0,0.65)) drop-shadow(0 0 60px rgba(16,185,129,0.14));}}
   .footbar{{position:absolute;left:72px;right:72px;bottom:56px;display:flex;align-items:center;gap:16px;
     border:1px solid rgba(52,211,153,0.28);border-radius:16px;padding:18px 26px;background:rgba(16,185,129,0.05);}}
   .footbar .fi{{width:34px;height:34px;flex:none;border:1px solid rgba(52,211,153,0.5);border-radius:9px;
@@ -116,54 +167,11 @@ def card(d):
     <div class="desc">{d['desc']}</div>
     <div class="cos">{callouts}</div>
   </div>
-  <div class="right"><canvas id="dev"></canvas></div>
+  {right_el}
   <div class="footbar"><div class="fi">{ICON}</div><div class="footline">{d['footer']}</div></div>
   <div class="honest">{d['honest']}</div>
 </div>
-<script>
-// Background knockout: flood from the borders, removing only pixels close to
-// the sampled light studio background (global threshold). Stops at the dark
-// device edge (keeps the matte-black body, USB, and LED). Then feathers the
-// 1px seam and fades any residual light shadow so the device floats cleanly.
-(function(){{
-  var im = new Image();
-  im.onload = function(){{
-    var w = im.naturalWidth, h = im.naturalHeight;
-    var work = document.createElement('canvas'); work.width = w; work.height = h;
-    var wx = work.getContext('2d'); wx.drawImage(im, 0, 0);
-    var d = wx.getImageData(0, 0, w, h), a = d.data;
-    // sample background = average of the four corners
-    function px(x,y){{ return (y*w+x)*4; }}
-    var cs=[px(2,2),px(w-3,2),px(2,h-3),px(w-3,h-3)], br=0,bg=0,bb=0;
-    for (var c=0;c<4;c++){{ br+=a[cs[c]]; bg+=a[cs[c]+1]; bb+=a[cs[c]+2]; }}
-    br/=4; bg/=4; bb/=4;
-    var HARD=60, SOFT=96;            // <HARD: bg; HARD..SOFT: partial fade
-    function dist(o){{ var dr=a[o]-br, dg=a[o+1]-bg, db=a[o+2]-bb; return Math.sqrt(dr*dr+dg*dg+db*db); }}
-    var vis = new Uint8Array(w*h);
-    var sx = new Int32Array(w*h), sy = new Int32Array(w*h), sp = 0;
-    function push(x,y){{ var id=y*w+x; if(!vis[id]){{ vis[id]=1; sx[sp]=x; sy[sp]=y; sp++; }} }}
-    for (var x=0;x<w;x++){{ push(x,0); push(x,h-1); }}
-    for (var y=0;y<h;y++){{ push(0,y); push(w-1,y); }}
-    while (sp>0){{
-      sp--; var cx=sx[sp], cy=sy[sp], o=(cy*w+cx)*4;
-      var dd=dist(o);
-      if (dd>=SOFT) continue;                 // reached the device — stop
-      a[o+3] = dd<=HARD ? 0 : Math.round(255*(dd-HARD)/(SOFT-HARD)); // feather seam
-      var nb=[[cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]];
-      for (var k=0;k<4;k++){{
-        var nx=nb[k][0], ny=nb[k][1];
-        if(nx<0||ny<0||nx>=w||ny>=h) continue;
-        push(nx,ny);
-      }}
-    }}
-    wx.putImageData(d,0,0);
-    var dev=document.getElementById('dev'); dev.width=w; dev.height=h;
-    dev.getContext('2d').drawImage(work,0,0);
-    document.body.setAttribute('data-ready','1');
-  }};
-  im.src = "{img}";
-}})();
-</script></body></html>"""
+{knockout}</body></html>"""
 
 manifest = []
 for d in DEVICES:
