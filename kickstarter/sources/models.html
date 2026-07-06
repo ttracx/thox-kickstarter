@@ -155,7 +155,7 @@
   <div class="controls">
     <input type="search" id="q" placeholder="Search models, base, use case…" />
     <select id="fsource"><option value="">Any source</option><option value="ollama">On Ollama</option><option value="hf">On Hugging Face</option></select>
-    <select id="fgroup"><option value="">All families</option><option value="core">ThoxLLM core</option><option value="nellie">Nellie agents</option><option value="pro">THOX Pro</option><option value="cluster">MagStack cluster</option></select>
+    <select id="fgroup"><option value="">All families</option><option value="core">ThoxLLM core</option><option value="nellie">Nellie agents</option><option value="pro">THOX Edge Pro</option><option value="cluster">MagStack cluster</option></select>
     <span class="chip" data-cap="vision">vision</span>
     <span class="chip" data-cap="think">thinking</span>
     <span class="chip" data-cap="tools">tools</span>
@@ -272,7 +272,7 @@ const M = [
 ];
 
 const el=(t,c,h)=>{const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
-const GROUP={core:"ThoxLLM core",nellie:"Nellie agent",pro:"THOX Pro",cluster:"MagStack cluster"};
+const GROUP={core:"ThoxLLM core",nellie:"Nellie agent",pro:"THOX Edge Pro",cluster:"MagStack cluster"};
 
 // device journey
 let activeDev=null;
