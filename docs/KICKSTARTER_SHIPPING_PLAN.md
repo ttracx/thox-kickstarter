@@ -594,15 +594,15 @@ The hero video (2:30) MUST show:
       LED strip pulsing emerald
 - [ ] An iPhone (running thoxos-companion or thox-terminal)
       controlling the ThoxNova over Tailscale
-- [ ] Marketing site at thox.ai matching the Kickstarter copy
+- [x] Marketing site at thox.ai matching the Kickstarter copy
 
 The Kickstarter page MUST link to:
 
-- [ ] 4-device pricing tier in `docs/REWARDS_MATRIX.md`
+- [x] 4-device pricing tier in `docs/REWARDS_MATRIX.md`
 - [ ] Spec sheet for each device in
       `thox-3dprint-kit/devices/<device>/v2/README.md`
-- [ ] Press kit at `docs/PRESS_KIT.md`
-- [ ] Backer FAQ at `docs/FAQ.md`
+- [x] Press kit at `docs/PRESS_KIT.md`
+- [x] Backer FAQ at `docs/FAQ.md`
 
 ## Dispatch
 
