@@ -8,7 +8,12 @@
 [![Local-first](https://img.shields.io/badge/local--first-yes-10B981?style=flat-square)](#privacy-positioning)
 [![Privacy-first](https://img.shields.io/badge/privacy--first-yes-10B981?style=flat-square)](#privacy-positioning)
 [![Status](https://img.shields.io/badge/status-quick--launch%20ready-d29922?style=flat-square)](#launch-readiness)
+[![Live Preview](https://img.shields.io/badge/live%20preview-ttracx.github.io%2Fthox--kickstarter-10B981?style=flat-square)](https://ttracx.github.io/thox-kickstarter/)
 <!-- /thox-badges -->
+
+## 🌐 Live campaign preview
+
+**[https://ttracx.github.io/thox-kickstarter/](https://ttracx.github.io/thox-kickstarter/)** — the full multi-page campaign, deployed on GitHub Pages. Every page link in this README opens the live site.
 
 ## Design Assets
 
@@ -37,28 +42,28 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 
 | What | Where | Notes |
 |---|---|---|
-| **Campaign site hub** | [`kickstarter/site/index.html`](kickstarter/site/index.html) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
-| **What's in the Box** | [`kickstarter/site/packaging.html`](kickstarter/site/packaging.html) | Retail-packaging showcase of what backers receive: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. |
-| **Founders Club & add-ons** | [`kickstarter/site/founders.html`](kickstarter/site/founders.html) | The Founders tier (back all four devices → numbered membership, pick-2 swag, 12-month MeshStack) plus every swag item as an add-on with suggested pricing. |
-| **THOX MagDisplay** (roadmap) | [`kickstarter/site/magdisplay.html`](kickstarter/site/magdisplay.html) | Upcoming companion display (Spring 2027): pocket-class color e-ink surface that MagStacks onto ThoxMini / Air / Clip / Nova. Hero, colorways, user journey, specs, compatibility, and exploded anatomy. |
-| **THOX Experience Fabric** | [`kickstarter/site/experience-fabric.html`](kickstarter/site/experience-fabric.html) | The scientific design system + Rust runtime behind every surface: three planes, locked nav, one visible agent, four-tier memory, generated tokens, certified Experience Score ≥ 90. |
-| **ThoxOS Mini Demo** | [`kickstarter/site/thoxos-mini-demo.html`](kickstarter/site/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
-| **ThoxOS Demo** (flagship) | [`kickstarter/site/thoxos-demo.html`](kickstarter/site/thoxos-demo.html) | The **full ThoxOS** desktop that ships on THOX Nova and the THOX Edge Series: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. |
-| **ThoxLLM Model Gallery** | [`kickstarter/site/models.html`](kickstarter/site/models.html) | Model gallery + download center for the real THOX models: filter, match to your device, copy the exact `ollama pull` / Hugging Face command. Links to the [catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/thox-ai). |
+| **Campaign site hub** | [`index.html` ↗](https://ttracx.github.io/thox-kickstarter/) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
+| **What's in the Box** | [`packaging.html` ↗](https://ttracx.github.io/thox-kickstarter/packaging.html) | Retail-packaging showcase of what backers receive: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. |
+| **Founders Club & add-ons** | [`founders.html` ↗](https://ttracx.github.io/thox-kickstarter/founders.html) | The Founders tier (back all four devices → numbered membership, pick-2 swag, 12-month MeshStack) plus every swag item as an add-on with suggested pricing. |
+| **THOX MagDisplay** (roadmap) | [`magdisplay.html` ↗](https://ttracx.github.io/thox-kickstarter/magdisplay.html) | Upcoming companion display (Spring 2027): pocket-class color e-ink surface that MagStacks onto ThoxMini / Air / Clip / Nova. Hero, colorways, user journey, specs, compatibility, and exploded anatomy. |
+| **THOX Experience Fabric** | [`experience-fabric.html` ↗](https://ttracx.github.io/thox-kickstarter/experience-fabric.html) | The scientific design system + Rust runtime behind every surface: three planes, locked nav, one visible agent, four-tier memory, generated tokens, certified Experience Score ≥ 90. |
+| **ThoxOS Mini Demo** | [`thoxos-mini-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
+| **ThoxOS Demo** (flagship) | [`thoxos-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-demo.html) | The **full ThoxOS** desktop that ships on THOX Nova and the THOX Edge Series: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. |
+| **ThoxLLM Model Gallery** | [`models.html` ↗](https://ttracx.github.io/thox-kickstarter/models.html) | Model gallery + download center for the real THOX models: filter, match to your device, copy the exact `ollama pull` / Hugging Face command. Links to the [catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/thox-ai). |
 | **MeshStack app** (5 platforms) | `kickstarter/site/meshstack-{ios,ipad,macos,windows,android}.html` | Fully-functional standalone MeshStack demos: identity, pairing, connect, monitor. |
 | **Flagship devices** (4) | `kickstarter/site/thox-{nova,pro,pro-max,pro-ultra}.html` | Interactive product pages for the upcoming THOX Nova and THOX Edge Series (Pro / Pro Max / Pro Ultra) edge-AI line, which run the full ThoxOS. |
-| **ThoxMigrate** | [`kickstarter/site/thoxmigrate.html`](kickstarter/site/thoxmigrate.html) | Cloud-to-edge AI migration tool (scan, map, migrate). |
+| **ThoxMigrate** | [`thoxmigrate.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxmigrate.html) | Cloud-to-edge AI migration tool (scan, map, migrate). |
 | **Campaign animatic** | `kickstarter/site/animatic.html` | Working-concept animatic video of the storyboard (`assets/video/`). Device close-ups in `assets/device/video/`. |
 | **Copy system** | [`kickstarter/copy.md`](kickstarter/copy.md) | Full + graphic-ready device copy; single source of truth. |
-| **Production Tracker** | [`kickstarter/site/production-tracker.html`](kickstarter/site/production-tracker.html) | Interactive film shot tracker — device capture inventory + 117 storyboard shots, To shoot → Captured → Approved, notes, JSON/CSV export, saved in-browser. |
-| **Visual storyboard** | [`kickstarter/site/storyboard.html`](kickstarter/site/storyboard.html) | QA-approved previz, 13 modules, 9:40 master. |
+| **Production Tracker** | [`production-tracker.html` ↗](https://ttracx.github.io/thox-kickstarter/production-tracker.html) | Interactive film shot tracker — device capture inventory + 117 storyboard shots, To shoot → Captured → Approved, notes, JSON/CSV export, saved in-browser. |
+| **Visual storyboard** | [`storyboard.html` ↗](https://ttracx.github.io/thox-kickstarter/storyboard.html) | QA-approved previz, 13 modules, 9:40 master. |
 | **Kickstarter Story** | [`kickstarter/story.html`](kickstarter/story.html) · [`story.md`](kickstarter/story.md) | Self-contained Story page + paste-ready copy. |
 | **Production inventory & checklist** | [`kickstarter/PRODUCTION.md`](kickstarter/PRODUCTION.md) | Printable device + scene checklist and capture workflow. |
 | **Full guide** | [`kickstarter/README.md`](kickstarter/README.md) | Deliverable map, provenance, and build/regenerate instructions. |
 
 Also included under `kickstarter/site/`: Campaign Runbook, Model Gallery, Software Demo, and the Campaign Animatic — the interactive design prototypes, rendered by the vendored runtime.
 
-**One platform, two scales.** ThoxOS Mini (the four launch devices) and full ThoxOS (the Nova and Edge Series roadmap) feel like one product because both run on the **THOX Experience Fabric** — a scientific design system plus a Rust runtime that locks navigation, keeps a single visible agent (THOXY), enforces four-tier memory, generates every design token from one source, and gates each surface on a certified **Experience Score ≥ 90**. It is also THOX's adopted internal development framework. See [`kickstarter/site/experience-fabric.html`](kickstarter/site/experience-fabric.html).
+**One platform, two scales.** ThoxOS Mini (the four launch devices) and full ThoxOS (the Nova and Edge Series roadmap) feel like one product because both run on the **THOX Experience Fabric** — a scientific design system plus a Rust runtime that locks navigation, keeps a single visible agent (THOXY), enforces four-tier memory, generates every design token from one source, and gates each surface on a certified **Experience Score ≥ 90**. It is also THOX's adopted internal development framework. See [`experience-fabric.html` ↗](https://ttracx.github.io/thox-kickstarter/experience-fabric.html).
 
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
