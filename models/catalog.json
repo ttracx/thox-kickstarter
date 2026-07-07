@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0",
+  "description": "Canonical THOX.ai model registry — the single source of truth for every model surfaced by the campaign. Reviewed and kept in sync with the live sources (Hugging Face org Thox-ai + Ollama namespace Thox-ai) by the Model Review agent team. See docs/MODEL_PROFILE_STANDARD.md for the field contract and scripts/review_thox_models.py for validation.",
+  "sources": {
+    "huggingface_org": "https://huggingface.co/Thox-ai",
+    "ollama_namespace": "https://ollama.com/Thox-ai",
+    "catalog_docs": "https://www.thox.ai/docs/model-catalog",
+    "compatibility_tool": "https://www.thox.ai/docs/model-compatibility"
+  },
+  "last_reviewed": "2026-07-07",
+  "namespaces": {
+    "huggingface": "Thox-ai",
+    "ollama": "Thox-ai"
+  },
+  "families": {
+    "core": "ThoxLLM core — the public on-device assistants that ship on THOX devices",
+    "webby": "ThoxWebby — browser-tier WebGPU models that run entirely in the browser",
+    "nellie": "Nellie agents — the THOX agent runtime family on Ollama",
+    "pro": "THOX Edge Pro — professional-tier models (roadmap)",
+    "cluster": "MagStack cluster — distributed enterprise models (roadmap, private)"
+  },
+  "models": [
+    {
+      "id": "thoxmini-3b",
+      "name": "ThoxMini-3B",
+      "family": "core",
+      "params": "3B",
+      "base": "meta-llama/Llama-3.2-3B-Instruct",
+      "license": "llama3.2",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools"],
+      "devices": ["ThoxMini Air", "ThoxMini", "ThoxKey"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxMini-3B",
+        "ollama": "Thox-ai/thoxmini-3b"
+      },
+      "blurb": "Pocket-sized local assistant. The default for the smallest THOX devices."
+    },
+    {
+      "id": "thoxforge-7b",
+      "name": "ThoxForge-7B",
+      "family": "core",
+      "params": "7B",
+      "base": "mistralai/Mistral-7B-Instruct-v0.3",
+      "license": "apache-2.0",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "code"],
+      "devices": ["ThoxMini", "ThoxNova"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxForge-7B",
+        "ollama": "Thox-ai/thoxforge-7b"
+      },
+      "blurb": "General-purpose coding and reasoning workhorse for everyday local workflows."
+    },
+    {
+      "id": "thoxglobal-7b",
+      "name": "ThoxGlobal-7B",
+      "family": "core",
+      "params": "7B",
+      "base": "Qwen/Qwen2.5-7B-Instruct",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools"],
+      "devices": ["ThoxMini", "ThoxNova"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxGlobal-7B",
+        "ollama": "Thox-ai/thoxglobal-7b"
+      },
+      "blurb": "Multilingual model tuned for cross-language work across 30+ languages."
+    },
+    {
+      "id": "thoxwave-8b",
+      "name": "ThoxWave-8B",
+      "family": "core",
+      "params": "8B",
+      "base": "dphn/dolphin-2.9-llama3-8b",
+      "license": "llama3",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools"],
+      "devices": ["ThoxMini", "ThoxNova"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxWave-8B",
+        "ollama": "Thox-ai/thoxwave-8b"
+      },
+      "blurb": "Expressive long-form model for creative and open-ended generation."
+    },
+    {
+      "id": "thoxnova-12b-core",
+      "name": "ThoxNova-12B-Core",
+      "family": "core",
+      "params": "12B",
+      "base": "google/gemma-4-12B",
+      "license": "gemma",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxNova"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxNova-12B-Core",
+        "ollama": "Thox-ai/thoxnova-12b-core"
+      },
+      "blurb": "Flagship reasoning core. The most capable single-node THOX model."
+    },
+    {
+      "id": "thoxnova-12b-agent",
+      "name": "ThoxNova-12B-Agent",
+      "family": "core",
+      "params": "12B",
+      "base": "google/gemma-4-12B-it-assistant",
+      "license": "gemma",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxNova"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxNova-12B-Agent",
+        "ollama": "Thox-ai/thoxnova-12b-agent"
+      },
+      "blurb": "Agentic flagship with tool use and multi-step thinking for automations. Pairs with ThoxNova-12B-Core for speculative decoding."
+    },
+    {
+      "id": "thoxgemma4",
+      "name": "ThoxGemma4",
+      "family": "core",
+      "params": "12B",
+      "base": "google/gemma-4-12b-it",
+      "license": "gemma",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxNova"],
+      "context": "256K",
+      "disk": "7.4 GB",
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/thoxgemma4:12b-q4_k_m"
+      },
+      "blurb": "Gemma-4 12B tuned build (Q4_K_M) with tools and thinking and a 256K context window, ready for agent flows."
+    },
+    {
+      "id": "thoxwebby-gemma-4-e2b",
+      "name": "ThoxWebby-Gemma-4-E2B",
+      "family": "webby",
+      "params": "2B (E2B)",
+      "base": "google/gemma-4-E2B-it-qat-mobile-transformers",
+      "license": "gemma",
+      "visibility": "gated",
+      "status": "live",
+      "capabilities": ["tools", "browser"],
+      "devices": ["ThoxKey", "ThoxMini Air"],
+      "sources": {
+        "huggingface": "Thox-ai/ThoxWebby-Gemma-4-E2B",
+        "ollama": null
+      },
+      "links": {
+        "space": "https://huggingface.co/spaces/Thox-ai/ThoxWebby"
+      },
+      "blurb": "Browser-tier local model: a QAT Gemma-4 E2B build that runs entirely in the browser over WebGPU via transformers.js. No install, no server — powers ThoxKey's carry-and-launch experience. Try it in the live ThoxWebby Space."
+    },
+    {
+      "id": "thoxmythos-9b",
+      "name": "ThoxMythos-9B",
+      "family": "core",
+      "params": "9B",
+      "base": "Qwen/Qwen3.5-9B",
+      "license": "other",
+      "visibility": "gated",
+      "status": "coming-soon",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxNova"],
+      "context": "1M",
+      "sources": {
+        "huggingface": "Thox-ai/ThoxMythos-9B",
+        "ollama": null
+      },
+      "links": {
+        "space": "https://huggingface.co/spaces/Thox-ai/ThoxMythos-9B-Space"
+      },
+      "blurb": "Long-context reasoning specialist on Qwen3.5-9B with native function-calling and a 1M-token context window. Gated preview — access on request."
+    },
+    {
+      "id": "nellie-core",
+      "name": "nellie-core",
+      "family": "nellie",
+      "params": "agent",
+      "base": "THOX agent runtime",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxMini", "ThoxNova"],
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/nellie-core"
+      },
+      "blurb": "Core Nellie agent: tools + thinking, the base for the agent family."
+    },
+    {
+      "id": "nellie-coder",
+      "name": "nellie-coder",
+      "family": "nellie",
+      "params": "agent",
+      "base": "THOX agent runtime",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "code"],
+      "devices": ["ThoxMini", "ThoxNova"],
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/nellie-coder"
+      },
+      "blurb": "Coding agent with tool use for local software workflows."
+    },
+    {
+      "id": "nellie-coder-next",
+      "name": "nellie-coder-next",
+      "family": "nellie",
+      "params": "agent",
+      "base": "THOX agent runtime",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "code"],
+      "devices": ["ThoxNova"],
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/nellie-coder-next"
+      },
+      "blurb": "Next-generation coding agent with expanded tool use."
+    },
+    {
+      "id": "nellie-orchestrator",
+      "name": "nellie-orchestrator",
+      "family": "nellie",
+      "params": "agent",
+      "base": "THOX agent runtime",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxNova"],
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/nellie-orchestrator"
+      },
+      "blurb": "Multi-agent orchestrator that routes work across the mesh."
+    },
+    {
+      "id": "nellie-research",
+      "name": "nellie-research",
+      "family": "nellie",
+      "params": "agent",
+      "base": "THOX agent runtime",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["tools", "think"],
+      "devices": ["ThoxNova"],
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/nellie-research"
+      },
+      "blurb": "Research agent for long-context retrieval and synthesis."
+    },
+    {
+      "id": "nellie-vision",
+      "name": "nellie-vision",
+      "family": "nellie",
+      "params": "agent",
+      "base": "THOX agent runtime",
+      "license": "other",
+      "visibility": "public",
+      "status": "live",
+      "capabilities": ["vision", "tools", "think"],
+      "devices": ["ThoxNova"],
+      "sources": {
+        "huggingface": null,
+        "ollama": "Thox-ai/nellie-vision"
+      },
+      "blurb": "Vision agent: sees, reasons, and acts with tools."
+    }
+  ]
+}

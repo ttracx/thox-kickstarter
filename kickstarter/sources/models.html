@@ -122,10 +122,10 @@
       <div class="d">Weights, GGUF, and model cards. The <code>Thox-ai</code> org.</div>
       <div class="go">huggingface.co/Thox-ai ↗</div>
     </a>
-    <a class="src" href="https://ollama.com/thox-ai" target="_blank" rel="noopener">
+    <a class="src" href="https://ollama.com/Thox-ai" target="_blank" rel="noopener">
       <div class="ico">🦙</div><div class="t">Ollama</div>
-      <div class="d">One-command pulls for local runtimes. The <code>thox-ai</code> namespace.</div>
-      <div class="go">ollama.com/thox-ai ↗</div>
+      <div class="d">One-command pulls for local runtimes. The <code>Thox-ai</code> namespace.</div>
+      <div class="go">ollama.com/Thox-ai ↗</div>
     </a>
     <a class="src" href="https://www.thox.ai/docs/model-catalog" target="_blank" rel="noopener">
       <div class="ico">📚</div><div class="t">Model catalog</div>
@@ -155,11 +155,12 @@
   <div class="controls">
     <input type="search" id="q" placeholder="Search models, base, use case…" />
     <select id="fsource"><option value="">Any source</option><option value="ollama">On Ollama</option><option value="hf">On Hugging Face</option></select>
-    <select id="fgroup"><option value="">All families</option><option value="core">ThoxLLM core</option><option value="nellie">Nellie agents</option><option value="pro">THOX Edge Pro</option><option value="cluster">MagStack cluster</option></select>
+    <select id="fgroup"><option value="">All families</option><option value="core">ThoxLLM core</option><option value="webby">ThoxWebby browser</option><option value="nellie">Nellie agents</option><option value="pro">THOX Edge Pro</option><option value="cluster">MagStack cluster</option></select>
     <span class="chip" data-cap="vision">vision</span>
     <span class="chip" data-cap="think">thinking</span>
     <span class="chip" data-cap="tools">tools</span>
     <span class="chip" data-cap="code">coding</span>
+    <span class="chip" data-cap="browser">browser</span>
   </div>
   <div class="grid" id="grid"></div>
 </div></div>
@@ -190,25 +191,31 @@ const M = [
   // ThoxLLM core (public on HF + Ollama)
   { name:"ThoxMini-3B", size:"3B", sizes:["3B"], base:"Llama-3.2-3B", group:"core",
     blurb:"Pocket-sized local assistant. The default for the smallest THOX devices.",
-    caps:["tools"], ollama:"thox-ai/thoxmini-3b", hf:"Thox-ai/ThoxMini-3B", devices:["ThoxMini Air","ThoxMini","ThoxKey"] },
+    caps:["tools"], ollama:"Thox-ai/thoxmini-3b", hf:"Thox-ai/ThoxMini-3B", devices:["ThoxMini Air","ThoxMini","ThoxKey"] },
   { name:"ThoxForge-7B", size:"7B", sizes:["7B"], base:"Mistral-7B", group:"core",
     blurb:"General-purpose workhorse for everyday local workflows and drafting.",
-    caps:["tools"], ollama:"thox-ai/thoxforge-7b", hf:"Thox-ai/ThoxForge-7B", devices:["ThoxMini","ThoxNova"] },
+    caps:["tools"], ollama:"Thox-ai/thoxforge-7b", hf:"Thox-ai/ThoxForge-7B", devices:["ThoxMini","ThoxNova"] },
   { name:"ThoxGlobal-7B", size:"7B", sizes:["7B"], base:"Qwen2.5-7B", group:"core",
     blurb:"Multilingual model tuned for cross-language work across 30+ languages.",
-    caps:["tools"], ollama:"thox-ai/thoxglobal-7b", hf:"Thox-ai/ThoxGlobal-7B", devices:["ThoxMini","ThoxNova"] },
+    caps:["tools"], ollama:"Thox-ai/thoxglobal-7b", hf:"Thox-ai/ThoxGlobal-7B", devices:["ThoxMini","ThoxNova"] },
   { name:"ThoxWave-8B", size:"8B", sizes:["8B"], base:"Dolphin-Llama-3", group:"core",
     blurb:"Expressive long-form model for creative and open-ended generation.",
-    caps:["tools"], ollama:"thox-ai/thoxwave-8b", hf:"Thox-ai/ThoxWave-8B", devices:["ThoxMini","ThoxNova"] },
+    caps:["tools"], ollama:"Thox-ai/thoxwave-8b", hf:"Thox-ai/ThoxWave-8B", devices:["ThoxMini","ThoxNova"] },
   { name:"ThoxNova-12B-Core", size:"12B", sizes:["12B"], base:"Gemma-4-12B", group:"core",
     blurb:"Flagship reasoning core. The most capable single-node THOX model.",
-    caps:["tools","think"], ollama:"thox-ai/thoxnova-12b-core", hf:"Thox-ai/ThoxNova-12B-Core", devices:["ThoxNova"] },
-  { name:"ThoxNova-12B-Agent", size:"12B", sizes:["12B"], base:"Gemma-4-12B", group:"core",
-    blurb:"Agentic flagship with tool use and multi-step thinking for automations.",
-    caps:["tools","think"], ollama:"thox-ai/thoxnova-12b-agent", hf:"Thox-ai/ThoxNova-12B-Agent", devices:["ThoxNova"] },
-  { name:"ThoxGemma4", size:"12B", sizes:["12B"], base:"Gemma-4", group:"core",
-    blurb:"Gemma-4 tuned build with tools and thinking, ready for agent flows.",
-    caps:["tools","think"], ollama:"thox-ai/thoxgemma4", hf:null, devices:["ThoxNova"] },
+    caps:["tools","think"], ollama:"Thox-ai/thoxnova-12b-core", hf:"Thox-ai/ThoxNova-12B-Core", devices:["ThoxNova"] },
+  { name:"ThoxNova-12B-Agent", size:"12B", sizes:["12B"], base:"Gemma-4-12B-it-assistant", group:"core",
+    blurb:"Agentic flagship with tool use and multi-step thinking for automations. Pairs with ThoxNova-12B-Core for speculative decoding.",
+    caps:["tools","think"], ollama:"Thox-ai/thoxnova-12b-agent", hf:"Thox-ai/ThoxNova-12B-Agent", devices:["ThoxNova"] },
+  { name:"ThoxGemma4", size:"12B", sizes:["12B"], base:"Gemma-4-12b-it", group:"core", ctx:"256K", mem:"7.4GB",
+    blurb:"Gemma-4 12B tuned build (Q4_K_M) with tools, thinking, and a 256K context window, ready for agent flows.",
+    caps:["tools","think"], ollama:"Thox-ai/thoxgemma4:12b-q4_k_m", hf:null, devices:["ThoxNova"] },
+  { name:"ThoxWebby-Gemma-4-E2B", size:"2B · E2B", sizes:["2B"], base:"Gemma-4-E2B (QAT)", group:"webby", gated:true,
+    blurb:"Browser-tier local model: QAT Gemma-4 E2B running entirely in the browser over WebGPU via transformers.js. No install, no server — powers ThoxKey carry-and-launch.",
+    caps:["tools","browser"], ollama:null, hf:"Thox-ai/ThoxWebby-Gemma-4-E2B", space:"https://huggingface.co/spaces/Thox-ai/ThoxWebby", devices:["ThoxKey","ThoxMini Air"] },
+  { name:"ThoxMythos-9B", size:"9B", sizes:["9B"], base:"Qwen3.5-9B", group:"core", gated:true, ctx:"1M",
+    blurb:"Long-context reasoning specialist on Qwen3.5-9B with native function-calling and a 1M-token context window. Gated preview — access on request.",
+    caps:["tools","think"], ollama:null, hf:"Thox-ai/ThoxMythos-9B", space:"https://huggingface.co/spaces/Thox-ai/ThoxMythos-9B-Space", devices:["ThoxNova"] },
   { name:"thox-micro-125m", size:"125M", sizes:["125M"], base:"—", group:"core", soon:true,
     blurb:"Ultra-light model for the most constrained edge tasks. Coming soon.",
     caps:["tools"], ollama:null, hf:null, devices:["ThoxMini Air","ThoxKey"] },
@@ -216,63 +223,63 @@ const M = [
   // Nellie agents (Ollama)
   { name:"nellie-core", size:"agent", sizes:[], base:"THOX agent runtime", group:"nellie",
     blurb:"Core Nellie agent: tools + thinking, the base for the agent family.",
-    caps:["tools","think"], ollama:"thox-ai/nellie-core", hf:null, devices:["ThoxMini","ThoxNova"] },
+    caps:["tools","think"], ollama:"Thox-ai/nellie-core", hf:null, devices:["ThoxMini","ThoxNova"] },
   { name:"nellie-coder", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
     blurb:"Coding agent with tool use for local software workflows.",
-    caps:["tools","code"], ollama:"thox-ai/nellie-coder", hf:null, devices:["ThoxMini","ThoxNova"] },
+    caps:["tools","code"], ollama:"Thox-ai/nellie-coder", hf:null, devices:["ThoxMini","ThoxNova"] },
   { name:"nellie-coder-next", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
     blurb:"Next-generation coding agent with expanded tool use.",
-    caps:["tools","code"], ollama:"thox-ai/nellie-coder-next", hf:null, devices:["ThoxNova"] },
+    caps:["tools","code"], ollama:"Thox-ai/nellie-coder-next", hf:null, devices:["ThoxNova"] },
   { name:"nellie-orchestrator", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
     blurb:"Multi-agent orchestrator that routes work across the mesh.",
-    caps:["tools","think"], ollama:"thox-ai/nellie-orchestrator", hf:null, devices:["ThoxNova"] },
+    caps:["tools","think"], ollama:"Thox-ai/nellie-orchestrator", hf:null, devices:["ThoxNova"] },
   { name:"nellie-research", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
     blurb:"Research agent for long-context retrieval and synthesis.",
-    caps:["tools","think"], ollama:"thox-ai/nellie-research", hf:null, devices:["ThoxNova"] },
+    caps:["tools","think"], ollama:"Thox-ai/nellie-research", hf:null, devices:["ThoxNova"] },
   { name:"nellie-vision", size:"agent", sizes:[], base:"THOX agent", group:"nellie",
     blurb:"Vision agent: sees, reasons, and acts with tools.",
-    caps:["vision","tools","think"], ollama:"thox-ai/nellie-vision", hf:null, devices:["ThoxNova"] },
+    caps:["vision","tools","think"], ollama:"Thox-ai/nellie-vision", hf:null, devices:["ThoxNova"] },
 
-  // THOX Pro catalog (docs; Ollama THOX-ai/thox-pro-*)
+  // THOX Pro catalog (docs; Ollama Thox-ai/thox-pro-*)
   { name:"THOX Pro 8B", size:"8B", sizes:["8B"], base:"Ministral-3 8B", group:"pro", ctx:"256K", mem:"10GB",
     blurb:"Privacy-first professional AI with vision + 32-language support. Recommended for most Pro users.",
-    caps:["vision","tools"], ollama:"THOX-ai/thox-pro-8b", hf:null, devices:["ThoxNova"] },
+    caps:["vision","tools"], ollama:"Thox-ai/thox-pro-8b", hf:null, devices:["ThoxNova"] },
   { name:"THOX Pro 14B", size:"14B", sizes:["14B"], base:"Ministral-3 14B", group:"pro", ctx:"256K", mem:"14GB",
     blurb:"Advanced vision model with enhanced multilingual capability for complex professional tasks.",
-    caps:["vision","tools"], ollama:"THOX-ai/thox-pro-14b", hf:null, devices:["ThoxNova"] },
+    caps:["vision","tools"], ollama:"Thox-ai/thox-pro-14b", hf:null, devices:["ThoxNova"] },
   { name:"THOX Pro 24B", size:"24B", sizes:["24B"], base:"Devstral-Small-2 24B", group:"pro", ctx:"384K", mem:"20GB",
     blurb:"Agentic coding model for software engineering: tool use and multi-file editing.",
-    caps:["tools","code","think"], ollama:"THOX-ai/thox-pro-24b", hf:null, devices:["ThoxNova"] },
+    caps:["tools","code","think"], ollama:"Thox-ai/thox-pro-24b", hf:null, devices:["ThoxNova"] },
   { name:"THOX Pro 30B", size:"30B", sizes:["30B"], base:"Nemotron-3-Nano 30B", group:"pro", ctx:"256K", mem:"24GB",
     blurb:"Reasoning powerhouse with thinking mode (3.5B active) for deep analysis and research.",
-    caps:["tools","think"], ollama:"THOX-ai/thox-pro-30b", hf:null, devices:["ThoxNova"] },
+    caps:["tools","think"], ollama:"Thox-ai/thox-pro-30b", hf:null, devices:["ThoxNova"] },
   { name:"THOX Pro 32B", size:"32B", sizes:["32B"], base:"Qwen3-VL 32B", group:"pro", ctx:"256K", mem:"24GB",
     blurb:"Vision specialist with OCR for 32 languages, built for document-heavy workflows.",
-    caps:["vision","tools"], ollama:"THOX-ai/thox-pro-32b", hf:null, devices:["ThoxNova"] },
+    caps:["vision","tools"], ollama:"Thox-ai/thox-pro-32b", hf:null, devices:["ThoxNova"] },
 
   // MagStack cluster / enterprise (private — shown for the roadmap picture)
   { name:"thox-cluster-nano", size:"cluster", sizes:["cluster"], base:"Nemotron-3-Nano", group:"cluster", priv:true,
     blurb:"Long-context cluster model optimized for MagStack clusters.",
-    caps:["think"], ollama:"thox-ai/thox-cluster-nano", hf:null, devices:["ThoxNova"] },
+    caps:["think"], ollama:"Thox-ai/thox-cluster-nano", hf:null, devices:["ThoxNova"] },
   { name:"thox-cluster-swift", size:"cluster", sizes:["cluster"], base:"Ministral-3 8B", group:"cluster", priv:true,
     blurb:"Ultra-fast distributed AI for 30–50 concurrent users, real-time responses.",
-    caps:["tools"], ollama:"thox-ai/thox-cluster-swift", hf:null, devices:["ThoxNova"] },
+    caps:["tools"], ollama:"Thox-ai/thox-cluster-swift", hf:null, devices:["ThoxNova"] },
   { name:"thox-cluster-code", size:"cluster", sizes:["cluster"], base:"Qwen2.5-Coder 32B", group:"cluster", priv:true,
     blurb:"Code-specialized cluster for engineering teams; GPT-4o-competitive coding.",
-    caps:["tools","code","think"], ollama:"thox-ai/thox-cluster-code", hf:null, devices:["ThoxNova"] },
+    caps:["tools","code","think"], ollama:"Thox-ai/thox-cluster-code", hf:null, devices:["ThoxNova"] },
   { name:"thox-cluster-deep", size:"cluster", sizes:["cluster"], base:"Llama 3.1 405B", group:"cluster", priv:true,
     blurb:"Frontier distributed reasoning across 6–12 hardened edge devices.",
-    caps:["think"], ollama:"thox-ai/thox-cluster-deep", hf:null, devices:["ThoxNova"] },
+    caps:["think"], ollama:"Thox-ai/thox-cluster-deep", hf:null, devices:["ThoxNova"] },
   { name:"thox-cluster-maverick", size:"cluster", sizes:["cluster"], base:"Qwen3 235B MoE", group:"cluster", priv:true,
     blurb:"Enterprise-scale distributed AI, on-premises, mission-critical reliability.",
-    caps:["tools","think"], ollama:"thox-ai/thox-cluster-maverick", hf:null, devices:["ThoxNova"] },
+    caps:["tools","think"], ollama:"Thox-ai/thox-cluster-maverick", hf:null, devices:["ThoxNova"] },
   { name:"thox-cluster-secure", size:"cluster", sizes:["cluster"], base:"Qwen2.5 72B", group:"cluster", priv:true,
     blurb:"Maximum-security distributed AI for cleared personnel; compliance-focused.",
-    caps:["think"], ollama:"thox-ai/thox-cluster-secure", hf:null, devices:["ThoxNova"] },
+    caps:["think"], ollama:"Thox-ai/thox-cluster-secure", hf:null, devices:["ThoxNova"] },
 ];
 
 const el=(t,c,h)=>{const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
-const GROUP={core:"ThoxLLM core",nellie:"Nellie agent",pro:"THOX Edge Pro",cluster:"MagStack cluster"};
+const GROUP={core:"ThoxLLM core",webby:"ThoxWebby browser",nellie:"Nellie agent",pro:"THOX Edge Pro",cluster:"MagStack cluster"};
 
 // device journey
 let activeDev=null;
@@ -307,6 +314,7 @@ function linksLine(m){
   const parts=[];
   if(m.hf) parts.push(`<a href="https://huggingface.co/${m.hf}" target="_blank" rel="noopener">🤗 Hugging Face ↗</a>`);
   if(m.ollama) parts.push(`<a href="https://ollama.com/${m.ollama}" target="_blank" rel="noopener">🦙 Ollama ↗</a>`);
+  if(m.space) parts.push(`<a href="${m.space}" target="_blank" rel="noopener">▶ Demo Space ↗</a>`);
   return parts.length? `<div class="links">${parts.join('')}</div>`:'';
 }
 
@@ -325,8 +333,8 @@ function render(){
     shown++;
     const card=el('div','m');
     const tags=(m.caps||[]).map(c=>`<span class="tag ${c==='vision'?'vision':c==='think'?'think':''}">${c==='think'?'thinking':c}</span>`).join('')
-      + (m.priv?'<span class="tag priv">private</span>':'') + (m.soon?'<span class="tag">coming soon</span>':'');
-    const meta = m.mem?`${m.base} · ${m.mem} · ${m.ctx} ctx`:m.base;
+      + (m.gated?'<span class="tag priv">gated</span>':'') + (m.priv?'<span class="tag priv">private</span>':'') + (m.soon?'<span class="tag">coming soon</span>':'');
+    const meta = m.mem?`${m.base} · ${m.mem} · ${m.ctx} ctx`:(m.ctx?`${m.base} · ${m.ctx} ctx`:m.base);
     const fit = m.devices.length?`<div class="devfit">Runs on: <b>${m.devices.join(' · ')}</b></div>`:'';
     card.innerHTML=
       `<div class="top"><div class="name">${m.name}</div><div class="size">${m.size}</div></div>`+

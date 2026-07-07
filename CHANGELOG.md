@@ -8,6 +8,12 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 
 ### Added
 
+- **Model Review agent team** (`agent_tasks/model-review-team.md`) that auto-reviews new THOX.ai models published on Hugging Face (`Thox-ai`) and Ollama (`Thox-ai`), validates them, and lands them consistently.
+- **Canonical model registry** (`models/catalog.json`) as the single source of truth for every campaign-surfaced model.
+- **Model profile standard** (`docs/MODEL_PROFILE_STANDARD.md`) and validation gate (`scripts/review_thox_models.py`).
+- **ThoxWebby-Gemma-4-E2B** — browser-tier WebGPU model (QAT Gemma-4 E2B via transformers.js) for ThoxKey — added to the model gallery, with its live demo Space linked.
+- **ThoxMythos-9B** — gated 1M-context reasoning model on Qwen3.5-9B with function-calling — added as a gated preview profile.
+- 2026-07-07 model review report (`docs/MODEL_REVIEW_2026-07-07.md`).
 - Quick-launch campaign source of truth for ThoxKey, ThoxMini, ThoxMini Air, and ThoxClip.
 - Kickstarter special and early-bird pricing for the four-device launch lineup.
 - Paste-ready Kickstarter Story page.
@@ -28,6 +34,7 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 - Wired the founder walkthrough script to the finalized device demos.
 - Extended validation to check demo guardrails and demo acceptance files.
 - Resolved merge conflicts in README, changelog, and security policy by keeping the four launch devices as the only Kickstarter/demo scope.
+- Standardized every model reference in the download center (`kickstarter/sources/models.html` + site build) onto the canonical `Thox-ai/` Hugging Face and Ollama namespaces (was a mix of `thox-ai/` and `THOX-ai/`); fixed the ThoxNova-12B-Agent base model and ThoxGemma4 Ollama tag to match the registry; fixed the README Ollama link to `ollama.com/Thox-ai`.
 
 ### Security
 

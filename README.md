@@ -49,7 +49,7 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 | **THOX Experience Fabric** | [`experience-fabric.html` ↗](https://ttracx.github.io/thox-kickstarter/experience-fabric.html) | The scientific design system + Rust runtime behind every surface: three planes, locked nav, one visible agent, four-tier memory, generated tokens, certified Experience Score ≥ 90. |
 | **ThoxOS Mini Demo** | [`thoxos-mini-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
 | **ThoxOS Demo** (flagship) | [`thoxos-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-demo.html) | The **full ThoxOS** desktop that ships on THOX Nova and the THOX Edge Series: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. |
-| **ThoxLLM Model Gallery** | [`models.html` ↗](https://ttracx.github.io/thox-kickstarter/models.html) | Model gallery + download center for the real THOX models: filter, match to your device, copy the exact `ollama pull` / Hugging Face command. Links to the [catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/thox-ai). |
+| **ThoxLLM Model Gallery** | [`models.html` ↗](https://ttracx.github.io/thox-kickstarter/models.html) | Model gallery + download center for the real THOX models: filter, match to your device, copy the exact `ollama pull` / Hugging Face command. Now includes **ThoxWebby-Gemma-4-E2B** (browser/WebGPU) and **ThoxMythos-9B** (gated, 1M-context). Links to the [catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/Thox-ai). |
 | **MeshStack app** (5 platforms) | `kickstarter/site/meshstack-{ios,ipad,macos,windows,android}.html` | Fully-functional standalone MeshStack demos: identity, pairing, connect, monitor. |
 | **Flagship devices** (4) | `kickstarter/site/thox-{nova,pro,pro-max,pro-ultra}.html` | Interactive product pages for the upcoming THOX Nova and THOX Edge Series (Pro / Pro Max / Pro Ultra) edge-AI line, which run the full ThoxOS. |
 | **ThoxMigrate** | [`thoxmigrate.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxmigrate.html) | Cloud-to-edge AI migration tool (scan, map, migrate). |
@@ -62,6 +62,20 @@ Deployable, brand-consistent campaign content generated from the design handoff 
 | **Full guide** | [`kickstarter/README.md`](kickstarter/README.md) | Deliverable map, provenance, and build/regenerate instructions. |
 
 Also included under `kickstarter/site/`: Campaign Runbook, Model Gallery, Software Demo, and the Campaign Animatic — the interactive design prototypes, rendered by the vendored runtime.
+
+## 🤖 THOX model registry & review team
+
+New THOX.ai models ship regularly on Hugging Face ([`Thox-ai`](https://huggingface.co/Thox-ai)) and Ollama ([`Thox-ai`](https://ollama.com/Thox-ai)). A dedicated **Model Review agent team** keeps this repository in sync: it discovers newly published models, validates each one against a profile standard, lands it consistently across every surface, and updates this README.
+
+| What | Where | Notes |
+|---|---|---|
+| **Canonical registry** | [`models/catalog.json`](models/catalog.json) | Single source of truth for every model surfaced by the campaign — name, base, license, visibility, sources, capabilities, device fit. |
+| **Profile standard** | [`docs/MODEL_PROFILE_STANDARD.md`](docs/MODEL_PROFILE_STANDARD.md) | The field contract + namespace/consistency rules a model must meet to be "properly implemented." |
+| **Review team charter** | [`agent_tasks/model-review-team.md`](agent_tasks/model-review-team.md) | The four-role team (Discovery → Validation → Integration → Docs) and its run procedure. |
+| **Validation gate** | [`scripts/review_thox_models.py`](scripts/review_thox_models.py) | `python3 scripts/review_thox_models.py` — validates the registry and cross-checks the download center. Must exit 0. |
+| **Latest review** | [`docs/MODEL_REVIEW_2026-07-07.md`](docs/MODEL_REVIEW_2026-07-07.md) | 2026-07-07 run: added **ThoxWebby-Gemma-4-E2B** (browser/WebGPU) and **ThoxMythos-9B** (gated, 1M-context); standardized every profile onto the `Thox-ai/` namespaces. |
+
+Canonical namespaces: Hugging Face **`Thox-ai/`**, Ollama **`Thox-ai/`**. Browse the full family in the [ThoxLLM Model Gallery ↗](https://ttracx.github.io/thox-kickstarter/models.html).
 
 **One platform, two scales.** ThoxOS Mini (the four launch devices) and full ThoxOS (the Nova and Edge Series roadmap) feel like one product because both run on the **THOX Experience Fabric** — a scientific design system plus a Rust runtime that locks navigation, keeps a single visible agent (THOXY), enforces four-tier memory, generates every design token from one source, and gates each surface on a certified **Experience Score ≥ 90**. It is also THOX's adopted internal development framework. See [`experience-fabric.html` ↗](https://ttracx.github.io/thox-kickstarter/experience-fabric.html).
 
