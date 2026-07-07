@@ -4,6 +4,8 @@ Deployable Kickstarter campaign content generated from the Claude Design
 handoff (`designs/thox-ai-kickstarter-campaign-handoff/`) and kept consistent
 with the **THOX Experience Fabric (TXF)** tokens.
 
+> 🌐 **Live site:** **https://ttracx.github.io/thox-kickstarter/** (GitHub Pages). The page links below open the deployed site.
+
 | File | What it is | Use it for |
 |---|---|---|
 | `story.html` | Self-contained, standalone Kickstarter Story page (all images + the Xolonium display font inlined as data URIs; Inter / JetBrains Mono via Google Fonts with system fallback). ~5 MB, single file. | Hosting a live campaign landing/preview page, embedding in a deck, or handing to the Kickstarter team as the visual spec. Open it in any browser. |
@@ -20,8 +22,8 @@ The Kickstarter film ships with an interactive production system, generated from
 
 | Tool | File | What it does |
 |---|---|---|
-| **Production Tracker** | [`site/production-tracker.html`](site/production-tracker.html) | Interactive, browser-saved tracker. Device capture inventory + every storyboard shot, moved **To shoot → Captured → Approved** with notes, filters, and JSON/CSV export. |
-| **Visual storyboard** | [`site/storyboard.html`](site/storyboard.html) | The QA-approved previz: 13 modules, shot-for-shot visual reference. |
+| **Production Tracker** | [`production-tracker.html` ↗](https://ttracx.github.io/thox-kickstarter/production-tracker.html) | Interactive, browser-saved tracker. Device capture inventory + every storyboard shot, moved **To shoot → Captured → Approved** with notes, filters, and JSON/CSV export. |
+| **Visual storyboard** | [`storyboard.html` ↗](https://ttracx.github.io/thox-kickstarter/storyboard.html) | The QA-approved previz: 13 modules, shot-for-shot visual reference. |
 | **Campaign animatic** | `site/animatic.html` | The working-concept animatic video of the storyboard, playable in the browser (source: `assets/video/thox-campaign-animatic-v1-1080p.mp4`). Device close-up clips live in `assets/device/video/`. |
 | **Inventory & checklist** | [`PRODUCTION.md`](PRODUCTION.md) | Static, printable device + scene checklist with the capture workflow and compliance reminders. |
 
@@ -79,10 +81,10 @@ design + runtime framework.
 - **ThoxOS Mini** — the edge build that ships on the four launch devices
   (**ThoxKey, ThoxMini Air, ThoxMini, ThoxClip**). A pocket-sized shell: boot,
   insert, agents, files, skills, terminal, all on-device. Demo:
-  [`site/thoxos-mini-demo.html`](site/thoxos-mini-demo.html).
+  [`thoxos-mini-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-mini-demo.html).
 - **Full ThoxOS** — the complete desktop OS that ships on the **THOX Nova and the
   THOX Edge Series** (kept in the campaign so backers meet the full architecture and
-  roadmap). Demo: [`site/thoxos-demo.html`](site/thoxos-demo.html).
+  roadmap). Demo: [`thoxos-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-demo.html).
 - **THOX Experience Fabric (TXF)** — the reason the two feel like one product.
   It is a scientific design system plus a Rust runtime that guarantees the same
   experience on every surface: three planes (products → SDKs → runtime),
@@ -91,7 +93,7 @@ design + runtime framework.
   generated from a single source, and a certification gate — the **Experience
   Score**, which every surface must hold at **≥ 90**. It is also THOX's adopted
   internal development framework. Page:
-  [`site/experience-fabric.html`](site/experience-fabric.html).
+  [`experience-fabric.html` ↗](https://ttracx.github.io/thox-kickstarter/experience-fabric.html).
 
 `experience-fabric.html` is a self-contained, from-scratch page built on the TXF
 tokens; `thoxos-mini-demo.html` is the Claude Design ThoxOS Mini prototype
