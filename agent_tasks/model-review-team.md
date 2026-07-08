@@ -84,6 +84,11 @@ artifact to attach to that PR.
 
 ## Latest run
 
+- **2026-07-08** — see [`docs/MODEL_REVIEW_2026-07-08.md`](../docs/MODEL_REVIEW_2026-07-08.md).
+  Re-review: no new campaign-facing models since 07-07 (the two newest HF
+  repos are private/internal). Standardized the `model-gallery.html` factory
+  view off the legacy `ttracx/` namespace onto `Thox-ai/`; verified the whole
+  deployed site is free of non-canonical namespaces.
 - **2026-07-07** — see [`docs/MODEL_REVIEW_2026-07-07.md`](../docs/MODEL_REVIEW_2026-07-07.md).
   Added ThoxWebby-Gemma-4-E2B (browser/WebGPU) and ThoxMythos-9B (gated,
   1M-context) profiles; standardized every profile onto the `Thox-ai/`

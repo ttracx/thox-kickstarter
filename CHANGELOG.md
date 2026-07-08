@@ -35,6 +35,7 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 - Extended validation to check demo guardrails and demo acceptance files.
 - Resolved merge conflicts in README, changelog, and security policy by keeping the four launch devices as the only Kickstarter/demo scope.
 - Standardized every model reference in the download center (`kickstarter/sources/models.html` + site build) onto the canonical `Thox-ai/` Hugging Face and Ollama namespaces (was a mix of `thox-ai/` and `THOX-ai/`); fixed the ThoxNova-12B-Agent base model and ThoxGemma4 Ollama tag to match the registry; fixed the README Ollama link to `ollama.com/Thox-ai`.
+- 2026-07-08 model re-review (`docs/MODEL_REVIEW_2026-07-08.md`): confirmed no new campaign-facing models on Hugging Face/Ollama (the two newest repos are private/internal); standardized the `model-gallery.html` factory view's copy-paste commands off the legacy `ttracx/` namespace onto `Thox-ai/` (source handoff + deployed site), leaving the deployed campaign fully on the canonical namespace.
 
 ### Security
 
