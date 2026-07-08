@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "description": "Canonical THOX.ai model registry — the single source of truth for every model surfaced by the campaign. Reviewed and kept in sync with the live sources (Hugging Face org Thox-ai + Ollama namespace Thox-ai) by the Model Review agent team. See docs/MODEL_PROFILE_STANDARD.md for the field contract and scripts/review_thox_models.py for validation.",
+  "description": "Canonical THOX.ai model registry - the single source of truth for every model surfaced by the campaign. Reviewed and kept in sync with the live sources (Hugging Face org Thox-ai + Ollama namespace Thox-ai) by the Model Review agent team. See docs/MODEL_PROFILE_STANDARD.md for the field contract and scripts/review_thox_models.py for validation.",
   "sources": {
     "huggingface_org": "https://huggingface.co/Thox-ai",
     "ollama_namespace": "https://ollama.com/Thox-ai",
@@ -13,11 +13,11 @@
     "ollama": "Thox-ai"
   },
   "families": {
-    "core": "ThoxLLM core — the public on-device assistants that ship on THOX devices",
-    "webby": "ThoxWebby — browser-tier WebGPU models that run entirely in the browser",
-    "nellie": "Nellie agents — the THOX agent runtime family on Ollama",
-    "pro": "THOX Edge Pro — professional-tier models (roadmap)",
-    "cluster": "MagStack cluster — distributed enterprise models (roadmap, private)"
+    "core": "ThoxLLM core - the public on-device assistants that ship on THOX devices",
+    "webby": "ThoxWebby - browser-tier WebGPU models that run entirely in the browser",
+    "nellie": "Nellie agents - the THOX agent runtime family on Ollama",
+    "pro": "THOX Edge Pro - professional-tier models (roadmap)",
+    "cluster": "MagStack cluster - distributed enterprise models (roadmap, private)"
   },
   "models": [
     {
@@ -159,7 +159,7 @@
       "links": {
         "space": "https://huggingface.co/spaces/Thox-ai/ThoxWebby"
       },
-      "blurb": "Browser-tier local model: a QAT Gemma-4 E2B build that runs entirely in the browser over WebGPU via transformers.js. No install, no server — powers ThoxKey's carry-and-launch experience. Try it in the live ThoxWebby Space."
+      "blurb": "Browser-tier local model: a QAT Gemma-4 E2B build that runs entirely in the browser over WebGPU via transformers.js. No install, no server - powers ThoxKey's carry-and-launch experience. Try it in the live ThoxWebby Space."
     },
     {
       "id": "thoxmythos-9b",
@@ -180,7 +180,7 @@
       "links": {
         "space": "https://huggingface.co/spaces/Thox-ai/ThoxMythos-9B-Space"
       },
-      "blurb": "Long-context reasoning specialist on Qwen3.5-9B with native function-calling and a 1M-token context window. Gated preview — access on request."
+      "blurb": "Long-context reasoning specialist on Qwen3.5-9B with native function-calling and a 1M-token context window. Gated preview - access on request."
     },
     {
       "id": "nellie-core",

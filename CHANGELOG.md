@@ -11,8 +11,8 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 - **Model Review agent team** (`agent_tasks/model-review-team.md`) that auto-reviews new THOX.ai models published on Hugging Face (`Thox-ai`) and Ollama (`Thox-ai`), validates them, and lands them consistently.
 - **Canonical model registry** (`models/catalog.json`) as the single source of truth for every campaign-surfaced model.
 - **Model profile standard** (`docs/MODEL_PROFILE_STANDARD.md`) and validation gate (`scripts/review_thox_models.py`).
-- **ThoxWebby-Gemma-4-E2B** — browser-tier WebGPU model (QAT Gemma-4 E2B via transformers.js) for ThoxKey — added to the model gallery, with its live demo Space linked.
-- **ThoxMythos-9B** — gated 1M-context reasoning model on Qwen3.5-9B with function-calling — added as a gated preview profile.
+- **ThoxWebby-Gemma-4-E2B** - browser-tier WebGPU model (QAT Gemma-4 E2B via transformers.js) for ThoxKey - added to the model gallery, with its live demo Space linked.
+- **ThoxMythos-9B** - gated 1M-context reasoning model on Qwen3.5-9B with function-calling - added as a gated preview profile.
 - 2026-07-07 model review report (`docs/MODEL_REVIEW_2026-07-07.md`).
 - Quick-launch campaign source of truth for ThoxKey, ThoxMini, ThoxMini Air, and ThoxClip.
 - Kickstarter special and early-bird pricing for the four-device launch lineup.
