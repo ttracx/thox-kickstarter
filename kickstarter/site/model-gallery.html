@@ -350,7 +350,7 @@ class Component extends DCLogic {
       const disabled = sel.status !== 'ready';
       const mkCmd = (cmd, key) => ({ cmd, onCopy: () => this.copy(cmd, key),
         copyLabel: S.copied === key ? 'Copied' : 'Copy', copyColor: S.copied === key ? '#34D399' : '#A1A1AA' });
-      const commands = disabled ? [] : [ mkCmd('ollama run ttracx/' + sel.tag, sel.id + '-run'), mkCmd('ollama pull ttracx/' + sel.tag, sel.id + '-pull') ];
+      const commands = disabled ? [] : [ mkCmd('ollama run Thox-ai/' + sel.tag, sel.id + '-run'), mkCmd('ollama pull Thox-ai/' + sel.tag, sel.id + '-pull') ];
       const quants = this.QUANTS.map((q, i) => ({
         quant: q, file: sel.id + '.' + q + '.gguf', size: sel.status === 'downloading' ? 'pending' : this.ggufSize(sel.params, q),
         bg: i === 0 ? 'rgba(16,185,129,0.05)' : 'transparent',
