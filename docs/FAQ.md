@@ -6,7 +6,7 @@ capture; heavier work routes to capable local hardware the user owns.
 
 ## Will THOX work without an internet connection?
 
-Yes — that is the whole point. THOX is local-first. ThoxKey unlocks your workspace on a trusted
+Yes - that is the whole point. THOX is local-first. ThoxKey unlocks your workspace on a trusted
 machine, ThoxMini Air and ThoxMini keep local services and routing on your own network, and ThoxClip
 captures and hands context into your workspace. Cloud connectors, if you ever use them, are an
 optional choice you control. The only thing that needs the internet is firmware updates, and you can
@@ -31,7 +31,7 @@ device runs a chat-class LLM.
 ThoxKey carries and unlocks your workflow. ThoxMini Air routes lightweight commands and coordinates
 nearby devices. ThoxMini runs local services, lightweight agents, encrypted storage, and private
 automations. ThoxClip runs quick capture, wake-word, and workflow triggers. None of the four is a
-standalone LLM computer — heavier work routes to capable local hardware the user owns.
+standalone LLM computer - heavier work routes to capable local hardware the user owns.
 
 ## Is this open source?
 
@@ -42,7 +42,7 @@ alongside the firmware repository at campaign launch so you can see exactly what
 
 We keep the first product set focused and have alternate suppliers identified for critical parts. If a
 primary component disappears, we switch the BOM, ship slightly later, and absorb the cost. No backer
-loses their reward — and if a date slips, you get a direct update explaining what changed and when the
+loses their reward - and if a date slips, you get a direct update explaining what changed and when the
 next update arrives.
 
 ## Will ThoxClip work without a paired THOX device?

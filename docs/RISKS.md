@@ -7,7 +7,7 @@ boundaries in [`docs/KICKSTARTER_PAGE_COPY.md`](KICKSTARTER_PAGE_COPY.md).
 
 > Hardware has real risks, and we would rather be direct about them than optimistic. The THOX.ai
 > local-first agent runtime is already in private alpha; what this campaign funds is the first
-> coordinated production run of four devices — ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip — and the
+> coordinated production run of four devices - ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip - and the
 > firmware, QA, and compliance work behind them. This is not machine-learning R&D; it is hardware
 > manufacturing.
 >

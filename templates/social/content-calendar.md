@@ -15,7 +15,7 @@ capable local hardware the user owns. Never post a cluster / LLM-host claim.
 
 ---
 
-## Phase 1 — Pre-launch awareness (T-60 → T-15 · May 8 → Jun 22)
+## Phase 1 - Pre-launch awareness (T-60 → T-15 · May 8 → Jun 22)
 
 3 posts/week. Objective: grow the Notify list. CTA = **Notify me** (`{prelaunch_url}`).
 
@@ -42,7 +42,7 @@ Weeks 6–7 (T-30 → T-15 · Jun 7 → Jun 22): repeat the strongest performers
 
 ---
 
-## Phase 2 — Ramp + countdown (T-14 → T-1 · Jun 23 → Jul 6)
+## Phase 2 - Ramp + countdown (T-14 → T-1 · Jun 23 → Jul 6)
 
 5 posts/week, then daily countdown from T-7. Objective: peak the Notify list (1,500+).
 
@@ -52,12 +52,12 @@ Weeks 6–7 (T-30 → T-15 · Jun 7 → Jun 22): repeat the strongest performers
 | T-12 | Proof | Best proof clip re-cut for ramp | 9:16 | TT, IG, X |
 | T-10 | Thesis | Long-form thesis post / hero video drop | 16:9 | LI, YT, X |
 | T-8 | People | "Meet the founders" before launch | 4:5 | LI, IG |
-| **T-7** | Campaign | Countdown: ThoxKey — "7 days" | 9:16 vid | all |
-| **T-6** | Campaign | Countdown: ThoxMini Air — "6 days" | 9:16 vid | all |
-| **T-5** | Campaign | Countdown: ThoxMini — "5 days" | 9:16 vid | all |
-| **T-4** | Campaign | Countdown: ThoxClip — "4 days" | 9:16 vid | all |
-| **T-3** | Campaign | Countdown: the family — "3 days" | 9:16 vid | all |
-| **T-2** | Campaign | Countdown: "$24 early-bird ThoxKey, only 500" — "2 days" | 9:16 vid | all |
+| **T-7** | Campaign | Countdown: ThoxKey - "7 days" | 9:16 vid | all |
+| **T-6** | Campaign | Countdown: ThoxMini Air - "6 days" | 9:16 vid | all |
+| **T-5** | Campaign | Countdown: ThoxMini - "5 days" | 9:16 vid | all |
+| **T-4** | Campaign | Countdown: ThoxClip - "4 days" | 9:16 vid | all |
+| **T-3** | Campaign | Countdown: the family - "3 days" | 9:16 vid | all |
+| **T-2** | Campaign | Countdown: "$24 early-bird ThoxKey, only 500" - "2 days" | 9:16 vid | all |
 | **T-1** | Campaign | Launch-eve teaser (per LAUNCH_CHECKLIST T-1) | 9:16 vid | all |
 
 > Generate the countdown tiles (T-7→T-0) as **one batch** from the same template
@@ -65,14 +65,14 @@ Weeks 6–7 (T-30 → T-15 · Jun 7 → Jun 22): repeat the strongest performers
 
 ---
 
-## Phase 3 — Launch day (T-0 · Jul 7)
+## Phase 3 - Launch day (T-0 · Jul 7)
 
 Posted **live**, not scheduled (copy reacts to real numbers). Full hour-by-hour in
 [templates/launch-day-social.md](../launch-day-social.md) and LAUNCH_CHECKLIST T-0. Minimum beats:
 
 | PT | Pillar | Post |
 |---|---|---|
-| 09:00 | Campaign | "We're LIVE" hero post — all channels |
+| 09:00 | Campaign | "We're LIVE" hero post - all channels |
 | 09:10 | Campaign | Early-bird urgency: "$24 ThoxKey, only 500" |
 | 11:00 | Campaign | "25% funded" milestone (if hit) |
 | 14:00 | Proof | A proof clip to convert the midday scrollers |
@@ -81,7 +81,7 @@ Posted **live**, not scheduled (copy reacts to real numbers). Full hour-by-hour 
 
 ---
 
-## Phase 4 — Sustain (T+1 → T+27 · Jul 8 → Aug 3)
+## Phase 4 - Sustain (T+1 → T+27 · Jul 8 → Aug 3)
 
 5 posts/week. Objective: hold pledge velocity, unlock stretch goals. CTA = **Back us**.
 
@@ -94,18 +94,18 @@ Posted **live**, not scheduled (copy reacts to real numbers). Full hour-by-hour 
 | Reddit AMA | T+1 (r/LocalLLaMA, r/selfhosted) | Proof/Thesis | text |
 | Stretch-unlock celebration | On each unlock (mirrors stretch-unlock-update.md) | Campaign | img §9 → vid §8 |
 
-Mid-campaign lull (≈ T+10 → T+18 · Jul 17 → Jul 25) is normal — lean on Proof and People to keep
+Mid-campaign lull (≈ T+10 → T+18 · Jul 17 → Jul 25) is normal - lean on Proof and People to keep
 the feed alive without burning urgency you'll need for the close.
 
 ---
 
-## Phase 5 — Close (T+28 → T+30 · Aug 4 → Aug 6)
+## Phase 5 - Close (T+28 → T+30 · Aug 4 → Aug 6)
 
 7+ posts. Objective: final-48 surge. CTA = **Back us before it closes**.
 
 | When | Post |
 |---|---|
-| T+28 (48h) | "Final 48 hours" — family hero, urgency cut (grok §9) |
+| T+28 (48h) | "Final 48 hours" - family hero, urgency cut (grok §9) |
 | T+29 (24h) | "24 hours. Early-bird + Complete Founder Kit disappear at close." |
 | T+30 −12h | "12 hours left" |
 | T+30 −6h | "6 hours" |
@@ -114,7 +114,7 @@ the feed alive without burning urgency you'll need for the close.
 
 ---
 
-## Phase 6 — Fulfillment (T+31 → Q1 2027)
+## Phase 6 - Fulfillment (T+31 → Q1 2027)
 
 Cadence drops to 2/week. Objective: keep backers warm, drive BackerKit add-ons. Beats follow
 TIMELINE.md milestones: BackerKit survey, design validation, pilot production, and each

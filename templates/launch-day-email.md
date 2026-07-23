@@ -8,10 +8,10 @@ If you want early-bird pricing, today is the day. The early-bird tiers are quant
 
 What is on the table:
 
-- $24 Early-bird ThoxKey (only 500) — then $34
-- $69 Early-bird ThoxMini Air (only 350) — then $79
-- $149 Early-bird ThoxMini (only 300) — then $169
-- $299 Early-bird ThoxClip (only 200) — then $329
+- $24 Early-bird ThoxKey (only 500) - then $34
+- $69 Early-bird ThoxMini Air (only 350) - then $79
+- $149 Early-bird ThoxMini (only 300) - then $169
+- $299 Early-bird ThoxClip (only 200) - then $329
 - $99 THOX Starter Kit (ThoxKey + ThoxMini Air)
 - $189 THOX Developer Kit (ThoxKey + ThoxMini)
 - $349 THOX Wearable Pro Kit (ThoxKey + ThoxClip)

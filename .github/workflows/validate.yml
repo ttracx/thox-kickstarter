@@ -1,0 +1,32 @@
+name: Validate campaign docs
+
+# Runs the campaign consistency checks the README badge advertises:
+#   - scripts/validate_campaign.py  (canonical terms, demo guardrails, legacy-name guard)
+#   - scripts/review_thox_models.py (model registry + download-center cross-check)
+#   - pytest tests/                 (campaign terms, brand voice, guardrails)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip pytest
+      - name: Validate campaign docs
+        run: python3 scripts/validate_campaign.py
+      - name: Validate model registry
+        run: python3 scripts/review_thox_models.py
+      - name: Run campaign tests
+        run: python3 -m pytest tests/ -q

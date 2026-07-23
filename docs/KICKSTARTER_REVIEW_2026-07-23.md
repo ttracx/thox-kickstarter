@@ -1,11 +1,11 @@
-# THOX.ai Kickstarter Review — 2026-07-23
+# THOX.ai Kickstarter Review - 2026-07-23
 
 A repository + campaign consistency review of the THOX.ai quick-launch Kickstarter, with fixes
 applied, a legacy-footprint audit, a reconciliation plan, and suggestions for the live campaign.
 
 > Scope note: the live Kickstarter page (`kickstarter.com/projects/thoxai/1935989296`) blocks
-> automated fetches (HTTP 403), so this review is based on the repository's canonical copy — which is
-> the campaign's source of truth — plus the deployed GitHub Pages preview structure. No file was
+> automated fetches (HTTP 403), so this review is based on the repository's canonical copy - which is
+> the campaign's source of truth - plus the deployed GitHub Pages preview structure. No file was
 > attached to this session.
 
 ---
@@ -14,11 +14,11 @@ applied, a legacy-footprint audit, a reconciliation plan, and suggestions for th
 
 The repository contains **two parallel campaigns**:
 
-1. **Canonical (current):** the four-device quick launch — **ThoxKey, ThoxMini Air, ThoxMini,
-   ThoxClip** — at $150K, launching **July 7, 2026** (30-day run, closing Aug 6), with honest
+1. **Canonical (current):** the four-device quick launch - **ThoxKey, ThoxMini Air, ThoxMini,
+   ThoxClip** - at $150K, launching **July 7, 2026** (30-day run, closing Aug 6), with honest
    capability boundaries. This is what README, `docs/CAMPAIGN_INFO.md`, `docs/KICKSTARTER_PAGE_COPY.md`,
    `docs/REWARDS_MATRIX.md`, the whole `kickstarter/site/` bundle, and the `demo/` package describe.
-2. **Legacy (retired):** an earlier four-device family — **ThoxClip, ThoxMini, ThoxAir, ThoxNova** —
+2. **Legacy (retired):** an earlier four-device family - **ThoxClip, ThoxMini, ThoxAir, ThoxNova** -
    at a $250K goal with $500K–$3M stretch goals, launching **August 12, 2026**, built on named
    silicon (Milk-V Duo, BCM2835, LattePanda N100, nRF52) and a cluster/LLM-host architecture, signed
    by "Phamy." `kickstarter/sources/thox-video-storyboards.md` explicitly lists these as **"Retired
@@ -40,7 +40,7 @@ cataloged for systematic reconciliation (Sections B–D).
 | Launch/close dates | `docs/CAMPAIGN_INFO.md` | Aug 12 / Sept 11 → **July 7 / Aug 6, 2026** (30-day run matches stated duration; campaign is live as of this review). |
 | Early-bird caps | `docs/REWARDS_MATRIX.md` | Reconciled the internally-contradictory caps (1000 / 100 / 500) to **500 / 350 / 300 / 200** (ThoxKey / Air / Mini / Clip), matching README + `CAMPAIGN_INFO`. |
 | Retail prices | `docs/KICKSTARTER_PAGE_COPY.md` | `$99.99 / $199.99 / $399.99` → round **$99 / $199 / $399** (validator canon); corrected bundle "retail value" sums ($238.99 / $438.99 / $736.99). |
-| Delivery windows | `docs/CAMPAIGN_INFO.md` | Jan–May 2027 → **Q3/Q4 2026 → Q1 2027**, aligning the outlier to the live page + rewards matrix. (But see Suggestion 1 — the aggressive window may be worth revisiting.) |
+| Delivery windows | `docs/CAMPAIGN_INFO.md` | Jan–May 2027 → **Q3/Q4 2026 → Q1 2027**, aligning the outlier to the live page + rewards matrix. (But see Suggestion 1 - the aggressive window may be worth revisiting.) |
 | Consolidated deliverable | `deliverables/THOX_Kickstarter_Campaign.md` | Full rewrite off the retired ThoxAir/ThoxNova/Milk-V/LattePanda family onto the canonical four devices, pricing, timeline, and honest boundaries. Removed fabricated stretch-goal dollar figures. |
 | Kickstarter FAQ | `docs/FAQ.md` | Rewrote off ThoxNova-hosts-LLM / cluster / Milk-V onto the four devices and honest boundaries (spec-free, no fabricated silicon). |
 | Kickstarter risks | `docs/RISKS.md` | Genericized supply-chain/manufacturing/overclaim copy; replaced silicon-specific EOL rows with a component-EOL row; owner `P`→`T`; dates aligned. |
@@ -77,16 +77,16 @@ Distribution by tree:
 - **NOT a reliable marker:** bare `ThoxNova` / `THOX Nova`. Nova is a **legitimate roadmap device** in
   the canonical campaign (`kickstarter/site/thox-nova.html`, README roadmap). Nova is legacy only when
   used as a **launch reward** (e.g., "ThoxNova ships to all backers", "$499 ThoxNova"). Do **not**
-  blanket-scrub Nova. Likewise `ThoxNova-12B-*` are real published **model names** — leave them.
+  blanket-scrub Nova. Likewise `ThoxNova-12B-*` are real published **model names** - leave them.
 
 ### High-signal legacy files still to reconcile (paste/backer-facing first)
 
-- `docs/TIMELINE.md` — Aug 12 launch → May 2027 fulfillment; ThoxAir/Cluster Pack/ThoxNova ship rows; owner `P`.
-- `docs/STRETCH_GOALS.md` and `content/launch/STRETCH_GOALS.md` — old $-figure ladder.
+- `docs/TIMELINE.md` - Aug 12 launch → May 2027 fulfillment; ThoxAir/Cluster Pack/ThoxNova ship rows; owner `P`.
+- `docs/STRETCH_GOALS.md` and `content/launch/STRETCH_GOALS.md` - old $-figure ladder.
 - `templates/launch-day-social.md`, `templates/weekly-update.md`, `templates/stretch-unlock-update.md`, `templates/reply-snippets.md`, `templates/social/post-copy-library.md`.
 - `docs/PRESS_KIT.md`, `content/launch/PRESS_KIT.md`, `docs/SOCIAL_MEDIA_CAMPAIGN.md`, `docs/KICKSTARTER_SHIPPING_PLAN.md`.
 - `runbooks/00-pre-launch.md`, `03-stretch-unlock.md`, `04-final-48h.md`, `07-crisis-response.md` (stretch figures + a few device refs).
-- Asset-gen prompt libraries (`prompts/openai/*`, `prompts/grok/*`, `templates/social/*-prompts.md`) — these describe the retired device **industrial design**; a faithful rewrite needs the current device renders as reference (see `kickstarter/site/` and `assets/device/`).
+- Asset-gen prompt libraries (`prompts/openai/*`, `prompts/grok/*`, `templates/social/*-prompts.md`) - these describe the retired device **industrial design**; a faithful rewrite needs the current device renders as reference (see `kickstarter/site/` and `assets/device/`).
 
 ---
 
@@ -122,42 +122,42 @@ Use this as the find-and-replace contract for any reconciliation pass.
    a team decision and was not done in this pass (destructive, 100+ files, no explicit mandate).
 2. **Reconcile the referenced legacy docs** next, in priority order: `docs/TIMELINE.md`,
    `docs/STRETCH_GOALS.md`, the remaining `templates/*`, the `runbooks/*` stretch figures, then the
-   asset-gen prompt libraries (last — they need current device renders as reference).
+   asset-gen prompt libraries (last - they need current device renders as reference).
 3. **Extend the validator's scope.** `scripts/validate_campaign.py` only scans `CANONICAL_DOCS`, which
    is why the legacy campaign never tripped it. Add `ThoxAir`, `Milk-V`, `LattePanda`, `nRF52`,
    `Phamy`, `August 12`, `$250K` to `LEGACY_PATTERNS`, and widen the scan to `templates/`, `runbooks/`,
-   `deliverables/`, and any tree you keep — so drift can't silently return.
-4. **Update the GitHub repo description.** It still reads "ThoxClip, ThoxMini, ThoxAir, ThoxNova" —
+   `deliverables/`, and any tree you keep - so drift can't silently return.
+4. **Update the GitHub repo description.** It still reads "ThoxClip, ThoxMini, ThoxAir, ThoxNova" -
    press and backers check the repo; it should list ThoxKey, ThoxMini Air, ThoxMini, ThoxClip.
 
 ---
 
 ## E. Suggestions for the live campaign
 
-1. **Delivery-date credibility (highest priority).** Shipping ThoxKey/Air/Mini in "Q3/Q4 2026" —
-   roughly 1–2 months after an Aug 6 close — is aggressive for hardware and invites backer skepticism
+1. **Delivery-date credibility (highest priority).** Shipping ThoxKey/Air/Mini in "Q3/Q4 2026" -
+   roughly 1–2 months after an Aug 6 close - is aggressive for hardware and invites backer skepticism
    and Kickstarter scrutiny. The retired campaign's own instinct (Jan–May 2027) was more defensible,
    and the canonical copy already promises "conservative delivery windows." Consider pushing the
    published estimates later (e.g., ThoxKey Q4 2026; Air/Mini Q1 2027; ThoxClip/Founder Q2 2027).
-   Under-promise, over-deliver — early is a delight, late is a refund request.
+   Under-promise, over-deliver - early is a delight, late is a refund request.
 2. **Resolve the two-campaign split before it leaks into comms.** A backer or journalist who finds the
    repo will see ThoxAir/ThoxNova/$499/Aug-12 material contradicting the live page. Archive or
    reconcile (Section D) quickly.
 3. **Lead the reward stack with scarcity you can defend.** Early-bird caps (500/350/300/200) and the
-   100-unit Complete Founder Kit are the launch-day urgency levers — surface the live remaining counts
+   100-unit Complete Founder Kit are the launch-day urgency levers - surface the live remaining counts
    in updates ("142 of 200 ThoxClip early-birds left"). Consider whether ThoxKey at $24 or the Founder
    Kit is the better hero for the first-hour push.
 4. **Add a "cloud AI vs. THOX" comparison block.** The differentiator is ownership/privacy; a simple
    two-column "your data leaves / your data stays" visual converts privacy-motivated backers. The copy
    and tokens already exist in `kickstarter/site/`.
 5. **Keep prototype honesty explicit.** The page copy already commits to labeling AI-generated concept
-   visuals and not presenting renders as production units — keep that label visible on every device
+   visuals and not presenting renders as production units - keep that label visible on every device
    tile, and use the `demo/` and `production-tracker.html` real-capture pipeline for hero shots.
 6. **Tighten the risks section around the honest-boundary story.** The strongest trust signal here is
-   "we tell you what the small devices *can't* do." Make that a headline, not a footnote — it
+   "we tell you what the small devices *can't* do." Make that a headline, not a footnote - it
    pre-empts the #1 objection to edge-AI hardware.
 7. **Founder video lower-thirds.** Ensure they read exactly "Craig Ross, CEO" and "Tommy Xaypanya,
-   CTO" (never "Phamy") — the retired name still appears in unreconciled assets.
+   CTO" (never "Phamy") - the retired name still appears in unreconciled assets.
 
 ---
 

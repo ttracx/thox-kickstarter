@@ -75,7 +75,7 @@ Full tier copy, add-ons, and shipping estimates live in [`docs/REWARDS_MATRIX.md
 
 Stretch goals are announced live once the $150,000 base goal is funded and are confirmed by the
 founders before publication. They will reward the community without changing any device's honest
-capability boundaries. (No stretch figures are committed in this document — see the launch runbook
+capability boundaries. (No stretch figures are committed in this document - see the launch runbook
 for the live stretch ladder once locked.)
 
 ### Timeline
@@ -203,8 +203,8 @@ The campaign uses **"Your AI. Your Data. Your Rules."** as the primary line.
 
 ## Who is behind THOX.ai
 
-- **Craig Ross, CEO, THOX.ai** — mission, product positioning, manufacturing plan, backer trust.
-- **Tommy Xaypanya, CTO, THOX.ai** — technical architecture, local-first AI runtime, security
+- **Craig Ross, CEO, THOX.ai** - mission, product positioning, manufacturing plan, backer trust.
+- **Tommy Xaypanya, CTO, THOX.ai** - technical architecture, local-first AI runtime, security
   posture, demo walkthrough.
 
 ## Backer commitments
