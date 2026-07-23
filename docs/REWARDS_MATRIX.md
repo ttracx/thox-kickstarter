@@ -6,23 +6,23 @@ Paste these tiers into Kickstarter Rewards. Retail prices are post-campaign MSRP
 
 | Device | Retail price | Kickstarter special | Early-bird price | Early-bird cap | Savings vs retail |
 |---|---:|---:|---:|---:|---:|
-| ThoxKey | $39.99 | $34 | $24 | 1000 | up to 40% |
-| ThoxMini Air | $99 | $79 | $69 | 500 | up to 30% |
-| ThoxMini | $199 | $169 | $149 | 500 | up to 25% |
-| ThoxClip | $399 | $329 | $299 | 500 | up to 25% |
+| ThoxKey | $39.99 | $34 | $24 | 500 | up to 40% |
+| ThoxMini Air | $99 | $79 | $69 | 350 | up to 30% |
+| ThoxMini | $199 | $169 | $149 | 300 | up to 25% |
+| ThoxClip | $399 | $329 | $299 | 200 | up to 25% |
 
 ## Main reward tiers
 
 | # | Tier name | Pledge | Quantity cap | Items included | Estimated delivery | Ships to |
 |---:|---|---:|---:|---|---|---|
 | 1 | THOX.ai Supporter | $5 | Unlimited | Backer updates, backer wall, digital wallpaper pack | October 2026 | Digital |
-| 2 | Early-bird ThoxKey | $24 | 100 | 1 ThoxKey USB device | Q3-Q4 2026 | US & Canada|
+| 2 | Early-bird ThoxKey | $24 | 500 | 1 ThoxKey USB device | Q3-Q4 2026 | US & Canada|
 | 3 | ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey USB device | Q3-Q4 2026 | US & Canada |
-| 4 | Early-bird ThoxMini Air | $69 | 500 | 1 ThoxMini Air, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
+| 4 | Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
 | 5 | ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
-| 6 | Early-bird ThoxMini | $149 | 500 | 1 ThoxMini, USB-C power cable, quick-start card | Q3-Q4 2026 | US & Canada |
+| 6 | Early-bird ThoxMini | $149 | 300 | 1 ThoxMini, USB-C power cable, quick-start card | Q3-Q4 2026 | US & Canada |
 | 7 | ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini, USB-C power cable, quick-start card | Q3-Q4 2026 | US & Canada |
-| 8 | Early-bird ThoxClip | $299 | 500 | 1 ThoxClip, charging cable, clip mount, quick-start card | Q1 2027 | US & Canada|
+| 8 | Early-bird ThoxClip | $299 | 200 | 1 ThoxClip, charging cable, clip mount, quick-start card | Q1 2027 | US & Canada|
 | 9 | ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip, charging cable, clip mount, quick-start card | Q1 2027 | US & Canada |
 | 10 | THOX Starter Kit | $99 | Unlimited | 1 ThoxKey + 1 ThoxMini Air | Q3-Q4 2026 | US & Canada |
 | 11 | THOX Developer Kit | $189 | Unlimited | 1 ThoxKey + 1 ThoxMini | Q3-Q4 2026 | US & Canada |
@@ -69,7 +69,7 @@ Free Shipping to US & Canada for orders over $100. Final shipping will be collec
 
 ### Early-bird ThoxMini Air
 
-`ThoxMini Air is the low-cost wireless companion for THOX.ai workflows. It connects nearby devices, routes lightweight commands, and helps keep your private AI workspace local-first. Limited to 500 early backers at $69.`
+`ThoxMini Air is the low-cost wireless companion for THOX.ai workflows. It connects nearby devices, routes lightweight commands, and helps keep your private AI workspace local-first. Limited to 350 early backers at $69.`
 
 ### ThoxMini Air Kickstarter Special
 
@@ -77,7 +77,7 @@ Free Shipping to US & Canada for orders over $100. Final shipping will be collec
 
 ### Early-bird ThoxMini
 
-`ThoxMini is the compact local compute node for your desk, lab, or field kit. Use it for local services, lightweight agents, encrypted storage, and private automations. Limited to 500 early backers at $149.`
+`ThoxMini is the compact local compute node for your desk, lab, or field kit. Use it for local services, lightweight agents, encrypted storage, and private automations. Limited to 300 early backers at $149.`
 
 ### ThoxMini Kickstarter Special
 
@@ -85,7 +85,7 @@ Free Shipping to US & Canada for orders over $100. Final shipping will be collec
 
 ### Early-bird ThoxClip
 
-`ThoxClip is the premium clip-on private AI command and capture device. Designed for quick voice capture, workflow triggers, field notes, and secure handoff into your THOX environment. Limited to 500 early backers at $299.`
+`ThoxClip is the premium clip-on private AI command and capture device. Designed for quick voice capture, workflow triggers, field notes, and secure handoff into your THOX environment. Limited to 200 early backers at $299.`
 
 ### ThoxClip Kickstarter Special
 

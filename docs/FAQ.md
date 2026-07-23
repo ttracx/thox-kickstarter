@@ -1,36 +1,57 @@
 # FAQ
 
-Eight questions, paste verbatim into the Kickstarter FAQ section.
+Paste these verbatim into the Kickstarter FAQ section. Answers stay within the honest capability
+boundaries in [`docs/CAMPAIGN_INFO.md`](CAMPAIGN_INFO.md): small devices carry identity, route, and
+capture; heavier work routes to capable local hardware the user owns.
 
 ## Will THOX work without an internet connection?
 
-Yes. The whole point. ThoxClip pairs to a local THOX node over BLE; the local node routes to ThoxNova on your LAN; ThoxNova hosts the LLM locally. The only thing that needs the internet is firmware updates, and you can defer those.
+Yes — that is the whole point. THOX is local-first. ThoxKey unlocks your workspace on a trusted
+machine, ThoxMini Air and ThoxMini keep local services and routing on your own network, and ThoxClip
+captures and hands context into your workspace. Cloud connectors, if you ever use them, are an
+optional choice you control. The only thing that needs the internet is firmware updates, and you can
+defer those.
 
-## Can I bring my own LLM?
+## Which device should I start with?
 
-Yes. ThoxNova ships with three default GGUF models (Qwen3-7B, Gemma 3 12B, Llama 3.2 11B). The agent runtime supports any GGUF that llama.cpp supports. Swap the model file, restart the service.
+ThoxKey ($24 early-bird) is the simplest, most affordable way in: your portable private-AI identity,
+launcher, and recovery profile. Add ThoxMini Air ($69) for a low-cost wireless companion, ThoxMini
+($149) for a compact local compute node, or ThoxClip ($299) for premium capture and command. The
+Starter, Developer, Wearable Pro, and Complete Founder kits bundle these together.
+
+## Can I use my own AI models?
+
+THOX is local-first and you own what runs. The small devices carry identity, route commands, run
+lightweight local work, and capture context. Anything that needs a full model routes to capable
+local hardware you own, where you choose which models run. We will never tell you a pocket-sized
+device runs a chat-class LLM.
+
+## What can these small devices actually run on-device?
+
+ThoxKey carries and unlocks your workflow. ThoxMini Air routes lightweight commands and coordinates
+nearby devices. ThoxMini runs local services, lightweight agents, encrypted storage, and private
+automations. ThoxClip runs quick capture, wake-word, and workflow triggers. None of the four is a
+standalone LLM computer — heavier work routes to capable local hardware the user owns.
 
 ## Is this open source?
 
-The agent runtime is MIT or Apache-2.0 depending on the module. The Buildroot configs ship with every device. At the $3M stretch goal, KiCad schematics and STEP enclosure files are published under CERN-OHL-S.
+The THOX agent runtime is MIT or Apache-2.0 depending on the module. We will publish the threat model
+alongside the firmware repository at campaign launch so you can see exactly what each device does.
 
-## What if Milk-V or the Pi vendor disappears?
+## What if a key component becomes unavailable?
 
-We have alternate silicon for every device. ThoxMini falls back to the Luckfox Pico Mini B (RV1103); ThoxAir falls back to the Pi Zero 2 W. Our firmware already runs on both alternates in alpha today.
+We keep the first product set focused and have alternate suppliers identified for critical parts. If a
+primary component disappears, we switch the BOM, ship slightly later, and absorb the cost. No backer
+loses their reward — and if a date slips, you get a direct update explaining what changed and when the
+next update arrives.
 
-## Can I cluster more than four ThoxAir nodes?
+## Will ThoxClip work without a paired THOX device?
 
-Yes. The MagStack Air cluster scales to eight ThoxAir nodes on one shelf with a single 5V/4A USB-C input. Beyond eight, WiFi airtime becomes the bottleneck and you should add a ThoxNova as a hub.
-
-## Why is ThoxNova so much more expensive than the other devices?
-
-ThoxNova is the only device in the family that actually hosts an LLM. The N100 plus 16 GB DDR5 plus a 256 GB NVMe plus a passive aluminum case is the BOM. The other three devices are honest about what they cannot do, which is why they can be cheap.
-
-## Will ThoxClip work without a paired THOX node?
-
-ThoxClip records locally for up to 30 minutes of audio and wakes on the wake-word, but the agent flows require a paired ThoxMini, ThoxAir, or ThoxNova within BLE range.
+ThoxClip captures locally and wakes on its wake-word, but the full agent flows route captured context
+into a paired THOX device (ThoxMini Air or ThoxMini) or capable local hardware within range.
 
 ## What about privacy?
 
-No cloud egress by default. The ThoxNova-hosted dashboard shows every outbound request and lets you allow or deny each destination. We will publish the threat model alongside the firmware repo at campaign launch.
-
+No cloud egress by default. You control every connector, and any outbound request is a choice you
+allow or deny. We will publish the threat model with the firmware repository at launch. This is the
+THOX.ai principle: Your AI. Your Data. Your Rules.

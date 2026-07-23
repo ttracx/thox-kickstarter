@@ -15,8 +15,8 @@ This is the source of truth for the THOX.ai Kickstarter quick launch.
 | Duration | 30 days |
 | Recommended funding goal | $150,000 |
 | Funding model | All-or-nothing |
-| Launch target | August 12, 2026, 9:00 AM PT |
-| End target | September 11, 2026, 10:00 PM PT |
+| Launch target | July 7, 2026, 9:00 AM PT |
+| End target | August 6, 2026, 10:00 PM PT |
 | Public slug | thox-ai-private-ai-hardware |
 | Operating repo | ttracx/thox-kickstarter |
 
@@ -97,18 +97,18 @@ The campaign uses a three-layer reward stack:
 | Tier | Price | Cap | Includes | Estimated delivery |
 |---|---:|---:|---|---|
 | Supporter | $5 | Unlimited | Updates, backer wall, digital wallpaper pack | October 2026 |
-| Early-bird ThoxKey | $24 | 500 | 1 ThoxKey | January 2027 |
-| ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey | January 2027 |
-| Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air | February 2027 |
-| ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air | February 2027 |
-| Early-bird ThoxMini | $149 | 300 | 1 ThoxMini | March 2027 |
-| ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini | March 2027 |
-| Early-bird ThoxClip | $299 | 200 | 1 ThoxClip | April 2027 |
-| ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip | April 2027 |
-| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxMini Air | February 2027 |
-| THOX Developer Kit | $189 | Unlimited | ThoxKey + ThoxMini | March 2027 |
-| THOX Wearable Pro Kit | $349 | Unlimited | ThoxKey + ThoxClip | April 2027 |
-| THOX Complete Founder Kit | $549 | 100 | ThoxKey + ThoxMini Air + ThoxMini + ThoxClip + founder serial | May 2027 |
+| Early-bird ThoxKey | $24 | 500 | 1 ThoxKey | Q3-Q4 2026 |
+| ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey | Q3-Q4 2026 |
+| Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air | Q3-Q4 2026 |
+| ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air | Q3-Q4 2026 |
+| Early-bird ThoxMini | $149 | 300 | 1 ThoxMini | Q3-Q4 2026 |
+| ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini | Q3-Q4 2026 |
+| Early-bird ThoxClip | $299 | 200 | 1 ThoxClip | Q1 2027 |
+| ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip | Q1 2027 |
+| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxMini Air | Q3-Q4 2026 |
+| THOX Developer Kit | $189 | Unlimited | ThoxKey + ThoxMini | Q3-Q4 2026 |
+| THOX Wearable Pro Kit | $349 | Unlimited | ThoxKey + ThoxClip | Q1 2027 |
+| THOX Complete Founder Kit | $549 | 100 | ThoxKey + ThoxMini Air + ThoxMini + ThoxClip + founder serial | Q1 2027 |
 
 ## Funding allocation
 

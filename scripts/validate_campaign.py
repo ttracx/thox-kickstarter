@@ -112,7 +112,10 @@ def main() -> int:
             "docs/VIDEO_WALKTHROUGH_SCRIPT.md",
         ]
     )
-    missing_demo_terms = [term for term in DEMO_REQUIRED_TERMS if term not in demo_text]
+    demo_text_lower = demo_text.lower()
+    missing_demo_terms = [
+        term for term in DEMO_REQUIRED_TERMS if term.lower() not in demo_text_lower
+    ]
     if missing_demo_terms:
         fail("Missing required demo guardrails: " + ", ".join(missing_demo_terms))
 
