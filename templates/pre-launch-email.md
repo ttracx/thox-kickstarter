@@ -1,32 +1,31 @@
 # Pre-launch email template
 
-Subject: `THOX is coming - August 12`
+Subject: `THOX is coming - July 7`
 
 Hey {first_name},
 
 You signed up at thox.ai (or hit the Notify Me button on Kickstarter) to hear when the THOX family is ready. It is almost ready.
 
-We launch on Kickstarter on August 12, 2026 at 9:00 AM PT. Four devices, one agent, honest claims.
+We launch on Kickstarter on July 7, 2026 at 9:00 AM PT. Four devices, one private AI workflow, honest claims.
 
-| Device | What it does | Backer price |
+| Device | What it does | Early-bird price |
 |---|---|---|
-| ThoxClip | Wearable that listens, taps, forwards | $39 early-bird |
-| ThoxMini | Pocketable RISC-V edge node | $69 |
-| ThoxAir | Wireless cluster node | $79 ($349 for a 4-pack) |
-| ThoxNova | Desktop hub that hosts the LLM | $499 |
+| ThoxKey | USB private AI identity, encrypted launcher, recovery, and configuration | $24 |
+| ThoxMini Air | Low-cost wireless companion for local-first AI workflows | $69 |
+| ThoxMini | Compact local compute node for desk, lab, and field work | $149 |
+| ThoxClip | Premium clip-on private AI command and capture device | $299 |
 
-The first 500 ThoxClips are $39. After that, ThoxClip is $49. If you want a ThoxClip, hit launch-day fast.
+Early-bird tiers are quantity-capped for launch day: 500 ThoxKey, 350 ThoxMini Air, 300 ThoxMini, and 200 ThoxClip. After the caps sell out, the Kickstarter special prices are $34 / $79 / $169 / $329. If you want an early-bird slot, hit launch-day fast.
 
 Two things to bookmark:
 1. Pre-launch page (smash the Notify button): {prelaunch_url}
 2. thox.ai for the full pitch.
 
-See you on August 12.
+See you on July 7.
 
-Phamy + Craig
+Tommy + Craig
 THOX.ai
 
 ---
 
 This email is sent only to people who opted in. Unsubscribe at any time at {unsubscribe_url}.
-

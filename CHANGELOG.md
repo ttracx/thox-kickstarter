@@ -6,6 +6,28 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 
 ## [Unreleased]
 
+### Fixed
+
+- **Campaign consistency pass (2026-07-23).** Reconciled conflicting "sources of truth" across the
+  canonical, paste-into-Kickstarter surface:
+  - Fixed the campaign validator/test (`scripts/validate_campaign.py`, `tests/test_campaign_docs.py`):
+    the demo-guardrail check was case-sensitive and failed on `main`. Now case-insensitive; validation
+    exits 0.
+  - Standardized launch/close dates to **July 7 → August 6, 2026** (30-day run); corrected the stale
+    August 12 / September 11 dates in `docs/CAMPAIGN_INFO.md`.
+  - Standardized early-bird caps to **ThoxKey 500 / ThoxMini Air 350 / ThoxMini 300 / ThoxClip 200**
+    across `docs/REWARDS_MATRIX.md` (was internally contradictory: 1000/100/500).
+  - Standardized retail prices to round `$99 / $199 / $399` and corrected bundle-sum math in
+    `docs/KICKSTARTER_PAGE_COPY.md` (were `.99` and mis-summed).
+  - Aligned reward delivery windows to the live page (Q3/Q4 2026 → Q1 2027) in `docs/CAMPAIGN_INFO.md`.
+  - Rewrote `deliverables/THOX_Kickstarter_Campaign.md`, `docs/FAQ.md`, `docs/RISKS.md`,
+    `templates/pre-launch-email.md`, `templates/launch-day-email.md`, and
+    `templates/social/content-calendar.md` off the **retired** device family (ThoxAir, ThoxNova, Milk-V,
+    LattePanda, "Phamy") onto the canonical four devices, July 7 timeline, and honest-boundary claims.
+  - Full audit + reconciliation plan for the remaining legacy footprint (the `content/` and
+    `social/posts/` trees, `docs/TIMELINE.md`, `docs/STRETCH_GOALS.md`, prompt libraries) in
+    `docs/KICKSTARTER_REVIEW_2026-07-23.md`.
+
 ### Added
 
 - **Model Review agent team** (`agent_tasks/model-review-team.md`) that auto-reviews new THOX.ai models published on Hugging Face (`Thox-ai`) and Ollama (`Thox-ai`), validates them, and lands them consistently.

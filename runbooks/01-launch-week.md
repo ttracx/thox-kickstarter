@@ -5,7 +5,7 @@ unlock the first stretch ($250K = "All backers get a free THOX logo
 coin"). The first 4 hours typically deliver 25% of total campaign
 funding; treat them like a moonshot launch.
 
-## T+0 Launch day (Tue Aug 12 2026)
+## T+0 Launch day (Tue Jul 7 2026)
 
 ### 8:00am PT - team assembles
 

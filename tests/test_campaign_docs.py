@@ -43,6 +43,7 @@ def test_device_demo_guardrails_present() -> None:
         ]
     )
 
+    text_lower = text.lower()
     for term in [
         "standalone LLM computer",
         "wireless local-first companion",
@@ -52,4 +53,4 @@ def test_device_demo_guardrails_present() -> None:
         "not a high-end inference workstation",
         "heavier work routes to capable local hardware",
     ]:
-        assert term in text
+        assert term.lower() in text_lower, term
