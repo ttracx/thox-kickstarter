@@ -27,17 +27,21 @@ Funding goal: $250,000. Stretch goal ceiling: $3,000,000. Pledges are All-or-Not
 
 ## Founder bios (placeholder text; founders review before press receives)
 
-### Tommy Xaypanya
+### Craig Ross, CEO and Co-Founder
 
-> *Placeholder bio - founders to revise.*
-> Tommy Xaypanya is co-founder of THOX.ai and leads software, AI runtime, and campaign operations. Tommy is an inventor of record on the THOX IP portfolio (IP-008 through IP-012 and onward, including IP-033). Tommy's background spans on-device AI runtimes, agent orchestration, and edge-class hardware bring-up.
+> *Short bio, founders to revise before press receives it.*
+> Craig Ross is co-founder and CEO of THOX.ai. He leads business strategy and corporate development, fundraising and investor relations, go-to-market execution, commercial and OEM/ODM partnerships, and operations across manufacturing, fulfillment, and logistics. Craig is an inventor of record on the THOX IP portfolio.
 
-### Craig Ross
+### Tommy Xaypanya, CTO and Co-Founder
 
-> *Placeholder bio - founders to revise.*
-> Craig Ross is co-founder of THOX.ai and leads hardware, mechanical design, and supply. Craig is an inventor of record on the THOX IP portfolio alongside Tommy. Craig's background spans embedded hardware, mechanical engineering, and small-batch manufacturing.
+> *Short bio, founders to revise before press receives it.*
+> Tommy Xaypanya is co-founder and CTO of THOX.ai. He leads all technical development, including the THOX.ai 1.0 carrier board, hardware architecture and Rust firmware, ThoxOS, MagStack magnetic clustering, the model pipeline, ThoxSDK, ThoxModels, and ThoxQu, plus IP strategy across 25 inventions in 7 domains. Tommy is an inventor of record on the THOX IP portfolio.
 
-Both bios are intentionally short and intentionally placeholders. Founders should rewrite to reflect their preferred public framing before this file moves to the press surface at `thox.ai/press`.
+Both bios are intentionally short. Founders should expand them to reflect their preferred public framing before this file moves to the press surface at `thox.ai/press`.
+
+**Corrected 2026-07-24.** The previous revision had the two role descriptions substantially inverted against https://www.thox.ai/team: it credited Craig with hardware and mechanical design and Tommy with campaign operations. The roles above now match the published team page.
+
+The previous revision also asserted pre-THOX career history for both founders ("background spans embedded hardware, mechanical engineering, and small-batch manufacturing" and "on-device AI runtimes, agent orchestration, and edge-class hardware bring-up"). None of that is published anywhere, and it was not sourced. It has been removed rather than shipped to journalists as fact. If the founders want prior-career detail in the press kit, they should write it themselves; it should not be inferred.
 
 ---
 
