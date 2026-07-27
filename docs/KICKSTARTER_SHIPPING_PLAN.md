@@ -599,8 +599,8 @@ The hero video (2:30) MUST show:
 The Kickstarter page MUST link to:
 
 - [x] 4-device pricing tier in `docs/REWARDS_MATRIX.md`
-- [ ] Spec sheet for each device in
-      `thox-3dprint-kit/devices/<device>/v2/README.md`
+- [x] Spec sheet for each device in
+      `devices/<device>/v2/README.md` (in-repo: thoxclip, thoxmini, thoxmini-air, thoxnova)
 - [x] Press kit at `docs/PRESS_KIT.md`
 - [x] Backer FAQ at `docs/FAQ.md`
 
