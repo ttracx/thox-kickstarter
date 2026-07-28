@@ -71,3 +71,15 @@ Vertical-slice MVPs for the THOX.ai Kickstarter quick launch.
 | Backend slice | Fulfillment milestone tracker |
 | Frontend slice | Kickstarter Updates and email |
 | Done when | First four weekly updates are drafted and scheduled |
+
+## MVP 8: Auditable Launch Gate
+
+| Field | Value |
+|---|---|
+| Outcome | Source validation and actual launch approval are reported as separate, evidence-backed states |
+| AI slice | None required; gate changes require human evidence and review |
+| Backend slice | `config/launch-readiness.json` plus standard-library audit script |
+| Frontend slice | Truthful README status and operator-readable blocked actions |
+| Security slice | Private payment, identity, credential, and recovery evidence stays outside Git |
+| Done when | `python3 scripts/audit_launch_readiness.py --require-ready` exits 0 with durable evidence for every gate |
+| Current status | Source validated; `release_ready=false` |

@@ -71,6 +71,8 @@ CAMPAIGN_INFO.md
 - Security claims must be scoped to the implementation shown.
 - Delivery estimates must include risk communication.
 - Optional cloud connectors must never be presented as mandatory.
+- Passing source tests does not approve launch. `config/launch-readiness.json` keeps physical media, exact preview, account/payment security, public URL, and founder approval as separate evidence gates.
+- Backer, payment, identity, supplier, and recovery data stays in approved private operator systems and never enters this public repository or Pages bundle.
 
 ## External systems
 

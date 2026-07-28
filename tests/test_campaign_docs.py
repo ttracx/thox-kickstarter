@@ -54,3 +54,25 @@ def test_device_demo_guardrails_present() -> None:
         "heavier work routes to capable local hardware",
     ]:
         assert term.lower() in text_lower, term
+
+
+def test_canonical_launch_window_is_consistent() -> None:
+    text = read_many(
+        [
+            ".env.example",
+            "docs/CAMPAIGN_INFO.md",
+            "docs/SETUP_GUIDE.md",
+        ]
+    )
+
+    assert "2026-07-07" in text
+    assert "2026-08-06" in text
+    assert "July 7, 2026" in text
+    assert "August 6, 2026" in text
+    for retired_date in [
+        "2026-08-12",
+        "2026-09-11",
+        "August 12, 2026",
+        "September 11, 2026",
+    ]:
+        assert retired_date not in text

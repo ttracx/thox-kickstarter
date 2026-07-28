@@ -12,9 +12,12 @@ REQUIRED_FILES = [
     "ecosystem_map.md",
     "mvp_catalog.md",
     "development_queue.md",
+    "architecture_decisions.md",
+    "security_model.md",
     "SECURITY.md",
     "CHANGELOG.md",
     ".env.example",
+    "config/launch-readiness.json",
     "docs/CAMPAIGN_INFO.md",
     "docs/KICKSTARTER_PAGE_COPY.md",
     "docs/REWARDS_MATRIX.md",
@@ -37,6 +40,7 @@ REQUIRED_FILES = [
 
 CANONICAL_DOCS = [
     "README.md",
+    ".env.example",
     "ecosystem_map.md",
     "mvp_catalog.md",
     "development_queue.md",
@@ -62,6 +66,7 @@ REQUIRED_TERMS = [
     "$39.99", "$99", "$199", "$399",
     "$24", "$69", "$149", "$299",
     "Craig Ross, CEO", "Tommy Xaypanya, CTO",
+    "2026-07-07", "2026-08-06",
 ]
 
 DEMO_REQUIRED_TERMS = [
@@ -80,6 +85,10 @@ LEGACY_PATTERNS = [
     r"\bThoxStick\b",
     r"\bPhamy\b",
     r"\bMilk-V\b",
+    r"2026-08-12",
+    r"2026-09-11",
+    r"\bAugust 12, 2026\b",
+    r"\bSeptember 11, 2026\b",
 ]
 
 

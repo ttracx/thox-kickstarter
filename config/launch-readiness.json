@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-07-27",
+  "campaign_source_status": "validated",
+  "release_ready": false,
+  "gates": [
+    {
+      "id": "source-consistency",
+      "status": "verified",
+      "owner": "Tommy",
+      "evidence": [
+        "scripts/validate_campaign.py",
+        "scripts/review_thox_models.py",
+        "tests"
+      ],
+      "next_action": "Keep all canonical campaign checks green."
+    },
+    {
+      "id": "static-preview-bundle",
+      "status": "verified",
+      "owner": "Launch operator",
+      "evidence": [
+        "kickstarter/site/index.html",
+        ".github/workflows/pages.yml"
+      ],
+      "next_action": "Re-run the Pages workflow after any preview bundle change."
+    },
+    {
+      "id": "final-product-imagery",
+      "status": "blocked",
+      "owner": "Producer",
+      "evidence": [
+        "docs/LAUNCH_CHECKLIST.md",
+        "development_queue.md"
+      ],
+      "next_action": "Produce and founder-approve final product imagery; label concept visuals explicitly until replaced."
+    },
+    {
+      "id": "founder-video-and-device-demos",
+      "status": "blocked",
+      "owner": "Tommy + Craig",
+      "evidence": [
+        "demo/RECORDING_RUNBOOK.md",
+        "demo/DEMO_ACCEPTANCE_CHECKLIST.md",
+        "development_queue.md"
+      ],
+      "next_action": "Record, export, and approve the founder walkthrough and four-device demo footage."
+    },
+    {
+      "id": "kickstarter-preview-validation",
+      "status": "blocked",
+      "owner": "Launch operator",
+      "evidence": [
+        "docs/PREVIEW_REVIEW_STATUS_2026-07-24.md",
+        "docs/KICKSTARTER_PREVIEW_IMPROVEMENT_PLAN_2026-07-24.md"
+      ],
+      "next_action": "Verify the exact Kickstarter preview on desktop and mobile, then capture approval evidence."
+    },
+    {
+      "id": "public-campaign-url",
+      "status": "blocked",
+      "owner": "Launch operator",
+      "evidence": [
+        "docs/PREVIEW_REVIEW_STATUS_2026-07-24.md"
+      ],
+      "next_action": "Copy the public URL from Kickstarter and verify it without a preview token before using it as a production CTA."
+    },
+    {
+      "id": "payment-identity-and-admin-security",
+      "status": "blocked",
+      "owner": "Craig",
+      "evidence": [
+        "docs/LAUNCH_CHECKLIST.md",
+        "docs/SETUP_GUIDE.md"
+      ],
+      "next_action": "Verify payment setup, business identity, least-privilege collaborators, 2FA, and recovery-code custody in the private operator system."
+    },
+    {
+      "id": "founder-go-no-go",
+      "status": "blocked",
+      "owner": "Tommy + Craig",
+      "evidence": [
+        "docs/LAUNCH_CHECKLIST.md"
+      ],
+      "next_action": "Complete the T-1 and T-0 checklist and record explicit founder approval."
+    }
+  ]
+}

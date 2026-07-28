@@ -31,7 +31,11 @@ Scores use a 1 to 10 scale.
 | [x] | Add video scene prompts | Graphic prompt and image-to-video prompt exist for every hero scene |
 | [x] | Add founder walkthrough script | Craig CEO and Tommy CTO script ready |
 | [x] | Add validation test path | Script and pytest file included |
+| [x] | Separate source validation from launch approval | Readiness manifest audits evidence and strict mode fails while operator gates remain blocked |
 | [x] | Finalize device demos | Per-device scripts, shot flow, fallback plans, and acceptance gates exist in `demo/` |
 | [ ] | Produce actual final images | Use `docs/VIDEO_SCENE_PROMPTS.md` |
 | [ ] | Record founder walkthrough and product demos | Use `demo/RECORDING_RUNBOOK.md` and `docs/VIDEO_WALKTHROUGH_SCRIPT.md` |
 | [ ] | Paste campaign into Kickstarter | Use `docs/SETUP_GUIDE.md` |
+| [ ] | Verify exact Kickstarter preview and public URL | Complete desktop/mobile review; verify the URL without a preview token |
+| [ ] | Verify private payment, identity, 2FA, and recovery controls | Record evidence in the approved private operator system, never in Git |
+| [ ] | Record founder go/no-go approval | Complete T-1/T-0 checklist, then run `python3 scripts/audit_launch_readiness.py --require-ready` |

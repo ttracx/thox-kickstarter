@@ -7,7 +7,7 @@
 [![THOX.ai](https://img.shields.io/badge/THOX.ai-Kickstarter%20Launchkit-1f6feb?style=flat-square)](https://thox.ai)
 [![Local-first](https://img.shields.io/badge/local--first-yes-10B981?style=flat-square)](#privacy-positioning)
 [![Privacy-first](https://img.shields.io/badge/privacy--first-yes-10B981?style=flat-square)](#privacy-positioning)
-[![Status](https://img.shields.io/badge/status-quick--launch%20ready-d29922?style=flat-square)](#launch-readiness)
+[![Status](https://img.shields.io/badge/status-source%20validated%20%7C%20launch%20blocked-d29922?style=flat-square)](#launch-readiness)
 [![Live Preview](https://img.shields.io/badge/live%20preview-ttracx.github.io%2Fthox--kickstarter-10B981?style=flat-square)](https://ttracx.github.io/thox-kickstarter/)
 <!-- /thox-badges -->
 
@@ -195,26 +195,34 @@ thox-kickstarter-quick-launch/
 
 ## Launch readiness
 
-Run the campaign validator before copying anything into Kickstarter:
+The campaign source and static preview validate, but the campaign is **not launch-ready**. Final product imagery, recorded/approved video, exact Kickstarter preview validation, the public campaign URL, private payment/admin checks, and founder go/no-go approval remain blocked operator gates. The machine-readable record is [`config/launch-readiness.json`](config/launch-readiness.json).
+
+Run all non-destructive repository gates before copying anything into Kickstarter:
 
 ```bash
 python3 scripts/validate_campaign.py
+python3 scripts/review_thox_models.py
+python3 scripts/audit_launch_readiness.py
+pytest -q
 ```
+
+`audit_launch_readiness.py` exits 0 when the manifest is structurally valid, even when it truthfully reports `release_ready=false`. The final operator go/no-go must use the strict gate:
+
+```bash
+python3 scripts/audit_launch_readiness.py --require-ready
+```
+
+That command exits 2 until every launch gate has verified evidence. Passing content tests alone is never launch approval.
 
 The validator checks for:
 
 - required product names
 - required retail and Kickstarter prices
+- canonical July 7, 2026 launch and August 6, 2026 close dates
 - outdated device names from older campaign drafts
 - required founder roles: Tommy Xaypanya, CTO and Craig Ross, CEO
 - required documentation files
 - required device demo guardrails and acceptance criteria
-
-For CI usage:
-
-```bash
-pytest -q
-```
 
 ---
 

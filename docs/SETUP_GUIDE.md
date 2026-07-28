@@ -37,8 +37,8 @@ Use these values unless leadership changes them in `docs/CAMPAIGN_INFO.md`.
 | Funding goal | $150,000 recommended |
 | Duration | 30 days |
 | Currency | USD |
-| Launch target | August 12, 2026, 9:00 AM PT |
-| End target | September 11, 2026, 10:00 PM PT |
+| Launch target | July 7, 2026, 9:00 AM PT |
+| End target | August 6, 2026, 10:00 PM PT |
 
 ## Story page setup
 
@@ -103,7 +103,7 @@ No. ThoxClip is a private AI capture and workflow control device. It is not a me
 
 ### When will rewards ship?
 
-Estimated delivery starts with ThoxKey in January 2027, then ThoxMini Air in February 2027, ThoxMini in March 2027, ThoxClip in April 2027, and Complete Founder Kits in May 2027.
+The currently published reward matrix estimates ThoxKey, ThoxMini Air, and ThoxMini for Q3-Q4 2026, with ThoxClip and Complete Founder Kits in Q1 2027. Treat these as estimates, keep them synchronized with `docs/CAMPAIGN_INFO.md` and `docs/REWARDS_MATRIX.md`, and publish any approved change consistently across every campaign surface.
 
 ### Can I add another device later?
 

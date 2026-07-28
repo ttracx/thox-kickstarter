@@ -6,6 +6,18 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 
 ## [Unreleased]
 
+### Launch-readiness audit (2026-07-27)
+
+- Corrected the retired August 12 / September 11 launch window in `.env.example` and
+  `docs/SETUP_GUIDE.md` to the canonical July 7 / August 6, 2026 window.
+- Reconciled the setup guide's shipping answer with the canonical Q3-Q4 2026 / Q1 2027 reward
+  estimates.
+- Added `config/launch-readiness.json` and `scripts/audit_launch_readiness.py` so source validation is
+  reported separately from launch approval. The truthful current state is `release_ready=false`.
+- Added strict go/no-go behavior (`--require-ready`), tests, and CI manifest auditing.
+- Added architecture decisions and a campaign-specific security model covering public/private trust
+  boundaries, secrets, backer data, account controls, and known limitations.
+
 ### Fixed
 
 - **Campaign consistency pass (2026-07-23).** Reconciled conflicting "sources of truth" across the

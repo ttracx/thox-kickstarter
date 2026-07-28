@@ -3,6 +3,7 @@ name: Validate campaign docs
 # Runs the campaign consistency checks the README badge advertises:
 #   - scripts/validate_campaign.py  (canonical terms, demo guardrails, legacy-name guard)
 #   - scripts/review_thox_models.py (model registry + download-center cross-check)
+#   - scripts/audit_launch_readiness.py (truthful launch-gate manifest)
 #   - pytest tests/                 (campaign terms, brand voice, guardrails)
 
 on:
@@ -28,5 +29,7 @@ jobs:
         run: python3 scripts/validate_campaign.py
       - name: Validate model registry
         run: python3 scripts/review_thox_models.py
+      - name: Audit launch readiness declaration
+        run: python3 scripts/audit_launch_readiness.py
       - name: Run campaign tests
         run: python3 -m pytest tests/ -q
