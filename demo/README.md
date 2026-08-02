@@ -20,7 +20,7 @@ Show how the four-device THOX.ai ecosystem fits together without overclaiming wh
 ## Recommended demo flow
 
 1. Insert ThoxKey and unlock a private THOX workspace.
-2. Show ThoxMini Air as the local wireless companion.
+2. Show ThoxAir as the local wireless companion.
 3. Show ThoxMini running a local service or lightweight agent dashboard.
 4. Trigger a capture action from ThoxClip.
 5. Route the captured note into the local workspace.
@@ -32,7 +32,7 @@ Show how the four-device THOX.ai ecosystem fits together without overclaiming wh
 |---|---|---|
 | Integrated ecosystem flow | 60 to 90 second master demo | Tommy |
 | ThoxKey | 20 to 30 second clip | Tommy |
-| ThoxMini Air | 20 to 30 second clip | Tommy |
+| ThoxAir | 20 to 30 second clip | Tommy |
 | ThoxMini | 25 to 40 second clip | Tommy |
 | ThoxClip | 20 to 30 second clip | Craig |
 | Pricing card | 8 to 12 second insert | Craig |
@@ -46,7 +46,7 @@ Show how the four-device THOX.ai ecosystem fits together without overclaiming wh
 - [ ] Founder titles correct.
 - [ ] Prices match `docs/REWARDS_MATRIX.md`.
 - [ ] ThoxKey is not described as a standalone LLM computer.
-- [ ] ThoxMini Air is not described as a high-end inference workstation.
+- [ ] ThoxAir is not described as a high-end inference workstation.
 - [ ] ThoxMini is framed as compact local compute for services and lightweight agents.
 - [ ] ThoxClip is not described as medical, emergency, safety, or surveillance hardware.
 - [ ] Generated visuals are labeled correctly if used.
