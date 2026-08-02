@@ -19,7 +19,7 @@ def test_required_campaign_terms_present() -> None:
 
     for term in [
         "ThoxKey",
-        "ThoxMini Air",
+        "ThoxAir",
         "ThoxMini",
         "ThoxClip",
         "$39.99",
