@@ -15,7 +15,7 @@ This campaign launches four devices:
 | Device | Kickstarter from | What it does |
 |---|---:|---|
 | ThoxKey | $24 early bird | USB private AI identity, encrypted launcher, recovery, and configuration |
-| ThoxMini Air | $69 early bird | Low-cost wireless companion for local-first AI workflows |
+| ThoxAir | $69 early bird | Low-cost wireless companion for local-first AI workflows |
 | ThoxMini | $149 early bird | Compact local compute node for desk, lab, and field work |
 | ThoxClip | $299 early bird | Premium clip-on private AI command and capture device |
 
@@ -54,20 +54,20 @@ What ThoxKey is not:
 - it is not a cloud subscription
 - it is not a generic storage stick marketed as AI
 
-### ThoxMini Air
+### ThoxAir
 
-ThoxMini Air is the low-cost wireless companion for local-first AI workflows. It connects nearby THOX devices, routes lightweight commands, and helps bridge your private AI workspace.
+ThoxAir is the low-cost wireless companion for local-first AI workflows. It connects nearby THOX devices, routes lightweight commands, and helps bridge your private AI workspace.
 
-Use ThoxMini Air when you want an accessible sub-$100 device in the THOX ecosystem.
+Use ThoxAir when you want an accessible sub-$100 device in the THOX ecosystem.
 
-What ThoxMini Air is for:
+What ThoxAir is for:
 
 - lightweight local routing
 - wireless companion workflows
 - simple device-to-device coordination
 - experimentation with private AI edge setups
 
-What ThoxMini Air is not:
+What ThoxAir is not:
 
 - it is not a replacement for a high-end workstation
 - it is not marketed as a large-model inference box
@@ -116,7 +116,7 @@ What ThoxClip is not:
 [ASSET: topology graphic.]
 
 1. Carry your identity and configuration with ThoxKey.
-2. Connect your local workspace with ThoxMini Air.
+2. Connect your local workspace with ThoxAir.
 3. Run local services and lightweight agents on ThoxMini.
 4. Capture and control workflows with ThoxClip.
 5. Route heavier work to capable local THOX nodes or user-owned computers.
@@ -128,7 +128,7 @@ This is local-first AI hardware with honest boundaries.
 | Reward | Kickstarter price | Retail value |
 |---|---:|---:|
 | ThoxKey | $34 | $39.99 |
-| ThoxMini Air | $79 | $99 |
+| ThoxAir | $79 | $99 |
 | ThoxMini | $169 | $199 |
 | ThoxClip | $329 | $399 |
 | THOX Starter Kit | $99 | $138.99 |
@@ -167,7 +167,7 @@ We will not present renders or generated images as final production units.
 | Firmware/security validation | Q3 2026 |
 | Pilot production | Q3 2026 |
 | ThoxKey shipping starts | Q3/Q4 2026 |
-| ThoxMini Air shipping starts | Q3/Q4 2026 |
+| ThoxAir shipping starts | Q3/Q4 2026 |
 | ThoxMini shipping starts | Q3/Q4 2026 |
 | ThoxClip shipping starts | Q1 2027 |
 | Complete Founder Kits ship | Q1 2027 |
