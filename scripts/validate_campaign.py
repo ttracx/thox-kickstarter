@@ -62,7 +62,7 @@ CANONICAL_DOCS = [
 ]
 
 REQUIRED_TERMS = [
-    "ThoxKey", "ThoxMini Air", "ThoxMini", "ThoxClip",
+    "ThoxKey", "ThoxAir", "ThoxMini", "ThoxClip",
     "$39.99", "$99", "$199", "$399",
     "$24", "$69", "$149", "$299",
     "Craig Ross, CEO", "Tommy Xaypanya, CTO",
@@ -81,7 +81,7 @@ DEMO_REQUIRED_TERMS = [
 
 LEGACY_PATTERNS = [
     r"\bThoxNova\b",
-    r"\bThoxAir\b",
+    r"\bThoxMini Air\b",
     r"\bThoxStick\b",
     r"\bPhamy\b",
     r"\bMilk-V\b",
