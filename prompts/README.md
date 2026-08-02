@@ -3,7 +3,7 @@
 This prompt library supports the quick-launch Kickstarter campaign for:
 
 - ThoxKey
-- ThoxMini Air
+- ThoxAir
 - ThoxMini
 - ThoxClip
 
