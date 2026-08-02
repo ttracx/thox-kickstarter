@@ -35,7 +35,7 @@ Use these exact names and roles in Kickstarter, press, social, video lower third
 
 ## Kickstarter blurb
 
-`Private AI hardware you own: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Local-first. Portable. Built for real workflows.`
+`Private AI hardware you own: ThoxKey, ThoxAir, ThoxMini, and ThoxClip. Local-first. Portable. Built for real workflows.`
 
 ## Plain-English promise
 
@@ -46,7 +46,7 @@ Most AI products ask you to send your work, ideas, conversations, and files some
 | Product | Retail | Kickstarter special | Early bird | Role |
 |---|---:|---:|---:|---|
 | ThoxKey | $39.99 | $34 | $24 | USB private AI identity, encrypted launcher, recovery and configuration device |
-| ThoxMini Air | $99 | $79 | $69 | Low-cost wireless edge companion and local routing node |
+| ThoxAir | $99 | $79 | $69 | Low-cost wireless edge companion and local routing node |
 | ThoxMini | $199 | $169 | $149 | Mini local compute node for desk, lab, and field workflows |
 | ThoxClip | $399 | $329 | $299 | Premium clip-on private AI capture, command, and control device |
 
@@ -60,13 +60,13 @@ Positioning: the simplest entry point into THOX.ai.
 
 Do not overclaim: ThoxKey is not marketed as a standalone LLM computer. It is the secure portable key for your private AI workflow.
 
-### ThoxMini Air
+### ThoxAir
 
-ThoxMini Air is the low-cost wireless companion for local-first AI workflows. It connects nearby THOX devices, routes lightweight commands, and helps bridge the private AI workspace without requiring a cloud account by default.
+ThoxAir is the low-cost wireless companion for local-first AI workflows. It connects nearby THOX devices, routes lightweight commands, and helps bridge the private AI workspace without requiring a cloud account by default.
 
 Positioning: the accessible wireless node for users who want a THOX device below $100.
 
-Do not overclaim: ThoxMini Air is an edge companion, not a high-end local LLM workstation.
+Do not overclaim: ThoxAir is an edge companion, not a high-end local LLM workstation.
 
 ### ThoxMini
 
@@ -99,16 +99,16 @@ The campaign uses a three-layer reward stack:
 | Supporter | $5 | Unlimited | Updates, backer wall, digital wallpaper pack | October 2026 |
 | Early-bird ThoxKey | $24 | 500 | 1 ThoxKey | Q3-Q4 2026 |
 | ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey | Q3-Q4 2026 |
-| Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air | Q3-Q4 2026 |
-| ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air | Q3-Q4 2026 |
+| Early-bird ThoxAir | $69 | 350 | 1 ThoxAir | Q3-Q4 2026 |
+| ThoxAir Kickstarter Special | $79 | Unlimited | 1 ThoxAir | Q3-Q4 2026 |
 | Early-bird ThoxMini | $149 | 300 | 1 ThoxMini | Q3-Q4 2026 |
 | ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini | Q3-Q4 2026 |
 | Early-bird ThoxClip | $299 | 200 | 1 ThoxClip | Q1 2027 |
 | ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip | Q1 2027 |
-| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxMini Air | Q3-Q4 2026 |
+| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxAir | Q3-Q4 2026 |
 | THOX Developer Kit | $189 | Unlimited | ThoxKey + ThoxMini | Q3-Q4 2026 |
 | THOX Wearable Pro Kit | $349 | Unlimited | ThoxKey + ThoxClip | Q1 2027 |
-| THOX Complete Founder Kit | $549 | 100 | ThoxKey + ThoxMini Air + ThoxMini + ThoxClip + founder serial | Q1 2027 |
+| THOX Complete Founder Kit | $549 | 100 | ThoxKey + ThoxAir + ThoxMini + ThoxClip + founder serial | Q1 2027 |
 
 ## Funding allocation
 
