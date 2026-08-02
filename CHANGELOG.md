@@ -6,6 +6,13 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 
 ## [Unreleased]
 
+### Official product naming (2026-08-02)
+
+- Renamed the wireless launch device from **ThoxMini Air** to **ThoxAir** across canonical campaign copy, rewards, demos, production scripts, and the static preview.
+- Kept legacy `thoxmini-air` paths and identifiers only for compatibility; user-facing copy must render **ThoxAir**.
+- Reversed the validation gate so `ThoxMini Air` is rejected and `ThoxAir` is required.
+
+
 ### Launch-readiness audit (2026-07-27)
 
 - Corrected the retired August 12 / September 11 launch window in `.env.example` and
@@ -27,7 +34,7 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
     exits 0.
   - Standardized launch/close dates to **July 7 → August 6, 2026** (30-day run); corrected the stale
     August 12 / September 11 dates in `docs/CAMPAIGN_INFO.md`.
-  - Standardized early-bird caps to **ThoxKey 500 / ThoxMini Air 350 / ThoxMini 300 / ThoxClip 200**
+  - Standardized early-bird caps to **ThoxKey 500 / ThoxAir 350 / ThoxMini 300 / ThoxClip 200**
     across `docs/REWARDS_MATRIX.md` (was internally contradictory: 1000/100/500).
   - Standardized retail prices to round `$99 / $199 / $399` and corrected bundle-sum math in
     `docs/KICKSTARTER_PAGE_COPY.md` (were `.99` and mis-summed).
@@ -48,7 +55,7 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 - **ThoxWebby-Gemma-4-E2B** - browser-tier WebGPU model (QAT Gemma-4 E2B via transformers.js) for ThoxKey - added to the model gallery, with its live demo Space linked.
 - **ThoxMythos-9B** - gated 1M-context reasoning model on Qwen3.5-9B with function-calling - added as a gated preview profile.
 - 2026-07-07 model review report (`docs/MODEL_REVIEW_2026-07-07.md`).
-- Quick-launch campaign source of truth for ThoxKey, ThoxMini, ThoxMini Air, and ThoxClip.
+- Quick-launch campaign source of truth for ThoxKey, ThoxMini, ThoxAir, and ThoxClip.
 - Kickstarter special and early-bird pricing for the four-device launch lineup.
 - Paste-ready Kickstarter Story page.
 - End-to-end quick-launch runbook.
