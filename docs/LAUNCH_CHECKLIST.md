@@ -114,7 +114,7 @@ Operational checklist for the THOX.ai quick-launch Kickstarter.
 | T+3 | Publish early-bird tier reminder | O |
 | T+4 | Publish technical clip or founder clip | T |
 | T+5 | Review pledge mix and traffic source quality | C |
-| T+6 | Publish ThoxMini Air / ThoxMini update | T |
+| T+6 | Publish ThoxAir / ThoxMini update | T |
 | T+7 | Publish weekly build update | C |
 
 ## Red flags
