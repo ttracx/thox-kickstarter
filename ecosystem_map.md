@@ -21,7 +21,7 @@ Backers
       -> fulfillment updates
   -> THOX.ai device family
       -> ThoxKey
-      -> ThoxMini Air
+      -> ThoxAir
       -> ThoxMini
       -> ThoxClip
   -> THOX.ai runtime ecosystem
@@ -37,7 +37,7 @@ Backers
 | Device | Ecosystem role | Core promise | Boundary |
 |---|---|---|---|
 | ThoxKey | Identity and portability | Carry your THOX setup | Not a standalone LLM computer |
-| ThoxMini Air | Wireless local companion | Coordinate nearby devices | Not a high-end inference workstation |
+| ThoxAir | Wireless local companion | Coordinate nearby devices | Not a high-end inference workstation |
 | ThoxMini | Compact local compute | Run local services and lightweight agents | Not unlimited large-model hardware |
 | ThoxClip | Premium capture and command | Capture context and trigger workflows | Not medical, emergency, safety, or surveillance hardware |
 
