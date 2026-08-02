@@ -32,7 +32,7 @@ Use these values unless leadership changes them in `docs/CAMPAIGN_INFO.md`.
 | Kickstarter field | Value |
 |---|---|
 | Project name | THOX.ai Private AI Hardware |
-| Short blurb | Private AI hardware you own: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Local-first. Portable. Built for real workflows. |
+| Short blurb | Private AI hardware you own: ThoxKey, ThoxAir, ThoxMini, and ThoxClip. Local-first. Portable. Built for real workflows. |
 | Category | Technology > Hardware |
 | Funding goal | $150,000 recommended |
 | Duration | 30 days |
@@ -95,7 +95,7 @@ THOX.ai is designed local-first. Cloud connectors, if enabled, should be optiona
 
 ### Which device should I back first?
 
-Start with ThoxKey for the lowest-cost entry point. Choose ThoxMini Air for wireless companion workflows. Choose ThoxMini for local services and lightweight agents. Choose ThoxClip for premium capture and command workflows.
+Start with ThoxKey for the lowest-cost entry point. Choose ThoxAir for wireless companion workflows. Choose ThoxMini for local services and lightweight agents. Choose ThoxClip for premium capture and command workflows.
 
 ### Is ThoxClip a medical or emergency device?
 
@@ -103,7 +103,7 @@ No. ThoxClip is a private AI capture and workflow control device. It is not a me
 
 ### When will rewards ship?
 
-The currently published reward matrix estimates ThoxKey, ThoxMini Air, and ThoxMini for Q3-Q4 2026, with ThoxClip and Complete Founder Kits in Q1 2027. Treat these as estimates, keep them synchronized with `docs/CAMPAIGN_INFO.md` and `docs/REWARDS_MATRIX.md`, and publish any approved change consistently across every campaign surface.
+The currently published reward matrix estimates ThoxKey, ThoxAir, and ThoxMini for Q3-Q4 2026, with ThoxClip and Complete Founder Kits in Q1 2027. Treat these as estimates, keep them synchronized with `docs/CAMPAIGN_INFO.md` and `docs/REWARDS_MATRIX.md`, and publish any approved change consistently across every campaign surface.
 
 ### Can I add another device later?
 
@@ -138,7 +138,7 @@ Do not click Launch unless every row is true.
 | Status | Requirement |
 |---|---|
 | [ ] | Campaign validator passes |
-| [ ] | Product names match: ThoxKey, ThoxMini Air, ThoxMini, ThoxClip |
+| [ ] | Product names match: ThoxKey, ThoxAir, ThoxMini, ThoxClip |
 | [ ] | Retail prices match: $39.99, $99, $199, $399 |
 | [ ] | Kickstarter prices match approved matrix |
 | [ ] | Founder roles match: Craig Ross CEO, Tommy Xaypanya CTO |
