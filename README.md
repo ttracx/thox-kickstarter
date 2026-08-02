@@ -38,16 +38,16 @@ The primary design file is `designs/thox-ai-kickstarter-campaign-handoff/project
 
 Deployable, brand-consistent campaign content generated from the design handoff and kept on the THOX Experience Fabric tokens. Everything is browsable and interactive — start at the hub and open any page in a browser. Every page is **mobile-optimized** (fluid type, auto-sizing elements, no horizontal scroll at phone widths) and carries the **company legal footer** (© THOX.ai LLC, trademark + IP notices in a collapsible "Legal & trademarks" view).
 
-**Campaign focus:** this Kickstarter launches four devices — **ThoxKey, ThoxMini Air, ThoxMini, ThoxClip** — and the **MeshStack app**. THOX Nova, the THOX Edge Series (Pro / Pro Max / Pro Ultra), and ThoxMigrate are shown as **roadmap and vision**, not campaign rewards. Device copy (full page copy + short graphic copy) lives in [`kickstarter/copy.md`](kickstarter/copy.md).
+**Campaign focus:** this Kickstarter launches four devices — **ThoxKey, ThoxAir, ThoxMini, ThoxClip** — and the **MeshStack app**. THOX Nova, the THOX Edge Series (Pro / Pro Max / Pro Ultra), and ThoxMigrate are shown as **roadmap and vision**, not campaign rewards. Device copy (full page copy + short graphic copy) lives in [`kickstarter/copy.md`](kickstarter/copy.md).
 
 | What | Where | Notes |
 |---|---|---|
 | **Campaign site hub** | [`index.html` ↗](https://ttracx.github.io/thox-kickstarter/) | One deployable static bundle linking **every** page below. Vendored React/Babel, no CDN needed. Serve with `python3 -m http.server --directory kickstarter/site`. |
-| **What's in the Box** | [`packaging.html` ↗](https://ttracx.github.io/thox-kickstarter/packaging.html) | Retail-packaging showcase of what backers receive: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. |
+| **What's in the Box** | [`packaging.html` ↗](https://ttracx.github.io/thox-kickstarter/packaging.html) | Retail-packaging showcase of what backers receive: ThoxAir, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. |
 | **Founders Club & add-ons** | [`founders.html` ↗](https://ttracx.github.io/thox-kickstarter/founders.html) | The Founders tier (back all four devices → numbered membership, pick-2 swag, 12-month MeshStack) plus every swag item as an add-on with suggested pricing. |
 | **THOX MagDisplay** (roadmap) | [`magdisplay.html` ↗](https://ttracx.github.io/thox-kickstarter/magdisplay.html) | Upcoming companion display (Spring 2027): pocket-class color e-ink surface that MagStacks onto ThoxMini / Air / Clip / Nova. Hero, colorways, user journey, specs, compatibility, and exploded anatomy. |
 | **THOX Experience Fabric** | [`experience-fabric.html` ↗](https://ttracx.github.io/thox-kickstarter/experience-fabric.html) | The scientific design system + Rust runtime behind every surface: three planes, locked nav, one visible agent, four-tier memory, generated tokens, certified Experience Score ≥ 90. |
-| **ThoxOS Mini Demo** | [`thoxos-mini-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
+| **ThoxOS Mini Demo** | [`thoxos-mini-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-mini-demo.html) | The edge ThoxOS build that powers the four launch devices (ThoxKey, ThoxAir, ThoxMini, ThoxClip): boot, insert, agents, files, skills, terminal. |
 | **ThoxOS Demo** (flagship) | [`thoxos-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-demo.html) | The **full ThoxOS** desktop that ships on THOX Nova and the THOX Edge Series: lock screen, menu bar, ⌘K palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. |
 | **ThoxLLM Model Gallery** | [`models.html` ↗](https://ttracx.github.io/thox-kickstarter/models.html) | Model gallery + download center for the real THOX models: filter, match to your device, copy the exact `ollama pull` / Hugging Face command. Now includes **ThoxWebby-Gemma-4-E2B** (browser/WebGPU) and **ThoxMythos-9B** (gated, 1M-context). Links to the [catalog](https://www.thox.ai/docs/model-catalog), [compatibility tool](https://www.thox.ai/docs/model-compatibility), [Hugging Face](https://huggingface.co/Thox-ai), and [Ollama](https://ollama.com/Thox-ai). |
 | **MeshStack app** (5 platforms) | `kickstarter/site/meshstack-{ios,ipad,macos,windows,android}.html` | Fully-functional standalone MeshStack demos: identity, pairing, connect, monitor. |
@@ -81,7 +81,7 @@ Canonical namespaces: Hugging Face **`Thox-ai/`**, Ollama **`Thox-ai/`**. Browse
 
 **Ready-to-use Kickstarter campaign source of truth for the THOX.ai hardware launch.**
 
-This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxMini Air**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and repository-standard planning docs.
+This repository is the campaign operating system for **ThoxKey**, **ThoxMini**, **ThoxAir**, and **ThoxClip**. It contains the Kickstarter page copy, reward tiers, launch runbook, founder video scripts, graphic-generation prompts, image-to-video prompts, finalized device demo runbooks, and repository-standard planning docs.
 
 > Campaign promise: private AI hardware for your desk, pocket, and workflow. Your AI. Your Data. Your Rules.
 
@@ -93,7 +93,7 @@ Only these four devices are in scope for the Kickstarter campaign and demos:
 
 1. **ThoxKey**
 2. **ThoxMini**
-3. **ThoxMini Air**
+3. **ThoxAir**
 4. **ThoxClip**
 
 All campaign copy, demo scripts, video walkthroughs, reward tiers, and validation checks must stay aligned to this four-device lineup.
@@ -106,7 +106,7 @@ All campaign copy, demo scripts, video walkthroughs, reward tiers, and validatio
 |---|---|---|---|---|---|
 | ThoxKey | $39.99 | $34 | $24 | 500 | up to 40% |
 | ThoxMini | $199 | $169 | $149 | 300 | up to 25% |
-| ThoxMini Air | $99 | $79 | $69 | 350 | up to 30% |
+| ThoxAir | $99 | $79 | $69 | 350 | up to 30% |
 | ThoxClip | $399 | $329 | $299 | 200 | up to 25% |
 
 Retail pricing is the post-campaign MSRP. Kickstarter pricing is the pledge price used in the live rewards matrix. Early-bird tiers are capped to protect margin and create launch-day urgency.
@@ -232,7 +232,7 @@ The demos show one integrated four-device flow:
 
 1. **ThoxKey** unlocks the private workspace and carries user-owned identity/configuration.
 2. **ThoxMini** runs compact local services, lightweight agents, encrypted storage, and private automations.
-3. **ThoxMini Air** coordinates nearby local devices as a wireless local-first companion.
+3. **ThoxAir** coordinates nearby local devices as a wireless local-first companion.
 4. **ThoxClip** captures context and triggers workflows into the private THOX workspace.
 5. Heavier work routes to capable local hardware the user owns.
 
@@ -246,7 +246,7 @@ THOX.ai should never imply that small devices run models they cannot realistical
 
 1. **ThoxKey** stores and carries the user-owned private AI identity, configuration, encrypted vault, and portable THOX launcher.
 2. **ThoxMini** is the local mini compute node for desk and field use.
-3. **ThoxMini Air** is the low-cost wireless edge companion and routing node.
+3. **ThoxAir** is the low-cost wireless edge companion and routing node.
 4. **ThoxClip** is the premium wearable / clip-on private AI capture and control device.
 5. Larger model workloads are routed to capable local THOX nodes or user-owned computers.
 
