@@ -27,7 +27,7 @@ The launch should move as a set of vertical slices:
 
 | Status | Task | Owner | Output |
 |---|---|---|---|
-| [ ] | Lock product lineup: ThoxKey, ThoxMini Air, ThoxMini, ThoxClip | Craig | `docs/CAMPAIGN_INFO.md` final |
+| [ ] | Lock product lineup: ThoxKey, ThoxAir, ThoxMini, ThoxClip | Craig | `docs/CAMPAIGN_INFO.md` final |
 | [ ] | Lock retail and Kickstarter pricing | Craig | `docs/REWARDS_MATRIX.md` final |
 | [ ] | Run `python3 scripts/validate_campaign.py` | Tommy | Validator passes |
 | [ ] | Generate first hero image from scene prompts | Producer | `assets/hero/thox-family-16x9.png` |
@@ -99,7 +99,7 @@ The launch should move as a set of vertical slices:
 | T+3 | Post reward-tier reminder and early-bird remaining counts | Launch operator |
 | T+4 | Publish short technical demo clip | Tommy |
 | T+5 | Review pledge mix and adjust ad spend, not reward prices | Craig |
-| T+6 | Post ThoxMini Air / ThoxMini architecture update | Tommy |
+| T+6 | Post ThoxAir / ThoxMini architecture update | Tommy |
 | T+7 | Weekly update with what shipped, what changed, what is next | Craig |
 
 ## Crisis response

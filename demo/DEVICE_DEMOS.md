@@ -1,6 +1,6 @@
 # Device Demo Finalization Guide
 
-This guide finalizes the Kickstarter-ready demos for ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip.
+This guide finalizes the Kickstarter-ready demos for ThoxKey, ThoxAir, ThoxMini, and ThoxClip.
 
 ## Demo objective
 
@@ -18,7 +18,7 @@ The demo must prove five things:
 
 ```text
 ThoxKey unlocks the private workspace.
-ThoxMini Air coordinates nearby local devices.
+ThoxAir coordinates nearby local devices.
 ThoxMini runs lightweight local services and automations.
 ThoxClip captures context and triggers workflows.
 Heavier work routes to capable local hardware the user owns.
@@ -29,7 +29,7 @@ Heavier work routes to capable local hardware the user owns.
 | Asset | Minimum acceptable demo state | Preferred state |
 |---|---|---|
 | ThoxKey | Physical USB device or clearly labeled EVT/mock unit | Functional unlock or launcher trigger |
-| ThoxMini Air | Physical enclosure/mock unit or board on desk | Wireless node appears in local dashboard |
+| ThoxAir | Physical enclosure/mock unit or board on desk | Wireless node appears in local dashboard |
 | ThoxMini | Physical enclosure/mock unit or mini compute box | Local dashboard or service running |
 | ThoxClip | Physical clip/mock unit | Button/tap/capture trigger visible |
 | Local dashboard | Static local HTML/app mock is acceptable if labeled | Live local THOX dashboard |
@@ -41,7 +41,7 @@ Heavier work routes to capable local hardware the user owns.
 Use these exact boundaries in every demo:
 
 - ThoxKey is a USB private AI identity, launcher, configuration, and recovery device. It is not a standalone LLM computer.
-- ThoxMini Air is a wireless local-first companion. It is not a high-end inference workstation.
+- ThoxAir is a wireless local-first companion. It is not a high-end inference workstation.
 - ThoxMini is a compact local compute node for services, lightweight agents, encrypted storage, and private automations.
 - ThoxClip is a premium command and capture device. It is not a medical, emergency, safety, or surveillance product.
 - Heavy model work routes to capable local hardware the user owns.
@@ -92,7 +92,7 @@ Use a local HTML dashboard mock with these labels only: `Local profile active`, 
 
 ---
 
-## Demo 2: ThoxMini Air local wireless companion
+## Demo 2: ThoxAir local wireless companion
 
 ### Purpose
 
@@ -102,7 +102,7 @@ Show why a sub-$100 wireless node belongs in the THOX ecosystem.
 
 | Item | Requirement |
 |---|---|
-| Device | ThoxMini Air on desk between laptop and other THOX devices |
+| Device | ThoxAir on desk between laptop and other THOX devices |
 | Screen | Local topology view |
 | Visual | Nearby-device connection rings only |
 | Speaker | Tommy Xaypanya, CTO |
@@ -111,7 +111,7 @@ Show why a sub-$100 wireless node belongs in the THOX ecosystem.
 
 | Step | Shot | Action | On-screen proof |
 |---:|---|---|---|
-| 1 | Product | ThoxMini Air placed near laptop | Device appears in topology |
+| 1 | Product | ThoxAir placed near laptop | Device appears in topology |
 | 2 | Screen | Local node connects | Status: local companion |
 | 3 | Graphic | Wireless rings connect nearby devices | No cloud icon |
 | 4 | Screen | Lightweight route is triggered | Local route accepted |
@@ -119,11 +119,11 @@ Show why a sub-$100 wireless node belongs in the THOX ecosystem.
 
 ### Script
 
-**Tommy:** ThoxMini Air is the low-cost wireless companion. Its job is local routing and lightweight coordination between nearby THOX devices. We are intentionally not positioning it as a high-end inference workstation. It helps the private AI workspace stay connected and local-first.
+**Tommy:** ThoxAir is the low-cost wireless companion. Its job is local routing and lightweight coordination between nearby THOX devices. We are intentionally not positioning it as a high-end inference workstation. It helps the private AI workspace stay connected and local-first.
 
 ### Acceptance criteria
 
-- [ ] ThoxMini Air is described as a wireless companion.
+- [ ] ThoxAir is described as a wireless companion.
 - [ ] No cloud dependency is implied by the visual.
 - [ ] Local routing or device discovery is visible.
 - [ ] Price card shows retail $99, Kickstarter $79, early bird $69.
@@ -131,7 +131,7 @@ Show why a sub-$100 wireless node belongs in the THOX ecosystem.
 
 ### Fallback demo
 
-Use a static topology graphic where ThoxMini Air pulses between ThoxKey, ThoxMini, ThoxClip, and the local workstation.
+Use a static topology graphic where ThoxAir pulses between ThoxKey, ThoxMini, ThoxClip, and the local workstation.
 
 ---
 
@@ -233,7 +233,7 @@ Show why all four devices together are more valuable than isolated gadgets.
 |---:|---|---|
 | 1 | Insert ThoxKey | Tommy |
 | 2 | Workspace unlocks | Tommy |
-| 3 | ThoxMini Air appears in topology | Tommy |
+| 3 | ThoxAir appears in topology | Tommy |
 | 4 | ThoxMini service card starts | Tommy |
 | 5 | ThoxClip captures a note | Craig |
 | 6 | Captured note lands in local THOX workspace | Tommy |
@@ -242,7 +242,7 @@ Show why all four devices together are more valuable than isolated gadgets.
 
 ### Integrated script
 
-**Tommy:** The full workflow starts with ThoxKey. It unlocks the private workspace and loads the local configuration. ThoxMini Air appears as the wireless companion. ThoxMini runs the local services. ThoxClip captures a note and routes it into the local workspace. When work gets heavier than a small device should handle, THOX routes it to capable local hardware the user owns.
+**Tommy:** The full workflow starts with ThoxKey. It unlocks the private workspace and loads the local configuration. ThoxAir appears as the wireless companion. ThoxMini runs the local services. ThoxClip captures a note and routes it into the local workspace. When work gets heavier than a small device should handle, THOX routes it to capable local hardware the user owns.
 
 **Craig:** That is the Kickstarter story. Four devices, clear roles, honest claims, and special pricing for early backers.
 

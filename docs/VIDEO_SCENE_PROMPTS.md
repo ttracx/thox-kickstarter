@@ -29,7 +29,7 @@ Animate the provided THOX.ai campaign graphic into a subtle premium hardware lau
 ### Graphic prompt
 
 ```text
-Create a 16:9 hero campaign image showing the four THOX.ai quick-launch devices on a matte black desk: ThoxKey as a compact premium USB device, ThoxMini Air as a small wireless companion node, ThoxMini as a compact local compute box, and ThoxClip as a premium clip-on capture device. Use emerald rim lighting, shallow depth of field, dark navy background, subtle secure-workspace atmosphere, and a clean Kickstarter-ready composition. Add tasteful text only: THOX.ai Private AI Hardware and Your AI. Your Data. Your Rules.
+Create a 16:9 hero campaign image showing the four THOX.ai quick-launch devices on a matte black desk: ThoxKey as a compact premium USB device, ThoxAir as a small wireless companion node, ThoxMini as a compact local compute box, and ThoxClip as a premium clip-on capture device. Use emerald rim lighting, shallow depth of field, dark navy background, subtle secure-workspace atmosphere, and a clean Kickstarter-ready composition. Add tasteful text only: THOX.ai Private AI Hardware and Your AI. Your Data. Your Rules.
 ```
 
 ### Image-to-video prompt
@@ -72,18 +72,18 @@ Animate the ThoxKey macro visual. Use a slow focus pull from the USB connector t
 
 ---
 
-## Scene 04: ThoxMini Air
+## Scene 04: ThoxAir
 
 ### Graphic prompt
 
 ```text
-Create a product visual of ThoxMini Air as a small wireless local-first companion device on a desk between a laptop and the THOX device family. Show soft emerald wireless rings connecting only nearby user-owned devices. Text: ThoxMini Air. Wireless local-first companion. Retail $99. Kickstarter from $69.
+Create a product visual of ThoxAir as a small wireless local-first companion device on a desk between a laptop and the THOX device family. Show soft emerald wireless rings connecting only nearby user-owned devices. Text: ThoxAir. Wireless local-first companion. Retail $99. Kickstarter from $69.
 ```
 
 ### Image-to-video prompt
 
 ```text
-Animate the ThoxMini Air visual with gentle local wireless rings. The rings should pulse between nearby devices, not outward into a cloud. Add subtle parallax and a slow orbit of no more than 12 degrees.
+Animate the ThoxAir visual with gentle local wireless rings. The rings should pulse between nearby devices, not outward into a cloud. Add subtle parallax and a slow orbit of no more than 12 degrees.
 ```
 
 ---
@@ -125,13 +125,13 @@ Animate the ThoxClip visual. A small emerald capture card should rise from the c
 ### Graphic prompt
 
 ```text
-Create a clean topology diagram with four devices: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Show each device connected to a local user-owned workstation. Label the flow: identity, wireless companion, local services, capture and command, heavier work routes to capable local hardware. Dark background, emerald lines, readable text.
+Create a clean topology diagram with four devices: ThoxKey, ThoxAir, ThoxMini, and ThoxClip. Show each device connected to a local user-owned workstation. Label the flow: identity, wireless companion, local services, capture and command, heavier work routes to capable local hardware. Dark background, emerald lines, readable text.
 ```
 
 ### Image-to-video prompt
 
 ```text
-Animate the topology diagram. Lines should trace from ThoxKey to the workspace, then ThoxMini Air, then ThoxMini, then ThoxClip. End with all lines connected locally. Keep every label readable and fixed.
+Animate the topology diagram. Lines should trace from ThoxKey to the workspace, then ThoxAir, then ThoxMini, then ThoxClip. End with all lines connected locally. Keep every label readable and fixed.
 ```
 
 ---
@@ -143,7 +143,7 @@ Animate the topology diagram. Lines should trace from ThoxKey to the workspace, 
 ```text
 Create a Kickstarter pricing card with four rows and clear mobile-readable text:
 ThoxKey retail $39.99, Kickstarter $34, early bird $24.
-ThoxMini Air retail $99, Kickstarter $79, early bird $69.
+ThoxAir retail $99, Kickstarter $79, early bird $69.
 ThoxMini retail $199, Kickstarter $169, early bird $149.
 ThoxClip retail $399, Kickstarter $329, early bird $299.
 Use premium dark background, emerald highlights for early-bird prices, and a small note: Early-bird tiers are quantity capped.
@@ -194,17 +194,17 @@ Animate the closing CTA card with a slow pullback from the device family to the 
 For 9:16 clips, keep the product in the lower half and the headline in the top third. Use one message per clip:
 
 - ThoxKey from $24 on Kickstarter.
-- ThoxMini Air from $69 on Kickstarter.
+- ThoxAir from $69 on Kickstarter.
 - ThoxMini from $149 on Kickstarter.
 - ThoxClip from $299 on Kickstarter.
 - Your AI. Your Data. Your Rules.
 
 ## Quality-control checklist
 
-- [ ] Product names match exactly: ThoxKey, ThoxMini Air, ThoxMini, ThoxClip.
+- [ ] Product names match exactly: ThoxKey, ThoxAir, ThoxMini, ThoxClip.
 - [ ] Prices match `docs/REWARDS_MATRIX.md`.
 - [ ] Craig Ross, CEO and Tommy Xaypanya, CTO titles are correct.
 - [ ] Generated visuals are not represented as final production photography.
 - [ ] Text is readable on mobile.
 - [ ] No cloud dependency is implied.
-- [ ] No standalone large-model claim is made for ThoxKey or ThoxMini Air.
+- [ ] No standalone large-model claim is made for ThoxKey or ThoxAir.

@@ -1,11 +1,11 @@
 ---
-title: ThoxMini Air User Manual
+title: ThoxAir User Manual
 device: thoxmini-air
 version: 1.0
 date: 2026-08
 ---
 
-# ThoxMini Air User Manual
+# ThoxAir User Manual
 
 Version 1.0
 August 2026
@@ -16,7 +16,7 @@ THOX.ai
 
 ## Welcome
 
-Thank you for backing ThoxMini Air. ThoxMini Air takes the compute core
+Thank you for backing ThoxAir. ThoxAir takes the compute core
 of ThoxMini, drops in a small LiPo cell for tetherless operation, and
 adds a magnetic ring on top so each unit clicks neatly onto the next.
 That last detail is the headline: a stack of Airs becomes a
@@ -24,7 +24,7 @@ self-cooled compute cluster you can carry in one hand.
 
 ### What is in the box
 
-- 1 x ThoxMini Air node in v4 enclosure (matte black back, light gray halo ring)
+- 1 x ThoxAir node in v4 enclosure (matte black back, light gray halo ring)
 - 1 x USB-A to USB-C cable, 1 m
 - 1 x quick-start card
 - 1 x THOX brand sticker
@@ -35,14 +35,14 @@ self-cooled compute cluster you can carry in one hand.
 
 - The LiPo cell is pre-installed and connected. Do not pry the enclosure
   open. The cell is small (500 mAh) but a punctured LiPo can vent flame.
-- Do not charge in an enclosed bag overnight. ThoxMini Air has overcharge
+- Do not charge in an enclosed bag overnight. ThoxAir has overcharge
   protection but treat any LiPo with respect.
 - Operating range is 0 C to 45 C ambient.
 - The magnetic halo ring is strong (N52). Keep it 100 mm from credit
   cards, hard drives, mechanical watches, and medical implants.
 - The enclosure is not weather-sealed. Keep it dry.
 
-### What ThoxMini Air is for
+### What ThoxAir is for
 
 - Tetherless private AI agent that runs for roughly 90 minutes off the
   internal cell on a typical workload
@@ -193,7 +193,7 @@ reboot
 
 ### Limited 1-year warranty
 
-THOX.ai warrants ThoxMini Air against defects in materials and
+THOX.ai warrants ThoxAir against defects in materials and
 workmanship for one (1) year from the date of shipment. The warranty
 covers the enclosure, the magnet ring, the JST cell pigtail, and the
 compute board. It does **not** cover the LiPo cell beyond 6 months

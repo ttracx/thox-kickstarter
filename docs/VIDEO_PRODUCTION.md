@@ -38,7 +38,7 @@ Production guide for the THOX.ai Kickstarter hero video and founder walkthrough.
 | Technical desk walkthrough | Practical video | Tommy | Devices on desk, screen recording optional |
 | Product lineup | Graphic + motion | Producer | Generated hero image can become motion clip |
 | ThoxKey close-up | Practical or graphic | Producer | Show USB form factor and secure identity concept |
-| ThoxMini Air wireless companion | Graphic + motion | Producer | Show network lines, not cloud dependency |
+| ThoxAir wireless companion | Graphic + motion | Producer | Show network lines, not cloud dependency |
 | ThoxMini local node | Practical + screen | Tommy | Show local services and honest boundaries |
 | ThoxClip premium workflow | Practical or graphic | Craig | Capture and command, no medical claims |
 | Reward pricing card | Motion graphic | Producer | Show early-bird and Kickstarter specials |
@@ -83,7 +83,7 @@ Production guide for the THOX.ai Kickstarter hero video and founder walkthrough.
 Before final export, verify:
 
 - [ ] ThoxKey is not described as a standalone LLM computer.
-- [ ] ThoxMini Air is not described as a high-end inference workstation.
+- [ ] ThoxAir is not described as a high-end inference workstation.
 - [ ] ThoxMini claims are limited to local services, lightweight agents, and user-owned workflows.
 - [ ] ThoxClip is not described as medical, emergency, safety, or surveillance hardware.
 - [ ] Cloud connectors are described as optional.

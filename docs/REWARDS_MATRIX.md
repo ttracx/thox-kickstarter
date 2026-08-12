@@ -7,7 +7,7 @@ Paste these tiers into Kickstarter Rewards. Retail prices are post-campaign MSRP
 | Device | Retail price | Kickstarter special | Early-bird price | Early-bird cap | Savings vs retail |
 |---|---:|---:|---:|---:|---:|
 | ThoxKey | $39.99 | $34 | $24 | 500 | up to 40% |
-| ThoxMini Air | $99 | $79 | $69 | 350 | up to 30% |
+| ThoxAir | $99 | $79 | $69 | 350 | up to 30% |
 | ThoxMini | $199 | $169 | $149 | 300 | up to 25% |
 | ThoxClip | $399 | $329 | $299 | 200 | up to 25% |
 
@@ -18,23 +18,23 @@ Paste these tiers into Kickstarter Rewards. Retail prices are post-campaign MSRP
 | 1 | THOX.ai Supporter | $5 | Unlimited | Backer updates, backer wall, digital wallpaper pack | October 2026 | Digital |
 | 2 | Early-bird ThoxKey | $24 | 500 | 1 ThoxKey USB device | Q3-Q4 2026 | US & Canada|
 | 3 | ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey USB device | Q3-Q4 2026 | US & Canada |
-| 4 | Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
-| 5 | ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
+| 4 | Early-bird ThoxAir | $69 | 350 | 1 ThoxAir, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
+| 5 | ThoxAir Kickstarter Special | $79 | Unlimited | 1 ThoxAir, USB-C cable, quick-start card | Q3-Q4 2026 | US & Canada |
 | 6 | Early-bird ThoxMini | $149 | 300 | 1 ThoxMini, USB-C power cable, quick-start card | Q3-Q4 2026 | US & Canada |
 | 7 | ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini, USB-C power cable, quick-start card | Q3-Q4 2026 | US & Canada |
 | 8 | Early-bird ThoxClip | $299 | 200 | 1 ThoxClip, charging cable, clip mount, quick-start card | Q1 2027 | US & Canada|
 | 9 | ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip, charging cable, clip mount, quick-start card | Q1 2027 | US & Canada |
-| 10 | THOX Starter Kit | $99 | Unlimited | 1 ThoxKey + 1 ThoxMini Air | Q3-Q4 2026 | US & Canada |
+| 10 | THOX Starter Kit | $99 | Unlimited | 1 ThoxKey + 1 ThoxAir | Q3-Q4 2026 | US & Canada |
 | 11 | THOX Developer Kit | $189 | Unlimited | 1 ThoxKey + 1 ThoxMini | Q3-Q4 2026 | US & Canada |
 | 12 | THOX Wearable Pro Kit | $349 | Unlimited | 1 ThoxKey + 1 ThoxClip | Q1 2027 | US & Canada |
-| 13 | THOX Complete Founder Kit | $549 | 100 | 1 ThoxKey + 1 ThoxMini Air + 1 ThoxMini + 1 ThoxClip + founder serial | Q1 2027 | US & Canada |
+| 13 | THOX Complete Founder Kit | $549 | 100 | 1 ThoxKey + 1 ThoxAir + 1 ThoxMini + 1 ThoxClip + founder serial | Q1 2027 | US & Canada |
 
 ## Add-ons
 
 | Add-on | Price | Eligibility | Estimated delivery |
 |---|---:|---|---|
 | Extra ThoxKey | $29 | Any physical reward pledge | Q3-Q4 2026 |
-| Extra ThoxMini Air | $74 | Any physical reward pledge | Q3-Q4 2026 |
+| Extra ThoxAir | $74 | Any physical reward pledge | Q3-Q4 2026 |
 | Extra ThoxMini | $159 | Any physical reward pledge | Q3-Q4 2026 |
 | Extra ThoxClip charging cable | $19 | Any ThoxClip pledge | Q1 2027 |
 | Extended warranty reserve | $29 | Any physical reward pledge | Same as base reward |
@@ -43,7 +43,7 @@ Paste these tiers into Kickstarter Rewards. Retail prices are post-campaign MSRP
 
 Free Shipping to US & Canada for orders over $100. Final shipping will be collected in the pledge manager after campaign close. Use these estimates on the campaign page so backers understand likely ranges before pledging.
 
-| Region | ThoxKey | ThoxMini Air / ThoxMini | ThoxClip | Bundles |
+| Region | ThoxKey | ThoxAir / ThoxMini | ThoxClip | Bundles |
 |---|---:|---:|---:|---:|
 | United States lower 48 | $5 | $9 | $12 | $14 to $24 |
 | Alaska, Hawaii, Puerto Rico | $9 | $15 | $19 | $24 to $39 |
@@ -67,13 +67,13 @@ Free Shipping to US & Canada for orders over $100. Final shipping will be collec
 
 `ThoxKey is the USB device that lets you carry your THOX setup between trusted machines. It is the simple, affordable entry point to private AI hardware you own.`
 
-### Early-bird ThoxMini Air
+### Early-bird ThoxAir
 
-`ThoxMini Air is the low-cost wireless companion for THOX.ai workflows. It connects nearby devices, routes lightweight commands, and helps keep your private AI workspace local-first. Limited to 350 early backers at $69.`
+`ThoxAir is the low-cost wireless companion for THOX.ai workflows. It connects nearby devices, routes lightweight commands, and helps keep your private AI workspace local-first. Limited to 350 early backers at $69.`
 
-### ThoxMini Air Kickstarter Special
+### ThoxAir Kickstarter Special
 
-`The sub-$100 THOX wireless companion. ThoxMini Air gives your workspace a lightweight edge node for local-first routing and everyday AI workflow support.`
+`The sub-$100 THOX wireless companion. ThoxAir gives your workspace a lightweight edge node for local-first routing and everyday AI workflow support.`
 
 ### Early-bird ThoxMini
 
@@ -93,7 +93,7 @@ Free Shipping to US & Canada for orders over $100. Final shipping will be collec
 
 ### THOX Starter Kit
 
-`Start with the USB identity device and the low-cost wireless companion: 1 ThoxKey + 1 ThoxMini Air. Best for first-time backers who want the simplest THOX setup.`
+`Start with the USB identity device and the low-cost wireless companion: 1 ThoxKey + 1 ThoxAir. Best for first-time backers who want the simplest THOX setup.`
 
 ### THOX Developer Kit
 
@@ -105,4 +105,4 @@ Free Shipping to US & Canada for orders over $100. Final shipping will be collec
 
 ### THOX Complete Founder Kit
 
-`One of each campaign device: ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip, plus founder serial treatment. Limited to 100 backers. This is the complete THOX.ai quick-launch hardware set.`
+`One of each campaign device: ThoxKey, ThoxAir, ThoxMini, and ThoxClip, plus founder serial treatment. Limited to 100 backers. This is the complete THOX.ai quick-launch hardware set.`

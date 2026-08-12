@@ -1,21 +1,21 @@
 ---
-title: ThoxMini Air Spec Sheet
+title: ThoxAir Spec Sheet
 device: thoxmini-air
 version: 2
 date: 2026-08
 ---
 
-# ThoxMini Air — Spec Sheet (v2)
+# ThoxAir — Spec Sheet (v2)
 
 > Tetherless edge AI cluster node with magnetic stacking. Compute core of ThoxMini + LiPo cell + MagStack ring.
 
-![ThoxMini Air](../../../assets/device/thoxmini-air-matte-black-4view.png)
+![ThoxAir](../../../assets/device/thoxmini-air-matte-black-4view.png)
 
 ---
 
 ## Overview
 
-ThoxMini Air takes the compute core of ThoxMini, adds a small LiPo cell for
+ThoxAir takes the compute core of ThoxMini, adds a small LiPo cell for
 tetherless operation, and a magnetic ring on top so each unit clicks neatly
 onto the next. A stack of Airs becomes a self-cooled compute cluster you can
 carry in one hand.
@@ -73,7 +73,7 @@ carry in one hand.
 
 ## In the box
 
-- 1 × ThoxMini Air node in v4 enclosure
+- 1 × ThoxAir node in v4 enclosure
 - 1 × USB-A to USB-C cable, 1 m
 - 1 × quick-start card
 - 1 × THOX brand sticker
