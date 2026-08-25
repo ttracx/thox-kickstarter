@@ -1,6 +1,6 @@
 # Timeline
 
-Aug 2026 launch through May 2027 fulfillment.
+Sep 2026 launch through May 2027 fulfillment.
 
 | Date | Milestone | Owner | Status |
 |---|---|---|---|
