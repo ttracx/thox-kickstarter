@@ -161,8 +161,8 @@ We will not present renders or generated images as final production units.
 
 | Milestone | Target |
 |---|---|
-| Campaign launch | July 7, 2026 |
-| Campaign close | August 6, 2026 |
+| Campaign launch | September 1, 2026 |
+| Campaign close | October 1, 2026 |
 | Design validation and supplier lock | September 2026 |
 | Firmware/security validation | Q3 2026 |
 | Pilot production | Q3 2026 |

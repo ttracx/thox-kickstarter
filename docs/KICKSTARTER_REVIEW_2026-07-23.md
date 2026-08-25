@@ -15,7 +15,7 @@ applied, a legacy-footprint audit, a reconciliation plan, and suggestions for th
 The repository contains **two parallel campaigns**:
 
 1. **Canonical (current):** the four-device quick launch - **ThoxKey, ThoxMini Air, ThoxMini,
-   ThoxClip** - at $150K, launching **July 7, 2026** (30-day run, closing Aug 6), with honest
+   ThoxClip** - at $150K, launching **September 1, 2026** (30-day run, closing Oct 1), with honest
    capability boundaries. This is what README, `docs/CAMPAIGN_INFO.md`, `docs/KICKSTARTER_PAGE_COPY.md`,
    `docs/REWARDS_MATRIX.md`, the whole `kickstarter/site/` bundle, and the `demo/` package describe.
 2. **Legacy (retired):** an earlier four-device family - **ThoxClip, ThoxMini, ThoxAir, ThoxNova** -
@@ -37,15 +37,15 @@ cataloged for systematic reconciliation (Sections B–D).
 | Area | File(s) | Change |
 |---|---|---|
 | Validator bug | `scripts/validate_campaign.py`, `tests/test_campaign_docs.py` | Demo-guardrail check was case-sensitive (`"heavier work routes…"` vs doc's `"Heavier work routes…"`) and failed on `main`. Now case-insensitive. `python3 scripts/validate_campaign.py` exits 0. |
-| Launch/close dates | `docs/CAMPAIGN_INFO.md` | Aug 12 / Sept 11 → **July 7 / Aug 6, 2026** (30-day run matches stated duration; campaign is live as of this review). |
+| Launch/close dates | `docs/CAMPAIGN_INFO.md` | Sept 1 / Oct 1 (30-day run matches stated duration; campaign is live as of this review). |
 | Early-bird caps | `docs/REWARDS_MATRIX.md` | Reconciled the internally-contradictory caps (1000 / 100 / 500) to **500 / 350 / 300 / 200** (ThoxKey / Air / Mini / Clip), matching README + `CAMPAIGN_INFO`. |
 | Retail prices | `docs/KICKSTARTER_PAGE_COPY.md` | `$99.99 / $199.99 / $399.99` → round **$99 / $199 / $399** (validator canon); corrected bundle "retail value" sums ($238.99 / $438.99 / $736.99). |
 | Delivery windows | `docs/CAMPAIGN_INFO.md` | Jan–May 2027 → **Q3/Q4 2026 → Q1 2027**, aligning the outlier to the live page + rewards matrix. (But see Suggestion 1 - the aggressive window may be worth revisiting.) |
 | Consolidated deliverable | `deliverables/THOX_Kickstarter_Campaign.md` | Full rewrite off the retired ThoxAir/ThoxNova/Milk-V/LattePanda family onto the canonical four devices, pricing, timeline, and honest boundaries. Removed fabricated stretch-goal dollar figures. |
 | Kickstarter FAQ | `docs/FAQ.md` | Rewrote off ThoxNova-hosts-LLM / cluster / Milk-V onto the four devices and honest boundaries (spec-free, no fabricated silicon). |
 | Kickstarter risks | `docs/RISKS.md` | Genericized supply-chain/manufacturing/overclaim copy; replaced silicon-specific EOL rows with a component-EOL row; owner `P`→`T`; dates aligned. |
-| Backer emails | `templates/pre-launch-email.md`, `templates/launch-day-email.md` | Rewrote to the four devices, correct pricing/caps, July 7 launch, $150K goal; fixed founder name "Phamy" → "Tommy." |
-| Social calendar | `templates/social/content-calendar.md` | Recomputed every T-offset date from the July 7 launch; swapped ThoxAir/ThoxNova reveals + cluster/LLM-host proofs for the four canonical devices; owner column + founder name fixed. |
+| Backer emails | `templates/pre-launch-email.md`, `templates/launch-day-email.md` | Rewrote to the four devices, correct pricing/caps, Sept 1 launch, $150K goal; fixed founder name "Phamy" → "Tommy." |
+| Social calendar | `templates/social/content-calendar.md` | Recomputed every T-offset date from the Sept 1 launch; swapped ThoxAir/ThoxNova reveals + cluster/LLM-host proofs for the four canonical devices; owner column + founder name fixed. |
 | Launch runbook | `runbooks/01-launch-week.md` | T+0 launch-day anchor Aug 12 → **Tue Jul 7 2026**. |
 | Changelog | `CHANGELOG.md` | Documented the consistency pass. |
 

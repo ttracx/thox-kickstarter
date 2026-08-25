@@ -4,10 +4,10 @@ Aug 2026 launch through May 2027 fulfillment.
 
 | Date | Milestone | Owner | Status |
 |---|---|---|---|
-| 2026-08-12 | Launch (Kickstarter goes live) | P | planned |
-| 2026-08-13 | Press embargo lifts (T+1) | P | planned |
-| 2026-09-11 | Campaign closes (T+30) | P | planned |
-| 2026-09-18 | BackerKit address-collection survey opens | P | planned |
+| 2026-09-01 | Launch (Kickstarter goes live) | P | planned |
+| 2026-09-02 | Press embargo lifts (T+1) | P | planned |
+| 2026-10-01 | Campaign closes (T+30) | P | planned |
+| 2026-10-08 | BackerKit address-collection survey opens | P | planned |
 | 2026-10-15 | DVT freeze; manufacturing partner contract signed | C | planned |
 | 2026-10-30 | Stretch goals announced complete (final $1M cut-off) | B | planned |
 | 2026-11-15 | PVT run, 200 units, ships to closed-beta backers | C | planned |

@@ -15,8 +15,8 @@ This is the source of truth for the THOX.ai Kickstarter quick launch.
 | Duration | 30 days |
 | Recommended funding goal | $150,000 |
 | Funding model | All-or-nothing |
-| Launch target | July 7, 2026, 9:00 AM PT |
-| End target | August 6, 2026, 10:00 PM PT |
+| Launch target | September 1, 2026, 9:00 AM PT |
+| End target | October 1, 2026, 10:00 PM PT |
 | Public slug | thox-ai-private-ai-hardware |
 | Operating repo | ttracx/thox-kickstarter |
 
