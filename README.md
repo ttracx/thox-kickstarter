@@ -218,7 +218,7 @@ The validator checks for:
 
 - required product names
 - required retail and Kickstarter prices
-- canonical July 7, 2026 launch and August 6, 2026 close dates
+- canonical September 1, 2026 launch and October 1, 2026 close dates
 - outdated device names from older campaign drafts
 - required founder roles: Tommy Xaypanya, CTO and Craig Ross, CEO
 - required documentation files

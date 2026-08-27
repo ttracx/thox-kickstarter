@@ -82,12 +82,12 @@ for the live stretch ladder once locked.)
 
 | Milestone | Target |
 |---|---|
-| Campaign launch | July 7, 2026 |
-| Campaign close | August 6, 2026 |
+| Campaign launch | September 1, 2026 |
+| Campaign close | October 1, 2026 |
 | Design validation and supplier lock | September 2026 |
-| Firmware / security validation | Q3 2026 |
-| Pilot production | Q3 2026 |
-| ThoxKey / ThoxMini Air / ThoxMini shipping | Q3/Q4 2026 |
+| Firmware / security validation | Q3-Q4 2026 |
+| Pilot production | Q3-Q4 2026 |
+| ThoxKey / ThoxAir / ThoxMini shipping | Q3-Q4 2026 |
 | ThoxClip shipping | Q1 2027 |
 | Complete Founder Kits ship | Q1 2027 |
 
