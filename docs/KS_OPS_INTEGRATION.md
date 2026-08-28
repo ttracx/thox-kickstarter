@@ -26,8 +26,8 @@ the operational data plane. The two compose; they do not overlap.
 
 ## When it runs
 
-- **Launch day (Aug 12 2026)**: smoke-tested and deployed BEFORE the click-launch moment so the first backer-report import can run within minutes of the first pledges
-- **Live campaign (Aug 12 to Sep 11)**: ingestion + fulfillment-risk + update-drafter run on operator demand; no public-facing endpoints
+- **Launch day (Sep 1 2026)**: smoke-tested and deployed BEFORE the click-launch moment so the first backer-report import can run within minutes of the first pledges
+- **Live campaign (Sep 1 to Oct 1)**: ingestion + fulfillment-risk + update-drafter run on operator demand; no public-facing endpoints
 - **Fulfillment (Nov 2026 onward)**: address-collection, shipping-issue triage, refund flagging continue through the fulfillment window
 
 ## Where it deploys
@@ -64,7 +64,7 @@ asks for a polished update draft instead of a structured markdown skeleton.
 ## Launch-day gates
 
 These six gates MUST clear before the launch button is clicked at 9:00am PT
-on Aug 12 2026. Owner is Tommy unless noted.
+on Sep 1 2026. Owner is Tommy unless noted.
 
 - [ ] **Integration deployed on the ops VPS** (Tailscale-only reachable, FastAPI healthcheck passes)
 - [ ] **dev@thox.ai added as Kickstarter collaborator** with Analytics + Coordinate fulfillment + Manage community per the integration's runbook

@@ -1,8 +1,8 @@
 # THOX.ai Kickstarter shipping plan
 
-**Launch date**: Tue Aug 12 2026, 9:00am PT
-**Days remaining**: 49 (T-49 as of 2026-06-24)
-**Filming window**: T-35 to T-14 (Jul 7 to Jul 28 2026)
+**Launch date**: Tue Sep 1 2026, 9:00am PT
+**Close date**: Thu Oct 1 2026, 10:00pm PT
+**Filming window**: T-35 to T-14 (Jul 28 to Aug 18 2026)
 **Goal**: ship 4 fully functional prototype devices on camera for the
 launch video, with the entire software / firmware / provisioning
 stack live by film day.

@@ -15,10 +15,10 @@ video with Grok) lives in [docs/AI_CONTENT_PIPELINE.md](AI_CONTENT_PIPELINE.md).
 
 | Phase | Window | Primary objective | Primary KPI |
 |---|---|---|---|
-| Pre-launch (awareness) | T-60 → T-1 (Jun 13 → Aug 11, 2026) | Grow the Kickstarter "Notify me" list | Notify-list signups (goal: 1,500+ by T-1) |
-| Launch (conversion) | T-0 → T+3 (Aug 12 → Aug 15) | Convert followers + press into Day-1 backers | Day-1 pledge count, % of goal at 24h |
-| Sustain (momentum) | T+4 → T+27 (Aug 16 → Sep 8) | Hold daily pledge velocity, unlock stretch goals | Pledges/day, stretch-thermometer progress |
-| Close (urgency) | T+28 → T+30 (Sep 9 → Sep 11) | Drive the final-48-hours surge | Final-48h pledge count |
+| Pre-launch (awareness) | T-60 → T-1 (Jul 3 → Aug 31, 2026) | Grow the Kickstarter "Notify me" list | Notify-list signups (goal: 1,500+ by T-1) |
+| Launch (conversion) | T-0 → T+3 (Sep 1 → Sep 4) | Convert followers + press into Day-1 backers | Day-1 pledge count, % of goal at 24h |
+| Sustain (momentum) | T+4 → T+27 (Sep 5 → Sep 28) | Hold daily pledge velocity, unlock stretch goals | Pledges/day, stretch-thermometer progress |
+| Close (urgency) | T+28 → T+30 (Sep 29 → Oct 1) | Drive the final-48-hours surge | Final-48h pledge count |
 | Fulfillment (trust) | T+31 → May 2027 | Keep backers warm, recruit late BackerKit add-ons | Update open rate, BackerKit add-on revenue |
 
 The North Star metric is **funded percentage**. Every post either grows the notify list

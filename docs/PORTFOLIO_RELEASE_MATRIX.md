@@ -2,7 +2,7 @@
 
 **Canonical single-page truth for SKU x Base Model x Device Firmware x Factory Registry x Release.**
 
-Last refreshed: **2026-07-02 EOD** (T-41 days to Kickstarter launch Aug 12 2026 / T-35 days to filming window Jul 7 2026). Phase C 12B fully shipped end-to-end this refresh.
+Last refreshed: **2026-07-02 EOD** (T-41 days to Kickstarter launch Sep 1 2026 / T-35 days to filming window Jul 28 2026). Phase C 12B fully shipped end-to-end this refresh.
 
 This document consolidates release state across 15+ THOX repos so backers,
 videographers, fulfillment, and the operator team have one place to answer:
@@ -12,9 +12,9 @@ downstream READMEs, spec sheets, and campaign copy must match.
 
 ---
 
-## 1. Shipping SKUs (Aug 12 launch)
+## 1. Shipping SKUs (Sep 1 launch)
 
-| SKU | Base model (Ollama tag) | Device SoC | Device firmware | Factory registry | Latest release | Aug 12 launch status |
+| SKU | Base model (Ollama tag) | Device SoC | Device firmware | Factory registry | Latest release | Sep 1 launch status |
 |---|---|---|---|---|---|---|
 | **ThoxKey** | `thoxmini-3b` Q3_K_S -> `ttracx/thoxmini:240steps` | Commodity USB (host machine's CPU) | THOX Key USB image builder (`build_image.py` + 5 tier loadouts) | [`thoxllm-factory` `registry/0.1.6.json`](https://github.com/ttracx/thoxllm-factory/blob/main/registry/0.1.6.json) | [`ttracx/thox-key` releases](https://github.com/ttracx/thox-key/releases) (latest: `portal-v0.4.0`) + [`ttracx/thoxkey-c175-enclosure` v2.0.0 Air-DNA](https://github.com/ttracx/thoxkey-c175-enclosure/releases/tag/v2.0.0) | GO — factory-model path ready; Stripe SKUs pending user action #1; enclosure v2.0.0 watertight-STL set ready |
 | **ThoxMini** | `thoxmini-3b` Q3_K_S -> `ttracx/thoxmini:240steps` | Luckfox Pico Mini B (RV1103, 64 MB DDR2, 128 MB flash, 0.5 TOPS NPU) | `thoxymicro` Go agent (MIT, IP-015) at `/usr/local/bin` | [`thoxllm-factory` `registry/0.1.6.json`](https://github.com/ttracx/thoxllm-factory/blob/main/registry/0.1.6.json) | [`ttracx/thoxmini-soc`](https://github.com/ttracx/thoxmini-soc) — no release yet, pre-launch (SoC is Luckfox Pico Mini B, board harness lives in `ttracx/thox-luckfox-pico-mini-b`); [`ttracx/thoxymicro`](https://github.com/ttracx/thoxymicro) — no release yet, pre-launch (main branch is canonical) | GO — SoC + Go agent both on `main`, model path ready; provisioner action #4 (`tailscale up`) pending user |
@@ -26,7 +26,7 @@ downstream READMEs, spec sheets, and campaign copy must match.
 
 ## 2. Portable + POC row group
 
-| Product | Base model | Runtime path | Host | Factory registry | Latest release | Aug 12 launch status |
+| Product | Base model | Runtime path | Host | Factory registry | Latest release | Sep 1 launch status |
 |---|---|---|---|---|---|---|
 | **ThoxOS Mini Portable v1.1.0** | `thoxmini-3b` default | Ollama sidecar container inside `thoxos-mini/docker-compose.yml` (6 GB RAM limit, internal `thoxos-mini-net` bridge, model pull on first boot into persistent `ollama-models` volume) | Docker on user's machine | [`thoxllm-factory` `registry/0.1.6.json`](https://github.com/ttracx/thoxllm-factory/blob/main/registry/0.1.6.json) | [`ttracx/thoxos-mini-portable`](https://github.com/ttracx/thoxos-mini-portable/releases) — latest tag is **v1.0.0**; **v1.1.0 alignment commit `cb521e6` on main**: `feat(llm): align to thoxllm-factory 0.1.6 model allocation (thoxmini-3b default)`. v1.1.0 tag pending release cut. | GO — main branch has 0.1.6 alignment landed; v1.1.0 tag is a keyboard-away formality |
 | **Fire Tablet 7" POC (5 SKUs)** | `thoxmini-3b` Q3_K_S -> `ttracx/thoxmini:240steps` | Ollama server on tablet, prompt UI via sideloaded APK | Amazon Fire Tablet 7" (MT8163, 1 GB / 8 GB, Android 5.1 patched via Fire OS 5) | [`thoxllm-factory` `registry/0.1.6.json`](https://github.com/ttracx/thoxllm-factory/blob/main/registry/0.1.6.json) | [`ttracx/thoxllm-factory` v0.1.6](https://github.com/ttracx/thoxllm-factory/releases/tag/v0.1.6) + [`apps/fire-tablet-7in-poc/`](https://github.com/ttracx/thoxllm-factory/tree/main/apps/fire-tablet-7in-poc) | GO — POC apps live under factory v0.1.6; MODEL_QUANT_MATRIX + DEMO_SCRIPT complete |
@@ -39,13 +39,13 @@ downstream READMEs, spec sheets, and campaign copy must match.
 |---|---|---|---|---|
 | **thoxos-kernel v1.2.0** (signed) | Rust microkernel + kernel runtime | Any THOX device | [v1.2.0 signed release 2026-06-29](https://github.com/ttracx/thoxos-kernel/releases/tag/v1.2.0) — SHA `70598e8` (staging commit `8952fc7`) | Smoke gate **PASSING**; MVP-39 orchestrator tag; v1.3-foundation staged post-v1.2.0 (`23c6861`) with KMS abstraction + 5-ring RolloutPolicy schema |
 | **thox-litert-lm v0.1.0** | Pure-Rust GGUF inference (LiteRT-LM substrate) | On-device runtime | [`ttracx/thox-litert-lm` v0.1.0](https://github.com/ttracx/thox-litert-lm/releases/tag/v0.1.0) (Phase 0 scaffold `v0.1.0-phase0` + Phase 0 tag `v0.1.0`) | 14-crate workspace; ADR-001/002; CI green; IP-022 |
-| **thoxllm-factory v0.1.6** | Model factory — produces every model artifact + canonical allocation table | 8 shipping models across the portfolio (thoxforge / thoxmini / thoxglobal / thoxwave / thoxnova-unleashed / thoxgemma4-12b / thoxnova-12b-agent / thoxnova-12b-core) | [`ttracx/thoxllm-factory` v0.1.6](https://github.com/ttracx/thoxllm-factory/releases/tag/v0.1.6) | Aug 12 primary training path; `registry/0.1.6.json` is portfolio-wide source of truth for `base_model` -> `ollama_tag` -> `gguf_files` |
+| **thoxllm-factory v0.1.6** | Model factory — produces every model artifact + canonical allocation table | 8 shipping models across the portfolio (thoxforge / thoxmini / thoxglobal / thoxwave / thoxnova-unleashed / thoxgemma4-12b / thoxnova-12b-agent / thoxnova-12b-core) | [`ttracx/thoxllm-factory` v0.1.6](https://github.com/ttracx/thoxllm-factory/releases/tag/v0.1.6) | Sep 1 primary training path; `registry/0.1.6.json` is portfolio-wide source of truth for `base_model` -> `ollama_tag` -> `gguf_files` |
 | **thox-kernel-agents v0.1.0** | Continuous kernel-vuln + enhancement scanning agents | Operates against `thoxos-kernel` crates | [`ttracx/thox-kernel-agents` v0.1.0](https://github.com/ttracx/thox-kernel-agents/releases/tag/v0.1.0) — 4-role team (Haiku 4.5 / Sonnet 4.6 / Opus 4.8+Codex / Opus 4.8+gpt5.5 dual); 100 files / ~7454 LOC; 14 pytest + 3 vitest | INVARIANTS I1-I5 mandatory pre-scan; feeds `thoxos-kernel` crates/`thox-agent-hub` v0.8.0 (MVP-34 substrate) |
 | **thox-loop-engine v0.1.0** | Self-improving OODA orchestrator (ThoxLoop v0.1.0 subpackage) | Operates factory batches; 5-agent OODA scaffold + ratchet benchmark subsystem | [`ttracx/thox-loop-engine` v0.1.0](https://github.com/ttracx/thox-loop-engine/releases/tag/v0.1.0) | 320 pytest green (planner-worker wave); TEL 4-wave absorption complete (foundation -> registry -> structure -> vertical-slice); v0.2 tag deferred to wave 5 (real-adapter env-wire + first real-model loop test) |
 
 ---
 
-## 4. Aug 12 Launch Readiness
+## 4. Sep 1 Launch Readiness
 
 - **Ship-readiness percent:** **~96%** (up from 94% — Phase C 12B fully shipped end-to-end 2026-07-02 EOD; three-artifact HF + GGUF + Ollama publish on `thoxgemma4-12b-lora` cleared the last model-layer blocker on the ThoxNova line)
 - **Acceptance-gate count:** **4/10 fully closed** (`REWARDS_MATRIX.md`, `PRESS_KIT.md`, `FAQ.md`, spec-sheet paths). **2 effectively-ready pending physical capture** per today's 2026-07-02 8:30 AM PT standup (magstack-cluster shot + iphone-tailscale shot each have production-ready scripts at `docs/video-script/` but need the physical hardware moment for real capture). 4 remaining are hardware + Phase C + Thox.ai PR merges.

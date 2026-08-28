@@ -1,14 +1,14 @@
 # Pull-forward tracker
 
 Living doc. Updated continuously during autonomous-admin sprints.
-Truth as of 2026-07-02 (T-41 days to Kickstarter launch Aug 12 2026).
+Truth as of 2026-07-02 (T-41 days to Kickstarter launch Sep 1 2026).
 
 > **Portfolio release single-source:** [`docs/PORTFOLIO_RELEASE_MATRIX.md`](PORTFOLIO_RELEASE_MATRIX.md)
 > is now the canonical one-page truth for SKU x base model x device firmware x
 > factory registry x current release. Refreshed 2026-07-02. If SKU / model /
 > firmware state drifts anywhere in the portfolio, that doc wins.
 
-When every row in "Actions waiting on you" is checked, we are ship-ready for Aug 12 2026 (T-48 days).
+When every row in "Actions waiting on you" is checked, we are ship-ready for Sep 1 2026.
 
 ---
 

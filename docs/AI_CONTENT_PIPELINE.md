@@ -211,7 +211,7 @@ Run this against every generated still and every finished video.
 - [ ] **Text legibility** at mobile size; any final price/date/spec is real overlaid type, not
       generated glyphs (generated text is for mood only, never for numbers).
 - [ ] **Safe area:** key content inside the center 80%.
-- [ ] **Numbers** ($39/$49/$69/$79/$349/$499/$599/$1,299, Aug 12 2026, $250K, $3M) exactly
+- [ ] **Numbers** ($39/$49/$69/$79/$349/$499/$599/$1,299, Sep 1 2026, $250K, $3M) exactly
       match CAMPAIGN_INFO.md.
 - [ ] **Caption posture** is honest: generated device art is framed as illustration, not photo.
 
