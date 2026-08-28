@@ -30,7 +30,7 @@ Pre-launch press receives the kit under T-21 day embargo, lifting at the launch 
 ## Frequently asked of press
 
 - **What is the funding goal?** $250,000.
-- **What is the launch date?** August 12, 2026, 9:00 AM PT.
+- **What is the launch date?** September 1, 2026, 9:00 AM PT.
 - **What is the first device to ship?** ThoxClip, January 2027.
 - **Is this an Indiegogo or Kickstarter?** Kickstarter. All-or-Nothing.
 - **Are these consumer-ready or developer-ready?** Both. Maker Kit and Air Kit tiers include dev docs access; the other tiers ship as consumer-ready devices with no soldering required.

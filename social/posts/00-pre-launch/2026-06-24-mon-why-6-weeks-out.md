@@ -85,7 +85,7 @@ launch day. /4
 - 7 more embargoed press hits
 - Production tooling deposit paid July 28 /5
 
-6/ The Kickstarter goes live Tue Aug 12 2026 at 9:00am PT.
+6/ The Kickstarter goes live Tue Sep 1 2026 at 9:00am PT.
 
 Add to calendar: thox.ai/launch
 
@@ -109,7 +109,7 @@ Status update on every front:
 What's left: 21 more pre-launch posts, final hero video shoot July
 15, production tooling deposit July 28.
 
-Add Tue Aug 12 2026 9am PT to your calendar.
+Add Tue Sep 1 2026 9am PT to your calendar.
 
 🔗 thox.ai/launch
 .
@@ -121,7 +121,7 @@ Add Tue Aug 12 2026 9am PT to your calendar.
 ## Caption: LinkedIn
 
 ```
-49 days out from the THOX.ai Kickstarter (Tue Aug 12 2026 9am PT).
+49 days out from the THOX.ai Kickstarter (Tue Sep 1 2026 9am PT).
 
 Where we are, by the numbers:
 
@@ -150,7 +150,7 @@ Production
 - Tooling deposit paid July 28
 - First production run starts the week of Sep 14 (post-funding)
 
-Aug 12 2026.
+Sep 1 2026.
 thox.ai/launch
 
 #THOXai #localAI #engineering #kickstarter #prelaunch

@@ -1,6 +1,6 @@
 # STRETCH_GOALS.md
 
-Campaign stretch goal copy for the August 12, 2026 Kickstarter, tied to the $250K baseline and $3M ceiling per the canonical campaign anchor.
+Campaign stretch goal copy for the September 1, 2026 Kickstarter, tied to the $250K baseline and $3M ceiling per the canonical campaign anchor.
 
 This is the launch-facing stretch goal ladder; the older operations-focused stretch goal list in `docs/STRETCH_GOALS.md` is retained as a historical record but this file is the version we ship on the Kickstarter page.
 

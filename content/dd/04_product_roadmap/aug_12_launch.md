@@ -1,4 +1,4 @@
-# August 12, 2026 launch
+# September 1, 2026 launch
 
 Last updated: 2026-06-25
 Status: DRAFT
@@ -18,7 +18,7 @@ Status: DRAFT
 
 ## Launch headline (per thox-kickstarter playbook)
 
-- Date: August 12, 2026.
+- Date: September 1, 2026.
 - SKUs: ThoxClip ($39+), ThoxMini ($69), ThoxAir ($79), ThoxNova ($499).
 - Baseline goal: $250,000.
 - Ceiling target: $3,000,000.

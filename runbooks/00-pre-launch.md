@@ -7,7 +7,7 @@ asset stocking, infrastructure setup, list building.
 ## T-90 (Mon May 13 2026): kickoff week
 
 Day 1 (Mon):
-- [ ] Confirm Aug 12 2026 launch date with the Kickstarter sales rep
+- [ ] Confirm Sep 1 2026 launch date with the Kickstarter sales rep
       (Kickstarter Pro accounts get launch-date support; activate this).
 - [ ] Assign all roles from [README.md](README.md) "Roles" table.
       Document in `../docs/BACKER_COMMS.md`.

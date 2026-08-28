@@ -27,7 +27,7 @@ Status: DRAFT - attorney review required
 - License inventory (every THOX repo, license per repo)
 
 ### 04_product_roadmap
-- Aug 12 launch milestones (cross-link to MILESTONES + STRETCH_GOALS)
+- Sep 1 launch milestones (cross-link to MILESTONES + STRETCH_GOALS)
 - Post-funding 90-day plan (fulfillment + manufacturing + community)
 - Phase F post-Kickstarter (cross-link to thoxcore ROADMAP_PHASE_F)
 - Long-term 18-month outlook (assumptions, not promises)

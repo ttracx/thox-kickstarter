@@ -1,6 +1,6 @@
 # VIDEO_SCRIPT.md
 
-90-second hero video for the THOX.ai Kickstarter, launching August 12, 2026.
+90-second hero video for the THOX.ai Kickstarter, launching September 1, 2026.
 
 This is the campaign's social-cut companion to the 2:30 master in `docs/VIDEO_PRODUCTION.md` and `deliverables/THOX_Video_Script.docx`. The 90-second cut is the version we push on YouTube Shorts, TikTok, Instagram Reels, and as the autoplay loop on the Kickstarter Story page.
 
@@ -139,7 +139,7 @@ Twenty seconds. Twelve seconds of founder. Eight seconds of CTA.
 | Lighting | n/a. |
 | Sound design | The ambient pad resolves to a single sustained cyan-colored tone. |
 | Voiceover | "Back the August twelfth Kickstarter at thox dot ai slash kickstarter." |
-| Graphics overlay | Wordmark in #F2F4F8 on #0B1220 background. Subline in IBM Plex Sans Medium: "Back the Kickstarter   thox.ai/kickstarter   August 12, 2026" |
+| Graphics overlay | Wordmark in #F2F4F8 on #0B1220 background. Subline in IBM Plex Sans Medium: "Back the Kickstarter   thox.ai/kickstarter   September 1, 2026" |
 | B-roll required | None. |
 | Render time estimate | AE comp 30 minutes. |
 

@@ -150,7 +150,7 @@ that runs the 12B locally.
 
 All in your pocket. All in your home. None in the cloud. /7
 
-8/ The Kickstarter is Aug 12 2026. We have spent the last 90 days
+8/ The Kickstarter is Sep 1 2026. We have spent the last 90 days
 building the production line so we can ship the day we close.
 
 Join the launch list to back at the early-bird tier:
@@ -188,7 +188,7 @@ The hard part: real local inference needs three things at once.
    Auditable.
 
 3. A UX that does not feel like a downgrade. Four devices launching
-   at Kickstarter on Aug 12 2026: ThoxClip (the pocket assistant),
+   at Kickstarter on Sep 1 2026: ThoxClip (the pocket assistant),
    ThoxMini (the always-on stick), ThoxAir (the local-AI accessory),
    ThoxNova (the desktop puck).
 

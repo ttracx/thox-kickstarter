@@ -2,7 +2,7 @@
 
 > **DISCLAIMER**: This document is general guidance, not legal or tax advice. THOX.ai LLC should consult a qualified CPA and a startup attorney before relying on any specific item. This checklist enumerates the categories and typical actions; the operator fills in their actual answers and confirms each item with a licensed professional in the relevant jurisdiction.
 
-Target launch: **2026-08-12** (Kickstarter, $250K baseline / $3M ceiling).
+Target launch: **2026-09-01** (Kickstarter, $250K baseline / $3M ceiling).
 Author cadence: refreshed by the autonomous-admin agent fleet on every sprint; status column is the operator's responsibility.
 
 > **NOTE ON ENTITY DOMICILE**: `docs/LEGAL.md` records THOX.ai LLC as a Nevada single-member LLC (registered agent in Reno, NV). Some upstream task briefs reference Cedar Park, Texas. Where the two disagree, the operator should verify the actual filing on record and treat that as authoritative. The checklist below is written for whichever state turns out to be the home state; line items applicable only to Texas or only to Nevada are tagged `[TX-only]` or `[NV-only]`.
@@ -193,7 +193,7 @@ Kickstarter collects VAT/GST on the campaign pledges in covered jurisdictions an
 | T-7 | 2026-08-05 | KS Trust & Safety final clearance received | TBD |
 | T-3 | 2026-08-09 | Tax + sales-tax dashboards smoke-tested | TBD |
 | T-1 | 2026-08-11 | Final pre-launch compliance attestation logged in `docs/internal/` | TBD |
-| T-0 | 2026-08-12 | Launch | - |
+| T-0 | 2026-09-01 | Launch | - |
 
 ---
 

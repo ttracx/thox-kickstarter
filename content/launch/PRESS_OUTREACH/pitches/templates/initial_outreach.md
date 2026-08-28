@@ -14,7 +14,7 @@ First-touch cold email. Use at T-28 for Tier 1, T-21 for Tier 2, T-14 for Tier 3
 ## Subject line (A)
 
 ```
-THOX - private AI on hardware you own. Kickstarter Aug 12.
+THOX - private AI on hardware you own. Kickstarter Sep 1.
 ```
 
 ## Subject line (B, A/B alternate)

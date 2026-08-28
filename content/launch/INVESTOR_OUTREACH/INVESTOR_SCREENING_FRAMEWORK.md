@@ -56,7 +56,7 @@ Why it matters: hardware-on-crowdfunding fundraises differently from
 software SaaS. A fund that has lived through a Kickstarter-funded
 portfolio company understands the manufacturing-capital story, the
 fulfillment risk story, and the Kickstarter-window dynamics that bracket
-THOX's Aug 12 launch. A fund that has not is likely to misprice the round
+THOX's Sep 1 launch. A fund that has not is likely to misprice the round
 or impose terms that disadvantage a hardware operator.
 
 How to verify:
@@ -176,8 +176,8 @@ Scoring:
 
 ## Question 5: Reputation for fast decision-making?
 
-Why it matters: THOX's round timing brackets the Aug 12 Kickstarter
-campaign and the Sep 11 campaign close. Funds with 90+ day decision
+Why it matters: THOX's round timing brackets the Sep 1 Kickstarter
+campaign and the Oct 1 campaign close. Funds with 90+ day decision
 cycles are a stage mismatch for this round; engage them only after the
 lead is committed. Funds with 14 to 45 day decision cycles are the
 target.

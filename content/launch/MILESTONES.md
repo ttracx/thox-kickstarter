@@ -1,8 +1,8 @@
 # MILESTONES.md
 
-T-minus countdown calendar for the August 12, 2026 Kickstarter launch.
+T-minus countdown calendar for the September 1, 2026 Kickstarter launch.
 
-Today is 2026-06-25. Launch day is T-0 (2026-08-12). The campaign window runs T+0 to T+30 (closes 2026-09-11 at 9:00 AM PT).
+Today is 2026-07-15. Launch day is T-0 (2026-09-01). The campaign window runs T+0 to T+30 (closes 2026-10-01 at 9:00 AM PT).
 
 Owners:
 - **T** = Tommy Xaypanya (software, runtime, campaign ops)
@@ -16,11 +16,11 @@ Blocker risk legend:
 
 ---
 
-## Phase 1: Content pack lock (T-48 to T-30, 2026-06-25 to 2026-07-13)
+## Phase 1: Content pack lock (T-48 to T-30, 2026-07-15 to 2026-08-02)
 
 | Date window | Deliverable | Owner | Dependency | Blocker risk |
 |---|---|---|---|---|
-| T-48 (2026-06-25) | This file plus VIDEO_SCRIPT, STORYBOARD, REWARDS_FAQ, STRETCH_GOALS, PRESS_KIT shipped to `content/launch/` | ops | none | low |
+| T-48 (2026-07-15) | This file plus VIDEO_SCRIPT, STORYBOARD, REWARDS_FAQ, STRETCH_GOALS, PRESS_KIT shipped to `content/launch/` | ops | none | low |
 | T-47 to T-44 | Founders review all content/launch/* files; revise founder bios, quotable lines, on-camera bite | T + C | content pack delivered | low |
 | T-44 to T-40 | Hero asset renders: ThoxClip turntable, ThoxMini desk, ThoxAir stack, ThoxNova hero | ops | founder review locked | med (render time + iteration) |
 | T-44 to T-40 | MagStack Cluster Dock printed and photographed; v4 ThoxMini Air printed and photographed | C | print kit shipped (already done), filament on hand | med (print fail rate) |
@@ -32,7 +32,7 @@ Phase 1 exit criteria: every file in `content/launch/` is reviewed and signed of
 
 ---
 
-## Phase 2: Friends + family preview (T-30 to T-21, 2026-07-13 to 2026-07-22)
+## Phase 2: Friends + family preview (T-30 to T-21, 2026-08-02 to 2026-08-11)
 
 | Date window | Deliverable | Owner | Dependency | Blocker risk |
 |---|---|---|---|---|
@@ -47,11 +47,11 @@ Phase 2 exit criteria: 25+ founder-list responders confirming launch-day pledge 
 
 ---
 
-## Phase 3: PR push and embargoed previews (T-21 to T-14, 2026-07-22 to 2026-07-29)
+## Phase 3: PR push and embargoed previews (T-21 to T-14, 2026-08-11 to 2026-08-18)
 
 | Date window | Deliverable | Owner | Dependency | Blocker risk |
 |---|---|---|---|---|
-| T-21 (2026-07-22) | Press kit goes out under T-21 embargo (lifts launch day 10:00 AM PT) | T | press kit assets ready | low |
+| T-21 (2026-08-11) | Press kit goes out under T-21 embargo (lifts launch day 10:00 AM PT) | T | press kit assets ready | low |
 | T-21 to T-18 | Media kit hosted at thox.ai/press; password-protected for journalists | T + ops | website team ready (NOT merged via this repo; PR-only on Thox.ai) | med (Thox.ai PR review window) |
 | T-21 to T-14 | Outreach to 30+ tier-1 outlets and 60+ tier-2 newsletters and podcasts | T | embargoed kit delivered | high (response rate is external) |
 | T-19 to T-15 | Color + sound on the 90-second cut; first locked version delivered | ops + editor | edit pass 1 done | med (editor schedule) |
@@ -62,11 +62,11 @@ Phase 3 exit criteria: Kickstarter draft page reviewed and ready to submit. Pres
 
 ---
 
-## Phase 4: Final polish (T-14 to T-7, 2026-07-29 to 2026-08-05)
+## Phase 4: Final polish (T-14 to T-7, 2026-08-18 to 2026-08-25)
 
 | Date window | Deliverable | Owner | Dependency | Blocker risk |
 |---|---|---|---|---|
-| T-14 (2026-07-29) | Submit Kickstarter project for review (Kickstarter takes up to 7 business days) | T | draft page ready | high (Kickstarter review SLA) |
+| T-14 (2026-08-18) | Submit Kickstarter project for review (Kickstarter takes up to 7 business days) | T | draft page ready | high (Kickstarter review SLA) |
 | T-14 to T-12 | Final master video render: 2:30 master, 90-sec cut, 30-sec teaser | ops + editor | locked cut done | low |
 | T-12 to T-9 | Kickstarter page polish: copy review, asset positioning, mobile pass | T | video uploaded | low |
 | T-12 to T-8 | Payment integration smoke test: Stripe + BackerKit + Kickstarter flow | ops + T | Stripe products renamed (per `docs/PULL_FORWARD_TRACKER.md`) | med |
@@ -78,23 +78,23 @@ Phase 4 exit criteria: Kickstarter review passed. Video and page approved. Payme
 
 ---
 
-## Phase 5: Pre-launch burst (T-7 to T-1, 2026-08-05 to 2026-08-11)
+## Phase 5: Pre-launch burst (T-7 to T-1, 2026-08-25 to 2026-08-31)
 
 | Date window | Deliverable | Owner | Dependency | Blocker risk |
 |---|---|---|---|---|
-| T-7 (2026-08-05) | Pre-launch email burst day 1: 5 emails staggered over 6 days to the founder list | T | warm-up email sent | low |
+| T-7 (2026-08-25) | Pre-launch email burst day 1: 5 emails staggered over 6 days to the founder list | T | warm-up email sent | low |
 | T-7 to T-5 | Social media prep: 30 posts queued across X, IG, TikTok, LinkedIn, YouTube, Reddit, Threads per `social/CALENDAR.md` | ops | content pack final, embargo holds | low |
 | T-7 to T-3 | Soft launch in select communities: 10 invite-only previews in maker, RISC-V, and on-device-AI Discord and Slack channels | T | community contacts confirmed | low |
 | T-5 to T-2 | Daily founder-list email cadence; press follow-ups; podcast pre-records | T | embargo holds | med |
 | T-3 to T-1 | Final ops VPS check: Kickstarter integration receiving test payloads; Stripe webhooks healthy | ops | deploy done | low |
 | T-3 to T-1 | War-room comms set up: dedicated Slack channel + on-call rotation for launch day | T + C + ops | none | low |
-| T-1 (2026-08-11 evening) | All systems green check; founders sign off on launch | T + C | everything above | low |
+| T-1 (2026-08-31 evening) | All systems green check; founders sign off on launch | T + C | everything above | low |
 
 Phase 5 exit criteria: 5,000+ on the launch-day mailing list. Press embargo holding. 5+ podcast pre-records in the can. Ops VPS green.
 
 ---
 
-## Phase 6: Launch day (T-0, 2026-08-12)
+## Phase 6: Launch day (T-0, 2026-09-01)
 
 Times in Pacific (campaign timezone).
 
@@ -116,7 +116,7 @@ Launch day exit criteria: campaign is live, no platform errors, day-1 pledge tot
 
 ---
 
-## Phase 7: Campaign window (T+0 to T+30, 2026-08-12 to 2026-09-11)
+## Phase 7: Campaign window (T+0 to T+30, 2026-09-01 to 2026-10-01)
 
 ### Update cadence
 

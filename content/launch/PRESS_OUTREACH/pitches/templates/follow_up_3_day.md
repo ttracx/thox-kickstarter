@@ -13,7 +13,7 @@ Polite 3-day bump. Use exactly once. If no response after the bump, the reporter
 ## Subject line (A)
 
 ```
-Re: THOX - private AI on hardware you own. Kickstarter Aug 12.
+Re: THOX - private AI on hardware you own. Kickstarter Sep 1.
 ```
 
 The "Re:" form keeps the email threaded with the original send. Inbox UIs collapse it under the first message, which is the polite read.

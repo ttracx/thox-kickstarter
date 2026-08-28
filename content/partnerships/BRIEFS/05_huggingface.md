@@ -8,7 +8,7 @@ Hugging Face is the default model registry for the open-weight ecosystem THOX bu
 
 Operationally, Hugging Face is the distribution channel that makes THOX's open-source posture credible. Every published THOX fine-tune is a Hub artifact. Every published THOX base model (ThoxMicro-125M, ThoxLLM-327M) is a Hub artifact. Every backer who wants to verify what is actually running on their device can read the model card on the Hub. The Hub is THOX's "show your work" surface. A formal relationship with the Hub team raises the credibility ceiling of that surface materially.
 
-Strategically, Hugging Face partnership unlocks two specific things that matter for the Aug 12 launch: verified-publisher status (which signals to Hub viewers that the Thox-ai org is who it claims to be), and a featured collection placement that drives organic Hub traffic to THOX model cards. Neither costs Hugging Face anything. Both move the THOX top-of-funnel meaningfully.
+Strategically, Hugging Face partnership unlocks two specific things that matter for the Sep 1 launch: verified-publisher status (which signals to Hub viewers that the Thox-ai org is who it claims to be), and a featured collection placement that drives organic Hub traffic to THOX model cards. Neither costs Hugging Face anything. Both move the THOX top-of-funnel meaningfully.
 
 ## Why this partnership might matter to Hugging Face
 
@@ -63,7 +63,7 @@ Finally, the cost to Hugging Face is near zero. THOX is not asking for paid serv
 - T-21 days (Jul 22, 2026): direct outreach via community channels with verified-publisher request and featured-collection nomination
 - T-14 days (Jul 29, 2026): polite single follow-up; consider escalating via a Hub community advocate
 - T-7 days (Aug 5, 2026): no further outbound; focus on launch
-- Aug 12, 2026 launch: campaign page links to the Hub model cards regardless of Hugging Face engagement
+- Sep 1, 2026 launch: campaign page links to the Hub model cards regardless of Hugging Face engagement
 - Post-launch (Aug 13 onward): re-engage with download counts, real backer usage data, and growing fine-tune library as proof points for verified-publisher status
 
 ## Decision authority

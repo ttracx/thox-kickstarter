@@ -1,7 +1,7 @@
 # INVESTOR_OUTREACH
 
 Internal preparation pack for the THOX.ai LLC pre-seed/seed round that
-closes alongside or shortly after the Aug 12 2026 Kickstarter campaign.
+closes alongside or shortly after the Sep 1 2026 Kickstarter campaign.
 
 Brand: #0B1220 / #F2F4F8 / #27E5FF / #FF3DA8. IBM Plex Sans + JetBrains
 Mono.

@@ -1,6 +1,6 @@
 # LINKEDIN_POSTS.md
 
-Eight LinkedIn posts spread across the six-week run-up to Aug 12, 2026. Posts alternate between Tommy Xaypanya (4 posts) and Craig Ross (4 posts), with a joint launch-day post co-signed.
+Eight LinkedIn posts spread across the six-week run-up to Sep 1, 2026. Posts alternate between Tommy Xaypanya (4 posts) and Craig Ross (4 posts), with a joint launch-day post co-signed.
 
 Voice: founder, technical, honest, no marketing fluff. No em-dashes. No emojis. Lowercase hashtags per LinkedIn convention. First line is the hook (LinkedIn truncates the rest behind a "see more" on most feeds, so the hook does the work).
 
@@ -26,7 +26,7 @@ Body:
 >
 > Privacy is not a marketing line. It is a property of where the computation runs.
 >
-> We launch on Kickstarter on August 12. Between now and then I will post the engineering deep-dives, the device walkthrough, the manufacturing story, and the unboxing thinking. If that is interesting, follow along.
+> We launch on Kickstarter on September 1. Between now and then I will post the engineering deep-dives, the device walkthrough, the manufacturing story, and the unboxing thinking. If that is interesting, follow along.
 
 CTA: Countdown and email list at https://thox.ai/launch
 
@@ -144,7 +144,7 @@ Body:
 >
 > 5. The campaign promises only what the prototype already does. The 7-adapter THOXCore router (LiteRT, OpenAI HTTP, Ollama, llama.cpp, vLLM, TensorRT, MLX) is shipped at v0.2.0, 145 of 145 tests green. The MagStack dock is shipped as a print kit. The v4 ThoxMini Air is shipped as a 3MF kit. We do not promise anything we have not already shipped to a repo.
 >
-> The campaign launches Aug 12 at 09:00 PT. Early-bird tiers are first-come during the first 24 hours.
+> The campaign launches Sep 1 at 09:00 PT. Early-bird tiers are first-come during the first 24 hours.
 
 CTA: Calendar reminder at https://thox.ai/launch
 
@@ -174,7 +174,7 @@ Body:
 >
 > 7 days to launch. The early-bird tiers cap during the first 24 hours.
 
-CTA: Save Aug 12 09:00 PT at https://thox.ai/launch
+CTA: Save Sep 1 09:00 PT at https://thox.ai/launch
 
 Hashtags: #productdesign #unboxing #packaging #userexperience #hardware
 
@@ -194,11 +194,11 @@ Body:
 >
 > Excited because we have already done the thing nobody can take back. The 7-adapter THOXCore router is shipped at v0.2.0, 145 of 145 tests green. The MagStack dock and the v4 ThoxMini Air print kits are shipped to repos. The provisioner for ThoxNova on LattePanda N100 is staged and verifiable. The runtime, the agent fleet, and the device-provisioning tooling are public on github.com/ttracx. None of this evaporates if the campaign goes a different direction than we hope. The work is real and out there.
 >
-> The thing I want to say honestly is that this is not a single-launch decision. We are building THOX whether or not Aug 12 hits the ceiling. The campaign is the funding mechanism for the manufacturing run that we cannot self-fund, and the public moment that lets the people who have been waiting actually back the thing. Both matter.
+> The thing I want to say honestly is that this is not a single-launch decision. We are building THOX whether or not Sep 1 hits the ceiling. The campaign is the funding mechanism for the manufacturing run that we cannot self-fund, and the public moment that lets the people who have been waiting actually back the thing. Both matter.
 >
 > If you are on the list, thank you. If you have been quietly watching, this is the post where it would help if you said something out loud. A repost, a comment, a question, a tag of one person who would also want one of these devices. The first 48 hours after launch decide a lot.
 >
-> Aug 12 at 09:00 PT.
+> Sep 1 at 09:00 PT.
 
 CTA: Save the calendar at https://thox.ai/launch
 
@@ -208,7 +208,7 @@ Suggested media: A simple frame: the four devices on a desk with the calendar da
 
 ---
 
-## Post 8: Tommy and Craig joint, T-0 (Wed Aug 12, 2026, 09:01 PT)
+## Post 8: Tommy and Craig joint, T-0 (Wed Sep 1, 2026, 09:01 PT)
 
 Hook (line 1): We're live.
 

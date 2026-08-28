@@ -1,6 +1,6 @@
 # PRESS_KIT.md
 
-Launch press kit for the THOX.ai Kickstarter, August 12, 2026. Companion to `docs/PRESS_KIT.md` (which is the operations-facing version with embargo policy, asset list, and outlet contacts).
+Launch press kit for the THOX.ai Kickstarter, September 1, 2026. Companion to `docs/PRESS_KIT.md` (which is the operations-facing version with embargo policy, asset list, and outlet contacts).
 
 This file is the press-facing one-page surface: company summary, founder bios, asset locations, outreach template, embargo terms, quotable lines, and a tech-spec one-pager per launch SKU.
 
@@ -12,7 +12,7 @@ All bios marked as placeholder text require sign-off from the named founder. No 
 
 THOX.ai LLC builds on-device personal AI. The runtime ships on a family of small, owned hardware that runs the model in your hands rather than in someone else's data center.
 
-The August 12, 2026 Kickstarter launches four devices:
+The September 1, 2026 Kickstarter launches four devices:
 
 - **ThoxClip** (from $39) - clip-on wake-word + voice gateway that pairs to a local THOX node over BLE.
 - **ThoxMini** ($69) - desktop edge compute on a Luckfox Pico Mini B; runs small instruction-tuned models locally.
@@ -65,13 +65,13 @@ Full asset spec including dimensions and encodes lives in `docs/PRESS_KIT.md` ("
 
 ## Outreach template
 
-Subject line: **THOX.ai launches a private, on-device AI hardware family on Kickstarter - August 12 (embargoed)**
+Subject line: **THOX.ai launches a private, on-device AI hardware family on Kickstarter - September 1 (embargoed)**
 
 Body:
 
 > Hi [name],
 >
-> THOX.ai is launching the THOX device family on Kickstarter on August 12, 2026, at 9:00 AM PT. We are sharing the press kit under embargo (lifts launch day at 10:00 AM PT) because we think the cloud-AI-by-default story is worth questioning, and the four devices in this family run the inference on your hardware instead of someone else's.
+> THOX.ai is launching the THOX device family on Kickstarter on September 1, 2026, at 9:00 AM PT. We are sharing the press kit under embargo (lifts launch day at 10:00 AM PT) because we think the cloud-AI-by-default story is worth questioning, and the four devices in this family run the inference on your hardware instead of someone else's.
 >
 > What we are launching: ThoxClip (from $39, clip-on voice gateway), ThoxMini ($69, desktop edge compute), ThoxAir ($79, single node + MagStack cluster), and ThoxNova ($499, flagship workstation hosting the THOX runtime).
 >
@@ -94,7 +94,7 @@ Length cap: under 250 words for the cold-outreach version. Longer follow-up vers
 
 ## Embargo terms
 
-The press kit is delivered under a T-21 embargo (delivered 2026-07-22; lifts 2026-08-12 at 10:00 AM PT, one hour after the Kickstarter goes live).
+The press kit is delivered under a T-21 embargo (delivered 2026-07-22; lifts 2026-09-01 at 10:00 AM PT, one hour after the Kickstarter goes live).
 
 Outlets that break embargo:
 

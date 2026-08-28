@@ -30,13 +30,13 @@ Four launch SKUs:
 
 Software: Apache-2.0, public on github.com/ttracx.
 
-Kickstarter launch: August 12, 2026. Goal $250K. Ceiling $3M.
+Kickstarter launch: September 1, 2026. Goal $250K. Ceiling $3M.
 
 > Speaker notes:
 >
-> Open with the one-line frame. THOX is private AI you can hold. The product family is built on a single thesis: privacy is not a marketing line, it is a property of where the computation runs. Hardware in your hands runs the model in your hands. Software is Apache-2.0 and the entire repo graph is public; nothing about the runtime requires the investor to take our word for it. The four launch SKUs span a $39 wake-word gateway up to a $499 workstation, with the MagStack Cluster Dock turning ThoxAir into a multi-node cluster on a desk. Lead with the product reality, not the vision. We have shipped a 7-backend Rust runtime, multiple device provisioners, and printable hardware kits. The campaign on Aug 12 is the funding mechanism for the manufacturing run, not the moment we start being a real company.
+> Open with the one-line frame. THOX is private AI you can hold. The product family is built on a single thesis: privacy is not a marketing line, it is a property of where the computation runs. Hardware in your hands runs the model in your hands. Software is Apache-2.0 and the entire repo graph is public; nothing about the runtime requires the investor to take our word for it. The four launch SKUs span a $39 wake-word gateway up to a $499 workstation, with the MagStack Cluster Dock turning ThoxAir into a multi-node cluster on a desk. Lead with the product reality, not the vision. We have shipped a 7-backend Rust runtime, multiple device provisioners, and printable hardware kits. The campaign on Sep 1 is the funding mechanism for the manufacturing run, not the moment we start being a real company.
 
-**Key takeaway:** THOX runs personal AI on hardware you own, not on someone else's server. Aug 12 Kickstarter is the funded manufacturing moment.
+**Key takeaway:** THOX runs personal AI on hardware you own, not on someone else's server. Sep 1 Kickstarter is the funded manufacturing moment.
 
 ---
 
@@ -62,7 +62,7 @@ Cloud AI carries three structural costs the consumer cannot price in at sign-up 
 
 A family of small, owned AI hardware spanning $39 to $499.
 
-The Aug 12 launch covers four SKUs. The stretch ladder unveils three concept devices (ThoxArm, ThoxVault, ThoxCargo). The full ecosystem covers wake-word, desktop edge, multi-node cluster, workstation, articulated mount, secure identity, and field carrier.
+The Sep 1 launch covers four SKUs. The stretch ladder unveils three concept devices (ThoxArm, ThoxVault, ThoxCargo). The full ecosystem covers wake-word, desktop edge, multi-node cluster, workstation, articulated mount, secure identity, and field carrier.
 
 Common runtime across the family. Same Apache-2.0 software stack. Same dashboard. Same observable outbound-byte ledger. Same upgrade path.
 
@@ -78,7 +78,7 @@ The category we are creating: personal AI compute as a hardware category, not a 
 
 ## Slide 4: The Product Line
 
-Aug 12 launch:
+Sep 1 launch:
 
 | SKU | Price | Form factor | Use case |
 |---|---|---|---|
@@ -99,7 +99,7 @@ MagStack Cluster Dock add-on: BackerKit add-on at T+45, ships with ThoxAir tier.
 >
 > Walk the table left-to-right. ThoxClip is the price-anchor entry that gets the brand in pockets. ThoxMini is the desktop bridge that proves the on-device thesis to a buyer who has only ever used cloud AI. ThoxAir is the engineering hero, where the magnetic clustering and multi-node software actually demonstrate the category. ThoxNova is the upmarket workstation that anchors the LTV and the technical credibility. The three concept devices are explicitly not shipping commitments under this Kickstarter; they are roadmap visibility. Be honest with the investor: the $1.5M, $2.5M, and $3M stretches are concept-art unveils, not product launches. Investors who push for an immediate ThoxArm or ThoxVault commitment are the wrong investors for this round. The campaign exists to fund the four launch SKUs.
 
-**Key takeaway:** Four shipping SKUs from $39 to $499 launch Aug 12; three concept devices are roadmap unveils, not promised products.
+**Key takeaway:** Four shipping SKUs from $39 to $499 launch Sep 1; three concept devices are roadmap unveils, not promised products.
 
 ---
 
@@ -137,7 +137,7 @@ What has shipped before the launch:
 
 What is in flight for the campaign:
 
-- Aug 12 launch on Kickstarter. Goal $250K. Ceiling $3M. 30-day window.
+- Sep 1 launch on Kickstarter. Goal $250K. Ceiling $3M. 30-day window.
 - Friends + family preview list TBD on size; target 5,000 on the launch-day mailing list.
 
 > Speaker notes:
@@ -164,7 +164,7 @@ Specific dollar figures are user-set and not in this deck.
 
 > Speaker notes:
 >
-> The four revenue lines are listed in expected order of contribution for the first 18 months: hardware first, EDU second, enterprise white-label third, bulk swag fourth. Be honest with the investor that hardware-margin businesses are unit-economics businesses, not subscription businesses; the LTV story is upgrade-and-refresh, not monthly-recurring. The THOXKey EDU line is the closest thing we have to recurring revenue and it is annual, not monthly. Enterprise white-label is a high-ASP, low-volume line that takes 12 to 18 months to land its first signed deal. We do not project specific dollar figures in this deck because the launch result on Aug 12 is the single largest input to the 18-month revenue model, and we will not have that number until Sep 11. After the campaign closes we update this slide with real numbers.
+> The four revenue lines are listed in expected order of contribution for the first 18 months: hardware first, EDU second, enterprise white-label third, bulk swag fourth. Be honest with the investor that hardware-margin businesses are unit-economics businesses, not subscription businesses; the LTV story is upgrade-and-refresh, not monthly-recurring. The THOXKey EDU line is the closest thing we have to recurring revenue and it is annual, not monthly. Enterprise white-label is a high-ASP, low-volume line that takes 12 to 18 months to land its first signed deal. We do not project specific dollar figures in this deck because the launch result on Sep 1 is the single largest input to the 18-month revenue model, and we will not have that number until Oct 1. After the campaign closes we update this slide with real numbers.
 
 **Key takeaway:** Hardware-margin core, EDU bulk pricing, enterprise white-label, bulk swag. Hardware first, EDU second, enterprise and bulk longer-tail. Real numbers post-campaign.
 
@@ -222,7 +222,7 @@ For: Y percent equity (user-set)
 Pre-money valuation: $Z (user-set)
 Use of funds: manufacturing capital, certification, fulfillment ops, founding-team extension.
 
-Timing: closes alongside or shortly after the Kickstarter campaign window (Aug 12 to Sep 11, 2026).
+Timing: closes alongside or shortly after the Kickstarter campaign window (Sep 1 to October 1, 2026).
 
 What the round buys:
 

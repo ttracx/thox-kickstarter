@@ -61,7 +61,7 @@ That is what local-first AI actually delivers. /4
 5/ ThoxNova is $499 early-bird. Less than 4 months of the cloud Max
 tier.
 
-📍 Aug 12 2026.
+📍 Sep 1 2026.
 thox.ai/launch
 🟢
 ```

@@ -1,7 +1,7 @@
 # Launch-day social copy
 
 Locked at T-7 per [LAUNCH_CHECKLIST.md](../docs/LAUNCH_CHECKLIST.md) ("Launch-day social copy
-locked in templates/launch-day-social.md"). Posted **live** on T-0 (Aug 12, 2026), not
+locked in templates/launch-day-social.md"). Posted **live** on T-0 (Sep 1, 2026), not
 scheduled — the milestone posts react to real numbers. Timing mirrors the LAUNCH_CHECKLIST
 hour-by-hour. Slots: `{kickstarter_url}`, `{pct}`, `{backer_count}`.
 

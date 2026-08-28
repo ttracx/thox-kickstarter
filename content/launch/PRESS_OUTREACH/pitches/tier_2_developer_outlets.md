@@ -21,7 +21,7 @@ Mixed. Hacker News and Lobsters do not honor embargoes; they are community submi
 - **Pitch angle**: lead with the technical artifact, not the marketing. Title format: `Show HN: THOX - private AI on USB-sized hardware (Apache-2.0)` or similar. Body is the GitHub repo link plus a short paragraph on what runs locally today.
 - **Contact channel**: NOT a contact-the-editor outlet. The operator posts directly.
 - **Submission guidelines**: https://news.ycombinator.com/showhn.html (Show HN rules: must be a thing people can play with, not just a landing page).
-- **Lead time**: post at launch hour (Aug 12, ~9am Pacific is the historical sweet spot for engineering audience timezone coverage).
+- **Lead time**: post at launch hour (Sep 1, ~9am Pacific is the historical sweet spot for engineering audience timezone coverage).
 - **Embargo policy**: none. The post is public the moment it is submitted.
 - **Coverage history**: Pine64, Framework Laptop, llama.cpp, Ollama, every notable open-source hardware launch from the last decade has had a top-page HN moment.
 - **Post template**:

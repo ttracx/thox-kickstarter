@@ -84,7 +84,7 @@ Tag v1.1.24. 35+ host tests in thox-util, 12 in the agent-hub. /6
 7/ This is the substrate the THOX devices run on. The Kickstarter is
 what brings the devices to your desk.
 
-Aug 12 2026.
+Sep 1 2026.
 thox.ai/launch
 🟢
 ```
@@ -112,7 +112,7 @@ language that ships all three.
 The kernel is at github.com/ttracx/thoxos-kernel under Apache-2.0.
 Tag v1.1.24. 24-absorb chain from MVP-7 through MVP-31.
 
-Kickstarter Aug 12 2026.
+Kickstarter Sep 1 2026.
 thox.ai/launch
 
 #rust #kernel #systems #THOXai #engineering #localAI

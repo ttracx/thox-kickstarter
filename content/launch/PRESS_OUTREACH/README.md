@@ -1,6 +1,6 @@
 # PRESS_OUTREACH
 
-Operator-facing press outreach pack for the THOX.ai Kickstarter campaign launching August 12, 2026.
+Operator-facing press outreach pack for the THOX.ai Kickstarter campaign launching September 1, 2026.
 
 This directory is what the founders (or a contracted PR firm) work from when reaching out to journalists, editors, and tipline addresses. Nothing in this directory commits THOX.ai to any specific reporter, publication, embargo deal, or financial transaction. Every cost decision and every send happens out of band, by a human, after a human has reviewed the relevant file here.
 

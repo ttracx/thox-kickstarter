@@ -65,7 +65,7 @@ Finally, the Gemma developer-relations team has been visibly engaged with the op
 - T-21 days (Jul 22, 2026): direct engagement with Gemma developer-relations via community channels
 - T-14 days (Jul 29, 2026): polite single follow-up if no response; engage at least one Gemma community advocate as a warm reference
 - T-7 days (Aug 5, 2026): no further outbound; focus on launch
-- Aug 12, 2026 launch: a public "ThoxNova ships Gemma fine-tunes" statement is fine on the campaign page regardless of Gemma team engagement; that is factual
+- Sep 1, 2026 launch: a public "ThoxNova ships Gemma fine-tunes" statement is fine on the campaign page regardless of Gemma team engagement; that is factual
 - Post-launch (Aug 13 onward): re-engage with funding numbers, real deployment surface count, and published fine-tune model cards as proof points
 
 ## Decision authority

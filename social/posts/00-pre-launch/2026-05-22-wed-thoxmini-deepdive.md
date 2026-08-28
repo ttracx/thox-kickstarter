@@ -77,7 +77,7 @@ think about cloud AI again. /5
 
 6/ Spec + STL set at github.com/ttracx/thox-3dprint-kit.
 
-Launch is Aug 12 2026.
+Launch is Sep 1 2026.
 
 thox.ai/launch
 
@@ -129,7 +129,7 @@ The slider mechanism is a deliberate UX choice. No cap to lose. No
 flat USB-C profile that scratches a laptop port over time. The
 slider doubles as the on-off switch.
 
-$69 single, $189 3-pack early-bird. Kickstarter Aug 12 2026.
+$69 single, $189 3-pack early-bird. Kickstarter Sep 1 2026.
 
 thox.ai/launch
 

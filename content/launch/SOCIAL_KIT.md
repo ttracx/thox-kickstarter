@@ -1,6 +1,6 @@
 # SOCIAL_KIT.md
 
-Shareable asset list for the Aug 12, 2026 THOX.ai Kickstarter launch across LinkedIn, X (Twitter), Mastodon, and Reddit.
+Shareable asset list for the Sep 1, 2026 THOX.ai Kickstarter launch across LinkedIn, X (Twitter), Mastodon, and Reddit.
 
 This file is the manifest. The actual asset files live in the THOX render pipeline drop at T-30 and the print-kit photography drop at T-40 to T-35. Where an asset is not yet rendered, the row is marked PLACEHOLDER with a render owner and an expected drop date.
 
@@ -95,9 +95,9 @@ Audio: same hero-cut music bed, no voiceover. Captions display the founder-list 
 
 Limit 280 chars; first-tweet-of-thread style.
 
-- "THOX is private AI you can hold. 4 devices from $39 to $499. Kickstarter Aug 12. https://thox.ai/launch"
-- "Edge AI is finally fast enough. THOX ships 4 devices on Aug 12. Apache-2.0 software, owned hardware, no cloud dependency. https://thox.ai/launch"
-- "We shipped a 7-backend Rust router (LiteRT + OpenAI HTTP + Ollama + llama.cpp + vLLM + TensorRT + MLX). 145/145 tests green. It is the runtime for the THOX device family. Aug 12 launch."
+- "THOX is private AI you can hold. 4 devices from $39 to $499. Kickstarter Sep 1. https://thox.ai/launch"
+- "Edge AI is finally fast enough. THOX ships 4 devices on Sep 1. Apache-2.0 software, owned hardware, no cloud dependency. https://thox.ai/launch"
+- "We shipped a 7-backend Rust router (LiteRT + OpenAI HTTP + Ollama + llama.cpp + vLLM + TensorRT + MLX). 145/145 tests green. It is the runtime for the THOX device family. Sep 1 launch."
 
 ### Reddit-style longform (subreddit-friendly)
 

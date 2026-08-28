@@ -12,7 +12,7 @@ across the THOX.ai portfolio. It is the output of a parallel audit
 of 40+ repos and lists every gap between today and a working launch
 video, organized into 8 parallel agent workstreams.
 
-## Build host decision (2026-06-23): local workstation, NOT cloud VM
+## Build host decision (2026-07-13): local workstation, NOT cloud VM
 
 The standing #1 blocker (shared Linux build host) is **RESOLVED** by using the local KnightHub workstation as `THOX-BUILD-01`. WSL Ubuntu 26.04, i7-14700F 28t, 127.7 GB RAM, RTX 4060 Ti 16 GB, 320+ GB free NVMe. More compute than any reasonable cloud VM and $0 recurring cost.
 
@@ -39,7 +39,7 @@ The standing #1 blocker today is the shared Linux build host (gates
 B/C/E/F). When work is blocked there, pull from unblocked lanes
 (A/D/G/H) instead.
 
-## SHIPPED 2026-06-23 (ahead-of-schedule wave)
+## SHIPPED 2026-07-13 (ahead-of-schedule wave)
 
 The following items shipped today, ahead of any deadline in this
 plan. None were in this plan's task table; all were pulled forward
@@ -56,42 +56,42 @@ under the policy above and pushed.
 
 48 commits across 11 repos in 24 hours. Velocity is real.
 
-## Pulled forward 2026-06-23
+## Pulled forward 2026-07-13
 
 | Lane | Pulled forward | Status | Commit / tag |
 |---|---|---|---|
-| **G Apps** | thox-terminal v0.3 mDNS device discovery scaffold (zero-config "see my Pi Zero stack" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc1 | commit `077daf0` + tag `v0.3.0-rc1` |
-| **G Apps** | thox-terminal v0.3 Tailscale local-API host import (composes with v0.3.0-rc1 mDNS + THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | **SHIPPED 2026-06-23** as v0.3.0-rc2 | commit `3ed8a8f` + tag `v0.3.0-rc2` |
-| **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser bundled | **SHIPPED 2026-06-23** as v0.3.0-rc3 | commit `640707f` + tag `v0.3.0-rc3` |
-| **B2B portal** | thox-key portal Vercel deploy config + GitHub Actions CI (lint + typecheck + build CI workflow + manual-trigger deploy workflow + PORTAL_DEPLOY.md runbook + pnpm-lock.yaml + check-env script) | **SHIPPED 2026-06-23** as portal-v0.1.0 | commit `caad6ff` + tag `portal-v0.1.0` |
-| **D Models** | thoxllm-factory Cohere North-Mini-Code eval branch (download_model.sh + build_llamacpp_pr24260.sh + run_benchmark.py + summarize_results.py + 22 subset prompts + 7 new agentic-coding prompts + reuses existing eval/run_eval.py harness for the 4 comparison adapters) | **SHIPPED 2026-06-23** as eval-north-mini-code-rc1 | commit `54cfbd7` + tag `eval-north-mini-code-rc1` |
-| **B2B portal** | thox-key portal pages: pricing + account dashboard + admin (dashboard / batches / customers) + login + magic-link auth scaffold | **SHIPPED 2026-06-23** as portal-v0.2.0 | commit `13a22f9` + tag `portal-v0.2.0` |
-| **G Apps** | thox-terminal v0.3.0-rc4 = ThoxMini first-run onboarding + local THOXY endpoint config per device (two P1 dev-queue items bundled; powers "unbox -> plug in -> already paired" + "tap a device, your local Ollama is wired" video beats) | **SHIPPED 2026-06-23** as v0.3.0-rc4 | commit `97d17b4` + tag `v0.3.0-rc4` |
-| **B2B portal** | thox-key portal-v0.3.0 = order detail + asset uploader + preview + checkout + admin batch detail + admin customer detail + auth callback round-trip + Stripe Halo checkout (real `stripe.checkout.sessions.create`) | **SHIPPED 2026-06-23** as portal-v0.3.0 | commit `1674564` + tag `portal-v0.3.0` |
-| **G Apps** | thox-terminal v0.3.0-rc5 = Secure Enclave P256 keygen + Ed25519 software fallback + ThoxKeyExporter to OpenSSH PEM + audit log writer with rotation + Settings export with no private-key leakage | **SHIPPED 2026-06-23** as v0.3.0-rc5 | commit `46598c6` + tag `v0.3.0-rc5` |
-| **D Models** | thoxllm-factory: ThoxKey portable runtime model mirror prep + sync script (MANIFEST.yaml + 5-model coverage + --verify-loadouts cross-check + 12/12 tests pass) | **SHIPPED 2026-06-23** as mirror-v0.1.0 | commit `eead49c` + tag `mirror-v0.1.0` (plus thox-key cross-link `e8e50be`) |
-| **G Apps** | thox-terminal v0.3.0-rc6 = tmux quick-action set per device kind (24 actions across 6 device kinds) + Connect-handoff polish (`ThoxDashboardFocusCoordinator` pulse) + v0.3.0 release notes draft | **SHIPPED 2026-06-24** as v0.3.0-rc6 | commit `95e1d98` + tag `v0.3.0-rc6` |
-| **B2B portal** | thox-key portal-v0.4.0 = RLS policies SQL (with `is_admin()` + `customer_users` join table) + 5 transactional email templates (plain TSX, zero new deps) + `/api/orders/[id]/quote` + `/api/orders/[id]/promote` + `/api/admin/batches/[id]/ship` + `/api/cron/activation-rollup` routes (Phase 1 backlog COMPLETE) | **SHIPPED 2026-06-24** as portal-v0.4.0 | commit `6f314f5` + tag `portal-v0.4.0` |
-| **Brand product line** | thox-portable-agent ThoxKey integration (plain-Node zero-dep: `dashboard/thoxkey.mjs` module + cross-platform mount detection + 5s polling + `/api/thoxkey` + `/api/thoxkey/apply` endpoints + in-banner UX with THOX palette + 14/14 tests via `node --test`) | **SHIPPED 2026-06-24** as v0.2.0 | commit `c8647f1` + tag `v0.2.0` |
-| **Cross-product foundation** | NEW `ttracx/thox-actions` repo: canonical mobile-action schema + FunctionGemma 270M FT mobile inference adapter (litert-community/functiongemma-270m-ft-mobile) + executor registry; ThoxOS + thox-terminal + thoxos-companion + thoxos-air-image + thox-portable-agent all consume this layer for natural-language action routing | dispatched 2026-06-24 (in flight) | tbd |
-| **G Apps** | thox-terminal v0.3.0-rc7 = thox-actions integration + Spotlight command palette + 14 per-variant executors (composes with v0.2/rc1/rc2/rc3/rc4/rc5/rc6) | **SHIPPED 2026-06-24** as v0.3.0-rc7 | commit `141a9e4` + tag `v0.3.0-rc7` |
-| **Cross-product foundation** | `ttracx/thox-actions` v0.1.0 SHIPPED with 4 Rust crates (1339 LoC), 36/36 tests green, model-card-agnostic prompt template. Patched in commit `4228eef` to correct the actual hub id `litert-community/functiongemma-270m-ft-mobile-actions` + add the real perf specs (289 MB dynamic_int8, 154 tk/s decode on S25 Ultra) | **SHIPPED 2026-06-24** as v0.1.0 + fix `4228eef` | commit `4ab04dc` + `4228eef` |
-| **Campaign ops** | `ttracx/thox-ks-monitor` v0.1.0: 58-file Next.js + Supabase + RLS Kickstarter ops dashboard. Lane A sanctioned CSV import + Lane B opt-in public scrape (ScrapingBee default) + Claude digest. `docs/TOS_POSTURE.md` closes the stored-credential lane. CI gates typecheck + lint + build. Cross-linked from thox-kickstarter README. | **SHIPPED 2026-06-24** as v0.1.0 | commit `474113b` + cross-link `2ad89b5` |
-| **Edge AI** | `ttracx/thox-edge-skills` v0.1.0: 23 Google AI Edge Gallery skills across 9 device categories + utilities. Text-only + JS + native-intent variants. catalog.json + Python validator + CI workflow. THOX brand palette in every webview. Cross-linked from thox-actions. IP-035. | **SHIPPED 2026-06-24** as v0.1.0 | tag `v0.1.0` |
-| **Industrial design** | `ttracx/thox-enclosures` v0.1.0: 12 v0 placeholder STLs (3 lay-flat-corrected) + OpenSCAD sources + dimension JSON + per-device ENVELOPE.md. Rev A spec docs for all 3 devices + shared MATERIALS / HARDWARE_BOM / PRINT_PROFILE. Qidi Q2 print queue assets: CSV (em-dashes scrubbed) + bed layout PNG + queue cards PNG + operator workflow doc. 3 ADRs (lifecycle / format trilogy / OpenSCAD toolchain). CI runs print-readiness audit; fails on FLOATING/OFFBED. **Discrepancy logged**: ThoxClip v0 ships 86 x 100 x 11.8 (rotated 90 deg from user-stated 100 x 86 x 11.8); Rev A spec pins user value as authoritative. | **SHIPPED 2026-06-24** as v0.1.0 | commit `1eec157` + cross-link `65afc3f` |
-| **A Marketing** | P0 CRITICAL Thox.ai claim-reconciliation: 13 commits, 0 contradictions remaining on live `src/app/` surface, 317 obsolete files moved under `archive/`, 4 Stripe-side renames enumerated in `STRIPE_RECONCILIATION_NEEDED.md`. `pnpm exec tsc --noEmit` zero new errors in src/. | **SHIPPED 2026-06-24** as 13-commit series | final commit `bad5424` |
-| **Industrial design** | `ttracx/thox-enclosures` rev-a-v0.2.0: 12 shared OpenSCAD utility modules + 15 per-device .scad files (Mini 4, Air 5, Clip 6) + `tools/build_stls.py` orchestrator + 12 produced STLs (100% lay-flat clean, all within Q2 Combo bed) + 3 per-device PRINT_PLAN docs. STEP + 3MF derivation paths gracefully skip when FreeCAD / Prusa Slicer not on PATH (this rig has only OpenSCAD). | **SHIPPED 2026-06-24** as rev-a-v0.2.0 | commit `ad0a964` + tag `rev-a-v0.2.0` |
-| **Cross-product foundation** | `ttracx/thox-actions` v0.2.0: bundle inspection extracted the ACTUAL FunctionGemma I/O contract from `MobileActions_270M.zip`. **The model emits a custom k:v shape, NOT JSON**: `<start_function_call>call:NAME{key:value}<end_function_call>`. Real Jinja chat template (5,124 bytes) checked in as `FUNCTIONGEMMA_BASE_PROMPT`. New `parser.rs` handles truncation + missing markers + nested JSON values + value coercion (null/bool/int/float/string). 55/55 tests pass (was 36). 10 smoke fixtures covering 10 of 13 ThoxAction variants. | **SHIPPED 2026-06-24** as v0.2.0 | commit `a31e840` + tag `v0.2.0` |
-| **G Apps** | thox-terminal v0.3.0-rc8: Swift port of the Rust parser + prompt builder + 10 smoke fixtures + MockFunctionGemmaServer URLProtocol fake. Full rewrite of `FunctionGemmaHTTPInferencer` to real k:v contract. Golden-string test verifies `renderPrompt` matches Rust byte-for-byte. ~51 tests total. | **SHIPPED 2026-06-24** as v0.3.0-rc8 | commit `fa7e4df` + tag `v0.3.0-rc8` |
-| **Edge AI** | thox-edge-skills v0.2.0: 10 new device-specific skills (33 total, was 23). `thox-route-action` JS now speaks real k:v contract (parseFunctionCall mirrors Rust parser; buildAction wraps tagged-enum; renderPrompt mirrors Rust render_prompt; helpers on `window.thoxRouteAction`). `chat_template.jinja` pinned at exact SHA256 match with canonical. 33/33 validator pass. | **SHIPPED 2026-06-24** as v0.2.0 | commit `3e8ad29` + tag `v0.2.0` |
-| **Commerce / config UX** | `ttracx/thox-configurator` v0.1.0: 6-step wizard (Device, Capacity, Model, Apps, Finish, Review) for ThoxKey + ThoxStick. Server-authoritative pricing. AI Assist re-validated by deterministic engine. Stripe checkout for ThoxKey; reserve-only for ThoxStick. 22 TS/TSX esbuild clean, 3 Python files py_compile clean, SQL migration verified. 3 ThoxStick render PNGs integrated as preview-pane supplements. Full THOX ancillary set (LICENSE, gitignore, CI, IP-037, ecosystem map, architecture, privacy posture, catalog reconciliation, CHANGELOG). Catalog reconciliation gap flagged: `src/lib/catalog.ts` ThoxKey section conceptually duplicates `thox-key/lib/skus.ts + pricing.ts`; v0.2.0 extraction plan documented in `docs/CATALOG_RECONCILIATION.md`. | **SHIPPED 2026-06-24** as v0.1.0 | commit `cd01918` + tag `v0.1.0` + cross-links `d8f9910` / `7609d4e` / `53774e5` |
-| **Flagship runtime** | `ttracx/thoxcore` v0.1.0: 19 Cargo packages (7 layer crates + 7 adapter crates + 4 example crates + 1 SDK re-export). 1,876 Rust LoC. 46/46 tests pass. `cargo fmt + clippy + test` all clean. TurboLLM seed absorbed **design-only** because its FSL-1.1-ALv2 license is NOT Apache-2.0-compatible (zero TurboLLM lines copied; all Rust rewritten clean per ADR-005). 7 ADRs locked: positioning / adapter contract / Rust core / SDK multi-lang strategy / TurboLLM absorb / edge-cloud-mobile split / versioning. `THOXCoreAdapter` trait stubbed across all 7 adapters (ollama / llama-cpp / vllm / litert / tensorrt / mlx / openai-compatible). Router default policy with fallback chain + 9 routing tests. SDK strategy: Rust real, Python (maturin) + TS (napi-rs) + Swift (C ABI) planned for v0.2. IP-038. | **SHIPPED 2026-06-24** as v0.1.0 | commit `708fae9` + tag `v0.1.0` + cross-links across 8 neighbor repos |
-| **Flagship runtime reference** | `ttracx/thoxcore-reference` v0.1.0: ChatGPT-built THOXCore 1.4.2-thoxcore.1 (TypeScript, 505/505 tests, FSL-1.1-ALv2 inherited) vendored VERBATIM with all 5 SHA256s verified clean. Dual-license posture documented (Apache-2.0 THOX-authored + FSL-1.1-ALv2 upstream NOTICE preserved). 9-item PORT_TRACKER staged for clean-room Rust ports into `ttracx/thoxcore`. Comprehensive README with 7-badge block + validation results table + checksum table. Bash + GitHub Actions SHA256 verifier. | **SHIPPED 2026-06-24** as v0.1.0 | commit `f9dac4d` + tag `v0.1.0` + thoxcore cross-link `afdde96` |
-| **Adapter wave 1: LiteRT** | `ttracx/thoxcore` v0.2.0-litert: LiteRT adapter wired behind `litert` cargo feature flag. Real `LiteRtRuntime` trait + `MockLiteRtRuntime` (canned-output runtime) so workspace stays buildable without the 289 MB .litertlm file. `thox-actions-functiongemma` path-dep wires the FUNCTIONGEMMA_BASE_PROMPT + parse_mobile_actions_tool_call into the adapter. Example 03 prints decoded `set_thox_led` function-call end to end. 57 tests no-feature, 64 with-feature. fmt + clippy + test all green. | **SHIPPED 2026-06-24** as v0.2.0-litert | commit `bf8d497` + tag `v0.2.0-litert` + thox-actions cross-link `6cec8e7` |
-| **Adapter wave 1: OpenAI-Compatible** | `ttracx/thoxcore` v0.2.0-openai-compat: real reqwest 0.12 + eventsource-stream 0.2 implementation of chat / generate / embed / chat_stream against `/v1/chat/completions` + `/v1/completions` + `/v1/embeddings`. SSE streaming parses `data: {json}` + `data: [DONE]` cleanly. OpenAI error envelope mapped to AdapterError. 14 new tests (4 unit + 10 wiremock integration covering health / models cache / chat round-trip / SSE / generate / embed / error / timeout / bearer / extra headers). Example 05 demonstrates hermetic round-trip against in-process wiremock. | **SHIPPED 2026-06-24** as v0.2.0-openai-compat | commit `afdde96` + tag `v0.2.0-openai-compat` |
-| **Adapter wave 2: Ollama** | `ttracx/thoxcore` v0.2.0-ollama: real HTTP client against Ollama's native API (`/api/chat`, `/api/generate`, `/api/embeddings`, `/api/tags`, `/api/show`). **NDJSON streaming** via reqwest bytes_stream + hand-rolled line buffering (NOT SSE; intentional - different framing from OpenAI). 19 tests (5 unit + 14 wiremock smoke). Composes with thoxllm-factory shipping tags (thoxforge, thoxgem-e4b-sft, thoxwave-8b-unleashed, thoxnova-12b-unleashed). | **SHIPPED 2026-06-24** as v0.2.0-ollama | commit `f107a53` + tag `v0.2.0-ollama` |
-| **Adapter wave 2: llama.cpp** | `ttracx/thoxcore` v0.2.0-llamacpp: subprocess wrapper around `llama-server`. `SubprocessLauncher` + `HealthChecker` trait seams (Real + Mock) so tests run without spawning the binary. Spawns llama-server at init with model_path + dynamic free port; polls `/health` until 200; delegates chat/generate/embed/stream to inner OpenAICompatibleAdapter pointed at the spawned process. Clean unload + Drop kills the subprocess. 20 tests (5 unit + 15 integration). | **SHIPPED 2026-06-24** as v0.2.0-llamacpp | commit `7639fa1` + tag `v0.2.0-llamacpp` |
-| **Kickstarter Ops Integration** | NEW `ttracx/thox-kickstarter-integration` repo: compliant FastAPI ingestion for backer reports + referral exports + advanced dashboard CSVs; fulfillment-risk detector slice; locked partner-API adapter; PII masking default; dev@thox.ai is the Kickstarter account identity. Operational data plane that runs after Aug 12 launch; distinct from this playbook repo. See `docs/KS_OPS_INTEGRATION.md` for deploy plan + launch-day gates. | absorbed 2026-06-24 from ChatGPT scaffold; sibling agent shipping the fulfillment-risk slice in parallel | initial-commit |
+| **G Apps** | thox-terminal v0.3 mDNS device discovery scaffold (zero-config "see my Pi Zero stack" video beat) | **SHIPPED 2026-07-13** as v0.3.0-rc1 | commit `077daf0` + tag `v0.3.0-rc1` |
+| **G Apps** | thox-terminal v0.3 Tailscale local-API host import (composes with v0.3.0-rc1 mDNS + THOX-BUILD-01 Tailscale install to enable "see Tommy's whole fleet in one tap" video beat) | **SHIPPED 2026-07-13** as v0.3.0-rc2 | commit `3ed8a8f` + tag `v0.3.0-rc2` |
+| **G Apps** | thox-terminal v0.3 Keychain private-key storage + ThoxOS `thoxos status` JSON parser bundled | **SHIPPED 2026-07-13** as v0.3.0-rc3 | commit `640707f` + tag `v0.3.0-rc3` |
+| **B2B portal** | thox-key portal Vercel deploy config + GitHub Actions CI (lint + typecheck + build CI workflow + manual-trigger deploy workflow + PORTAL_DEPLOY.md runbook + pnpm-lock.yaml + check-env script) | **SHIPPED 2026-07-13** as portal-v0.1.0 | commit `caad6ff` + tag `portal-v0.1.0` |
+| **D Models** | thoxllm-factory Cohere North-Mini-Code eval branch (download_model.sh + build_llamacpp_pr24260.sh + run_benchmark.py + summarize_results.py + 22 subset prompts + 7 new agentic-coding prompts + reuses existing eval/run_eval.py harness for the 4 comparison adapters) | **SHIPPED 2026-07-13** as eval-north-mini-code-rc1 | commit `54cfbd7` + tag `eval-north-mini-code-rc1` |
+| **B2B portal** | thox-key portal pages: pricing + account dashboard + admin (dashboard / batches / customers) + login + magic-link auth scaffold | **SHIPPED 2026-07-13** as portal-v0.2.0 | commit `13a22f9` + tag `portal-v0.2.0` |
+| **G Apps** | thox-terminal v0.3.0-rc4 = ThoxMini first-run onboarding + local THOXY endpoint config per device (two P1 dev-queue items bundled; powers "unbox -> plug in -> already paired" + "tap a device, your local Ollama is wired" video beats) | **SHIPPED 2026-07-13** as v0.3.0-rc4 | commit `97d17b4` + tag `v0.3.0-rc4` |
+| **B2B portal** | thox-key portal-v0.3.0 = order detail + asset uploader + preview + checkout + admin batch detail + admin customer detail + auth callback round-trip + Stripe Halo checkout (real `stripe.checkout.sessions.create`) | **SHIPPED 2026-07-13** as portal-v0.3.0 | commit `1674564` + tag `portal-v0.3.0` |
+| **G Apps** | thox-terminal v0.3.0-rc5 = Secure Enclave P256 keygen + Ed25519 software fallback + ThoxKeyExporter to OpenSSH PEM + audit log writer with rotation + Settings export with no private-key leakage | **SHIPPED 2026-07-13** as v0.3.0-rc5 | commit `46598c6` + tag `v0.3.0-rc5` |
+| **D Models** | thoxllm-factory: ThoxKey portable runtime model mirror prep + sync script (MANIFEST.yaml + 5-model coverage + --verify-loadouts cross-check + 12/12 tests pass) | **SHIPPED 2026-07-13** as mirror-v0.1.0 | commit `eead49c` + tag `mirror-v0.1.0` (plus thox-key cross-link `e8e50be`) |
+| **G Apps** | thox-terminal v0.3.0-rc6 = tmux quick-action set per device kind (24 actions across 6 device kinds) + Connect-handoff polish (`ThoxDashboardFocusCoordinator` pulse) + v0.3.0 release notes draft | **SHIPPED 2026-07-14** as v0.3.0-rc6 | commit `95e1d98` + tag `v0.3.0-rc6` |
+| **B2B portal** | thox-key portal-v0.4.0 = RLS policies SQL (with `is_admin()` + `customer_users` join table) + 5 transactional email templates (plain TSX, zero new deps) + `/api/orders/[id]/quote` + `/api/orders/[id]/promote` + `/api/admin/batches/[id]/ship` + `/api/cron/activation-rollup` routes (Phase 1 backlog COMPLETE) | **SHIPPED 2026-07-14** as portal-v0.4.0 | commit `6f314f5` + tag `portal-v0.4.0` |
+| **Brand product line** | thox-portable-agent ThoxKey integration (plain-Node zero-dep: `dashboard/thoxkey.mjs` module + cross-platform mount detection + 5s polling + `/api/thoxkey` + `/api/thoxkey/apply` endpoints + in-banner UX with THOX palette + 14/14 tests via `node --test`) | **SHIPPED 2026-07-14** as v0.2.0 | commit `c8647f1` + tag `v0.2.0` |
+| **Cross-product foundation** | NEW `ttracx/thox-actions` repo: canonical mobile-action schema + FunctionGemma 270M FT mobile inference adapter (litert-community/functiongemma-270m-ft-mobile) + executor registry; ThoxOS + thox-terminal + thoxos-companion + thoxos-air-image + thox-portable-agent all consume this layer for natural-language action routing | dispatched 2026-07-14 (in flight) | tbd |
+| **G Apps** | thox-terminal v0.3.0-rc7 = thox-actions integration + Spotlight command palette + 14 per-variant executors (composes with v0.2/rc1/rc2/rc3/rc4/rc5/rc6) | **SHIPPED 2026-07-14** as v0.3.0-rc7 | commit `141a9e4` + tag `v0.3.0-rc7` |
+| **Cross-product foundation** | `ttracx/thox-actions` v0.1.0 SHIPPED with 4 Rust crates (1339 LoC), 36/36 tests green, model-card-agnostic prompt template. Patched in commit `4228eef` to correct the actual hub id `litert-community/functiongemma-270m-ft-mobile-actions` + add the real perf specs (289 MB dynamic_int8, 154 tk/s decode on S25 Ultra) | **SHIPPED 2026-07-14** as v0.1.0 + fix `4228eef` | commit `4ab04dc` + `4228eef` |
+| **Campaign ops** | `ttracx/thox-ks-monitor` v0.1.0: 58-file Next.js + Supabase + RLS Kickstarter ops dashboard. Lane A sanctioned CSV import + Lane B opt-in public scrape (ScrapingBee default) + Claude digest. `docs/TOS_POSTURE.md` closes the stored-credential lane. CI gates typecheck + lint + build. Cross-linked from thox-kickstarter README. | **SHIPPED 2026-07-14** as v0.1.0 | commit `474113b` + cross-link `2ad89b5` |
+| **Edge AI** | `ttracx/thox-edge-skills` v0.1.0: 23 Google AI Edge Gallery skills across 9 device categories + utilities. Text-only + JS + native-intent variants. catalog.json + Python validator + CI workflow. THOX brand palette in every webview. Cross-linked from thox-actions. IP-035. | **SHIPPED 2026-07-14** as v0.1.0 | tag `v0.1.0` |
+| **Industrial design** | `ttracx/thox-enclosures` v0.1.0: 12 v0 placeholder STLs (3 lay-flat-corrected) + OpenSCAD sources + dimension JSON + per-device ENVELOPE.md. Rev A spec docs for all 3 devices + shared MATERIALS / HARDWARE_BOM / PRINT_PROFILE. Qidi Q2 print queue assets: CSV (em-dashes scrubbed) + bed layout PNG + queue cards PNG + operator workflow doc. 3 ADRs (lifecycle / format trilogy / OpenSCAD toolchain). CI runs print-readiness audit; fails on FLOATING/OFFBED. **Discrepancy logged**: ThoxClip v0 ships 86 x 100 x 11.8 (rotated 90 deg from user-stated 100 x 86 x 11.8); Rev A spec pins user value as authoritative. | **SHIPPED 2026-07-14** as v0.1.0 | commit `1eec157` + cross-link `65afc3f` |
+| **A Marketing** | P0 CRITICAL Thox.ai claim-reconciliation: 13 commits, 0 contradictions remaining on live `src/app/` surface, 317 obsolete files moved under `archive/`, 4 Stripe-side renames enumerated in `STRIPE_RECONCILIATION_NEEDED.md`. `pnpm exec tsc --noEmit` zero new errors in src/. | **SHIPPED 2026-07-14** as 13-commit series | final commit `bad5424` |
+| **Industrial design** | `ttracx/thox-enclosures` rev-a-v0.2.0: 12 shared OpenSCAD utility modules + 15 per-device .scad files (Mini 4, Air 5, Clip 6) + `tools/build_stls.py` orchestrator + 12 produced STLs (100% lay-flat clean, all within Q2 Combo bed) + 3 per-device PRINT_PLAN docs. STEP + 3MF derivation paths gracefully skip when FreeCAD / Prusa Slicer not on PATH (this rig has only OpenSCAD). | **SHIPPED 2026-07-14** as rev-a-v0.2.0 | commit `ad0a964` + tag `rev-a-v0.2.0` |
+| **Cross-product foundation** | `ttracx/thox-actions` v0.2.0: bundle inspection extracted the ACTUAL FunctionGemma I/O contract from `MobileActions_270M.zip`. **The model emits a custom k:v shape, NOT JSON**: `<start_function_call>call:NAME{key:value}<end_function_call>`. Real Jinja chat template (5,124 bytes) checked in as `FUNCTIONGEMMA_BASE_PROMPT`. New `parser.rs` handles truncation + missing markers + nested JSON values + value coercion (null/bool/int/float/string). 55/55 tests pass (was 36). 10 smoke fixtures covering 10 of 13 ThoxAction variants. | **SHIPPED 2026-07-14** as v0.2.0 | commit `a31e840` + tag `v0.2.0` |
+| **G Apps** | thox-terminal v0.3.0-rc8: Swift port of the Rust parser + prompt builder + 10 smoke fixtures + MockFunctionGemmaServer URLProtocol fake. Full rewrite of `FunctionGemmaHTTPInferencer` to real k:v contract. Golden-string test verifies `renderPrompt` matches Rust byte-for-byte. ~51 tests total. | **SHIPPED 2026-07-14** as v0.3.0-rc8 | commit `fa7e4df` + tag `v0.3.0-rc8` |
+| **Edge AI** | thox-edge-skills v0.2.0: 10 new device-specific skills (33 total, was 23). `thox-route-action` JS now speaks real k:v contract (parseFunctionCall mirrors Rust parser; buildAction wraps tagged-enum; renderPrompt mirrors Rust render_prompt; helpers on `window.thoxRouteAction`). `chat_template.jinja` pinned at exact SHA256 match with canonical. 33/33 validator pass. | **SHIPPED 2026-07-14** as v0.2.0 | commit `3e8ad29` + tag `v0.2.0` |
+| **Commerce / config UX** | `ttracx/thox-configurator` v0.1.0: 6-step wizard (Device, Capacity, Model, Apps, Finish, Review) for ThoxKey + ThoxStick. Server-authoritative pricing. AI Assist re-validated by deterministic engine. Stripe checkout for ThoxKey; reserve-only for ThoxStick. 22 TS/TSX esbuild clean, 3 Python files py_compile clean, SQL migration verified. 3 ThoxStick render PNGs integrated as preview-pane supplements. Full THOX ancillary set (LICENSE, gitignore, CI, IP-037, ecosystem map, architecture, privacy posture, catalog reconciliation, CHANGELOG). Catalog reconciliation gap flagged: `src/lib/catalog.ts` ThoxKey section conceptually duplicates `thox-key/lib/skus.ts + pricing.ts`; v0.2.0 extraction plan documented in `docs/CATALOG_RECONCILIATION.md`. | **SHIPPED 2026-07-14** as v0.1.0 | commit `cd01918` + tag `v0.1.0` + cross-links `d8f9910` / `7609d4e` / `53774e5` |
+| **Flagship runtime** | `ttracx/thoxcore` v0.1.0: 19 Cargo packages (7 layer crates + 7 adapter crates + 4 example crates + 1 SDK re-export). 1,876 Rust LoC. 46/46 tests pass. `cargo fmt + clippy + test` all clean. TurboLLM seed absorbed **design-only** because its FSL-1.1-ALv2 license is NOT Apache-2.0-compatible (zero TurboLLM lines copied; all Rust rewritten clean per ADR-005). 7 ADRs locked: positioning / adapter contract / Rust core / SDK multi-lang strategy / TurboLLM absorb / edge-cloud-mobile split / versioning. `THOXCoreAdapter` trait stubbed across all 7 adapters (ollama / llama-cpp / vllm / litert / tensorrt / mlx / openai-compatible). Router default policy with fallback chain + 9 routing tests. SDK strategy: Rust real, Python (maturin) + TS (napi-rs) + Swift (C ABI) planned for v0.2. IP-038. | **SHIPPED 2026-07-14** as v0.1.0 | commit `708fae9` + tag `v0.1.0` + cross-links across 8 neighbor repos |
+| **Flagship runtime reference** | `ttracx/thoxcore-reference` v0.1.0: ChatGPT-built THOXCore 1.4.2-thoxcore.1 (TypeScript, 505/505 tests, FSL-1.1-ALv2 inherited) vendored VERBATIM with all 5 SHA256s verified clean. Dual-license posture documented (Apache-2.0 THOX-authored + FSL-1.1-ALv2 upstream NOTICE preserved). 9-item PORT_TRACKER staged for clean-room Rust ports into `ttracx/thoxcore`. Comprehensive README with 7-badge block + validation results table + checksum table. Bash + GitHub Actions SHA256 verifier. | **SHIPPED 2026-07-14** as v0.1.0 | commit `f9dac4d` + tag `v0.1.0` + thoxcore cross-link `afdde96` |
+| **Adapter wave 1: LiteRT** | `ttracx/thoxcore` v0.2.0-litert: LiteRT adapter wired behind `litert` cargo feature flag. Real `LiteRtRuntime` trait + `MockLiteRtRuntime` (canned-output runtime) so workspace stays buildable without the 289 MB .litertlm file. `thox-actions-functiongemma` path-dep wires the FUNCTIONGEMMA_BASE_PROMPT + parse_mobile_actions_tool_call into the adapter. Example 03 prints decoded `set_thox_led` function-call end to end. 57 tests no-feature, 64 with-feature. fmt + clippy + test all green. | **SHIPPED 2026-07-14** as v0.2.0-litert | commit `bf8d497` + tag `v0.2.0-litert` + thox-actions cross-link `6cec8e7` |
+| **Adapter wave 1: OpenAI-Compatible** | `ttracx/thoxcore` v0.2.0-openai-compat: real reqwest 0.12 + eventsource-stream 0.2 implementation of chat / generate / embed / chat_stream against `/v1/chat/completions` + `/v1/completions` + `/v1/embeddings`. SSE streaming parses `data: {json}` + `data: [DONE]` cleanly. OpenAI error envelope mapped to AdapterError. 14 new tests (4 unit + 10 wiremock integration covering health / models cache / chat round-trip / SSE / generate / embed / error / timeout / bearer / extra headers). Example 05 demonstrates hermetic round-trip against in-process wiremock. | **SHIPPED 2026-07-14** as v0.2.0-openai-compat | commit `afdde96` + tag `v0.2.0-openai-compat` |
+| **Adapter wave 2: Ollama** | `ttracx/thoxcore` v0.2.0-ollama: real HTTP client against Ollama's native API (`/api/chat`, `/api/generate`, `/api/embeddings`, `/api/tags`, `/api/show`). **NDJSON streaming** via reqwest bytes_stream + hand-rolled line buffering (NOT SSE; intentional - different framing from OpenAI). 19 tests (5 unit + 14 wiremock smoke). Composes with thoxllm-factory shipping tags (thoxforge, thoxgem-e4b-sft, thoxwave-8b-unleashed, thoxnova-12b-unleashed). | **SHIPPED 2026-07-14** as v0.2.0-ollama | commit `f107a53` + tag `v0.2.0-ollama` |
+| **Adapter wave 2: llama.cpp** | `ttracx/thoxcore` v0.2.0-llamacpp: subprocess wrapper around `llama-server`. `SubprocessLauncher` + `HealthChecker` trait seams (Real + Mock) so tests run without spawning the binary. Spawns llama-server at init with model_path + dynamic free port; polls `/health` until 200; delegates chat/generate/embed/stream to inner OpenAICompatibleAdapter pointed at the spawned process. Clean unload + Drop kills the subprocess. 20 tests (5 unit + 15 integration). | **SHIPPED 2026-07-14** as v0.2.0-llamacpp | commit `7639fa1` + tag `v0.2.0-llamacpp` |
+| **Kickstarter Ops Integration** | NEW `ttracx/thox-kickstarter-integration` repo: compliant FastAPI ingestion for backer reports + referral exports + advanced dashboard CSVs; fulfillment-risk detector slice; locked partner-API adapter; PII masking default; dev@thox.ai is the Kickstarter account identity. Operational data plane that runs after Sep 1 launch; distinct from this playbook repo. See `docs/KS_OPS_INTEGRATION.md` for deploy plan + launch-day gates. | absorbed 2026-07-14 from ChatGPT scaffold; sibling agent shipping the fulfillment-risk slice in parallel | initial-commit |
 
 ### Adapter wave-order progress (7 of 7 real) - FOUNDATION PHASE COMPLETE
 
@@ -105,7 +105,7 @@ under the policy above and pushed.
 | 6 | TensorRT | real (NVIDIA Triton; auto-probe; native JSONLines + OpenAI proxy SSE; NO CUDA dep) | `v0.2.0-tensorrt` | 24 | 68894f4 |
 | 7 | MLX | real (mlx_lm.server subprocess; macOS-gated; cross-platform mock tests) | `v0.2.0-mlx` | 22 | de3ac6a |
 
-Workspace tests: **145 pass, 0 fail**. fmt + clippy clean with `-D warnings`. **Wave 12 complete 2026-06-24: 7-adapter THOXCore foundation phase shipped.** v0.2.0 final ships on real-device verification across Mobile (MLX/LiteRT on iPhone + Apple Silicon), Edge (Ollama on Pi Zero MagStack), and Cloud (vLLM / TensorRT on a CUDA box). THOXCore now moves from foundation phase to integration phase (routing policies, multi-adapter failover, THOXCore SDK surface in thox-terminal and thoxllm-factory).
+Workspace tests: **145 pass, 0 fail**. fmt + clippy clean with `-D warnings`. **Wave 12 complete 2026-07-14: 7-adapter THOXCore foundation phase shipped.** v0.2.0 final ships on real-device verification across Mobile (MLX/LiteRT on iPhone + Apple Silicon), Edge (Ollama on Pi Zero MagStack), and Cloud (vLLM / TensorRT on a CUDA box). THOXCore now moves from foundation phase to integration phase (routing policies, multi-adapter failover, THOXCore SDK surface in thox-terminal and thoxllm-factory).
 
 ### Locked next steps + adapter wire plan
 
@@ -188,28 +188,28 @@ Handoff: `vercel link` from `portal/`, `gh secret set VERCEL_TOKEN/VERCEL_ORG_ID
 
 Handoff: at the 4060 Ti rig, run `bash eval/cohere-north-mini-code/scripts/download_model.sh && bash eval/cohere-north-mini-code/scripts/build_llamacpp_pr24260.sh && python eval/cohere-north-mini-code/scripts/run_benchmark.py --compare && python eval/cohere-north-mini-code/scripts/summarize_results.py`, then fill in `eval/cohere-north-mini-code/DECISION.md`. Approx 30 min download + 20 min build + 2 hr benchmark.
 
-Delivered: real URLSession against `http://localhost:41112/localapi/v0/status` with the `Host: local-tailscaled.sock` anti-DNS-rebinding header, 2s timeout. `ThoxTailscaleClient` actor + `ThoxTailscalePeer` / `ThoxTailscaleStatus` types + `ThoxTailscaleImportService` mapping Tailscale peers to v0.3.0-rc1 `ThoxDiscoveredDevice`. `ThoxTailscaleImportViewModel` + `ThoxTailscaleImportView` SwiftUI sheet. macOS path functional; iOS path stubbed with `// TODO(ios):` falling through to `.daemonUnreachable` empty state. 3 test files with URLProtocol mock transport. `docs/superpowers/specs/2026-06-23-tailscale-import-design.md`. 10 added + 6 modified.
+Delivered: real URLSession against `http://localhost:41112/localapi/v0/status` with the `Host: local-tailscaled.sock` anti-DNS-rebinding header, 2s timeout. `ThoxTailscaleClient` actor + `ThoxTailscalePeer` / `ThoxTailscaleStatus` types + `ThoxTailscaleImportService` mapping Tailscale peers to v0.3.0-rc1 `ThoxDiscoveredDevice`. `ThoxTailscaleImportViewModel` + `ThoxTailscaleImportView` SwiftUI sheet. macOS path functional; iOS path stubbed with `// TODO(ios):` falling through to `.daemonUnreachable` empty state. 3 test files with URLProtocol mock transport. `docs/superpowers/specs/2026-07-13-tailscale-import-design.md`. 10 added + 6 modified.
 
 Next contributor for thox-terminal v0.3.0 (out of rc2): iOS Network Extension exploration to bind the Tailscale-supplied socket, tag-based device-kind heuristics once THOX `tag:*` taxonomy locks, real-device verification on the live THOX-BUILD-01 tailnet with ThoxNova prototype + 4-node Pi Zero MagStack for the Kickstarter video beat.
 
-Delivered: real NWBrowser wiring against `_thox._tcp` service type (default port 22) with `includePeerToPeer: true`, ThoxDiscoveryService actor + ThoxDiscoveryViewModel + ThoxDiscoveryView, both iOS + macOS Info.plist with NSBonjourServices and NSLocalNetworkUsageDescription, Discovery tab wired into ThoxRootView, 3 test files with a fixture seam, `docs/superpowers/specs/2026-06-23-mdns-discovery-design.md`. README + development_queue.md updated. 10 files added + 6 modified.
+Delivered: real NWBrowser wiring against `_thox._tcp` service type (default port 22) with `includePeerToPeer: true`, ThoxDiscoveryService actor + ThoxDiscoveryViewModel + ThoxDiscoveryView, both iOS + macOS Info.plist with NSBonjourServices and NSLocalNetworkUsageDescription, Discovery tab wired into ThoxRootView, 3 test files with a fixture seam, `docs/superpowers/specs/2026-07-13-mdns-discovery-design.md`. README + development_queue.md updated. 10 files added + 6 modified.
 
 Next contributor needs: real-device verification on a Pi Zero MagStack advertising `_thox._tcp` (captures the Kickstarter video beat), then polish the "promote and connect" hand-off so the freshly-discovered device gets the dashboard's active-connection highlight, then cut `v0.3.0`.
 
-## Plan correction (2026-06-23 wave)
+## Plan correction (2026-07-13 wave)
 
 This plan previously listed thox-terminal v0.2 SSH as in-flight. A
 verification pass during pull-forward dispatch found that v0.2
-**already shipped on 2026-06-22**:
+**already shipped on 2026-07-12**:
 
 - Commit `f4ba35b` "docs: TestFlight submission guide for v0.2 (T-49 Kickstarter handoff)"
 - Citadel 0.12.1 SSH dependency in `Package.swift`
 - Full `ThoxSSHClient` + `ThoxSSHTransport` + `ThoxSSHCommandBuilder`
 - Vault stores: `ThoxKeychain`, `ThoxCredentialStore`, `ThoxSnippetStore`, `ThoxKnownHostsStore`, `ThoxConnectionLogStore`
-- Live interactive shell view + test suite + design spec at `docs/superpowers/specs/2026-06-22-ssh-connectivity-design.md`
+- Live interactive shell view + test suite + design spec at `docs/superpowers/specs/2026-07-12-ssh-connectivity-design.md`
 - Keychain Sharing entitlements for iOS + macOS
 
-Mark thox-terminal v0.2 native SSH as **SHIPPED 2026-06-22 (commit f4ba35b)**. Lane G Apps proceeds to v0.3.
+Mark thox-terminal v0.2 native SSH as **SHIPPED 2026-07-12 (commit f4ba35b)**. Lane G Apps proceeds to v0.3.
 
 ## Demo gap analysis (per device)
 
@@ -218,12 +218,12 @@ What the video must show vs. what currently works:
 | Device | Video beat | Current status | Gap |
 |---|---|---|---|
 | **ThoxNova** (6" tablet) | 6" display running ThoxOS + 12B local inference + MagStack pogo-pin stacking | thoxos-kernel v1.1.24, NO_GO on v1.2.0 (no QEMU evidence, no signed release). thox-gemma4 Phase C 12B not yet trained. STL set ready (v2.1). | **HIGH RISK**: kernel can't boot Nova hardware in video; 12B not on Ollama yet |
-| **ThoxClip** (MagStack puck) | Stacking, Qi2 charging, mesh sync with other clips | STL set ready (v7.1 with recessed pocket). magstack-air fabric exists; legacy Pi Zero 2 W path unverified, RV1103 port in flight following the 2026-06-25 ThoxMini Air SoC retarget. No clip-specific firmware repo in the audit. | **MEDIUM RISK**: cluster assembly unproven on camera; clip firmware repo missing |
+| **ThoxClip** (MagStack puck) | Stacking, Qi2 charging, mesh sync with other clips | STL set ready (v7.1 with recessed pocket). magstack-air fabric exists; legacy Pi Zero 2 W path unverified, RV1103 port in flight following the 2026-07-15 ThoxMini Air SoC retarget. No clip-specific firmware repo in the audit. | **MEDIUM RISK**: cluster assembly unproven on camera; clip firmware repo missing |
 | **ThoxMini** (USB-C stick) | Local inference on a host laptop | STL set ready (v2.1 with USB-C cutout). thoxos-air-image is the Mini Air image; RV1103 Mini also uses this. No signed image artifact yet. | **MEDIUM RISK**: no bootable signed image |
-| **ThoxMini Air** (carry-along) | Button controls + carabiner + mesh sync | STL set ready (v2.1 with 4 button cutouts + carabiner ring). Updated 2026-06-25: ThoxMini Air retargeted from Pi Zero W to Luckfox Pico Mini B with MagStack ring (same RV1103 SoC as ThoxMini, distinguished by clustering + form factor). magstack-air + magstack-air-edge-rs need Rust env build + RV1103 port deploy (Pi Zero 2 W path now legacy prototype only). | **MEDIUM RISK**: not verified to compile + run end-to-end on the new SoC |
-| **All devices (marketing site)** | thox.ai matches the Kickstarter pricing + date | Site says "April 14 2026 / starting at $549"; Kickstarter playbook says "Aug 12 2026 / $39-$499" | **CRITICAL**: marketing site contradicts the video |
-| **ThoxStick** (candidate SKU, NOT in launch lineup) | 96 x 28 x 11.8 mm private-AI compute stick, emerald X mark | v0.2.0 ready at [ttracx/thox-stick-poc](https://github.com/ttracx/thox-stick-poc) + mirror at `thox-3dprint-kit/devices/thoxstick/poc/`. 18 STLs lay-flat clean, 91 STL-derived preview PNGs, investor-grade X logo + PCB dummy refresh, cross-platform renderer. T-7 decision packet at `thox-stick-poc/docs/KICKSTARTER_DECISION_T7.md` (3 outcomes). Supplier CAD intake at `thox-stick-poc/docs/SUPPLIER_CAD_INTAKE.md` (6-component priority). | **OPTIONAL stretch SKU**: do NOT add to launch lineup pre-Aug 12. **T-7 decision Aug 5**: OUTCOME_A stretch reward $49 / OUTCOME_B roadmap teaser / OUTCOME_C hold. Default OUTCOME_C if no call by EOD. Mechanical mockup only; no powered electronics. |
-| **ThoxKey** (parallel revenue lane, NOT in main launch SKU lineup) | Sub-$50 commodity USB drive preloaded with private local AI; B2B bulk swag + university bookstore + DTC halo | v0.1.0 live at [ttracx/thox-key](https://github.com/ttracx/thox-key). Ships TODAY on commodity USB hardware + THOX portable runtime + factory model loadouts. 6 tiers ($19-$49), 5-25 day lead time, $1M north-star at 9 months. Full ordering portal spec, fulfillment runbook, BOM, supplier list, 3 outreach templates ready. | **PARALLEL LANE, NOT a launch dependency**: can ship before, during, or after Aug 12 without affecting the 4-SKU launch lineup. Education tier could appear as Kickstarter add-on for $25 if we cut a HS / university discount reward. Distinct from ThoxStick. |
+| **ThoxMini Air** (carry-along) | Button controls + carabiner + mesh sync | STL set ready (v2.1 with 4 button cutouts + carabiner ring). Updated 2026-07-15: ThoxMini Air retargeted from Pi Zero W to Luckfox Pico Mini B with MagStack ring (same RV1103 SoC as ThoxMini, distinguished by clustering + form factor). magstack-air + magstack-air-edge-rs need Rust env build + RV1103 port deploy (Pi Zero 2 W path now legacy prototype only). | **MEDIUM RISK**: not verified to compile + run end-to-end on the new SoC |
+| **All devices (marketing site)** | thox.ai matches the Kickstarter pricing + date | Site says "April 14 2026 / starting at $549"; Kickstarter playbook says "Sep 1 2026 / $39-$499" | **CRITICAL**: marketing site contradicts the video |
+| **ThoxStick** (candidate SKU, NOT in launch lineup) | 96 x 28 x 11.8 mm private-AI compute stick, emerald X mark | v0.2.0 ready at [ttracx/thox-stick-poc](https://github.com/ttracx/thox-stick-poc) + mirror at `thox-3dprint-kit/devices/thoxstick/poc/`. 18 STLs lay-flat clean, 91 STL-derived preview PNGs, investor-grade X logo + PCB dummy refresh, cross-platform renderer. T-7 decision packet at `thox-stick-poc/docs/KICKSTARTER_DECISION_T7.md` (3 outcomes). Supplier CAD intake at `thox-stick-poc/docs/SUPPLIER_CAD_INTAKE.md` (6-component priority). | **OPTIONAL stretch SKU**: do NOT add to launch lineup pre-Sep 1. **T-7 decision Aug 5**: OUTCOME_A stretch reward $49 / OUTCOME_B roadmap teaser / OUTCOME_C hold. Default OUTCOME_C if no call by EOD. Mechanical mockup only; no powered electronics. |
+| **ThoxKey** (parallel revenue lane, NOT in main launch SKU lineup) | Sub-$50 commodity USB drive preloaded with private local AI; B2B bulk swag + university bookstore + DTC halo | v0.1.0 live at [ttracx/thox-key](https://github.com/ttracx/thox-key). Ships TODAY on commodity USB hardware + THOX portable runtime + factory model loadouts. 6 tiers ($19-$49), 5-25 day lead time, $1M north-star at 9 months. Full ordering portal spec, fulfillment runbook, BOM, supplier list, 3 outreach templates ready. | **PARALLEL LANE, NOT a launch dependency**: can ship before, during, or after Sep 1 without affecting the 4-SKU launch lineup. Education tier could appear as Kickstarter add-on for $25 if we cut a HS / university discount reward. Distinct from ThoxStick. |
 
 ## Critical-path repos (the 12 that must ship)
 
@@ -232,20 +232,20 @@ team (see "Agent team structure" below).
 
 | Priority | Repo | Current state | Must-have for launch | Owner team |
 |---|---|---|---|---|
-| **P0** | `Thox.ai` (marketing site) | April 14 / $549 copy | Aug 12 / 4-SKU lineup | Team A (Marketing) |
+| **P0** | `Thox.ai` (marketing site) | April 14 / $549 copy | Sep 1 / 4-SKU lineup | Team A (Marketing) |
 | **P0** | `thox-command-center` | Not gitted | Keep PRIVATE; never link from public | Team A (Marketing) |
 | **P0** | `thoxos-kernel` | v1.1.24, NO_GO | QEMU evidence + signed v1.2.0 release | Team B (Kernel) |
 | **P0** | `thoxos-air-image` | No signed artifact | Signed v0.1 image released to GH | Team C (Images) |
 | **P0** | `thox-gemma4` | Phase C 12B blocked on tx5.6 | Phase C 12B trained + GGUF | Team D (Models) |
 | **P0** | `thoxllm-factory` | P1.5 pending | 7 Ollama tags live + ThoxGem-E4B GGUF | Team D (Models) |
 | **P1** | `thox-provisioner` | ThoxAir MaskROM untested | Cross-platform smoke test | Team E (Provisioning) |
-| **P1** | `magstack-air` + `magstack-air-edge-rs` | Compile unverified | Run on real 4-8 Luckfox Pico Mini B MagStack ring (updated 2026-06-25; Pi Zero 2 W stack now legacy prototype lane only) | Team F (MagStack) |
+| **P1** | `magstack-air` + `magstack-air-edge-rs` | Compile unverified | Run on real 4-8 Luckfox Pico Mini B MagStack ring (updated 2026-07-15; Pi Zero 2 W stack now legacy prototype lane only) | Team F (MagStack) |
 | **P1** | `thox-terminal` | v0.1.0 scaffold | v0.2 native SSH for "control from iPhone" beat | Team G (Apps) |
 | **P1** | `thoxos-companion` | Not on TestFlight | TestFlight build for iPhone beat | Team G (Apps) |
 | **P2** | `thoxinchip` | Branch unmerged | GDS render of ThoxCPU for "silicon roadmap" cutaway | Team H (Silicon) |
 | **P2** | `thox-watch` | Hardware bring-up | Display + I2C verified for stretch-goal "ThoxWatch coming" beat | Team H (Silicon) |
 
-## Day 0 launch order (revised 2026-06-23 per shiproom review)
+## Day 0 launch order (revised 2026-07-13 per shiproom review)
 
 Four corrections to the original plan:
 
@@ -314,7 +314,7 @@ weekly check-in (Fri 5pm PT) + the daily blocker triage in Slack
 - **DRI**: Phamy
 - **Repos**: `Thox.ai`, `thox-command-center`
 - **Goal**: ship the production marketing site that matches the
-  Kickstarter playbook (Aug 12 / 4 SKUs / $39-$499) by T-30 (Jul 13).
+  Kickstarter playbook (Sep 1 / 4 SKUs / $39-$499) by T-30 (Jul 13).
 - **Workstream**:
   1. Rewrite hero copy to match `thox-kickstarter/docs/CAMPAIGN_INFO.md`
   2. Replace single-SKU framing with 4-SKU lineup grid (ThoxClip /
@@ -517,54 +517,54 @@ Team G (Apps) ────────────► TestFlight ────►
 Team H (Silicon) ─────────► B-roll PNG ────► T-14 stretch tease
                               │
                               ▼
-                           FILM DAY (T-7 = Aug 5)
+                           FILM DAY (T-7 = Aug 25)
                               │
                               ▼
-                           LAUNCH (T+0 = Aug 12 9am PT)
+                           LAUNCH (T+0 = Sep 1 9am PT)
 ```
 
 ## Weekly milestones (T-49 to T+0)
 
-### Week of 2026-06-22 (T-49 to T-42) — kickoff
+### Week of 2026-07-12 (T-49 to T-42) — kickoff
 - All 8 teams assigned DRIs + agent instances spun up
 - Each team posts a 1-line week-1 plan in `#ks-ops`
 - Marketing site (Team A) drafts new copy
 
-### Week of 2026-06-29 (T-42 to T-35)
+### Week of 2026-07-19 (T-42 to T-35)
 - Team B: Linux build host operational; first QEMU smoke
 - Team D: transformers 5.6+ bump merged + Phase C 12B training started
 - Team A: site copy review + design draft
 - Team F: Cluster Dock prints from Q2 Combo
 - Team G: thox-terminal Xcode target stood up
 
-### Week of 2026-07-06 (T-35 to T-28) — filming prep
+### Week of 2026-07-26 (T-35 to T-28) — filming prep
 - Team C: signed image artifact released
 - Team D: 7 Ollama tags live (P1.5)
 - Team G: TestFlight builds in beta review
 - Team A: site live at staging URL
 - Team F: 8-clip stack assembled
 
-### Week of 2026-07-13 (T-28 to T-21) — film week
+### Week of 2026-08-02 (T-28 to T-21) — film week
 - All hero shots filmed
 - Team B: v1.2.0 release tagged + signed
 - Team A: site GA at thox.ai
 - Team D: 12B on Nova hardware verified
 - Team E: flasher demo recorded
 
-### Week of 2026-07-20 (T-21 to T-14) — edit + B-roll
+### Week of 2026-08-09 (T-21 to T-14) — edit + B-roll
 - Team H: silicon + watch B-roll filmed
 - Hero video edit complete
 - Press kit final
 
-### Week of 2026-07-27 (T-14 to T-7) — embargo + final
+### Week of 2026-08-16 (T-14 to T-7) — embargo + final
 - Press embargoed copies sent
 - Final video lock
 - All apps + sites verified
 
-### Week of 2026-08-03 (T-7 to T+0) — launch week
+### Week of 2026-08-23 (T-7 to T+0) — launch week
 - T-7: full team rehearsal of launch-day choreography
 - T-3: "we launch in 3 days" email
-- T+0: launch (9am PT Aug 12 2026)
+- T+0: launch (9am PT Sep 1 2026)
 
 ## Risk register
 

@@ -1,7 +1,7 @@
 # THOX user manuals
 
 Per-device printed-or-PDF user manuals shipped in every backer carton on
-fulfillment day (Aug 12, 2026 wave). The manuals are short on purpose:
+fulfillment day (Sep 1, 2026 wave). The manuals are short on purpose:
 6 to 8 pages each, US Letter, single-column, IBM Plex Sans body + JetBrains
 Mono code, THOX cyan (`#27E5FF`) accents on the headings.
 

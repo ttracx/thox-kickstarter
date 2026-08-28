@@ -164,7 +164,7 @@ fulfillment audit trail at ship time.
 
 ## When to tear down
 
-Keep this host alive through T+30 (Sep 11 2026) at minimum, ideally
+Keep this host alive through T+30 (Oct 1 2026) at minimum, ideally
 through T+90 (Nov 10 2026) for fulfillment-phase batch flashing +
 QA-trail verification. After T+90, snapshot the artifacts directory
 to a long-term backup and decommission.

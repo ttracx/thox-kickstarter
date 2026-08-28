@@ -1,12 +1,12 @@
 # Post brief template
 
 Copy this file to the appropriate phase directory with a date-prefixed
-ID: `posts/01-launch-day/2026-08-12-09am-launch-x.md`. Fill every
+ID: `posts/01-launch-day/2026-09-01-09am-launch-x.md`. Fill every
 field. Empty fields fail the QA gate.
 
 ## Identity
 
-- **Post ID**: `YYYY-MM-DD-<slug>` (e.g. `2026-08-12-09am-launch-x`)
+- **Post ID**: `YYYY-MM-DD-<slug>` (e.g. `2026-09-01-09am-launch-x`)
 - **Phase**: pre-launch | launch-day | week-1 | mid-campaign | stretch | final-48h | post-funding
 - **Platform(s)**: x | instagram | tiktok | linkedin | youtube | reddit | threads (list all that apply)
 - **Date / time (PT)**: `YYYY-MM-DD HH:MM`

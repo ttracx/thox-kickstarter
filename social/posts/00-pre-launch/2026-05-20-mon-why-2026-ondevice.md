@@ -76,7 +76,7 @@ ThoxClip: $39. ThoxMini: $69. ThoxAir: $79. ThoxNova: $499.
 
 No monthly bill. Ever. /4
 
-5/ The Kickstarter is Aug 12 2026. Early-bird tiers fill fast.
+5/ The Kickstarter is Sep 1 2026. Early-bird tiers fill fast.
 
 Join the launch list: thox.ai/launch
 
@@ -100,7 +100,7 @@ Plus an Apache-2.0 model family they own forever.
 The pitch is not "we are better than cloud AI". The pitch is "the
 cloud is overcharging you for what your hardware can do locally."
 
-Kickstarter launches Aug 12 2026. Launch list at thox.ai/launch.
+Kickstarter launches Sep 1 2026. Launch list at thox.ai/launch.
 
 #THOXai #localAI #engineering #economics
 ```

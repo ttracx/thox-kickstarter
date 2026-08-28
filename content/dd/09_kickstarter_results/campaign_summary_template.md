@@ -7,7 +7,7 @@ Status: TEMPLATE - blank until campaign closes
 
 ## Campaign window
 
-- Open: 2026-08-12 (planned)
+- Open: 2026-09-01 (planned)
 - Close: FILL
 - Days live: FILL
 

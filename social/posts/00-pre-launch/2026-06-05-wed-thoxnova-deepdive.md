@@ -80,7 +80,7 @@ the lid. Backup your fine-tunes, swap a checkpoint, keep going. /5
 6/ Spec at github.com/ttracx/thox-3dprint-kit and
 github.com/ttracx/thoxos-kernel.
 
-Kickstarter Aug 12 2026.
+Kickstarter Sep 1 2026.
 thox.ai/launch
 
 🟢 Your AI. Your Data. Your Rules.
@@ -137,7 +137,7 @@ NX. Tradeoff was worth it for a $499 retail target.
 $499 single early-bird. $1,399 4-pack early-bird (mesh-clustered for
 ~30 tokens/sec aggregate).
 
-Kickstarter Aug 12 2026.
+Kickstarter Sep 1 2026.
 thox.ai/launch
 
 #THOXai #localAI #engineering #intel #lattepanda

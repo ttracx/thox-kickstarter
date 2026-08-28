@@ -93,7 +93,7 @@ rig (Qi2 coil drive, MagStack pad continuity, USB-C PD negotiation,
 LED indicator, 18 power-rail checkpoints). 1 failure on a USB-C
 contact bridge - rework, not a respin.
 
-Production run starts the week after Kickstarter closes (Aug 12
+Production run starts the week after Kickstarter closes (Sep 1
 through Sep 10 2026). Contract manufacturer's tooling is staged;
 their first article is scheduled for week 6 post-funding.
 

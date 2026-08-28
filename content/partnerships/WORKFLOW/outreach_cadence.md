@@ -18,7 +18,7 @@ Internal-only operational doc. Mirrors the shape of `content/launch/PRESS_OUTREA
 | T-21 | Jul 22 | Warm-intro attempt or single cold note to Anthropic, OpenAI, Cohere | Direct engagement with Gemma DevRel | Community channel outreach to Hugging Face Hub team; NVIDIA Jetson NOT engaged pre-launch | No outreach; Apple Developer Program enrollment verified |
 | T-14 | Jul 29 | Polite single follow-up to non-responders | Polite single follow-up | Polite single follow-up to Hugging Face | No outreach |
 | T-7 | Aug 5 | No further outbound; focus on launch | No further outbound | No further outbound | Confirm thox-terminal App Store submission status if applicable |
-| T-0 | Aug 12 | Public mention permitted only if a positive response was received | Public mention of Gemma fine-tunes is factual and permitted | Public mention of Hub model cards is factual and permitted | No Apple mention; no NVIDIA mention |
+| T-0 | Sep 1 | Public mention permitted only if a positive response was received | Public mention of Gemma fine-tunes is factual and permitted | Public mention of Hub model cards is factual and permitted | No Apple mention; no NVIDIA mention |
 
 ## Post-launch outreach window (Aug 13 onward)
 
@@ -77,4 +77,4 @@ Plan for 4-7 real partnership conversations to surface from the 8-brief slate ov
 5. NEVER commit THOX to anything beyond a discovery call without Tommy + Craig sign-off.
 6. NEVER agree to NDAs that block THOX from talking about the partnership publicly or that block THOX from continuing to support other vendors.
 7. NEVER spend money on paid introductions, paid placement, or paid partnerships pre-launch.
-8. NEVER let a partnership conversation slow down the Aug 12 launch. Launch is the priority. Partnerships are second-tier.
+8. NEVER let a partnership conversation slow down the Sep 1 launch. Launch is the priority. Partnerships are second-tier.

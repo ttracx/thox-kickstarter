@@ -5,7 +5,7 @@ unlock the first stretch ($250K = "All backers get a free THOX logo
 coin"). The first 4 hours typically deliver 25% of total campaign
 funding; treat them like a moonshot launch.
 
-## T+0 Launch day (Tue Jul 7 2026)
+## T+0 Launch day (Tue Sep 1 2026)
 
 ### 8:00am PT - team assembles
 
@@ -44,7 +44,7 @@ funding; treat them like a moonshot launch.
 - [ ] Campaign owner clicks "Launch" on the Kickstarter creator
       dashboard.
 - [ ] Within 30 seconds: content producer publishes the 9am tweet
-      per `../social/posts/01-launch-day/2026-08-12-09am-launch-x.md`.
+      per `../social/posts/01-launch-day/2026-09-01-09am-launch-x.md`.
 - [ ] Within 90 seconds: IG Stories sticker, Threads cross-post, FB
       post all live.
 - [ ] Within 5 minutes: the launch-day choreography from

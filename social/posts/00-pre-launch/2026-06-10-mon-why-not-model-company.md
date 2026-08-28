@@ -78,7 +78,7 @@ AI.
 
 Different end of the same stack. /4
 
-5/ Kickstarter Aug 12 2026. We are shipping 4 devices. ThoxClip $39,
+5/ Kickstarter Sep 1 2026. We are shipping 4 devices. ThoxClip $39,
 ThoxMini $69, ThoxAir $79, ThoxNova $499. No subscription. Ever.
 
 thox.ai/launch
@@ -108,7 +108,7 @@ Our models exist to make the hardware useful. The hardware exists
 because the cloud model API is the wrong long-term shape for local
 AI.
 
-4 devices launching Aug 12 2026 on Kickstarter. ThoxClip ($39),
+4 devices launching Sep 1 2026 on Kickstarter. ThoxClip ($39),
 ThoxMini ($69), ThoxAir ($79), ThoxNova ($499).
 
 thox.ai/launch

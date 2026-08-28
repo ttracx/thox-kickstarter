@@ -1,6 +1,6 @@
 # Partnerships
 
-PRE-OUTREACH internal-only memos for Tommy + Craig to review BEFORE any actual partnership outreach is initiated for the THOX.ai Kickstarter launching August 12, 2026.
+PRE-OUTREACH internal-only memos for Tommy + Craig to review BEFORE any actual partnership outreach is initiated for the THOX.ai Kickstarter launching September 1, 2026.
 
 Nothing in this folder commits THOX.ai to any specific partner, deal, NDA, financial transaction, or public announcement. Every commitment requires Tommy + Craig joint sign-off and (above $10K or where any of the briefs flag attorney review) startup-attorney sign-off as well.
 

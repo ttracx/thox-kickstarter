@@ -80,7 +80,7 @@ is a paid add-on at BackerKit. /4
 
 5/ Spec + STL set at github.com/ttracx/thox-3dprint-kit.
 
-Launch Aug 12 2026.
+Launch Sep 1 2026.
 thox.ai/launch
 
 🟢 Your AI. Your Data. Your Rules.
@@ -136,7 +136,7 @@ airflow.
 $79 single, $219 3-pack early-bird. The 3-pack stacks via the THOX
 mesh protocol for aggregated throughput.
 
-Kickstarter Aug 12 2026.
+Kickstarter Sep 1 2026.
 thox.ai/launch
 
 #THOXai #localAI #engineering #npu #edgeai
