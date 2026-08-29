@@ -1,6 +1,6 @@
 """Parse T-N milestone timeline and assert ordering + date sanity.
 
-Launch is 2026-08-12. Today (per repo state) is 2026-06-25. T-48 corresponds
+Launch is 2026-09-01. Today (per repo state) is 2026-06-25. T-48 corresponds
 to 2026-06-25. T-0 is launch day. Negative T (T+N) is post-launch.
 """
 
@@ -17,7 +17,7 @@ from .conftest import REPO_ROOT
 MILESTONES = REPO_ROOT / "content" / "launch" / "MILESTONES.md"
 TIMELINE = REPO_ROOT / "docs" / "TIMELINE.md"
 
-LAUNCH_DATE = dt.date(2026, 8, 12)
+LAUNCH_DATE = dt.date(2026, 9, 1)
 TODAY = dt.date(2026, 6, 25)
 GRACE_DAYS_PAST = 7  # allow recently-shipped Phase-1 deliverables already in the past
 
@@ -112,7 +112,7 @@ def test_milestones_no_far_past_dates():
 
 def test_milestones_launch_date_referenced():
     text = MILESTONES.read_text(encoding="utf-8")
-    assert "2026-08-12" in text, "launch date 2026-08-12 must be in MILESTONES.md"
+    assert "2026-09-01" in text, "launch date 2026-09-01 must be in MILESTONES.md"
 
 
 def test_timeline_doc_exists_if_referenced():
