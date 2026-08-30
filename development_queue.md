@@ -39,3 +39,17 @@ Scores use a 1 to 10 scale.
 | [ ] | Verify exact Kickstarter preview and public URL | Complete desktop/mobile review; verify the URL without a preview token |
 | [ ] | Verify private payment, identity, 2FA, and recovery controls | Record evidence in the approved private operator system, never in Git |
 | [ ] | Record founder go/no-go approval | Complete T-1/T-0 checklist, then run `python3 scripts/audit_launch_readiness.py --require-ready` |
+
+## Live operating status (2026-08-30)
+
+Do not merge this branch and do not publish Pages until Tommy picks one public campaign window.
+
+Date lock is split three ways:
+
+- Live `https://www.thox.ai/`: Sep 8 to Oct 8, 2026
+- Repo `main` `5f2c6bc`: Sep 1 to Oct 1, 2026
+- GitHub Pages `https://ttracx.github.io/thox-kickstarter/`: kicker still July 9, 2026 because `pages.yml` deploys only when `kickstarter/site/**` changes on `main`
+
+This branch removes the July 9 kicker from `kickstarter/site/index.html` and replaces it with `Kickstarter campaign preview`. It does not choose Sep 1 or Sep 8.
+
+`validate.yml` on `5f2c6bc` (run 33278375159) did not start: GitHub annotation is `The job was not started because your account is locked due to a billing issue.` That is why validate-docs is red. Content tests were not executed. Unlock billing before expecting green CI or a Pages redeploy, even after a future merge.
