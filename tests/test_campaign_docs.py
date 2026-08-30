@@ -65,10 +65,10 @@ def test_canonical_launch_window_is_consistent() -> None:
         ]
     )
 
-    assert "2026-09-01" in text
-    assert "2026-10-01" in text
-    assert "September 1, 2026" in text
-    assert "October 1, 2026" in text
+    assert "2026-09-08" in text
+    assert "2026-10-08" in text
+    assert "September 8, 2026" in text
+    assert "October 8, 2026" in text
     for retired_date in [
         "2026-07-07",
         "2026-08-06",
@@ -78,5 +78,9 @@ def test_canonical_launch_window_is_consistent() -> None:
         "2026-09-11",
         "August 12, 2026",
         "September 11, 2026",
+        "2026-09-01",
+        "2026-10-01",
+        "September 1, 2026",
+        "October 1, 2026",
     ]:
         assert retired_date not in text
