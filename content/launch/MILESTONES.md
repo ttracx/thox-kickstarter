@@ -2,7 +2,7 @@
 
 T-minus countdown calendar for the September 8, 2026 Kickstarter launch.
 
-Today is 2026-07-15. Launch day is T-0 (2026-09-08). The campaign window runs T+0 to T+30 (closes 2026-10-08 at 9:00 AM PT).
+Today is 2026-07-15. Launch day is T-0 (2026-09-08). The campaign window runs T+0 to T+30 (closes 2026-10-08 at 10:00 PM PT).
 
 Owners:
 - **T** = Tommy Xaypanya (software, runtime, campaign ops)
