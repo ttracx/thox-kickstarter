@@ -37,8 +37,8 @@ Use these values unless leadership changes them in `docs/CAMPAIGN_INFO.md`.
 | Funding goal | $150,000 recommended |
 | Duration | 30 days |
 | Currency | USD |
-| Launch target | September 1, 2026, 9:00 AM PT |
-| End target | October 1, 2026, 10:00 PM PT |
+| Launch target | September 8, 2026, 9:00 AM PT |
+| End target | October 8, 2026, 10:00 PM PT |
 
 ## Story page setup
 

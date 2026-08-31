@@ -1,6 +1,6 @@
 # EMAIL_SEQUENCE.md
 
-Pre-launch email sequence for the September 1, 2026 THOX.ai Kickstarter. Five emails sent over six weeks (T-42, T-28, T-14, T-7, T-0) to the founder list.
+Pre-launch email sequence for the September 8, 2026 THOX.ai Kickstarter. Five emails sent over six weeks (T-42, T-28, T-14, T-7, T-0) to the founder list.
 
 Voice: Tommy, first person, technical, no marketing fluff. Honest about what ships and what does not. No em-dashes. No emojis. Plain language.
 
@@ -44,7 +44,7 @@ Body:
 >
 > That is the whole thesis. Privacy is not a marketing line; it is a property of where the computation runs.
 >
-> We launch on Kickstarter on September 1, 2026. Between now and then I will send you four more emails. The next one walks through the four devices we are launching, with prices and ship windows. The one after that shows the engineering work on the multi-node cluster dock. The fourth walks through the early-bird tiers and stretch ladder. The fifth says "we are live."
+> We launch on Kickstarter on September 8, 2026. Between now and then I will send you four more emails. The next one walks through the five devices on the live family page. Pledge prices stay in the campaign source of truth. I will not invent a Case price here. The one after that shows the engineering work on the multi-node cluster dock. The fourth walks through the early-bird tiers and stretch ladder. The fifth says "we are live."
 >
 > If you want to skip ahead, the campaign details are at the link below. There is nothing to pledge yet. The countdown page just collects an email and shows the current day count to launch.
 >
@@ -55,15 +55,15 @@ Body:
 
 CTA: Countdown page at https://thox.ai/launch
 
-Link label: "See the countdown and the four devices"
+Link label: "See the countdown and the five devices"
 
 ---
 
 ## Email 2: T-28 (Tue Aug 4, 2026)
 
-Subject: Meet the four devices
-Alt subject (A/B): The THOX family, with prices
-Preview text: ThoxClip $39, ThoxMini $69, ThoxAir $79, ThoxNova $499
+Subject: Meet the five devices
+Alt subject (A/B): The THOX family on the live page
+Preview text: Five devices. Nova is not in this campaign.
 
 Body:
 
@@ -71,17 +71,15 @@ Body:
 >
 > Two weeks ago I sent you the why. Here is the what.
 >
-> Four devices launch on Sep 1. All four run on-device. All four are designed so the rest of the family stays useful even if you only own one.
+> Five devices are on the live family page. Every device is useful standalone except ThoxClip, which needs a paired THOX node for agent features. ThoxNova is not part of this campaign. It follows after Kickstarter fulfilment.
 >
-> 1. ThoxClip, from $39. Clip-on wake-word and voice gateway. Pairs to a local THOX node over BLE. Roughly the size of a USB stick. You wear it or clip it. It is the entry point.
+> 1. ThoxKey. USB private AI identity.
+> 2. ThoxAir. Wireless local companion.
+> 3. ThoxMini. Compact local compute.
+> 4. ThoxClip. MagStack clip with local AI. Needs a paired THOX node for agent features.
+> 5. ThoxCase. Companion case for the phone you already carry.
 >
-> 2. ThoxMini, $69. Desktop edge compute on a Luckfox Pico Mini B. Runs small instruction-tuned models locally. It is the thing that sits on your desk and answers without ever calling out. A 30+ skill catalog ships at the time of fulfillment.
->
-> 3. ThoxAir, $79. Single-node compute that clusters via the MagStack Cluster Dock. Multi-node setups for multi-agent workflows. You can run one or you can stack four for the same kind of work a small server rack does, on your desk, silently.
->
-> 4. ThoxNova, $499. The flagship workstation. Hosts the full THOX runtime and the 7-backend ThoxCore router (LiteRT, OpenAI-compatible HTTP, Ollama, llama.cpp, vLLM, TensorRT, MLX). This is the one that runs the bigger local models and routes traffic across the family.
->
-> Hero renders for all four are at the link below. The Sep 1 ship windows are firm intent: ThoxClip first (Q1 2027), ThoxMini and ThoxAir together (Q2 2027), ThoxNova close behind (Q2 2027). Ship windows are intent, not contracts. If we hit a real blocker we will publish it as a backer update before slipping a date.
+> No pledge amounts in this email. Prices live in the campaign source of truth. I will not invent a Case price. Hero renders are at the link below. Ship windows are intent, not contracts. If we hit a real blocker we will publish it as a backer update before slipping a date.
 >
 > All software is Apache-2.0. The full repo graph is on github.com/ttracx. The runtime, the agent fleet, and the device-provisioning tooling are all already shipped before launch day. None of this requires you to take our word for it.
 >
@@ -90,9 +88,9 @@ Body:
 > Tommy
 > Co-founder, THOX.ai
 
-CTA: See the four devices at https://thox.ai/launch#devices
+CTA: See the five devices at https://thox.ai/launch#devices
 
-Link label: "See all four devices, renders, and ship windows"
+Link label: "See all five devices, renders, and ship windows"
 
 ---
 
@@ -148,17 +146,14 @@ Body:
 >
 > Campaign window:
 >
-> - Launch: Sep 1, 2026 at 09:00 PT
+> - Launch: Sep 8, 2026 at 09:00 PT
 > - Press embargo lifts: 10:00 PT same day
-> - Campaign closes: October 1, 2026 at 09:00 PT
+> - Campaign closes: October 8, 2026 at 10:00 PM PT
 > - Kickstarter All-or-Nothing pledge model: if we do not hit $250K, nobody is charged.
 >
 > Early-bird tiers (first 24 hours after launch):
 >
-> - ThoxClip early-bird: starts at $39, increasing tiers after the early-bird cap
-> - ThoxMini early-bird: $69 (cap), then $79 at the standard tier
-> - ThoxAir early-bird: $79 (cap), then $89 at the standard tier
-> - ThoxNova early-bird: $499 (cap), then $549 at the standard tier
+> - Early-bird amounts match docs/CAMPAIGN_INFO.md. No amounts invented in this email.
 > - MagStack Cluster Dock add-on: BackerKit add-on, surfaced at T+45 to ThoxAir backers
 >
 > Stretch ladder (unlocks during the 30-day window):
@@ -178,13 +173,12 @@ Body:
 > - ThoxClip: Q1 2027
 > - ThoxMini: Q2 2027
 > - ThoxAir + MagStack add-on: Q2 2027
-> - ThoxNova: Q2 2027
 >
 > International shipping is available. Per-region surcharges are listed at BackerKit checkout, not pledge time. We do not absorb duty for any destination. We do not ship to countries under active US export sanctions; if your country becomes restricted before your reward ships, we refund in full.
 >
 > What to do in the next seven days:
 >
-> 1. Save 09:00 PT on Sep 1 to your calendar. Early-bird tiers are capped, and the first hour is the only hour they are guaranteed to be open.
+> 1. Save 09:00 PT on Sep 8 to your calendar. Early-bird tiers are capped, and the first hour is the only hour they are guaranteed to be open.
 > 2. Forward this email to one person who would also want one. The campaign lives or dies on the first 48 hours.
 > 3. Reply with any questions. I read every one.
 >
@@ -195,12 +189,12 @@ Body:
 
 CTA: Save launch day to your calendar
 
-Link label: "Add Sep 1 09:00 PT to your calendar"
+Link label: "Add Sep 8 09:00 PT to your calendar"
 Link URL: https://thox.ai/launch#calendar (serves an .ics file)
 
 ---
 
-## Email 5: T-0 (Tue Sep 1, 2026, 08:30 PT)
+## Email 5: T-0 (Tue Sep 8, 2026, 08:30 PT)
 
 Subject: We're live
 Alt subject (A/B): THOX.ai is live on Kickstarter
@@ -214,7 +208,7 @@ Body:
 >
 > Link: https://www.kickstarter.com/projects/thoxai/thox-private-ai-you-can-hold (replace at send time with the canonical Kickstarter project URL)
 >
-> Early-bird tiers are open and capped. ThoxClip $39. ThoxMini $69. ThoxAir $79. ThoxNova $499. First 24 hours.
+> Early-bird tiers are open and capped. Amounts are on the live Kickstarter page. First 24 hours.
 >
 > Two things to do, in order of how much they matter:
 >
@@ -239,7 +233,7 @@ Link URL: live Kickstarter project URL (set at 09:00 PT on send day)
 
 - All five emails are queued in BackerKit. Templates are loaded; copy is frozen per `docs/PULL_FORWARD_TRACKER.md` Phase 4 deliverable "Backer-comms templates loaded into mail tool."
 - A/B test the alt subject lines on each email at a 10 percent split, then send the winner to the remaining 90 percent two hours later.
-- Send window: emails 1 through 4 go out at 09:00 PT on a Tuesday. Email 5 goes out at 08:30 PT on Tue Sep 1 (the launch).
+- Send window: emails 1 through 4 go out at 09:00 PT on a Tuesday. Email 5 goes out at 08:30 PT on Tue Sep 8 (the launch).
 - Suppression list: anyone who unsubscribes during the sequence is removed from all subsequent sends in the sequence and from the launch-day blast.
 - Bounce handling: hard-bounces are removed after the first failure. Soft-bounces retry once at the next scheduled send.
 

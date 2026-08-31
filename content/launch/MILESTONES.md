@@ -1,8 +1,8 @@
 # MILESTONES.md
 
-T-minus countdown calendar for the September 1, 2026 Kickstarter launch.
+T-minus countdown calendar for the September 8, 2026 Kickstarter launch.
 
-Today is 2026-07-15. Launch day is T-0 (2026-09-01). The campaign window runs T+0 to T+30 (closes 2026-10-01 at 9:00 AM PT).
+Today is 2026-07-15. Launch day is T-0 (2026-09-08). The campaign window runs T+0 to T+30 (closes 2026-10-08 at 10:00 PM PT).
 
 Owners:
 - **T** = Tommy Xaypanya (software, runtime, campaign ops)
@@ -94,7 +94,7 @@ Phase 5 exit criteria: 5,000+ on the launch-day mailing list. Press embargo hold
 
 ---
 
-## Phase 6: Launch day (T-0, 2026-09-01)
+## Phase 6: Launch day (T-0, 2026-09-08)
 
 Times in Pacific (campaign timezone).
 
@@ -116,7 +116,7 @@ Launch day exit criteria: campaign is live, no platform errors, day-1 pledge tot
 
 ---
 
-## Phase 7: Campaign window (T+0 to T+30, 2026-09-01 to 2026-10-01)
+## Phase 7: Campaign window (T+0 to T+30, 2026-09-08 to 2026-10-08)
 
 ### Update cadence
 
