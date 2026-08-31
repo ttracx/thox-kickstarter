@@ -39,3 +39,13 @@ Scores use a 1 to 10 scale.
 | [ ] | Verify exact Kickstarter preview and public URL | Complete desktop/mobile review; verify the URL without a preview token |
 | [ ] | Verify private payment, identity, 2FA, and recovery controls | Record evidence in the approved private operator system, never in Git |
 | [ ] | Record founder go/no-go approval | Complete T-1/T-0 checklist, then run `python3 scripts/audit_launch_readiness.py --require-ready` |
+
+## Live operating status (2026-08-30)
+
+Draft only. Do not merge. Do not publish Pages. Do not `workflow_dispatch`.
+
+Canonical public window matches live `https://www.thox.ai/`: Sep 8 to Oct 8, 2026 (close 10:00 PM PT). Docs and tests live on PR #25. This PR only retargets `kickstarter/site/index.html` so a future merge would move Pages off July 9.
+
+Kicker is now `Kickstarter · Sep 8 to Oct 8, 2026`. Trees stay split from #25.
+
+`pages.yml` deploys only when `kickstarter/site/**` changes on `main`. GitHub billing lock still blocks CI and Pages deploy until unlocked.
