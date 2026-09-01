@@ -519,7 +519,7 @@ VO tick: silence; ambient pad resolves.
 [                                                  ]
 [       Back the Kickstarter                       ]
 [       thox.ai/kickstarter                        ]
-[       September 1, 2026                            ]
+[       September 8, 2026                            ]
 [                                                  ]
 ```
 
@@ -538,7 +538,7 @@ VO tick: "Back the August twelfth Kickstarter at thox dot ai slash kickstarter."
 [                   THOX                           ]
 [       Back the Kickstarter                       ]
 [       thox.ai/kickstarter                        ]
-[       September 1, 2026                            ]
+[       September 8, 2026                            ]
 [                                                  ]
 ```
 

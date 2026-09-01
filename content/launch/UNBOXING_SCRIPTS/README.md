@@ -1,7 +1,7 @@
 # UNBOXING_SCRIPTS
 
 Per-device unboxing and intro scripts (30 to 60 seconds each) for the THOX.ai
-Kickstarter launch on September 1, 2026. These are the social-cut companions to
+Kickstarter launch on September 8, 2026. These are the social-cut companions to
 the 90-second hero in `content/launch/VIDEO_SCRIPT.md` and the 30-second alt
 cut covered by `content/launch/STORYBOARD.md`.
 

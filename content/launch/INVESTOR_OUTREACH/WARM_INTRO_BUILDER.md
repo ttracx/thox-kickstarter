@@ -91,7 +91,7 @@ Ask script (sent to the warm-intro source):
 
 > Hi {name}, hope the {recent thing in their public timeline} is going
 > well. Quick ask: I'm fundraising a pre-seed for THOX.ai, a family of
-> small on-device AI hardware devices launching on Kickstarter Sep 1.
+> small on-device AI hardware devices launching on Kickstarter Sep 8.
 > Your portfolio overlap with {partner name} at {fund} looks strong for
 > our thesis. Would you be open to a forwardable intro if it makes sense
 > after a 15-minute call?
@@ -172,7 +172,7 @@ Ask script (sent to a friend who has raised):
 
 > Hi {name}, congrats on the {their recent round}. Quick ask: I'm
 > fundraising a pre-seed for THOX.ai (private AI hardware family,
-> Kickstarter Sep 1). Looking for warm intros to {partner name} at
+> Kickstarter Sep 8). Looking for warm intros to {partner name} at
 > {fund}, {partner name} at {fund}, and {partner name} at {fund}. Any
 > of those a path from your side? No pressure either way.
 >
@@ -284,13 +284,13 @@ the intro from scratch.
 
 Forwardable block template:
 
-> Subject: Intro -- THOX.ai (private AI hardware, Kickstarter Sep 1)
+> Subject: Intro -- THOX.ai (private AI hardware, Kickstarter Sep 8)
 >
 > Hi {partner_first_name},
 >
 > Wanted to introduce you to Tommy Xaypanya and Craig Ross, co-founders
 > of THOX.ai. THOX is a family of small on-device AI hardware devices
-> launching on Kickstarter Sep 1 -- four SKUs from $39 to $499 on a
+> launching on Kickstarter Sep 8 -- four SKUs from $39 to $499 on a
 > common Apache-2.0 runtime, all repos public at github.com/ttracx.
 >
 > One-pager attached. The pitch deck is in the data room (link on

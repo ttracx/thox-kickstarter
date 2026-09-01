@@ -4,9 +4,9 @@ PRE-OUTREACH MEMO. Tommy + Craig review before any contact is initiated. Interna
 
 ## Why this partnership matters to THOX
 
-THOX evaluated the Jetson Orin NX as the ThoxNova prototype SoC and ruled it out in favor of LattePanda N100 (see project_thoxnova_soc in memory). That decision is locked for the Sep 1 launch lineup. The Jetson family is therefore NOT a load-bearing component of the Kickstarter SKUs. The case for a Jetson partnership is stretch-SKU-only: a post-Kickstarter "ThoxNova Pro" or "ThoxNova Max" tier where the CUDA + TensorRT runtime would unlock workloads the LattePanda Intel Xe + SYCL + Vulkan path cannot reach at the same envelope.
+THOX evaluated the Jetson Orin NX as the ThoxNova prototype SoC and ruled it out in favor of LattePanda N100 (see project_thoxnova_soc in memory). That decision is locked for the Sep 8 launch lineup. The Jetson family is therefore NOT a load-bearing component of the Kickstarter SKUs. The case for a Jetson partnership is stretch-SKU-only: a post-Kickstarter "ThoxNova Pro" or "ThoxNova Max" tier where the CUDA + TensorRT runtime would unlock workloads the LattePanda Intel Xe + SYCL + Vulkan path cannot reach at the same envelope.
 
-Operationally, THOXCore already supports TensorRT as one of the 7 backend adapters. The integration exists. A Jetson partnership would unlock evaluation kit access, ecosystem listing as an NVIDIA Jetson partner, and reference designs that include the full NVIDIA edge-AI stack. None of those unlock anything required for Sep 1, but they de-risk the stretch SKU lineage and the post-funding "ThoxNova Pro on Jetson" path that would otherwise require THOX to engineer from scratch.
+Operationally, THOXCore already supports TensorRT as one of the 7 backend adapters. The integration exists. A Jetson partnership would unlock evaluation kit access, ecosystem listing as an NVIDIA Jetson partner, and reference designs that include the full NVIDIA edge-AI stack. None of those unlock anything required for Sep 8, but they de-risk the stretch SKU lineage and the post-funding "ThoxNova Pro on Jetson" path that would otherwise require THOX to engineer from scratch.
 
 Strategically, NVIDIA partnership for the THOX product line is an option, not a requirement. THOX should not bet the launch on it. THOX should pursue it on a slower timeline (Tier 3, post-launch) and let the post-funding evidence drive the conversation.
 
@@ -21,7 +21,7 @@ That said, NVIDIA does not need THOX. NVIDIA has hundreds of Jetson ecosystem pa
 ## Mutual fit assessment (1-10)
 
 - Strategic alignment: 6 (NVIDIA Jetson aligns with edge-AI; THOX is edge-AI; modest overlap)
-- Technical compatibility: 8 (TensorRT adapter exists in THOXCore; integration is real but not deployed in any Sep 1 SKU)
+- Technical compatibility: 8 (TensorRT adapter exists in THOXCore; integration is real but not deployed in any Sep 8 SKU)
 - Brand fit: 5 (NVIDIA is enterprise-grand; THOX is prosumer-honest; coexists but does not deeply resonate)
 - Commercial overlap risk: 3 (NVIDIA does not ship competing prosumer hardware in the THOX segment, but does ship developer kits that overlap with maker-segment buyers)
 - Total weighted score: 6.0
@@ -31,7 +31,7 @@ That said, NVIDIA does not need THOX. NVIDIA has hundreds of Jetson ecosystem pa
 - Jetson developer kit evaluation access for the post-Kickstarter ThoxNova Pro / ThoxNova Max line
 - Jetson partner ecosystem listing for THOX once a Jetson-bearing SKU ships
 - Pre-release access to upcoming Jetson modules and JetPack updates relevant to THOXCore's TensorRT adapter
-- Co-marketing on a "TensorRT on THOX" reference architecture (post-launch, not for Sep 1)
+- Co-marketing on a "TensorRT on THOX" reference architecture (post-launch, not for Sep 8)
 - Discount on Jetson Orin / next-gen modules in volume for a future ThoxNova Pro production run
 - Inclusion in NVIDIA's edge-AI showcase materials once a Jetson-based THOX SKU ships at scale
 
@@ -61,8 +61,8 @@ That said, NVIDIA does not need THOX. NVIDIA has hundreds of Jetson ecosystem pa
 
 ## Recommended timing
 
-- T-21 days (Jul 22, 2026): NO outreach. NVIDIA is not on the pre-launch outreach list because no Sep 1 SKU uses Jetson.
-- Sep 1, 2026 launch: no NVIDIA mention required on the campaign page. ThoxNova ships on LattePanda. That story stands alone.
+- T-21 days (Jul 22, 2026): NO outreach. NVIDIA is not on the pre-launch outreach list because no Sep 8 SKU uses Jetson.
+- Sep 8, 2026 launch: no NVIDIA mention required on the campaign page. ThoxNova ships on LattePanda. That story stands alone.
 - Post-launch (Aug 13 onward, contingent on $1.5M+ stretch funding): engage Jetson Partner Program with funding data and a credible plan for the ThoxNova Pro SKU
 - Post-launch (Aug 13 onward, regardless of stretch funding): apply for Jetson ecosystem listing as an early step toward a future Pro SKU even if the launch does not unlock the Pro tier immediately
 

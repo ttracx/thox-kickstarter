@@ -63,9 +63,9 @@ That said, Apple is famously hard to engage with at the partnership level. The r
 
 ## Recommended timing
 
-- T-21 days (Jul 22, 2026): NO outreach. Apple is not on the pre-launch outreach list because no Sep 1 ask depends on Apple engagement.
+- T-21 days (Jul 22, 2026): NO outreach. Apple is not on the pre-launch outreach list because no Sep 8 ask depends on Apple engagement.
 - T-7 days (Aug 5, 2026): ensure Apple Developer Program enrollment is current; confirm thox-terminal app store submission status if applicable
-- Sep 1, 2026 launch: no Apple mention required on the campaign page. thox-terminal availability on iOS and macOS is a factual statement that can be made independent of any Apple partnership.
+- Sep 8, 2026 launch: no Apple mention required on the campaign page. thox-terminal availability on iOS and macOS is a factual statement that can be made independent of any Apple partnership.
 - Post-launch (Aug 13 onward): engage MLX community channels with real device install base data; submit WWDC 2027 session proposal if relevant; pursue App Store Featured placement on thox-terminal updates
 
 ## Decision authority

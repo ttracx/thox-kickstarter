@@ -1,7 +1,7 @@
 # INVESTOR_TARGET_LIST.md
 
 Tiered investor target list for the THOX.ai LLC pre-seed/seed round that
-closes alongside or shortly after the Sep 1 2026 Kickstarter campaign.
+closes alongside or shortly after the Sep 8 2026 Kickstarter campaign.
 
 Brand: #0B1220 / #F2F4F8 / #27E5FF / #FF3DA8. IBM Plex Sans body, JetBrains
 Mono for code.

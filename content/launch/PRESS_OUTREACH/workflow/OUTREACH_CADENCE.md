@@ -1,6 +1,6 @@
 # OUTREACH_CADENCE.md
 
-When to send what. T-N = days before launch. T-0 = Sep 1, 2026.
+When to send what. T-N = days before launch. T-0 = Sep 8, 2026.
 
 For the absolute calendar dates, see `content/launch/MILESTONES.md`.
 
@@ -16,7 +16,7 @@ For the absolute calendar dates, see `content/launch/MILESTONES.md`.
 | T-5 | Aug 7 | Tier-5 + Tier-6 follow-up | 5, 6 | follow_up_3_day | 9 outlets |
 | T-3 | Aug 9 | Local + EDU press (Tier 7 + 8) | 7, 8 | initial_outreach | 4 + 3 = 7 outlets |
 | T-1 | Aug 11 | Final reminder to all warm reporters; HN post final draft sanity-check | All | brief reply on the thread | warm only |
-| T-0 | Sep 1 | Day-of pitch to all non-responders + Hacker News post + Lobsters submission | All | initial_outreach (day-of variant) + HN post + Lobsters | non-responders + community sites |
+| T-0 | Sep 8 | Day-of pitch to all non-responders + Hacker News post + Lobsters submission | All | initial_outreach (day-of variant) + HN post + Lobsters | non-responders + community sites |
 | T+1 | Aug 13 | Thank-you notes to reporters who published; check-in to warm-but-unpublished | All | brief reply, no template | published + warm |
 | T+3 | Aug 15 | Drop ghosted reporters; archive cold list | All | none, log update only | drops only |
 

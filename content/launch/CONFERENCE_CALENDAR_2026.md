@@ -2,7 +2,7 @@
 
 Living doc. Update as events confirm. All dates are typical patterns from prior years and MUST be verified against the specific 2026 calendar before committing to registration, travel, or booth contracts.
 
-Anchor: Kickstarter launch Sep 1 2026. Q3 events orbit launch; Q4 events drive fulfillment-window press + B2B leads; Q1-Q2 2027 events drive post-fulfillment ramp.
+Anchor: Kickstarter launch Sep 8 2026. Q3 events orbit launch; Q4 events drive fulfillment-window press + B2B leads; Q1-Q2 2027 events drive post-fulfillment ramp.
 
 THOX angles to lead with at every event:
 1. Private on-device AI (no cloud round-trip, no telemetry by default)
@@ -27,7 +27,7 @@ Budget envelopes use general bands (USD). Real numbers depend on Kickstarter fun
 | Jul | DEF CON / Black Hat (Las Vegas) | Security | $2-5K | Privacy + security narrative | Attend; THOXKey giveaway to researchers |
 | Aug | Worldcon | Genre | $1K | Niche community + maker overlap | Attend only |
 | Aug | AI Engineer Summit (San Francisco) | Tech | $3-8K | Developer tools, on-device inference | Speak track if CFP accepted; exhibit otherwise |
-| Aug | KICKSTARTER LAUNCH (Sep 1) | - | - | Campaign go-live | All-hands; no travel commitments |
+| Aug | KICKSTARTER LAUNCH (Sep 8) | - | - | Campaign go-live | All-hands; no travel commitments |
 | Sep | Open Source Summit (typical: Tokyo + LA) | Tech | $3-6K | Apache-2.0 + thoxcore + thox-litert-lm | Speak track |
 | Sep | DjangoCon US (typical: late Sep) | Dev community | $1-3K | Python dev outreach for THOXKey SDK | Attend |
 

@@ -14,7 +14,7 @@ A final visual pass requires a full-page desktop capture plus mobile captures of
 
 Two campaign timelines remain in circulation:
 
-- Canonical Kickstarter repository: September 1, 2026 launch; October 1, 2026 close; $150,000 goal.
+- Canonical Kickstarter repository: September 8, 2026 launch; October 1, 2026 close; $150,000 goal.
 - Website handoff assumption: July 9, 2026 launch; August 8, 2026 close.
 
 The Kickstarter editor values must win. Reconcile the repository, website state machine, emails, social posts, reward availability, and close runbook before public promotion.

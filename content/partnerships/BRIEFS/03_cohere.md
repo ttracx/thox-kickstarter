@@ -66,7 +66,7 @@ Finally, the Cohere brand voice and the THOX brand voice rhyme. Both are technic
 - T-21 days (Jul 22, 2026): warm-intro outreach attempted; if no warm path, send a tightly written cold note that leads with the existing North-Mini-Code eval baseline as the credibility hook
 - T-14 days (Jul 29, 2026): polite single follow-up if no response
 - T-7 days (Aug 5, 2026): no further outbound; focus on launch
-- Sep 1, 2026 launch: public mention of the North-Mini-Code eval baseline is acceptable on the campaign page regardless of Cohere engagement, framed as a factual technical capability of THOXCore
+- Sep 8, 2026 launch: public mention of the North-Mini-Code eval baseline is acceptable on the campaign page regardless of Cohere engagement, framed as a factual technical capability of THOXCore
 - Post-launch (Aug 13 onward): re-engage with funding numbers, backer install base, and the eval baseline numbers as proof points
 
 ## Decision authority

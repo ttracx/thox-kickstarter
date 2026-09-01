@@ -54,7 +54,7 @@ deepens the assembly and clustering story.
 | Aug 04 (T-8) | Full hero stack lit, slow tilt up | IG + TikTok + LinkedIn + X | 30 s. No voiceover. |
 | Aug 05 (T-7) | The 90-second hero video, full cut | All channels | The big drop. |
 
-## Phase 4: Countdown (T-7 to T-0, September 1 to September 8)
+## Phase 4: Countdown (T-7 to T-0, September 8 to September 8)
 
 Daily countdown posts. The 30-second alt cut from the storyboard goes
 live on T-3.

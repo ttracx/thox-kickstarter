@@ -62,7 +62,7 @@ Finally, THOX's positioning is non-competitive. THOX does not train frontier mod
 - T-21 days (Jul 22, 2026): warm-intro outreach attempted; if no warm path, send a single tightly written cold note
 - T-14 days (Jul 29, 2026): polite single follow-up if no response; if still no response, table until post-launch
 - T-7 days (Aug 5, 2026): no further outbound; focus on launch
-- Sep 1, 2026 launch: a generic "THOXCore supports the OpenAI API" line is fine on the campaign page regardless of OpenAI engagement, because that is a factual statement about the open protocol
+- Sep 8, 2026 launch: a generic "THOXCore supports the OpenAI API" line is fine on the campaign page regardless of OpenAI engagement, because that is a factual statement about the open protocol
 - Post-launch (Aug 13 onward): re-engage with funding numbers and a real backer install base as proof points
 
 ## Decision authority

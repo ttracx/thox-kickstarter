@@ -61,7 +61,7 @@ Finally, THOX's privacy and interpretability story sits adjacent to Anthropic's 
 - T-21 days (Jul 22, 2026): warm-intro outreach attempted; if no warm path, send a single tightly written cold note
 - T-14 days (Jul 29, 2026): polite single follow-up if no response; if still no response, table the outreach until post-launch
 - T-7 days (Aug 5, 2026): no further outbound; focus on launch
-- Sep 1, 2026 launch: public open-letter style mention is acceptable IF there has been at least one positive Anthropic-side response; otherwise stay silent
+- Sep 8, 2026 launch: public open-letter style mention is acceptable IF there has been at least one positive Anthropic-side response; otherwise stay silent
 - Post-launch (Aug 13 onward): re-engage with concrete funding data and a real backer install base as proof points
 
 ## Decision authority

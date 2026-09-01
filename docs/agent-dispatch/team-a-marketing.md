@@ -38,7 +38,7 @@ Phamy
    - Nova cost comparison line at $899 one-time
    - delivery target December 2026
 2. Internal Kickstarter playbook says:
-   - Sep 1 2026 launch
+   - Sep 8 2026 launch
    - $39–$499 ladder
    - 4 SKU campaign structure
 3. Earlier Team A pass (commit `bda5b54`) updated hero + countdown + 4-SKU

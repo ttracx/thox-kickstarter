@@ -1,6 +1,6 @@
 # THOX.ai Kickstarter shipping plan
 
-**Launch date**: Tue Sep 1 2026, 9:00am PT
+**Launch date**: Tue Sep 8 2026, 9:00am PT
 **Close date**: Thu Oct 1 2026, 10:00pm PT
 **Filming window**: T-35 to T-14 (Jul 28 to Aug 18 2026)
 **Goal**: ship 4 fully functional prototype devices on camera for the
@@ -91,7 +91,7 @@ under the policy above and pushed.
 | **Adapter wave 1: OpenAI-Compatible** | `ttracx/thoxcore` v0.2.0-openai-compat: real reqwest 0.12 + eventsource-stream 0.2 implementation of chat / generate / embed / chat_stream against `/v1/chat/completions` + `/v1/completions` + `/v1/embeddings`. SSE streaming parses `data: {json}` + `data: [DONE]` cleanly. OpenAI error envelope mapped to AdapterError. 14 new tests (4 unit + 10 wiremock integration covering health / models cache / chat round-trip / SSE / generate / embed / error / timeout / bearer / extra headers). Example 05 demonstrates hermetic round-trip against in-process wiremock. | **SHIPPED 2026-07-14** as v0.2.0-openai-compat | commit `afdde96` + tag `v0.2.0-openai-compat` |
 | **Adapter wave 2: Ollama** | `ttracx/thoxcore` v0.2.0-ollama: real HTTP client against Ollama's native API (`/api/chat`, `/api/generate`, `/api/embeddings`, `/api/tags`, `/api/show`). **NDJSON streaming** via reqwest bytes_stream + hand-rolled line buffering (NOT SSE; intentional - different framing from OpenAI). 19 tests (5 unit + 14 wiremock smoke). Composes with thoxllm-factory shipping tags (thoxforge, thoxgem-e4b-sft, thoxwave-8b-unleashed, thoxnova-12b-unleashed). | **SHIPPED 2026-07-14** as v0.2.0-ollama | commit `f107a53` + tag `v0.2.0-ollama` |
 | **Adapter wave 2: llama.cpp** | `ttracx/thoxcore` v0.2.0-llamacpp: subprocess wrapper around `llama-server`. `SubprocessLauncher` + `HealthChecker` trait seams (Real + Mock) so tests run without spawning the binary. Spawns llama-server at init with model_path + dynamic free port; polls `/health` until 200; delegates chat/generate/embed/stream to inner OpenAICompatibleAdapter pointed at the spawned process. Clean unload + Drop kills the subprocess. 20 tests (5 unit + 15 integration). | **SHIPPED 2026-07-14** as v0.2.0-llamacpp | commit `7639fa1` + tag `v0.2.0-llamacpp` |
-| **Kickstarter Ops Integration** | NEW `ttracx/thox-kickstarter-integration` repo: compliant FastAPI ingestion for backer reports + referral exports + advanced dashboard CSVs; fulfillment-risk detector slice; locked partner-API adapter; PII masking default; dev@thox.ai is the Kickstarter account identity. Operational data plane that runs after Sep 1 launch; distinct from this playbook repo. See `docs/KS_OPS_INTEGRATION.md` for deploy plan + launch-day gates. | absorbed 2026-07-14 from ChatGPT scaffold; sibling agent shipping the fulfillment-risk slice in parallel | initial-commit |
+| **Kickstarter Ops Integration** | NEW `ttracx/thox-kickstarter-integration` repo: compliant FastAPI ingestion for backer reports + referral exports + advanced dashboard CSVs; fulfillment-risk detector slice; locked partner-API adapter; PII masking default; dev@thox.ai is the Kickstarter account identity. Operational data plane that runs after Sep 8 launch; distinct from this playbook repo. See `docs/KS_OPS_INTEGRATION.md` for deploy plan + launch-day gates. | absorbed 2026-07-14 from ChatGPT scaffold; sibling agent shipping the fulfillment-risk slice in parallel | initial-commit |
 
 ### Adapter wave-order progress (7 of 7 real) - FOUNDATION PHASE COMPLETE
 
@@ -221,9 +221,9 @@ What the video must show vs. what currently works:
 | **ThoxClip** (MagStack puck) | Stacking, Qi2 charging, mesh sync with other clips | STL set ready (v7.1 with recessed pocket). magstack-air fabric exists; legacy Pi Zero 2 W path unverified, RV1103 port in flight following the 2026-07-15 ThoxMini Air SoC retarget. No clip-specific firmware repo in the audit. | **MEDIUM RISK**: cluster assembly unproven on camera; clip firmware repo missing |
 | **ThoxMini** (USB-C stick) | Local inference on a host laptop | STL set ready (v2.1 with USB-C cutout). thoxos-air-image is the Mini Air image; RV1103 Mini also uses this. No signed image artifact yet. | **MEDIUM RISK**: no bootable signed image |
 | **ThoxMini Air** (carry-along) | Button controls + carabiner + mesh sync | STL set ready (v2.1 with 4 button cutouts + carabiner ring). Updated 2026-07-15: ThoxMini Air retargeted from Pi Zero W to Luckfox Pico Mini B with MagStack ring (same RV1103 SoC as ThoxMini, distinguished by clustering + form factor). magstack-air + magstack-air-edge-rs need Rust env build + RV1103 port deploy (Pi Zero 2 W path now legacy prototype only). | **MEDIUM RISK**: not verified to compile + run end-to-end on the new SoC |
-| **All devices (marketing site)** | thox.ai matches the Kickstarter pricing + date | Site says "April 14 2026 / starting at $549"; Kickstarter playbook says "Sep 1 2026 / $39-$499" | **CRITICAL**: marketing site contradicts the video |
-| **ThoxStick** (candidate SKU, NOT in launch lineup) | 96 x 28 x 11.8 mm private-AI compute stick, emerald X mark | v0.2.0 ready at [ttracx/thox-stick-poc](https://github.com/ttracx/thox-stick-poc) + mirror at `thox-3dprint-kit/devices/thoxstick/poc/`. 18 STLs lay-flat clean, 91 STL-derived preview PNGs, investor-grade X logo + PCB dummy refresh, cross-platform renderer. T-7 decision packet at `thox-stick-poc/docs/KICKSTARTER_DECISION_T7.md` (3 outcomes). Supplier CAD intake at `thox-stick-poc/docs/SUPPLIER_CAD_INTAKE.md` (6-component priority). | **OPTIONAL stretch SKU**: do NOT add to launch lineup pre-Sep 1. **T-7 decision Aug 5**: OUTCOME_A stretch reward $49 / OUTCOME_B roadmap teaser / OUTCOME_C hold. Default OUTCOME_C if no call by EOD. Mechanical mockup only; no powered electronics. |
-| **ThoxKey** (parallel revenue lane, NOT in main launch SKU lineup) | Sub-$50 commodity USB drive preloaded with private local AI; B2B bulk swag + university bookstore + DTC halo | v0.1.0 live at [ttracx/thox-key](https://github.com/ttracx/thox-key). Ships TODAY on commodity USB hardware + THOX portable runtime + factory model loadouts. 6 tiers ($19-$49), 5-25 day lead time, $1M north-star at 9 months. Full ordering portal spec, fulfillment runbook, BOM, supplier list, 3 outreach templates ready. | **PARALLEL LANE, NOT a launch dependency**: can ship before, during, or after Sep 1 without affecting the 4-SKU launch lineup. Education tier could appear as Kickstarter add-on for $25 if we cut a HS / university discount reward. Distinct from ThoxStick. |
+| **All devices (marketing site)** | thox.ai matches the Kickstarter pricing + date | Site says "April 14 2026 / starting at $549"; Kickstarter playbook says "Sep 8 2026 / $39-$499" | **CRITICAL**: marketing site contradicts the video |
+| **ThoxStick** (candidate SKU, NOT in launch lineup) | 96 x 28 x 11.8 mm private-AI compute stick, emerald X mark | v0.2.0 ready at [ttracx/thox-stick-poc](https://github.com/ttracx/thox-stick-poc) + mirror at `thox-3dprint-kit/devices/thoxstick/poc/`. 18 STLs lay-flat clean, 91 STL-derived preview PNGs, investor-grade X logo + PCB dummy refresh, cross-platform renderer. T-7 decision packet at `thox-stick-poc/docs/KICKSTARTER_DECISION_T7.md` (3 outcomes). Supplier CAD intake at `thox-stick-poc/docs/SUPPLIER_CAD_INTAKE.md` (6-component priority). | **OPTIONAL stretch SKU**: do NOT add to launch lineup pre-Sep 8. **T-7 decision Aug 5**: OUTCOME_A stretch reward $49 / OUTCOME_B roadmap teaser / OUTCOME_C hold. Default OUTCOME_C if no call by EOD. Mechanical mockup only; no powered electronics. |
+| **ThoxKey** (parallel revenue lane, NOT in main launch SKU lineup) | Sub-$50 commodity USB drive preloaded with private local AI; B2B bulk swag + university bookstore + DTC halo | v0.1.0 live at [ttracx/thox-key](https://github.com/ttracx/thox-key). Ships TODAY on commodity USB hardware + THOX portable runtime + factory model loadouts. 6 tiers ($19-$49), 5-25 day lead time, $1M north-star at 9 months. Full ordering portal spec, fulfillment runbook, BOM, supplier list, 3 outreach templates ready. | **PARALLEL LANE, NOT a launch dependency**: can ship before, during, or after Sep 8 without affecting the 4-SKU launch lineup. Education tier could appear as Kickstarter add-on for $25 if we cut a HS / university discount reward. Distinct from ThoxStick. |
 
 ## Critical-path repos (the 12 that must ship)
 
@@ -232,7 +232,7 @@ team (see "Agent team structure" below).
 
 | Priority | Repo | Current state | Must-have for launch | Owner team |
 |---|---|---|---|---|
-| **P0** | `Thox.ai` (marketing site) | April 14 / $549 copy | Sep 1 / 4-SKU lineup | Team A (Marketing) |
+| **P0** | `Thox.ai` (marketing site) | April 14 / $549 copy | Sep 8 / 4-SKU lineup | Team A (Marketing) |
 | **P0** | `thox-command-center` | Not gitted | Keep PRIVATE; never link from public | Team A (Marketing) |
 | **P0** | `thoxos-kernel` | v1.1.24, NO_GO | QEMU evidence + signed v1.2.0 release | Team B (Kernel) |
 | **P0** | `thoxos-air-image` | No signed artifact | Signed v0.1 image released to GH | Team C (Images) |
@@ -314,7 +314,7 @@ weekly check-in (Fri 5pm PT) + the daily blocker triage in Slack
 - **DRI**: Phamy
 - **Repos**: `Thox.ai`, `thox-command-center`
 - **Goal**: ship the production marketing site that matches the
-  Kickstarter playbook (Sep 1 / 4 SKUs / $39-$499) by T-30 (Jul 13).
+  Kickstarter playbook (Sep 8 / 4 SKUs / $39-$499) by T-30 (Jul 13).
 - **Workstream**:
   1. Rewrite hero copy to match `thox-kickstarter/docs/CAMPAIGN_INFO.md`
   2. Replace single-SKU framing with 4-SKU lineup grid (ThoxClip /
@@ -520,7 +520,7 @@ Team H (Silicon) ─────────► B-roll PNG ────► T-14 
                            FILM DAY (T-7 = Aug 25)
                               │
                               ▼
-                           LAUNCH (T+0 = Sep 1 9am PT)
+                           LAUNCH (T+0 = Sep 8 9am PT)
 ```
 
 ## Weekly milestones (T-49 to T+0)
@@ -564,7 +564,7 @@ Team H (Silicon) ─────────► B-roll PNG ────► T-14 
 ### Week of 2026-08-23 (T-7 to T+0) — launch week
 - T-7: full team rehearsal of launch-day choreography
 - T-3: "we launch in 3 days" email
-- T+0: launch (9am PT Sep 1 2026)
+- T+0: launch (9am PT Sep 8 2026)
 
 ## Risk register
 

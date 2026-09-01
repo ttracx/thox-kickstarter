@@ -15,7 +15,7 @@ applied, a legacy-footprint audit, a reconciliation plan, and suggestions for th
 The repository contains **two parallel campaigns**:
 
 1. **Canonical (current):** the four-device quick launch - **ThoxKey, ThoxMini Air, ThoxMini,
-   ThoxClip** - at $150K, launching **September 1, 2026** (30-day run, closing Oct 1), with honest
+   ThoxClip** - at $150K, launching **September 8, 2026** (30-day run, closing Oct 1), with honest
    capability boundaries. This is what README, `docs/CAMPAIGN_INFO.md`, `docs/KICKSTARTER_PAGE_COPY.md`,
    `docs/REWARDS_MATRIX.md`, the whole `kickstarter/site/` bundle, and the `demo/` package describe.
 2. **Legacy (retired):** an earlier four-device family - **ThoxClip, ThoxMini, ThoxAir, ThoxNova** -

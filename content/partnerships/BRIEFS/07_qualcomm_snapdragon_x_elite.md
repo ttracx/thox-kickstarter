@@ -4,7 +4,7 @@ PRE-OUTREACH MEMO. Tommy + Craig review before any contact is initiated. Interna
 
 ## Why this partnership matters to THOX
 
-The Snapdragon X Elite is the leading ARM-on-Windows platform for prosumer + small-business hardware in 2026. THOX does not ship a Snapdragon SKU on Sep 1, but the ARM-Windows-on-Snapdragon path is the obvious next step for a future ThoxNova Desktop or ThoxNova Workstation tier targeting buyers who want long battery life, fanless or near-fanless thermals, and a low-power AI accelerator NPU integrated into the SoC. The Snapdragon X Elite NPU is exactly the kind of edge-AI silicon THOX's runtime story was designed for.
+The Snapdragon X Elite is the leading ARM-on-Windows platform for prosumer + small-business hardware in 2026. THOX does not ship a Snapdragon SKU on Sep 8, but the ARM-Windows-on-Snapdragon path is the obvious next step for a future ThoxNova Desktop or ThoxNova Workstation tier targeting buyers who want long battery life, fanless or near-fanless thermals, and a low-power AI accelerator NPU integrated into the SoC. The Snapdragon X Elite NPU is exactly the kind of edge-AI silicon THOX's runtime story was designed for.
 
 Operationally, the path is non-trivial: THOXCore would need an ARM-Windows build of every adapter, the Windows-on-ARM emulation surface is still imperfect for some Python tooling, and the Snapdragon NPU has its own runtime that THOXCore does not currently target as a first-class adapter (it would be a candidate for an 8th adapter slot post-launch). The partnership conversation is therefore early: THOX is asking Qualcomm for evaluation kit access and developer-program admission, not for a co-branded product.
 
@@ -61,8 +61,8 @@ That said, Qualcomm is a large company with a long sales cycle. The right postur
 
 ## Recommended timing
 
-- T-21 days (Jul 22, 2026): NO outreach. Qualcomm is not on the pre-launch outreach list because no Sep 1 SKU uses Snapdragon.
-- Sep 1, 2026 launch: no Qualcomm mention required on the campaign page.
+- T-21 days (Jul 22, 2026): NO outreach. Qualcomm is not on the pre-launch outreach list because no Sep 8 SKU uses Snapdragon.
+- Sep 8, 2026 launch: no Qualcomm mention required on the campaign page.
 - Post-launch (Aug 13 onward, regardless of stretch funding): apply to the Snapdragon Developer Program as an early step toward a possible 2027 ThoxNova Desktop / Workstation SKU
 - 2026-Q4: evaluation kit conversation if developer-program admission lands
 - 2027-Q1: SKU feasibility decision

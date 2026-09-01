@@ -2,7 +2,7 @@
 
 These are the comms templates for after Kickstarter funding closes. The pre-launch `EMAIL_SEQUENCE.md` is documented separately. All templates follow the THOX brand voice: technical, honest, no marketing fluff, no em-dashes, no emojis.
 
-Day numbering throughout this pack is relative to Day 0, defined as the day Kickstarter funding closes (currently October 1, 2026 if the campaign launches Sep 1, 2026 and runs 30 days; the absolute date moves with the actual launch date and is owned by `docs/TIMELINE.md`).
+Day numbering throughout this pack is relative to Day 0, defined as the day Kickstarter funding closes (currently October 1, 2026 if the campaign launches Sep 8, 2026 and runs 30 days; the absolute date moves with the actual launch date and is owned by `docs/TIMELINE.md`).
 
 From, Reply-To, and Sender name are inherited from the pre-launch sequence:
 

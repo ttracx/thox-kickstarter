@@ -88,7 +88,7 @@ partner does not specify.
 | Minute | Section | What to do |
 |---|---|---|
 | 0-1 | Opener | Thank the warm-intro source. Confirm what the partner has read in advance. |
-| 1-3 | Frame | One paragraph: "THOX is a family of small AI hardware devices that run inference on hardware in your hands. Four SKUs from $39 to $499 on a common Apache-2.0 runtime. Kickstarter Sep 1. Goal $250K. Ceiling $3M." |
+| 1-3 | Frame | One paragraph: "THOX is a family of small AI hardware devices that run inference on hardware in your hands. Four SKUs from $39 to $499 on a common Apache-2.0 runtime. Kickstarter Sep 8. Goal $250K. Ceiling $3M." |
 | 3-6 | Problem + Why now | Slide 2 + Slide 5 condensed. Cloud AI's three structural costs. Edge silicon is cheap enough now. |
 | 6-9 | Product + Traction | Slide 4 + Slide 6 condensed. Four SKUs. What has shipped to public repos. |
 | 9-11 | Business model + Team | Slide 7 + Slide 9 condensed. Hardware-first, EDU bulk, enterprise white-label. Two co-founders, both inventors of record. |
@@ -255,7 +255,7 @@ Honest response:
 > away from ThoxNova; the common runtime makes that upgrade frictionless.
 > The THOXKey EDU bulk channel adds annual-refresh recurring on the
 > education side. We do not project specific LTV figures in the deck
-> because the Sep 1 campaign result is the single largest input to
+> because the Sep 8 campaign result is the single largest input to
 > the model, and we update the deck post-campaign.
 
 ### "What if the Kickstarter doesn't hit goal?"

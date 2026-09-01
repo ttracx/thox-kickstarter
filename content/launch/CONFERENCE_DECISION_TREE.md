@@ -38,7 +38,7 @@ Use the tiered decision rules below.
 
 ### Rule 3: Conference budget exceeds $10K total commitment
 
-- Decision: DEFER until post-Kickstarter funding visibility (Sep 1 2026 launch + 30-day post-launch readout).
+- Decision: DEFER until post-Kickstarter funding visibility (Sep 8 2026 launch + 30-day post-launch readout).
 - Recommend exhibit only if Kickstarter raised tier supports it:
   - $250K floor -> skip $10K+ events
   - $500K-$1M base -> approve EDUCAUSE + AI Engineer Summit

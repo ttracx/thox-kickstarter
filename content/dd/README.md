@@ -67,7 +67,7 @@ require an NDA executed before disclosure.
 - 01_company - incorporation, operating agreement, cap table, bank
 - 02_financials - pro forma, burn, runway, pricing, unit economics
 - 03_intellectual_property - IP-008..IP-033 summary, trademarks, OSS posture
-- 04_product_roadmap - Sep 1 launch, 90-day post-funding, Phase F, long-term
+- 04_product_roadmap - Sep 8 launch, 90-day post-funding, Phase F, long-term
 - 05_team - founders, advisors, hiring plan, org chart
 - 06_market - TAM/SAM/SOM, competitive landscape, personas
 - 07_technical - architecture, security, scaling, OSS communities
