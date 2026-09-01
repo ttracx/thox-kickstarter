@@ -10,7 +10,7 @@ Voice: technical, honest. No fabricated quotes. No fabricated metrics. User-set 
 
 ## THOX.ai - Private AI you can hold
 
-A family of small, owned AI hardware devices that run inference on hardware in your hands. Kickstarter launch September 1, 2026. Goal $250K. Ceiling $3M.
+A family of small, owned AI hardware devices that run inference on hardware in your hands. Kickstarter launch September 8, 2026. Goal $250K. Ceiling $3M.
 
 ---
 
@@ -80,7 +80,7 @@ Advisors and additional team: TBD. Named only on commitment in writing.
 | Amount raising | $X (user-set) |
 | For | Y percent equity (user-set) |
 | Pre-money | $Z (user-set) |
-| Round timing | Closes alongside or after Kickstarter window (Sep 1 to October 1, 2026) |
+| Round timing | Closes alongside or after Kickstarter window (Sep 8 to October 8, 2026) |
 
 Use of funds: manufacturing capital, certification budget, fulfillment ops capacity (Q1 to Q3 2027), 3 to 5 hires to extend founding team (supply, fulfillment, devrel).
 
