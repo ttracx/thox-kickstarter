@@ -161,7 +161,7 @@ The pitch is not "ThoxAir is better than cloud on every axis". The
 pitch is "ThoxAir is better than cloud on the 80% of usage where
 the 80% matters most: cost, privacy, offline capability."
 
-Kickstarter Sep 1 2026.
+Kickstarter Sep 8 2026.
 thox.ai/launch
 
 #THOXai #localAI #tco #engineering #privacy

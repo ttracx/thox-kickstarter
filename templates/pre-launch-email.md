@@ -1,12 +1,12 @@
 # Pre-launch email template
 
-Subject: `THOX is coming - September 1`
+Subject: `THOX is coming - September 8`
 
 Hey {first_name},
 
 You signed up at thox.ai (or hit the Notify Me button on Kickstarter) to hear when the THOX family is ready. It is almost ready.
 
-We launch on Kickstarter on September 1, 2026 at 9:00 AM PT. Four devices, one private AI workflow, honest claims.
+We launch on Kickstarter on September 8, 2026 at 9:00 AM PT. Four devices, one private AI workflow, honest claims.
 
 | Device | What it does | Early-bird price |
 |---|---|---|

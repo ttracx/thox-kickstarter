@@ -89,7 +89,7 @@ network. /6
 
 7/ This is what local-first actually requires under the hood.
 
-Kickstarter Sep 1 2026.
+Kickstarter Sep 8 2026.
 thox.ai/launch
 
 🟢 Your AI. Your Data. Your Rules.
@@ -117,7 +117,7 @@ never hitting the network.
 This is the architecture that makes "local AI on consumer hardware"
 real in 2026.
 
-Kickstarter Sep 1 2026.
+Kickstarter Sep 8 2026.
 thox.ai/launch
 
 #THOXai #localAI #engineering #systems #memory

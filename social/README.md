@@ -15,7 +15,7 @@ social/
 └── posts/                       per-post specs grouped by phase
     ├── _TEMPLATE_brief.md       brief template (copy this for new posts)
     ├── 00-pre-launch/           T-90 to T-1 days, building the email list
-    ├── 01-launch-day/           T+0 (Sep 1 2026, 9am PT go-live)
+    ├── 01-launch-day/           T+0 (Sep 8 2026, 9am PT go-live)
     ├── 02-week-1/               T+1 to T+7 (momentum + first stretch unlock)
     ├── 03-mid-campaign/         T+8 to T+21 (sustained drumbeat)
     ├── 04-stretch/              T+22 to T+28 (stretch goal pushes)
@@ -28,7 +28,7 @@ social/
 | Phase | Window | Goal | Post cadence | Tone |
 |---|---|---|---|---|
 | Pre-launch | T-90 to T-1 | 10K email signups, 5K pre-launch followers | 3/week per platform | Curious, technical-leaning |
-| Launch day | T+0 (Sep 1 2026) | First $50K in 24h | 8 posts across all platforms in 24h | Bold, time-stamped, transparent |
+| Launch day | T+0 (Sep 8 2026) | First $50K in 24h | 8 posts across all platforms in 24h | Bold, time-stamped, transparent |
 | Week 1 | T+1 to T+7 | Cross $100K, unlock first stretch | 1-2/day per platform | Momentum, social proof |
 | Mid-campaign | T+8 to T+21 | Sustain $5K/day baseline | 1/day per platform | Drumbeat, deep-dives |
 | Stretch | T+22 to T+28 | Unlock $1M to $2M tier | 2/day per platform | Push, exclusivity |

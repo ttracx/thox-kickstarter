@@ -82,7 +82,7 @@ for the live stretch ladder once locked.)
 
 | Milestone | Target |
 |---|---|
-| Campaign launch | September 1, 2026 |
+| Campaign launch | September 8, 2026 |
 | Campaign close | October 1, 2026 |
 | Design validation and supplier lock | September 2026 |
 | Firmware / security validation | Q3-Q4 2026 |

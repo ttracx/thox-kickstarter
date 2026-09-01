@@ -82,7 +82,7 @@ shell + green LED + white MagStack ring outline. Multi-color FDM
 print on a Qidi Q2 Combo (yes, every shell prints in-house at the
 moment). /5
 
-6/ The full engineering spec is in the design pack. Launch is Sep 1
+6/ The full engineering spec is in the design pack. Launch is Sep 8
 2026.
 
 Join the launch list to back at the $39 early-bird:
@@ -105,7 +105,7 @@ Slide 6: how to back at the $39 early-bird.
 
 🔗 Link in bio. Launch list at thox.ai/launch.
 
-📍 Sep 1 2026.
+📍 Sep 8 2026.
 .
 .
 #thoxai #thoxclip #magstack #localai #localfirst #ai #wirelessAI

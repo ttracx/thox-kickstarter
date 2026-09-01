@@ -89,7 +89,7 @@ production tooling + the first 12 months of fulfillment.
 Inventors of record on the THOX patents: Craig Ross and Phamy
 Xaypanya. The team you back is the team that ships.
 
-Sep 1 2026.
+Sep 8 2026.
 thox.ai/launch
 
 #THOXai #founders #engineering #hardware #localAI

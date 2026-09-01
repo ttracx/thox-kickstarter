@@ -149,7 +149,7 @@ Local-only by design. No NAT traversal, no STUN server, no internet
 dependency for sync. The mesh fails closed if the local network is
 unavailable.
 
-$189 3-pack early-bird at Kickstarter Sep 1 2026.
+$189 3-pack early-bird at Kickstarter Sep 8 2026.
 
 thox.ai/launch
 

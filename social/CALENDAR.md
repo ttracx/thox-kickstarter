@@ -36,7 +36,7 @@ Example for week T-12 (May 13-19 2026):
 "Join the launch list at thox.ai/launch" (link in bio for IG; link
 sticker for Stories; direct link in caption for X / LinkedIn / FB).
 
-## Phase 1: Launch day (T+0 = Sep 1 2026)
+## Phase 1: Launch day (T+0 = Sep 8 2026)
 
 **Cadence**: 8 posts across all platforms in 24 hours. Choreographed.
 
