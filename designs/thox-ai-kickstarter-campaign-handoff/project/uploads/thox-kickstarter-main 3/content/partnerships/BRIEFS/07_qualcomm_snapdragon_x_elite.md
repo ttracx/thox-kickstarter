@@ -46,7 +46,7 @@ That said, Qualcomm is a large company with a long sales cycle. The right postur
 
 ## Risks + non-starters
 
-- DO NOT enter exclusivity arrangements. THOX is multi-architecture (Intel x86 for current ThoxNova, Rockchip RV1103 for ThoxMini, Pi-class ARM for ThoxMini Air). Snapdragon is one option among many.
+- DO NOT enter exclusivity arrangements. THOX is multi-architecture (Intel x86 for current ThoxNova, Rockchip RV1103 for ThoxMini, Pi-class ARM for ThoxAir). Snapdragon is one option among many.
 - DO NOT accept terms that pull THOX into Qualcomm's broader chipset-licensing or OEM funnel. THOX is a hardware shop, not a phone OEM.
 - DO NOT accept any arrangement that obligates THOX to ship a Snapdragon SKU on a specific timeline.
 - DO NOT accept volume-commit pricing that obligates THOX to a minimum SoC purchase before the SKU is funded.

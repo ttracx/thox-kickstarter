@@ -416,7 +416,7 @@ class Component extends DCLogic {
   DEVICES = [
     { id: 'key', name: 'ThoxKey', sub: 'Workspace key', detail: 'USB workspace key. Files, launchers, and model assets travel with you and mount on any supported computer.',
       stats: [ {k:'Type',v:'USB-A'}, {k:'Mounted',v:'mac-9d31'}, {k:'Storage',v:'62% used'}, {k:'Synced',v:'2m ago'} ] },
-    { id: 'air', name: 'ThoxMini Air', sub: 'Wireless companion', detail: 'Battery-powered wireless module. Pairs for portable sessions with no cable.',
+    { id: 'air', name: 'ThoxAir', sub: 'Wireless companion', detail: 'Battery-powered wireless module. Pairs for portable sessions with no cable.',
       stats: [ {k:'Link',v:'Wireless'}, {k:'Battery',v:'82%'}, {k:'Latency',v:'22 ms'}, {k:'Synced',v:'14m ago'} ] },
     { id: 'mini', name: 'ThoxMini', sub: 'Compute companion', detail: 'USB-C compute node. Runs local services and agents at full tilt, offline-first.',
       stats: [ {k:'Link',v:'USB-C'}, {k:'Load',v:'34%'}, {k:'Throughput',v:'32 tok/s'}, {k:'Synced',v:'now'} ] },
@@ -426,7 +426,7 @@ class Component extends DCLogic {
 
   ACTIVITY = [
     { icon: '#sd-bolt', text: 'ThoxMini began a local inference session', t: '2m' },
-    { icon: '#sd-link', text: 'ThoxMini Air paired over wireless', t: '14m' },
+    { icon: '#sd-link', text: 'ThoxAir paired over wireless', t: '14m' },
     { icon: '#sd-grid', text: 'ThoxKey mounted on mac-9d31', t: '1h' },
     { icon: '#sd-shield', text: 'Firmware check: all devices current', t: '3h' },
   ];

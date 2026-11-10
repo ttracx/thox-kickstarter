@@ -23,7 +23,7 @@ Blocker risk legend:
 | T-48 (2026-07-15) | This file plus VIDEO_SCRIPT, STORYBOARD, REWARDS_FAQ, STRETCH_GOALS, PRESS_KIT shipped to `content/launch/` | ops | none | low |
 | T-47 to T-44 | Founders review all content/launch/* files; revise founder bios, quotable lines, on-camera bite | T + C | content pack delivered | low |
 | T-44 to T-40 | Hero asset renders: ThoxClip turntable, ThoxMini desk, ThoxAir stack, ThoxNova hero | ops | founder review locked | med (render time + iteration) |
-| T-44 to T-40 | MagStack Cluster Dock printed and photographed; v4 ThoxMini Air printed and photographed | C | print kit shipped (already done), filament on hand | med (print fail rate) |
+| T-44 to T-40 | MagStack Cluster Dock printed and photographed; v4 ThoxAir printed and photographed | C | print kit shipped (already done), filament on hand | med (print fail rate) |
 | T-40 to T-35 | Alpha demo recording: real device boot + first-token capture on ThoxMini and ThoxNova | T | both devices provisioned | med (device readiness) |
 | T-38 to T-32 | Founder portrait shoot; founders + photographer + 2-hour session in Reno | T + C | wardrobe + location locked | low |
 | T-35 to T-30 | Video pre-production lockdown: script + storyboard + prop list + crew booked | ops + T | hero renders + portraits done | low |

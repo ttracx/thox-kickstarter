@@ -32,7 +32,7 @@ reveal as the week closer.
 |---|---|---|---|
 | Jul 22 (T-21) | `01_thoxclip.md` + `06_thoxkey.md` (paired) | IG + TikTok + X | 30 + 30 s |
 | Jul 23 (T-20) | `02_thoxmini.md` | IG + TikTok + LinkedIn + X | 45 s |
-| Jul 24 (T-19) | `03_thoxmini_air.md` | IG + TikTok + LinkedIn + X | 45 s |
+| Jul 24 (T-19) | `03_thoxair.md` | IG + TikTok + LinkedIn + X | 45 s |
 | Jul 25 (T-18) | rest day, repost the strongest of T-21 to T-19 | n/a | n/a |
 | Jul 26 (T-17) | `04_thoxnova.md` | IG + TikTok + LinkedIn + YouTube Shorts | 60 s |
 | Jul 27 (T-16) | rest day, founder Q&A in IG Stories | IG Stories | live |
@@ -63,7 +63,7 @@ live on T-3.
 |---|---|---|---|
 | Aug 06 (T-6) | Countdown card "6 days" with brand-cyan accent | All channels | Static. |
 | Aug 07 (T-5) | Countdown card "5 days" + ThoxClip macro inset | IG + X | Static + macro. |
-| Aug 08 (T-4) | Countdown card "4 days" + ThoxMini Air macro | IG + LinkedIn | Static + macro. |
+| Aug 08 (T-4) | Countdown card "4 days" + ThoxAir macro | IG + LinkedIn | Static + macro. |
 | Aug 09 (T-3) | The 30-second alt cut from `STORYBOARD.md` | IG + TikTok + X | 30 s. |
 | Aug 10 (T-2) | Countdown card "2 days" + four-node stack inset | All channels | Static + inset. |
 | Aug 11 (T-1) | "Tomorrow." Single-frame brand-cyan card | All channels | Static. |

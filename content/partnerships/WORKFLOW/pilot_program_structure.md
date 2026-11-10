@@ -25,7 +25,7 @@ A pilot is the lowest-risk way to convert a partnership conversation into a form
 |---|---|---|
 | 01 Anthropic | 10-25 THOX devices preloaded with Claude adapter, shipped to designated Anthropic team for internal use | Anthropic needs an on-device deployment surface; THOX is the cleanest one available |
 | 02 OpenAI | 25-50 THOX devices preloaded with OpenAI adapter, shipped to OpenAI developer relations and community advocates | Higher unit count because OpenAI's audience is broader; lower per-unit engagement expectation |
-| 03 Cohere | 25 THOX devices (mixed ThoxNova + ThoxMini Air) preloaded with Cohere adapter, shipped to Cohere developer-relations and 5-10 enterprise design partners | Cohere has a real enterprise pilot motion; THOX hardware fits that motion cleanly |
+| 03 Cohere | 25 THOX devices (mixed ThoxNova + ThoxAir) preloaded with Cohere adapter, shipped to Cohere developer-relations and 5-10 enterprise design partners | Cohere has a real enterprise pilot motion; THOX hardware fits that motion cleanly |
 | 04 Google Gemma | 25 ThoxNova units with latest Gemma fine-tune, shipped to Gemma community advocates and Google developer-relations | Gemma is already on-device; pilot validates the deployment surface story |
 | 05 Hugging Face | 10-15 THOX devices shipped to Hugging Face developer-experience team for Hub-integration testing | Smaller pilot; testbed-shaped, not deployment-shaped |
 | 06 NVIDIA Jetson | Post-launch only; pilot only after a Jetson-bearing SKU exists in the THOX roadmap | Premature otherwise |

@@ -11,7 +11,7 @@ Status: DRAFT - searches and filings to be conducted by counsel
 - THOX.ai
 - ThoxClip
 - ThoxMini
-- ThoxMini Air
+- ThoxAir
 - ThoxAir
 - ThoxNova
 - ThoxVault

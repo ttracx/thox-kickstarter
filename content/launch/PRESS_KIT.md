@@ -52,7 +52,7 @@ Press kit assets are not in this repository (the kickstarter playbook holds the 
 | Asset class | Location | Notes |
 |---|---|---|
 | MagStack Cluster Dock STL + 3MF plates + assembly photos | `ttracx/thox-3dprint-kit` PR #3 | Photographable today |
-| ThoxMini Air v4 enclosure STL + 3MF plates | `ttracx/thox-3dprint-kit` PR #4 | Photographable today |
+| ThoxAir v4 enclosure STL + 3MF plates | `ttracx/thox-3dprint-kit` PR #4 | Photographable today |
 | Hero render placeholders | `assets/README.md` in this repo | Replace with finals after T-40 |
 | THOX wordmark SVG + PNG | TBD - render pipeline drop at T-30 | On-light + on-dark variants |
 | Founder portraits | TBD - shoot at T-38 to T-32 | Placeholders until photo session |
@@ -172,7 +172,7 @@ Founders may revise or replace these lines before the press kit ships. Any line 
 | Spec | Value |
 |---|---|
 | Role | Single-node compute; clusters via MagStack Cluster Dock |
-| SoC | Luckfox Pico Mini B (same as ThoxMini; ThoxMini Air adds the MagStack ring) |
+| SoC | Luckfox Pico Mini B (same as ThoxMini; ThoxAir adds the MagStack ring) |
 | Cluster | 4 to 8 nodes per MagStack dock; single 5V/4A USB-C input feeds the stack |
 | Cluster software | mDNS leader election; SQLite task queue; llama.cpp `--rpc` integration; MagStack Air firmware ships at $1M stretch goal as default |
 | Power per node | 5V / 3A USB-C |

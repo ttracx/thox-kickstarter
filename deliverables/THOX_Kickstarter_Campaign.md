@@ -2,7 +2,7 @@
 
 A quick-launch Kickstarter campaign for the THOX.ai private-AI hardware family.
 
-Devices: **ThoxKey**, **ThoxMini Air**, **ThoxMini**, **ThoxClip**.
+Devices: **ThoxKey**, **ThoxAir**, **ThoxMini**, **ThoxClip**.
 
 > Canonical source of truth: [`docs/CAMPAIGN_INFO.md`](../docs/CAMPAIGN_INFO.md),
 > [`docs/KICKSTARTER_PAGE_COPY.md`](../docs/KICKSTARTER_PAGE_COPY.md), and
@@ -25,7 +25,7 @@ the user owns. They speak the same THOX agent protocol. They are yours.
 | Device | What it is | Role |
 |---|---|---|
 | **ThoxKey** | USB private-AI identity device | Encrypted launcher, recovery profile, and portable configuration. The simplest way into THOX.ai. |
-| **ThoxMini Air** | Low-cost wireless companion | Connects nearby THOX devices and routes lightweight commands. The accessible sub-$100 node. |
+| **ThoxAir** | Low-cost wireless companion | Connects nearby THOX devices and routes lightweight commands. The accessible sub-$100 node. |
 | **ThoxMini** | Compact local compute node | Local services, lightweight agents, encrypted storage, and private automations for desk, lab, and field. |
 | **ThoxClip** | Premium clip-on capture + command | Fast voice capture, workflow triggers, and secure handoff into your THOX environment. |
 
@@ -47,7 +47,7 @@ QA, and compliance work to ship them to backers who want private AI ownership fr
 | Device | Retail | Kickstarter special | Early-bird | Early-bird cap |
 |---|---:|---:|---:|---:|
 | ThoxKey | $39.99 | $34 | $24 | 500 |
-| ThoxMini Air | $99 | $79 | $69 | 350 |
+| ThoxAir | $99 | $79 | $69 | 350 |
 | ThoxMini | $199 | $169 | $149 | 300 |
 | ThoxClip | $399 | $329 | $299 | 200 |
 
@@ -58,13 +58,13 @@ QA, and compliance work to ship them to backers who want private AI ownership fr
 | THOX.ai Supporter | $5 | Unlimited | Updates, backer wall, digital wallpaper pack | Oct 2026 |
 | Early-bird ThoxKey | $24 | 500 | 1 ThoxKey | Q3-Q4 2026 |
 | ThoxKey Kickstarter Special | $34 | Unlimited | 1 ThoxKey | Q3-Q4 2026 |
-| Early-bird ThoxMini Air | $69 | 350 | 1 ThoxMini Air | Q3-Q4 2026 |
-| ThoxMini Air Kickstarter Special | $79 | Unlimited | 1 ThoxMini Air | Q3-Q4 2026 |
+| Early-bird ThoxAir | $69 | 350 | 1 ThoxAir | Q3-Q4 2026 |
+| ThoxAir Kickstarter Special | $79 | Unlimited | 1 ThoxAir | Q3-Q4 2026 |
 | Early-bird ThoxMini | $149 | 300 | 1 ThoxMini | Q3-Q4 2026 |
 | ThoxMini Kickstarter Special | $169 | Unlimited | 1 ThoxMini | Q3-Q4 2026 |
 | Early-bird ThoxClip | $299 | 200 | 1 ThoxClip | Q1 2027 |
 | ThoxClip Kickstarter Special | $329 | Unlimited | 1 ThoxClip | Q1 2027 |
-| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxMini Air | Q3-Q4 2026 |
+| THOX Starter Kit | $99 | Unlimited | ThoxKey + ThoxAir | Q3-Q4 2026 |
 | THOX Developer Kit | $189 | Unlimited | ThoxKey + ThoxMini | Q3-Q4 2026 |
 | THOX Wearable Pro Kit | $349 | Unlimited | ThoxKey + ThoxClip | Q1 2027 |
 | THOX Complete Founder Kit | $549 | 100 | One of each device + founder serial | Q1 2027 |
@@ -121,7 +121,7 @@ restoring settings after a rebuild, keeping launch and recovery workflows portab
 storage stick marketed as AI. It carries and unlocks the workflow; heavier work routes to capable
 local hardware the user owns.
 
-### ThoxMini Air - The wireless companion
+### ThoxAir - The wireless companion
 
 The low-cost wireless companion for local-first AI workflows. It connects nearby THOX devices,
 routes lightweight commands, and helps bridge your private workspace without requiring a cloud
@@ -130,7 +130,7 @@ account by default.
 **Use it for**: lightweight local routing, wireless companion workflows, simple device-to-device
 coordination, experimentation with private-AI edge setups.
 
-**Honest boundary**: ThoxMini Air is an edge companion, not a high-end local LLM workstation.
+**Honest boundary**: ThoxAir is an edge companion, not a high-end local LLM workstation.
 
 ### ThoxMini - The compact local compute node
 
@@ -159,7 +159,7 @@ captured context to your THOX stack.
 
 ```
 ThoxKey        carries your private-AI identity; unlocks the workspace on trusted machines
-ThoxMini Air   connects nearby THOX devices and routes lightweight commands
+ThoxAir   connects nearby THOX devices and routes lightweight commands
 ThoxMini       runs local services, lightweight agents, encrypted storage, and automations
 ThoxClip       captures context and triggers workflows into your THOX environment
 Heavier work   routes to capable local hardware the user owns

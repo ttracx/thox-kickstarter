@@ -48,13 +48,13 @@ Body:
 >
 > Three things I always pull forward into the first sketch:
 >
-> 1. Single-tool assembly. If a customer needs more than one screwdriver bit to take it apart, the design has lost. ThoxMini Air v4 is a four-screw enclosure, all the same head.
+> 1. Single-tool assembly. If a customer needs more than one screwdriver bit to take it apart, the design has lost. ThoxAir v4 is a four-screw enclosure, all the same head.
 >
 > 2. Repair-friendly fasteners over snaps where it matters. Snaps fail at the field-repair step. Screws cost a few cents more and outlast the device.
 >
 > 3. The bed is the constraint. The QIDI Q2 Combo at 270 by 270 by 256 mm is the print envelope for the kits we ship to backers. Every part fits inside that envelope or it does not ship.
 >
-> The v4 ThoxMini Air enclosure ships as a multi-material 3MF kit: matte-black PETG shell, satin light-gray halo ring, green accent button. The print is honest about what it is.
+> The v4 ThoxAir enclosure ships as a multi-material 3MF kit: matte-black PETG shell, satin light-gray halo ring, green accent button. The print is honest about what it is.
 >
 > Software is one half of THOX. The hardware is the half that decides whether anyone keeps it on the desk after week three.
 
@@ -62,7 +62,7 @@ CTA: See the v4 enclosure and the MagStack dock at https://thox.ai/launch
 
 Hashtags: #hardwaredesign #industrialdesign #manufacturing #3dprinting #makers
 
-Suggested media: ThoxMini Air v4 multi-material assembly photo OR a frame from the QIDI Q2 print bed.
+Suggested media: ThoxAir v4 multi-material assembly photo OR a frame from the QIDI Q2 print bed.
 
 ---
 
@@ -122,7 +122,7 @@ CTA: See the MagStack dock at https://thox.ai/launch
 
 Hashtags: #hardware #engineering #clustercomputing #magstack #onedeviceai
 
-Suggested media: 4-node MagStack assembly hero shot (use the photographed v4 ThoxMini Air dock from `ttracx/thox-3dprint-kit` PR #3 once printed).
+Suggested media: 4-node MagStack assembly hero shot (use the photographed v4 ThoxAir dock from `ttracx/thox-3dprint-kit` PR #3 once printed).
 
 ---
 
@@ -134,7 +134,7 @@ Body:
 
 > Manufacturing and supply chain reality, for anyone thinking about taking a hardware product from sketch to backers.
 >
-> 1. The bed dictates the BOM. We had a different ThoxMini Air enclosure design through three revisions before we matched it to the QIDI Q2 Combo bed at 270 by 270 by 256 mm. Designing first and matching the bed second cost us six weeks across rev1, rev2, and the v4 multi-material kit we landed on last week.
+> 1. The bed dictates the BOM. We had a different ThoxAir enclosure design through three revisions before we matched it to the QIDI Q2 Combo bed at 270 by 270 by 256 mm. Designing first and matching the bed second cost us six weeks across rev1, rev2, and the v4 multi-material kit we landed on last week.
 >
 > 2. Single-source parts will hurt you. Every part on the launch BOM has at least one alternate vendor identified. The magnets for the MagStack dock are a commodity from three suppliers. The pogo pads are dual-sourced. The Luckfox Pico Mini B for ThoxMini is the one part we are single-source on, and that is the part keeping me up at night.
 >
@@ -142,7 +142,7 @@ Body:
 >
 > 4. Certification is a long pole, not a short one. Plan for the lab to take 6 to 12 weeks from a clean EVT unit. We started early.
 >
-> 5. The campaign promises only what the prototype already does. The 7-adapter THOXCore router (LiteRT, OpenAI HTTP, Ollama, llama.cpp, vLLM, TensorRT, MLX) is shipped at v0.2.0, 145 of 145 tests green. The MagStack dock is shipped as a print kit. The v4 ThoxMini Air is shipped as a 3MF kit. We do not promise anything we have not already shipped to a repo.
+> 5. The campaign promises only what the prototype already does. The 7-adapter THOXCore router (LiteRT, OpenAI HTTP, Ollama, llama.cpp, vLLM, TensorRT, MLX) is shipped at v0.2.0, 145 of 145 tests green. The MagStack dock is shipped as a print kit. The v4 ThoxAir is shipped as a 3MF kit. We do not promise anything we have not already shipped to a repo.
 >
 > The campaign launches Sep 8 at 09:00 PT. Early-bird tiers are first-come during the first 24 hours.
 
@@ -150,7 +150,7 @@ CTA: Calendar reminder at https://thox.ai/launch
 
 Hashtags: #hardware #manufacturing #kickstarter #buildinpublic #ondeviceai
 
-Suggested media: A photo of the BOM whiteboard or the v4 ThoxMini Air QIDI Q2 print plate as captured from the QIDI Studio preview.
+Suggested media: A photo of the BOM whiteboard or the v4 ThoxAir QIDI Q2 print plate as captured from the QIDI Studio preview.
 
 ---
 
@@ -170,7 +170,7 @@ Body:
 >
 > 3. Packaging is recyclable single-material molded pulp with a soft paper insert. No bag-of-bags. No PE foam. No twist-ties. We pay a little more per unit for it and we charge nothing extra to backers.
 >
-> The v4 ThoxMini Air is a multi-material print kit when it ships to print-it-yourself backers, and a printed-and-assembled finished unit for the assembled tiers. The unboxing for both paths is the same: device first, card under it, no extra packaging waste.
+> The v4 ThoxAir is a multi-material print kit when it ships to print-it-yourself backers, and a printed-and-assembled finished unit for the assembled tiers. The unboxing for both paths is the same: device first, card under it, no extra packaging waste.
 >
 > 7 days to launch. The early-bird tiers cap during the first 24 hours.
 
@@ -192,7 +192,7 @@ Body:
 >
 > Nervous because every Kickstarter is a first-48-hour story. If we do not hit a healthy day-1 number, the surface area we get on the platform shrinks, the press cycle skips us, and the campaign math gets harder every day after.
 >
-> Excited because we have already done the thing nobody can take back. The 7-adapter THOXCore router is shipped at v0.2.0, 145 of 145 tests green. The MagStack dock and the v4 ThoxMini Air print kits are shipped to repos. The provisioner for ThoxNova on LattePanda N100 is staged and verifiable. The runtime, the agent fleet, and the device-provisioning tooling are public on github.com/ttracx. None of this evaporates if the campaign goes a different direction than we hope. The work is real and out there.
+> Excited because we have already done the thing nobody can take back. The 7-adapter THOXCore router is shipped at v0.2.0, 145 of 145 tests green. The MagStack dock and the v4 ThoxAir print kits are shipped to repos. The provisioner for ThoxNova on LattePanda N100 is staged and verifiable. The runtime, the agent fleet, and the device-provisioning tooling are public on github.com/ttracx. None of this evaporates if the campaign goes a different direction than we hope. The work is real and out there.
 >
 > The thing I want to say honestly is that this is not a single-launch decision. We are building THOX whether or not Sep 8 hits the ceiling. The campaign is the funding mechanism for the manufacturing run that we cannot self-fund, and the public moment that lets the people who have been waiting actually back the thing. Both matter.
 >
@@ -222,7 +222,7 @@ Body:
 >
 > Early-bird tiers are open and capped at 24 hours.
 >
-> All software is Apache-2.0. Full repo graph at github.com/ttracx. The 7-adapter ThoxCore router is shipped (v0.2.0, 145/145 tests). The MagStack dock and v4 ThoxMini Air ship as print kits. The provisioner for ThoxNova is verifiable. Everything we promised is already in a repo.
+> All software is Apache-2.0. Full repo graph at github.com/ttracx. The 7-adapter ThoxCore router is shipped (v0.2.0, 145/145 tests). The MagStack dock and v4 ThoxAir ship as print kits. The provisioner for ThoxNova is verifiable. Everything we promised is already in a repo.
 >
 > Three things that help, in order of how much:
 >

@@ -1115,7 +1115,7 @@ function SceneCEO() {
 
 function SceneEco() {
   const { localTime: t } = useSprite();
-  const names = ['THOXKEY', 'THOXMINI AIR', 'THOXMINI', 'THOXCLIP'];
+  const names = ['THOXKEY', 'THOXAIR', 'THOXMINI', 'THOXCLIP'];
   const xs = [330, 750, 1170, 1520];
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
@@ -1243,7 +1243,7 @@ function SceneMesh() {
   const hub = { x: 960, y: 480 };
   const nodes = [
     { x: 610, y: 320, label: 'THOXKEY', d: 1.6, kind: 'thox' },
-    { x: 1310, y: 320, label: 'THOXMINI AIR', d: 2.2, kind: 'thox' },
+    { x: 1310, y: 320, label: 'THOXAIR', d: 2.2, kind: 'thox' },
     { x: 640, y: 690, label: 'THOXCLIP', d: 2.8, kind: 'thox' },
     { x: 380, y: 500, label: 'MACBOOK PRO', d: 6.6, kind: 'guest' },
     { x: 1540, y: 520, label: 'PC', d: 7.2, kind: 'guest' },
@@ -1397,7 +1397,7 @@ function CampaignAnimatic({ burnIns = true, loop = true }) {
         </SceneBody>
       </Sprite>
       <Sprite start={32.8} end={41.2}>
-        <SceneBody cam={0.06} chrome={<Slate id="V05" title="THOXMINI AIR / WORK IN MOTION" shot="CLOSE-UP / FOOTAGE" />}>
+        <SceneBody cam={0.06} chrome={<Slate id="V05" title="THOXAIR / WORK IN MOTION" shot="CLOSE-UP / FOOTAGE" />}>
           <SceneAir />
         </SceneBody>
       </Sprite>

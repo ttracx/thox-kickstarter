@@ -1,6 +1,6 @@
 ---
 title: ThoxAir User Manual
-device: thoxmini-air
+device: thoxair
 version: 1.0
 date: 2026-08
 ---
@@ -220,7 +220,7 @@ steps.
 Identical to ThoxMini: GPL-2.0 (kernel + Ubuntu userland), BSD-3-Clause
 (Tailscale), Apache-2.0 (thoxymicro + agents + THOX models), MIT
 (llama.cpp + UI assets), Rockchip OEM (RKNN runtime). Full text on
-device at `/usr/share/doc/thoxmini-air/LICENSES.md`.
+device at `/usr/share/doc/thoxair/LICENSES.md`.
 
 \newpage
 

@@ -4,7 +4,7 @@ interactive tracker for the THOX Kickstarter film, built from
 sources/thox-video-shotlist.csv.
 
 Tracks two things the team needs to complete:
-  1) Device video capture (per device: ThoxKey, ThoxMini, ThoxMini Air, ThoxClip)
+  1) Device video capture (per device: ThoxKey, ThoxMini, ThoxAir, ThoxClip)
   2) Storyboard scene capture, following the script + storyboard steps (V01-V13)
 
 Each shot moves To shoot -> Captured -> Approved, with a notes field. All state
@@ -18,12 +18,12 @@ OUT = ROOT / "site/production-tracker.html"
 
 SEG_TITLES = {
     "ceo-open": "CEO Open", "ecosystem": "The Ecosystem", "cto-intro": "CTO Intro",
-    "thoxkey": "ThoxKey", "thoxmini-air": "ThoxMini Air", "thoxmini": "ThoxMini",
+    "thoxkey": "ThoxKey", "thoxair": "ThoxAir", "thoxmini": "ThoxMini",
     "thoxclip": "ThoxClip", "unified": "A Unified Day", "thoxos-mini": "ThoxOS Mini",
     "meshstack": "MeshStack", "user-stories": "User Stories",
     "cto-close": "CTO Close", "ceo-close": "CEO Close",
 }
-PRIMARY_DEVICES = ["ThoxKey", "ThoxMini Air", "ThoxMini", "ThoxClip"]
+PRIMARY_DEVICES = ["ThoxKey", "ThoxAir", "ThoxMini", "ThoxClip"]
 
 rows = []
 with open(CSV, newline="") as f:

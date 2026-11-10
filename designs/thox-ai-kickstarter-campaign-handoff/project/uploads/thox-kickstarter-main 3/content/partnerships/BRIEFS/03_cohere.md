@@ -32,7 +32,7 @@ Finally, the Cohere brand voice and the THOX brand voice rhyme. Both are technic
 - Co-marketing on the existing North-Mini-Code eval baseline as a public "Cohere on THOXCore" reference
 - Pre-release access to Cohere model updates so THOXCore's adapter stays current with model shape changes
 - Joint case study with a single regulated-vertical reference customer post-launch
-- Pilot program: 25 THOX devices (mixed SKU: ThoxNova for the developer tier, ThoxMini Air for the maker tier) preloaded with the Cohere adapter configured, shipped to Cohere developer-relations and 5-10 selected enterprise design partners
+- Pilot program: 25 THOX devices (mixed SKU: ThoxNova for the developer tier, ThoxAir for the maker tier) preloaded with the Cohere adapter configured, shipped to Cohere developer-relations and 5-10 selected enterprise design partners
 - Joint placement on Cohere's docs site as one of the listed deployment patterns
 - Cohere booth presence reciprocity at one shared developer event in 2027
 

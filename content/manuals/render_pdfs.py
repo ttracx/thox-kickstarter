@@ -28,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 DEVICES = [
     "thoxclip",
     "thoxmini",
-    "thoxmini-air",
+    "thoxair",
     "thoxnova",
     "magstack-cluster-dock",
     "thoxkey",

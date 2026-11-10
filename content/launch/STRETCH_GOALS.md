@@ -107,7 +107,7 @@ Specifics:
 
 - 6-frame ThoxCargo concept art set.
 - 90-second concept motion piece.
-- A full-family hero render featuring ThoxClip, ThoxMini, ThoxMini Air, ThoxAir, ThoxNova, plus the three concept devices ThoxArm, ThoxVault, ThoxCargo.
+- A full-family hero render featuring ThoxClip, ThoxMini, ThoxAir, ThoxAir, ThoxNova, plus the three concept devices ThoxArm, ThoxVault, ThoxCargo.
 - A roadmap post explaining how the announced concepts connect to the shipping products.
 
 Same posture as the other concept stretches: this is an unveil. ThoxCargo has no SKU, no ship window, no campaign commitment to manufacture.

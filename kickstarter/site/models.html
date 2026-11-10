@@ -203,7 +203,7 @@
 // ---- Device memory tiers (from thox.ai/docs/model-compatibility) ----
 const DEVICES = [
   { id:"ThoxKey", n:"ThoxKey", tier:"Carry &amp; launch", r:"Carries your workspace + GGUF model files. Pairs with a compute device to run.", fit:["3B"] },
-  { id:"ThoxMini Air", n:"ThoxMini Air", tier:"Lightweight · wireless", r:"Battery-powered companion. Best with the smallest models for quick local tasks.", fit:["125M","3B"] },
+  { id:"ThoxAir", n:"ThoxAir", tier:"Lightweight · wireless", r:"Battery-powered companion. Best with the smallest models for quick local tasks.", fit:["125M","3B"] },
   { id:"ThoxMini", n:"ThoxMini", tier:"Single device · ~16GB", r:"Compact USB-C compute. Comfortable with 3–8B models.", fit:["3B","7B","8B"] },
   { id:"ThoxNova", n:"ThoxNova + MagStack", tier:"MagStack 2×/4× · 32–64GB+", r:"Flagship node; stack for frontier + cluster models (12–32B and beyond).", fit:["8B","12B","14B","24B","30B","32B","cluster"] },
 ];
@@ -213,7 +213,7 @@ const M = [
   // ThoxLLM core (public on HF + Ollama)
   { name:"ThoxMini-3B", size:"3B", sizes:["3B"], base:"Llama-3.2-3B", group:"core",
     blurb:"Pocket-sized local assistant. The default for the smallest THOX devices.",
-    caps:["tools"], ollama:"Thox-ai/thoxmini-3b", hf:"Thox-ai/ThoxMini-3B", devices:["ThoxMini Air","ThoxMini","ThoxKey"] },
+    caps:["tools"], ollama:"Thox-ai/thoxmini-3b", hf:"Thox-ai/ThoxMini-3B", devices:["ThoxAir","ThoxMini","ThoxKey"] },
   { name:"ThoxForge-7B", size:"7B", sizes:["7B"], base:"Mistral-7B", group:"core",
     blurb:"General-purpose workhorse for everyday local workflows and drafting.",
     caps:["tools"], ollama:"Thox-ai/thoxforge-7b", hf:"Thox-ai/ThoxForge-7B", devices:["ThoxMini","ThoxNova"] },
@@ -234,13 +234,13 @@ const M = [
     caps:["tools","think"], ollama:"Thox-ai/thoxgemma4:12b-q4_k_m", hf:null, devices:["ThoxNova"] },
   { name:"ThoxWebby-Gemma-4-E2B", size:"2B · E2B", sizes:["2B"], base:"Gemma-4-E2B (QAT)", group:"webby", gated:true,
     blurb:"Browser-tier local model: QAT Gemma-4 E2B running entirely in the browser over WebGPU via transformers.js. No install, no server — powers ThoxKey carry-and-launch.",
-    caps:["tools","browser"], ollama:null, hf:"Thox-ai/ThoxWebby-Gemma-4-E2B", space:"https://huggingface.co/spaces/Thox-ai/ThoxWebby", devices:["ThoxKey","ThoxMini Air"] },
+    caps:["tools","browser"], ollama:null, hf:"Thox-ai/ThoxWebby-Gemma-4-E2B", space:"https://huggingface.co/spaces/Thox-ai/ThoxWebby", devices:["ThoxKey","ThoxAir"] },
   { name:"ThoxMythos-9B", size:"9B", sizes:["9B"], base:"Qwen3.5-9B", group:"core", gated:true, ctx:"1M",
     blurb:"Long-context reasoning specialist on Qwen3.5-9B with native function-calling and a 1M-token context window. Gated preview — access on request.",
     caps:["tools","think"], ollama:null, hf:"Thox-ai/ThoxMythos-9B", space:"https://huggingface.co/spaces/Thox-ai/ThoxMythos-9B-Space", devices:["ThoxNova"] },
   { name:"thox-micro-125m", size:"125M", sizes:["125M"], base:"—", group:"core", soon:true,
     blurb:"Ultra-light model for the most constrained edge tasks. Coming soon.",
-    caps:["tools"], ollama:null, hf:null, devices:["ThoxMini Air","ThoxKey"] },
+    caps:["tools"], ollama:null, hf:null, devices:["ThoxAir","ThoxKey"] },
 
   // Nellie agents (Ollama)
   { name:"nellie-core", size:"agent", sizes:[], base:"THOX agent runtime", group:"nellie",

@@ -17,7 +17,7 @@ THOX.ai
 ## Welcome
 
 Thank you for backing the MagStack Cluster Dock. The Cluster Dock is the
-base station + magnetic spine that holds a column of 4 to 8 ThoxMini Air
+base station + magnetic spine that holds a column of 4 to 8 ThoxAir
 nodes. With the Dock you turn a handful of Airs into a self-cooled,
 self-aligning compute cluster you can carry between desks.
 
@@ -53,7 +53,7 @@ additional cables.
 
 ### What the Cluster Dock is for
 
-- Aggregate 4 to 8 ThoxMini Air nodes into one self-discovering compute
+- Aggregate 4 to 8 ThoxAir nodes into one self-discovering compute
   cluster
 - Centralize power to a single wall adapter via the USB-C hub
 - Hold the spec plate facing forward for in-rack identification
@@ -98,7 +98,7 @@ Recommended for 5+ node stacks for rotational alignment.
 4. If the topmost spine extends above the top Air, trim it flush with
    a hacksaw or pull the topmost segment off.
 
-### 2. Stack each ThoxMini Air
+### 2. Stack each ThoxAir
 
 Each subsequent Air mates onto the one below via the 30 mm halo magnet
 faces. The spine (if installed) passes through the inner 19 mm of each
@@ -148,7 +148,7 @@ contents:
 ```
 THOX MagStack Cluster Dock
 Serial: <fleet-id>
-4-node config | 4x ThoxMini Air
+4-node config | 4x ThoxAir
 Deployed: <YYYY-MM-DD>
 ```
 
@@ -248,7 +248,7 @@ photo of the issue.
 
 The Cluster Dock is a passive enclosure plus a USB-C hub. It does not
 itself run software, so there is no telemetry. The Airs that sit in
-it ship with telemetry off by default; see the ThoxMini Air manual
+it ship with telemetry off by default; see the ThoxAir manual
 to verify.
 
 ### License summary

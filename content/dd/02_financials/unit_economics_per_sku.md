@@ -11,7 +11,7 @@ line items. Sources for BOMs:
 - ttracx/thox-quickstart boms/ - 7 SKUs in shipping kits.
 - content/manuals/ in this repo - reward manuals.
 - Per-product memory entries in MEMORY.md for SoC choices (Luckfox Pico
-  Mini B for ThoxClip / ThoxMini / ThoxMini Air; LattePanda N100 for
+  Mini B for ThoxClip / ThoxMini / ThoxAir; LattePanda N100 for
   ThoxNova).
 
 ## Structure per SKU

@@ -30,7 +30,7 @@
       "visibility": "public",
       "status": "live",
       "capabilities": ["tools"],
-      "devices": ["ThoxMini Air", "ThoxMini", "ThoxKey"],
+      "devices": ["ThoxAir", "ThoxMini", "ThoxKey"],
       "sources": {
         "huggingface": "Thox-ai/ThoxMini-3B",
         "ollama": "Thox-ai/thoxmini-3b"
@@ -151,7 +151,7 @@
       "visibility": "gated",
       "status": "live",
       "capabilities": ["tools", "browser"],
-      "devices": ["ThoxKey", "ThoxMini Air"],
+      "devices": ["ThoxKey", "ThoxAir"],
       "sources": {
         "huggingface": "Thox-ai/ThoxWebby-Gemma-4-E2B",
         "ollama": null

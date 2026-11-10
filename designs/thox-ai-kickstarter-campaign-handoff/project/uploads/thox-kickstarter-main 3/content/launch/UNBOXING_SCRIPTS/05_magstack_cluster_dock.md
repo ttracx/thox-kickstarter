@@ -28,7 +28,7 @@ on the side. Cable channel routes power and data through the spine."
 
 ### Beat 3 (15 to 30s): The stack assembly
 
-On camera: hands place one ThoxMini Air onto the magnetic pad. Then a
+On camera: hands place one ThoxAir onto the magnetic pad. Then a
 second clicks onto the halo ring of the first. Then a third. Then a
 fourth. Each unit snaps with a real Foley snap. All four LED bars
 light cyan in sequence.
@@ -60,7 +60,7 @@ Voiceover (Craig): "Back us on Kickstarter. August twelve."
 4. Magnetic pad close-up, 3 s.
 5. USB-C hub macro, 2 s.
 6. Cable channel macro, 2 s.
-7. First ThoxMini Air placed on the dock, 3 s.
+7. First ThoxAir placed on the dock, 3 s.
 8. Second unit snap-on close-up, 3 s.
 9. Third and fourth unit snap-on, 4 s.
 10. All four LED bars lit, slow tilt up, 5 s.

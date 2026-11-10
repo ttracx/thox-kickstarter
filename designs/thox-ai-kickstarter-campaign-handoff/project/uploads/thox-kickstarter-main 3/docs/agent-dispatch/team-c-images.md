@@ -2,7 +2,7 @@
 
 ## Mission
 
-Ship signed Pi Zero 2 W / RV1103 OS image for ThoxMini Air (also
+Ship signed Pi Zero 2 W / RV1103 OS image for ThoxAir (also
 reused for ThoxMini RV1106) by T-21 (Jul 22 2026).
 
 ## Repos you own
@@ -41,7 +41,7 @@ reused for ThoxMini RV1106) by T-21 (Jul 22 2026).
 ## Acceptance gate
 
 - [ ] Signed image artifact at github.com/ttracx/thoxos-air-image/releases
-- [ ] Pi Zero 2 W boots to ThoxMini Air branded login + LED strip
+- [ ] Pi Zero 2 W boots to ThoxAir branded login + LED strip
       lit emerald
 - [ ] `systemctl status thox-mesh-ctl thox-assistant` shows both
       active on first boot

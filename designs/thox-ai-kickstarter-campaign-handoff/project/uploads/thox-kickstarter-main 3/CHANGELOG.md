@@ -8,7 +8,7 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 
 ### Added
 
-- Quick-launch campaign source of truth for ThoxKey, ThoxMini, ThoxMini Air, and ThoxClip.
+- Quick-launch campaign source of truth for ThoxKey, ThoxMini, ThoxAir, and ThoxClip.
 - Kickstarter special and early-bird pricing for the four-device launch lineup.
 - Paste-ready Kickstarter Story page.
 - End-to-end quick-launch runbook.

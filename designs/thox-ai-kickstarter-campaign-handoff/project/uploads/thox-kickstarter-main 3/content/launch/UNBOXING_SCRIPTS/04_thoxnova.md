@@ -98,7 +98,7 @@ Kickstarter. August twelve."
 ## Music
 
 - Driving electronic bed, 90 to 105 BPM, no vocals. Slightly more
-  reserved than the ThoxMini and ThoxMini Air beds because the
+  reserved than the ThoxMini and ThoxAir beds because the
   ThoxNova cut is the longest in the series.
 - Cyan-light sync points at 6 s, 16 s, 30 s, 45 s, and 55 s.
 - Drop the bed for the final 1.5 s after the CTA voiceover.

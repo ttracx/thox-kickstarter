@@ -5,4 +5,4 @@ still_prompt: n/a — hand-composed brand art, not a filled pipeline prompt
 motion_prompt: n/a — still asset
 source_still: prelaunch_campaign_ecosystem_16x9_v1.png
 qc: passed 2026-07-06 by TX (brand-QC'd on delivery)
-notes: 'The THOX Ecosystem' — all four devices (ThoxKey, ThoxMini, ThoxMini Air, ThoxClip) on one modular-lineup board with connector rail + one-line captions. Brand tokens verified (emerald #10b981 accents, ink #0a0e14 ground, Inter/mono type). Wordmark + tagline "Your AI. Your Data. Your Rules." present. Keep this approved v1; archive if superseded.
+notes: 'The THOX Ecosystem' — all four devices (ThoxKey, ThoxMini, ThoxAir, ThoxClip) on one modular-lineup board with connector rail + one-line captions. Brand tokens verified (emerald #10b981 accents, ink #0a0e14 ground, Inter/mono type). Wordmark + tagline "Your AI. Your Data. Your Rules." present. Keep this approved v1; archive if superseded.

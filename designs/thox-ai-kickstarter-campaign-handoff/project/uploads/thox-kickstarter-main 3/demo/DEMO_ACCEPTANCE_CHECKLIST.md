@@ -27,7 +27,7 @@ Use this checklist before approving any Kickstarter device demo clip.
 | [ ] | Retail $39.99 appears only when price card is shown |
 | [ ] | Kickstarter special $34 and early bird $24 are correct |
 
-## ThoxMini Air gate
+## ThoxAir gate
 
 | Status | Requirement |
 |---|---|
@@ -63,7 +63,7 @@ Use this checklist before approving any Kickstarter device demo clip.
 | Status | Requirement |
 |---|---|
 | [ ] | ThoxKey appears first as identity/configuration |
-| [ ] | ThoxMini Air appears as local wireless companion |
+| [ ] | ThoxAir appears as local wireless companion |
 | [ ] | ThoxMini appears as local services/agent node |
 | [ ] | ThoxClip appears as capture/command device |
 | [ ] | Heavier work routes to capable local user-owned hardware |
@@ -77,7 +77,7 @@ Reject or reshoot the clip if any of these appear:
 - A legacy product name appears.
 - Real credentials or personal data appear.
 - ThoxKey is framed as a standalone model-running computer.
-- ThoxMini Air is framed as a high-end AI workstation.
+- ThoxAir is framed as a high-end AI workstation.
 - ThoxClip is framed as medical, emergency, safety, or surveillance hardware.
 - A generated render is framed as final production photography.
 - Text is unreadable on mobile.

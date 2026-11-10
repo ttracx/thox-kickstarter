@@ -1,11 +1,11 @@
-# ThoxMini Air unboxing - 45s social cut
+# ThoxAir unboxing - 45s social cut
 
 ## Posting plan
 
 - Channel: Instagram Reels + TikTok + LinkedIn + X
 - Date: T-19 days (July 24, 2026)
 - Founder voice: Craig (hardware) leads; Tommy delivers the closing CTA
-- Render dependencies: ThoxMini Air iso hero + exploded + 4-node hero
+- Render dependencies: ThoxAir iso hero + exploded + 4-node hero
 - Sibling cut: paired with `02_thoxmini.md` earlier that week
 
 ## Script (45s)
@@ -15,7 +15,7 @@
 On camera: a sealed THOX shipping box on a dark walnut desk. Brand-cyan
 accent light from camera-right.
 
-Voiceover (Craig): "This is ThoxMini Air. Three minutes from box to
+Voiceover (Craig): "This is ThoxAir. Three minutes from box to
 running."
 
 ### Beat 2 (5 to 15s): Open the box
@@ -30,14 +30,14 @@ deboss on the front. USB-C on the bottom."
 ### Beat 3 (15 to 30s): Plug and first boot
 
 On camera: USB-C plug into a MacBook. The LED bar lights cyan. Status
-badge on the laptop screen fades in: "thoxmini-air-luckfox online."
+badge on the laptop screen fades in: "thoxair-luckfox online."
 
 Voiceover (Tommy): "Plug it in. The Luckfox Pico Mini B inside boots
 in eight seconds. Edge Gallery skills are pre-loaded."
 
 ### Beat 4 (30 to 40s): MagStack reveal
 
-On camera: a second ThoxMini Air clicks into the magnetic halo ring on
+On camera: a second ThoxAir clicks into the magnetic halo ring on
 top of the first. Status badge updates to "2-node stack."
 
 Voiceover (Craig): "Add a second unit. Magnets do the work. Two nodes

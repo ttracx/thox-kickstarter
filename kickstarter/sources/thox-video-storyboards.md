@@ -20,7 +20,7 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 | V02 Ecosystem Montage | 0:45 | 0:30 | Trim turntables to 4s each |
 | V03 CTO Introduction | 0:35 | 0:25 | Trim desk map beat |
 | V04 ThoxKey Demo | 1:30 | 0:50 | Two demo beats instead of four |
-| V05 ThoxMini Air Demo | 1:30 | 0:50 | Travel montage to 2 cuts |
+| V05 ThoxAir Demo | 1:30 | 0:50 | Travel montage to 2 cuts |
 | V06 ThoxMini Demo | 1:45 | 0:55 | Three app beats instead of six |
 | V07 ThoxClip Demo | 1:30 | 0:45 | Two capture scenarios plus payoff |
 | V08 Unified Experience | 2:00 | 1:00 | Compress to 4 handoffs plus caption stack |
@@ -68,7 +68,7 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 - **Talent**: Craig Ross
 - **Location / Set**: Dark studio, plinth set, LED wall
 - **Purpose**: Establish the why. Privacy, portability, ownership. Introduce the tagline.
-- **Setup**: All four devices staged on a black acrylic plinth: ThoxKey, ThoxMini Air, ThoxMini, ThoxClip. Mesh animation loop on the LED wall behind. Emerald practicals low.
+- **Setup**: All four devices staged on a black acrylic plinth: ThoxKey, ThoxAir, ThoxMini, ThoxClip. Mesh animation loop on the LED wall behind. Emerald practicals low.
 
 | Shot | Dur | Camera / Frame | Action / On-screen | Dialogue / Audio | Notes |
 |---|---|---|---|---|---|
@@ -76,7 +76,7 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 | S2 | 10s | MCU, slow push, 50mm | Craig to camera. | Craig: AI is changing everything. But your intelligence shouldn't belong to someone else. | Teleprompter. Two takes: measured and warmer. |
 | S3 | 8s | Macro slider pan, 100mm, rack focus | Pan left to right across the lineup, ThoxKey to ThoxClip, focus pulling device to device. | Craig VO: At THOX.ai we asked a different question. What if AI belonged entirely to you? | Shoot at 59.94 for optional slow motion. |
 | S4 | 10s | CU, 85mm | Craig to camera. | Craig: Today we're introducing an ecosystem built around privacy, portability, and ownership. Welcome to THOX.ai. | Hold eyeline through the beat after the line. |
-| S5 | 9s | 180 degree orbit, gimbal | Orbit the plinth. Xolonium name cards fade in per device as camera passes: ThoxKey, ThoxMini Air, ThoxMini, ThoxClip. | Craig VO: Your AI. Your Data. Your Rules. | Track markers for post name-card placement. |
+| S5 | 9s | 180 degree orbit, gimbal | Orbit the plinth. Xolonium name cards fade in per device as camera passes: ThoxKey, ThoxAir, ThoxMini, ThoxClip. | Craig VO: Your AI. Your Data. Your Rules. | Track markers for post name-card placement. |
 | S6 | 7s | Graphics resolve | Cut to black. THOX.ai logo resolve with emerald sweep. Tagline lockup beneath. | Music button. Fade. | Logo sting comes from the VFX package. |
 
 ## 5. V02 Ecosystem Introduction Montage
@@ -91,7 +91,7 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 | Shot | Dur | Camera / Frame | Action / On-screen | Dialogue / Audio | Notes |
 |---|---|---|---|---|---|
 | S1 | 6s | Render turntable | ThoxKey rotates on black. Xolonium name card: ThoxKey. | Score builds. | Use latest retractable-USB industrial design renders only. |
-| S2 | 6s | Render turntable | ThoxMini Air rotates. Name card: ThoxMini Air. | Score. |  |
+| S2 | 6s | Render turntable | ThoxAir rotates. Name card: ThoxAir. | Score. |  |
 | S3 | 6s | Render turntable | ThoxMini rotates. Name card: ThoxMini. Device face branding reads ThoxMini. | Score. | USB-C compute stick form factor per latest ID. |
 | S4 | 6s | Render turntable | ThoxClip rotates. Name card: ThoxClip. | Score. |  |
 | S5 | 8s | VFX pullback | All four devices arrange into a lineup. Emerald mesh lines draw between them. | VO: One ecosystem. | Mesh lines from the VFX link-pulse pack. |
@@ -137,28 +137,28 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 | S11 | 6s | Product lineup | Three colorways on black acrylic: Matte Black, Space Gray, Arctic White. Name card plus theme line: Personal AI, Pocket Sized. | Score. |  |
 | S12 | 5s | Turntable resolve | Hero rotate. ThoxKey lockup. | Music accent. | Reusable as social short tail. |
 
-## 8. V05 Device Demo 2: ThoxMini Air. Work in Motion
+## 8. V05 Device Demo 2: ThoxAir. Work in Motion
 
 - **Runtime**: 1:30
 - **Talent**: Tommy Xaypanya
 - **Location / Set**: Studio, travel lifestyle locations
 - **Purpose**: Portable Personal AI for work in motion. Wireless pocket or keychain node with MeshStack onboarding. Continue the ThoxKey project.
-- **Setup**: ThoxMini Air hero unit with keychain ring, laptop host, travel props. Continuity: the project file started in V04 reappears here. Battery, charging, and thermal claims stay proof-gated; nothing on screen or in dialogue.
+- **Setup**: ThoxAir hero unit with keychain ring, laptop host, travel props. Continuity: the project file started in V04 reappears here. Battery, charging, and thermal claims stay proof-gated; nothing on screen or in dialogue.
 - **Module VO**: Pick up exactly where you left off. More headroom. Same workspace.
 
 | Shot | Dur | Camera / Frame | Action / On-screen | Dialogue / Audio | Notes |
 |---|---|---|---|---|---|
-| S1 | 5s | Product slide-in, light sweep | ThoxMini Air glides into frame on black. | Score. |  |
-| S2 | 8s | Screen capture | Laptop: THOX.ai MeshStack app, Pair scene. LAN discovery finds ThoxMini Air. Pairing code confirm. Connected toast. Caption: Works offline on LAN after pairing. | UI tones. | MeshStack five-scene flow; this is Pair. No cloud step shown. |
-| S3 | 8s | MCU Tommy | Tommy beside the setup. | Tommy: When you need more capability without sacrificing portability... meet ThoxMini Air. | Locked script. |
+| S1 | 5s | Product slide-in, light sweep | ThoxAir glides into frame on black. | Score. |  |
+| S2 | 8s | Screen capture | Laptop: THOX.ai MeshStack app, Pair scene. LAN discovery finds ThoxAir. Pairing code confirm. Connected toast. Caption: Works offline on LAN after pairing. | UI tones. | MeshStack five-scene flow; this is Pair. No cloud step shown. |
+| S3 | 8s | MCU Tommy | Tommy beside the setup. | Tommy: When you need more capability without sacrificing portability... meet ThoxAir. | Locked script. |
 | S4 | 8s | Screen capture | Projects: the exact project from V04 opens. Caption: Pick up where you left off. | Tommy VO: Same project. Same workspace. | Continuity anchor for V08. |
 | S5 | 7s | Screen capture | Image generation prompt. Grid renders progressively. | Tommy VO: Generate an image. | Show progress visually, no timing numbers. |
 | S6 | 7s | Screen capture | Spreadsheet dropped into Files. Analysis summary plus chart. | Tommy VO: Analyze a spreadsheet. | Demo dataset only. |
 | S7 | 7s | Screen capture | Coding session: agent applies an edit, tests pass tick. | Tommy VO: Ship a fix. | JetBrains Mono overlay. |
 | S8 | 6s | Screen capture | Documents: polish the presentation from V04. | Tommy VO: Finish the deck. |  |
-| S9 | 12s | Travel montage, 3 cuts | Airport gate, hotel desk, cafe window. ThoxMini Air beside the laptop each time. | Score. | No airline or venue branding readable. |
+| S9 | 12s | Travel montage, 3 cuts | Airport gate, hotel desk, cafe window. ThoxAir beside the laptop each time. | Score. | No airline or venue branding readable. |
 | S10 | 6s | Screen edge tease | A second node pulse appears at the edge of the ThoxOS Mini screen. | Tommy VO: And this is where it starts to get interesting. | Plant for V10. Do not explain yet. |
-| S11 | 6s | Turntable resolve | Hero rotate. ThoxMini Air lockup plus theme line: Work in Motion. | Music accent. |  |
+| S11 | 6s | Turntable resolve | Hero rotate. ThoxAir lockup plus theme line: Work in Motion. | Music accent. |  |
 
 ## 9. V06 Device Demo 3: ThoxMini. Your Dedicated AI Workspace
 
@@ -219,12 +219,12 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 |---|---|---|---|---|---|
 | S1 | 9s | Morning desk wide | 8:04 AM on a desk clock. ThoxMini session: research pane plus code pane on the monitor. | VO: Start at your desk. | Aurora Proposal project card visible. |
 | S2 | 6s | Screen insert | Project card: Aurora Proposal. Task list half checked. | Keys, room tone. |  |
-| S3 | 6s | Lifestyle | Packing up. ThoxMini Air slides into a bag sleeve. | VO: Continue on the move. |  |
-| S4 | 9s | Screen capture | Hotel desk: ThoxMini Air pairs to the laptop. Aurora Proposal opens exactly where it left off. Caption: Continue instantly. | UI tone. | Pairing beat mirrors V05 S2. |
+| S3 | 6s | Lifestyle | Packing up. ThoxAir slides into a bag sleeve. | VO: Continue on the move. |  |
+| S4 | 9s | Screen capture | Hotel desk: ThoxAir pairs to the laptop. Aurora Proposal opens exactly where it left off. Caption: Continue instantly. | UI tone. | Pairing beat mirrors V05 S2. |
 | S5 | 7s | Cafe insert plus screen | A different machine at a cafe. ThoxKey inserts. Same workspace loads. Caption: Same workspace. Any machine. | Cafe ambience. |  |
 | S6 | 6s | Street walk insert | ThoxClip tap while walking. | Tommy: Add a section on offline mode to the proposal. | Line lands in S7 payoff. |
 | S7 | 9s | Evening home screen | ThoxMini at home: Aurora Proposal now contains the new offline-mode section note plus captured tasks. A timeline strip shows the day of device handoffs. | VO: And come home to everything already in sync. | Timeline strip is a VFX overlay. |
-| S8 | 8s | Split-screen quad | Four panels recap the day: ThoxMini, ThoxMini Air, ThoxKey, ThoxClip active moments. | Score lifts. | Pull from earlier module selects. |
+| S8 | 8s | Split-screen quad | Four panels recap the day: ThoxMini, ThoxAir, ThoxKey, ThoxClip active moments. | Score lifts. | Pull from earlier module selects. |
 | S9 | 8s | Caption stack over hero | Captions land one by one: Nothing copied manually. Nothing emailed. No interruption. | Score. |  |
 | S10 | 6s | Caption resolve | Final caption: Works offline on LAN after pairing. A faint mesh shimmer previews V10. | Score tail. |  |
 
@@ -233,9 +233,9 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 - **Runtime**: 2:00
 - **Talent**: Tommy Xaypanya (VO)
 - **Location / Set**: Screen-led, minimal set inserts
-- **Purpose**: Software, not hardware. Tour the device OS that ships on ThoxMini and ThoxMini Air, then land on the connectivity cluster as the springboard to MeshStack.
+- **Purpose**: Software, not hardware. Tour the device OS that ships on ThoxMini and ThoxAir, then land on the connectivity cluster as the springboard to MeshStack.
 - **Setup**: All screens from the UI Capture Manifest. Smooth pan and zoom moves in post. One VO line per segment. Decision gate D-V09: confirm every surface against the current ThoxOS Mini build and trim segments for anything unimplemented. Internal-named prototype tiles (Mesh Cognition, KV Cache, Memory Hierarchy, Distributed Inference) are renamed or hidden before capture.
-- **Module VO**: This is ThoxOS Mini, the operating system inside ThoxMini and ThoxMini Air. Here is what lives inside.
+- **Module VO**: This is ThoxOS Mini, the operating system inside ThoxMini and ThoxAir. Here is what lives inside.
 
 | Shot | Dur | Camera / Frame | Action / On-screen | Dialogue / Audio | Notes |
 |---|---|---|---|---|---|
@@ -266,12 +266,12 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 |---|---|---|---|---|---|
 | S1 | 8s | Screen plus MCU | A single ThoxMini runs a long local job. Progress bar crawls. Tommy watches. | Tommy: One device is powerful. | Relative progress only, no numbers. |
 | S2 | 8s | Screen capture | Scene: Identity. MeshStack app first run on the laptop. Create your mesh identity; keys generated on device. Caption: Data stays on your devices. | Tommy: First, create your identity. | Scene 1 of 5. No cloud account step shown. |
-| S3 | 9s | Screen capture | Scene: Pair. LAN discovery finds ThoxMini Air. Pairing code confirm. A new node joins the graph with a link pulse. | Tommy: Pair a device. Watch it join. | Decision gate D-V10: pairing code vs QR. Default: code. |
+| S3 | 9s | Screen capture | Scene: Pair. LAN discovery finds ThoxAir. Pairing code confirm. A new node joins the graph with a link pulse. | Tommy: Pair a device. Watch it join. | Decision gate D-V10: pairing code vs QR. Default: code. |
 | S4 | 8s | Screen capture | Scene: Connect. ThoxClip joins; its captured tasks route into the mesh inbox. Encrypted links draw between nodes. | Tommy: Every device brings something. | Workflow-bridge framing per positioning. |
 | S5 | 11s | Practical plus screen | THE BRANCH, still Pair. MacBook close-up: the THOX.ai MeshStack app is open. Join Mesh. Pairing code entered. A node labeled MacBook Pro appears in the graph. | Tommy: And it's not just THOX hardware. | This is the moment the campaign turns. Give it air. |
 | S6 | 7s | Practical plus screen | Windows PC joins via the MeshStack app. Node appears. | Tommy: Your PC. |  |
 | S7 | 7s | Practical plus screen | Phone: MeshStack app pairing flow, joins. Node appears. Caption: MeshStack app on iOS, iPadOS, Android, macOS, and Windows. | Tommy: Even your phone. | Platform list matches the locked facts table. |
-| S8 | 9s | Screen capture | Scene: Monitor. Device Manager fleet list: ThoxMini (Lead Device), ThoxMini Air, ThoxClip, ThoxKey host, MacBook Pro, Windows PC, iPhone. Status column: Online, Encrypted. | Score builds. | Pays off the V03 S3 desk map. |
+| S8 | 9s | Screen capture | Scene: Monitor. Device Manager fleet list: ThoxMini (Lead Device), ThoxAir, ThoxClip, ThoxKey host, MacBook Pro, Windows PC, iPhone. Status column: Online, Encrypted. | Score builds. | Pays off the V03 S3 desk map. |
 | S9 | 10s | Practical plus screen | Scene: Chat. Tommy asks his Personal AI a question from the iPhone MeshStack app. The reply streams; across the room the ThoxMini status LED works. Caption: Your phone asks. Your devices answer. | Tommy: Ask from anywhere on your mesh. Your own devices answer. | Answer path stays feature-level. No latency numbers. |
 | S10 | 7s | Screen capture | Optional stretch tease: the long job from S1 redistributes across nodes and visibly accelerates. Caption: Mesh Cluster Mode beta. Unlocks at the $1.0M stretch goal. | SFX: node pulse. | Include only with the locked stretch ladder (gate D2). Speedup shown relatively, never as numbers. |
 | S11 | 10s | Full-screen mesh viz | Nodes, encrypted links, one interface pane. Captions land in sequence: Uses the WireGuard protocol. Coordinator never sees plaintext. Works offline on LAN after pairing. | Score peak. | Approved claim wording exactly, sentence case. Emerald palette only. |
@@ -292,13 +292,13 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 | Shot | Dur | Camera / Frame | Action / On-screen | Dialogue / Audio | Notes |
 |---|---|---|---|---|---|
 | S1 | 5s | Vignette | Developer: ThoxMini plus laptop, terminal glow. | Score montage. |  |
-| S2 | 5s | Vignette | Designer: ThoxMini Air beside a tablet, image generation grid. | Score. |  |
+| S2 | 5s | Vignette | Designer: ThoxAir beside a tablet, image generation grid. | Score. |  |
 | S3 | 5s | Vignette | Teacher: ThoxKey in a classroom laptop, lesson outline. | Score. | No students identifiable. |
 | S4 | 5s | Vignette | Doctor: generic note-taking with ThoxClip. No patient data anywhere on screen. | Score. | Absolutely no health-compliance implication. |
 | S5 | 5s | Vignette | Researcher: ThoxMini, long document plus citations pane. | Score. |  |
-| S6 | 5s | Vignette | Small business owner: ThoxMini Air at a shop counter, spreadsheet summary. | Score. | No brand signage. |
+| S6 | 5s | Vignette | Small business owner: ThoxAir at a shop counter, spreadsheet summary. | Score. | No brand signage. |
 | S7 | 5s | Vignette | Student: ThoxKey in a library laptop. | Score. |  |
-| S8 | 5s | Vignette | Traveler: ThoxMini Air plus ThoxClip at an airport gate. | Score. |  |
+| S8 | 5s | Vignette | Traveler: ThoxAir plus ThoxClip at an airport gate. | Score. |  |
 | S9 | 5s | Grid resolve | Nine vignettes tile into a grid. Mesh lines connect them. | VO: Different work. Different devices. One private mesh. |  |
 | S10 | 3s | Lockup | THOX.ai lockup. | Music accent. |  |
 
@@ -360,8 +360,8 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 - Desk plates: hero desk empty, hero desk full, overhead map, for VFX flexibility.
 - Lifestyle bank: cafe, airport gate, hotel desk, street walk, workshop, meeting room, classroom-safe angle.
 - LED wall loops: mesh idle, mesh growth, ThoxOS Mini screensaver.
-- Air Cluster support: four ThoxMini Air units arranged on the magnetic stack base (Tier 9 reward support). Emerald treatment, no purple, no charging claims.
-- ThoxMini Air on the Qi pad, placement beauty only. Charging behavior stays proof-gated: no on-screen charging claims.
+- Air Cluster support: four ThoxAir units arranged on the magnetic stack base (Tier 9 reward support). Emerald treatment, no purple, no charging claims.
+- ThoxAir on the Qi pad, placement beauty only. Charging behavior stays proof-gated: no on-screen charging claims.
 - Stills: 12 plus frames pulled from masters for press kit reuse.
 
 ## 20. Compliance Verification
@@ -394,7 +394,7 @@ Thirteen modules: founder segments, four device demos, unified experience, ThoxO
 ### Pre-lock checklist
 
 - Launch date reads Thursday, July 9, 2026, 9:00 AM PT. Close date Saturday, August 8, 2026, 9:00 AM PT where shown.
-- Only ThoxKey, ThoxMini, ThoxMini Air, ThoxClip, MeshStack, and ThoxOS Mini appear. No other hardware, no retired names, no Nova.
+- Only ThoxKey, ThoxMini, ThoxAir, ThoxClip, MeshStack, and ThoxOS Mini appear. No other hardware, no retired names, no Nova.
 - Every privacy statement matches the four approved phrases word for word, rendered sentence case in captions.
 - No numeric benchmarks, tokens per second, TOPS, SoC names, connector internals, or internal algorithm names on screen or in dialogue.
 - No reward prices or delivery dates inside the video; pricing and Estimated delivery live on the campaign page.

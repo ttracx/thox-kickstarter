@@ -1,6 +1,6 @@
 ---
 title: ThoxAir Spec Sheet
-device: thoxmini-air
+device: thoxair
 version: 2
 date: 2026-08
 ---
@@ -9,7 +9,7 @@ date: 2026-08
 
 > Tetherless edge AI cluster node with magnetic stacking. Compute core of ThoxMini + LiPo cell + MagStack ring.
 
-![ThoxAir](../../../assets/device/thoxmini-air-matte-black-4view.png)
+![ThoxAir](../../../assets/device/thoxair-matte-black-4view.png)
 
 ---
 
@@ -119,7 +119,7 @@ Email `dev@thox.ai` for claims.
 
 ## Links
 
-- **User manual**: [`content/manuals/thoxmini-air/MANUAL.md`](../../../content/manuals/thoxmini-air/MANUAL.md)
+- **User manual**: [`content/manuals/thoxair/MANUAL.md`](../../../content/manuals/thoxair/MANUAL.md)
 - **Firmware**: [ttracx/magstack-air](https://github.com/ttracx/magstack-air)
 - **SoC**: [ttracx/thoxmini-air-soc](https://github.com/ttracx/thoxmini-air-soc)
 - **Models**: [ttracx/thoxllm-factory](https://github.com/ttracx/thoxllm-factory)

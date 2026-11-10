@@ -21,7 +21,7 @@ for the campaign's hero "wow" shot.
 
 ## Current state
 
-- magstack-air: prototype, no CHANGELOG, no release tag, no hardware field test (Pi Zero 2 W path now legacy; RV1103 port pending after 2026-06-25 ThoxMini Air SoC retarget)
+- magstack-air: prototype, no CHANGELOG, no release tag, no hardware field test (Pi Zero 2 W path now legacy; RV1103 port pending after 2026-06-25 ThoxAir SoC retarget)
 - magstack-air-edge-rs: generated in sandbox without Rust toolchain; compile unverified
 - thox-q2-print-farm Cluster Dock: split-and-bond dovetail joint unproven
 

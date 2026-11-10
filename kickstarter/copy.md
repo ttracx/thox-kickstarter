@@ -5,7 +5,7 @@ Canonical campaign copy. **Two registers:**
 - **Full copy** → the Kickstarter Story page (`story.md` / `story.html`) and long-form surfaces.
 - **Graphic-ready copy** → on-image text. Keep it short so assets stay readable and premium.
 
-**Campaign focus:** the four launch devices — **ThoxKey · ThoxMini Air · ThoxMini · ThoxClip** — plus the **MeshStack app**. Everything else (THOX Nova, the Pro / Pro Max / Pro Ultra line, ThoxMigrate) is shown as **roadmap and vision**, not as a campaign reward.
+**Campaign focus:** the four launch devices — **ThoxKey · ThoxAir · ThoxMini · ThoxClip** — plus the **MeshStack app**. Everything else (THOX Nova, the Pro / Pro Max / Pro Ultra line, ThoxMigrate) is shown as **roadmap and vision**, not as a campaign reward.
 
 ## Brand constants
 
@@ -40,8 +40,8 @@ Long paragraphs · certification claims · HIPAA/GDPR claims · "Runs any model"
 - **Footer line:** Compact connected compute for local AI.
 - **Honest positioning:** Compact local compute companion. Final performance depends on production hardware and software release.
 
-## ThoxMini Air
-- **Title:** ThoxMini Air
+## ThoxAir
+- **Title:** ThoxAir
 - **Subheadline:** Wireless THOX workflows in a battery-powered form.
 - **Short description:** A portable wireless THOX companion for lightweight local services, device pairing, mobile access, and on-the-go workflows.
 - **Callouts:** Wireless-first companion · Battery-powered portability · Device pairing + mobile access · Local-first workflow support · Works with THOX companion apps
@@ -59,7 +59,7 @@ Long paragraphs · certification claims · HIPAA/GDPR claims · "Runs any model"
 ## The THOX Ecosystem
 - **Title:** The THOX Ecosystem
 - **Subheadline:** Four devices. One modular local AI ecosystem.
-- **Device roles:** ThoxKey carries your workspace. · ThoxMini provides compact connected compute. · ThoxMini Air adds wireless portability. · ThoxClip brings THOX to your phone.
+- **Device roles:** ThoxKey carries your workspace. · ThoxMini provides compact connected compute. · ThoxAir adds wireless portability. · ThoxClip brings THOX to your phone.
 - **Campaign line:** Your AI. Your Data. Your Rules.
 - **Short description:** THOX devices are being developed for people who want more ownership over their AI workflows, more control over their data, and more flexibility than cloud-only tools can provide.
 
@@ -76,7 +76,7 @@ ThoxKey is the simplest way to carry your THOX workspace with you. It is a compa
 - Simple USB plug-in workflow for supported desktop and laptop systems
 - Local-first design: your files and device tools stay physically in your hands
 - Prototype-friendly storage for installers, model files, documentation, recovery scripts, and offline resources
-- Companion to ThoxOS, ThoxMini, ThoxMini Air, and ThoxClip workflows
+- Companion to ThoxOS, ThoxMini, ThoxAir, and ThoxClip workflows
 - No cloud account required for basic file access, depending on host system configuration
 - Compact THOX-branded enclosure
 
@@ -102,9 +102,9 @@ ThoxMini is a pocket-sized local AI device that brings THOX workflows to the edg
 
 **What it is, honestly:** ThoxMini is a compact local compute companion. Final performance, model support, and runtime capabilities depend on the production hardware configuration and the supported software release.
 
-## ThoxMini Air — Wireless THOX workflows in a smaller, battery-powered form.
+## ThoxAir — Wireless THOX workflows in a smaller, battery-powered form.
 
-ThoxMini Air is the wireless version of the ThoxMini concept. It is a small, battery-powered THOX companion that supports lightweight local services, device pairing, wireless access, and on-the-go workflows without a constant USB tether. Built for portability, quick access, and local-first interaction between THOX devices, companion apps, and supported host systems.
+ThoxAir is the wireless version of the ThoxMini concept. It is a small, battery-powered THOX companion that supports lightweight local services, device pairing, wireless access, and on-the-go workflows without a constant USB tether. Built for portability, quick access, and local-first interaction between THOX devices, companion apps, and supported host systems.
 
 **Key features**
 - Wireless-first companion design for portable THOX workflows
@@ -118,7 +118,7 @@ ThoxMini Air is the wireless version of the ThoxMini concept. It is a small, bat
 
 **Best for:** portable local AI workflows · wireless access to THOX tools · device-to-device demos · backers who want a smaller wireless THOX companion.
 
-**What it is, honestly:** ThoxMini Air is a wireless companion device for lightweight local workflows. It is not intended to replace a laptop, workstation, or a larger THOX compute device.
+**What it is, honestly:** ThoxAir is a wireless companion device for lightweight local workflows. It is not intended to replace a laptop, workstation, or a larger THOX compute device.
 
 ## ThoxClip — The magnetic THOX companion for your phone.
 
@@ -131,7 +131,7 @@ ThoxClip is a slim magnetic companion designed to attach to the back of compatib
 - THOX MagStack design direction for modular device attachment and pairing
 - Local-first mobile companion role within the THOX hardware and app ecosystem
 - 3D-printed prototype validation before final production refinement
-- Built to complement ThoxKey, ThoxMini, and ThoxMini Air, not replace them
+- Built to complement ThoxKey, ThoxMini, and ThoxAir, not replace them
 
 **Best for:** phone-based THOX demos · magnetic mobile companion workflows · portable AI hardware experimentation · a THOX device that lives with your phone.
 
@@ -141,7 +141,7 @@ ThoxClip is a slim magnetic companion designed to attach to the back of compatib
 
 - ThoxKey carries your workspace.
 - ThoxMini provides compact connected compute.
-- ThoxMini Air adds wireless portability.
+- ThoxAir adds wireless portability.
 - ThoxClip brings THOX to your phone.
 
 Four devices. One modular local AI ecosystem. **Your AI. Your Data. Your Rules.**
@@ -168,7 +168,7 @@ Positioning: **Build. Don't replace.** The four campaign devices ship first; the
 
 ## THOX Founders Complete Set — $549
 
-Back all four launch devices (ThoxKey, ThoxMini Air, ThoxMini, ThoxClip) in one pledge and join the **THOX Founders Club**. À-la-carte Kickstarter value is $611 ($34 + $79 + $169 + $329), so the set saves $62 vs individual pledges and $188 off the $737 combined retail.
+Back all four launch devices (ThoxKey, ThoxAir, ThoxMini, ThoxClip) in one pledge and join the **THOX Founders Club**. À-la-carte Kickstarter value is $611 ($34 + $79 + $169 + $329), so the set saves $62 vs individual pledges and $188 off the $737 combined retail.
 
 Included with the Founders tier:
 - A **numbered** Founders Club metal member card (#0001 and up, one per Founder)

@@ -38,7 +38,7 @@ EDU IT buyers cannot adopt cloud AI tools easily because of FERPA + parental-con
 
 ## Booth / demo configuration
 
-- SKUs to demo: THOXKey EDU classroom kit, MagStack Air (Pi Zero variant safer for K-12), ThoxMini Air
+- SKUs to demo: THOXKey EDU classroom kit, MagStack Air (Pi Zero variant safer for K-12), ThoxAir
 - Live demo: classroom scenario, 8 students each with THOXKey EDU running same prompt; teacher dashboard showing per-student progress with zero data leaving the room
 - Signage: "Private AI for every student. Nothing leaves the classroom." + EDU color treatment (lighter palette, brand-approved)
 - Handout: FERPA compliance one-pager + parent-consent template + curriculum-integration starter guide

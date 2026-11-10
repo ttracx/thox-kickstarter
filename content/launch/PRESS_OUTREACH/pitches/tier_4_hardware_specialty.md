@@ -43,7 +43,7 @@ Variable. Hackaday and Make accept embargoes when terms are clear. Tom's Hardwar
 
 - **URL**: https://www.tomshardware.com
 - **Beat**: PC hardware, components, SBCs, peripherals. Strong on Raspberry Pi and SBC coverage.
-- **Pitch angle**: the SBC + AI angle. ThoxMini and ThoxMini Air on Luckfox Pico Mini B. ThoxNova on LattePanda N100 with Intel Xe + Vulkan + SYCL runtime. Frame as "the SBC family for on-device AI."
+- **Pitch angle**: the SBC + AI angle. ThoxMini and ThoxAir on Luckfox Pico Mini B. ThoxNova on LattePanda N100 with Intel Xe + Vulkan + SYCL runtime. Frame as "the SBC family for on-device AI."
 - **Contact channel**: `tipline@tomshardware.com` (verify). Reporter-specific: pull byline from recent SBC / Pi / AI-hardware coverage. They have a dedicated SBC + maker writer; check the masthead.
 - **Submission guidelines**: https://www.tomshardware.com/about-us/contact (verify)
 - **Lead time**: 5-7 days.

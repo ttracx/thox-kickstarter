@@ -52,7 +52,7 @@ Drives mesh cognition + training/inference memory placement.
 
 ## Mesh
 
-- MagStack ring on ThoxMini Air enables physical clustering up to 8
+- MagStack ring on ThoxAir enables physical clustering up to 8
   Pico Mini B nodes via pogo pins.
 - thox-digitalhumans handoff engine arbitrates conversation routing
   across multiple devices.

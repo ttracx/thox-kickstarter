@@ -43,13 +43,13 @@ DEVICES = [
         "fit": "contain",
     },
     {
-        "key": "thoxminiair", "name_w": "Thox", "name_g": "Mini Air",
+        "key": "thoxair", "name_w": "Thox", "name_g": "Air",
         "sub": "Wireless THOX workflows in a battery-powered form.",
         "desc": "A portable wireless THOX companion for lightweight local services, device pairing, mobile access, and on-the-go workflows.",
         "callouts": ["Wireless-first companion", "Battery-powered portability", "Device pairing + mobile access", "Local-first workflow support", "Works with THOX companion apps"],
         "footer": "Portable wireless access to THOX workflows.",
         "honest": "Wireless companion for lightweight local workflows. Not a laptop or workstation replacement.",
-        "img": REPO / "assets/device/thoxmini-air-matte-black-4view.png",
+        "img": REPO / "assets/device/thoxair-matte-black-4view.png",
         "fit": "contain",
     },
     {

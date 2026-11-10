@@ -9,7 +9,7 @@ Anchors (from CAMPAIGN_INFO.md): **Launch Jul 7, 2026 (T-0)** · **Close Aug 6, 
 `T` = Tommy, `C` = Craig, `B` = both. Channels: LI = LinkedIn, X = X/Bluesky/Mastodon (write
 once, fan out), IG = Instagram, TT = TikTok, YT = YouTube.
 
-The four campaign devices are **ThoxKey**, **ThoxMini Air**, **ThoxMini**, and **ThoxClip**.
+The four campaign devices are **ThoxKey**, **ThoxAir**, **ThoxMini**, and **ThoxClip**.
 Keep claims honest: small devices carry identity, route, and capture; heavier work routes to
 capable local hardware the user owns. Never post a cluster / LLM-host claim.
 
@@ -24,7 +24,7 @@ capable local hardware the user owns. Never post a cluster / LLM-host claim.
 | 1 | Mon | Thesis | "Personal AI on silicon you own" launch teaser | 1:1 + 16:9 vid | LI, X, IG | img §5 → vid §6 | T |
 | 1 | Wed | Product | ThoxKey reveal (the USB private-AI key) | 4:5 + 9:16 vid | IG, TT, X | img §1 → vid §1 | T |
 | 1 | Fri | People | Who is building THOX (Craig + Tommy) | 4:5 | LI, IG | img §6 | B |
-| 2 | Mon | Product | ThoxMini Air reveal (wireless companion) | 4:5 + 9:16 vid | X, IG, TT | img §1 → vid §1 | T |
+| 2 | Mon | Product | ThoxAir reveal (wireless companion) | 4:5 + 9:16 vid | X, IG, TT | img §1 → vid §1 | T |
 | 2 | Wed | Proof | ThoxKey unlock: plug in, workspace opens | 9:16 vid | TT, IG, X | img §3 → vid §3 | T |
 | 2 | Fri | Thesis | Founder POV: rented vs. owned AI | text + 1:1 | LI, X | img §5 | T |
 | 3 | Mon | Product | ThoxMini reveal (compact local compute node) | 4:5 + 9:16 vid | X, IG | img §1 → vid §1 | T |
@@ -53,7 +53,7 @@ Weeks 6–7 (T-30 → T-15 · Jun 7 → Jun 22): repeat the strongest performers
 | T-10 | Thesis | Long-form thesis post / hero video drop | 16:9 | LI, YT, X |
 | T-8 | People | "Meet the founders" before launch | 4:5 | LI, IG |
 | **T-7** | Campaign | Countdown: ThoxKey - "7 days" | 9:16 vid | all |
-| **T-6** | Campaign | Countdown: ThoxMini Air - "6 days" | 9:16 vid | all |
+| **T-6** | Campaign | Countdown: ThoxAir - "6 days" | 9:16 vid | all |
 | **T-5** | Campaign | Countdown: ThoxMini - "5 days" | 9:16 vid | all |
 | **T-4** | Campaign | Countdown: ThoxClip - "4 days" | 9:16 vid | all |
 | **T-3** | Campaign | Countdown: the family - "3 days" | 9:16 vid | all |
@@ -118,7 +118,7 @@ the feed alive without burning urgency you'll need for the close.
 
 Cadence drops to 2/week. Objective: keep backers warm, drive BackerKit add-ons. Beats follow
 TIMELINE.md milestones: BackerKit survey, design validation, pilot production, and each
-**ship** date (ThoxKey / ThoxMini Air / ThoxMini in Q3/Q4 2026; ThoxClip and the Complete Founder
+**ship** date (ThoxKey / ThoxAir / ThoxMini in Q3/Q4 2026; ThoxClip and the Complete Founder
 Kit in Q1 2027). Each ship milestone = one Proof post (real unit, real packaging) + one People
 post (the line running).
 

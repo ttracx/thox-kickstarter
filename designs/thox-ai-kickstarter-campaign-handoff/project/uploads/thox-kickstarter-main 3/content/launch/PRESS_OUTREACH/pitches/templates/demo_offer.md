@@ -7,7 +7,7 @@ Demo unit + assembly experience offer. Use for reporters who want hands-on acces
 - `{{ publication }}`
 - `{{ reporter }}`
 - `{{ ship_address_request }}` - opening line asking for the reporter's shipping address; default is the canonical line below
-- `{{ demo_skus }}` - list of demo SKUs being offered; default is ThoxAir + ThoxMini Air + MagStack Cluster Dock kit
+- `{{ demo_skus }}` - list of demo SKUs being offered; default is ThoxAir + ThoxAir + MagStack Cluster Dock kit
 - `{{ assembly_option }}` - whether assembly walkthrough video is offered; yes for Tier 4
 - `{{ founder_signoff }}`
 
@@ -26,7 +26,7 @@ Hands-on with THOX: demo unit + assembly walkthrough offer
 ## Preview text (~60 chars)
 
 ```
-ThoxAir + ThoxMini Air demo. Ships this week. Loan unit.
+ThoxAir + ThoxAir demo. Ships this week. Loan unit.
 ```
 
 ## Body (~290 words)
@@ -40,7 +40,7 @@ Demo SKUs
 
 {{ demo_skus }}
 
-Default: one ThoxAir node, one ThoxMini Air node, and the MagStack Cluster Dock kit (4-node printable dock + magnets + pogo pins). This is enough to demonstrate single-node compute, multi-node compute via clustering, and the on-device router routing between local nodes.
+Default: one ThoxAir node, one ThoxAir node, and the MagStack Cluster Dock kit (4-node printable dock + magnets + pogo pins). This is enough to demonstrate single-node compute, multi-node compute via clustering, and the on-device router routing between local nodes.
 
 The demo is a loan unit. We ask that you return it in working condition within 30 days of receipt, or write to us about extending the loan if your editorial calendar pushes longer. We cover return shipping. If you would prefer to purchase the unit at backer pricing after the loan period, we can convert it instead.
 

@@ -131,7 +131,7 @@ What has shipped before the launch:
 - ThoxMini provisioner shipped for the Luckfox Pico Mini B.
 - ThoxNova provisioner staged for the LattePanda N100.
 - MagStack Cluster Dock print kit shipped at ttracx/thox-3dprint-kit PR #3.
-- ThoxMini Air v4 multi-material 3MF kit shipped at PR #4.
+- ThoxAir v4 multi-material 3MF kit shipped at PR #4.
 - Kickstarter launch content pack shipped: VIDEO_SCRIPT, STORYBOARD, REWARDS_FAQ, MILESTONES, STRETCH_GOALS, PRESS_KIT.
 - Backer reward fulfillment workflow shipped at ttracx/thox-kickstarter-integration (55 of 55 tests green).
 

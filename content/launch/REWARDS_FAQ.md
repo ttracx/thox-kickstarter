@@ -134,7 +134,7 @@ ThoxMini, ThoxAir, and ThoxNova are designed with standard fasteners and replace
 
 ### 21. DIY mod-friendly?
 
-Yes. The 3D-print kits for ThoxMini Air and the MagStack Cluster Dock are public on `ttracx/thox-3dprint-kit`. The agent runtime accepts custom skills. The router accepts any of seven model backends. Mod away. Modifications void the warranty on the modified part; everything else is still covered.
+Yes. The 3D-print kits for ThoxAir and the MagStack Cluster Dock are public on `ttracx/thox-3dprint-kit`. The agent runtime accepts custom skills. The router accepts any of seven model backends. Mod away. Modifications void the warranty on the modified part; everything else is still covered.
 
 ### 22. Power requirements?
 
