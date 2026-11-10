@@ -8,9 +8,9 @@ The format follows Keep a Changelog 1.1, and this project tracks campaign-source
 
 ### Official product naming (2026-08-02)
 
-- Renamed the wireless launch device from **ThoxMini Air** to **ThoxAir** across canonical campaign copy, rewards, demos, production scripts, and the static preview.
-- Kept legacy `thoxmini-air` paths and identifiers only for compatibility; user-facing copy must render **ThoxAir**.
-- Reversed the validation gate so `ThoxMini Air` is rejected and `ThoxAir` is required.
+- Renamed the wireless launch device from **ThoxAir** to **ThoxAir** across canonical campaign copy, rewards, demos, production scripts, and the static preview.
+- Kept legacy `thoxair` paths and identifiers only for compatibility; user-facing copy must render **ThoxAir**.
+- Reversed the validation gate so `ThoxAir` is rejected and `ThoxAir` is required.
 
 
 ### Launch-readiness audit (2026-07-27)

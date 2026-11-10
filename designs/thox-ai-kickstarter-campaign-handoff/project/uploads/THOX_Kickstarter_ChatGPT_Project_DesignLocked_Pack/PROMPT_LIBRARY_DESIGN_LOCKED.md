@@ -26,7 +26,7 @@ ThoxKey:
 A compact THOX-branded USB drive on a keyring beside a laptop, dark #09090B campaign surface, emerald #10B981 edge accent, Xolonium product label treatment, Inter microcopy space, local-first AI workspace suggested on-screen, no cloud icons, no security-key framing.
 ```
 
-ThoxMini Air:
+ThoxAir:
 
 ```text
 A small wireless THOX pocket node with keychain ring, MeshStack pairing screen nearby, black and zinc surfaces, emerald status light, Xolonium title space, JetBrains Mono device label, no purple, no unverified certification marks, clean 3:2 reward-tile composition.

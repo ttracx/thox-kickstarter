@@ -20,7 +20,7 @@ ExecStart=/usr/local/bin/magair-node \
   --beat-ms ${MAGSTACK_AIR_BEAT_MS} \
   --failure-timeout-ms ${MAGSTACK_AIR_FAILURE_TIMEOUT_MS} \
   --label tier=air \
-  --label product=thoxmini-air
+  --label product=thoxair
 Restart=on-failure
 RestartSec=3
 NoNewPrivileges=true

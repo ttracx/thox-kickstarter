@@ -26,7 +26,7 @@ Each entry in `models/catalog.json → models[]` MUST provide:
 | `visibility` | enum | `public` (openly downloadable), `gated` (public listing, access request), or `private` (not listed publicly). |
 | `status` | enum | `live` (pullable now), `coming-soon` (announced/gated preview), or `roadmap` (planned). |
 | `capabilities` | string[] | Subset of `tools`, `think`, `vision`, `code`, `browser`. May be empty. |
-| `devices` | string[] | THOX devices/tiers the model targets (`ThoxKey`, `ThoxMini Air`, `ThoxMini`, `ThoxNova`). |
+| `devices` | string[] | THOX devices/tiers the model targets (`ThoxKey`, `ThoxAir`, `ThoxMini`, `ThoxNova`). |
 | `sources` | object | `huggingface` and `ollama` keys; each a repo/tag string or `null`. At least one must be non-null. |
 | `blurb` | string | One–two sentence description, ≤ 240 chars, no marketing superlatives that overstate hardware ("runs a 70B on a keychain"). |
 

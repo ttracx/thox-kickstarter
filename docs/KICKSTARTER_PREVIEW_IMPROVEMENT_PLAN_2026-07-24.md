@@ -19,7 +19,7 @@ Two campaign timelines remain in circulation:
 
 The Kickstarter editor values must win. Reconcile the repository, website state machine, emails, social posts, reward availability, and close runbook before public promotion.
 
-The June campaign setup guide is still useful for design, trust, prototype, AI-disclosure, manufacturing, and page-structure guidance, but its Nova-led device lineup is retired for the current launch. The current reward lineup is ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. ThoxNova may appear only as roadmap context, not as a launch reward.
+The June campaign setup guide is still useful for design, trust, prototype, AI-disclosure, manufacturing, and page-structure guidance, but its Nova-led device lineup is retired for the current launch. The current reward lineup is ThoxKey, ThoxAir, ThoxMini, and ThoxClip. ThoxNova may appear only as roadmap context, not as a launch reward.
 
 ## Executive verdict
 
@@ -78,7 +78,7 @@ Priority formula:
 
 Most AI tools ask you to send your work, notes, files, and ideas somewhere else. THOX.ai is building a local-first hardware family for people who want private AI they can own, carry, and control.
 
-Start with a $24 ThoxKey, add wireless routing with ThoxMini Air, run lightweight local services on ThoxMini, or capture private context with ThoxClip. Each device does what it can honestly do. Heavier work routes to capable local hardware you own.
+Start with a $24 ThoxKey, add wireless routing with ThoxAir, run lightweight local services on ThoxMini, or capture private context with ThoxClip. Each device does what it can honestly do. Heavier work routes to capable local hardware you own.
 
 ### First-screen support line
 
@@ -102,14 +102,14 @@ Never use an unlabeled generated render as apparent production photography.
 | Device | Starts at | Best for | Honest boundary |
 |---|---:|---|---|
 | ThoxKey | $24 early bird | Portable identity, encrypted launcher, recovery, and configuration | Not a standalone LLM computer |
-| ThoxMini Air | $69 early bird | Lightweight wireless routing and device coordination | Not a workstation or large-model inference box |
+| ThoxAir | $69 early bird | Lightweight wireless routing and device coordination | Not a workstation or large-model inference box |
 | ThoxMini | $149 early bird | Local services, lightweight agents, encrypted storage, and automations | Large-model work routes to capable local hardware |
 | ThoxClip | $299 early bird | Voice capture, workflow triggers, field notes, and secure handoff | Not a medical, emergency, surveillance, or regulated safety device |
 
 Add a simple recommendation below the table:
 
 - Start with **ThoxKey** for the lowest-cost entry.
-- Choose **ThoxMini Air** for a sub-$100 wireless companion.
+- Choose **ThoxAir** for a sub-$100 wireless companion.
 - Choose **ThoxMini** for the practical local compute node.
 - Choose **ThoxClip** for premium capture and command away from the desk.
 - Choose the **Complete Founder Kit** for one of every launch device.
@@ -140,7 +140,7 @@ Create one evidence card per device. Each card must contain:
 Recommended proof sequence:
 
 - ThoxKey: plug in, unlock or launch the local workspace, show recovery/configuration flow.
-- ThoxMini Air: power on, join the local THOX environment, route a lightweight command.
+- ThoxAir: power on, join the local THOX environment, route a lightweight command.
 - ThoxMini: boot, show one local service or lightweight agent, show encrypted local storage or automation status.
 - ThoxClip: capture a note or trigger, then show secure handoff into the paired local environment.
 
@@ -153,7 +153,7 @@ Use this template and fill only from dated engineering evidence:
 | Device | Demonstrated now | Current stage | Remaining before production | Evidence |
 |---|---|---|---|---|
 | ThoxKey | `[verified demonstration]` | `[stage]` | `[remaining work]` | `[dated photo/video/build link]` |
-| ThoxMini Air | `[verified demonstration]` | `[stage]` | `[remaining work]` | `[dated photo/video/build link]` |
+| ThoxAir | `[verified demonstration]` | `[stage]` | `[remaining work]` | `[dated photo/video/build link]` |
 | ThoxMini | `[verified demonstration]` | `[stage]` | `[remaining work]` | `[dated photo/video/build link]` |
 | ThoxClip | `[verified demonstration]` | `[stage]` | `[remaining work]` | `[dated photo/video/build link]` |
 
@@ -164,8 +164,8 @@ The canonical matrix has 13 reward tiers. Before launch, reduce decision overloa
 1. Supporter.
 2. Early-bird ThoxKey.
 3. ThoxKey Kickstarter Special.
-4. Early-bird ThoxMini Air.
-5. ThoxMini Air Kickstarter Special.
+4. Early-bird ThoxAir.
+5. ThoxAir Kickstarter Special.
 6. Early-bird ThoxMini.
 7. ThoxMini Kickstarter Special.
 8. Early-bird ThoxClip.
@@ -174,7 +174,7 @@ The canonical matrix has 13 reward tiers. Before launch, reduce decision overloa
 
 Move Starter, Developer, and Wearable Pro combinations into add-on guidance or the pledge manager. This keeps one complete bundle while allowing backers to build their own pair.
 
-Recommended featured reward while inventory remains: **Early-bird ThoxMini Air at $69**. It is below $100, demonstrates the ecosystem more clearly than a digital tier, and provides a stronger physical entry point than a configuration key alone. When it sells out, feature the standard ThoxMini Air reward.
+Recommended featured reward while inventory remains: **Early-bird ThoxAir at $69**. It is below $100, demonstrates the ecosystem more clearly than a digital tier, and provides a stronger physical entry point than a configuration key alone. When it sells out, feature the standard ThoxAir reward.
 
 Keep the $24 ThoxKey prominent in the hero as the lowest-cost physical entry. Keep the Complete Founder Kit prominent in the Story as the high-value full-family option.
 
@@ -182,14 +182,14 @@ If any tier already has backers, do not change its price, contents, or delivery 
 
 ## Delivery-date correction gate
 
-The current Q3/Q4 2026 estimates for ThoxKey, ThoxMini Air, and ThoxMini are aggressive relative to a late campaign close and hardware validation work. Do not change them from this document alone. Operations, manufacturing, finance, and certification owners must approve the final windows.
+The current Q3/Q4 2026 estimates for ThoxKey, ThoxAir, and ThoxMini are aggressive relative to a late campaign close and hardware validation work. Do not change them from this document alone. Operations, manufacturing, finance, and certification owners must approve the final windows.
 
 Conservative candidate windows from the repository review:
 
 | Reward | Current canonical estimate | Candidate conservative estimate |
 |---|---|---|
 | ThoxKey | Q3-Q4 2026 | Q4 2026 |
-| ThoxMini Air | Q3-Q4 2026 | Q1 2027 |
+| ThoxAir | Q3-Q4 2026 | Q1 2027 |
 | ThoxMini | Q3-Q4 2026 | Q1 2027 |
 | ThoxClip | Q1 2027 | Q2 2027 |
 | Complete Founder Kit | Q1 2027 | Q2 2027 |
@@ -310,7 +310,7 @@ Craig Ross, CEO, owns the mission, product positioning, manufacturing path, oper
 
 ### Update 6: Which THOX should you choose?
 
-Use ThoxKey for the lowest-cost entry, ThoxMini Air for a sub-$100 wireless companion, ThoxMini for local services and automations, ThoxClip for premium capture and command, or the Complete Founder Kit for the full launch family.
+Use ThoxKey for the lowest-cost entry, ThoxAir for a sub-$100 wireless companion, ThoxMini for local services and automations, ThoxClip for premium capture and command, or the Complete Founder Kit for the full launch family.
 
 Include a mobile-readable reward comparison and current early-bird availability.
 
@@ -343,7 +343,7 @@ Design rules:
 ## Final go/no-go checklist
 
 - [ ] Kickstarter editor dates and $150,000 goal match every repository and website surface.
-- [ ] Current launch rewards are ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip.
+- [ ] Current launch rewards are ThoxKey, ThoxAir, ThoxMini, and ThoxClip.
 - [ ] ThoxNova is roadmap-only and does not appear as a launch reward.
 - [ ] Every device has real prototype evidence or an explicit prototype-status disclosure.
 - [ ] Every concept image is labeled.

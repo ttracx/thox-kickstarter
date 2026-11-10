@@ -13,7 +13,7 @@ Brand tokens and typography are the same as [`../README.md`](../README.md).
 |---|---|
 | **ThoxKey** | `thoxkey-matte-black.png`, `thoxkey-space-gray.png`, `thoxkey-arctic-white.png`, `thoxkey-colorways.png` (lineup board) |
 | **ThoxMini** | `thoxmini-matte-black.png`, `thoxmini-space-gray.png`, `thoxmini-arctic-white.png`, `thoxmini-packaging.png` (retail board) |
-| **ThoxMini Air** | `thoxmini-air-matte-black-4view.png`, `thoxmini-air-space-gray-4view.png`, `thoxmini-air-arctic-white-4view.png` (front / back / side / detail per color) |
+| **ThoxAir** | `thoxair-matte-black-4view.png`, `thoxair-space-gray-4view.png`, `thoxair-arctic-white-4view.png` (front / back / side / detail per color) |
 | **ThoxClip** | `thoxclip-matte-black-back.png`, `thoxclip-space-gray-back.png`, `thoxclip-arctic-white-back.png`, `thoxclip-packaging.png` (retail board) |
 | **THOX Nova** | `thoxnova-spec-board.png` (full spec board: internals, MagStack duo/quad architecture, colorways, MeshStack network, specifications) |
 
@@ -24,7 +24,7 @@ Product close-up clips for the four campaign devices, for social cutdowns and th
 | Device | File |
 |---|---|
 | ThoxKey | `video/thoxkey-closeup.mp4` |
-| ThoxMini Air | `video/thoxmini-air-closeup.mp4` |
+| ThoxAir | `video/thoxair-closeup.mp4` |
 | ThoxMini | `video/thoxmini-closeup.mp4` |
 | ThoxClip | `video/thoxclip-closeup.mp4` |
 

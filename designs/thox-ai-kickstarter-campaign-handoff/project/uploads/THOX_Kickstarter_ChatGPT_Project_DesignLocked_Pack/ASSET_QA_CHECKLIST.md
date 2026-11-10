@@ -4,7 +4,7 @@
 
 - [ ] Launch date is July 9, 2026 everywhere.
 - [ ] Close date is August 8, 2026 everywhere it appears.
-- [ ] Product scope is ThoxKey, ThoxMini, ThoxMini Air, ThoxClip, MeshStack.
+- [ ] Product scope is ThoxKey, ThoxMini, ThoxAir, ThoxClip, MeshStack.
 - [ ] No ThoxAir, ThoxOnStick, ThoxStick, or Nova-as-reward in public copy.
 - [ ] No city or state in public output.
 

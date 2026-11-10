@@ -12,7 +12,7 @@ Capture one clean integrated demo plus four standalone product demo clips that c
 |---|---:|---|
 | Integrated ecosystem demo | 60 to 90 seconds | Hero video middle section and walkthrough |
 | ThoxKey standalone demo | 20 to 30 seconds | Product section, social, Update |
-| ThoxMini Air standalone demo | 20 to 30 seconds | Product section, social, Update |
+| ThoxAir standalone demo | 20 to 30 seconds | Product section, social, Update |
 | ThoxMini standalone demo | 25 to 40 seconds | Technical walkthrough and Update |
 | ThoxClip standalone demo | 20 to 30 seconds | Product section, social, Update |
 | Pricing insert | 8 to 12 seconds | Hero video and social cutdown |
@@ -38,7 +38,7 @@ Capture one clean integrated demo plus four standalone product demo clips that c
 Camera A wide shot
 
 [ laptop / monitor ]     [ ThoxMini ]
-         |                [ ThoxMini Air ]
+         |                [ ThoxAir ]
 [ ThoxKey near laptop ]   [ ThoxClip near notebook/lapel ]
 
 Camera B macro / close-up moves between devices.
@@ -64,7 +64,7 @@ Camera B macro / close-up moves between devices.
 1. Record room tone.
 2. Record integrated demo wide shot.
 3. Record ThoxKey macro and screen capture.
-4. Record ThoxMini Air desk and topology shots.
+4. Record ThoxAir desk and topology shots.
 5. Record ThoxMini dashboard screen capture.
 6. Record ThoxClip lifestyle and capture shots.
 7. Record Craig pricing section.
@@ -76,11 +76,11 @@ Camera B macro / close-up moves between devices.
 
 ### Card 1: Integrated flow
 
-**Tommy:** ThoxKey unlocks the private workspace. ThoxMini Air connects nearby local devices. ThoxMini runs the local services. ThoxClip captures a note and routes it into the workspace. Heavier work routes to capable local hardware the user owns.
+**Tommy:** ThoxKey unlocks the private workspace. ThoxAir connects nearby local devices. ThoxMini runs the local services. ThoxClip captures a note and routes it into the workspace. Heavier work routes to capable local hardware the user owns.
 
 ### Card 2: Pricing
 
-**Craig:** Kickstarter backers get special pricing. ThoxKey starts at $24 for early backers. ThoxMini Air starts at $69. ThoxMini starts at $149. ThoxClip starts at $299. Standard Kickstarter specials are still below retail.
+**Craig:** Kickstarter backers get special pricing. ThoxKey starts at $24 for early backers. ThoxAir starts at $69. ThoxMini starts at $149. ThoxClip starts at $299. Standard Kickstarter specials are still below retail.
 
 ### Card 3: Trust close
 
@@ -131,7 +131,7 @@ Notes:
 Best take:
 Notes:
 
-## ThoxMini Air
+## ThoxAir
 Best take:
 Notes:
 

@@ -26,7 +26,7 @@ on `Thox.ai` main, build verified TypeScript-clean, repo pushed.
    more $99.99 deposit / $629 floor / Q4 2026 shipping). Page still
    resolves so internal links don't 404.
 4. Rewrote `/pricing` hero, replaced the single-Nova ladder + the
-   MagStack bundle row, labeled ThoxMini Air / ThoxMini consumer
+   MagStack bundle row, labeled ThoxAir / ThoxMini consumer
    stick / Nova MagStack Bundles as direct-channel surfaces
    separate from the Aug 12 campaign.
 5. Updated `/product` to remove three "Founder Reserve - Open Now"

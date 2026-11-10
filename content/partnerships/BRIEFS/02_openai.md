@@ -39,7 +39,7 @@ Finally, THOX's positioning is non-competitive. THOX does not train frontier mod
 - Co-branded hardware reference designs that showcase the OpenAI API behind a THOX edge tier, suitable for OpenAI demo footage at developer events
 - A real privacy-tier deployment case study OpenAI can reference when enterprise customers ask "how do we run this in a privacy-sensitive environment"
 - A standing testbed for OpenAI to validate API surface changes against an on-device router workload
-- THOX hardware (ThoxNova + ThoxMini Air MagStack cluster) shipped to OpenAI's platform team for internal experimentation
+- THOX hardware (ThoxNova + ThoxAir MagStack cluster) shipped to OpenAI's platform team for internal experimentation
 - A documented on-device adapter that handles graceful fallback when the OpenAI API is rate-limited or unavailable, useful as a community reference
 
 ## Risks + non-starters

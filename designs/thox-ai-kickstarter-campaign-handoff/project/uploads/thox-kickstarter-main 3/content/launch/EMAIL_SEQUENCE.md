@@ -112,7 +112,7 @@ Body:
 >
 > Three engineering details that took the longest to land:
 >
-> 1. Multi-material print. The v4 ThoxMini Air enclosure and the dock both ship as QIDI Q2 Combo 3MF kits across matte-black PETG shell, satin light-gray halo ring, and the green accent button. We had to settle the bed (270 by 270 by 256 mm), the layer regime, and the support strategy on a real machine before we could ship the kit. v4 PR #4 landed last week.
+> 1. Multi-material print. The v4 ThoxAir enclosure and the dock both ship as QIDI Q2 Combo 3MF kits across matte-black PETG shell, satin light-gray halo ring, and the green accent button. We had to settle the bed (270 by 270 by 256 mm), the layer regime, and the support strategy on a real machine before we could ship the kit. v4 PR #4 landed last week.
 >
 > 2. Magnetic clustering. Eight magnets per dock, paired to the base of each ThoxAir. The geometry forces the right alignment whether you are stacking two nodes or four. The first time we got the auto-align right was the meeting where Craig and I knew the campaign was real.
 >
@@ -127,7 +127,7 @@ Body:
 > Tommy
 > Co-founder, THOX.ai
 
-CTA: See the MagStack dock and the v4 ThoxMini Air
+CTA: See the MagStack dock and the v4 ThoxAir
 
 Link label: "See the multi-material print kits and the stack"
 Link URL: https://thox.ai/launch#magstack

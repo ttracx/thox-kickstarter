@@ -45,7 +45,7 @@ Personal AI compute as a hardware category, not a SaaS line item. Hardware-as-ca
 - THOXCore v0.4.0 release notes staged. 221 of 221 tests at integration phase.
 - 30+ public ttracx/* repos in the THOX ecosystem.
 - ThoxMini provisioner shipped (Luckfox Pico Mini B). ThoxNova provisioner staged (LattePanda N100).
-- MagStack Cluster Dock print kit shipped. ThoxMini Air v4 multi-material 3MF kit shipped.
+- MagStack Cluster Dock print kit shipped. ThoxAir v4 multi-material 3MF kit shipped.
 - Kickstarter campaign content pack shipped (script, storyboard, FAQ, milestones, stretch, press kit).
 - Backer reward fulfillment workflow shipped. 55 of 55 tests green.
 

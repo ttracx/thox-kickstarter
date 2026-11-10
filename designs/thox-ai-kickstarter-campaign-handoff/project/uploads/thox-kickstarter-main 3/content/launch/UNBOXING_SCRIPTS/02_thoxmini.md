@@ -6,7 +6,7 @@
 - Date: T-20 days (July 23, 2026)
 - Founder voice: Craig leads; Tommy delivers the closing CTA
 - Render dependencies: ThoxMini iso hero render + exploded view
-- Sibling cut: paired with `03_thoxmini_air.md` later that week
+- Sibling cut: paired with `03_thoxair.md` later that week
 
 ## Script (45s)
 

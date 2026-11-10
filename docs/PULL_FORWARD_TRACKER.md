@@ -37,7 +37,7 @@ When every row in "Actions waiting on you" is checked, we are ship-ready for Sep
 | 4 | `adb shell tailscale up --hostname=thoxmini-luckfox --tun=userspace-networking --advertise-tags=tag:thoxmini --accept-routes` with auth key | 2 min | ThoxMini tailnet |
 | 5 | Insert SD card in USB card reader OR connect Pi to USB-OTG port | 1 min | ThoxClip flash |
 | 6 | Vercel project for docs.thox.ai + 3 secrets + DNS CNAME | 10 min | docs.thox.ai live |
-| 7 | Print + assemble ThoxMini Air v4 in QIDI Studio | 90 min | Kickstarter hero photo |
+| 7 | Print + assemble ThoxAir v4 in QIDI Studio | 90 min | Kickstarter hero photo |
 | 8 | Print + assemble Cluster Dock | 6.5h | Kickstarter hero photo |
 | 9 | Flash ThoxNova LattePanda N100 with Ubuntu 24.04 + run install.sh | 30 min | ThoxNova provisioned |
 | 10 | Review + go on Thox.ai PRs #215 / #216 / #217 / #218 | 30 min | website goes live |
@@ -86,8 +86,8 @@ Consolidated from all "Recently shipped" entries through 2026-06-25, grouped by 
 
 ### Hardware (8 items)
 
-- ThoxMini Air v4 QIDI Q2 3MF kit (582fa8b, merged PR #4)
-- ThoxMini Air v4 OpenSCAD source-of-truth per ADR-003 (1e050f2; thox-3dprint-kit)
+- ThoxAir v4 QIDI Q2 3MF kit (582fa8b, merged PR #4)
+- ThoxAir v4 OpenSCAD source-of-truth per ADR-003 (1e050f2; thox-3dprint-kit)
 - MagStack Cluster Dock print pack (726236d, merged PR #3)
 - ThoxArm + ThoxVault + ThoxCargo concept enclosures + scaffolds (028ab11)
 - Render automation pipeline + 131 actual renders + hero shots + press kit batch (e18a388 + f1cf56c, Blender 5.1.1)
@@ -104,7 +104,7 @@ Consolidated from all "Recently shipped" entries through 2026-06-25, grouped by 
 - 5 pre-launch emails + 8 LinkedIn posts + investor deck PDF + one-pager PDF + investor outreach pack + social kit
 - 12 post-funding email templates + comms playbook + shipping process + crisis comms
 - 8 partnership briefs + 3 workflow docs
-- 6 device user manuals + PDFs (ThoxClip / Mini / Mini Air / Nova / Cluster Dock / THOXKey)
+- 6 device user manuals + PDFs (ThoxClip / Mini / ThoxAir / Nova / Cluster Dock / THOXKey)
 - THOXKey outreach pack v2 (7 docs)
 - Conference calendar + 8 deep-dives + CFP submit list
 - Pre-launch compliance + runbook + 4 contract templates (NDA / Vendor / EDU Pricing / Waiver)
@@ -173,7 +173,7 @@ Send the end-of-day summary when ALL of the following are true:
 
 1. Every row in section 1 (Actions waiting on you) is checked OR explicitly deferred
 2. Both thoxcore v0.2.0 and v0.3.0 final tags are pushed
-3. At least one ThoxMini Air enclosure is physically printed + fit-checked
+3. At least one ThoxAir enclosure is physically printed + fit-checked
 4. Self-hosted runner is online
 5. Stripe products are renamed
 6. Thox.ai PR #215 is merged

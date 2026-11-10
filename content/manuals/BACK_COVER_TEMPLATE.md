@@ -58,7 +58,7 @@ UKCA marking compliance (declaration on file). UK representative:
 Do not throw THOX devices in household trash.
 
 - **United States**: drop at any e-waste collection event or Best Buy
-  recycling kiosk. Lithium cells (ThoxMini Air): Call2Recycle.
+  recycling kiosk. Lithium cells (ThoxAir): Call2Recycle.
 - **European Union**: drop at any WEEE collection point. The crossed-out
   wheelie-bin symbol marks every THOX product as separate-collection.
 - **Other regions**: consult your local municipal hazmat / e-waste

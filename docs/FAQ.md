@@ -7,7 +7,7 @@ capture; heavier work routes to capable local hardware the user owns.
 ## Will THOX work without an internet connection?
 
 Yes - that is the whole point. THOX is local-first. ThoxKey unlocks your workspace on a trusted
-machine, ThoxMini Air and ThoxMini keep local services and routing on your own network, and ThoxClip
+machine, ThoxAir and ThoxMini keep local services and routing on your own network, and ThoxClip
 captures and hands context into your workspace. Cloud connectors, if you ever use them, are an
 optional choice you control. The only thing that needs the internet is firmware updates, and you can
 defer those.
@@ -15,7 +15,7 @@ defer those.
 ## Which device should I start with?
 
 ThoxKey ($24 early-bird) is the simplest, most affordable way in: your portable private-AI identity,
-launcher, and recovery profile. Add ThoxMini Air ($69) for a low-cost wireless companion, ThoxMini
+launcher, and recovery profile. Add ThoxAir ($69) for a low-cost wireless companion, ThoxMini
 ($149) for a compact local compute node, or ThoxClip ($299) for premium capture and command. The
 Starter, Developer, Wearable Pro, and Complete Founder kits bundle these together.
 
@@ -28,7 +28,7 @@ device runs a chat-class LLM.
 
 ## What can these small devices actually run on-device?
 
-ThoxKey carries and unlocks your workflow. ThoxMini Air routes lightweight commands and coordinates
+ThoxKey carries and unlocks your workflow. ThoxAir routes lightweight commands and coordinates
 nearby devices. ThoxMini runs local services, lightweight agents, encrypted storage, and private
 automations. ThoxClip runs quick capture, wake-word, and workflow triggers. None of the four is a
 standalone LLM computer - heavier work routes to capable local hardware the user owns.
@@ -48,7 +48,7 @@ next update arrives.
 ## Will ThoxClip work without a paired THOX device?
 
 ThoxClip captures locally and wakes on its wake-word, but the full agent flows route captured context
-into a paired THOX device (ThoxMini Air or ThoxMini) or capable local hardware within range.
+into a paired THOX device (ThoxAir or ThoxMini) or capable local hardware within range.
 
 ## What about privacy?
 

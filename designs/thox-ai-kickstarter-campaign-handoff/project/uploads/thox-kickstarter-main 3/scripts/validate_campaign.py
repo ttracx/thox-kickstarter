@@ -58,7 +58,7 @@ CANONICAL_DOCS = [
 ]
 
 REQUIRED_TERMS = [
-    "ThoxKey", "ThoxMini Air", "ThoxMini", "ThoxClip",
+    "ThoxKey", "ThoxAir", "ThoxMini", "ThoxClip",
     "$39.99", "$99", "$199", "$399",
     "$24", "$69", "$149", "$299",
     "Craig Ross, CEO", "Tommy Xaypanya, CTO",

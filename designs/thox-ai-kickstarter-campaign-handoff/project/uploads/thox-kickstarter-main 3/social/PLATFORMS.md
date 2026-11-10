@@ -151,11 +151,11 @@ priority order:
 | Subreddit | Audience | Post format | Frequency |
 |---|---|---|---|
 | r/Kickstarter | Active backers | Native text + 1 hero image | Once at launch + once at $250K unlock |
-| r/raspberry_pi | Pi enthusiasts | Native text + ThoxMini Air shot + thread engagement | 2x during pre-launch + 1x at stretch |
+| r/raspberry_pi | Pi enthusiasts | Native text + ThoxAir shot + thread engagement | 2x during pre-launch + 1x at stretch |
 | r/selfhosted | Local-first / privacy crowd | Text post about local inference + ThoxNova image | 1x during pre-launch + 1x at launch |
 | r/LocalLLaMA | LLM enthusiasts | Text post about ThoxLLM models + technical depth | 1x pre-launch + 1x launch + 1x at $1M unlock |
 | r/3Dprinting | 3D printing crowd (for the ThoxClip prints) | Image post of the multi-color ThoxClip print | 1x mid-campaign |
-| r/HomeAssistant | Smart home / local-first | ThoxMini Air integration post | 1x mid-campaign |
+| r/HomeAssistant | Smart home / local-first | ThoxAir integration post | 1x mid-campaign |
 | r/futurology | Trend-watchers | Text post about local-first AI thesis | 1x launch week |
 
 **Posting tips**:

@@ -168,7 +168,7 @@ Twenty seconds. Twelve seconds of founder. Eight seconds of CTA.
 - AI image and video prompt library: `prompts/openai/` and `prompts/grok/`
 - Hero family-shot reference: `assets/README.md` (asset paths once renders complete)
 - MagStack Cluster Dock STL plus print plates: `ttracx/thox-3dprint-kit` PR #3
-- ThoxMini Air v4 enclosure for B-roll: `ttracx/thox-3dprint-kit` PR #4
+- ThoxAir v4 enclosure for B-roll: `ttracx/thox-3dprint-kit` PR #4
 
 ---
 

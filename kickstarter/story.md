@@ -36,7 +36,7 @@ THOX.ai is a local-first hardware and software ecosystem built around one rule: 
 
 ### Four devices. One modular local AI ecosystem.
 
-This campaign launches four devices — **ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip** — and the **MeshStack app** that ties them together. Each does one honest job well; together they form a private, local-first system you own.
+This campaign launches four devices — **ThoxKey, ThoxAir, ThoxMini, and ThoxClip** — and the **MeshStack app** that ties them together. Each does one honest job well; together they form a private, local-first system you own.
 
 ---
 
@@ -49,7 +49,7 @@ ThoxKey is the simplest way to carry your THOX workspace with you. It is a compa
 - Simple USB plug-in workflow for supported desktop and laptop systems
 - Local-first design: your files and device tools stay physically in your hands
 - Prototype-friendly storage for installers, model files, documentation, recovery scripts, and offline resources
-- Companion to ThoxOS, ThoxMini, ThoxMini Air, and ThoxClip workflows
+- Companion to ThoxOS, ThoxMini, ThoxAir, and ThoxClip workflows
 - No cloud account required for basic file access, depending on host system configuration
 - Compact THOX-branded enclosure
 
@@ -79,9 +79,9 @@ ThoxMini is a pocket-sized local AI device that brings THOX workflows to the edg
 
 ---
 
-### ThoxMini Air — Wireless THOX workflows in a smaller, battery-powered form. · from **$69** (retail $99)
+### ThoxAir — Wireless THOX workflows in a smaller, battery-powered form. · from **$69** (retail $99)
 
-ThoxMini Air is the wireless version of the ThoxMini concept. It is a small, battery-powered THOX companion that supports lightweight local services, device pairing, wireless access, and on-the-go workflows without a constant USB tether. Built for portability, quick access, and local-first interaction between THOX devices, companion apps, and supported host systems.
+ThoxAir is the wireless version of the ThoxMini concept. It is a small, battery-powered THOX companion that supports lightweight local services, device pairing, wireless access, and on-the-go workflows without a constant USB tether. Built for portability, quick access, and local-first interaction between THOX devices, companion apps, and supported host systems.
 
 **Key features**
 - Wireless-first companion design for portable THOX workflows
@@ -110,7 +110,7 @@ ThoxClip is a slim magnetic companion designed to attach to the back of compatib
 - THOX MagStack design direction for modular device attachment and pairing
 - Local-first mobile companion role within the THOX hardware and app ecosystem
 - 3D-printed prototype validation before final production refinement
-- Built to complement ThoxKey, ThoxMini, and ThoxMini Air, not replace them
+- Built to complement ThoxKey, ThoxMini, and ThoxAir, not replace them
 
 **Best for:** phone-based THOX demos · magnetic mobile companion workflows · portable AI hardware experimentation · a THOX device that lives with your phone.
 
@@ -127,7 +127,7 @@ _Every hardware pledge includes 12 months of MeshStack Pro._
 ### Honest boundaries, by design.
 
 1. Carry your workspace with **ThoxKey**.
-2. Pair wirelessly on the go with **ThoxMini Air**.
+2. Pair wirelessly on the go with **ThoxAir**.
 3. Run local services and agents over USB-C with **ThoxMini**.
 4. Keep THOX with your phone with **ThoxClip**.
 5. Route heavier work to capable THOX nodes or computers **you own**.
@@ -178,7 +178,7 @@ ThoxOS runs the family: setup, pairing, the model library, chat, agents, and upd
 
 ## 06 — Choose your device
 
-| | ThoxKey | ThoxMini Air | ThoxMini | ThoxClip |
+| | ThoxKey | ThoxAir | ThoxMini | ThoxClip |
 |---|---|---|---|---|
 | **Form factor** | USB workspace key | Wireless, battery-powered | USB-C companion | Magnetic phone-back |
 | **Best for** | Carrying your workspace | Portable wireless sessions | Local development | Phone-based workflows |
@@ -198,7 +198,7 @@ Early bird pricing is limited to the first 100 backers per device. Every hardwar
 
 - **ThoxKey — $24** (was $39.99 retail) · Early bird, first 100 · Ships Q3–Q4 2026 · 12 mo MeshStack Pro
   The portable workspace key. Files, launchers, and recovery tools that travel with you.
-- **ThoxMini Air — $69** (was $99 retail) · Early bird, first 100 · Ships Q3–Q4 2026 · 12 mo MeshStack Pro
+- **ThoxAir — $69** (was $99 retail) · Early bird, first 100 · Ships Q3–Q4 2026 · 12 mo MeshStack Pro
   The wireless, battery-powered companion. Portable sessions and pairing without plugging in.
 - **ThoxMini — $149** (was $199 retail) · Early bird, first 100 · Ships Q3–Q4 2026 · 12 mo MeshStack Pro
   The compact compute companion. Plugs into a supported computer over USB-C for local services and agents.
@@ -212,7 +212,7 @@ Early bird pricing is limited to the first 100 backers per device. Every hardwar
 ### Past the goal.
 
 - **$10K — Funded: the production run** (Baseline). Every listed reward moves to manufacturing and ships as described.
-- **$25K — Sage colorway unlocks.** ThoxMini Air in Sage becomes a free fourth color option for every Air backer.
+- **$25K — Sage colorway unlocks.** ThoxAir in Sage becomes a free fourth color option for every Air backer.
 - **$50K — Repair and mod kit, free.** Service guides and the 3D-printable accessory kit publish free for every device.
 
 _Stretch goals add to what backers receive. No new hardware is promised mid-campaign._
@@ -227,7 +227,7 @@ _Stretch goals add to what backers receive. No new hardware is promised mid-camp
 - **Aug 8, 2026** — Campaign closes. All-or-nothing: cards are charged only if the $10,000 goal is met.
 - **Aug 2026** — BackerKit surveys. Colors, add-ons, and shipping addresses. Addresses lock 30 days before each ship window.
 - **Sep–Oct 2026** — Design freeze and production. Final validation builds, then the first manufacturing run.
-- **Q3–Q4 2026** — ThoxKey, ThoxMini Air, and ThoxMini ship. Waves by pledge order. Tracking numbers arrive at carrier handoff.
+- **Q3–Q4 2026** — ThoxKey, ThoxAir, and ThoxMini ship. Waves by pledge order. Tracking numbers arrive at carrier handoff.
 - **Q1 2027** — ThoxClip ships. The magnetic phone companion has the longest certification path, so it ships last.
 
 ---

@@ -12,7 +12,7 @@ Dedicated shots per hardware device (shots where the device is the subject):
 | Device | Dedicated shots | Capture done | Approved |
 |---|---|---|---|
 | **ThoxKey** | 17 | ☐ | ☐ |
-| **ThoxMini Air** | 9 | ☐ | ☐ |
+| **ThoxAir** | 9 | ☐ | ☐ |
 | **ThoxMini** | 12 | ☐ | ☐ |
 | **ThoxClip** | 14 | ☐ | ☐ |
 | MeshStack (app/mesh) | 17 | ☐ | ☐ |
@@ -28,7 +28,7 @@ Support / context shots: All (8), Talent (7), Mixed (3), None (3).
 | V02 | **The Ecosystem** | 7 | ☐ | ☐ |
 | V03 | **CTO Intro** | 4 | ☐ | ☐ |
 | V04 | **ThoxKey** | 12 | ☐ | ☐ |
-| V05 | **ThoxMini Air** | 11 | ☐ | ☐ |
+| V05 | **ThoxAir** | 11 | ☐ | ☐ |
 | V06 | **ThoxMini** | 12 | ☐ | ☐ |
 | V07 | **ThoxClip** | 11 | ☐ | ☐ |
 | V08 | **A Unified Day** | 10 | ☐ | ☐ |

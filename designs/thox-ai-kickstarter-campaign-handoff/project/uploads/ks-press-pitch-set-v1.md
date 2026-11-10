@@ -17,7 +17,7 @@ Compressed-timeline outreach: the kit goes out today, embargo lifts July 9, 10:0
 
 {One sentence referencing their specific recent piece and why this fits their beat.}
 
-On Thursday, July 9 we launch a Kickstarter for four local-AI devices: a $29 USB drive that runs a private AI assistant on any computer (ThoxKey), a wearable clip that keeps the microphone off your phone (ThoxClip, $39 early bird), a $69 USB-C compute stick (ThoxMini), and a 38-gram wireless keychain node with up to 24 hours of battery (ThoxMini Air, $89). A private mesh app, MeshStack, ties them together - data stays on your devices, and it works offline on LAN after pairing.
+On Thursday, July 9 we launch a Kickstarter for four local-AI devices: a $29 USB drive that runs a private AI assistant on any computer (ThoxKey), a wearable clip that keeps the microphone off your phone (ThoxClip, $39 early bird), a $69 USB-C compute stick (ThoxMini), and a 38-gram wireless keychain node with up to 24 hours of battery (ThoxAir, $89). A private mesh app, MeshStack, ties them together - data stays on your devices, and it works offline on LAN after pairing.
 
 The angle we think fits {Outlet}: {chosen angle from the press kit, one sentence}.
 

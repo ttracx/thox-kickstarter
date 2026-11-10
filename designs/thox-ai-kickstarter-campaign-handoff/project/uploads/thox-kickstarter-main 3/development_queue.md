@@ -26,7 +26,7 @@ Scores use a 1 to 10 scale.
 
 | Status | Task | Acceptance criteria |
 |---|---|---|
-| [x] | Replace old campaign lineup with ThoxKey, ThoxMini Air, ThoxMini, ThoxClip | README and canonical docs use updated lineup |
+| [x] | Replace old campaign lineup with ThoxKey, ThoxAir, ThoxMini, ThoxClip | README and canonical docs use updated lineup |
 | [x] | Generate Kickstarter special pricing | Rewards matrix includes retail, Kickstarter, and early-bird pricing |
 | [x] | Add video scene prompts | Graphic prompt and image-to-video prompt exist for every hero scene |
 | [x] | Add founder walkthrough script | Craig CEO and Tommy CTO script ready |

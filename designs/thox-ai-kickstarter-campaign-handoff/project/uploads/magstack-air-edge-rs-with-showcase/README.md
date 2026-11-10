@@ -1,6 +1,6 @@
 # MagStack Air Edge RS
 
-Rust-first MagStack Air prototype for ThoxMini Air / ThoxOS Air-class edge devices.
+Rust-first MagStack Air prototype for ThoxAir / ThoxOS Air-class edge devices.
 
 This package improves the previous MagStack Air direction by turning the Wi-Fi cluster from a generic task fabric into a realistic edge-AI vertical slice:
 
@@ -194,4 +194,4 @@ docs/                Operations, security, API, AI jobs, Claude review
 
 ## Device showcase HTML
 
-Open `showcase.html` or `docs/device_showcase.html` for a standalone internal showcase page that presents the MagStack Air / ThoxMini Air device, Rust Wi-Fi fabric, and realistic edge-AI job demo flow.
+Open `showcase.html` or `docs/device_showcase.html` for a standalone internal showcase page that presents the MagStack Air / ThoxAir device, Rust Wi-Fi fabric, and realistic edge-AI job demo flow.

@@ -49,7 +49,7 @@ Embargo terms
 What you get
 
 - Press kit with hero renders, founder bios, boilerplate copy, tech-spec one-pagers per launch SKU, and a 30-second teaser MP4. Located at {{ press_kit_url }} (released on embargo acceptance).
-- Demo unit: one ThoxAir + one ThoxMini Air shipped to a US address. International addresses: we can ship; transit time may push past the embargo lift, in which case we will discuss timing.
+- Demo unit: one ThoxAir + one ThoxAir shipped to a US address. International addresses: we can ship; transit time may push past the embargo lift, in which case we will discuss timing.
 - Founder briefing: 30 minutes with me and my co-founder Craig Ross. Schedule via the link in my reply.
 
 Reply to confirm and we will move.
@@ -78,6 +78,6 @@ Kickstarter pre-launch: {{ kickstarter_url }}
 - Reporter has responded with interest, OR the operator has a documented history of embargo-honoring practice with this reporter
 - `{{ embargo_date }}` is the canonical Aug 5, 2026 09:00 ET (unless the operator has documented a different date in writing for this reporter)
 - `{{ press_kit_url }}` is live and the kit is staged behind the embargo (not public)
-- Demo unit inventory checked; one ThoxAir + one ThoxMini Air available for this reporter
+- Demo unit inventory checked; one ThoxAir + one ThoxAir available for this reporter
 - Schedule link for the founder briefing is live
 - Logged in `workflow/JOURNALIST_RELATIONSHIP_LOG.md` with `warm` -> `hot` status upgrade

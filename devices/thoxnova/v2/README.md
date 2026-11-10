@@ -65,7 +65,7 @@ for one or more ThoxMini or ThoxClip clients.
 | **Web UI** | `http://thoxnova.local:18790` |
 | **SSH** | `ssh root@thoxnova.local` |
 | **Telemetry** | Off by default |
-| **Fleet role** | Offload target for ThoxMini / ThoxClip / ThoxMini Air clients |
+| **Fleet role** | Offload target for ThoxMini / ThoxClip / ThoxAir clients |
 
 ---
 

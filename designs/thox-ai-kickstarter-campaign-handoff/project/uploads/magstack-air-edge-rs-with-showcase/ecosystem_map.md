@@ -2,7 +2,7 @@
 
 ## Module
 
-`MagStack Air Edge RS` is the Rust-first Wi-Fi cluster and edge-AI runtime for ThoxMini Air / ThoxOS Air-class nodes.
+`MagStack Air Edge RS` is the Rust-first Wi-Fi cluster and edge-AI runtime for ThoxAir / ThoxOS Air-class nodes.
 
 It sits between the hardware enclosure/platform work and the broader ThoxOS / MeshStack software family.
 

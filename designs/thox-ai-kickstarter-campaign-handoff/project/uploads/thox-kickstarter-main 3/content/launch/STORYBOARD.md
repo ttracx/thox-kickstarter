@@ -21,7 +21,7 @@ For frames that lean on assembled-device visuals (Frame 03, the cluster reveal, 
 | Device family lineup beat | `renders/hero/hero_device-family.png` |
 | Pocket-scale establishing | `renders/hero/hero_pocket-context.png` |
 | Stretch-goal teaser tail | `renders/hero/hero_stretch-goals.png` |
-| ThoxMini Air macro insert | `devices/thoxmini-air/renders/iso_lit.png` |
+| ThoxAir macro insert | `devices/thoxair/renders/iso_lit.png` |
 | Cluster dock detail B-roll | `devices/magstack-cluster-dock/renders/side_callout.png` |
 | Exploded mechanical beat | `devices/<device>/renders/exploded.png` |
 
@@ -568,7 +568,7 @@ VO for 30s cut: "AI that runs on you. ThoxClip. ThoxMini. ThoxAir. ThoxNova. One
 ## Asset and continuity notes
 
 - The MagStack Cluster Dock has shipped (`thox-3dprint-kit` PR #3). All dock shots are practical.
-- ThoxMini Air v4 enclosure has shipped today (`thox-3dprint-kit` PR #4). Either ThoxMini Air or ThoxAir may be used for the cluster frames; lock the choice before pre-production.
+- ThoxAir v4 enclosure has shipped today (`thox-3dprint-kit` PR #4). Either ThoxAir or ThoxAir may be used for the cluster frames; lock the choice before pre-production.
 - The ThoxCore router CLI shown in Frame 16 must use real `thoxcore` v0.3 output; do not mock it (see `project_thoxcore_integration_phase` memory).
 - The dashboard in Frame 14 should run a deterministic chat replay so re-shoots are possible.
 - Frame 06 is the only AI-generated frame; all others are practical.

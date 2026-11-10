@@ -26,7 +26,7 @@ Status: DRAFT
 - LLC - Limited Liability Company.
 - LoRA - Low-Rank Adaptation. Fine-tuning technique used in
   thoxllm-factory.
-- MagStack - magnetic-pogo clustering form factor used on ThoxMini Air.
+- MagStack - magnetic-pogo clustering form factor used on ThoxAir.
 - MCP - Model Context Protocol.
 - MDX - Markdown extended with JSX. Used by thox-docs.
 - MVP - in this codebase, a numbered milestone increment per the

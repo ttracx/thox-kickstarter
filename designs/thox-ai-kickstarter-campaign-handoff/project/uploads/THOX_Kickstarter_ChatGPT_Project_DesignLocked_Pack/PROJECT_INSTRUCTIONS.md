@@ -1,6 +1,6 @@
 # THOX.ai Kickstarter - ChatGPT Project Instructions
 
-Campaign: ThoxKey + ThoxMini Air + ThoxMini + ThoxClip with MeshStack App  
+Campaign: ThoxKey + ThoxAir + ThoxMini + ThoxClip with MeshStack App  
 Launch: Thursday, July 9, 2026, 9:00 AM PT  
 Close: Saturday, August 8, 2026, 9:00 AM PT  
 Doc: THOX-KS-INSTR-001 - Rev B - 2026-07-02  
@@ -21,9 +21,9 @@ Hard replacements:
 | Any old launch date | July 9, 2026, 9:00 AM PT |
 | Any old close date | August 8, 2026, 9:00 AM PT |
 | ThoxNova as Kickstarter SKU | Out of Kickstarter. Mention only once in FAQ as `/founders` pointer if needed. |
-| ThoxAir | ThoxMini Air |
+| ThoxAir | ThoxAir |
 | ThoxOnStick or ThoxStick | Retired from public scope. Use ThoxKey for USB launch SKU. |
-| Public SKU list containing Nova, ThoxAir, or ThoxOnStick | Public SKUs are ThoxKey, ThoxMini, ThoxMini Air, ThoxClip. MeshStack is companion software. |
+| Public SKU list containing Nova, ThoxAir, or ThoxOnStick | Public SKUs are ThoxKey, ThoxMini, ThoxAir, ThoxClip. MeshStack is companion software. |
 | Any city or state origin line | Remove. Never state company location in campaign-facing output. |
 | Old Nova stretch goals or bundles | Use reward and stretch ladder in this file. |
 
@@ -54,7 +54,7 @@ Priorities:
 | Platform | Kickstarter, all-or-nothing | Locked |
 | Launch | Thu Jul 9, 2026, 9:00 AM PT | Locked |
 | Close | Sat Aug 8, 2026, 9:00 AM PT | Locked |
-| SKUs | ThoxKey, ThoxMini, ThoxMini Air, ThoxClip | Locked |
+| SKUs | ThoxKey, ThoxMini, ThoxAir, ThoxClip | Locked |
 | Companion software | MeshStack app for iOS, iPadOS, Android, macOS, Windows | Locked |
 | Device OS | ThoxOS Mini | Locked |
 | Funding goal | $150,000 | Working, gate D2 |
@@ -79,11 +79,11 @@ Use this ladder by default unless Tommy overrides it. Once locked, it becomes th
 | 2 | Early-bird ThoxClip | $39 | 500 | 1x ThoxClip, magnetic charger, lanyard | Q1 2027 |
 | 3 | ThoxClip | $49 | Unlimited | Same as early-bird ThoxClip | Q1 2027 |
 | 4 | ThoxMini | $69 | Unlimited | 1x ThoxMini USB-C stick, ThoxOS Mini preflashed microSD, USB-C cable | Q1 2027 |
-| 5 | ThoxMini Air | $89 | Unlimited | 1x ThoxMini Air, finish choice, keychain ring, Qi pad, quick-start card | Q1 2027 |
+| 5 | ThoxAir | $89 | Unlimited | 1x ThoxAir, finish choice, keychain ring, Qi pad, quick-start card | Q1 2027 |
 | 6 | Maker Kit | $109 | Unlimited | ThoxMini + ThoxClip + dev docs access | Q1 2027 |
-| 7 | Air Kit | $129 | Unlimited | ThoxMini Air + ThoxClip + dev docs access | Q1 2027 |
-| 8 | Mesh Starter | $199 | Unlimited | ThoxKey + ThoxMini + ThoxMini Air + ThoxClip | Q2 2027 |
-| 9 | Air Cluster Pack | $349 | Unlimited | 4x ThoxMini Air + magnetic stack base + USB-C 5V/4A hub | Q2 2027 |
+| 7 | Air Kit | $129 | Unlimited | ThoxAir + ThoxClip + dev docs access | Q1 2027 |
+| 8 | Mesh Starter | $199 | Unlimited | ThoxKey + ThoxMini + ThoxAir + ThoxClip | Q2 2027 |
+| 9 | Air Cluster Pack | $349 | Unlimited | 4x ThoxAir + magnetic stack base + USB-C 5V/4A hub | Q2 2027 |
 | 10 | Founders Pack | $999 | 100 | Mesh Starter x2 + serialized engraving + name in firmware boot banner + lifetime priority support + private Discord | Q2 2027 |
 
 Add-ons via BackerKit:
@@ -106,8 +106,8 @@ Shipping: reuse the REWARDS_MATRIX regional surcharge table. US-48 free. Surchar
 |---:|---|
 | $150K | Baseline: all ten tiers ship as listed; DVT freeze scheduled |
 | $250K | Enhanced ThoxOS Mini: TUI polish, preset launcher, model picker, offline doc index, free OTA |
-| $400K | ThoxMini Air finish program: Sage, Midnight, Copper, Sand added as backer-choice finishes |
-| $600K | ThoxMini Air Secure variant unlocked as BackerKit upgrade |
+| $400K | ThoxAir finish program: Sage, Midnight, Copper, Sand added as backer-choice finishes |
+| $600K | ThoxAir Secure variant unlocked as BackerKit upgrade |
 | $800K | Advanced local AI runtime: optimized inference engine, free OTA |
 | $1.0M | Mesh Cluster Mode beta: multi-device inference fabric with MeshStack orchestration, Founders and Air Cluster backers first |
 
@@ -115,7 +115,7 @@ Fulfillment waves:
 
 - Wave 1: ThoxKey, Dec 2026.
 - Wave 2: ThoxClip early-bird + ThoxMini, Q1 2027.
-- Wave 3: ThoxMini Air + kits, Q1-Q2 2027.
+- Wave 3: ThoxAir + kits, Q1-Q2 2027.
 - Wave 4: Cluster Packs + Founders Pack, Q2 2027.
 
 Every public delivery estimate uses `Estimated` and matches this section exactly.
@@ -211,7 +211,7 @@ Design System Sweep:
 
 Use exact casing:
 
-- THOX.ai, THOX.ai LLC, ThoxOS, ThoxKey, ThoxMini, ThoxMini Air, ThoxClip, MeshStack, MagStack.
+- THOX.ai, THOX.ai LLC, ThoxOS, ThoxKey, ThoxMini, ThoxAir, ThoxClip, MeshStack, MagStack.
 
 Voice:
 
@@ -244,7 +244,7 @@ ThoxMini:
 - Public level: compact local-first compute node for builders and labs.
 - Keep boot time, model size, and performance claims proof-gated.
 
-ThoxMini Air:
+ThoxAir:
 
 - Wireless pocket or keychain AI node with MeshStack onboarding.
 - Public level: wireless local-first node that pairs through MeshStack.
@@ -373,7 +373,7 @@ Examples:
 - Design system: `colors_and_type.css`, `thox-tokens.css`, `keyvisual.jsx`, and MeshStack `tokens.ts`, with Section 6 as the campaign lock.
 - Story voice: ThoxMini Kickstarter prototype narrative, rewritten to new scope.
 - Structure: docs/CAMPAIGN_INFO.md, rewritten to new scope.
-- ThoxMini Air specs and imagery: ThoxMini Air Lineup files and air image assets.
+- ThoxAir specs and imagery: ThoxAir Lineup files and air image assets.
 - ThoxClip specs and imagery: ThoxClip files and clip image assets.
 - ThoxMini imagery: black, space gray, white Mini image assets.
 - ThoxKey product definition: thoxkey manual and thox-key repo sources.

@@ -15,7 +15,7 @@ document the videographer can take into production without back-and-forth.
 | `00_master_voice_guide.md` | All | Reference | n/a |
 | `01_thoxclip.md` | ThoxClip | 30 s | IG Reels, TikTok, X |
 | `02_thoxmini.md` | ThoxMini | 45 s | IG Reels, TikTok, LinkedIn, X |
-| `03_thoxmini_air.md` | ThoxMini Air | 45 s | IG Reels, TikTok, LinkedIn, X |
+| `03_thoxair.md` | ThoxAir | 45 s | IG Reels, TikTok, LinkedIn, X |
 | `04_thoxnova.md` | ThoxNova | 60 s | IG Reels, TikTok, LinkedIn, YouTube Shorts |
 | `05_magstack_cluster_dock.md` | MagStack Cluster Dock | 45 s | IG Reels, TikTok, LinkedIn, X |
 | `06_thoxkey.md` | THOXKey | 30 s | IG Reels, TikTok, X |

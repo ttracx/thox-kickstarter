@@ -74,7 +74,7 @@ PAGES = [
     (PROJ / "Model Gallery.dc.html",                   "model-gallery.html",     "Model Gallery",      "Interactive browser of the local model library available on ThoxOS.", "interactive"),
     (PROJ / "Software Demo.dc.html",                   "software-demo.html",     "Software Demo",      "Clickable ThoxOS software walkthrough: mesh, devices, activity, settings.", "interactive"),
     ((ROOT / "sources/thoxos-mini-demo.dc.html") if (ROOT / "sources/thoxos-mini-demo.dc.html").exists() else (PROJ / "ThoxOS Mini Demo.dc.html"),
-                                                       "thoxos-mini-demo.html",  "ThoxOS Mini Demo",   "The edge build that powers ThoxKey, ThoxMini Air, ThoxMini, and ThoxClip. Boot, insert, agents, files, skills, terminal — the same Experience Fabric, shrunk to a key.", "interactive"),
+                                                       "thoxos-mini-demo.html",  "ThoxOS Mini Demo",   "The edge build that powers ThoxKey, ThoxAir, ThoxMini, and ThoxClip. Boot, insert, agents, files, skills, terminal — the same Experience Fabric, shrunk to a key.", "interactive"),
     (PROJ / "Campaign Animatic.dc.html",               "campaign-animatic.html", "Campaign Animatic",  "Animated teaser sequence built from the device close-up footage.", "interactive"),
 ]
 
@@ -128,7 +128,7 @@ if pkg_page.exists() and pkg_imgs.exists():
     shutil.copytree(pkg_imgs, SITE / "assets/packaging", dirs_exist_ok=True)
     shutil.copy2(pkg_page, SITE / "packaging.html")
     packaging_kept.append(("packaging.html", "What's in the Box",
-        "The actual retail packaging your pledge ships in: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — front, back, and specs. Exactly what Kickstarter backers receive."))
+        "The actual retail packaging your pledge ships in: ThoxAir, ThoxMini (three colorways), and ThoxClip — front, back, and specs. Exactly what Kickstarter backers receive."))
     print("  ~ packaging.html         <- sources/packaging.html (+ assets/packaging/)")
 fnd_page = ROOT / "sources/founders.html"
 fnd_imgs = ROOT / "sources/swag"
@@ -147,7 +147,7 @@ if md_page.exists() and md_imgs.exists():
     shutil.copytree(md_imgs, SITE / "assets/magdisplay", dirs_exist_ok=True)
     shutil.copy2(md_page, SITE / "magdisplay.html")
     magdisplay_kept.append(("magdisplay.html", "THOX MagDisplay",
-        "Upcoming companion display (Spring 2027): a pocket-class color e-ink surface that MagStacks onto ThoxMini, ThoxMini Air, ThoxClip, or ThoxNova. See more, stay local, own your data."))
+        "Upcoming companion display (Spring 2027): a pocket-class color e-ink surface that MagStacks onto ThoxMini, ThoxAir, ThoxClip, or ThoxNova. See more, stay local, own your data."))
     print("  ~ magdisplay.html        <- sources/magdisplay.html (+ assets/magdisplay/)")
 
 # 4b4) Flagship edge-AI device demos (upcoming product line)

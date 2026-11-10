@@ -14,7 +14,7 @@ applied, a legacy-footprint audit, a reconciliation plan, and suggestions for th
 
 The repository contains **two parallel campaigns**:
 
-1. **Canonical (current):** the four-device quick launch - **ThoxKey, ThoxMini Air, ThoxMini,
+1. **Canonical (current):** the four-device quick launch - **ThoxKey, ThoxAir, ThoxMini,
    ThoxClip** - at $150K, launching **September 8, 2026** (30-day run, closing Oct 1), with honest
    capability boundaries. This is what README, `docs/CAMPAIGN_INFO.md`, `docs/KICKSTARTER_PAGE_COPY.md`,
    `docs/REWARDS_MATRIX.md`, the whole `kickstarter/site/` bundle, and the `demo/` package describe.
@@ -96,7 +96,7 @@ Use this as the find-and-replace contract for any reconciliation pass.
 
 | Retired | Canonical | Notes |
 |---|---|---|
-| ThoxAir | ThoxMini Air | Renamed. |
+| ThoxAir | ThoxAir | Renamed. |
 | ThoxNova (as a **reward**) | (remove from rewards) | Nova is roadmap, not a launch reward. Keep Nova only in roadmap/vision context. |
 | ThoxStick / ThoxOnStick / ThingOnStick | (removed) | Retired concepts. |
 | "Phamy" | Tommy Xaypanya (CTO) | Founder name. Owner code `P` → `T`. |
@@ -104,7 +104,7 @@ Use this as the find-and-replace contract for any reconciliation pass.
 | Goal $250K; stretch $500K/$1M/$1.5M/$2M/$3M | Goal **$150,000**; stretch = TBD (announced live, founder-confirmed) | No fabricated stretch figures. |
 | ThoxClip $39 / $49 | ThoxClip **$299 early-bird / $329 special** ($399 retail) | |
 | ThoxMini $69 | ThoxMini **$149 early-bird / $169 special** ($199 retail) | |
-| ThoxAir $79; Cluster Pack $349 | ThoxMini Air **$69 early-bird / $79 special** ($99 retail); no Cluster Pack | |
+| ThoxAir $79; Cluster Pack $349 | ThoxAir **$69 early-bird / $79 special** ($99 retail); no Cluster Pack | |
 | ThoxNova $499 | (removed from rewards) | |
 | Family Bundle $599 | THOX **Complete Founder Kit $549** (100 cap) | |
 | Founders Pack $1,299 | (folded into Complete Founder Kit / Founders Club) | See `kickstarter/site/founders.html`. |
@@ -128,7 +128,7 @@ Use this as the find-and-replace contract for any reconciliation pass.
    `Phamy`, `August 12`, `$250K` to `LEGACY_PATTERNS`, and widen the scan to `templates/`, `runbooks/`,
    `deliverables/`, and any tree you keep - so drift can't silently return.
 4. **Update the GitHub repo description.** It still reads "ThoxClip, ThoxMini, ThoxAir, ThoxNova" -
-   press and backers check the repo; it should list ThoxKey, ThoxMini Air, ThoxMini, ThoxClip.
+   press and backers check the repo; it should list ThoxKey, ThoxAir, ThoxMini, ThoxClip.
 
 ---
 

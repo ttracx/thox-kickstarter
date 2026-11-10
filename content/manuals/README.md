@@ -11,7 +11,7 @@ Mono code, THOX cyan (`#27E5FF`) accents on the headings.
 |---|---|---|---:|---|
 | `thoxclip/`             | `MANUAL.md` (1442 words) | `MANUAL.pdf` | ~111 KB | `b66b99a13bcc0fb6` |
 | `thoxmini/`             | `MANUAL.md` (1231 words) | `MANUAL.pdf` | ~111 KB | `85330f5f59c253b1` |
-| `thoxmini-air/`         | `MANUAL.md` (1370 words) | `MANUAL.pdf` | ~111 KB | `a12dd863157e29e7` |
+| `thoxair/`         | `MANUAL.md` (1370 words) | `MANUAL.pdf` | ~111 KB | `a12dd863157e29e7` |
 | `thoxnova/`             | `MANUAL.md` (1326 words) | `MANUAL.pdf` | ~154 KB | `d5172ec8b632b96b` |
 | `magstack-cluster-dock/`| `MANUAL.md` (1547 words) | `MANUAL.pdf` | ~110 KB | `9bfd634d22ac28fe` |
 | `thoxkey/`              | `MANUAL.md` (1713 words) | `MANUAL.pdf` | ~113 KB | `556388abd66278c0` |
@@ -85,7 +85,7 @@ Recommended print parameters for the print shop:
 |---|---|---|---|
 | ThoxClip | (Pi Zero 2 W enclosure tbd) | `ttracx/thox-quickstart/docs/THOXCLIP_PHYSICAL_SETUP.md` | THX-CLIP-100 |
 | ThoxMini | `ttracx/thox-3dprint-kit/devices/thoxmini` | `THOXMINI_PROVISIONING.md` + `THOXMINI_FINISH_WIRING.md` | THX-MINI-100 |
-| ThoxMini Air | `ttracx/thox-3dprint-kit/devices/thoxmini-air` | `THOXMINI_AIR_PROVISIONING.md` | THX-AIR-100 |
+| ThoxAir | `ttracx/thox-3dprint-kit/devices/thoxmini-air` | `THOXMINI_AIR_PROVISIONING.md` | THX-AIR-100 |
 | ThoxNova | (LattePanda N100 chassis tbd) | `THOXNOVA_PROVISIONING.md` | THX-NOVA-100 |
 | MagStack Cluster Dock | `ttracx/thox-3dprint-kit/devices/magstack-cluster-dock` | `magstack-cluster-dock/PRINT_GUIDE.md` | THX-DOCK-4N / THX-DOCK-8N |
 | THOXKey | `ttracx/thox-key` | `thox-key/docs/MODEL_LOADOUT.md` | THX-KEY-* (tier-specific) |

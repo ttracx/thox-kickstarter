@@ -37,7 +37,7 @@ runs it automatically as its last step.
 | Page | Kind | Notes |
 |---|---|---|
 | **ThoxOS Demo** (`thoxos-demo.html`) | Flagship | The **full ThoxOS** desktop sandbox (v6.1) that ships on THOX Nova and the THOX Edge Series: lock screen, menu bar, ⌘K command palette, app dock, live on-device inference. Same Experience Fabric as ThoxOS Mini, scaled up. Self-contained React app. Any password unlocks it. |
-| **What's in the Box** (`packaging.html`) | Rewards | Retail-packaging showcase of what backers receive: ThoxMini Air, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. Self-contained. Renders in `sources/packaging/`. |
+| **What's in the Box** (`packaging.html`) | Rewards | Retail-packaging showcase of what backers receive: ThoxAir, ThoxMini (three colorways), and ThoxClip — box front/back, specs, and "in the box" contents. Self-contained. Renders in `sources/packaging/`. |
 | **Founders Club & add-ons** (`founders.html`) | Rewards | The Founders tier — back all four devices to become a Founder (numbered metal member card, pick any 2 swag items, 12-month MeshStack, name in credits) — plus every swag item as an add-on with suggested pricing. Self-contained. Renders in `sources/swag/`. |
 | **THOX MagDisplay** (`magdisplay.html`) | Roadmap | Upcoming companion display (early Spring 2027): pocket-class color e-ink surface that MagStacks (v3.0) onto ThoxMini / Air / Clip / Nova. Hero, colorways, three-step user journey, spec grid (THOX-MCD-rA1), compatibility, and exploded anatomy. Self-contained. Renders in `sources/magdisplay/`. |
 | **THOX Experience Fabric** (`experience-fabric.html`) | Platform | The scientific design system + Rust runtime behind every THOX surface. Three planes (products → SDKs → runtime), the runtime crates, locked navigation, one visible agent (THOXY), four-tier memory, generated tokens, and the certified **Experience Score ≥ 90**. Self-contained. Source in `sources/experience-fabric.html`. |
@@ -45,7 +45,7 @@ runs it automatically as its last step.
 | **MeshStack app** (`meshstack-{ios,ipad,macos,windows,android}.html`) | Live app ×5 | Fully-functional standalone MeshStack demos, one per platform: identity, pairing, connect, monitor, devices. Self-contained React apps. Sources in `sources/meshstack/`. |
 | **Flagship devices** (`thox-nova.html`, `thox-pro.html`, `thox-pro-max.html`, `thox-pro-ultra.html`) | Live demo ×4 | Interactive product pages for the upcoming THOX Nova and THOX Edge Series (Pro / Pro Max / Pro Ultra) edge-AI line, which run the **full ThoxOS**. Self-contained. Sources in `sources/devices/`. |
 | **ThoxMigrate** (`thoxmigrate.html`) | Live app | Cloud-to-edge AI migration tool: scan cloud API traffic, map models to local equivalents, plan the move to THOX edge. Self-contained. Source in `sources/thoxmigrate.html`. |
-| **ThoxOS Mini Demo** (`thoxos-mini-demo.html`) | Interactive | The **edge build of ThoxOS** that powers the four campaign devices — ThoxKey, ThoxMini Air, ThoxMini, ThoxClip: boot, insert, agents, files, skills, terminal. The same Experience Fabric as full ThoxOS, shrunk to a key. Source in `sources/thoxos-mini-demo.dc.html`. |
+| **ThoxOS Mini Demo** (`thoxos-mini-demo.html`) | Interactive | The **edge build of ThoxOS** that powers the four campaign devices — ThoxKey, ThoxAir, ThoxMini, ThoxClip: boot, insert, agents, files, skills, terminal. The same Experience Fabric as full ThoxOS, shrunk to a key. Source in `sources/thoxos-mini-demo.dc.html`. |
 | Kickstarter Story | Self-contained | Same page as `../story.html`. |
 | Campaign Runbook | Runtime | Internal launch playbook. |
 | Model Gallery · Software Demo · Campaign Animatic | Interactive | Claude Design prototypes, rendered by the vendored runtime. |
@@ -79,7 +79,7 @@ The campaign presents one platform at two scales, held together by a single
 design + runtime framework.
 
 - **ThoxOS Mini** — the edge build that ships on the four launch devices
-  (**ThoxKey, ThoxMini Air, ThoxMini, ThoxClip**). A pocket-sized shell: boot,
+  (**ThoxKey, ThoxAir, ThoxMini, ThoxClip**). A pocket-sized shell: boot,
   insert, agents, files, skills, terminal, all on-device. Demo:
   [`thoxos-mini-demo.html` ↗](https://ttracx.github.io/thox-kickstarter/thoxos-mini-demo.html).
 - **Full ThoxOS** — the complete desktop OS that ships on the **THOX Nova and the
