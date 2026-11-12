@@ -1,7 +1,10 @@
 {
-  "exclusions": [
+  "ignoredFiles": [
     "assets/**",
+    "**/assets/**",
     "designs/**",
-    "kickstarter/**"
+    "**/designs/**",
+    "kickstarter/**",
+    "**/kickstarter/**"
   ]
 }
